@@ -33,12 +33,12 @@
   "Create tags file."
   (interactive "DDirectory: ")
   (eshell-command
-    (format "find . -type f -iname \"*.py\" -not -path \"*/venv/*\" -not -path \"*/middleware/*\" | etags -" dir-name)))
+    (format "find . -type f -iname \"*.py\" -not -path \"*/venv/*\" | etags -" dir-name)))
 ;; refresh tags
 (defun er-refresh-etags (&optional extension)
   "Run etags on all peer files in current dir and reload them silently."
   (interactive)
-  (shell-command (format "find . -type f -iname \"*.py\" -not -path \"*/venv/*\" -not -path \"*/middleware/*\" | etags -" '.))
+  (shell-command (format "find . -type f -iname \"*.py\" -not -path \"*/venv/*\" | etags -" '.))
   (let ((tags-revert-without-query t))  ; don't query, revert silently          
     (visit-tags-table default-directory nil)))
 ;; hooks for tags
