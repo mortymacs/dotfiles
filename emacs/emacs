@@ -1,0 +1,101 @@
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.org/packages/"))
+(package-initialize)
+
+; general settings
+(menu-bar-mode -1)
+
+; file manager
+(require 'neotree)
+(global-set-key [f8] 'neotree-toggle)
+(setq neo-hidden-regexp-list '("venv" "\\.pyc$" "~$" "\\.git" "__pycache__"))
+
+; line settings
+(global-linum-mode t)
+(setq linum-format " %d ")
+(column-number-mode t)
+(require 'fill-column-indicator)
+(add-hook 'afte0r-change-major-mode-hook 'fci-mode)
+(setq fci-rule-column 120)
+(setq-default
+  whitespace-line-column 120
+  whitespace-style '(face lines-tail))
+(add-hook 'prog-mode-hook #'whitespace-mode)
+(toggle-truncate-lines -1)
+
+; theme settings
+(load-theme 'gruvbox-dark-medium t)
+
+; tags settings
+;; create tags
+(defun create-tags (dir-name)
+  "Create tags file."
+  (interactive "DDirectory: ")
+  (eshell-command
+    (format "find . -type f -iname \"*.py\" -not -path \"*/venv/*\" -not -path \"*/middleware/*\" | etags -" dir-name)))
+;; refresh tags
+(defun er-refresh-etags (&optional extension)
+  "Run etags on all peer files in current dir and reload them silently."
+  (interactive)
+  (shell-command (format "find . -type f -iname \"*.py\" -not -path \"*/venv/*\" -not -path \"*/middleware/*\" | etags -" '.))
+  (let ((tags-revert-without-query t))  ; don't query, revert silently          
+    (visit-tags-table default-directory nil)))
+;; hooks for tags
+(create-tags '.)
+(add-hook 'after-save-hook (create-tags '.))
+(add-hook 'after-save-hook #'er-refresh-etags)
+
+; buffer settings
+(setq make-backup-files nil)
+(setq auto-save-default nil)
+(setq-default truncate-lines 1)
+
+; default buffers
+(setq inhibit-startup-screen t)
+(setq-default message-log-max nil)
+(kill-buffer "*Messages*")
+(setq initial-scratch-message "")
+(kill-buffer "*scratch*")
+(add-hook 'minibuffer-exit-hook 
+  '(lambda ()
+    (let ((buffer "*Completions*"))
+      (and (get-buffer buffer)
+      (kill-buffer buffer)))))
+
+; shortcut keys
+;; create window
+(global-set-key (kbd "<M-up>") 'windmove-up)
+(global-set-key (kbd "<M-down>") 'windmove-down)
+(global-set-key (kbd "<M-left>") 'windmove-left)
+(global-set-key (kbd "<M-right>") 'windmove-right)
+;; window size
+(global-set-key (kbd "S-C-<up>") 'shrink-window)
+(global-set-key (kbd "S-C-<down>") 'enlarge-window)
+(global-set-key (kbd "S-C-<left>") 'shrink-window-horizontally)
+(global-set-key (kbd "S-C-<right>") 'enlarge-window-horizontally)
+;; select text
+(global-set-key (kbd "C-o") 'er/expand-region)
+
+; git settings
+(global-git-gutter-mode +1)
+
+; fold
+(load-library "hideshow")
+(global-set-key (kbd "C-f") 'hs-toggle-hiding)
+(add-hook 'python-mode-hook 'hs-minor-mode)
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (magit gruvbox-theme fill-column-indicator git-gutter expand-region neotree))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
