@@ -24,8 +24,15 @@
 (add-hook 'prog-mode-hook #'whitespace-mode)
 (toggle-truncate-lines -1)
 
+;(setq flycheck-check-syntax-automatically '(mode-enabled save))
+(setq flycheck-python-pylint-executable "pylint")
+(setq flycheck-python-flake8-executable "flake8")
+(setq flycheck-python-mypy-executable "mypy")
+(add-hook 'after-init-hook #'global-flycheck-mode)
+;(projectile-mode)
+
 ; theme settings
-(load-theme 'gruvbox-dark-medium t)
+(load-theme 'sanityinc-tomorrow-eighties t)
 
 ; tags settings
 ;; create tags
@@ -42,9 +49,16 @@
   (let ((tags-revert-without-query t))  ; don't query, revert silently          
     (visit-tags-table default-directory nil)))
 ;; hooks for tags
-(create-tags '.)
-(add-hook 'after-save-hook (create-tags '.))
-(add-hook 'after-save-hook #'er-refresh-etags)
+; (create-tags '.)
+; (add-hook 'after-save-hook (create-tags '.))
+; (add-hook 'after-save-hook #'er-refresh-etags)
+
+; (require 'project-root)
+
+; (setq project-roots
+;     `(("general"
+;        :root-contains-files ("venv"))))
+; (global-set-key (kbd "C-c p d") 'project-root-goto-root)
 
 ; buffer settings
 (setq make-backup-files nil)
@@ -65,10 +79,10 @@
 
 ; shortcut keys
 ;; create window
-(global-set-key (kbd "<M-up>") 'windmove-up)
-(global-set-key (kbd "<M-down>") 'windmove-down)
-(global-set-key (kbd "<M-left>") 'windmove-left)
-(global-set-key (kbd "<M-right>") 'windmove-right)
+(global-set-key (kbd "M-<up>") 'windmove-up)
+(global-set-key (kbd "M-<down>") 'windmove-down)
+(global-set-key (kbd "M-<left>") 'windmove-left)
+(global-set-key (kbd "M-<right>") 'windmove-right)
 ;; window size
 (global-set-key (kbd "S-C-<up>") 'shrink-window)
 (global-set-key (kbd "S-C-<down>") 'enlarge-window)
@@ -92,7 +106,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (magit gruvbox-theme fill-column-indicator git-gutter expand-region neotree))))
+    (color-theme-sanityinc-solarized color-theme-sanityinc-tomorrow flycheck flycheck-pycheckers magit gruvbox-theme fill-column-indicator git-gutter expand-region neotree))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
