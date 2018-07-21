@@ -28,7 +28,7 @@
 (setq flycheck-python-pylint-executable "pylint")
 (setq flycheck-python-flake8-executable "flake8")
 (setq flycheck-python-mypy-executable "mypy")
-(add-hook 'after-init-hook #'global-flycheck-mode)
+;(add-hook 'after-init-hook #'global-flycheck-mode)
 ;(projectile-mode)
 
 ; theme settings
@@ -60,6 +60,9 @@
 ;        :root-contains-files ("venv"))))
 ; (global-set-key (kbd "C-c p d") 'project-root-goto-root)
 
+; autocomplete
+(ac-config-default)
+
 ; buffer settings
 (setq make-backup-files nil)
 (setq auto-save-default nil)
@@ -90,6 +93,10 @@
 (global-set-key (kbd "S-C-<right>") 'enlarge-window-horizontally)
 ;; select text
 (global-set-key (kbd "C-o") 'er/expand-region)
+;; goto
+(global-set-key (kbd "M-d") 'dumb-jump-go)
+(global-set-key (kbd "M-f") 'dumb-jump-back)
+(global-set-key (kbd "M-q") 'dumb-jump-quick-look)
 
 ; git settings
 (global-git-gutter-mode +1)
@@ -99,6 +106,8 @@
 (global-set-key (kbd "C-f") 'hs-toggle-hiding)
 (add-hook 'python-mode-hook 'hs-minor-mode)
 
+(show-paren-mode 1)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -106,7 +115,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (color-theme-sanityinc-solarized color-theme-sanityinc-tomorrow flycheck flycheck-pycheckers magit gruvbox-theme fill-column-indicator git-gutter expand-region neotree))))
+    (auto-complete dumb-jump color-theme-sanityinc-solarized color-theme-sanityinc-tomorrow flycheck flycheck-pycheckers magit gruvbox-theme fill-column-indicator git-gutter expand-region neotree))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
