@@ -116,6 +116,13 @@
 (global-set-key (kbd "C-f") 'hs-toggle-hiding)
 (add-hook 'python-mode-hook 'hs-minor-mode)
 
+; trim spaces
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+(setq require-final-newline t)
+
+;; autopair closing parenthesis insertion
+(autopair-global-mode)
+(diminish 'autopair-mode)
 (show-paren-mode 1)
 
 (custom-set-variables
