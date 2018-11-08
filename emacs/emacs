@@ -38,7 +38,7 @@
 
 ; theme settings
 ;(load-theme 'sanityinc-tomorrow-eighties t)
-(load-theme 'subatomic256 t)
+(load-theme 'monokai t)
 (add-to-list 'default-frame-alist '(background-color . "#242626"))
 ;;(set-face-background 'default-frame-alist "#242626")
 (set-face-background 'linum "#242626")
@@ -137,7 +137,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (subatomic256-theme powerline multiple-cursors monokai-theme auto-complete dumb-jump color-theme-sanityinc-solarized color-theme-sanityinc-tomorrow flycheck flycheck-pycheckers magit gruvbox-theme fill-column-indicator git-gutter expand-region neotree))))
+    (multiple-cursors monokai-theme auto-complete dumb-jump color-theme-sanityinc-solarized color-theme-sanityinc-tomorrow flycheck flycheck-pycheckers magit gruvbox-theme fill-column-indicator git-gutter expand-region neotree))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
