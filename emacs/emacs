@@ -5,6 +5,9 @@
 
 ; general settings
 (menu-bar-mode -1)
+;(tool-bar-mode -1)
+;(toggle-scroll-bar -1)
+;(set-face-bold-p 'bold nil)
 
 ; file manager
 (require 'neotree)
@@ -37,11 +40,11 @@
 ;(projectile-mode)
 
 ; theme settings
-;(load-theme 'sanityinc-tomorrow-eighties t)
-(load-theme 'monokai t)
+;(load-theme 'solarized-dark t)
+(load-theme 'oceanic t)
 (add-to-list 'default-frame-alist '(background-color . "#242626"))
 ;;(set-face-background 'default-frame-alist "#242626")
-(set-face-background 'linum "#242626")
+;(set-face-background 'linum "#242626")
 
 ; tags settings
 ;; create tags
@@ -130,6 +133,9 @@
 (diminish 'autopair-mode)
 (show-paren-mode 1)
 
+; magit
+(global-set-key (kbd "C-x g") 'magit-status)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -137,7 +143,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (multiple-cursors monokai-theme auto-complete dumb-jump color-theme-sanityinc-solarized color-theme-sanityinc-tomorrow flycheck flycheck-pycheckers magit gruvbox-theme fill-column-indicator git-gutter expand-region neotree))))
+    (docker-compose-mode dockerfile-mode rust-mode oceanic-theme exotica-theme vala-mode auto-complete dumb-jump magit fill-column-indicator git-gutter expand-region neotree))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
