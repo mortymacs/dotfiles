@@ -1,0 +1,6 @@
+[
+    // {"keys": ["alt+d"], "command": "sublime_jedi_goto"},
+    {"keys": ["alt+b"], "command": "blame"},
+    {"keys": ["alt+f"], "command": "jump_back"},
+	{"keys": ["alt+d"], "command": "goto_definition"}
+]

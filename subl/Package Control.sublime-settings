@@ -1,0 +1,19 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"A File Icon",
+		"Dockerfile Syntax Highlighting",
+		"Git",
+		"Git blame",
+		"GitGutter",
+		"INI",
+		"iOpener",
+		"Jedi - Python autocompletion",
+		"Package Control",
+		"Vala-TMBundle"
+	]
+}

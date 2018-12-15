@@ -1,0 +1,43 @@
+{
+	"added_words":
+	[
+		"config",
+		"python3",
+		"env"
+	],
+	"color_scheme": "Packages/Color Scheme - Default/Mariana.sublime-color-scheme",
+	"create_window_at_startup": false,
+	"drag_text": false,
+	"enable_tab_scrolling": false,
+	"folder_exclude_patterns":
+	[
+		".svn",
+		".git",
+		".hg",
+		"CVS",
+		"venv",
+		"__pycache__"
+	],
+	"font_face": "Monaco",
+	"font_size": 12,
+	"highlight_line": true,
+	"ignored_packages":
+	[
+		"SublimeLinter",
+		"SublimeLinter-flake8",
+		"SublimeLinter-pylint",
+		"Vintage"
+	],
+	"line_padding_bottom": 1,
+	"line_padding_top": 1,
+	"rulers":
+	[
+		120
+	],
+	"show_full_path": false,
+	"show_tab_close_buttons": false,
+	"theme": "Default.sublime-theme",
+	"translate_tabs_to_spaces": true,
+	"use_tab_stops": false,
+	"word_wrap": false
+}
