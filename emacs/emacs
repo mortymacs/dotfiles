@@ -5,9 +5,6 @@
 
 ; general settings
 (menu-bar-mode -1)
-;(tool-bar-mode -1)
-;(toggle-scroll-bar -1)
-;(set-face-bold-p 'bold nil)
 
 ; file manager
 (require 'neotree)
@@ -32,19 +29,9 @@
 (add-hook 'prog-mode-hook #'whitespace-mode)
 (toggle-truncate-lines -1)
 
-;(setq flycheck-check-syntax-automatically '(mode-enabled save))
-;(setq flycheck-python-pylint-executable "pylint")
-;(setq flycheck-python-flake8-executable "flake8")
-;(setq flycheck-python-mypy-executable "mypy")
-;(add-hook 'after-init-hook #'global-flycheck-mode)
-;(projectile-mode)
-
 ; theme settings
-;(load-theme 'solarized-dark t)
 (load-theme 'oceanic t)
 (add-to-list 'default-frame-alist '(background-color . "#242626"))
-;;(set-face-background 'default-frame-alist "#242626")
-;(set-face-background 'linum "#242626")
 
 ; tags settings
 ;; create tags
@@ -60,25 +47,11 @@
   (shell-command (format "find . -type f -iname \"*.py\" -not -path \"*/venv/*\" | etags -" '.))
   (let ((tags-revert-without-query t))  ; don't query, revert silently
     (visit-tags-table default-directory nil)))
-;; hooks for tags
-; (create-tags '.)
-; (add-hook 'after-save-hook (create-tags '.))
-; (add-hook 'after-save-hook #'er-refresh-etags)
 
+; cursors
 (require 'multiple-cursors)
 (global-set-key (kbd "C-e") 'mc/edit-lines)
 (global-set-key (kbd "M-s") 'mc/mark-pop)
-;(global-set-key (kbd "M-q") 'mc/mark-next-like-this)
-;;(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
-;(global-set-key (kbd "M-n") 'mc/mark-all-like-this)
-
-; (setq project-roots
-;     `(("general"
-;        :root-contains-files ("venv"))))
-; (global-set-key (kbd "C-c p d") 'project-root-goto-root)
-
-; autocomplete
-;(ac-config-default)
 
 ; buffer settings
 (setq make-backup-files nil)
@@ -135,6 +108,34 @@
 
 ; magit
 (global-set-key (kbd "C-x g") 'magit-status)
+
+; handle copy/paste
+(defun copy-to-clipboard ()
+  (interactive)
+  (if (region-active-p)
+	(progn
+	  (shell-command-on-region (region-beginning) (region-end) "xsel -i -b")
+	  (message "Yanked region to clipboard!")
+	  (deactivate-mark))
+      (message "No region active; can't yank to clipboard!"))
+  )
+(defun cut-to-clipboard ()
+  (interactive)
+  (if (region-active-p)
+	(progn
+	  (shell-command-on-region (region-beginning) (region-end) "xsel -i -b")
+	  (call-interactively 'clipboard-kill-region)
+	  (message "Cut region to clipboard!")
+	  (deactivate-mark))
+      (message "No region active; can't yank to clipboard!"))
+  )
+(defun paste-from-clipboard ()
+  (interactive)
+  (insert (shell-command-to-string "xsel -o -b"))
+  )
+(global-set-key (kbd "M-w") 'copy-to-clipboard)
+(global-set-key (kbd "C-w") 'cut-to-clipboard)
+(global-set-key (kbd "C-y") 'paste-from-clipboard)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
