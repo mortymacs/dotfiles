@@ -136,6 +136,7 @@
 (global-set-key (kbd "M-w") 'copy-to-clipboard)
 (global-set-key (kbd "C-w") 'cut-to-clipboard)
 (global-set-key (kbd "C-y") 'paste-from-clipboard)
+(global-set-key (kbd "C-q") 'paste-from-clipboard)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
