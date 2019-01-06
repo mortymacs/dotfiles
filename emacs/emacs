@@ -153,6 +153,11 @@
 (global-set-key (kbd "C-v") 'ffip-split-window-vertically)
 (global-set-key (kbd "C-h") 'ffip-split-window-horizontally)
 
+; drag lines (move up/down)
+(require 'drag-stuff)
+(drag-stuff-global-mode 1)
+(drag-stuff-define-keys)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -160,7 +165,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (find-file-in-project hungry-delete focus multiple-cursors docker-compose-mode dockerfile-mode rust-mode oceanic-theme exotica-theme vala-mode auto-complete dumb-jump magit fill-column-indicator git-gutter expand-region neotree))))
+    (drag-stuff find-file-in-project hungry-delete focus multiple-cursors docker-compose-mode dockerfile-mode rust-mode oceanic-theme exotica-theme vala-mode auto-complete dumb-jump magit fill-column-indicator git-gutter expand-region neotree))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
