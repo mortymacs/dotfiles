@@ -140,6 +140,19 @@
 (global-set-key (kbd "C-y") 'paste-from-clipboard)
 (global-set-key (kbd "C-q") 'paste-from-clipboard)
 
+; hungry delete
+(require 'hungry-delete)
+(add-hook 'python-mode-hook #'(lambda () (hungry-keyboard python-mode-map)))
+(global-set-key (kbd "C-h") 'hungry-delete-backward)
+(global-set-key (kbd "C-<delete>") 'hungry-delete-forward)
+
+; find file in project
+(global-set-key (kbd "C-f") 'find-file-in-project)
+(global-set-key (kbd "C-d") 'find-file-with-similar-name)
+(global-set-key (kbd "C-l") 'find-file-in-current-directory)
+(global-set-key (kbd "C-v") 'ffip-split-window-vertically)
+(global-set-key (kbd "C-h") 'ffip-split-window-horizontally)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -147,7 +160,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (multiple-cursors docker-compose-mode dockerfile-mode rust-mode oceanic-theme exotica-theme vala-mode auto-complete dumb-jump magit fill-column-indicator git-gutter expand-region neotree))))
+    (find-file-in-project hungry-delete focus multiple-cursors docker-compose-mode dockerfile-mode rust-mode oceanic-theme exotica-theme vala-mode auto-complete dumb-jump magit fill-column-indicator git-gutter expand-region neotree))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
