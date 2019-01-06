@@ -30,7 +30,7 @@
 (toggle-truncate-lines -1)
 
 ; theme settings
-(load-theme 'oceanic t)
+(load-theme 'monokai t)
 (add-to-list 'default-frame-alist '(background-color . "#242626"))
 
 ; tags settings
@@ -47,13 +47,6 @@
   (shell-command (format "find . -type f -iname \"*.py\" -not -path \"*/venv/*\" | etags -" '.))
   (let ((tags-revert-without-query t))  ; don't query, revert silently
     (visit-tags-table default-directory nil)))
-
-; cursors
-;; (require 'multiple-cursors)
-;; (global-set-key (kbd "C-m") 'mc/edit-lines)
-;; (global-set-key (kbd "C-<down>") 'mc/mark-next-like-this)
-;; (global-set-key (kbd "C-<up>") 'mc/mark-previous-like-this)
-;; (global-set-key (kbd "C-<up>") 'mc/mark-previous-like-this)
 
 ; buffer settings
 (setq make-backup-files nil)
@@ -165,7 +158,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (drag-stuff find-file-in-project hungry-delete focus multiple-cursors docker-compose-mode dockerfile-mode rust-mode oceanic-theme exotica-theme vala-mode auto-complete dumb-jump magit fill-column-indicator git-gutter expand-region neotree))))
+    (monokai-theme drag-stuff find-file-in-project hungry-delete focus multiple-cursors docker-compose-mode dockerfile-mode rust-mode oceanic-theme exotica-theme vala-mode auto-complete dumb-jump magit fill-column-indicator git-gutter expand-region neotree))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
