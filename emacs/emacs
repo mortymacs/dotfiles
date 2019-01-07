@@ -86,6 +86,7 @@
 ; git settings
 (global-git-gutter-mode +1)
 (global-set-key (kbd "C-x g") 'magit-status)
+(global-set-key (kbd "C-x v") 'magit-diff-range)
 
 ; fold
 (load-library "hideshow")
