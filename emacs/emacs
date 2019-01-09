@@ -12,10 +12,6 @@
 (setq neo-hidden-regexp-list '("venv" "\\.pyc$" "~$" "\\.git" "__pycache__"))
 (setq neo-window-position (quote right))
 
-; powerline
-(require 'powerline)
-(powerline-vim-theme)
-
 ; line settings
 (global-linum-mode t)
 (setq linum-format " %d ")
@@ -28,10 +24,6 @@
   whitespace-style '(face lines-tail))
 (add-hook 'prog-mode-hook #'whitespace-mode)
 (toggle-truncate-lines -1)
-
-; theme settings
-(load-theme 'monokai t)
-(add-to-list 'default-frame-alist '(background-color . "#242626"))
 
 ; tags settings
 ;; create tags
@@ -161,7 +153,8 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (monokai-theme drag-stuff find-file-in-project hungry-delete focus multiple-cursors docker-compose-mode dockerfile-mode rust-mode oceanic-theme exotica-theme vala-mode auto-complete dumb-jump magit fill-column-indicator git-gutter expand-region neotree))))
+    (toml-mode drag-stuff find-file-in-project hungry-delete focus multiple-cursors docker-compose-mode dockerfile-mode rust-mode exotica-theme vala-mode auto-complete dumb-jump magit fill-column-indicator git-gutter expand-region neotree))))
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
