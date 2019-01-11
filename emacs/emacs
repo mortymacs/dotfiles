@@ -13,8 +13,7 @@
 (setq neo-window-position (quote right))
 
 ; line settings
-(global-linum-mode t)
-(setq linum-format " %d ")
+(global-nlinum-mode)
 (column-number-mode t)
 (require 'fill-column-indicator)
 (add-hook 'afte0r-change-major-mode-hook 'fci-mode)
@@ -76,7 +75,6 @@
 (global-set-key (kbd "M-q") 'dumb-jump-quick-look)
 
 ; git settings
-(global-git-gutter-mode +1)
 (global-set-key (kbd "C-x g") 'magit-status)
 (global-set-key (kbd "C-x v") 'magit-diff-range)
 
@@ -153,7 +151,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (toml-mode drag-stuff find-file-in-project hungry-delete focus multiple-cursors docker-compose-mode dockerfile-mode rust-mode exotica-theme vala-mode auto-complete dumb-jump magit fill-column-indicator git-gutter expand-region neotree))))
+    (nlinum toml-mode drag-stuff find-file-in-project hungry-delete focus multiple-cursors docker-compose-mode dockerfile-mode rust-mode exotica-theme vala-mode auto-complete dumb-jump magit fill-column-indicator expand-region neotree))))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
