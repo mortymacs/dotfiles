@@ -140,9 +140,11 @@
 ; drag lines (move up/down)
 (require 'drag-stuff)
 (drag-stuff-global-mode 1)
-; (drag-stuff-define-keys)
 (global-set-key (kbd "M-S-<up>") 'drag-stuff-up)
 (global-set-key (kbd "M-S-<down>") 'drag-stuff-down)
+
+; rest client mode
+(global-set-key (kbd "M-r") 'restclient-mode)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
