@@ -1,6 +1,9 @@
 [
-    // {"keys": ["alt+d"], "command": "sublime_jedi_goto"},
     {"keys": ["alt+b"], "command": "blame"},
     {"keys": ["alt+f"], "command": "jump_back"},
-	{"keys": ["alt+d"], "command": "goto_definition"}
+	{"keys": ["alt+d"], "command": "goto_definition"},
+    {"keys": ["alt+left"], "command": "focus_neighboring_group", "args": {"forward": false} },
+    {"keys": ["alt+right"], "command": "focus_neighboring_group" },
+    // {"keys": ["ctrl+space+left"], "command": "move_to_neighboring_group", "args": {"forward": false} },
+    // {"keys": ["ctrl+space+right"], "command": "move_to_neighboring_group" }
 ]
