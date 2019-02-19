@@ -5,6 +5,11 @@
 
 ; general settings
 (menu-bar-mode -1)
+(tool-bar-mode -1)
+(scroll-bar-mode -1)
+
+; theme
+(load-theme 'farmhouse-dark t)
 
 ; file manager
 (require 'neotree)
@@ -95,6 +100,9 @@
 ; magit
 (global-set-key (kbd "C-x g") 'magit-status)
 
+; misc
+(global-set-key (kbd "C-c g") 'rgrep)
+
 ; handle copy/paste
 (defun copy-to-clipboard ()
   (interactive)
@@ -154,7 +162,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (regex-tool salt-mode json-mode restclient nlinum toml-mode drag-stuff find-file-in-project hungry-delete focus multiple-cursors docker-compose-mode dockerfile-mode rust-mode exotica-theme vala-mode auto-complete dumb-jump magit fill-column-indicator expand-region neotree))))
+    (farmhouse-theme dracula-theme markdown-mode regex-tool salt-mode json-mode restclient nlinum toml-mode drag-stuff find-file-in-project hungry-delete focus multiple-cursors docker-compose-mode dockerfile-mode rust-mode exotica-theme vala-mode auto-complete dumb-jump magit fill-column-indicator expand-region neotree))))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
