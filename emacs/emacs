@@ -9,7 +9,7 @@
 (scroll-bar-mode -1)
 
 ; theme
-(load-theme 'farmhouse-dark t)
+(load-theme 'dracula t)
 
 ; file manager
 (require 'neotree)
@@ -60,6 +60,10 @@
     (let ((buffer "*Completions*"))
       (and (get-buffer buffer)
       (kill-buffer buffer)))))
+
+; dumb jump
+(setq dumb-jump-prefer-searcher 'ag)
+(setq dumb-jump-default-project ".")
 
 ; shortcut keys
 ;; create window
