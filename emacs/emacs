@@ -11,6 +11,11 @@
 ; theme
 (load-theme 'dracula t)
 
+; tabbar settings
+(tabbar-mode)
+(setq tabbar-use-images nil)
+;(setq tabbar-background-color "#fff")
+
 ; file manager
 (require 'neotree)
 (global-set-key [f8] 'neotree-toggle)
@@ -155,6 +160,9 @@
 (global-set-key (kbd "M-S-<up>") 'drag-stuff-up)
 (global-set-key (kbd "M-S-<down>") 'drag-stuff-down)
 
+; tabbar config
+(global-set-key (kbd "S-<left>") 'tabbar-backward-tab)
+(global-set-key (kbd "S-<right>") 'tabbar-forward-tab)
 
 ; rest client mode
 (global-set-key (kbd "M-r") 'restclient-mode)
@@ -166,7 +174,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (farmhouse-theme dracula-theme markdown-mode regex-tool salt-mode json-mode restclient nlinum toml-mode drag-stuff find-file-in-project hungry-delete focus multiple-cursors docker-compose-mode dockerfile-mode rust-mode exotica-theme vala-mode auto-complete dumb-jump magit fill-column-indicator expand-region neotree))))
+    (tabbar makefile-executor farmhouse-theme dracula-theme markdown-mode regex-tool salt-mode json-mode restclient nlinum toml-mode drag-stuff find-file-in-project hungry-delete focus multiple-cursors docker-compose-mode dockerfile-mode rust-mode exotica-theme vala-mode auto-complete dumb-jump magit fill-column-indicator expand-region neotree))))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
