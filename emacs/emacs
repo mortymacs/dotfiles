@@ -23,7 +23,8 @@
 (setq neo-window-position (quote right))
 
 ; line settings
-(global-nlinum-mode)
+;(global-nlinum-mode)
+(global-display-line-numbers-mode 1)
 (column-number-mode t)
 (require 'fill-column-indicator)
 (add-hook 'afte0r-change-major-mode-hook 'fci-mode)
@@ -33,6 +34,7 @@
   whitespace-style '(face lines-tail))
 (add-hook 'prog-mode-hook #'whitespace-mode)
 (toggle-truncate-lines -1)
+(add-hook 'eshell-mode-hook (lambda () (display-line-numbers-mode -1)))
 
 ; tags settings
 ;; create tags
