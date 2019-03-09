@@ -23,6 +23,9 @@ apt install -y linux-libc-dev util-linux
 # -- general
 apt install -y wget
 apt install -y chromium-browser gnome-calendar
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+dpkg -i google-chrome-stable_current_amd64.deb
+rm -f google-chrome-stable_current_amd64.deb
 
 # -- virtualization
 apt install -y virtualbox
@@ -50,10 +53,13 @@ pip3 install ipython tmuxp requests
 # -- messanger
 wget -O telegram.tar.xz -c https://telegram.org/dl/desktop/linux
 tar xf telegram.tar.xz -C $USER_APPLICATION_PATH
+rm -f telegram.tar.xz
 wget -c https://repo.skype.com/latest/skypeforlinux-64.deb
 dpkg -i skypeforlinux-64.deb
+rm -f skypeforlinux-64.deb
 wget -O slack-desktop-amd64.deb -c https://downloads.slack-edge.com/linux_releases/slack-desktop-3.3.7-amd64.deb
 dpkg -i slack-desktop-amd64.deb
+rm -f slack-desktop-amd64.deb
 
 # -- music
 apt install -y gnome-music
