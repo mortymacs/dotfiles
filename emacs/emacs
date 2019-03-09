@@ -111,6 +111,10 @@
 ;(global-set-key (kbd "M-f") 'hs-toggle-hiding)
 ;(add-hook 'python-mode-hook 'hs-minor-mode)
 
+; project
+(projectile-mode +1)
+(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+
 ; trim spaces
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 (setq require-final-newline t)
@@ -194,7 +198,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (auto-compile doom-themes evil airline-themes powerline go-mode tabbar makefile-executor farmhouse-theme dracula-theme markdown-mode regex-tool salt-mode json-mode restclient nlinum toml-mode drag-stuff find-file-in-project hungry-delete focus multiple-cursors docker-compose-mode dockerfile-mode rust-mode exotica-theme vala-mode auto-complete dumb-jump magit fill-column-indicator expand-region neotree))))
+    (projectile auto-compile doom-themes evil airline-themes powerline go-mode tabbar makefile-executor farmhouse-theme dracula-theme markdown-mode regex-tool salt-mode json-mode restclient nlinum toml-mode drag-stuff find-file-in-project hungry-delete focus multiple-cursors docker-compose-mode dockerfile-mode rust-mode exotica-theme vala-mode auto-complete dumb-jump magit fill-column-indicator expand-region neotree))))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
