@@ -147,5 +147,5 @@ alias rm="rm -i"
 export EDITOR="vim"
 alias a="source ./venv/bin/activate"
 alias d="deactivate"
-export PATH=$PATH:$HOME/.cargo/bin
-export PATH=$PATH:/usr/local/go/bin
+alias ascii="graph-easy --from=dot --as_ascii"
+export PATH=$PATH:/usr/local/go/bin:$HOME/.cargo/bin
