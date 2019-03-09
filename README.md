@@ -9,4 +9,6 @@ List of config files:
  * sublime
  * tmux
  * tmuxp
- 
+ * bash
+
+ Font: https://nerdfonts.com/  (DejavuSans Mono)
