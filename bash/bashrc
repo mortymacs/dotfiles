@@ -57,21 +57,14 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 ##### ==================
-# Sexy Bash Prompt, inspired by "Extravagant Zsh Prompt"
-# Screenshot: http://cloud.gf3.ca/M5rG
-# A big thanks to \amethyst on Freenode
-MAGENTA="\033[1;31m"
-ORANGE="\033[1;33m"
+# Sexy Bash Prompt
 GREEN="\e[32m"
-PURPLE="\033[1;35m"
-WHITE="\033[1;37m"
 RED="\e[91m"
 CYAN="\e[36m"
-BOLD=""
 RESET="\033[m"
 
 function prompt_command() {
-  # PS1="\[${BOLD}${MAGENTA}\]\u\[$WHITE\]@\[$ORANGE\]\h\[$WHITE\] \[$GREEN\]\W\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$PURPLE\]\$(parse_git_branch)\[$WHITE\]\n\$ \[$RESET\]"
+  # inspired by miloshadzic theme in zsh
   PS1="\[$CYAN\]\W\[$RED\]|\[$GREEN\]\$([ -e '.git' ] && git symbolic-ref -q HEAD 2>/dev/null | cut -d/ -f3- | xargs -I {} echo -n {}' \[$CYAN\]⇒' || echo '\[$CYAN\]⇒') \[$RESET\]"
 }
 prompt_command
@@ -152,7 +145,6 @@ alias whereiam='echo $(curl -s http://ip-api.com/json | jq -r ".country,.city")'
 alias grep="grep -n --color"
 alias rm="rm -i"
 export EDITOR="vim"
-alias plotwise="tmuxp load plotwise"
 alias a="source ./venv/bin/activate"
 alias d="deactivate"
 export PATH=$PATH:$HOME/.cargo/bin
