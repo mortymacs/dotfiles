@@ -26,6 +26,9 @@ apt install -y chromium-browser gnome-calendar
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 dpkg -i google-chrome-stable_current_amd64.deb
 rm -f google-chrome-stable_current_amd64.deb
+wget -O dropbox_amd64.deb -c https://linux.dropbox.com/packages/ubuntu/dropbox_2019.01.31_amd64.deb
+dpkg -i dropbox_amd64.deb
+rm -f dropbox_amd64.deb
 
 # -- virtualization
 apt install -y virtualbox
@@ -71,6 +74,9 @@ apt install -y spotify-client
 # update
 apt update
 apt upgrade -y
+
+# wizard setups
+dropbox
 
 
 echo 'Done ;)'
