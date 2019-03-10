@@ -101,8 +101,10 @@
 (global-set-key (kbd "M-d") 'dumb-jump-go)
 (global-set-key (kbd "M-f") 'dumb-jump-back)
 (global-set-key (kbd "M-q") 'dumb-jump-quick-look)
-
-; git settings
+;; find
+(global-set-key (kbd "C-p") 'find-grep)
+;; auto indent (mark-whole-buffer -> c-x h, indent-region -> c-m-\)
+;; git settings
 (global-set-key (kbd "C-x g") 'magit-status)
 (global-set-key (kbd "C-x v") 'magit-diff-range)
 
@@ -192,6 +194,15 @@
 (global-set-key (kbd "C-c s") 'eshell)
 (global-set-key (kbd "C-c c") 'compile)
 
+; help config
+(require 'helm)
+(helm-mode 1)
+(global-set-key (kbd "M-x") 'helm-M-x)
+(global-set-key (kbd "M-c") 'helm-find)
+(global-set-key (kbd "C-f") 'helm-find-files)
+(global-set-key (kbd "C-s") 'helm-occur)
+(global-set-key (kbd "M-g") 'helm-grep-do-git-grep)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -199,7 +210,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (projectile auto-compile doom-themes evil airline-themes powerline go-mode tabbar makefile-executor farmhouse-theme dracula-theme markdown-mode regex-tool salt-mode json-mode restclient nlinum toml-mode drag-stuff find-file-in-project hungry-delete focus multiple-cursors docker-compose-mode dockerfile-mode rust-mode vala-mode auto-complete dumb-jump magit fill-column-indicator expand-region neotree))))
+    (helm projectile auto-compile doom-themes evil airline-themes powerline go-mode tabbar makefile-executor farmhouse-theme dracula-theme markdown-mode regex-tool salt-mode json-mode restclient nlinum toml-mode drag-stuff find-file-in-project hungry-delete focus multiple-cursors docker-compose-mode dockerfile-mode rust-mode vala-mode auto-complete dumb-jump magit fill-column-indicator expand-region neotree))))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
