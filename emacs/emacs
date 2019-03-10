@@ -189,7 +189,8 @@
 (global-set-key (kbd "M-r") 'restclient-mode)
 
 ; compile
-(global-set-key (kbd "C-x c") 'compile)
+(global-set-key (kbd "C-c s") 'eshell)
+(global-set-key (kbd "C-c c") 'compile)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
