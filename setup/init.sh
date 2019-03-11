@@ -7,3 +7,8 @@ cd -
 
 sudo su
 ./packages.sh
+
+
+# wallpapers
+
+# git working directory

@@ -201,7 +201,7 @@
 (global-set-key (kbd "M-c") 'helm-find)
 (global-set-key (kbd "C-f") 'helm-find-files)
 (global-set-key (kbd "C-s") 'helm-occur)
-(global-set-key (kbd "M-g") 'helm-grep-do-git-grep)
+(global-set-key (kbd "M-v") 'helm-grep-do-git-grep)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
