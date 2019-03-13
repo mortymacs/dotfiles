@@ -164,6 +164,9 @@
 (global-set-key (kbd "C-y") 'paste-from-clipboard)
 (global-set-key (kbd "C-q") 'paste-from-clipboard)
 
+; find & replace
+(global-set-key (kbd "C-h") 'query-replace)
+
 ; hungry delete
 (require 'hungry-delete)
 (add-hook 'python-mode-hook #'(lambda () (hungry-keyboard python-mode-map)))
