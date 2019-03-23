@@ -12,11 +12,9 @@
 		"venv",
 		"__pycache__"
 	],
-	"font_face": "Monaco",
-	"font_size": 13,
+	"font_size": 14,
 	"ignored_packages":
 	[
-		"0_package_control_loader",
 		"Vintage"
 	],
 	"indent_to_bracket": true,
@@ -24,11 +22,12 @@
 	"line_padding_top": 1,
 	"rulers":
 	[
+		78,
 		120
 	],
 	"show_full_path": false,
 	"show_tab_close_buttons": false,
-	"theme": "Default.sublime-theme",
+	"theme": "Adaptive.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true
 }
