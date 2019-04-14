@@ -18,8 +18,11 @@ PS1="\[$CYAN\]\W\[$RED\]|\[$GREEN\]\$([ -e '.git' ] && git symbolic-ref -q HEAD 
 
 alias p="ping 8.8.8.8"
 alias v="vim"
-alias e="emacsclient"
-alias ee="emacs"
+alias e="emacs -nw"
+alias ee="emacsclient"
+alias c="source ~/.py2/bin/activate; weechat; d"
+alias p2="source ~/.py2/bin/activate"
+alias p3="source ~/.py3/bin/activate"
 alias s="subl"
 alias t="tmux"
 alias pdf="evince"
@@ -28,7 +31,10 @@ alias dx='export http_proxy=""'
 alias whereiam='echo $(curl -s http://ip-api.com/json | jq -r ".country,.city")'
 alias grep="grep -n --color"
 alias rm="rm -i"
-export EDITOR="vim"
+export EDITOR="emacsclient"
 alias a="source ./venv/bin/activate"
 alias d="deactivate"
 alias ascii="graph-easy --from=dot --as_ascii"
+
+export GOPATH=/home/morteza/.go
+export PATH=$PATH:$GOPATH/bin

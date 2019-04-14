@@ -11,6 +11,9 @@
 ; theme
 (load-theme 'doom-nord t)
 
+; calendar
+(require 'appt)
+
 ; tabbar settings
 (tabbar-mode)
 (setq tabbar-use-images nil)
