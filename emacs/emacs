@@ -10,6 +10,7 @@
 
 ; theme
 (load-theme 'doom-nord t)
+;(add-to-list 'default-frame-alist '(background-color . "#333"))
 
 ; calendar
 (require 'appt)
@@ -42,7 +43,7 @@
 (global-display-line-numbers-mode 1)
 (column-number-mode t)
 (require 'fill-column-indicator)
-(add-hook 'afte0r-change-major-mode-hook 'fci-mode)
+(add-hook 'after-change-major-mode-hook 'fci-mode)
 (setq fci-rule-column 120)
 (setq-default
   whitespace-line-column 120
