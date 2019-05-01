@@ -35,6 +35,12 @@ export EDITOR="emacsclient"
 alias a="source ./venv/bin/activate"
 alias d="deactivate"
 alias ascii="graph-easy --from=dot --as_ascii"
+alias rk="tmuxp load rk"
+alias c="~/Applications/venv/bin/gcalcli"
+alias today="c agenda '`date --date=\"today\" +\"%a %b %d\"`' '`date --date=\"tomorrow\" +\"%a %b %d\"`'"
+alias week="c calw"
+alias month="c calm"
 
 export GOPATH=/home/morteza/.go
+PATH=$PATH:/home/morteza/Applications/venv/bin
 export PATH=$PATH:$GOPATH/bin
