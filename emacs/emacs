@@ -112,7 +112,7 @@
 ;; auto indent (mark-whole-buffer -> c-x h, indent-region -> c-m-\)
 ;; git settings
 (global-set-key (kbd "C-x g") 'magit-status)
-(global-set-key (kbd "C-x v") 'magit-diff-range)
+(global-set-key (kbd "C-x v") 'magit-diff-unstaged)
 (global-set-key (kbd "C-d") 'delete-indentation)
 
 ; fold
