@@ -6,7 +6,7 @@
 ; general settings
 (menu-bar-mode -1)
 (tool-bar-mode -1)
-(scroll-bar-mode -1)
+;(scroll-bar-mode -1)
 (setq c-basic-offset 4)
 
 ; theme
@@ -224,7 +224,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (flycheck-pyflakes kaolin-themes cython-mode git-gutter helm projectile auto-compile doom-themes evil airline-themes powerline go-mode tabbar makefile-executor farmhouse-theme dracula-theme markdown-mode regex-tool salt-mode json-mode restclient nlinum toml-mode drag-stuff find-file-in-project hungry-delete focus multiple-cursors docker-compose-mode dockerfile-mode rust-mode vala-mode auto-complete dumb-jump magit fill-column-indicator expand-region neotree))))
+    (sublime-themes sublimity flycheck-pyflakes kaolin-themes cython-mode git-gutter helm projectile auto-compile doom-themes evil airline-themes powerline go-mode tabbar makefile-executor farmhouse-theme dracula-theme markdown-mode regex-tool salt-mode json-mode restclient nlinum toml-mode drag-stuff find-file-in-project hungry-delete focus multiple-cursors docker-compose-mode dockerfile-mode rust-mode vala-mode auto-complete dumb-jump magit fill-column-indicator expand-region neotree))))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

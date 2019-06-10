@@ -18,13 +18,13 @@ PS1="\[$CYAN\]\W\[$RED\]|\[$GREEN\]\$([ -e '.git' ] && git symbolic-ref -q HEAD 
 
 alias p="ping 8.8.8.8"
 alias v="vim"
-alias e="emacs -nw"
+alias e="emacs"
 alias ee="emacsclient"
 alias c="source ~/.py2/bin/activate; weechat; d"
 alias p2="source ~/.py2/bin/activate"
 alias p3="source ~/.py3/bin/activate"
 alias s="subl"
-alias t="tmux"
+alias t="tmux new -s `pwd | rev | cut -f1 -d '/' | rev`"
 alias pdf="evince"
 alias x='export http_proxy="http://127.0.0.1:8118"'
 alias dx='export http_proxy=""'
@@ -37,10 +37,13 @@ alias d="deactivate"
 alias ascii="graph-easy --from=dot --as_ascii"
 alias rk="tmuxp load rk"
 alias c="~/Applications/venv/bin/gcalcli"
+alias dcc='kubectl config use-context minikube'
 alias today="c agenda '`date --date=\"today\" +\"%a %b %d\"`' '`date --date=\"tomorrow\" +\"%a %b %d\"`'"
 alias week="c calw"
 alias month="c calm"
 
 export GOPATH=/home/morteza/.go
-PATH=$PATH:/home/morteza/Applications/venv/bin
+#PATH=$PATH:/home/morteza/Applications/venv/bin
+PATH=$PATH:/home/morteza/.gem/ruby/2.6.0/bin/
 export PATH=$PATH:$GOPATH/bin
+
