@@ -7,7 +7,7 @@
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 ;(scroll-bar-mode -1)
-(setq c-basic-offset 4)
+;(setq c-basic-offset 4)
 
 ; theme
 (load-theme 'kaolin-galaxy t)
@@ -26,14 +26,7 @@
 (require 'powerline)
 (powerline-center-theme)
 (require 'airline-themes)
-(load-theme 'airline-papercolor :no-confirm)
-(setq airline-utf-glyph-separator-left      #xe0b0
-      airline-utf-glyph-separator-right     #xe0b2
-      airline-utf-glyph-subseparator-left   #xe0b1
-      airline-utf-glyph-subseparator-right  #xe0b3
-      airline-utf-glyph-branch              #xe0a0
-      airline-utf-glyph-readonly            #xe0a2
-      airline-utf-glyph-linenumber          #xe0a1)
+(load-theme 'airline-hybridline :no-confirm)
 
 ; file manager
 (require 'neotree)
@@ -224,11 +217,11 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (sublime-themes sublimity flycheck-pyflakes kaolin-themes cython-mode git-gutter helm projectile auto-compile doom-themes evil airline-themes powerline go-mode tabbar makefile-executor farmhouse-theme dracula-theme markdown-mode regex-tool salt-mode json-mode restclient nlinum toml-mode drag-stuff find-file-in-project hungry-delete focus multiple-cursors docker-compose-mode dockerfile-mode rust-mode vala-mode auto-complete dumb-jump magit fill-column-indicator expand-region neotree))))
+    (cmake-ide cmake-mode make-it-so sublime-themes sublimity flycheck-pyflakes kaolin-themes cython-mode git-gutter helm projectile auto-compile doom-themes evil airline-themes powerline go-mode tabbar makefile-executor farmhouse-theme dracula-theme markdown-mode regex-tool salt-mode json-mode restclient nlinum toml-mode drag-stuff find-file-in-project hungry-delete focus multiple-cursors docker-compose-mode dockerfile-mode rust-mode vala-mode auto-complete dumb-jump magit fill-column-indicator expand-region neotree))))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(default ((t (:background nil)))))
