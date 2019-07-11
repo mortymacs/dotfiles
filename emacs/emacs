@@ -10,7 +10,7 @@
 ;(setq c-basic-offset 4)
 
 ; theme
-(load-theme 'kaolin-galaxy t)
+(load-theme 'doom-vibrant t)
 (global-hl-line-mode 1)
 ;(add-to-list 'default-frame-alist '(background-color . "#333"))
 
