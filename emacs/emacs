@@ -3,57 +3,61 @@
              '("melpa" . "http://melpa.org/packages/"))
 (package-initialize)
 
-; general settings
+;; general settings
 (menu-bar-mode -1)
 (tool-bar-mode -1)
-;(scroll-bar-mode -1)
-;(setq c-basic-offset 4)
+;;(scroll-bar-mode -1)
+;;(setq c-basic-offset 4)
 
-; theme
-(load-theme 'doom-vibrant t)
+;; theme
+;;(load-theme 'doom-vibrant t)
 (global-hl-line-mode 1)
-;(add-to-list 'default-frame-alist '(background-color . "#333"))
+;;(add-to-list 'default-frame-alist '(background-color . "#333"))
+;;>> https://emacs.stackexchange.com/a/36240/19615
+(custom-set-faces
+ '(mode-line ((t (:background "dim gray" :foreground "white"))))
+ '(mode-line-inactive ((t (:background nil)))))
 
-; calendar
+;; calendar
 (require 'appt)
 
-; tabbar settings
+;; tabbar settings
 (tabbar-mode)
 (setq tabbar-use-images nil)
 (setq tabbar-background-color "#333")
 
-; poweline
+;; poweline
 (require 'powerline)
 (powerline-center-theme)
 (require 'airline-themes)
 (load-theme 'airline-hybridline :no-confirm)
 
-; file manager
+;; file manager
 (require 'neotree)
 (global-set-key [f8] 'neotree-toggle)
 (setq neo-hidden-regexp-list '("venv" "\\.pyc$" "~$" "\\.git" "__pycache__"))
 (setq neo-window-position (quote right))
 
-; line settings
+;; line settings
 (global-display-line-numbers-mode 1)
 (column-number-mode t)
 (require 'fill-column-indicator)
 (add-hook 'after-change-major-mode-hook 'fci-mode)
 (setq fci-rule-column 120)
 (setq-default
-  whitespace-line-column 120
-  whitespace-style '(face lines-tail))
+ whitespace-line-column 120
+ whitespace-style '(face lines-tail))
 (add-hook 'prog-mode-hook #'whitespace-mode)
 (toggle-truncate-lines -1)
 (add-hook 'eshell-mode-hook (lambda () (display-line-numbers-mode -1)))
 
-; tags settings
+;; tags settings
 ;; create tags
 (defun create-tags (dir-name)
   "Create tags file."
   (interactive "DDirectory: ")
   (eshell-command
-    (format "find . -type f -iname \"*.py\" -not -path \"*/venv/*\" | etags -" dir-name)))
+   (format "find . -type f -iname \"*.py\" -not -path \"*/venv/*\" | etags -" dir-name)))
 ;; refresh tags
 (defun er-refresh-etags (&optional extension)
   "Run etags on all peer files in current dir and reload them silently."
@@ -62,28 +66,28 @@
   (let ((tags-revert-without-query t))  ; don't query, revert silently
     (visit-tags-table default-directory nil)))
 
-; buffer settings
+;; buffer settings
 (setq make-backup-files nil)
 (setq auto-save-default nil)
 (setq-default truncate-lines 1)
 
-; default buffers
+;; default buffers
 (setq inhibit-startup-screen t)
 (setq-default message-log-max nil)
 (kill-buffer "*Messages*")
 (setq initial-scratch-message "")
 (kill-buffer "*scratch*")
 (add-hook 'minibuffer-exit-hook
-  '(lambda ()
-    (let ((buffer "*Completions*"))
-      (and (get-buffer buffer)
-      (kill-buffer buffer)))))
+	  '(lambda ()
+	     (let ((buffer "*Completions*"))
+	       (and (get-buffer buffer)
+		    (kill-buffer buffer)))))
 
-; dumb jump
+;; dumb jump
 (setq dumb-jump-prefer-searcher 'ag)
 (setq dumb-jump-default-project ".")
 
-; shortcut keys
+;; shortcut keys
 ;; create window
 (global-set-key (kbd "M-<up>") 'windmove-up)
 (global-set-key (kbd "M-<down>") 'windmove-down)
@@ -108,16 +112,16 @@
 (global-set-key (kbd "C-x v") 'magit-diff-unstaged)
 (global-set-key (kbd "C-d") 'delete-indentation)
 
-; fold
-;(load-library "hideshow")
-;(global-set-key (kbd "M-f") 'hs-toggle-hiding)
-;(add-hook 'python-mode-hook 'hs-minor-mode)
+;; fold
+;;(load-library "hideshow")
+;;(global-set-key (kbd "M-f") 'hs-toggle-hiding)
+;;(add-hook 'python-mode-hook 'hs-minor-mode)
 
-; project
+;; project
 (projectile-mode +1)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 
-; trim spaces
+					; trim spaces
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 (setq require-final-newline t)
 
@@ -126,35 +130,35 @@
 (diminish 'autopair-mode)
 (show-paren-mode 1)
 
-; auto completion
-;(ac-config-default)
+;; auto completion
+;;(ac-config-default)
 
-; git
+;; git
 (global-set-key (kbd "C-x g") 'magit-status)
 (global-git-gutter-mode +1)
 
-; misc
+;; misc
 (global-set-key (kbd "C-c g") 'rgrep)
 
-; handle copy/paste
+;; handle copy/paste
 (defun copy-to-clipboard ()
   (interactive)
   (if (region-active-p)
-	(progn
-	  (shell-command-on-region (region-beginning) (region-end) "xsel -i -b")
-	  (message "Yanked region to clipboard!")
-	  (deactivate-mark))
-      (message "No region active; can't yank to clipboard!"))
+      (progn
+	(shell-command-on-region (region-beginning) (region-end) "xsel -i -b")
+	(message "Yanked region to clipboard!")
+	(deactivate-mark))
+    (message "No region active; can't yank to clipboard!"))
   )
 (defun cut-to-clipboard ()
   (interactive)
   (if (region-active-p)
-	(progn
-	  (shell-command-on-region (region-beginning) (region-end) "xsel -i -b")
-	  (call-interactively 'clipboard-kill-region)
-	  (message "Cut region to clipboard!")
-	  (deactivate-mark))
-      (message "No region active; can't yank to clipboard!"))
+      (progn
+	(shell-command-on-region (region-beginning) (region-end) "xsel -i -b")
+	(call-interactively 'clipboard-kill-region)
+	(message "Cut region to clipboard!")
+	(deactivate-mark))
+    (message "No region active; can't yank to clipboard!"))
   )
 (defun paste-from-clipboard ()
   (interactive)
@@ -165,40 +169,40 @@
 (global-set-key (kbd "C-y") 'paste-from-clipboard)
 (global-set-key (kbd "C-q") 'paste-from-clipboard)
 
-; find & replace
+;; find & replace
 (global-set-key (kbd "C-h") 'query-replace)
 
-; hungry delete
+;; hungry delete
 (require 'hungry-delete)
 (add-hook 'python-mode-hook #'(lambda () (hungry-keyboard python-mode-map)))
 (global-set-key (kbd "C-h") 'hungry-delete-backward)
 (global-set-key (kbd "C-<delete>") 'hungry-delete-forward)
 
-; find file in project
+;; find file in project
 (global-set-key (kbd "C-f") 'find-file-in-project)
 (global-set-key (kbd "C-d") 'find-file-with-similar-name)
 (global-set-key (kbd "C-l") 'find-file-in-current-directory)
 (global-set-key (kbd "C-v") 'ffip-split-window-vertically)
 (global-set-key (kbd "C-h") 'ffip-split-window-horizontally)
 
-; drag lines (move up/down)
+;; drag lines (move up/down)
 (require 'drag-stuff)
 (drag-stuff-global-mode 1)
 (global-set-key (kbd "M-S-<up>") 'drag-stuff-up)
 (global-set-key (kbd "M-S-<down>") 'drag-stuff-down)
 
-; tabbar config
+;; tabbar config
 (global-set-key (kbd "S-<left>") 'tabbar-backward-tab)
 (global-set-key (kbd "S-<right>") 'tabbar-forward-tab)
 
-; rest client mode
+;; rest client mode
 (global-set-key (kbd "M-r") 'restclient-mode)
 
-; compile
+;; compile
 (global-set-key (kbd "C-c s") 'eshell)
 (global-set-key (kbd "C-c c") 'compile)
 
-; help config
+;; help config
 (require 'helm)
 (helm-mode 1)
 (global-set-key (kbd "M-x") 'helm-M-x)
@@ -207,8 +211,18 @@
 (global-set-key (kbd "C-s") 'helm-occur)
 (global-set-key (kbd "M-v") 'helm-grep-do-git-grep)
 
-; flycheck
+;; flycheck
 (add-hook 'after-init-hook #'global-flycheck-mode)
+
+;; active pane config
+(defun highlight-selected-window ()
+  "Highlight selected window with a different background color."
+  (walk-windows (lambda (w)
+		  (unless (eq w (selected-window))
+		    (with-current-buffer (window-buffer w)
+		      (buffer-face-set '(:background "#333"))))))
+  (buffer-face-set 'default))
+(add-hook 'buffer-list-update-hook 'highlight-selected-window)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -217,7 +231,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (cmake-ide cmake-mode make-it-so sublime-themes sublimity flycheck-pyflakes kaolin-themes cython-mode git-gutter helm projectile auto-compile doom-themes evil airline-themes powerline go-mode tabbar makefile-executor farmhouse-theme dracula-theme markdown-mode regex-tool salt-mode json-mode restclient nlinum toml-mode drag-stuff find-file-in-project hungry-delete focus multiple-cursors docker-compose-mode dockerfile-mode rust-mode vala-mode auto-complete dumb-jump magit fill-column-indicator expand-region neotree))))
+    (flymake-cppcheck cmake-ide cmake-mode make-it-so sublime-themes sublimity flycheck-pyflakes kaolin-themes cython-mode git-gutter helm projectile auto-compile doom-themes evil airline-themes powerline go-mode tabbar makefile-executor farmhouse-theme dracula-theme markdown-mode regex-tool salt-mode json-mode restclient nlinum toml-mode drag-stuff find-file-in-project hungry-delete focus multiple-cursors docker-compose-mode dockerfile-mode rust-mode vala-mode auto-complete dumb-jump magit fill-column-indicator expand-region neotree))))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
