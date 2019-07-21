@@ -10,13 +10,18 @@
 ;;(setq c-basic-offset 4)
 
 ;; theme
-;;(load-theme 'doom-vibrant t)
+(load-theme 'monokai t)
 (global-hl-line-mode 1)
 ;;(add-to-list 'default-frame-alist '(background-color . "#333"))
 ;;>> https://emacs.stackexchange.com/a/36240/19615
-(custom-set-faces
- '(mode-line ((t (:background "dim gray" :foreground "white"))))
- '(mode-line-inactive ((t (:background nil)))))
+;; (custom-set-faces
+;;  ;; custom-set-faces was added by Custom.
+;;  ;; If you edit it by hand, you could mess it up, so be careful.
+;;  ;; Your init file should contain only one such instance.
+;;  ;; If there is more than one, they won't work right.
+;;  '(default ((t (:background nil))))
+;;  '(mode-line ((t (:background "dim gray" :foreground "white"))))
+;;  '(mode-line-inactive ((t (:background nil)))))
 
 ;; calendar
 (require 'appt)
@@ -29,8 +34,8 @@
 ;; poweline
 (require 'powerline)
 (powerline-center-theme)
-(require 'airline-themes)
-(load-theme 'airline-hybridline :no-confirm)
+;;(require 'airline-themes)
+;;(load-theme 'airline-molokai :no-confirm)
 
 ;; file manager
 (require 'neotree)
@@ -121,7 +126,7 @@
 (projectile-mode +1)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 
-					; trim spaces
+;; trim spaces
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 (setq require-final-newline t)
 
@@ -222,7 +227,7 @@
 		    (with-current-buffer (window-buffer w)
 		      (buffer-face-set '(:background "#333"))))))
   (buffer-face-set 'default))
-(add-hook 'buffer-list-update-hook 'highlight-selected-window)
+;;(add-hook 'buffer-list-update-hook 'highlight-selected-window)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -231,11 +236,4 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (flymake-cppcheck cmake-ide cmake-mode make-it-so sublime-themes sublimity flycheck-pyflakes kaolin-themes cython-mode git-gutter helm projectile auto-compile doom-themes evil airline-themes powerline go-mode tabbar makefile-executor farmhouse-theme dracula-theme markdown-mode regex-tool salt-mode json-mode restclient nlinum toml-mode drag-stuff find-file-in-project hungry-delete focus multiple-cursors docker-compose-mode dockerfile-mode rust-mode vala-mode auto-complete dumb-jump magit fill-column-indicator expand-region neotree))))
-
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(default ((t (:background nil)))))
+    (monokai-theme cmake-project cpputils-cmake flymake-cppcheck cmake-ide cmake-mode make-it-so sublime-themes sublimity flycheck-pyflakes kaolin-themes cython-mode git-gutter helm projectile auto-compile evil airline-themes powerline go-mode tabbar makefile-executor farmhouse-theme dracula-theme markdown-mode regex-tool salt-mode json-mode restclient nlinum toml-mode drag-stuff find-file-in-project hungry-delete focus multiple-cursors docker-compose-mode dockerfile-mode rust-mode vala-mode auto-complete dumb-jump magit fill-column-indicator expand-region neotree))))
