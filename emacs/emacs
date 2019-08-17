@@ -5,8 +5,6 @@
 
 ;; general settings
 (menu-bar-mode -1)
-;;(tool-bar-mode -1)
-;;(scroll-bar-mode -1)
 ;;(setq c-basic-offset 4)
 (global-unset-key (kbd "<next>"))
 (global-unset-key (kbd "<prior>"))
@@ -14,7 +12,6 @@
 ;; theme
 (load-theme 'monokai t)
 (global-hl-line-mode 1)
-;;(add-to-list 'default-frame-alist '(background-color . "#333"))
 
 ;; calendar
 (require 'appt)
@@ -22,6 +19,8 @@
 ;; dump jump
 (setq dumb-jump-quiet t)
 (setq dumb-jump-selector 'ivy)
+(setq dumb-jump-prefer-searcher 'ag)
+(setq dumb-jump-default-project ".")
 
 ;; tabbar settings
 (tabbar-mode)
@@ -31,10 +30,8 @@
 ;; poweline
 (require 'powerline)
 (powerline-center-theme)
-;;(require 'airline-themes)
-;;(load-theme 'airline-molokai :no-confirm)
 
-;; file manager
+; file manager
 (require 'neotree)
 (global-set-key [f8] 'neotree-toggle)
 (setq neo-hidden-regexp-list '("venv" "\\.pyc$" "~$" "\\.git" "__pycache__" "build"))
@@ -86,10 +83,6 @@
 	       (and (get-buffer buffer)
 		    (kill-buffer buffer)))))
 
-;; dumb jump
-(setq dumb-jump-prefer-searcher 'ag)
-(setq dumb-jump-default-project ".")
-
 ;; shortcut keys
 ;; create window
 (global-set-key (kbd "M-<up>") 'windmove-up)
@@ -134,13 +127,8 @@
 (setq require-final-newline t)
 (require 'smartparens-config)
 
-;; autopair closing parenthesis insertion
-(autopair-global-mode)
-(diminish 'autopair-mode)
+;; paren
 (show-paren-mode 1)
-
-;; auto completion
-;;(ac-config-default)
 
 ;; git
 (global-set-key (kbd "C-x g") 'magit-status)
@@ -184,10 +172,10 @@
 (global-set-key (kbd "C-h") 'query-replace)
 
 ;; hungry delete
-;;(require 'hungry-delete)
-;;(add-hook 'python-mode-hook #'(lambda () (hungry-keyboard python-mode-map)))
-;;(global-set-key (kbd "C-h") 'hungry-delete-backward)
-;;(global-set-key (kbd "C-<delete>") 'hungry-delete-forward)
+(require 'hungry-delete)
+(add-hook 'python-mode-hook #'(lambda () (hungry-keyboard python-mode-map)))
+(global-set-key (kbd "C-h") 'hungry-delete-backward)
+(global-set-key (kbd "C-<delete>") 'hungry-delete-forward)
 
 ;; find file in project
 (global-set-key (kbd "C-f") 'find-file-in-project)
@@ -213,7 +201,7 @@
 (global-set-key (kbd "C-c s") 'eshell)
 (global-set-key (kbd "C-c c") 'compile)
 
-;; help config
+; help config
 (require 'helm)
 (helm-mode 1)
 (setq helm-input-idle-delay 0.2)
@@ -225,26 +213,6 @@
 
 ;; flycheck
 (add-hook 'after-init-hook #'global-flycheck-mode)
-
-;; active pane config
-;; (defun highlight-selected-window ()
-;;   "Highlight selected window with a different background color."
-;;   (walk-windows (lambda (w)
-;; 		  (unless (eq w (selected-window))
-;; 		    (with-current-buffer (window-buffer w)
-;; 		      (buffer-face-set '(:background "#333"))))))
-;;   (buffer-face-set 'default))
-;;(add-hook 'buffer-list-update-hook 'highlight-selected-window)
-;;>> https://emacs.stackexchange.com/a/36240/19615
-;; (custom-set-faces
-;;  ;; custom-set-faces was added by Custom.
-;;  ;; If you edit it by hand, you could mess it up, so be careful.
-;;  ;; Your init file should contain only one such instance.
-;;  ;; If there is more than one, they won't work right.
-;;  '(default ((t (:background nil))))
-;;  '(mode-line ((t (:background "dim gray" :foreground "white"))))
-;;  '(mode-line-inactive ((t (:background nil)))))
-
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
