@@ -5,6 +5,8 @@
 
 ;; general settings
 (menu-bar-mode -1)
+;(toggle-scroll-bar -1)
+;(tool-bar-mode -1)
 ;;(setq c-basic-offset 4)
 (global-unset-key (kbd "<next>"))
 (global-unset-key (kbd "<prior>"))
@@ -12,7 +14,6 @@
 ;; theme
 (load-theme 'monokai t)
 (global-hl-line-mode 1)
-
 ;; calendar
 (require 'appt)
 
@@ -30,6 +31,8 @@
 ;; poweline
 (require 'powerline)
 (powerline-center-theme)
+;(require 'doom-modeline)
+;(doom-modeline-mode 1)
 
 ; file manager
 (require 'neotree)
@@ -108,7 +111,7 @@
 (global-set-key (kbd "C-x v") 'magit-diff-unstaged)
 (global-set-key (kbd "C-d") 'delete-indentation)
 ;; compile
-(global-set-key (kbd "C-c r") 'compile)
+;;(global-set-key (kbd "C-c r") 'compile)
 
 ;; fold
 ;;(load-library "hideshow")
@@ -116,7 +119,16 @@
 ;;(add-hook 'python-mode-hook 'hs-minor-mode)
 
 ;; compile
-(setq compile-command "cd build;cmake ..;make clean; make")
+(global-set-key (kbd "C-c s") 'eshell)
+;(setq compile-command "cd build;cmake ..;make clean; make")
+(global-set-key
+ (kbd "C-c r") (lambda ()
+		 (interactive)
+		 (emamux:run-command "cd cmake-build-debug && cmake .. && make clean && make")))
+(global-set-key
+ (kbd "C-c q") (lambda ()
+		 (interactive)
+		 (emamux:close-panes)))
 
 ;; project
 (projectile-mode +1)
@@ -197,10 +209,6 @@
 ;; rest client mode
 (global-set-key (kbd "M-r") 'restclient-mode)
 
-;; compile
-(global-set-key (kbd "C-c s") 'eshell)
-(global-set-key (kbd "C-c c") 'compile)
-
 ; help config
 (require 'helm)
 (helm-mode 1)
@@ -214,6 +222,33 @@
 ;; flycheck
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
+;; https://stackoverflow.com/a/14511461/2338672
+(setq skippable-buffers '("*Messages*" "*scratch*" "*Help*", "*Flycheck error messages*", "*helm occur*"))
+(defun my-next-buffer ()
+  "next-buffer that skips certain buffers"
+  (interactive)
+  (next-buffer)
+  (while (member (buffer-name) skippable-buffers)
+    (next-buffer)))
+(defun my-previous-buffer ()
+  "previous-buffer that skips certain buffers"
+  (interactive)
+  (previous-buffer)
+  (while (member (buffer-name) skippable-buffers)
+    (previous-buffer)))
+(global-set-key [remap next-buffer] 'my-next-buffer)
+(global-set-key [remap previous-buffer] 'my-previous-buffer)
+
+;; irony
+(add-hook 'c++-mode-hook 'irony-mode)
+(add-hook 'c-mode-hook 'irony-mode)
+(add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
+(add-hook 'after-init-hook 'global-company-mode)
+(eval-after-load 'company
+  '(add-to-list 'company-backends 'company-irony))
+(global-set-key (kbd "M-z") 'company-complete)
+;;(add-to-list 'company-backends 'company-c-headers)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -221,7 +256,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (ivy zeno-theme flycheck-cython flycheck-mypy smartparens rtags monokai-theme cmake-project cpputils-cmake flymake-cppcheck cmake-mode make-it-so sublime-themes sublimity flycheck-pyflakes kaolin-themes cython-mode git-gutter helm projectile auto-compile evil airline-themes powerline go-mode tabbar makefile-executor farmhouse-theme dracula-theme markdown-mode regex-tool salt-mode json-mode restclient nlinum toml-mode drag-stuff find-file-in-project hungry-delete focus multiple-cursors docker-compose-mode dockerfile-mode rust-mode vala-mode auto-complete dumb-jump magit fill-column-indicator expand-region neotree))))
+    (emamux gitignore-mode travis company-irony company-irony-c-headers irony doom-modeline docker ivy zeno-theme flycheck-cython flycheck-mypy smartparens rtags monokai-theme cmake-project cpputils-cmake flymake-cppcheck cmake-mode make-it-so sublime-themes sublimity flycheck-pyflakes kaolin-themes cython-mode git-gutter helm projectile auto-compile evil airline-themes powerline go-mode tabbar makefile-executor farmhouse-theme dracula-theme markdown-mode regex-tool salt-mode json-mode restclient nlinum toml-mode drag-stuff find-file-in-project hungry-delete focus multiple-cursors docker-compose-mode dockerfile-mode rust-mode vala-mode auto-complete dumb-jump magit fill-column-indicator expand-region neotree))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
