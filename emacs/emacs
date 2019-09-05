@@ -7,7 +7,7 @@
 (menu-bar-mode -1)
 ;(toggle-scroll-bar -1)
 ;(tool-bar-mode -1)
-;;(setq c-basic-offset 4)
+;(setq c-basic-offset 4)
 (global-unset-key (kbd "<next>"))
 (global-unset-key (kbd "<prior>"))
 
@@ -124,7 +124,7 @@
 (global-set-key
  (kbd "C-c r") (lambda ()
 		 (interactive)
-		 (emamux:run-command "cd cmake-build-debug && cmake .. && make clean && make")))
+		 (emamux:run-command "cd `git rev-parse --show-toplevel`/cmake-build-debug/ && cmake .. && make clean && make")))
 (global-set-key
  (kbd "C-c q") (lambda ()
 		 (interactive)
@@ -181,12 +181,12 @@
 (global-set-key (kbd "C-q") 'paste-from-clipboard)
 
 ;; find & replace
-(global-set-key (kbd "C-h") 'query-replace)
+(global-set-key (kbd "C-h") 'zeal-at-point)
 
 ;; hungry delete
 (require 'hungry-delete)
 (add-hook 'python-mode-hook #'(lambda () (hungry-keyboard python-mode-map)))
-(global-set-key (kbd "C-h") 'hungry-delete-backward)
+;;(global-set-key (kbd "C-h") 'hungry-delete-backward)
 (global-set-key (kbd "C-<delete>") 'hungry-delete-forward)
 
 ;; find file in project
@@ -194,7 +194,7 @@
 (global-set-key (kbd "C-d") 'find-file-with-similar-name)
 (global-set-key (kbd "C-l") 'find-file-in-current-directory)
 (global-set-key (kbd "C-v") 'ffip-split-window-vertically)
-(global-set-key (kbd "C-h") 'ffip-split-window-horizontally)
+;;(global-set-key (kbd "C-h") 'ffip-split-window-horizontally)
 
 ;; drag lines (move up/down)
 (require 'drag-stuff)
@@ -256,7 +256,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (emamux gitignore-mode travis company-irony company-irony-c-headers irony doom-modeline docker ivy zeno-theme flycheck-cython flycheck-mypy smartparens rtags monokai-theme cmake-project cpputils-cmake flymake-cppcheck cmake-mode make-it-so sublime-themes sublimity flycheck-pyflakes kaolin-themes cython-mode git-gutter helm projectile auto-compile evil airline-themes powerline go-mode tabbar makefile-executor farmhouse-theme dracula-theme markdown-mode regex-tool salt-mode json-mode restclient nlinum toml-mode drag-stuff find-file-in-project hungry-delete focus multiple-cursors docker-compose-mode dockerfile-mode rust-mode vala-mode auto-complete dumb-jump magit fill-column-indicator expand-region neotree))))
+    (zeal-at-point emamux gitignore-mode travis company-irony company-irony-c-headers irony doom-modeline docker ivy zeno-theme flycheck-cython flycheck-mypy smartparens rtags monokai-theme cmake-project cpputils-cmake flymake-cppcheck cmake-mode make-it-so sublime-themes sublimity flycheck-pyflakes kaolin-themes cython-mode git-gutter helm projectile auto-compile evil airline-themes powerline go-mode tabbar makefile-executor farmhouse-theme dracula-theme markdown-mode regex-tool salt-mode json-mode restclient nlinum toml-mode drag-stuff find-file-in-project hungry-delete focus multiple-cursors docker-compose-mode dockerfile-mode rust-mode vala-mode auto-complete dumb-jump magit fill-column-indicator expand-region neotree))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
