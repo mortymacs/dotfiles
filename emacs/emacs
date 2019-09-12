@@ -160,6 +160,7 @@
 ;; git
 (global-set-key (kbd "C-x g") 'magit-status)
 (global-git-gutter-mode +1)
+(global-set-key (kbd "C-c d") 'git-gutter:popup-diff)
 
 ;; misc
 (global-set-key (kbd "C-c g") 'rgrep)
