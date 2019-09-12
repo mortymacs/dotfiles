@@ -135,6 +135,11 @@
  (kbd "C-c q") (lambda ()
 		 (interactive)
 		 (emamux:close-panes)))
+(global-set-key (kbd "M-b") 'gdb-toggle-breakpoint)
+(global-set-key (kbd "M-n") 'gdb-next-breakpoint)
+(global-set-key (kbd "M-t") 'gdb)
+(setq gud-gdb-command-name (concat "gdb -i=mi " (concat (shell-command-to-string "echo -n `git rev-parse --show-toplevel`") "/cmake-build-debug")))
+
 ;; cpp linter
 (eval-after-load 'flycheck
   '(add-hook 'flycheck-mode-hook #'flycheck-clang-tidy-setup))
