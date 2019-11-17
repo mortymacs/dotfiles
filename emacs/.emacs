@@ -9,8 +9,6 @@
 
 ;; https://stackoverflow.com/a/14511461/2338672
 (setq skippable-buffers '("*Messages*" "*scratch*" "*Help*", "*helm occur*"))
-(defun display-startup-echo-area-message()
-  (message ""))
 
 ;; mode line
 (setq-default mode-line-format nil)
@@ -102,7 +100,9 @@
 (setq neo-window-fixed-size nil)
 
 ;; ---------------------------------------------- eshell
-(add-hook 'eshell-mode-hook (lambda () (display-line-numbers-mode -1)))
+(add-hook 'eshell-mode-hook
+	  (lambda ()
+	    (display-line-numbers-mode -1)))
 
 ;; ---------------------------------------------- buffer
 (setq make-backup-files nil)

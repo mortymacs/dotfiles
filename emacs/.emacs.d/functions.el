@@ -1,4 +1,7 @@
 ;; ---------------------------------------------- general
+(defun display-startup-echo-area-message()
+  (message ""))
+
 ;;; https://emacs.stackexchange.com/a/30475/19615
 (defun ask-before-closing ()
   "Close only if y was pressed."
