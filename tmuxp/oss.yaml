@@ -1,0 +1,14 @@
+session_name: OSS
+windows:
+- window_name: DEV-1
+  panes:
+  - cd Workspace/oss/
+- window_name: DEV-2
+  panes:
+  - cd Workspace/oss
+- window_name: WORK
+  panes:
+  - cd Workspace/oss
+- window_name: CONTAINER
+  panes:
+  - pane
