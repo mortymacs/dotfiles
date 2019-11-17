@@ -37,7 +37,14 @@
 ;; https://stackoverflow.com/a/663636/2338672
 (add-hook 'c-mode-common-hook 'google-set-c-style)
 (add-hook 'c-mode-common-hook 'google-make-newline-indent)
-(setq c-default-style "linux")
+(c-add-style "cc-style"
+	     '("linux"
+	       (c-basic-offset . 2)
+	       (c-offsets-alist
+		(arglist-close . c-lineup-close-paren))))
+(add-hook 'c++-mode-hook
+	  (lambda()
+	    (c-set-style "cc-style")))
 
 ;; https://stackoverflow.com/a/37318957/2338672
 (add-hook 'c-mode-common-hook
