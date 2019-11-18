@@ -24,6 +24,12 @@
 (global-display-line-numbers-mode 1)
 (toggle-truncate-lines -1)
 
+;; ---------------------------------------------- extensions
+(setq auto-mode-alist
+      (append
+       '(("\\.schema\\'" . json-mode))
+       auto-mode-alist))
+
 ;; ---------------------------------------------- dashboard
 (require 'dashboard)
 (dashboard-setup-startup-hook)
