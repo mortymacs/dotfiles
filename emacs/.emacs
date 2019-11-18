@@ -39,7 +39,8 @@
 	     '("linux"
 	       (c-basic-offset . 2)
 	       (c-offsets-alist
-		(arglist-close . c-lineup-close-paren))))
+		(arglist-close . c-lineup-close-paren)
+		(innamespace . 0))))
 (add-hook 'c++-mode-hook
 	  (lambda()
 	    (c-set-style "cc-style")))
