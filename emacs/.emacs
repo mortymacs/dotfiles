@@ -57,12 +57,12 @@
 (setq ido-ignore-extensions t)
 (setq ido-show-dot-for-dired nil)
 (setq ido-ignore-files '("Makefile"
-			 "\\.cmake" "CMakeCache\.txt" "\\.cbp" "CMakeFiles/" "cmake-build-debug" "Testing/" "build/"
+			 "\\.cmake" "CMakeCache\.txt" "\\.cbp" "CMakeFiles/" "Testing/" "build/"
 			 "\\.a" "\\.so"
 			 "venv" "\\.pyc" "\\.coverage" "__pycache__"
 			 "\\.git/" "\\.github"
 			 "\\.bin/" "bin/"
-			 "tmp/" "\\.idea"
+			 "tmp/"
 			 "\\`CVS/" "\\`#" "\\`.#" "\\`\\.\\./" "\\`\\./"))
 (require 'ido-vertical-mode)
 (ido-vertical-mode t)
@@ -89,12 +89,12 @@
 ;; ---------------------------------------------- neotree
 (require 'neotree)
 (setq neo-hidden-regexp-list '("Makefile"
-			       "\\.cmake" "CMakeCache\.txt" "\\.cbp" "CMakeFiles/" "cmake-build-debug" "Testing/" "build/"
+			       "\\.cmake" "CMakeCache\.txt" "\\.cbp" "CMakeFiles/" "Testing/" "build/"
 			       "\\.a" "\\.so"
 			       "\\.pyc" "\\.coverage" "__pycache__"
 			       "\\.git/" "\\.github"
 			       "\\.bin/" "bin/"
-			       "tmp/" "\\.idea"
+			       "tmp/"
 			       "\\`CVS/" "\\`#" "\\`.#" "\\`\\.\\./" "\\`\\./"))
 (setq neo-window-position (quote left))
 (setq neo-window-fixed-size nil)
