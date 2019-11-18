@@ -36,11 +36,10 @@
 (add-hook 'c-mode-common-hook 'google-set-c-style)
 (add-hook 'c-mode-common-hook 'google-make-newline-indent)
 (c-add-style "cc-style"
-	     '("linux"
+	     '("google"
 	       (c-basic-offset . 2)
 	       (c-offsets-alist
-		(arglist-close . c-lineup-close-paren)
-		(innamespace . 0))))
+		(arglist-close . c-lineup-close-paren))))
 (add-hook 'c++-mode-hook
 	  (lambda()
 	    (c-set-style "cc-style")))
