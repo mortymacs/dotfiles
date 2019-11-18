@@ -28,7 +28,7 @@
 ;; ---------------------------------------------- buffer
 (global-set-key [remap next-buffer] 'my-next-buffer)
 (global-set-key [remap previous-buffer] 'my-previous-buffer)
-(global-set-key (kbd "M-k") 'kill-current-buffer)
+(global-set-key (kbd "C-k") 'kill-current-buffer)
 (when (daemonp) (global-set-key (kbd "C-x C-c") 'ask-before-closing))
 
 ;; ---------------------------------------------- rest client
