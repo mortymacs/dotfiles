@@ -7,7 +7,7 @@ apt update
 apt upgrade -y
 
 # -- dev
-apt install -y tmux vim emacs-nox
+apt install -y tmux vim-nox emacs-nox emacs-common-non-dfsg
 apt install -y gcc g++ python3 python3-venv python3-pip
 apt install -y git gitg curl jq
 apt install -y libgtk-3-dev
@@ -77,6 +77,5 @@ apt upgrade -y
 
 # wizard setups
 dropbox
-
 
 echo 'Done ;)'
