@@ -6,6 +6,11 @@
 ;; ---------------------------------------------- general settings
 (menu-bar-mode -1)
 (set-face-bold 'bold nil)
+;; https://stackoverflow.com/a/5795518/2338672
+(when (display-graphic-p)
+  (progn
+    (toggle-scroll-bar -1)
+    (tool-bar-mode -1)))
 
 ;; https://stackoverflow.com/a/14511461/2338672
 (setq skippable-buffers '("*Messages*" "*scratch*" "*Help*", "*helm occur*"))
