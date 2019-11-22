@@ -39,3 +39,8 @@
 ;; ---------------------------------------------- line
 (set-face-attribute 'hl-line nil :background "#262626")
 (set-face-foreground 'highlight nil)
+
+;; ---------------------------------------------- mode-line
+;; https://emacs.stackexchange.com/a/33091/19615
+;; https://www.saltycrane.com/blog/2007/10/emacs-mode-line-color-custimization/
+(set-face-background 'mode-line "#333")

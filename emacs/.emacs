@@ -16,7 +16,11 @@
 (setq skippable-buffers '("*Messages*" "*scratch*" "*Help*", "*helm occur*"))
 
 ;; mode line
-(setq-default mode-line-format nil)
+;; https://www.gnu.org/software/emacs/manual/html_node/elisp/Mode-Line-Top.html#Mode-Line-Top
+;; https://www.gnu.org/software/emacs/manual/html_node/elisp/_0025_002dConstructs.html#g_t_0025_002dConstructs
+;; https://emacs.stackexchange.com/a/10000/19615
+(setq-default mode-line-format
+	      (list "---File:[%b%+] Line:[%l] Size:[%i]%-"))
 
 ;; misc
 (delete-selection-mode 1)
@@ -169,7 +173,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (helm-ag helm-ag-r ido-vertical-mode ag auto-complete-c-headers dashboard cmake-ide atom-one-dark-theme flycheck google-c-style zeal-at-point emamux gitignore-mode travis company-irony company-irony-c-headers irony doom-modeline docker ivy zeno-theme flycheck-cython flycheck-mypy smartparens rtags monokai-theme cmake-project cpputils-cmake flymake-cppcheck cmake-mode make-it-so sublimity flycheck-pyflakes kaolin-themes cython-mode git-gutter helm projectile auto-compile evil airline-themes powerline go-mode tabbar makefile-executor farmhouse-theme dracula-theme markdown-mode regex-tool salt-mode json-mode restclient nlinum toml-mode drag-stuff find-file-in-project hungry-delete focus multiple-cursors docker-compose-mode dockerfile-mode rust-mode vala-mode auto-complete dumb-jump magit fill-column-indicator expand-region neotree)))
+    (helm-ag helm-ag-r ido-vertical-mode ag auto-complete-c-headers dashboard cmake-ide atom-one-dark-theme flycheck google-c-style zeal-at-point emamux gitignore-mode travis company-irony company-irony-c-headers irony doom-modeline docker ivy zeno-theme flycheck-cython flycheck-mypy smartparens rtags monokai-theme cmake-project cpputils-cmake flymake-cppcheck cmake-mode make-it-so sublimity flycheck-pyflakes kaolin-themes cython-mode git-gutter helm projectile auto-compile evil go-mode tabbar makefile-executor farmhouse-theme dracula-theme markdown-mode regex-tool salt-mode json-mode restclient nlinum toml-mode drag-stuff find-file-in-project hungry-delete focus multiple-cursors docker-compose-mode dockerfile-mode rust-mode vala-mode auto-complete dumb-jump magit fill-column-indicator expand-region neotree)))
  '(tabbar-separator (quote (0.5))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

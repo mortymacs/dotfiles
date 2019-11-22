@@ -1,6 +1,6 @@
 ;; ---------------------------------------------- general
 (defun display-startup-echo-area-message()
-  (message ""))
+  (message "Hello! :)"))
 
 ;;; https://emacs.stackexchange.com/a/30475/19615
 (defun ask-before-closing ()
