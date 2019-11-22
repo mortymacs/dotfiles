@@ -105,3 +105,6 @@
 ;; ---------------------------------------------- code
 (global-set-key (kbd "C-M-l") 're-indent)
 (global-set-key (kbd "M-;") 'comment-line)
+
+;; ---------------------------------------------- flycheck
+(global-set-key (kbd "C-e") 'list-flycheck-errors)
