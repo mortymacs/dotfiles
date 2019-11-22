@@ -17,6 +17,8 @@
 ;; ---------------------------------------------- drag lines (move up/down)
 (global-set-key (kbd "M-S-<up>") 'drag-stuff-up)
 (global-set-key (kbd "M-S-<down>") 'drag-stuff-down)
+(global-set-key (kbd "M-a") 'beginning-of-buffer)
+(global-set-key (kbd "M-e") 'end-of-buffer)
 
 ;; select text
 (global-set-key (kbd "C-o") 'er/expand-region)
