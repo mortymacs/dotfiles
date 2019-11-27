@@ -9,7 +9,6 @@
 
 ;; ---------------------------------------------- file and directory
 ;; find file in project
-(global-set-key (kbd "C-f") 'find-file-in-project)
 (global-set-key (kbd "C-d") 'find-file-with-similar-name)
 (global-set-key (kbd "C-l") 'find-file-in-current-directory)
 (global-set-key (kbd "C-v") 'ffip-split-window-vertically)
@@ -39,7 +38,6 @@
 ;; ---------------------------------------------- helm config
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "M-c") 'helm-find)
-(global-set-key (kbd "C-f") 'helm-find-files)
 (global-set-key (kbd "C-s") 'helm-occur)
 (global-set-key (kbd "M-v") 'helm-grep-do-git-grep)
 
@@ -81,7 +79,7 @@
 ;; ---------------------------------------------- projectile
 (global-set-key (kbd "M-p") 'projectile-switch-project)
 (global-set-key (kbd "M-l") 'projectile-switch-open-project)
-(global-set-key (kbd "C-x f") 'projectile-find-file)
+(global-set-key (kbd "C-f") 'projectile-find-file)
 
 ;; ---------------------------------------------- neotree
 (global-set-key [f8] 'neotree-toggle)
