@@ -1,0 +1,57 @@
+
+
+#
+# Workaround for colored entries
+#
+style "entry_border" {
+
+  xthickness = 7
+  ythickness = 5
+
+  engine "pixmap" {
+
+    image {
+      function = SHADOW
+      state = NORMAL
+      detail = "entry"
+      file = "assets/entry-border-bg.png"
+      border = {6, 6, 6, 6}
+      stretch = TRUE
+    }
+
+    image {
+      function = SHADOW
+      state = ACTIVE
+      detail = "entry"
+      file = "assets/entry-border-active-bg.png"
+      border = {6, 6, 6, 6}
+      stretch = TRUE
+    }
+
+    image {
+      function = FLAT_BOX
+      state    = ACTIVE
+      detail   = "entry_bg"
+      file     = "assets/null.png"
+    }
+
+    image {
+      function = FLAT_BOX
+      state    = INSENSITIVE
+      detail   = "entry_bg"
+      file     = "assets/null.png"
+    }
+
+    image {
+      function = FLAT_BOX
+      detail   = "entry_bg"
+      file     = "assets/null.png"
+    }
+  }
+}
+
+# Mousepad search entry
+widget_class "*MousepadSearchBar*.<GtkEntry>"    style "entry_border"
+
+# Hexchat input box
+class "SexySpellEntry"                           style:highest "entry_border"
