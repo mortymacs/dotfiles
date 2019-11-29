@@ -10,7 +10,7 @@
 ;; ---------------------------------------------- file and directory
 ;; find file in project
 (global-set-key (kbd "C-d") 'find-file-with-similar-name)
-(global-set-key (kbd "C-l") 'find-file-in-current-directory)
+;;(global-set-key (kbd "C-l") 'find-file-in-current-directory)
 (global-set-key (kbd "C-v") 'ffip-split-window-vertically)
 
 ;; ---------------------------------------------- drag lines (move up/down)
@@ -60,7 +60,7 @@
 (global-set-key (kbd "M-q") 'dumb-jump-quick-look)
 
 ;; ---------------------------------------------- find & replace
-(global-set-key (kbd "C-p") 'find-grep)
+(global-set-key (kbd "C-c p") 'find-grep)
 (global-set-key (kbd "C-c g") 'rgrep)
 
 ;; ---------------------------------------------- git
@@ -77,8 +77,8 @@
 (global-unset-key (kbd "<prior>"))
 
 ;; ---------------------------------------------- projectile
-(global-set-key (kbd "M-p") 'projectile-switch-project)
-(global-set-key (kbd "M-l") 'projectile-switch-open-project)
+(global-set-key (kbd "C-p") 'projectile-switch-project)
+(global-set-key (kbd "C-l") 'projectile-switch-open-project)
 (global-set-key (kbd "C-f") 'projectile-find-file)
 
 ;; ---------------------------------------------- neotree
