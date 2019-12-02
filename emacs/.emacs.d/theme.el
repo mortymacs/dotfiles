@@ -9,12 +9,12 @@
 ;; tab theme: https://gist.github.com/3demax/1264635
 (set-face-attribute
  'tabbar-default nil
- :background "gray20"
+ :background "nil"
  :foreground "gray20"
  :box '(:line-width 1 :color "gray20" :style nil))
 (set-face-attribute
  'tabbar-unselected nil
- :background "gray30"
+ :background "nil"
  :foreground "white"
  :box '(:line-width 5 :color "gray30" :style nil))
 (set-face-attribute
