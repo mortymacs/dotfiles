@@ -118,3 +118,4 @@ fi
 
 export PATH=$PATH:/home/morteza/.local/bin
 export PATH=$PATH:/home/morteza/.gem/ruby/2.5.0/bin
+export PATH=$PATH:$HOME/.cargo/bin
