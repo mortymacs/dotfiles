@@ -1,188 +1,108 @@
-(require 'package)
-(add-to-list 'package-archives
-             '("melpa" . "http://melpa.org/packages/"))
-(package-initialize)
+;; ---------------------------------------------- copy/paste
+(global-set-key (kbd "M-w") 'copy-to-clipboard)
+(global-set-key (kbd "C-w") 'cut-to-clipboard)
+(global-set-key (kbd "C-y") 'paste-from-clipboard)
+(global-set-key (kbd "C-q") 'paste-from-clipboard)
 
-;; ---------------------------------------------- general settings
-(menu-bar-mode -1)
-(set-face-bold 'bold nil)
-;; https://stackoverflow.com/a/5795518/2338672
-(when (display-graphic-p)
-  (progn
-    (toggle-scroll-bar -1)
-    (tool-bar-mode -1)))
+;; ---------------------------------------------- document and manual
+(global-set-key (kbd "M-h") 'zeal-at-point)
 
-;; https://stackoverflow.com/a/14511461/2338672
-(setq skippable-buffers '("*Messages*" "*scratch*" "*Help*", "*helm occur*"))
+;; ---------------------------------------------- file and directory
+;; find file in project
+(global-set-key (kbd "C-d") 'find-file-with-similar-name)
+;;(global-set-key (kbd "C-l") 'find-file-in-current-directory)
+(global-set-key (kbd "C-v") 'ffip-split-window-vertically)
 
-;; mode line
-;; https://www.gnu.org/software/emacs/manual/html_node/elisp/Mode-Line-Top.html#Mode-Line-Top
-;; https://www.gnu.org/software/emacs/manual/html_node/elisp/_0025_002dConstructs.html#g_t_0025_002dConstructs
-;; https://emacs.stackexchange.com/a/10000/19615
-(setq-default mode-line-format
-	      (list "---File:[%b%+] Line:[%l] Size:[%i]%-"))
+;; ---------------------------------------------- drag lines (move up/down)
+(global-set-key (kbd "M-S-<up>") 'drag-stuff-up)
+(global-set-key (kbd "M-S-<down>") 'drag-stuff-down)
+(global-set-key (kbd "M-a") 'beginning-of-buffer)
+(global-set-key (kbd "M-e") 'end-of-buffer)
 
-;; misc
-(delete-selection-mode 1)
+;; select text
+(global-set-key (kbd "M-s") 'er/expand-region)
 
-;; theme
-(load-theme 'rebecca t)
-
-;; line settings
-(global-hl-line-mode 1)
-(global-display-line-numbers-mode 1)
-(toggle-truncate-lines -1)
-
-;; ---------------------------------------------- extensions
-(setq auto-mode-alist
-      (append
-       '(("\\.schema\\'" . json-mode))
-       auto-mode-alist))
-
-;; ---------------------------------------------- dashboard
-(require 'dashboard)
-(dashboard-setup-startup-hook)
-(setq dashboard-items '((recents  . 5)
-                        (projects . 5)
-                        (agenda . 5)))
-
-;; ---------------------------------------------- c/c++
-;; https://stackoverflow.com/a/663636/2338672
-(add-hook 'c-mode-common-hook 'google-set-c-style)
-(add-hook 'c-mode-common-hook 'google-make-newline-indent)
-(c-add-style "cc-style"
-	     '("google"
-	       (c-basic-offset . 2)
-	       (c-offsets-alist
-		(arglist-close . c-lineup-close-paren))))
-(add-hook 'c++-mode-hook
-	  (lambda()
-	    (c-set-style "cc-style")))
-;;(setq flycheck-clang-include-path  (concat (shell-command-to-string "echo -n `git rev-parse --show-toplevel`") "/include"))))
-
-;; https://stackoverflow.com/a/37318957/2338672
-(add-hook 'c-mode-common-hook
-	  (lambda ()
-	    (c-set-offset 'arglist-cont-nonempty '+)))
-
-;; https://emacs.stackexchange.com/a/36341/19615
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(c-noise-macro-names (quote ("constexpr")))
- '(package-selected-packages
-   (quote
-    (rebecca-theme dakrone-light-theme dakrone-theme helm-ag helm-ag-r ido-vertical-mode ag auto-complete-c-headers dashboard cmake-ide atom-one-dark-theme flycheck google-c-style zeal-at-point emamux gitignore-mode travis company-irony company-irony-c-headers irony doom-modeline docker ivy zeno-theme flycheck-cython flycheck-mypy smartparens rtags monokai-theme cmake-project cpputils-cmake flymake-cppcheck cmake-mode make-it-so sublimity flycheck-pyflakes kaolin-themes cython-mode git-gutter helm projectile auto-compile evil go-mode tabbar makefile-executor farmhouse-theme dracula-theme markdown-mode regex-tool salt-mode json-mode restclient nlinum toml-mode drag-stuff find-file-in-project hungry-delete focus multiple-cursors docker-compose-mode dockerfile-mode rust-mode vala-mode auto-complete dumb-jump magit fill-column-indicator expand-region neotree)))
- '(tabbar-separator (quote (0.5))))
-
-(setq gud-gdb-command-name (concat "gdb -i=mi " (concat (shell-command-to-string "echo -n `git rev-parse --show-toplevel`") "/build")))
-
-;; ---------------------------------------------- ido
-(ido-mode t)
-(setq ido-enable-flex-matching t)
-(setq ido-ignore-extensions t)
-(setq ido-show-dot-for-dired nil)
-(setq ido-ignore-files '("Makefile"
-			 "\\.cmake" "CMakeCache\.txt" "\\.cbp" "CMakeFiles/" "Testing/" "build/"
-			 "\\.a" "\\.so"
-			 "venv" "\\.pyc" "\\.coverage" "__pycache__"
-			 "\\.git/" "\\.github"
-			 "\\.bin/" "bin/"
-			 "tmp/"
-			 "\\`CVS/" "\\`#" "\\`.#" "\\`\\.\\./" "\\`\\./"))
-(require 'ido-vertical-mode)
-(ido-vertical-mode t)
-(setq ido-vertical-show-count t)
-
-;; ---------------------------------------------- dump jump (goto)
-(setq dumb-jump-quiet t)
-(setq dumb-jump-selector 'ivy)
-(setq dumb-jump-prefer-searcher 'ag)
-(setq dumb-jump-default-project ".")
-
-;; ---------------------------------------------- tabbar
-(tabbar-mode)
-;; hide tabbar navigation buttons
-;; source: https://github.com/dholm/tabbar/issues/27#issuecomment-467308462
-(customize-set-variable 'tabbar-scroll-right-button '(("") ""))
-(customize-set-variable 'tabbar-scroll-left-button '(("") ""))
-(customize-set-variable 'tabbar-buffer-home-button '(("") ""))
-
-;; ---------------------------------------------- projectile
-(projectile-mode +1)
-(setq projectile-project-search-path '("~/Workspace/plotwise/" "~/Workspace/oss/"))
-
-;; ---------------------------------------------- neotree
-(require 'neotree)
-(setq neo-hidden-regexp-list '("Makefile"
-			       "\\.cmake" "CMakeCache\.txt" "\\.cbp" "CMakeFiles/" "Testing/" "build/"
-			       "\\.a" "\\.so"
-			       "\\.pyc" "\\.coverage" "__pycache__"
-			       "\\.git/" "\\.github"
-			       "\\.bin/" "bin/"
-			       "tmp/"
-			       "\\`CVS/" "\\`#" "\\`.#" "\\`\\.\\./" "\\`\\./"))
-(setq neo-window-position (quote left))
-(setq neo-window-fixed-size nil)
-
-;; ---------------------------------------------- eshell
-(add-hook 'eshell-mode-hook
-	  (lambda ()
-	    (display-line-numbers-mode -1)))
+;; ---------------------------------------------- tabbar config
+(global-set-key (kbd "S-<left>") 'tabbar-backward-tab)
+(global-set-key (kbd "S-<right>") 'tabbar-forward-tab)
 
 ;; ---------------------------------------------- buffer
-(setq make-backup-files nil)
-(setq auto-save-default nil)
-(setq-default truncate-lines 1)
+(global-set-key [remap next-buffer] 'my-next-buffer)
+(global-set-key [remap previous-buffer] 'my-previous-buffer)
+(global-set-key (kbd "C-k") 'kill-current-buffer)
+(when (daemonp) (global-set-key (kbd "C-x C-c") 'ask-before-closing))
 
-;; default buffers
-(setq inhibit-startup-screen t)
-(setq-default message-log-max nil)
-(kill-buffer "*Messages*")
-(setq initial-scratch-message "")
-(kill-buffer "*scratch*")
-(add-hook 'minibuffer-exit-hook
-	  '(lambda ()
-	     (let ((buffer "*Completions*"))
-	       (and (get-buffer buffer)
-		    (kill-buffer buffer)))))
-
-;; ---------------------------------------------- trim spaces
-(add-hook 'before-save-hook 'delete-trailing-whitespace)
-(setq require-final-newline t)
-(require 'smartparens-config)
-
-;; ---------------------------------------------- paren
-(show-paren-mode 1)
-
-;; ---------------------------------------------- git
-(global-git-gutter-mode +1)
-
-;; ---------------------------------------------- drag stuff
-(require 'drag-stuff)
-(drag-stuff-global-mode 1)
+;; ---------------------------------------------- rest client
+(global-set-key (kbd "M-r") 'restclient-mode)
 
 ;; ---------------------------------------------- helm config
-(require 'helm)
-(helm-mode 1)
-(setq helm-input-idle-delay 0.2)
+(global-set-key (kbd "M-x") 'helm-M-x)
+(global-set-key (kbd "M-c") 'helm-find)
+(global-set-key (kbd "C-s") 'helm-occur)
+(global-set-key (kbd "M-v") 'helm-grep-do-git-grep)
+
+;; ---------------------------------------------- gdb
+(global-set-key (kbd "M-b") 'gdb-toggle-breakpoint)
+(global-set-key (kbd "M-n") 'gdb-next-breakpoint)
+(global-set-key (kbd "M-t") 'gdb)
+
+;; ---------------------------------------------- shell config
+(global-set-key (kbd "C-c s") 'eshell)
+
+;; ---------------------------------------------- compile
+(global-set-key (kbd "C-c r") 'build-it)
+(global-set-key (kbd "C-c t") 'test-it)
+(global-set-key (kbd "C-c q") 'build-it-exit)
+
+;; ---------------------------------------------- dump jump (goto)
+(global-set-key (kbd "M-d") 'dumb-jump-go)
+(global-set-key (kbd "M-f") 'dumb-jump-back)
+(global-set-key (kbd "M-q") 'dumb-jump-quick-look)
+
+;; ---------------------------------------------- find & replace
+(global-set-key (kbd "C-c p") 'find-grep)
+(global-set-key (kbd "C-c g") 'rgrep)
+
+;; ---------------------------------------------- git
+(global-set-key (kbd "C-x g") 'magit-status)
+(global-set-key (kbd "C-x v") 'magit-diff-unstaged)
+(global-set-key (kbd "C-d") 'delete-indentation)
+(global-set-key (kbd "C-c d") 'git-gutter:popup-diff)
+
+;; ---------------------------------------------- function config
+(global-set-key (kbd "M-q") 'fa-show)
+
+;; ---------------------------------------------- unset keys
+(global-unset-key (kbd "<next>"))
+(global-unset-key (kbd "<prior>"))
+
+;; ---------------------------------------------- projectile
+(global-set-key (kbd "C-p") 'projectile-switch-project)
+(global-set-key (kbd "C-l") 'projectile-switch-open-project)
+(global-set-key (kbd "C-f") 'projectile-find-file)
+
+;; ---------------------------------------------- neotree
+(global-set-key [f8] 'neotree-toggle)
+
+;; ---------------------------------------------- window and pane
+;; create window
+(global-set-key (kbd "M-<up>") 'windmove-up)
+(global-set-key (kbd "M-<down>") 'windmove-down)
+(global-set-key (kbd "M-<left>") 'windmove-left)
+(global-set-key (kbd "M-<right>") 'windmove-right)
+
+;; window size
+(global-set-key (kbd "S-C-<up>") 'shrink-window)
+(global-set-key (kbd "S-C-<down>") 'enlarge-window)
+(global-set-key (kbd "S-C-<left>") 'shrink-window-horizontally)
+(global-set-key (kbd "S-C-<right>") 'enlarge-window-horizontally)
+
+;; window resize
+(global-set-key (kbd "M-z") 'toggle-maximize-window)
+
+;; ---------------------------------------------- code
+(global-set-key (kbd "C-M-l") 're-indent)
+(global-set-key (kbd "M-;") 'comment-line)
 
 ;; ---------------------------------------------- flycheck
-(global-flycheck-mode)
-
-;; ---------------------------------------------- load files
-(load-file "~/.emacs.d/functions.el")
-(load-file "~/.emacs.d/keybindings.el")
-(load-file "~/.emacs.d/theme.el")
-
-;; ---------------------------------------------- packages
-;; we also need to set separator to avoid overlapping tabs by highlighted tabs
-
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(default ((t (:background nil)))))
+(global-set-key (kbd "C-e") 'list-flycheck-errors)
