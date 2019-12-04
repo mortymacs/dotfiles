@@ -20,7 +20,11 @@
 (global-set-key (kbd "M-e") 'end-of-buffer)
 
 ;; select text
-(global-set-key (kbd "C-o") 'er/expand-region)
+(global-set-key (kbd "M-s") 'er/expand-region)
+
+;; multiple cursors
+(global-set-key (kbd "C-x <down>") 'mc/mark-next-lines)
+(global-set-key (kbd "C-x <up>") 'mc/mark-previous-lines)
 
 ;; ---------------------------------------------- tabbar config
 (global-set-key (kbd "S-<left>") 'tabbar-backward-tab)
