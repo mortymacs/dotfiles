@@ -10,8 +10,9 @@
 ;; ---------------------------------------------- file and directory
 ;; find file in project
 (global-set-key (kbd "C-d") 'find-file-with-similar-name)
-;;(global-set-key (kbd "C-l") 'find-file-in-current-directory)
+(global-set-key (kbd "C-x g") 'projectile-grep)
 (global-set-key (kbd "C-v") 'ffip-split-window-vertically)
+(global-set-key (kbd "C-x p") 'current-file-path)
 
 ;; ---------------------------------------------- drag lines (move up/down)
 (global-set-key (kbd "M-S-<up>") 'drag-stuff-up)
@@ -68,7 +69,7 @@
 (global-set-key (kbd "C-c g") 'rgrep)
 
 ;; ---------------------------------------------- git
-(global-set-key (kbd "C-x g") 'magit-status)
+;;(global-set-key (kbd "C-x g") 'magit-status)
 (global-set-key (kbd "C-x v") 'magit-diff-unstaged)
 (global-set-key (kbd "C-d") 'delete-indentation)
 (global-set-key (kbd "C-c d") 'git-gutter:popup-diff)

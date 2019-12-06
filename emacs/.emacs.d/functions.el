@@ -25,6 +25,11 @@
   (while (member (buffer-name) skippable-buffers)
     (previous-buffer)))
 
+(defun current-file-path ()
+  "Show current file path"
+  (interactive)
+  (message (buffer-file-name)))
+
 ;; ---------------------------------------------- windows & pane
 (defun toggle-maximize-window ()
   (interactive)
