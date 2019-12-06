@@ -75,7 +75,7 @@
  '(c-noise-macro-names (quote ("constexpr")))
  '(package-selected-packages
    (quote
-    (rebecca-theme dakrone-light-theme dakrone-theme helm-ag helm-ag-r ido-vertical-mode ag auto-complete-c-headers dashboard cmake-ide atom-one-dark-theme flycheck google-c-style zeal-at-point emamux gitignore-mode travis company-irony company-irony-c-headers irony doom-modeline docker ivy zeno-theme flycheck-cython flycheck-mypy smartparens rtags monokai-theme cmake-project cpputils-cmake flymake-cppcheck cmake-mode make-it-so sublimity flycheck-pyflakes kaolin-themes cython-mode git-gutter helm projectile auto-compile evil go-mode tabbar makefile-executor farmhouse-theme dracula-theme markdown-mode regex-tool salt-mode json-mode restclient nlinum toml-mode drag-stuff find-file-in-project hungry-delete focus multiple-cursors docker-compose-mode dockerfile-mode rust-mode vala-mode auto-complete dumb-jump magit fill-column-indicator expand-region neotree)))
+    (uuidgen rebecca-theme dakrone-light-theme dakrone-theme helm-ag helm-ag-r ido-vertical-mode ag auto-complete-c-headers dashboard cmake-ide atom-one-dark-theme flycheck google-c-style zeal-at-point emamux gitignore-mode travis company-irony company-irony-c-headers irony doom-modeline docker ivy zeno-theme flycheck-cython flycheck-mypy smartparens rtags monokai-theme cmake-project cpputils-cmake flymake-cppcheck cmake-mode make-it-so sublimity flycheck-pyflakes kaolin-themes cython-mode git-gutter helm projectile auto-compile evil go-mode tabbar makefile-executor farmhouse-theme dracula-theme markdown-mode regex-tool salt-mode json-mode restclient nlinum toml-mode drag-stuff find-file-in-project hungry-delete focus multiple-cursors docker-compose-mode dockerfile-mode rust-mode vala-mode auto-complete dumb-jump magit fill-column-indicator expand-region neotree)))
  '(tabbar-separator (quote (0.5))))
 
 (setq gud-gdb-command-name (concat "gdb -i=mi " (concat (shell-command-to-string "echo -n `git rev-parse --show-toplevel`") "/build")))
@@ -169,6 +169,10 @@
 (require 'helm)
 (helm-mode 1)
 (setq helm-input-idle-delay 0.2)
+;; https://www.reddit.com/r/emacs/comments/7rho4f/now_you_can_use_helm_with_frames_instead_of/
+(setq helm-display-function 'helm-display-buffer-in-own-frame
+      helm-display-buffer-reuse-frame t
+      helm-use-undecorated-frame-option t)
 
 ;; ---------------------------------------------- flycheck
 (global-flycheck-mode)
