@@ -90,6 +90,10 @@
 (global-set-key [f8] 'neotree-toggle)
 
 ;; ---------------------------------------------- window and pane
+;;frame
+(global-set-key (kbd "C-c c") 'make-frame-command)
+(global-set-key (kbd "C-c n") 'other-frame)
+
 ;; create window
 (global-set-key (kbd "M-<up>") 'windmove-up)
 (global-set-key (kbd "M-<down>") 'windmove-down)

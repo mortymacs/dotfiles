@@ -10,7 +10,8 @@
 (when (display-graphic-p)
   (progn
     (toggle-scroll-bar -1)
-    (tool-bar-mode -1)))
+    (tool-bar-mode -1)
+    (scroll-bar-mode -1)))
 
 ;; https://stackoverflow.com/a/14511461/2338672
 (setq skippable-buffers '("*Messages*" "*scratch*" "*Help*", "*helm occur*"))
@@ -20,7 +21,7 @@
 ;; https://www.gnu.org/software/emacs/manual/html_node/elisp/_0025_002dConstructs.html#g_t_0025_002dConstructs
 ;; https://emacs.stackexchange.com/a/10000/19615
 (setq-default mode-line-format
-	      (list "---File:[%b%+] Line:[%l] Size:[%i]%-"))
+	      (list "---File:[%f%+] Line:[%l] Size:[%I]%-"))
 
 ;; misc
 (delete-selection-mode 1)
@@ -46,6 +47,15 @@
 (setq dashboard-items '((recents  . 5)
                         (projects . 5)
                         (agenda . 5)))
+
+;;---------------------------------------------- ruler
+;; https://emacs.stackexchange.com/a/14066
+;; https://emacs.stackexchange.com/a/149
+(defun prog-python-mode-max-line ()
+  (setq-default
+   whitespace-line-column 99
+   whitespace-style '(face lines-tail)))
+(add-hook 'python-mode-hook #'prog-python-mode-max-line)
 
 ;; ---------------------------------------------- c/c++
 ;; https://stackoverflow.com/a/663636/2338672
