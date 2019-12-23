@@ -15,6 +15,9 @@ alias u="sudo apt update && sudo apt upgrade"
 alias a="source ./venv/bin/activate"
 alias d="deactivate"
 
+## ---------------------------------------------- db
+alias psql="pgcli"
+
 ## ---------------------------------------------- editor
 alias v="vim.tiny"
 alias ee="emacs -nw"
