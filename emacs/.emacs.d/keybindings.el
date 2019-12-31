@@ -71,8 +71,8 @@
 ;; ---------------------------------------------- git
 (global-set-key (kbd "C-x b") 'magit-blame)
 (global-set-key (kbd "C-x v") 'magit-diff-unstaged)
-(global-set-key (kbd "C-d") 'delete-indentation)
-(global-set-key (kbd "C-c d") 'git-gutter:popup-hunk)
+;;(global-set-key (kbd "C-d") 'delete-indentation)
+(global-set-key (kbd "C-d") 'git-gutter:popup-hunk)
 
 ;; ---------------------------------------------- function config
 (global-set-key (kbd "M-q") 'fa-show)
