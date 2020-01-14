@@ -1,9 +1,16 @@
-;; ---------------------------------------------- monokai
-(custom-set-faces
- '(default ((t (:background nil)))))
+;; ---------------------------------------------- dakron theme
+(custom-theme-set-faces
+ 'dakrone
+ ;;'(default ((t (:background nil))))
+ '(mode-line ((t (:foreground nil :background nil))))
+ '(mode-line-inactive ((t (:foreground nil :background nil)))))
 
-(setq monokai-highlight-line "#262626"
-      monokai-line-number    "#262626")
+;; ---------------------------------------------- monokai
+;; (custom-set-faces
+;;  '(default ((t (:background nil)))))
+
+;; (setq monokai-highlight-line "#262626"
+;;       monokai-line-number    "#262626")
 
 ;; ---------------------------------------------- tabbar
 ;; tab theme: https://gist.github.com/3demax/1264635
