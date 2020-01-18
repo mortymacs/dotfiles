@@ -97,7 +97,7 @@
 (global-set-key (kbd "C-c c") 'make-frame-command)
 (global-set-key (kbd "C-c d") 'dired-other-frame)
 (global-set-key (kbd "C-c n") 'other-frame)
-(global-set-key (kbd "C-c q") 'delete-frame)
+(global-set-key (kbd "C-c e") 'delete-frame)
 
 ;; create window
 (global-set-key (kbd "M-<up>") 'windmove-up)
