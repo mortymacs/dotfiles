@@ -115,6 +115,11 @@
   (interactive)
   (emamux:close-panes))
 
+(defun rtags-index ()
+  (interactive)
+  (shell-command (format "[ -d build ] || mkdir `git rev-parse --show-toplevel`/build/"))
+  (shell-command (format "cd `git rev-parse --show-toplevel`/build/ && cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1 .. && cd .. && rc -J `find . -iname 'compile_commands.json' -exec realpath {} \\;`")))
+
 ;; ---------------------------------------------- code
 (defun re-indent ()
   (interactive)

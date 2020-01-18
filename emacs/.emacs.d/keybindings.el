@@ -61,6 +61,9 @@
 
 ;; ---------------------------------------------- dump jump (goto)
 (global-set-key (kbd "M-d") 'dumb-jump-go)
+(add-hook 'c++-mode-hook
+ (lambda()
+ (global-set-key (kbd "M-d") 'rtags-find-symbol-at-point)))
 (global-set-key (kbd "M-f") 'dumb-jump-back)
 (global-set-key (kbd "M-q") 'dumb-jump-quick-look)
 
