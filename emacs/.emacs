@@ -102,6 +102,7 @@
 			 "\\.git/" "\\.github"
 			 "\\.bin/" "bin/"
 			 "tmp/"
+			 "logs/"
 			 "\\`CVS/" "\\`#" "\\`.#" "\\`\\.\\./" "\\`\\./"))
 (require 'ido-vertical-mode)
 (ido-vertical-mode t)
@@ -124,6 +125,13 @@
 ;; ---------------------------------------------- projectile
 (projectile-mode +1)
 (setq projectile-project-search-path '("~/Workspace/plotwise/" "~/Workspace/oss/"))
+;; https://github.com/bbatsov/projectile/issues/184#issuecomment-62940053
+(add-to-list 'projectile-globally-ignored-files "*.log")
+(add-to-list 'projectile-globally-ignored-files "*.cmake")
+(add-to-list 'projectile-globally-ignored-files "*.so")
+(add-to-list 'projectile-globally-ignored-files "*.a")
+(add-to-list 'projectile-globally-ignored-files "*.pyc")
+(add-to-list 'projectile-globally-ignored-directories "*test*")
 
 ;; ---------------------------------------------- neotree
 (require 'neotree)
