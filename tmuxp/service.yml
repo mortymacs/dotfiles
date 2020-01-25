@@ -1,0 +1,5 @@
+session_name: Service
+windows:
+- window_name: rtags-rdm
+  panes:
+  - rdm
