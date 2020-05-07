@@ -2,32 +2,31 @@
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.org/packages/"))
 (package-initialize)
+(require 'use-package)
 
 ;; ---------------------------------------------- general settings
 (menu-bar-mode -1)
 (set-face-bold 'bold nil)
-;; https://stackoverflow.com/a/5795518/2338672
+
+;; source: https://stackoverflow.com/a/5795518/2338672
 (when (display-graphic-p)
   (progn
     (toggle-scroll-bar -1)
     (tool-bar-mode -1)
     (scroll-bar-mode -1)))
 
-;; https://stackoverflow.com/a/14511461/2338672
+;; source: https://stackoverflow.com/a/14511461/2338672
 (setq skippable-buffers '("*Messages*" "*scratch*" "*Help*", "*helm occur*"))
 
 ;; mode line
-;; https://www.gnu.org/software/emacs/manual/html_node/elisp/Mode-Line-Top.html#Mode-Line-Top
-;; https://www.gnu.org/software/emacs/manual/html_node/elisp/_0025_002dConstructs.html#g_t_0025_002dConstructs
-;; https://emacs.stackexchange.com/a/10000/19615
-(setq-default mode-line-format
-	      (list "---File:[%f%+] Line:[%l] Size:[%I]%-"))
+(require 'powerline)
+(powerline-default-theme)
 
 ;; misc
 (delete-selection-mode 1)
 
 ;; theme
-(load-theme 'dakrone t)
+(load-theme 'vs-dark t)
 
 ;; line settings
 (global-hl-line-mode 1)
@@ -49,8 +48,8 @@
                         (agenda . 5)))
 
 ;;---------------------------------------------- ruler
-;; https://emacs.stackexchange.com/a/14066
-;; https://emacs.stackexchange.com/a/149
+;; source: https://emacs.stackexchange.com/a/14066
+;; source: https://emacs.stackexchange.com/a/149
 (defun prog-python-mode-max-line ()
   (setq-default
    whitespace-line-column 99
@@ -58,7 +57,8 @@
 (add-hook 'python-mode-hook #'prog-python-mode-max-line)
 
 ;; ---------------------------------------------- c/c++
-;; https://stackoverflow.com/a/663636/2338672
+;; source: https://stackoverflow.com/a/663636/2338672
+;; coding standard
 (add-hook 'c-mode-common-hook 'google-set-c-style)
 (add-hook 'c-mode-common-hook 'google-make-newline-indent)
 (c-add-style "cc-style"
@@ -69,22 +69,55 @@
 (add-hook 'c++-mode-hook
 	  (lambda()
 	    (c-set-style "cc-style")))
-;;(setq flycheck-clang-include-path  (concat (shell-command-to-string "echo -n `git rev-parse --show-toplevel`") "/include"))))
 
-;; https://stackoverflow.com/a/37318957/2338672
+;; source: https://stackoverflow.com/a/37318957/2338672
 (add-hook 'c-mode-common-hook
 	  (lambda ()
 	    (c-set-offset 'arglist-cont-nonempty '+)))
 
-;; https://emacs.stackexchange.com/a/36341/19615
+;; source: https://emacs.stackexchange.com/a/36341/19615
+;; lsp & company & irony
+(require 'lsp-mode)
+(add-hook 'c++-mode-hook #'lsp)
+
+;; source: https://youtu.be/XeWZfruRu6k
+(use-package company-lsp
+  :ensure t
+  :config
+  (setq company-idle-delay 0)
+  (setq company-minimum-prefix-length 3))
+(use-package company-irony
+  :ensure t
+  :config
+  (require 'company)
+  (add-to-list 'company-backends 'company-irony))
+(use-package irony
+  :ensure t
+  :config
+  (add-hook 'c++-mode-hook 'irony-mode)
+  (add-hook 'c-mode-hook 'irony-mode)
+  (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options))
+(with-eval-after-load 'company
+  (add-hook 'c++-mode-hook 'company-mode)
+  (add-hook 'c-mode-hook 'company-mode))
+
+;; rainbow delimiters
+(add-hook 'c++-mode-hook #'rainbow-delimiters-mode)
+(add-hook 'c-mode-hook #'rainbow-delimiters-mode)
+
+;; gdb
 (setq gud-gdb-command-name (concat "gdb -i=mi " (concat (shell-command-to-string "echo -n `git rev-parse --show-toplevel`") "/build")))
 
+;; cmake
+(require 'rtags)
+(cmake-ide-setup)
+
 ;; ---------------------------------------------- ivy
-;; (require 'ivy-posframe)
-;; (setq ivy-posframe-display-functions-alist '((t . ivy-posframe-display)))
-;; (setq ivy-posframe-display-functions-alist '((t . ivy-posframe-display-at-frame-center)))
-;; (setq ivy-posframe-display-functions-alist '((t . ivy-posframe-display-at-frame-top-center)))
-;; (ivy-posframe-mode 1)
+(require 'ivy-posframe)
+(setq ivy-posframe-display-functions-alist '((t . ivy-posframe-display)))
+(setq ivy-posframe-display-functions-alist '((t . ivy-posframe-display-at-frame-center)))
+(setq ivy-posframe-display-functions-alist '((t . ivy-posframe-display-at-frame-top-center)))
+(ivy-posframe-mode 1)
 
 ;; ---------------------------------------------- ido
 (ido-mode t)
@@ -112,6 +145,7 @@
 
 ;; ---------------------------------------------- tabbar
 (tabbar-mode)
+
 ;; hide tabbar navigation buttons
 ;; source: https://github.com/dholm/tabbar/issues/27#issuecomment-467308462
 (customize-set-variable 'tabbar-scroll-right-button '(("") ""))
@@ -121,7 +155,7 @@
 ;; ---------------------------------------------- projectile
 (projectile-mode +1)
 (setq projectile-project-search-path '("~/Workspace/plotwise/" "~/Workspace/oss/"))
-;; https://github.com/bbatsov/projectile/issues/184#issuecomment-62940053
+;; source: https://github.com/bbatsov/projectile/issues/184#issuecomment-62940053
 (add-to-list 'projectile-globally-ignored-files "*.log")
 (add-to-list 'projectile-globally-ignored-files "*.cmake")
 (add-to-list 'projectile-globally-ignored-files "*.so")
@@ -185,14 +219,14 @@
 (setq helm-input-idle-delay 0.2)
 ;; https://tuhdo.github.io/helm-intro.html
 (helm-autoresize-mode 1)
-;; https://www.reddit.com/r/emacs/comments/7rho4f/now_you_can_use_helm_with_frames_instead_of/
+;; source: https://www.reddit.com/r/emacs/comments/7rho4f/now_you_can_use_helm_with_frames_instead_of/
 (setq helm-display-function 'helm-display-buffer-in-own-frame
       helm-display-buffer-reuse-frame t
       helm-use-undecorated-frame-option t)
 
 ;; ---------------------------------------------- flycheck
 (global-flycheck-mode)
-;; https://github.com/flycheck/flycheck/issues/378
+;; source: https://github.com/flycheck/flycheck/issues/378
 (setq-default flycheck-flake8-maximum-line-length 99)
 
 ;; ---------------------------------------------- load files
@@ -210,5 +244,14 @@
  '(c-noise-macro-names (quote ("constexpr")))
  '(package-selected-packages
    (quote
-    (ivy-posframe git-timemachine kubernetes uuidgen dakrone-light-theme dakrone-theme helm-ag helm-ag-r ido-vertical-mode ag auto-complete-c-headers dashboard cmake-ide atom-one-dark-theme flycheck google-c-style zeal-at-point emamux gitignore-mode travis company-irony company-irony-c-headers irony doom-modeline docker ivy zeno-theme flycheck-cython flycheck-mypy smartparens rtags cmake-project cpputils-cmake flymake-cppcheck cmake-mode make-it-so sublimity flycheck-pyflakes kaolin-themes cython-mode git-gutter helm projectile auto-compile evil go-mode tabbar makefile-executor farmhouse-theme dracula-theme markdown-mode regex-tool salt-mode json-mode restclient nlinum toml-mode drag-stuff find-file-in-project hungry-delete focus multiple-cursors docker-compose-mode dockerfile-mode rust-mode vala-mode auto-complete dumb-jump magit fill-column-indicator expand-region neotree)))
+    (rainbow-delimiters vs-dark-theme bash-completion company-c-headers company-jedi company-posframe lsp-ui company-lsp lsp-ivy powerline challenger-deep-theme ivy-posframe git-timemachine kubernetes uuidgen dakrone-light-theme helm-ag helm-ag-r ido-vertical-mode ag auto-complete-c-headers dashboard cmake-ide atom-one-dark-theme flycheck google-c-style zeal-at-point emamux gitignore-mode travis company-irony company-irony-c-headers irony doom-modeline docker ivy zeno-theme flycheck-cython flycheck-mypy smartparens rtags cmake-project cpputils-cmake flymake-cppcheck cmake-mode make-it-so sublimity flycheck-pyflakes kaolin-themes cython-mode git-gutter helm projectile auto-compile evil go-mode tabbar makefile-executor farmhouse-theme dracula-theme markdown-mode regex-tool salt-mode json-mode restclient nlinum toml-mode drag-stuff find-file-in-project hungry-delete focus multiple-cursors docker-compose-mode dockerfile-mode rust-mode vala-mode auto-complete dumb-jump magit fill-column-indicator expand-region neotree)))
+ '(tabbar-buffer-home-button (quote (("") "")))
+ '(tabbar-scroll-left-button (quote (("") "")))
+ '(tabbar-scroll-right-button (quote (("") "")))
  '(tabbar-separator (quote (0.5))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
