@@ -2,7 +2,7 @@
 (defun display-startup-echo-area-message()
   (message "Hello! :)"))
 
-;;; https://emacs.stackexchange.com/a/30475/19615
+;; source: https://emacs.stackexchange.com/a/30475/19615
 (defun ask-before-closing ()
   "Close only if y was pressed."
   (interactive)
@@ -42,7 +42,7 @@
       (put 'buffer-maximum-window-mode 'state t))))
 
 ;; ---------------------------------------------- copy & paste
-;;; https://stackoverflow.com/a/19625063/2338672
+;; source: https://stackoverflow.com/a/19625063/2338672
 (defun copy-to-clipboard ()
   (interactive)
   (if (region-active-p)
@@ -81,7 +81,7 @@
                                 (tabbar-current-tabset)))))))))
 
 ;; ---------------------------------------------- neotree
-;; https://www.reddit.com/r/emacs/comments/9gjb0s/how_to_hide_line_numbers_in_neotrees_buffer/e65ta33/
+;; source: https://www.reddit.com/r/emacs/comments/9gjb0s/how_to_hide_line_numbers_in_neotrees_buffer/e65ta33/
 (defun my/disable-line-numbers (&optional dummy)
   (display-line-numbers-mode -1))
 (add-hook 'neo-after-create-hook 'my/disable-line-numbers)
@@ -124,3 +124,13 @@
 (defun re-indent ()
   (interactive)
   (indent-region (point-min) (point-max)))
+
+;; source: https://emacs.stackexchange.com/a/19084/19615
+(defun what-class-im-in ()
+  (interactive)
+  (save-excursion
+    (call-interactively 'move-end-of-line)
+    (search-backward-regexp "^\\s-*\\(?:\\(?:abstract\\|final\\)\\s-+\\)?class\\s-+\\(\\(?:\\sw\\|\\\\\\|\\s_\\)+\\)")
+    (let ((ret (match-string 1)))
+      (message ret)
+      ret)))
