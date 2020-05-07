@@ -20,7 +20,6 @@ clang
 clisp
 clutter
 cmake
-code
 cogl
 colordiff
 cppcheck
@@ -263,7 +262,6 @@ tidy
 tig
 tk
 tmux
-tmuxp
 totem
 tracker
 tracker-miners
