@@ -61,11 +61,9 @@
 
 ;; ---------------------------------------------- dump jump (goto)
 (global-set-key (kbd "M-d") 'dumb-jump-go)
-(add-hook 'c++-mode-hook
- (lambda()
- (global-set-key (kbd "M-d") 'rtags-find-symbol-at-point)))
 (global-set-key (kbd "M-f") 'dumb-jump-back)
 (global-set-key (kbd "M-q") 'dumb-jump-quick-look)
+(global-set-key (kbd "C-j") 'helm-imenu)
 
 ;; ---------------------------------------------- find & replace
 (global-set-key (kbd "C-c p") 'find-grep)
@@ -74,7 +72,6 @@
 ;; ---------------------------------------------- git
 (global-set-key (kbd "C-x b") 'magit-blame)
 (global-set-key (kbd "C-x v") 'magit-diff-unstaged)
-;;(global-set-key (kbd "C-d") 'delete-indentation)
 (global-set-key (kbd "C-d") 'git-gutter:popup-hunk)
 
 ;; ---------------------------------------------- function config
@@ -84,7 +81,7 @@
 (global-unset-key (kbd "<next>"))
 (global-unset-key (kbd "<prior>"))
 
-;; ---------------------------------------------- projectile
+;; ---------------------------------------------- projectile / file
 (global-set-key (kbd "C-p") 'projectile-switch-project)
 (global-set-key (kbd "C-l") 'projectile-switch-open-project)
 (global-set-key (kbd "C-f") 'projectile-find-file)
@@ -117,6 +114,15 @@
 ;; ---------------------------------------------- code
 (global-set-key (kbd "C-M-l") 're-indent)
 (global-set-key (kbd "M-;") 'comment-line)
+(global-set-key (kbd "M-q") 'what-class-im-in)
 
 ;; ---------------------------------------------- flycheck
 (global-set-key (kbd "C-e") 'list-flycheck-errors)
+
+;; ---------------------------------------------- company
+;; source: https://youtu.be/XeWZfruRu6k
+(with-eval-after-load 'company
+  (define-key company-active-map (kbd "M-n") nil)
+  (define-key company-active-map (kbd "M-p") nil)
+  (define-key company-active-map (kbd "C-n") #'company-select-next)
+  (define-key company-active-map (kbd "C-p") #'company-select-previous))
