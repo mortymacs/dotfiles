@@ -8,6 +8,7 @@ List of config files:
  * tmux
  * emacs
  * gdb
+ * git
  * packages
 
 Font: hack
