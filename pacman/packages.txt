@@ -31,7 +31,6 @@ dia
 dialog
 diff-so-fancy
 dina-font
-discord
 docker
 docker-compose
 doxygen
