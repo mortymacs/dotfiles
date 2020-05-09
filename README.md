@@ -9,6 +9,7 @@ List of config files:
  * emacs
  * gdb
  * git
+ * tig
  * packages
 
 Font: hack

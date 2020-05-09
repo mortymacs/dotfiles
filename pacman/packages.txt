@@ -159,6 +159,7 @@ kubectl
 libnss_nis
 libpqxx
 librabbitmq-c
+libreoffice-fresh
 libtool
 libva1
 libva1-intel-driver
