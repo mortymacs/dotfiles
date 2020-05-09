@@ -1,5 +1,4 @@
 accerciser
-alacritty
 autoconf
 automake
 baobab
@@ -240,15 +239,12 @@ qt5ct
 quadrapassel
 rabbitmq
 redis
-retext
 rust
 rygel
 sed
 simple-scan
 simplescreenrecorder
-steam-native-runtime
 strongswan
-sublime-merge
 sublime-text
 sudo
 sushi
