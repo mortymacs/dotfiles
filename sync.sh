@@ -21,3 +21,4 @@ cp ~/.tigrc tig/
 
 # packages
 pacman -Qqen > pacman/packages.txt
+pacman -Qqem > pacman/thirdparty.txt
