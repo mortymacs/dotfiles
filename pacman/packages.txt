@@ -53,6 +53,7 @@ flameshot
 flex
 foliate
 four-in-a-row
+fzf
 gawk
 gcc
 gcovr
