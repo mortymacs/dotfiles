@@ -45,6 +45,7 @@
 (global-set-key (kbd "M-c") 'helm-find)
 (global-set-key (kbd "C-s") 'helm-occur)
 (global-set-key (kbd "M-v") 'helm-grep-do-git-grep)
+(global-set-key (kbd "C-x C-b") 'helm-buffers-list)
 
 ;; ---------------------------------------------- gdb
 (global-set-key (kbd "M-b") 'gdb-toggle-breakpoint)
@@ -52,7 +53,7 @@
 (global-set-key (kbd "M-t") 'gdb)
 
 ;; ---------------------------------------------- shell config
-(global-set-key (kbd "C-c s") 'shell)
+(global-set-key (kbd "C-c s") 'eshell)
 
 ;; ---------------------------------------------- compile
 (global-set-key (kbd "C-c r") 'build-it)
