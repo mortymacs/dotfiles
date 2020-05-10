@@ -1,4 +1,5 @@
 accerciser
+arch-wiki-lite
 autoconf
 automake
 baobab
@@ -143,6 +144,7 @@ gvfs-nfs
 gvfs-smb
 gzip
 hitori
+hq
 htop
 hub
 iagno
