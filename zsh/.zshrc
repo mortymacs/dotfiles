@@ -8,7 +8,7 @@ fi
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 source $HOME/.zsh_aliases
-export PATH=$PATH:/home/morteza/.local/bin
+export PATH=$PATH:/home/morteza/.gem/ruby/2.7.0/bin/:/home/morteza/.local/bin
 
 HISTFILE=~/.zsh_history
 HISTSIZE=10000

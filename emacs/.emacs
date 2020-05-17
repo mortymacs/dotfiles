@@ -102,6 +102,9 @@
   (add-hook 'c++-mode-hook 'company-mode)
   (add-hook 'c-mode-hook 'company-mode))
 
+;; source: https://stackoverflow.com/a/30964293/2338672
+(add-hook 'c++-mode-hook (lambda () (setq flycheck-gcc-language-standard "c++17")))
+
 ;; rainbow delimiters
 (add-hook 'c++-mode-hook #'rainbow-delimiters-mode)
 (add-hook 'c-mode-hook #'rainbow-delimiters-mode)
@@ -109,8 +112,12 @@
 ;; gdb
 (setq gud-gdb-command-name (concat "gdb -i=mi " (concat (shell-command-to-string "echo -n `git rev-parse --show-toplevel`") "/build")))
 
-;; cmake
+;; rtags
 (require 'rtags)
+(add-hook 'c-mode-hook 'rtags-start-process-unless-running)
+(add-hook 'c++-mode-hook 'rtags-start-process-unless-running)
+
+;; cmake
 (cmake-ide-setup)
 
 ;; ---------------------------------------------- ivy

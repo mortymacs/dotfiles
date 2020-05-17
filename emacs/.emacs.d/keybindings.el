@@ -23,6 +23,10 @@
 ;; select text
 (global-set-key (kbd "M-s") 'er/expand-region)
 
+;; hungry delete
+(global-set-key (kbd "M-DEL") 'c-hungry-delete-backwards)
+(global-set-key (kbd "<M-delete>") 'c-hungry-delete-forward)
+
 ;; multiple cursors
 (global-set-key (kbd "C-x <down>") 'mc/mark-next-lines)
 (global-set-key (kbd "C-x <up>") 'mc/mark-previous-lines)

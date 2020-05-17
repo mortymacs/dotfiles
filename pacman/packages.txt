@@ -246,6 +246,7 @@ rygel
 sed
 simple-scan
 simplescreenrecorder
+sshpass
 strongswan
 sublime-text
 sudo
