@@ -13,6 +13,8 @@
 (global-set-key (kbd "C-x g") 'projectile-grep)
 (global-set-key (kbd "C-v") 'ffip-split-window-vertically)
 (global-set-key (kbd "C-x p") 'current-file-path)
+(global-set-key (kbd "C-c C-n") 'neotree-create-node)
+(global-set-key (kbd "C-c C-d") 'dired-create-directory)
 
 ;; ---------------------------------------------- drag lines (move up/down)
 (global-set-key (kbd "M-S-<up>") 'drag-stuff-up)

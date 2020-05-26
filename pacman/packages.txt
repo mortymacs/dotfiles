@@ -41,6 +41,7 @@ epiphany
 espeak
 espeak-ng
 evince
+extra-cmake-modules
 fakeroot
 festival
 figlet
@@ -122,6 +123,7 @@ gnome-user-docs
 gnome-user-share
 gnome-video-effects
 gnome-weather
+go
 gpick
 graphicsmagick
 graphviz

@@ -1,5 +1,7 @@
 dive
+elementary-planner-git
 networkmanager-l2tp
 rtags
 slack-desktop
+yay
 zeal
