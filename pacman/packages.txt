@@ -166,6 +166,7 @@ libreoffice-fresh
 libtool
 libva1
 libva1-intel-driver
+liferea
 lightsoff
 linux
 linux-firmware
