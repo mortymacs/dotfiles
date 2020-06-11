@@ -1,7 +1,11 @@
 dive
+dropbox
 elementary-planner-git
+minder
 networkmanager-l2tp
+notorious-git
 rtags
+skypeforlinux-stable-bin
 slack-desktop
 yay
 zeal
