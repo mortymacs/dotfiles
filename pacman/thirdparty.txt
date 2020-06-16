@@ -1,6 +1,7 @@
 dive
 dropbox
 elementary-planner-git
+lazygit
 minder
 networkmanager-l2tp
 notorious-git
