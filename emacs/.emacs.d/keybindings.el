@@ -33,6 +33,11 @@
 (global-set-key (kbd "C-x <down>") 'mc/mark-next-lines)
 (global-set-key (kbd "C-x <up>") 'mc/mark-previous-lines)
 
+;; pair
+;; source: https://www.emacswiki.org/emacs/InsertPair
+(global-set-key (kbd "M-'") 'insert-quotations)
+(global-set-key (kbd "M-\"") 'insert-quotes)
+
 ;; ---------------------------------------------- tabbar config
 (global-set-key (kbd "S-<left>") 'tabbar-backward-tab)
 (global-set-key (kbd "S-<right>") 'tabbar-forward-tab)

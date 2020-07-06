@@ -134,3 +134,16 @@
     (let ((ret (match-string 1)))
       (message ret)
       ret)))
+
+;; source: https://www.emacswiki.org/emacs/InsertPair
+(defun insert-quotations (&optional arg)
+  "Enclose following ARG sexps in quotation marks.
+Leave point after open-paren."
+  (interactive "*P")
+  (insert-pair arg ?\' ?\'))
+
+(defun insert-quotes (&optional arg)
+  "Enclose following ARG sexps in quotes.
+Leave point after open-quote."
+  (interactive "*P")
+  (insert-pair arg ?\" ?\"))

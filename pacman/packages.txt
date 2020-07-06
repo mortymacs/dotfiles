@@ -16,10 +16,12 @@ cgdb
 cheese
 chrome-gnome-shell
 chromium
+chrpath
 clang
 clisp
 clutter
 cmake
+code
 cogl
 colordiff
 cppcheck
@@ -43,6 +45,7 @@ espeak-ng
 evince
 extra-cmake-modules
 fakeroot
+feh
 festival
 figlet
 file
@@ -56,6 +59,7 @@ flex
 foliate
 four-in-a-row
 fzf
+ganv
 gawk
 gcc
 gcovr
@@ -136,6 +140,7 @@ gtest
 gtk-engine-murrine
 gtk-engines
 gtkglext
+gtkmm3-docs
 gvfs
 gvfs-afc
 gvfs-goa
@@ -188,6 +193,7 @@ nasm
 nautilus
 nautilus-image-converter
 nautilus-terminal
+net-tools
 networkmanager
 networkmanager-pptp
 ninja
@@ -212,6 +218,7 @@ pyside2
 python-gdal
 python-language-server
 python-owslib
+python-pandas
 python-pip
 python-pylint
 python-virtualenv
@@ -247,6 +254,7 @@ redis
 rust
 rygel
 sed
+shellcheck
 simple-scan
 simplescreenrecorder
 sshpass
@@ -264,11 +272,14 @@ texlive-core
 texlive-latexextra
 tidy
 tig
+tilix
 tk
+tldr
 tmux
 totem
 tracker
 tracker-miners
+trash-cli
 tree
 ttf-anonymous-pro
 ttf-bitstream-vera

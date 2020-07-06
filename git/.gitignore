@@ -16,3 +16,4 @@ __pycached__/
 *.sublime-*
 .bundle
 compile_commands.json
+.ccls
