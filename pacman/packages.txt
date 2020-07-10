@@ -150,6 +150,7 @@ gvfs-mtp
 gvfs-nfs
 gvfs-smb
 gzip
+heaptrack
 hitori
 hq
 htop
@@ -161,6 +162,7 @@ iotop
 ipython
 iw
 jq
+kcachegrind
 kcalendarcore
 krita
 kubectl
@@ -180,6 +182,7 @@ llvm
 m4
 make
 man-db
+massif-visualizer
 meld
 mesa-demos
 meson
@@ -311,6 +314,7 @@ vtk
 wget
 which
 wmctrl
+workrave
 wxgtk2
 wxgtk3
 xdg-user-dirs-gtk
