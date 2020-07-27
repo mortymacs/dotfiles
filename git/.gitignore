@@ -6,9 +6,9 @@ venv
 *.so
 .idea
 *.cmake
-Makefile
 CMakeCache.txt
 CMakeFiles/
+cmake-build-debug/
 *.egg-info/
 dist/
 *.swp
@@ -17,3 +17,4 @@ __pycached__/
 .bundle
 compile_commands.json
 .ccls
+Gemfile.lock

@@ -5,6 +5,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+export QT_QPA_PLATFORMTHEME=qt5ct
+
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 source $HOME/.zsh_aliases
@@ -21,6 +23,10 @@ zstyle ':completion:*' menu select
 zstyle ':completion::complete:*' gain-privileges 1
 setopt COMPLETE_ALIASES
 setopt HIST_IGNORE_SPACE
+
+# source: https://unix.stackexchange.com/a/258661/204066
+autoload -U select-word-style
+select-word-style bash
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

@@ -21,7 +21,6 @@ clang
 clisp
 clutter
 cmake
-code
 cogl
 colordiff
 cppcheck
@@ -56,6 +55,7 @@ five-or-more
 flake8
 flameshot
 flex
+fmt
 foliate
 four-in-a-row
 fzf
@@ -70,10 +70,12 @@ geary
 gedit
 gettext
 ghex
+ghidra
 gimp
 git
 gitg
 glade
+glances
 gnome-backgrounds
 gnome-books
 gnome-boxes
@@ -127,7 +129,6 @@ gnome-user-docs
 gnome-user-share
 gnome-video-effects
 gnome-weather
-go
 gpick
 graphicsmagick
 graphviz
@@ -154,9 +155,11 @@ heaptrack
 hitori
 hq
 htop
+httpie
 hub
 iagno
 inetutils
+inter-font
 intltool
 iotop
 ipython
@@ -187,6 +190,7 @@ meld
 mesa-demos
 meson
 microsoft-gsl
+minder
 minikube
 mkinitcpio
 mousetweaks
@@ -197,13 +201,16 @@ nautilus
 nautilus-image-converter
 nautilus-terminal
 net-tools
+network-manager-applet
 networkmanager
 networkmanager-pptp
 ninja
+nlohmann-json
 nnn
 noto-fonts-emoji
 ntfs-3g
 nuitka
+obs-studio
 opencv
 openssh
 orca
@@ -211,6 +218,7 @@ p7zip
 pacman
 pacman-contrib
 patch
+pavucontrol
 pkgconf
 polari
 postgis
@@ -259,7 +267,7 @@ rygel
 sed
 shellcheck
 simple-scan
-simplescreenrecorder
+sshfs
 sshpass
 stow
 strongswan
@@ -279,6 +287,7 @@ tilix
 tk
 tldr
 tmux
+tmuxp
 totem
 tracker
 tracker-miners
@@ -303,6 +312,7 @@ ttf-roboto-mono
 ttf-ubuntu-font-family
 twin
 unicode-emoji
+unrar
 vagrant
 vala
 valgrind
@@ -314,7 +324,6 @@ vtk
 wget
 which
 wmctrl
-workrave
 wxgtk2
 wxgtk3
 xdg-user-dirs-gtk
@@ -324,6 +333,7 @@ xf86-video-intel
 xl2tpd
 xsel
 yelp
+youtube-dl
 zsh
 zsh-autosuggestions
 zsh-completions
