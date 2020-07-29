@@ -11,6 +11,7 @@ binutils
 bison
 boost
 calibre-python3
+catch2
 ccls
 cgdb
 cheese
@@ -164,6 +165,7 @@ intltool
 iotop
 ipython
 iw
+jenkins
 jq
 kcachegrind
 kcalendarcore
