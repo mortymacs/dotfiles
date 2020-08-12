@@ -21,7 +21,7 @@ alias d="deactivate"
 
 ## ---------------------------------------------- editor
 alias v="vim"
-alias ee="emacsclient -nw -c"
+alias ee="emacs -nw"
 alias e="emacs -nw ."
 alias s="subl"
 export EDITOR="emacs -nw -q"

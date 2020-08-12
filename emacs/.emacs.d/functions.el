@@ -66,20 +66,6 @@
   (interactive)
   (insert (shell-command-to-string "xsel -o -b")))
 
-;; ---------------------------------------------- tabbar
-;; adding spaces
-(defun tabbar-buffer-tab-label (tab)
-  "Return a label for TAB. That is, a string used to represent it on the tab bar."
-  (let ((label  (if tabbar--buffer-show-groups
-                    (format "[%s]  " (tabbar-tab-tabset tab))
-                  (format "%s  " (tabbar-tab-value tab)))))
-    (if tabbar-auto-scroll-flag
-        label
-      (tabbar-shorten
-       label (max 1 (/ (window-width)
-                       (length (tabbar-view
-                                (tabbar-current-tabset)))))))))
-
 ;; ---------------------------------------------- neotree
 ;; source: https://www.reddit.com/r/emacs/comments/9gjb0s/how_to_hide_line_numbers_in_neotrees_buffer/e65ta33/
 (defun my/disable-line-numbers (&optional dummy)

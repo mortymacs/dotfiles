@@ -18,3 +18,4 @@ __pycached__/
 compile_commands.json
 .ccls
 Gemfile.lock
+.vscode/

@@ -22,6 +22,7 @@ clang
 clisp
 clutter
 cmake
+code
 cogl
 colordiff
 cppcheck
@@ -37,7 +38,7 @@ dina-font
 docker
 docker-compose
 doxygen
-emacs-nox
+emacs
 eog
 epiphany
 espeak
@@ -143,6 +144,7 @@ gtk-engine-murrine
 gtk-engines
 gtkglext
 gtkmm3-docs
+guake
 gvfs
 gvfs-afc
 gvfs-goa
@@ -221,6 +223,7 @@ pacman
 pacman-contrib
 patch
 pavucontrol
+pidgin
 pkgconf
 polari
 postgis
@@ -237,6 +240,11 @@ python-pylint
 python-virtualenv
 python2-pip
 python2-virtualenv
+qemu-arch-extra
+qemu-block-gluster
+qemu-block-iscsi
+qemu-block-rbd
+qemu-guest-agent
 qgis
 qt5-3d
 qt5-charts
@@ -269,10 +277,12 @@ rygel
 sed
 shellcheck
 simple-scan
+spdlog
 sshfs
 sshpass
 stow
 strongswan
+sublime-merge
 sublime-text
 sudo
 sushi
