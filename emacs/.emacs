@@ -27,7 +27,7 @@
 (delete-selection-mode 1)
 
 ;; theme
-(load-theme 'ayu-dark t)
+(load-theme 'monokai t)
 (load-theme 'airline-doom-molokai t)
 
 ;; line settings

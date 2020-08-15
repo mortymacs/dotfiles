@@ -14,6 +14,7 @@ calibre-python3
 catch2
 ccls
 cgdb
+chafa
 cheese
 chrome-gnome-shell
 chromium
@@ -22,7 +23,6 @@ clang
 clisp
 clutter
 cmake
-code
 cogl
 colordiff
 cppcheck
@@ -31,6 +31,7 @@ ctemplate
 cython
 dconf-editor
 devhelp
+dfc
 dia
 dialog
 diff-so-fancy
@@ -78,6 +79,7 @@ git
 gitg
 glade
 glances
+gmock
 gnome-backgrounds
 gnome-books
 gnome-boxes
@@ -166,6 +168,7 @@ inter-font
 intltool
 iotop
 ipython
+irssi
 iw
 jenkins
 jq
@@ -186,6 +189,7 @@ linux
 linux-firmware
 lldb
 llvm
+lsd
 m4
 make
 man-db
@@ -349,4 +353,5 @@ youtube-dl
 zsh
 zsh-autosuggestions
 zsh-completions
+zsh-syntax-highlighting
 zsh-theme-powerlevel10k

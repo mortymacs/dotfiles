@@ -1,6 +1,7 @@
 ## ---------------------------------------------- general
 alias grep="grep -n --color"
-alias rm="rm -i"
+#alias rm="rm -i"
+alias rm="trash"
 
 ## ---------------------------------------------- utility
 alias p="ping 8.8.8.8"
@@ -10,20 +11,19 @@ alias cat="bat"
 # source: https://medium.com/@GroundControl/better-git-diffs-with-fzf-89083739a9cb
 alias f="fzf --preview 'bat {-1} --color=always'"
 alias rmc="rm -rf CMakeFiles/ Testing/ CMakeCache.txt *.cmake Makefile compile_commands.json *.cbp"
-alias u="sudo apt update && sudo apt upgrade"
+alias u="yay -Syu"
 
 ## ---------------------------------------------- python
 alias a="source ./venv/bin/activate"
 alias d="deactivate"
 
 ## ---------------------------------------------- db
-#alias psql="pgcli"
+alias psql="pgcli"
 
 ## ---------------------------------------------- editor
 alias v="vim"
 alias ee="emacs -nw"
 alias e="emacs -nw ."
-alias s="subl"
 export EDITOR="emacs -nw -q"
 
 ## ---------------------------------------------- tmux
