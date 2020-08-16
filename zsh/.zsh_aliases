@@ -2,6 +2,7 @@
 alias grep="grep -n --color"
 #alias rm="rm -i"
 alias rm="trash"
+alias ls="lsd"
 
 ## ---------------------------------------------- utility
 alias p="ping 8.8.8.8"
