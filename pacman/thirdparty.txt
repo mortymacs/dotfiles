@@ -1,6 +1,8 @@
 anydesk-bin
 dive
 dropbox
+google-cloud-sdk
+hotspot
 jmeter
 justniffer
 networkmanager-l2tp

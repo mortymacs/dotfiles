@@ -133,6 +133,8 @@ gnome-user-docs
 gnome-user-share
 gnome-video-effects
 gnome-weather
+gperf
+gperftools
 gpick
 graphicsmagick
 graphviz
@@ -294,6 +296,7 @@ swell-foop
 syntax-highlighting
 sysprof
 tali
+terraform
 texinfo
 texlive-core
 texlive-latexextra
@@ -347,6 +350,8 @@ xdot
 xdotool
 xf86-video-intel
 xl2tpd
+xorg-font-util
+xorg-fonts-alias-misc
 xsel
 yelp
 youtube-dl
