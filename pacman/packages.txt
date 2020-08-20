@@ -229,6 +229,7 @@ pacman
 pacman-contrib
 patch
 pavucontrol
+perf
 pidgin
 pkgconf
 polari
