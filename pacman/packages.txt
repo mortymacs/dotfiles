@@ -10,8 +10,10 @@ bc
 binutils
 bison
 boost
-calibre-python3
+broot
+calibre
 catch2
+cbindgen
 ccls
 cgdb
 chafa
@@ -23,8 +25,10 @@ clang
 clisp
 clutter
 cmake
+code
 cogl
 colordiff
+container-diff
 cppcheck
 ctags
 ctemplate
@@ -35,10 +39,13 @@ dfc
 dia
 dialog
 diff-so-fancy
+diffstat
 dina-font
 docker
 docker-compose
 doxygen
+elementary-icon-theme
+elementary-wallpapers
 emacs
 eog
 epiphany
@@ -47,6 +54,7 @@ espeak-ng
 evince
 extra-cmake-modules
 fakeroot
+fd
 feh
 festival
 figlet
@@ -68,6 +76,7 @@ gcc
 gcovr
 gdal
 gdb
+gdb-dashboard
 gdm
 geary
 gedit
@@ -77,6 +86,7 @@ ghidra
 gimp
 git
 gitg
+github-cli
 glade
 glances
 gmock
@@ -164,6 +174,7 @@ hq
 htop
 httpie
 hub
+hyperfine
 iagno
 inetutils
 inter-font
@@ -183,8 +194,6 @@ libpqxx
 librabbitmq-c
 libreoffice-fresh
 libtool
-libva1
-libva1-intel-driver
 liferea
 lightsoff
 linux
@@ -196,9 +205,11 @@ m4
 make
 man-db
 massif-visualizer
+mdcat
 meld
 mesa-demos
 meson
+mg
 microsoft-gsl
 minder
 minikube
@@ -210,6 +221,7 @@ nasm
 nautilus
 nautilus-image-converter
 nautilus-terminal
+neofetch
 net-tools
 network-manager-applet
 networkmanager
@@ -236,6 +248,8 @@ polari
 postgis
 postgresql
 postgresql-libs
+powerline-fonts
+powerline-vim
 pptpclient
 pyside2
 python-gdal
@@ -301,9 +315,9 @@ terraform
 texinfo
 texlive-core
 texlive-latexextra
+thefuck
 tidy
 tig
-tilix
 tk
 tldr
 tmux
@@ -356,6 +370,7 @@ xorg-fonts-alias-misc
 xsel
 yelp
 youtube-dl
+z
 zsh
 zsh-autosuggestions
 zsh-completions

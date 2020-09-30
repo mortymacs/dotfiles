@@ -14,6 +14,7 @@ alias f="fzf --preview 'bat {-1} --color=always'"
 alias rmc="rm -rf CMakeFiles/ Testing/ CMakeCache.txt *.cmake Makefile compile_commands.json *.cbp"
 alias u="yay -Syu"
 alias o="ee \`f\`"
+alias diff="ydiff -s --wrap"
 
 ## ---------------------------------------------- python
 alias a="source ./venv/bin/activate"

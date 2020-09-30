@@ -10,6 +10,7 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 source $HOME/.zsh_aliases
+source $HOME/.local/bin/forgit.plugin.zsh
 export PATH=$PATH:/home/morteza/.gem/ruby/2.7.0/bin/:/home/morteza/.local/bin
 
 HISTFILE=~/.zsh_history
@@ -30,5 +31,9 @@ select-word-style bash
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+[[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+source /home/morteza/.config/broot/launcher/bash/br

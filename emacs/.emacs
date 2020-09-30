@@ -3,7 +3,6 @@
              '("melpa" . "http://melpa.org/packages/"))
 (package-initialize)
 (require 'use-package)
-(auto-package-update-maybe)
 
 ;; ---------------------------------------------- general settings
 (menu-bar-mode -1)
@@ -27,8 +26,8 @@
 (delete-selection-mode 1)
 
 ;; theme
-(load-theme 'monokai t)
-(load-theme 'airline-doom-molokai t)
+(load-theme 'gruvbox-dark-hard t)
+(load-theme 'airline-raven t) ;;airline-doom-molokai
 
 ;; line settings
 (global-hl-line-mode 1)
@@ -52,11 +51,14 @@
 ;;---------------------------------------------- ruler
 ;; source: https://emacs.stackexchange.com/a/14066
 ;; source: https://emacs.stackexchange.com/a/149
-(defun prog-python-mode-max-line ()
+(defun prog-python-mode ()
   (setq-default
    whitespace-line-column 99
-   whitespace-style '(face lines-tail)))
-(add-hook 'python-mode-hook #'prog-python-mode-max-line)
+   whitespace-style '(face lines-tail))
+  (elpy-enable)
+  (require 'py-autopep8)
+  )
+(add-hook 'python-mode-hook #'prog-python-mode)
 
 ;; ---------------------------------------------- c/c++
 ;; source: https://stackoverflow.com/a/663636/2338672
@@ -81,6 +83,9 @@
 ;; lsp & company & irony
 (require 'lsp-mode)
 (add-hook 'c++-mode-hook #'lsp)
+
+;; https://www.reddit.com/r/emacs/comments/bbpicg/any_way_to_disable_these_giant_hovering_info/ekkg7vx/?utm_source=reddit&utm_medium=web2x&context=3
+(setq lsp-ui-doc-enable nil)
 
 ;; source: https://youtu.be/XeWZfruRu6k
 (use-package company-lsp
@@ -250,7 +255,7 @@
  ;; If there is more than one, they won't work right.
  '(c-noise-macro-names '("constexpr"))
  '(package-selected-packages
-   '(auto-package-update flymake-shell flymake-shellcheck ayu-theme rustic flycheck-rust dotenv-mode csv-mode airline-themes doom-themes vdiff monokai-theme rainbow-delimiters bash-completion company-c-headers company-jedi company-posframe lsp-ui company-lsp lsp-ivy powerline challenger-deep-theme ivy-posframe git-timemachine kubernetes uuidgen dakrone-light-theme helm-ag helm-ag-r ido-vertical-mode ag auto-complete-c-headers dashboard cmake-ide flycheck google-c-style zeal-at-point emamux gitignore-mode travis company-irony company-irony-c-headers irony doom-modeline docker ivy zeno-theme flycheck-cython flycheck-mypy smartparens rtags cmake-project cpputils-cmake flymake-cppcheck cmake-mode make-it-so sublimity flycheck-pyflakes kaolin-themes cython-mode git-gutter helm projectile auto-compile evil go-mode makefile-executor farmhouse-theme markdown-mode regex-tool salt-mode json-mode restclient nlinum toml-mode drag-stuff find-file-in-project hungry-delete focus multiple-cursors docker-compose-mode dockerfile-mode rust-mode vala-mode auto-complete dumb-jump magit fill-column-indicator expand-region neotree)))
+   '(gruvbox-theme ein blacken py-autopep8 elpy jenkinsfile-mode auto-package-update flymake-shell flymake-shellcheck ayu-theme rustic flycheck-rust dotenv-mode csv-mode airline-themes doom-themes vdiff monokai-theme rainbow-delimiters bash-completion company-c-headers company-jedi company-posframe lsp-ui company-lsp lsp-ivy powerline challenger-deep-theme ivy-posframe git-timemachine kubernetes uuidgen dakrone-light-theme helm-ag helm-ag-r ido-vertical-mode ag auto-complete-c-headers dashboard cmake-ide flycheck google-c-style zeal-at-point emamux gitignore-mode travis company-irony company-irony-c-headers irony doom-modeline docker ivy zeno-theme flycheck-cython flycheck-mypy smartparens rtags cmake-project cpputils-cmake flymake-cppcheck cmake-mode make-it-so sublimity flycheck-pyflakes kaolin-themes cython-mode git-gutter helm projectile auto-compile evil go-mode makefile-executor farmhouse-theme markdown-mode regex-tool salt-mode json-mode restclient nlinum toml-mode drag-stuff find-file-in-project hungry-delete focus multiple-cursors docker-compose-mode dockerfile-mode rust-mode vala-mode auto-complete dumb-jump magit fill-column-indicator expand-region neotree)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
