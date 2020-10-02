@@ -3,7 +3,7 @@ default='6f291bdb-bcfb-4158-a7cc-0d2782a46b43'
 list=['6f291bdb-bcfb-4158-a7cc-0d2782a46b43']
 
 [:6f291bdb-bcfb-4158-a7cc-0d2782a46b43]
-background-color='rgb(40,40,40)'
+background-color='rgb(0,0,0)'
 bold-color-same-as-fg=true
 bold-is-bright=false
 cell-height-scale=1.0
@@ -12,8 +12,8 @@ cursor-blink-mode='on'
 cursor-shape='ibeam'
 default-size-columns=120
 default-size-rows=24
-foreground-color='rgb(235,219,178)'
-palette=['#66665C5C5454', '#FBFB49493434', '#8383A5A59898', '#D7D799992121', '#B1B162628686', '#454585858888', '#B8B8BBBB2626', '#D6D65D5D0E0E', '#A8A899998484', '#FBFB49493434', '#8E8EC0C07C7C', '#FAFABDBD2F2F', '#D3D386869B9B', '#68689D9D6A6A', '#989897971A1A', '#FEFE80801919']
+foreground-color='rgb(242,242,242)'
+palette=['#2A2A2A2A2A2A', '#FFFF00000000', '#7979FFFF0F0F', '#E7E7BFBF0000', '#38386B6BD7D7', '#B3B34949BEBE', '#6666CCCCFFFF', '#BBBBBBBBBBBB', '#666666666666', '#FFFF00008080', '#6666FFFF6666', '#F3F3D6D64E4E', '#70709A9AEDED', '#DBDB6767E6E6', '#7979DFDFF2F2', '#FFFFFFFFFFFF']
 scrollback-lines=20000
 scrollbar-policy='never'
 use-theme-colors=false

@@ -26,7 +26,7 @@
 (delete-selection-mode 1)
 
 ;; theme
-(load-theme 'gruvbox-dark-hard t)
+(load-theme 'monokai t)
 (load-theme 'airline-raven t) ;;airline-doom-molokai
 
 ;; line settings
@@ -55,7 +55,7 @@
   (setq-default
    whitespace-line-column 99
    whitespace-style '(face lines-tail))
-  (elpy-enable)
+  ;;(elpy-enable)
   (require 'py-autopep8)
   )
 (add-hook 'python-mode-hook #'prog-python-mode)
