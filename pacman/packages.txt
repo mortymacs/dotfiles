@@ -32,6 +32,8 @@ container-diff
 cppcheck
 ctags
 ctemplate
+cups
+cups-pdf
 cython
 dconf-editor
 devhelp
@@ -170,6 +172,7 @@ gvfs-smb
 gzip
 heaptrack
 hitori
+hplip
 hq
 htop
 httpie
@@ -310,6 +313,7 @@ sushi
 swell-foop
 syntax-highlighting
 sysprof
+system-config-printer
 tali
 terraform
 texinfo
