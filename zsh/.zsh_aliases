@@ -25,8 +25,8 @@ alias psql="pgcli"
 
 ## ---------------------------------------------- editor
 alias v="vim"
-alias ee="emacs -nw"
-alias e="emacs -nw ."
+alias ee="emacsclient -c -nw"
+alias e="emacsclient -c -nw ."
 export EDITOR="emacs -nw -q"
 
 ## ---------------------------------------------- tmux

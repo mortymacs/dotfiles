@@ -11,6 +11,7 @@ binutils
 bison
 boost
 broot
+c-ares
 calibre
 catch2
 cbindgen

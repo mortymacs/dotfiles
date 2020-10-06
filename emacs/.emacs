@@ -132,8 +132,8 @@
 (yas-global-mode 1)
 
 ;; cmake
-(cmake-ide-setup)
-(set 'gc-cons-threshold 100000000)
+;;(cmake-ide-setup)
+;;(set 'gc-cons-threshold 100000000)
 
 ;; ---------------------------------------------- shell
 (use-package flymake-shellcheck
