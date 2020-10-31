@@ -1,3 +1,4 @@
+abseil-cpp
 anydesk-bin
 czmq-git
 dive
@@ -15,11 +16,13 @@ networkmanager-l2tp
 peco
 pgcli
 rtags
+shortwave
 skypeforlinux-stable-bin
 slack-desktop
 spotify
 ttf-recursive
 ttf-sometype-mono
+typora
 yaru-gnome-shell-theme
 yaru-gtk-theme
 yaru-icon-theme

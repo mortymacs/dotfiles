@@ -13,7 +13,9 @@
   (progn
     (toggle-scroll-bar -1)
     (tool-bar-mode -1)
-    (scroll-bar-mode -1)))
+    (scroll-bar-mode -1)
+    ;; source: https://stackoverflow.com/a/60981985/2338672
+    (set-face-attribute 'default nil :font "Hack" :height 130)))
 
 ;; source: https://stackoverflow.com/a/14511461/2338672
 (setq skippable-buffers '("*Messages*" "*scratch*" "*Help*", "*helm occur*"))
@@ -26,7 +28,7 @@
 (delete-selection-mode 1)
 
 ;; theme
-(load-theme 'doom-monokai-pro t)
+(load-theme 'badwolf t)
 (load-theme 'airline-raven t) ;;airline-doom-molokai
 
 ;; line settings
@@ -185,6 +187,7 @@
 
 ;; ---------------------------------------------- neotree
 (require 'neotree)
+(setq neo-theme 'arrow)
 (setq neo-hidden-regexp-list '("Makefile"
 			       "\\.cmake" "CMakeCache\.txt" "\\.cbp" "CMakeFiles/" "Testing/" "build/"
 			       "\\.a" "\\.so"
@@ -263,7 +266,7 @@
  ;; If there is more than one, they won't work right.
  '(c-noise-macro-names '("constexpr"))
  '(package-selected-packages
-   '(cpanfile-mode yasnippet nord-theme gruvbox-theme ein blacken py-autopep8 elpy jenkinsfile-mode auto-package-update flymake-shell flymake-shellcheck ayu-theme rustic flycheck-rust dotenv-mode csv-mode airline-themes doom-themes vdiff monokai-theme rainbow-delimiters bash-completion company-c-headers company-jedi company-posframe lsp-ui company-lsp lsp-ivy powerline challenger-deep-theme ivy-posframe git-timemachine kubernetes uuidgen dakrone-light-theme helm-ag helm-ag-r ido-vertical-mode ag auto-complete-c-headers dashboard cmake-ide flycheck google-c-style zeal-at-point emamux gitignore-mode travis company-irony company-irony-c-headers irony doom-modeline docker ivy zeno-theme flycheck-cython flycheck-mypy smartparens rtags cmake-project cpputils-cmake flymake-cppcheck cmake-mode make-it-so sublimity flycheck-pyflakes kaolin-themes cython-mode git-gutter helm projectile auto-compile evil go-mode makefile-executor farmhouse-theme markdown-mode regex-tool salt-mode json-mode restclient nlinum toml-mode drag-stuff find-file-in-project hungry-delete focus multiple-cursors docker-compose-mode dockerfile-mode rust-mode vala-mode auto-complete dumb-jump magit fill-column-indicator expand-region neotree)))
+   '(badwolf-theme highlight-doxygen cpanfile-mode yasnippet gruvbox-theme ein blacken py-autopep8 elpy jenkinsfile-mode auto-package-update flymake-shell flymake-shellcheck rustic flycheck-rust dotenv-mode csv-mode airline-themes vdiff monokai-theme rainbow-delimiters bash-completion company-c-headers company-jedi company-posframe lsp-ui company-lsp lsp-ivy powerline ivy-posframe git-timemachine kubernetes uuidgen dakrone-light-theme helm-ag helm-ag-r ido-vertical-mode ag auto-complete-c-headers dashboard cmake-ide flycheck google-c-style zeal-at-point emamux gitignore-mode travis company-irony company-irony-c-headers irony doom-modeline docker ivy zeno-theme flycheck-cython flycheck-mypy smartparens rtags cmake-project cpputils-cmake flymake-cppcheck cmake-mode make-it-so sublimity flycheck-pyflakes kaolin-themes cython-mode git-gutter helm projectile auto-compile evil go-mode makefile-executor farmhouse-theme markdown-mode regex-tool salt-mode json-mode restclient nlinum toml-mode drag-stuff find-file-in-project hungry-delete focus multiple-cursors docker-compose-mode dockerfile-mode rust-mode vala-mode auto-complete dumb-jump magit fill-column-indicator expand-region neotree)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

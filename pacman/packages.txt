@@ -26,7 +26,6 @@ clang
 clisp
 clutter
 cmake
-code
 cogl
 colordiff
 container-diff
@@ -196,6 +195,7 @@ kubectl
 libnss_nis
 libpqxx
 librabbitmq-c
+librdkafka
 libreoffice-fresh
 libtool
 liferea
@@ -221,6 +221,7 @@ mkinitcpio
 mousetweaks
 mutter
 mypy
+nano
 nasm
 nautilus
 nautilus-image-converter
@@ -232,7 +233,7 @@ networkmanager
 networkmanager-pptp
 ninja
 nlohmann-json
-nnn
+noto-fonts
 noto-fonts-emoji
 ntfs-3g
 nuitka

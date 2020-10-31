@@ -13,9 +13,8 @@ cmake-build-debug/
 dist/
 *.swp
 __pycached__/
-*.sublime-*
 .bundle
 compile_commands.json
 .ccls
 Gemfile.lock
-.vscode/
+.mypy_cache
