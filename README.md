@@ -7,6 +7,7 @@ List of config files:
  * zsh
  * tmux
  * emacs
+ * vim
  * gdb
  * git
  * tig
