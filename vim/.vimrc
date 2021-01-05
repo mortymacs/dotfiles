@@ -88,6 +88,9 @@ nmap <c-x><c-q> :q<cr>
 nmap <c-g><c-d> <plug>(GitGutterPreviewHunk)
 nmap <c-g><c-u> <plug>(GitGutterUndoHunk)                                                                                                                                                  
 nmap <c-g><c-l> <plug>(GitGutterStageHunk)
+" source: https://github.com/longsleep/bin-scripts/blob/master/config/vimrc
+" auto wrap git commit messages
+au FileType gitcommit set tw=72
 
 " text
 ""source: https://stackoverflow.com/a/63887462/2338672

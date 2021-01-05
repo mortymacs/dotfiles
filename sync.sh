@@ -27,4 +27,5 @@ pacman -Qqen > pacman/packages.txt
 pacman -Qqem > pacman/thirdparty.txt
 
 # dconf
-dconf dump /org/gnome/terminal/legacy/profiles:/ > dconf/gnome-terminal.dump
+#dconf dump /org/gnome/terminal/legacy/profiles:/ > dconf/gnome-terminal.dump
+cp ~/.config/alacritty/alacritty.yml alacritty/
