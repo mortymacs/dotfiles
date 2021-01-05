@@ -22,6 +22,9 @@ cp ~/{.gitconfig,.gitignore} git/
 # tig
 cp ~/.tigrc tig/
 
+# broot
+cp ~/.config/broot/conf.toml broot/
+
 # packages
 pacman -Qqen > pacman/packages.txt
 pacman -Qqem > pacman/thirdparty.txt

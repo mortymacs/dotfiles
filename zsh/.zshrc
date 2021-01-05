@@ -50,3 +50,7 @@ source /usr/share/nvm/init-nvm.sh
 
 # source: https://stackoverflow.com/a/22481496
 export TERM="xterm-256color"
+
+# source: https://unix.stackexchange.com/a/177979
+export EDITOR=vim
+export VISUAL=vim
