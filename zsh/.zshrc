@@ -47,3 +47,6 @@ export GOMODCACHE="$HOME/.local/share/go/pkg/mod"
 
 eval "$(pyenv init -)"
 source /usr/share/nvm/init-nvm.sh
+
+# source: https://stackoverflow.com/a/22481496
+export TERM="xterm-256color"
