@@ -20,16 +20,11 @@
 ;; source: https://stackoverflow.com/a/14511461/2338672
 (setq skippable-buffers '("*Messages*" "*scratch*" "*Help*", "*helm occur*"))
 
-;; mode line
-(require 'powerline)
-(require 'airline-themes)
-
 ;; misc
 (delete-selection-mode 1)
 
 ;; theme
-(load-theme 'badwolf t)
-(load-theme 'airline-raven t) ;;airline-doom-molokai
+(load-theme 'monokai t)
 
 ;; line settings
 (global-hl-line-mode 1)
@@ -39,8 +34,8 @@
 
 ;; auto complete
 ;; source: https://youtu.be/HTUE03LnaXA
-(require 'auto-complete)
-(ac-config-default)
+;(require 'auto-complete)
+;(ac-config-default)
 
 ;; ---------------------------------------------- extensions
 (setq auto-mode-alist
@@ -49,106 +44,106 @@
        auto-mode-alist))
 
 ;; ---------------------------------------------- dashboard
-(require 'dashboard)
-(dashboard-setup-startup-hook)
-(setq dashboard-items '((recents  . 5)
-                        (projects . 5)
-                        (agenda . 5)))
+;(require 'dashboard)
+;(dashboard-setup-startup-hook)
+;(setq dashboard-items '((recents  . 5)
+;                        (projects . 5)
+;                        (agenda . 5)))
 
 ;;---------------------------------------------- ruler
 ;; source: https://emacs.stackexchange.com/a/14066
 ;; source: https://emacs.stackexchange.com/a/149
-(defun prog-python-mode ()
-  (setq-default
-   whitespace-line-column 99
-   whitespace-style '(face lines-tail))
-  (require 'py-autopep8)
-  )
-(add-hook 'python-mode-hook #'prog-python-mode)
+;(defun prog-python-mode ()
+;  (setq-default
+;   whitespace-line-column 99
+;   whitespace-style '(face lines-tail))
+;  (require 'py-autopep8)
+;  )
+;(add-hook 'python-mode-hook #'prog-python-mode)
 
 ;; ---------------------------------------------- c/c++
 ;; source: https://stackoverflow.com/a/663636/2338672
 ;; coding standard
-(add-hook 'c-mode-common-hook 'google-set-c-style)
-(add-hook 'c-mode-common-hook 'google-make-newline-indent)
-(c-add-style "cc-style"
-	     '("google"
-	       (c-basic-offset . 2)
-	       (c-offsets-alist
-		(arglist-close . c-lineup-close-paren))))
-(add-hook 'c++-mode-hook
-	  (lambda()
-	    (c-set-style "cc-style")))
+;(add-hook 'c-mode-common-hook 'google-set-c-style)
+;(add-hook 'c-mode-common-hook 'google-make-newline-indent)
+;(c-add-style "cc-style"
+;	     '("google"
+;	       (c-basic-offset . 2)
+;	       (c-offsets-alist
+;		(arglist-close . c-lineup-close-paren))))
+;(add-hook 'c++-mode-hook
+;	  (lambda()
+;	    (c-set-style "cc-style")))
 
 ;; source: https://stackoverflow.com/a/37318957/2338672
-(add-hook 'c-mode-common-hook
-	  (lambda ()
-	    (c-set-offset 'arglist-cont-nonempty '+)))
+;(add-hook 'c-mode-common-hook
+;	  (lambda ()
+;	    (c-set-offset 'arglist-cont-nonempty '+)))
 
 ;; source: https://emacs.stackexchange.com/a/36341/19615
 ;; lsp & company & irony
-(require 'lsp-mode)
-(add-hook 'c++-mode-hook #'lsp)
+;(require 'lsp-mode)
+;(add-hook 'c++-mode-hook #'lsp)
 
 ;; https://www.reddit.com/r/emacs/comments/bbpicg/any_way_to_disable_these_giant_hovering_info/ekkg7vx/?utm_source=reddit&utm_medium=web2x&context=3
-(setq lsp-ui-doc-enable nil)
+;(setq lsp-ui-doc-enable nil)
 
 ;; source: https://youtu.be/XeWZfruRu6k
-(use-package company-lsp
-  :ensure t
-  :config
-  (setq company-idle-delay 0)
-  (setq company-minimum-prefix-length 3))
-(use-package company-irony
-  :ensure t
-  :config
-  (require 'company)
-  (add-to-list 'company-backends 'company-irony))
-(use-package irony
-  :ensure t
-  :config
-  (add-hook 'c++-mode-hook 'irony-mode)
-  (add-hook 'c-mode-hook 'irony-mode)
-  (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options))
-(with-eval-after-load 'company
-  (add-hook 'c++-mode-hook 'company-mode)
-  (add-hook 'c-mode-hook 'company-mode))
+;(use-package company-lsp
+;  :ensure t
+;  :config
+;  (setq company-idle-delay 0)
+;  (setq company-minimum-prefix-length 3))
+;(use-package company-irony
+;  :ensure t
+;  :config
+;  (require 'company)
+;  (add-to-list 'company-backends 'company-irony))
+;(use-package irony
+;  :ensure t
+;  :config
+;  (add-hook 'c++-mode-hook 'irony-mode)
+;  (add-hook 'c-mode-hook 'irony-mode)
+;  (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options))
+;(with-eval-after-load 'company
+;  (add-hook 'c++-mode-hook 'company-mode)
+;  (add-hook 'c-mode-hook 'company-mode))
 
 ;; source: https://stackoverflow.com/a/30964293/2338672
-(add-hook 'c++-mode-hook (lambda () (setq flycheck-clang-language-standard "c++17")))
+;(add-hook 'c++-mode-hook (lambda () (setq flycheck-clang-language-standard "c++17")))
 
 ;; rainbow delimiters
-(add-hook 'c++-mode-hook #'rainbow-delimiters-mode)
-(add-hook 'c-mode-hook #'rainbow-delimiters-mode)
+;(add-hook 'c++-mode-hook #'rainbow-delimiters-mode)
+;(add-hook 'c-mode-hook #'rainbow-delimiters-mode)
 
 ;; gdb
 (setq gud-gdb-command-name (concat "gdb -i=mi " (concat (shell-command-to-string "echo -n `git rev-parse --show-toplevel`") "/build")))
 
 ;; rtags
-(require 'rtags)
-(add-hook 'c-mode-hook 'rtags-start-process-unless-running)
-(add-hook 'c++-mode-hook 'rtags-start-process-unless-running)
+;(require 'rtags)
+;(add-hook 'c-mode-hook 'rtags-start-process-unless-running)
+;(add-hook 'c++-mode-hook 'rtags-start-process-unless-running)
 
 ;; yasnippet
-(require 'yasnippet)
-(yas-global-mode 1)
+;(require 'yasnippet)
+;(yas-global-mode 1)
 
 ;; cmake
 ;;(cmake-ide-setup)
 ;;(set 'gc-cons-threshold 100000000)
 
 ;; ---------------------------------------------- shell
-(use-package flymake-shellcheck
-  :commands flymake-shellcheck-load
-  :init
-  (add-hook 'sh-mode-hook 'flymake-shellcheck-load))
+;(use-package flymake-shellcheck
+;  :commands flymake-shellcheck-load
+;  :init
+;  (add-hook 'sh-mode-hook 'flymake-shellcheck-load))
 
 ;; ---------------------------------------------- ivy
-(require 'ivy-posframe)
-(setq ivy-posframe-display-functions-alist '((t . ivy-posframe-display)))
-(setq ivy-posframe-display-functions-alist '((t . ivy-posframe-display-at-frame-center)))
-(setq ivy-posframe-display-functions-alist '((t . ivy-posframe-display-at-frame-top-center)))
-(ivy-posframe-mode 1)
+;(require 'ivy-posframe)
+;(setq ivy-posframe-display-functions-alist '((t . ivy-posframe-display)))
+;(setq ivy-posframe-display-functions-alist '((t . ivy-posframe-display-at-frame-center)))
+;(setq ivy-posframe-display-functions-alist '((t . ivy-posframe-display-at-frame-top-center)))
+;(ivy-posframe-mode 1)
 
 ;; ---------------------------------------------- ido
 (ido-mode t)
@@ -164,9 +159,9 @@
 			 "tmp/"
 			 "logs/"
 			 "\\`CVS/" "\\`#" "\\`.#" "\\`\\.\\./" "\\`\\./"))
-(require 'ido-vertical-mode)
-(ido-vertical-mode t)
-(setq ido-vertical-show-count t)
+;(require 'ido-vertical-mode)
+;(ido-vertical-mode t)
+;(setq ido-vertical-show-count t)
 
 ;; ---------------------------------------------- dump jump (goto)
 (setq dumb-jump-quiet t)
@@ -237,20 +232,20 @@
 (drag-stuff-global-mode 1)
 
 ;; ---------------------------------------------- helm config
-(require 'helm)
-(helm-mode 1)
-(setq helm-input-idle-delay 0.2)
+;(require 'helm)
+;(helm-mode 1)
+;(setq helm-input-idle-delay 0.2)
 ;; https://tuhdo.github.io/helm-intro.html
-(helm-autoresize-mode 1)
+;(helm-autoresize-mode 1)
 ;; source: https://www.reddit.com/r/emacs/comments/7rho4f/now_you_can_use_helm_with_frames_instead_of/
-(setq helm-display-function 'helm-display-buffer-in-own-frame
-      helm-display-buffer-reuse-frame t
-      helm-use-undecorated-frame-option t)
+;(setq helm-display-function 'helm-display-buffer-in-own-frame
+;      helm-display-buffer-reuse-frame t
+;      helm-use-undecorated-frame-option t)
 
 ;; ---------------------------------------------- flycheck
-(global-flycheck-mode)
+;(global-flycheck-mode)
 ;; source: https://github.com/flycheck/flycheck/issues/378
-(setq-default flycheck-flake8-maximum-line-length 99)
+;(setq-default flycheck-flake8-maximum-line-length 99)
 
 ;; ---------------------------------------------- load files
 (load-file "~/.emacs.d/functions.el")

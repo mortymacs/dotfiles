@@ -10,6 +10,9 @@ cp ~/.tmux.conf tmux/
 cp ~/.emacs ./emacs/
 cp /home/morteza/.emacs.d/{functions.el,keybindings.el,theme.el} emacs/.emacs.d/
 
+# vim
+cp ~/.vimrc ./vim/
+
 # gdb
 cp ~/.gdbinit gdb/
 

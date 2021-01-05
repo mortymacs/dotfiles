@@ -1,6 +1,6 @@
 ## ---------------------------------------------- general
 alias grep="grep -n --color"
-#alias rm="rm -i"
+alias rm="rm -i"
 alias rm="trash"
 alias ls="lsd"
 
@@ -13,7 +13,7 @@ alias cat="bat"
 alias f="fzf --cycle -i --preview 'bat {-1} --color=always'"
 alias rmc="rm -rf CMakeFiles/ Testing/ CMakeCache.txt *.cmake Makefile compile_commands.json *.cbp"
 alias u="yay -Syu"
-alias o="ee \`f\`"
+alias o="vv \`f\`"
 alias diff="ydiff -s --wrap"
 
 ## ---------------------------------------------- python
@@ -24,10 +24,13 @@ alias d="deactivate"
 alias psql="pgcli"
 
 ## ---------------------------------------------- editor
-alias v="vim"
-alias ee="emacsclient -c -nw"
-alias e="emacsclient -c -nw ."
-export EDITOR="emacs -nw -q"
+alias vv="vim"
+alias v="vv ."
+#alias ee="emacsclient -c -nw"
+#alias e="emacsclient -c -nw ."
+alias ee="emacs"
+alias e="ee ."
+export EDITOR="emacs -q"
 
 ## ---------------------------------------------- tmux
 alias t="pwd | rev | cut -f1 -d '/' | rev | xargs tmux new-session -d -s && tmux attach"

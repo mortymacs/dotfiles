@@ -1,8 +1,5 @@
 # ---------------------------------------------- general
-set substitute-path /build/glibc-4WA41p/glibc-2.30/ /opt/src/glibc-2.30/
-
-# ---------------------------------------------- source
-source ~/Workspace/oss/dotfiles/gdb/.gdbinit-dashboard
+#set substitute-path /build/glibc-4WA41p/glibc-2.30/ /opt/src/glibc-2.30/
 
 # ---------------------------------------------- layout
 dashboard -layout source breakpoints history memory stack threads variables
