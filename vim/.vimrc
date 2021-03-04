@@ -5,8 +5,11 @@ set mouse-=a
 set number
 set cursorline
 set nocompatible             " be iMproved, required
-set termguicolors     " enable true colors support
+set termguicolors            " enable true colors support
 set nowrap
+"" source: https://stackoverflow.com/a/11560415/2338672
+set backspace=2
+set updatetime=500
 
 " package management
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -20,18 +23,35 @@ Plugin 'preservim/tagbar'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'ayu-theme/ayu-vim'
+Plugin 'bluz71/vim-nightfly-guicolors'
+""Plugin 'ayu-theme/ayu-vim'
 Plugin 'tpope/vim-surround'
+Plugin 'mileszs/ack.vim'
 Plugin 'KabbAmine/zeavim.vim'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'MattesGroeger/vim-bookmarks'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
 " theme
-let ayucolor="dark"   " for dark version of theme
-colorscheme ayu
-
+colorscheme nightfly
+""let ayucolor="dark"   " for dark version of theme
+""colorscheme ayu
 "" source: https://stackoverflow.com/a/60643538/2338672
 highlight VertSplit cterm=NONE
+"" source: https://stackoverflow.com/a/37720708
+highlight Normal guibg=NONE ctermbg=NONE
+"" source: https://stackoverflow.com/a/17506351/2338672
+set fillchars+=vert:\|
+hi vertsplit guifg=NONE guibg=NONE
+"" powerline
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = ' '
+let g:airline_powerline_fonts = 0
+let g:airline_left_sep = ' '
+let g:airline_right_sep = ' '
+let g:airline_left_alt_sep = ' '
+let g:airline_right_alt_sep = ' '
 
 " coc.vim
 "" source: https://github.com/neoclide/coc.nvim/issues/318#issuecomment-451331078
@@ -95,10 +115,12 @@ au FileType gitcommit set tw=72
 " text
 ""source: https://stackoverflow.com/a/63887462/2338672
 nnoremap <s-m-down> :m .+1<CR>==
-nnoremap <s-m-up> :m .-2<CR>==
+nnoremap <s-m-up>   :m .-2<CR>==
 inoremap <s-m-down> <Esc>:m .+1<CR>==gi
-inoremap <s-m-up> <Esc>:m .-2<CR>==gi
+inoremap <s-m-up>   <Esc>:m .-2<CR>==gi
 vnoremap <s-m-down> :m '>+1<CR>gv=gv
-vnoremap <s-m-up> :m '<-2<CR>gv=gv
+vnoremap <s-m-up>   :m '<-2<CR>gv=gv
 ""code
 nmap <c-c><c-h> <Plug>Zeavim
+""source: https://vim.fandom.com/wiki/Fix_indentation
+map <c-c><c-r> gg=G<C-o><C-o>

@@ -1,5 +1,7 @@
 ## ---------------------------------------------- general
 alias grep="grep -n --color"
+# source: https://github.com/beyondgrep/ack2/issues/28#issuecomment-276645667
+alias gg="git ls-files -oc --exclude-standard | ack -x"
 alias rm="rm -i"
 alias rm="trash"
 alias ls="lsd"
@@ -15,10 +17,14 @@ alias rmc="rm -rf CMakeFiles/ Testing/ CMakeCache.txt *.cmake Makefile compile_c
 alias u="yay -Syu"
 alias o="vv \`f\`"
 alias diff="ydiff -s --wrap"
+alias ms="minikube start --vm-driver kvm2"
+## --------------------------------------------- server
+alias s="ssh mort@159.65.192.108"
 
 ## ---------------------------------------------- python
 alias a="source ./venv/bin/activate"
 alias d="deactivate"
+alias cb="xclip -selection clipboard"
 
 ## ---------------------------------------------- db
 alias psql="pgcli"

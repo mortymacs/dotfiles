@@ -11,7 +11,7 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 source $HOME/.zsh_aliases
 #source $HOME/.local/bin/forgit.plugin.zsh
-export PATH=$PATH:/home/mort/.gem/ruby/2.7.0/bin/:/home/morteza/.local/bin
+export PATH=$PATH:/home/mort/.gem/ruby/2.7.0/bin/:/home/mort/.local/bin
 
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
@@ -40,6 +40,7 @@ bindkey '^[[B' history-substring-search-down
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+autoload ztodo
 source /home/mort/.config/broot/launcher/bash/br
 
 export GOPATH="$HOME/.local/share/go"

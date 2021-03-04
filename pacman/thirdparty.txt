@@ -1,4 +1,7 @@
 anydesk-bin
+czmq-git
+dive
+docker-machine-driver-kvm2
 dry-bin
 duf
 git-extras
@@ -6,6 +9,8 @@ hotspot
 insomnia-bin
 jekyll
 jid
+kafka
+kubespy
 mtodo
 nvm
 peco
@@ -13,6 +18,7 @@ shc
 skypeforlinux-stable-bin
 slack-desktop
 spotify
+ttf-recursive
 typora
 yaru-gnome-shell-theme
 yaru-gtk-theme
