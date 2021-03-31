@@ -7,11 +7,11 @@ duf
 git-extras
 hotspot
 insomnia-bin
-jekyll
 jid
 kafka
 kubespy
 mtodo
+nats-server
 nvm
 peco
 shc

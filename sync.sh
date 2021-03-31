@@ -31,4 +31,7 @@ pacman -Qqem > pacman/thirdparty.txt
 
 # dconf
 #dconf dump /org/gnome/terminal/legacy/profiles:/ > dconf/gnome-terminal.dump
-cp ~/.config/alacritty/alacritty.yml alacritty/
+#cp ~/.config/alacritty/alacritty.yml alacritty/
+
+# docker
+cp ~/.docker/config.json docker/

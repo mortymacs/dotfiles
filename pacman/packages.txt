@@ -103,6 +103,7 @@ gnome-video-effects
 gnome-weather
 go
 gopls
+gparted
 gperf
 gperftools
 gpick
@@ -111,6 +112,7 @@ graphviz
 grep
 grilo-plugins
 groff
+groovy
 grpc
 gtest
 guake
@@ -151,6 +153,7 @@ lxd
 m4
 make
 man-db
+mariadb-clients
 massif-visualizer
 maven
 meld
@@ -233,6 +236,7 @@ tracker3
 tracker3-miners
 trash-cli
 tree
+ttf-cascadia-code
 ttf-droid
 ttf-fira-mono
 ttf-hack
