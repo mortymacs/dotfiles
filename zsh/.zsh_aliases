@@ -18,13 +18,14 @@ alias u="yay -Syu && vim -c PluginUpdate -c :q -c :q"
 alias o="vv \`f\`"
 alias diff="ydiff -s --wrap"
 alias ms="minikube start --vm-driver kvm2"
+alias cb="xclip -selection clipboard"
 ## --------------------------------------------- server
 alias s="ssh mort@159.65.192.108"
 
 ## ---------------------------------------------- python
 alias a="source ./venv/bin/activate"
 alias d="deactivate"
-alias cb="xclip -selection clipboard"
+alias ipy="ipython --no-term-title --no-confirm-exit --no-banner --no-simple-prompt"
 
 ## ---------------------------------------------- db
 alias psql="pgcli"

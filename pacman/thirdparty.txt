@@ -18,7 +18,6 @@ shc
 skypeforlinux-stable-bin
 slack-desktop
 spotify
-ttf-recursive
 typora
 yaru-gnome-shell-theme
 yaru-gtk-theme
