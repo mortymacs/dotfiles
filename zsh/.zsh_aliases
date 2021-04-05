@@ -14,7 +14,7 @@ alias cat="bat"
 # source: https://medium.com/@GroundControl/better-git-diffs-with-fzf-89083739a9cb
 alias f="fzf --cycle -i --preview 'bat {-1} --color=always'"
 alias rmc="rm -rf CMakeFiles/ Testing/ CMakeCache.txt *.cmake Makefile compile_commands.json *.cbp"
-alias u="yay -Syu && vim -c PluginUpdate -c :q -c :q"
+alias u="yay -Syu && vim -c PluginUpdate +quitall && vim -c :CocUpdateSync +quitall"
 alias o="vv \`f\`"
 alias diff="ydiff -s --wrap"
 alias ms="minikube start --vm-driver kvm2"

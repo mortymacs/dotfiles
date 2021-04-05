@@ -221,6 +221,7 @@ step-cli
 sublime-text
 sudo
 sushi
+sysbench
 systemd-resolvconf
 tailscale
 terraform
