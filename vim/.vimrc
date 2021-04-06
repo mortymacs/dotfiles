@@ -24,19 +24,17 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'bluz71/vim-nightfly-guicolors'
-""Plugin 'ayu-theme/ayu-vim'
 Plugin 'tpope/vim-surround'
 Plugin 'mileszs/ack.vim'
 Plugin 'KabbAmine/zeavim.vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'MattesGroeger/vim-bookmarks'
+Plugin 'stsewd/sphinx.nvim', { 'do': ':UpdateRemotePlugins' }
 call vundle#end()            " required
 filetype plugin indent on    " required
 
 " theme
 colorscheme nightfly
-""let ayucolor="dark"   " for dark version of theme
-""colorscheme ayu
 "" source: https://stackoverflow.com/a/60643538/2338672
 highlight VertSplit cterm=NONE
 "" source: https://stackoverflow.com/a/37720708
@@ -124,3 +122,4 @@ vnoremap <s-m-up>   :m '<-2<CR>gv=gv
 nmap <c-c><c-h> <Plug>Zeavim
 ""source: https://vim.fandom.com/wiki/Fix_indentation
 map <c-c><c-r> gg=G<C-o><C-o>
+

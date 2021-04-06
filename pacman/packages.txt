@@ -50,6 +50,7 @@ file-roller
 findutils
 firefox
 flake8
+flameshot
 flex
 fmt
 fzf
@@ -195,6 +196,7 @@ python-pytest
 python-pytz
 python-requests-oauthlib
 python-rich
+python-sphinx
 python-vmprof
 qemu-arch-extra
 qemu-block-gluster
@@ -250,7 +252,6 @@ vino
 virtualbox
 virtualbox-guest-utils
 vlc
-warzone2100
 which
 wireguard-dkms
 wireguard-tools
