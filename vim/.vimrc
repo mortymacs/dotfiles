@@ -30,18 +30,21 @@ Plugin 'KabbAmine/zeavim.vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'MattesGroeger/vim-bookmarks'
 Plugin 'stsewd/sphinx.nvim', { 'do': ':UpdateRemotePlugins' }
+Plugin 'patstockwell/vim-monokai-tasty'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
 " theme
-colorscheme nightfly
+"colorscheme nightfly
+"let g:vim_monokai_tasty_italic = 1
+colorscheme vim-monokai-tasty
 "" source: https://stackoverflow.com/a/60643538/2338672
-highlight VertSplit cterm=NONE
+"highlight VertSplit cterm=NONE
 "" source: https://stackoverflow.com/a/37720708
 highlight Normal guibg=NONE ctermbg=NONE
 "" source: https://stackoverflow.com/a/17506351/2338672
-set fillchars+=vert:\|
-hi vertsplit guifg=NONE guibg=NONE
+"set fillchars+=vert:\|
+"hi vertsplit guifg=NONE guibg=NONE
 "" powerline
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = ' '
