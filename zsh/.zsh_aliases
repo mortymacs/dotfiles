@@ -21,7 +21,7 @@ alias ms="minikube start --vm-driver kvm2"
 alias cb="xclip -selection clipboard"
 ## --------------------------------------------- server
 alias s="ssh mort@159.65.192.108"
-
+alias ap="ps aux | peco"
 ## ---------------------------------------------- python
 alias a="source ./venv/bin/activate"
 alias d="deactivate"
