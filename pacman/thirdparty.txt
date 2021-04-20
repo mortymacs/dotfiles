@@ -5,11 +5,13 @@ docker-machine-driver-kvm2
 dry-bin
 duf
 git-extras
+gnome-getting-started-docs
 hotspot
 insomnia-bin
 jid
 kafka
 kubespy
+mattermost-desktop
 mtodo
 nats-server
 nvm

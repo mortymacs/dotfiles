@@ -79,7 +79,6 @@ gnome-control-center
 gnome-disk-utility
 gnome-documents
 gnome-font-viewer
-gnome-getting-started-docs
 gnome-keyring
 gnome-logs
 gnome-maps
@@ -116,7 +115,6 @@ groff
 groovy
 grpc
 gtest
-guake
 gvfs
 gvfs-afc
 gvfs-goa

@@ -35,16 +35,12 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 " theme
-"colorscheme nightfly
-"let g:vim_monokai_tasty_italic = 1
 colorscheme vim-monokai-tasty
 "" source: https://stackoverflow.com/a/60643538/2338672
-"highlight VertSplit cterm=NONE
+highlight VertSplit cterm=NONE ctermbg=NONE guifg=NONE guibg=NONE
 "" source: https://stackoverflow.com/a/37720708
 highlight Normal guibg=NONE ctermbg=NONE
-"" source: https://stackoverflow.com/a/17506351/2338672
-"set fillchars+=vert:\|
-"hi vertsplit guifg=NONE guibg=NONE
+
 "" powerline
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = ' '
@@ -69,6 +65,7 @@ set complete+=s
 " fzf
 nmap <c-x><c-f> :Files<cr>
 nmap <c-x><c-t> :Tags<cr>
+nmap <c-x><c-b> :Buffers<cr>
 
 " nerdtree
 map <c-x><c-\> :NERDTreeToggle<cr>
