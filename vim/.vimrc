@@ -76,6 +76,23 @@ let g:nerdtree_tabs_focus_on_files=1
 nmap <c-x><c-i> :TagbarToggle<cr>
 
 " window
+"" https://vim.fandom.com/wiki/Maximize_window_and_return_to_previous_split_structure
+function! MaximizeWindowToggle()
+  if exists("s:maximize_session")
+    exec "source " . s:maximize_session
+    call delete(s:maximize_session)
+    unlet s:maximize_session
+    let &hidden=s:maximize_hidden_save
+    unlet s:maximize_hidden_save
+  else
+    let s:maximize_hidden_save = &hidden
+    let s:maximize_session = tempname()
+    set hidden
+    exec "mksession! " . s:maximize_session
+    only
+  endif
+endfunction
+nmap <c-x><c-m> :call MaximizeWindowToggle()<cr>
 nmap <c-x><c-v> :vsplit<cr>
 nmap <c-x><c-h> :split<cr>
 nmap <c-x><c-c> :close<cr>

@@ -32,6 +32,7 @@ dconf-editor
 dia
 dialog
 diff-so-fancy
+discord
 docker
 docker-compose
 docker-machine
@@ -140,6 +141,7 @@ k9s
 kcachegrind
 krita
 kubectl
+kubectx
 libev
 libtool
 linux
@@ -163,7 +165,6 @@ mutter
 mypy
 namcap
 nautilus
-neovim
 net-tools
 network-manager-applet
 networkmanager

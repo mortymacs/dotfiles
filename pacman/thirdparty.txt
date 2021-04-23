@@ -11,6 +11,7 @@ insomnia-bin
 jid
 kafka
 kubespy
+mailspring
 mattermost-desktop
 mtodo
 nats-server
