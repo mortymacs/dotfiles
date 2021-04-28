@@ -5,7 +5,7 @@ docker-machine-driver-kvm2
 dry-bin
 duf
 git-extras
-gnome-getting-started-docs
+google-cloud-cpp
 hotspot
 insomnia-bin
 jid

@@ -23,25 +23,22 @@ Plugin 'preservim/tagbar'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'bluz71/vim-nightfly-guicolors'
+Plugin 'haishanh/night-owl.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'mileszs/ack.vim'
 Plugin 'KabbAmine/zeavim.vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'MattesGroeger/vim-bookmarks'
 Plugin 'stsewd/sphinx.nvim', { 'do': ':UpdateRemotePlugins' }
-Plugin 'patstockwell/vim-monokai-tasty'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
 " theme
-colorscheme vim-monokai-tasty
+colorscheme night-owl
 "" source: https://stackoverflow.com/a/60643538/2338672
 highlight VertSplit cterm=NONE ctermbg=NONE guifg=NONE guibg=NONE
-"" source: https://stackoverflow.com/a/37720708
-highlight Normal guibg=NONE ctermbg=NONE
 
-"" powerline
+" powerline
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = ' '
 let g:airline_powerline_fonts = 0
@@ -54,7 +51,7 @@ let g:airline_right_alt_sep = ' '
 "" source: https://github.com/neoclide/coc.nvim/issues/318#issuecomment-451331078
 nmap <c-c><c-d> :call CocActionAsync('jumpDefinition')<cr>
 nnoremap <c-c><c-e> <c-o>
-"" code indent
+" code indent
 """ source: https://github.com/jelly/Dotfiles/blob/master/.vimrc
 autocmd FileType python set expandtab shiftwidth=4 softtabstop=4
 set cindent
@@ -135,8 +132,9 @@ inoremap <s-m-down> <Esc>:m .+1<CR>==gi
 inoremap <s-m-up>   <Esc>:m .-2<CR>==gi
 vnoremap <s-m-down> :m '>+1<CR>gv=gv
 vnoremap <s-m-up>   :m '<-2<CR>gv=gv
-""code
+"code
 nmap <c-c><c-h> <Plug>Zeavim
 ""source: https://vim.fandom.com/wiki/Fix_indentation
 map <c-c><c-r> gg=G<C-o><C-o>
-
+"" https://unix.stackexchange.com/a/75431/204066
+autocmd BufWritePre * :%s/\s\+$//e
