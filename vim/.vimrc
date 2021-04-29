@@ -29,6 +29,8 @@ Plugin 'mileszs/ack.vim'
 Plugin 'KabbAmine/zeavim.vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'MattesGroeger/vim-bookmarks'
+Plugin 'fisadev/vim-isort'
+Plugin 'psf/black'
 Plugin 'stsewd/sphinx.nvim', { 'do': ':UpdateRemotePlugins' }
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -107,8 +109,8 @@ nmap <c-x><c-e> :bd<cr>
 
 " clipboard
 "" https://superuser.com/a/921975
-vmap <c-c><c-c> y:call system("xclip -i -selection clipboard", getreg("\""))<CR>:call system("xclip -i", getreg("\""))<CR>
-nmap <c-c><c-v> :call setreg("\"",system("xclip -o -selection clipboard"))<CR>p
+vmap <c-c><c-c> y:call system("xclip -i -selection clipboard", getreg("\""))<cr>:call system("xclip -i", getreg("\""))<cr>
+nmap <c-c><c-v> :call setreg("\"",system("xclip -o -selection clipboard"))<cr>p
 
 " tabbar
 let g:airline#extensions#tabline#enabled = 1
@@ -131,15 +133,24 @@ au FileType gitcommit set tw=72
 
 " text
 ""source: https://stackoverflow.com/a/63887462/2338672
-nnoremap <s-m-down> :m .+1<CR>==
-nnoremap <s-m-up>   :m .-2<CR>==
-inoremap <s-m-down> <Esc>:m .+1<CR>==gi
-inoremap <s-m-up>   <Esc>:m .-2<CR>==gi
-vnoremap <s-m-down> :m '>+1<CR>gv=gv
-vnoremap <s-m-up>   :m '<-2<CR>gv=gv
-"code
-nmap <c-c><c-h> <Plug>Zeavim
+nnoremap <s-m-down> :m .+1<cr>==
+nnoremap <s-m-up>   :m .-2<cr>==
+inoremap <s-m-down> <esc>:m .+1<cr>==gi
+inoremap <s-m-up>   <esc>:m .-2<cr>==gi
+vnoremap <s-m-down> :m '>+1<cr>gv=gv
+vnoremap <s-m-up>   :m '<-2<cr>gv=gv
+
+" code
+nmap <c-c><c-h> <plug>Zeavim
 ""source: https://vim.fandom.com/wiki/Fix_indentation
-map <c-c><c-r> gg=G<C-o><C-o>
+map <c-c><c-r> gg=G<c-o><c-o>
 "" https://unix.stackexchange.com/a/75431/204066
 autocmd BufWritePre * :%s/\s\+$//e
+
+" python - isort
+let g:vim_isort_map = ''
+nmap <c-c><c-i> :Isort<cr>
+" python - black
+nmap <c-c><c-r> :Black<cr>
+"" https://github.com/psf/black/issues/252#issuecomment-392132433
+autocmd BufWritePost *.py execute ':Black'
