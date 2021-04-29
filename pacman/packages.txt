@@ -187,10 +187,12 @@ prometheus
 pyenv
 python-dask
 python-distributed
+python-isort
 python-kivy
 python-kubernetes
 python-lxml
 python-memory-profiler
+python-pudb
 python-pytest
 python-pytz
 python-requests-oauthlib

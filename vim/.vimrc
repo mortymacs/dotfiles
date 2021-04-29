@@ -105,6 +105,11 @@ map <c-s-right> :vertical resize -1<cr>
 " buffer
 nmap <c-x><c-e> :bd<cr>
 
+" clipboard
+"" https://superuser.com/a/921975
+vmap <c-c><c-c> y:call system("xclip -i -selection clipboard", getreg("\""))<CR>:call system("xclip -i", getreg("\""))<CR>
+nmap <c-c><c-v> :call setreg("\"",system("xclip -o -selection clipboard"))<CR>p
+
 " tabbar
 let g:airline#extensions#tabline#enabled = 1
 "" https://github.com/vim-airline/vim-airline/issues/1688#issuecomment-373459776
@@ -118,7 +123,7 @@ nmap <c-x><c-q> :q<cr>
 
 " git
 nmap <c-g><c-d> <plug>(GitGutterPreviewHunk)
-nmap <c-g><c-u> <plug>(GitGutterUndoHunk)                                                                                                                                                  
+nmap <c-g><c-u> <plug>(GitGutterUndoHunk)
 nmap <c-g><c-l> <plug>(GitGutterStageHunk)
 " source: https://github.com/longsleep/bin-scripts/blob/master/config/vimrc
 " auto wrap git commit messages
