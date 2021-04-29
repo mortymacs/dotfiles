@@ -37,8 +37,10 @@ filetype plugin indent on    " required
 
 " theme
 colorscheme night-owl
-"" source: https://stackoverflow.com/a/60643538/2338672
+"" https://stackoverflow.com/a/60643538/2338672
 highlight VertSplit cterm=NONE ctermbg=NONE guifg=NONE guibg=NONE
+"" https://stackoverflow.com/a/15648665/2338672
+set cmdheight=1
 
 " powerline
 let g:airline#extensions#tabline#left_sep = ' '
@@ -152,5 +154,4 @@ let g:vim_isort_map = ''
 nmap <c-c><c-i> :Isort<cr>
 " python - black
 nmap <c-c><c-r> :Black<cr>
-"" https://github.com/psf/black/issues/252#issuecomment-392132433
-autocmd BufWritePost *.py execute ':Black'
+autocmd BufWritePre *.py execute ':Black'
