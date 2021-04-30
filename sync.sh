@@ -7,8 +7,8 @@ cp ~/{.zshrc,.zsh_aliases,.p10k.zsh} zsh/
 cp ~/.tmux.conf tmux/
 
 # emacs
-cp ~/.emacs ./emacs/
-cp /home/morteza/.emacs.d/{functions.el,keybindings.el,theme.el} emacs/.emacs.d/
+#cp ~/.emacs ./emacs/
+#cp /home/morteza/.emacs.d/{functions.el,keybindings.el,theme.el} emacs/.emacs.d/
 
 # vim
 cp ~/.vimrc ./vim/

@@ -23,7 +23,7 @@ Plugin 'preservim/tagbar'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'haishanh/night-owl.vim'
+Plugin 'bluz71/vim-nightfly-guicolors'
 Plugin 'tpope/vim-surround'
 Plugin 'mileszs/ack.vim'
 Plugin 'KabbAmine/zeavim.vim'
@@ -36,7 +36,7 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 " theme
-colorscheme night-owl
+colorscheme nightfly
 "" https://stackoverflow.com/a/60643538/2338672
 highlight VertSplit cterm=NONE ctermbg=NONE guifg=NONE guibg=NONE
 "" https://stackoverflow.com/a/15648665/2338672
