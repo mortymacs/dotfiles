@@ -186,6 +186,7 @@ prettyping
 prometheus
 pyenv
 python-black
+python-cherrypy
 python-dask
 python-distributed
 python-isort
@@ -211,6 +212,7 @@ rsibreak
 rust
 rust-bindgen
 rygel
+salt
 scour
 screen
 sed
@@ -248,10 +250,12 @@ ttf-hack
 ttf-jetbrains-mono
 ttf-nerd-fonts-symbols-mono
 ttf-ubuntu-font-family
+vagrant
 valgrind
 vim
 vino
 virtualbox
+virtualbox-guest-iso
 virtualbox-guest-utils
 vlc
 which

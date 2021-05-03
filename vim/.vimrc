@@ -39,6 +39,8 @@ filetype plugin indent on    " required
 colorscheme nightfly
 "" https://stackoverflow.com/a/60643538/2338672
 highlight VertSplit cterm=NONE ctermbg=NONE guifg=NONE guibg=NONE
+"" https://www.reddit.com/r/vim/comments/elwner/disable_background_colour/fdkrfjc?utm_source=share&utm_medium=web2x&context=3
+highlight Normal guibg=NONE ctermbg=NONE
 "" https://stackoverflow.com/a/15648665/2338672
 set cmdheight=1
 
