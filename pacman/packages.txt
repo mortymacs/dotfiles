@@ -163,6 +163,7 @@ minikube
 mtr
 mutter
 mypy
+mysql-workbench
 namcap
 nautilus
 net-tools
@@ -195,6 +196,7 @@ python-kubernetes
 python-lxml
 python-memory-profiler
 python-pudb
+python-pylint
 python-pytest
 python-pytz
 python-requests-oauthlib

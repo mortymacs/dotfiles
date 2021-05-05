@@ -23,7 +23,7 @@ Plugin 'preservim/tagbar'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'bluz71/vim-nightfly-guicolors'
+Plugin 'ayu-theme/ayu-vim'
 Plugin 'tpope/vim-surround'
 Plugin 'mileszs/ack.vim'
 Plugin 'KabbAmine/zeavim.vim'
@@ -36,11 +36,9 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 " theme
-colorscheme nightfly
-"" https://stackoverflow.com/a/60643538/2338672
-highlight VertSplit cterm=NONE ctermbg=NONE guifg=NONE guibg=NONE
-"" https://www.reddit.com/r/vim/comments/elwner/disable_background_colour/fdkrfjc?utm_source=share&utm_medium=web2x&context=3
-highlight Normal guibg=NONE ctermbg=NONE
+set termguicolors     " enable true colors support
+let ayucolor="dark"   " for dark version of theme
+colorscheme ayu
 "" https://stackoverflow.com/a/15648665/2338672
 set cmdheight=1
 
@@ -71,9 +69,11 @@ nmap <c-x><c-t> :Tags<cr>
 nmap <c-x><c-b> :Buffers<cr>
 
 " nerdtree
-map <c-x><c-\> :NERDTreeToggle<cr>
+map <c-x><c-l> :NERDTreeToggle<cr>
 let g:NERDTreeIgnore=['\.pyc$', '\~$', 'venv', '.git', '__pycache__', '.tags']
 let g:nerdtree_tabs_focus_on_files=1
+"" https://stackoverflow.com/a/60465641/2338672
+let NERDTreeCustomOpenArgs={'file':{'where': 't'}}
 
 " tagbar
 nmap <c-x><c-i> :TagbarToggle<cr>
@@ -154,6 +154,7 @@ autocmd BufWritePre * :%s/\s\+$//e
 " python - isort
 let g:vim_isort_map = ''
 nmap <c-c><c-i> :Isort<cr>
+autocmd BufWritePre *.py execute ':Isort'
 " python - black
 nmap <c-c><c-r> :Black<cr>
 autocmd BufWritePre *.py execute ':Black'
