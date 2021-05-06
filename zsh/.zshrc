@@ -55,3 +55,6 @@ export TERM="xterm-256color"
 # source: https://unix.stackexchange.com/a/177979
 export EDITOR=vim
 export VISUAL=vim
+
+# python
+export PYTHONBREAKPOINT="ipdb.set_trace"
