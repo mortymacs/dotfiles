@@ -13,8 +13,9 @@ cp ~/.tmux.conf tmux/
 # vim
 cp ~/.vimrc ./vim/
 
-# gdb
+# gdb, pdb
 cp ~/.gdbinit gdb/
+cp ~/.pdbrc pdb/
 
 # git
 cp ~/{.gitconfig,.gitignore} git/

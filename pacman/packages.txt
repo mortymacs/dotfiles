@@ -190,6 +190,7 @@ python-black
 python-cherrypy
 python-dask
 python-distributed
+python-ipdb
 python-isort
 python-kivy
 python-kubernetes
