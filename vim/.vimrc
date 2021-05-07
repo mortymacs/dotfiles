@@ -10,6 +10,7 @@ set nowrap
 "" source: https://stackoverflow.com/a/11560415/2338672
 set backspace=2
 set updatetime=500
+filetype plugin on
 
 " package management
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -29,6 +30,7 @@ Plugin 'mileszs/ack.vim'
 Plugin 'KabbAmine/zeavim.vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'MattesGroeger/vim-bookmarks'
+Plugin 'preservim/nerdcommenter'
 Plugin 'fisadev/vim-isort'
 Plugin 'psf/black'
 Plugin 'stsewd/sphinx.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -150,6 +152,9 @@ nmap <c-c><c-h> <plug>Zeavim
 map <c-c><c-r> gg=G<c-o><c-o>
 "" https://unix.stackexchange.com/a/75431/204066
 autocmd BufWritePre * :%s/\s\+$//e
+nnoremap <c-c><c-s> :call NERDComment('cc', 'toggle')<cr>
+inoremap <c-c><c-s> :call NERDComment('cc', 'toggle')<cr>
+vnoremap <c-c><c-s> :call NERDComment('cc', 'toggle')<cr>
 
 " python - isort
 let g:vim_isort_map = ''

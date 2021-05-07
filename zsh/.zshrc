@@ -57,4 +57,4 @@ export EDITOR=vim
 export VISUAL=vim
 
 # python
-export PYTHONBREAKPOINT="ipdb.set_trace"
+#export PYTHONBREAKPOINT="ipdb.set_trace"
