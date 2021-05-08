@@ -37,6 +37,14 @@ Plugin 'stsewd/sphinx.nvim', { 'do': ':UpdateRemotePlugins' }
 call vundle#end()            " required
 filetype plugin indent on    " required
 
+" https://stackoverflow.com/a/43595915/2338672
+" https://stackoverflow.com/a/13854888/2338672
+function! MapKeys(keys, rhs)
+    for map_command in ['map', 'map!']
+        execute map_command . a:keys '<esc>' . a:rhs
+    endfor
+endfunction
+
 " theme
 set termguicolors     " enable true colors support
 let ayucolor="dark"   " for dark version of theme
@@ -55,8 +63,9 @@ let g:airline_right_alt_sep = ' '
 
 " coc.vim
 "" source: https://github.com/neoclide/coc.nvim/issues/318#issuecomment-451331078
-nmap <c-c><c-d> :call CocActionAsync('jumpDefinition')<cr>
-nnoremap <c-c><c-e> <c-o>
+call MapKeys("<c-c><c-d>", ":call CocActionAsync('jumpDefinition')<cr>")
+call MapKeys("<c-c><c-e>", "<c-o>")
+
 " code indent
 """ source: https://github.com/jelly/Dotfiles/blob/master/.vimrc
 autocmd FileType python set expandtab shiftwidth=4 softtabstop=4
@@ -66,19 +75,19 @@ set autoindent
 set complete+=s
 
 " fzf
-nmap <c-x><c-f> :Files<cr>
-nmap <c-x><c-t> :Tags<cr>
-nmap <c-x><c-b> :Buffers<cr>
+call MapKeys("<c-x><c-f>", ":Files<cr>")
+call MapKeys("<c-x><c-t>", ":Tags<cr>")
+call MapKeys("<c-x><c-b>", ":Buffers<cr>")
 
 " nerdtree
-map <c-x><c-l> :NERDTreeToggle<cr>
+call MapKeys("<c-x><c-l>", ":NERDTreeToggle<cr>")
 let g:NERDTreeIgnore=['\.pyc$', '\~$', 'venv', '.git', '__pycache__', '.tags']
 let g:nerdtree_tabs_focus_on_files=1
 "" https://stackoverflow.com/a/60465641/2338672
 let NERDTreeCustomOpenArgs={'file':{'where': 't'}}
 
 " tagbar
-nmap <c-x><c-i> :TagbarToggle<cr>
+call MapKeys("<c-x><c-i>", ":TagbarToggle<cr>")
 
 " window
 "" https://vim.fandom.com/wiki/Maximize_window_and_return_to_previous_split_structure
@@ -97,21 +106,21 @@ function! MaximizeWindowToggle()
     only
   endif
 endfunction
-nmap <c-x><c-m> :call MaximizeWindowToggle()<cr>
-nmap <c-x><c-v> :vsplit<cr>
-nmap <c-x><c-h> :split<cr>
-nmap <c-x><c-c> :close<cr>
-nnoremap <m-up>    <c-w><c-k>
-nnoremap <m-down>  <c-w><c-j>
-nnoremap <m-left>  <c-w><c-h>
-nnoremap <m-right> <c-w><c-l>
-map <c-s-up>    :resize -1<cr>
-map <c-s-down>  :resize +1<cr>
-map <c-s-left>  :vertical resize +1<cr>
-map <c-s-right> :vertical resize -1<cr>
+call MapKeys("<c-x><c-m>", ":call MaximizeWindowToggle()<cr>")
+call MapKeys("<c-x><c-v>", ":vsplit<cr>")
+call MapKeys("<c-x><c-h>", ":split<cr>")
+call MapKeys("<c-x><c-c>", ":close<cr>")
+call MapKeys("<m-up>", "<c-w><c-k>")
+call MapKeys("<m-down>", "<c-w><c-j>")
+call MapKeys("<m-left>", "<c-w><c-h>")
+call MapKeys("<m-right>", "<c-w><c-l>")
+call MapKeys("<c-s-up>", ":resize -1<cr>")
+call MapKeys("<c-s-down>", ":resize +1<cr>")
+call MapKeys("<c-s-left>", ":vertical resize +1<cr>")
+call MapKeys("<c-s-right>", ":vertical resize -1<cr>")
 
 " buffer
-nmap <c-x><c-e> :bd<cr>
+call MapKeys("<c-x><c-e>", ":bd<cr>")
 
 " clipboard
 "" https://superuser.com/a/921975
@@ -122,17 +131,17 @@ nmap <c-c><c-v> :call setreg("\"",system("xclip -o -selection clipboard"))<cr>p
 let g:airline#extensions#tabline#enabled = 1
 "" https://github.com/vim-airline/vim-airline/issues/1688#issuecomment-373459776
 let g:airline_powerline_fonts = 1
-map <s-right> :tabnext<cr>
-map <s-left>  :tabprevious<cr>
+call MapKeys("<s-right>", ":tabnext<cr>")
+call MapKeys("<s-left>", ":tabprevious<cr>")
 
 " general
-nmap <c-x><c-s> :w<cr>
-nmap <c-x><c-q> :q<cr>
+call MapKeys("<c-x><c-s>", ":w<cr>")
+call MapKeys("<c-x><c-q>", ":q<cr>")
 
 " git
-nmap <c-g><c-d> <plug>(GitGutterPreviewHunk)
-nmap <c-g><c-u> <plug>(GitGutterUndoHunk)
-nmap <c-g><c-l> <plug>(GitGutterStageHunk)
+call MapKeys("<c-g><c-d>", "<plug>(GitGutterPreviewHunk)")
+call MapKeys("<c-g><c-u>", "<plug>(GitGutterUndoHunk)")
+call MapKeys("<c-g><c-l>", "<plug>(GitGutterStageHunk)")
 " source: https://github.com/longsleep/bin-scripts/blob/master/config/vimrc
 " auto wrap git commit messages
 au FileType gitcommit set tw=72
@@ -147,9 +156,9 @@ vnoremap <s-m-down> :m '>+1<cr>gv=gv
 vnoremap <s-m-up>   :m '<-2<cr>gv=gv
 
 " code
-nmap <c-c><c-h> <plug>Zeavim
+call MapKeys("<c-c><c-h>", "<plug>Zeavim")
 ""source: https://vim.fandom.com/wiki/Fix_indentation
-map <c-c><c-r> gg=G<c-o><c-o>
+call MapKeys("<c-c><c-r>", "gg=G<c-o><c-o>")
 "" https://unix.stackexchange.com/a/75431/204066
 autocmd BufWritePre * :%s/\s\+$//e
 nnoremap <c-c><c-s> :call NERDComment('cc', 'toggle')<cr>
@@ -158,8 +167,8 @@ vnoremap <c-c><c-s> :call NERDComment('cc', 'toggle')<cr>
 
 " python - isort
 let g:vim_isort_map = ''
-nmap <c-c><c-i> :Isort<cr>
+call MapKeys("<c-c><c-i>", ":Isort<cr>")
 autocmd BufWritePre *.py execute ':Isort'
 " python - black
-nmap <c-c><c-r> :Black<cr>
+call MapKeys("<c-c><c-r>", ":Black<cr>")
 autocmd BufWritePre *.py execute ':Black'
