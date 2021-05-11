@@ -1,4 +1,5 @@
 anydesk-bin
+chrome-gnome-shell
 czmq-git
 dive
 docker-machine-driver-kvm2

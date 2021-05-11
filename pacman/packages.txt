@@ -21,7 +21,6 @@ buildah
 cawbird
 cgdb
 cheese
-chrome-gnome-shell
 chromium
 clang
 cppcheck
