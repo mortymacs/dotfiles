@@ -211,6 +211,7 @@ redis
 ripgrep
 rsibreak
 rust
+rust-analyzer
 rust-bindgen
 rygel
 salt
@@ -220,6 +221,7 @@ sed
 shotwell
 signal-desktop
 simple-scan
+smem
 spatialindex
 spdlog
 sqlitebrowser
@@ -229,6 +231,7 @@ sublime-text
 sudo
 sushi
 sysbench
+syslog-ng
 systemd-resolvconf
 tailscale
 terraform

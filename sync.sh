@@ -13,6 +13,9 @@ cp ~/.tmux.conf tmux/
 # vim
 cp ~/.vimrc ./vim/
 
+# cocvim
+cp ~/.vim/coc-settings.json ./vim/
+
 # gdb, pdb
 cp ~/.gdbinit gdb/
 cp ~/.pdbrc pdb/

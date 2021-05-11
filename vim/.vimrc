@@ -10,6 +10,10 @@ set nowrap
 "" source: https://stackoverflow.com/a/11560415/2338672
 set backspace=2
 set updatetime=500
+set hidden
+set nobackup
+set nowritebackup
+set updatetime=300
 filetype plugin on
 
 " package management
