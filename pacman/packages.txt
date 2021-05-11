@@ -162,7 +162,6 @@ minikube
 mtr
 mutter
 mypy
-mysql-workbench
 namcap
 nautilus
 net-tools

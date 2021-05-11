@@ -79,6 +79,9 @@ call MapKeys("<c-x><c-f>", ":Files<cr>")
 call MapKeys("<c-x><c-t>", ":Tags<cr>")
 call MapKeys("<c-x><c-b>", ":Buffers<cr>")
 
+" bat
+let $BAT_THEME="1337"
+
 " nerdtree
 call MapKeys("<c-x><c-l>", ":NERDTreeToggle<cr>")
 let g:NERDTreeIgnore=['\.pyc$', '\~$', 'venv', '.git', '__pycache__', '.tags']

@@ -15,9 +15,11 @@ kubespy
 mailspring
 mattermost-desktop
 mtodo
+mycli
 nats-server
 nvm
 peco
+pgcli
 shc
 skypeforlinux-stable-bin
 slack-desktop
