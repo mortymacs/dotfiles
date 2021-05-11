@@ -56,5 +56,5 @@ export TERM="xterm-256color"
 export EDITOR=vim
 export VISUAL=vim
 
-# python
-#export PYTHONBREAKPOINT="ipdb.set_trace"
+# bat
+export BAT_THEME="1337"
