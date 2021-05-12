@@ -34,6 +34,8 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
+bindkey ';5D' backward-word
+bindkey ';5C' forward-word
 
 [[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
 
