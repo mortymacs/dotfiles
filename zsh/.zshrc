@@ -32,6 +32,7 @@ select-word-style bash
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+bindkey -e ${$(tput kDC3 2>/dev/null):-'\e[3;3~'} kill-word
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 bindkey ';5D' backward-word
