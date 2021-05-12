@@ -35,7 +35,9 @@ source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 bindkey ';5D' backward-word
+bindkey ';3D' backward-word
 bindkey ';5C' forward-word
+bindkey ';3C' forward-word
 
 [[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
 
