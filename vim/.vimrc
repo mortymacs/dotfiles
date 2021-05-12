@@ -169,6 +169,8 @@ nnoremap <c-c><c-s> :call NERDComment('cc', 'toggle')<cr>
 inoremap <c-c><c-s> :call NERDComment('cc', 'toggle')<cr>
 vnoremap <c-c><c-s> :call NERDComment('cc', 'toggle')<cr>
 
+" python
+call MapKeys("<c-c><c-p>", ":!python %<cr>")
 " python - isort
 let g:vim_isort_map = ''
 call MapKeys("<c-c><c-i>", ":Isort<cr>")
