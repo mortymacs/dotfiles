@@ -25,13 +25,14 @@ zstyle ':completion::complete:*' gain-privileges 1
 setopt COMPLETE_ALIASES
 setopt HIST_IGNORE_SPACE
 
-# source: https://unix.stackexchange.com/a/258661/204066
+# https://unix.stackexchange.com/a/258661/204066
 autoload -U select-word-style
 select-word-style bash
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+# https://unix.stackexchange.com/a/57841/204066
 bindkey -e ${$(tput kDC3 2>/dev/null):-'\e[3;3~'} kill-word
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
@@ -54,10 +55,10 @@ export GOMODCACHE="$HOME/.local/share/go/pkg/mod"
 eval "$(pyenv init -)"
 source /usr/share/nvm/init-nvm.sh
 
-# source: https://stackoverflow.com/a/22481496
+# https://stackoverflow.com/a/22481496
 export TERM="xterm-256color"
 
-# source: https://unix.stackexchange.com/a/177979
+# https://unix.stackexchange.com/a/177979
 export EDITOR=vim
 export VISUAL=vim
 
