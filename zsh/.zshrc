@@ -64,3 +64,9 @@ export VISUAL=vim
 
 # bat
 export BAT_THEME="1337"
+
+# auto completion
+# https://unix.stackexchange.com/questions/185537/combining-zsh-s-tab-completion-with-case-insensitivity
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+setopt MENU_COMPLETE
+setopt no_list_ambiguous
