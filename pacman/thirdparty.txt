@@ -1,4 +1,5 @@
 anydesk-bin
+atuin
 chrome-gnome-shell
 czmq-git
 dive
