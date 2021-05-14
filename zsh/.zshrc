@@ -52,7 +52,7 @@ source /home/mort/.config/broot/launcher/bash/br
 export GOPATH="$HOME/.local/share/go"
 export GOMODCACHE="$HOME/.local/share/go/pkg/mod"
 
-eval "$(pyenv init -)"
+#eval "$(pyenv init -)"
 source /usr/share/nvm/init-nvm.sh
 
 # https://stackoverflow.com/a/22481496

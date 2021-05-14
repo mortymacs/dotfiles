@@ -183,7 +183,7 @@ pitivi
 pkgconf
 prettyping
 prometheus
-pyenv
+pypy3
 python-black
 python-cherrypy
 python-dask
@@ -194,6 +194,7 @@ python-kivy
 python-kubernetes
 python-lxml
 python-memory-profiler
+python-pip
 python-pudb
 python-pylint
 python-pytest
@@ -263,7 +264,6 @@ virtualbox-guest-iso
 virtualbox-guest-utils
 vlc
 which
-wireguard-dkms
 wireguard-tools
 wpa_supplicant
 xclip
