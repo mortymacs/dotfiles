@@ -159,6 +159,7 @@ maven
 meld
 memcached
 minikube
+moreutils
 mtr
 mutter
 mypy

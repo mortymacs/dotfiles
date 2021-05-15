@@ -53,7 +53,6 @@ source /home/mort/.config/broot/launcher/bash/br
 export GOPATH="$HOME/.local/share/go"
 export GOMODCACHE="$HOME/.local/share/go/pkg/mod"
 
-#eval "$(pyenv init -)"
 source /usr/share/nvm/init-nvm.sh
 
 # https://stackoverflow.com/a/22481496
@@ -65,6 +64,9 @@ export VISUAL=vim
 
 # bat
 export BAT_THEME="1337"
+
+# fzf
+export FZF_DEFAULT_COMMAND='fd --type f'
 
 # auto completion
 # https://unix.stackexchange.com/questions/185537/combining-zsh-s-tab-completion-with-case-insensitivity
