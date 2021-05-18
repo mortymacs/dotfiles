@@ -37,6 +37,8 @@ Plugin 'MattesGroeger/vim-bookmarks'
 Plugin 'preservim/nerdcommenter'
 Plugin 'fisadev/vim-isort'
 Plugin 'psf/black'
+Plugin 'alfredodeza/pytest.vim'
+Plugin 'vim-test/vim-test'
 Plugin 'stsewd/sphinx.nvim', { 'do': ':UpdateRemotePlugins' }
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -171,6 +173,10 @@ vnoremap <c-c><c-s> :call NERDComment('cc', 'toggle')<cr>
 
 " python
 call MapKeys("<c-c><c-p>", ":!python %<cr>")
+call MapKeys("<c-t><c-c>", ":Pytest class<cr>")
+call MapKeys("<c-t><c-m>", ":Pytest method<cr>")
+call MapKeys("<c-t><c-f>", ":Pytest function<cr>")
+call MapKeys("<c-t><c-a>", ":Pytest file<cr>")
 " python - isort
 let g:vim_isort_map = ''
 call MapKeys("<c-c><c-i>", ":Isort<cr>")

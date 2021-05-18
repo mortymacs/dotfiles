@@ -198,7 +198,6 @@ python-memory-profiler
 python-pip
 python-pudb
 python-pylint
-python-pytest
 python-pytz
 python-requests-oauthlib
 python-rich

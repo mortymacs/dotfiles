@@ -42,7 +42,7 @@ bindkey ';5C' forward-word
 bindkey ';3C' forward-word
 
 [[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
-eval "$(atuin init zsh)"
+# eval "$(atuin init zsh)"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
