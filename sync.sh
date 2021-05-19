@@ -41,6 +41,7 @@ pacman -Qqem > pacman/thirdparty.txt
 cp ~/.docker/config.json docker/
 
 # push changes.
+git status
 git add .
 git commit -m "Update dotfiles"
 git push
