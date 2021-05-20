@@ -7,7 +7,7 @@ set cursorline
 set nocompatible             " be iMproved, required
 set termguicolors            " enable true colors support
 set nowrap
-"" source: https://stackoverflow.com/a/11560415/2338672
+"" https://stackoverflow.com/a/11560415/2338672
 set backspace=2
 set updatetime=500
 set hidden
@@ -68,12 +68,12 @@ let g:airline_left_alt_sep = ' '
 let g:airline_right_alt_sep = ' '
 
 " coc.vim
-"" source: https://github.com/neoclide/coc.nvim/issues/318#issuecomment-451331078
+"" https://github.com/neoclide/coc.nvim/issues/318#issuecomment-451331078
 call MapKeys("<c-c><c-d>", ":call CocActionAsync('jumpDefinition', 'drop')<cr>")
 call MapKeys("<c-c><c-e>", "<c-o>")
 
 " code indent
-""" source: https://github.com/jelly/Dotfiles/blob/master/.vimrc
+""" https://github.com/jelly/Dotfiles/blob/master/.vimrc
 autocmd FileType python set expandtab shiftwidth=4 softtabstop=4
 set cindent
 set smartindent
@@ -151,22 +151,25 @@ call MapKeys("<c-@>", "v")
 call MapKeys("<c-g><c-d>", "<plug>(GitGutterPreviewHunk)")
 call MapKeys("<c-g><c-u>", "<plug>(GitGutterUndoHunk)")
 call MapKeys("<c-g><c-l>", "<plug>(GitGutterStageHunk)")
-" source: https://github.com/longsleep/bin-scripts/blob/master/config/vimrc
+"" https://github.com/longsleep/bin-scripts/blob/master/config/vimrc
 " auto wrap git commit messages
 au FileType gitcommit set tw=72
 
 " text
-""source: https://stackoverflow.com/a/63887462/2338672
+"" https://stackoverflow.com/a/63887462/2338672
 nnoremap <s-m-down> :m .+1<cr>==
 nnoremap <s-m-up>   :m .-2<cr>==
 inoremap <s-m-down> <esc>:m .+1<cr>==gi
 inoremap <s-m-up>   <esc>:m .-2<cr>==gi
 vnoremap <s-m-down> :m '>+1<cr>gv=gv
 vnoremap <s-m-up>   :m '<-2<cr>gv=gv
+"" https://vim.fandom.com/wiki/Map_Ctrl-Backspace_to_delete_previous_word
+noremap! <c-bs> <c-w>
+noremap! <c-h> <c-w>
 
 " code
 call MapKeys("<c-c><c-h>", "<plug>Zeavim")
-""source: https://vim.fandom.com/wiki/Fix_indentation
+"" https://vim.fandom.com/wiki/Fix_indentation
 call MapKeys("<c-c><c-r>", "gg=G<c-o><c-o>")
 "" https://unix.stackexchange.com/a/75431/204066
 autocmd BufWritePre * :%s/\s\+$//e
