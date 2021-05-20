@@ -69,7 +69,7 @@ let g:airline_right_alt_sep = ' '
 
 " coc.vim
 "" source: https://github.com/neoclide/coc.nvim/issues/318#issuecomment-451331078
-call MapKeys("<c-c><c-d>", ":call CocActionAsync('jumpDefinition')<cr>")
+call MapKeys("<c-c><c-d>", ":call CocActionAsync('jumpDefinition', 'drop')<cr>")
 call MapKeys("<c-c><c-e>", "<c-o>")
 
 " code indent
@@ -145,6 +145,7 @@ call MapKeys("<s-left>", ":tabprevious<cr>")
 " general
 call MapKeys("<c-x><c-s>", ":w<cr>")
 call MapKeys("<c-x><c-q>", ":q<cr>")
+call MapKeys("<c-@>", "v")
 
 " git
 call MapKeys("<c-g><c-d>", "<plug>(GitGutterPreviewHunk)")

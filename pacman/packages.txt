@@ -1,4 +1,5 @@
 ack
+alacritty
 arc-icon-theme
 arc-solid-gtk-theme
 atop

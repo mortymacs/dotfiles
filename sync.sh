@@ -6,6 +6,9 @@ cp ~/{.zshrc,.zsh_aliases,.p10k.zsh} zsh/
 # tmux
 cp ~/.tmux.conf tmux/
 
+# Alacritty
+cp ~/.alacritty.yaml alacritty/
+
 # emacs
 #cp ~/.emacs ./emacs/
 #cp /home/morteza/.emacs.d/{functions.el,keybindings.el,theme.el} emacs/.emacs.d/

@@ -1,8 +1,9 @@
 # ---------------------------------------------- general
 alias grep="grep -n --color"
-alias gg="rg --pretty"
+alias gg="rg -i --pretty"
 alias rm="trash"
 alias ls="lsd"
+alias reload="source ~/.zshrc"
 
 # ---------------------------------------------- utility
 alias pdf="evince"
@@ -27,7 +28,7 @@ alias k="kubectl"
 alias kx="kubectx"
 
 # ---------------------------------------------- python
-alias a="[ -d .venv ] || python -m venv .venv ; source ./.venv/bin/activate"
+alias a="[ -d .venv ] || python -m venv .venv ; source ./.venv/bin/activate ; pip install isort"
 alias d="deactivate"
 alias ipy="ipython --no-term-title --no-confirm-exit --no-banner --no-simple-prompt"
 alias py="python -q"
