@@ -7,7 +7,7 @@ cp ~/{.zshrc,.zsh_aliases,.p10k.zsh} zsh/
 cp ~/.tmux.conf tmux/
 
 # Alacritty
-cp ~/.alacritty.yaml alacritty/
+cp ~/.alacritty.yml alacritty/
 
 # emacs
 #cp ~/.emacs ./emacs/
