@@ -150,6 +150,7 @@ lld
 lldb
 llvm
 lsd
+lsof
 lxd
 m4
 make
@@ -228,7 +229,6 @@ spdlog
 sqlitebrowser
 sshfs
 step-cli
-sublime-text
 sudo
 sushi
 sysbench
@@ -263,6 +263,7 @@ virtualbox
 virtualbox-guest-iso
 virtualbox-guest-utils
 vlc
+w3m
 which
 wireguard-tools
 wpa_supplicant
