@@ -5,7 +5,9 @@ alias rm="trash"
 alias ls="lsd"
 alias reload="source ~/.zshrc"
 ## http://www.bashoneliners.com/oneliners/235/
-alias mkcd='NAME=$1; mkdir -p "$NAME"; cd "$NAME"'
+mkcd(){ mkdir -p "$1" && cd "$1" }
+## https://superuser.com/a/1545418/298390
+atree(){ tar -tf "$1" | tree --fromfile . }
 
 # ---------------------------------------------- utility
 alias pdf="evince"

@@ -10,6 +10,8 @@ git-extras
 glow
 google-cloud-cpp
 hotspot
+immuadmin
+immuclient
 insomnia-bin
 jid
 kafka
@@ -22,9 +24,8 @@ nats-server
 nvm
 peco
 pgcli
-python-bench-it
 python-configparser
-python-oyaml
+python-panwid
 shc
 skypeforlinux-stable-bin
 slack-desktop
