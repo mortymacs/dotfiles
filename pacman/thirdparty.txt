@@ -10,8 +10,6 @@ git-extras
 glow
 google-cloud-cpp
 hotspot
-immuadmin
-immuclient
 insomnia-bin
 jid
 kafka
