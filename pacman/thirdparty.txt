@@ -22,10 +22,14 @@ nats-server
 nvm
 peco
 pgcli
+python-bench-it
+python-configparser
+python-oyaml
 shc
 skypeforlinux-stable-bin
 slack-desktop
 spotify
+sqlfluff
 typora
 yay
 ydiff

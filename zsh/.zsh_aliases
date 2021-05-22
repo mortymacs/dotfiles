@@ -21,6 +21,7 @@ alias tgz='rpyc ; tar --exclude='.venv' --exclude='.git' --exclude='.gitignore' 
 alias cb="xclip -selection clipboard"
 alias kp="ps aux | peco | awk '{print \$2}' | xargs kill -9"
 alias ap="ps aux | peco"
+rme(){ ls | \grep -v "$1" | xargs rm -rf }
 
 # ---------------------------------------------- server
 alias p="ping 8.8.8.8"

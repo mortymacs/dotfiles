@@ -190,6 +190,7 @@ pypy3
 python-black
 python-cherrypy
 python-dask
+python-diff-cover
 python-distributed
 python-ipdb
 python-isort
@@ -197,13 +198,17 @@ python-kivy
 python-kubernetes
 python-lxml
 python-memory-profiler
+python-pandas
 python-pip
 python-pudb
+python-py-cpuinfo
 python-pylint
+python-pytest
 python-pytz
 python-requests-oauthlib
 python-rich
 python-sphinx
+python-tqdm
 python-vmprof
 qemu-arch-extra
 qemu-block-gluster
