@@ -22,6 +22,7 @@ nats-server
 nvm
 peco
 pgcli
+pingtop
 python-configparser
 python-panwid
 shc
