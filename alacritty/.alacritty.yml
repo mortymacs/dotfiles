@@ -5,18 +5,19 @@ window:
     lines: 30
 
 # Font configuration (changes require restart).
+#CodeNewRoman Nerd Font Mono
 font:
   size: 14
   normal:
-    family: CodeNewRoman Nerd Font Mono
-    style: Book
+    family: JetBrains Mono
+    style: Regular
 
   bold:
-    family: CodeNewRoman Nerd Font Mono
+    family: JetBrains Mono
     style: Bold
 
   italic:
-    family: CodeNewRoman Nerd Font Mono
+    family: JetBrains Mono
     style: Italic
 
 # Color configuration.
