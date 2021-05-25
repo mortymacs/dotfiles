@@ -59,13 +59,13 @@ colorscheme ayu
 set cmdheight=1
 
 " powerline
-"let g:airline#extensions#tabline#left_sep = ' '
-"let g:airline#extensions#tabline#left_alt_sep = ' '
-"let g:airline_powerline_fonts = 0
-"let g:airline_left_sep = ' '
-"let g:airline_right_sep = ' '
-"let g:airline_left_alt_sep = ' '
-"let g:airline_right_alt_sep = ' '
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = ' '
+let g:airline_powerline_fonts = 0
+let g:airline_left_sep = ' '
+let g:airline_right_sep = ' '
+let g:airline_left_alt_sep = ' '
+let g:airline_right_alt_sep = ' '
 
 " coc.vim
 "" https://github.com/neoclide/coc.nvim/issues/318#issuecomment-451331078
@@ -75,6 +75,7 @@ call MapKeys("<c-c><c-e>", "<c-o>")
 " code indent
 """ https://github.com/jelly/Dotfiles/blob/master/.vimrc
 autocmd FileType python set expandtab shiftwidth=4 softtabstop=4
+autocmd FileType cucumber set expandtab shiftwidth=4 softtabstop=4
 set cindent
 set smartindent
 set autoindent
