@@ -9,15 +9,15 @@ window:
 font:
   size: 13
   normal:
-    family: JetBrains Mono
+    family: Jetbrains Mono
     style: Regular
 
   bold:
-    family: JetBrains Mono
+    family: Jetbrains Mono
     style: Bold
 
   italic:
-    family: JetBrains Mono
+    family: Jetbrains Mono
     style: Italic
 
 # Color configuration.
