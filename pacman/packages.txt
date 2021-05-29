@@ -269,7 +269,6 @@ ttf-nerd-fonts-symbols-mono
 ttf-ubuntu-font-family
 vagrant
 valgrind
-vim
 vino
 virtualbox
 virtualbox-guest-iso

@@ -14,8 +14,8 @@ cp ~/.alacritty.yml alacritty/
 #cp /home/morteza/.emacs.d/{functions.el,keybindings.el,theme.el} emacs/.emacs.d/
 
 # vim
-cp ~/.vimrc vim/
-cp ~/.vim/coc-settings.json vim/
+#cp ~/.vimrc vim/
+#cp ~/.vim/coc-settings.json vim/
 
 # nvim
 cp ~/.config/nvim/{init.vim,coc-settings.json} nvim/
