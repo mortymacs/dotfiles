@@ -133,6 +133,7 @@ hplip
 hq
 htop
 httpie
+hugo
 inetutils
 intel-ucode
 ipython
@@ -169,6 +170,7 @@ mutter
 mypy
 namcap
 nautilus
+neovim
 net-tools
 network-manager-applet
 networkmanager
@@ -202,13 +204,16 @@ python-lxml
 python-memory-profiler
 python-pandas
 python-pip
+python-poetry
 python-pudb
 python-py-cpuinfo
 python-pylint
+python-pynvim
 python-pytest
 python-pytz
 python-requests-oauthlib
 python-rich
+python-sh
 python-sphinx
 python-tqdm
 python-vmprof
@@ -256,7 +261,6 @@ tracker3
 tracker3-miners
 trash-cli
 tree
-ttf-cascadia-code
 ttf-droid
 ttf-fira-mono
 ttf-hack

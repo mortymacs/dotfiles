@@ -16,7 +16,7 @@ alias cat="bat"
 ## https://medium.com/@GroundControl/better-git-diffs-with-fzf-89083739a9cb
 alias f="fzf --cycle -i --preview 'bat {-1} --color=always'"
 alias rmc="rm -rf CMakeFiles/ Testing/ CMakeCache.txt *.cmake Makefile compile_commands.json *.cbp"
-alias u="yay -Syu && vim -c PluginUpdate +quitall && vim -c :CocUpdateSync +quitall && vim -c :BlackUpgrade +quitall"
+alias u="yay -Syu && vv -c :PlugUpdate +quitall && vv -c :CocUpdateSync +quitall && vv -c :BlackUpgrade +quitall"
 alias o="vv \`f\`"
 alias diff="ydiff -s --wrap"
 alias tgz='rpyc ; tar --exclude='.venv' --exclude='.git' --exclude='.gitignore' --exclude='.kube' -zcvf `basename $PWD`.tar.gz ./*'
@@ -39,7 +39,7 @@ alias cdi="docker images -q -f dangling=true | xargs --no-run-if-empty --delim='
 alias gt="fd | ctags --links=no -L-"
 
 # ---------------------------------------------- python
-alias a="[ -d .venv ] || python -m venv .venv ; source ./.venv/bin/activate ; pip freeze | grep isort > /dev/null || pip install isort >/dev/null"
+alias a="[ -d .venv ] || python -m venv .venv --system-site-packages ; source ./.venv/bin/activate"
 alias d="deactivate"
 alias up="pip list --outdated | awk '{ print \$1\"==\"\$3 }' | tail +3 | xargs pip install --upgrade"
 alias ipy="ipython --no-term-title --no-confirm-exit --no-banner --no-simple-prompt"
@@ -51,7 +51,7 @@ alias psql="pgcli"
 alias mysql="mycli"
 
 # ---------------------------------------------- editor
-alias vv="PYTHONPATH=$(pwd):$PYTHONPATH vim"
+alias vv="PYTHONPATH=$(pwd):$PYTHONPATH nvim"
 alias v="vv ."
 alias ee="PYTHONPATH=$(pwd):$PYTHONPATH emacs"
 alias e="ee ."
