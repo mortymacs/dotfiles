@@ -71,13 +71,17 @@ call MapKeys("<c-c><c-d>", ":call CocActionAsync('jumpDefinition', 'drop')<cr>")
 call MapKeys("<c-c><c-e>", "<c-o>")
 
 " code indent
-""" https://github.com/jelly/Dotfiles/blob/master/.vimrc
+"" https://github.com/jelly/Dotfiles/blob/master/.vimrc
 autocmd FileType python set expandtab shiftwidth=4 softtabstop=4
 autocmd FileType cucumber set expandtab shiftwidth=4 softtabstop=4
+autocmd FileType html set expandtab shiftwidth=2 softtabstop=2
+autocmd FileType css set expandtab shiftwidth=2 softtabstop=2
 set cindent
 set smartindent
 set autoindent
 set complete+=s
+"" reformat the whole buffer
+call MapKeys("<c-c><c-l>", "gg=G<cr>")
 
 " fzf
 "" https://github.com/universal-ctags/ctags/issues/218#issuecomment-72355190
@@ -165,6 +169,9 @@ vnoremap <s-m-up>   :m '<-2<cr>gv=gv
 "" https://vim.fandom.com/wiki/Map_Ctrl-Backspace_to_delete_previous_word
 noremap! <c-bs> <c-w>
 noremap! <c-h> <c-w>
+"" goto the beginning and end of a line.
+call MapKeys("<c-e>", "<s-$>")
+call MapKeys("<c-w>", "<s-^>")
 
 " code
 call MapKeys("<c-c><c-h>", "<plug>Zeavim")
