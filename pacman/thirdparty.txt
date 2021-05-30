@@ -13,6 +13,7 @@ hotspot
 insomnia-bin
 jid
 kafka
+kubectl-df-pv
 kubespy
 mailspring
 mattermost-desktop
@@ -30,7 +31,6 @@ skypeforlinux-stable-bin
 slack-desktop
 spotify
 sqlfluff
-typora
 yay
 ydiff
 zeal
