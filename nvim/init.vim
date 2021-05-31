@@ -7,6 +7,10 @@ set cursorline
 set nocompatible             " be iMproved, required
 set termguicolors            " enable true colors support
 set nowrap
+"" https://stackoverflow.com/a/2054674/2338672
+set tabstop=4
+set shiftwidth=4
+set expandtab
 "" https://stackoverflow.com/a/11560415/2338672
 set backspace=2
 set updatetime=500
@@ -74,10 +78,8 @@ call MapKeys("<c-c><c-e>", "<c-o>")
 
 " code indent
 "" https://github.com/jelly/Dotfiles/blob/master/.vimrc
-autocmd FileType python set expandtab shiftwidth=4 softtabstop=4
-autocmd FileType cucumber set expandtab shiftwidth=4 softtabstop=4
-autocmd FileType html set expandtab shiftwidth=2 softtabstop=2
-autocmd FileType css set expandtab shiftwidth=2 softtabstop=2
+autocmd FileType python,cucumber set expandtab shiftwidth=4 softtabstop=4
+autocmd FileType html,css,vim,yaml,json set expandtab shiftwidth=2 softtabstop=2
 set cindent
 set smartindent
 set autoindent
@@ -154,18 +156,17 @@ call MapKeys("<c-@>", "v")
 "" https://stackoverflow.com/a/20579322/2338672
 let s:presentation_enabled = 0
 function! PresentationToggle()
-    if s:presentation_enabled
-        Goyo
+  Goyo
+  if s:presentation_enabled
 	Limelight!
 	silent !xdotool key ctrl+0
-        let s:presentation_enabled = 0
-    else
-        Goyo
+    let s:presentation_enabled = 0
+  else
 	Limelight
 	silent !xdotool key --repeat 4 ctrl+plus
 	silent !xdotool key --repeat 4 ctrl+equal
-        let s:presentation_enabled = 1
-    endif
+    let s:presentation_enabled = 1
+  endif
 endfunction
 call MapKeys("<c-x><c-p>", ":call PresentationToggle()<cr>")
 
