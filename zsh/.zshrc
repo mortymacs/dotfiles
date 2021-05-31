@@ -59,7 +59,7 @@ source /usr/share/nvm/init-nvm.sh
 export TERM="xterm-256color"
 
 # https://unix.stackexchange.com/a/177979
-export EDITOR=vim
+export EDITOR=nvim
 export VISUAL=vim
 
 # bat

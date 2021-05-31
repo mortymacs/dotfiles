@@ -39,6 +39,8 @@ Plug 'psf/black'
 Plug 'alfredodeza/pytest.vim'
 Plug 'vim-test/vim-test'
 Plug 'stsewd/sphinx.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'junegunn/limelight.vim'
+Plug 'junegunn/goyo.vim'
 call plug#end()
 
 " https://stackoverflow.com/a/43595915/2338672
@@ -149,6 +151,22 @@ call MapKeys("<s-left>", ":tabprevious<cr>")
 call MapKeys("<c-x><c-s>", ":w<cr>")
 call MapKeys("<c-x><c-q>", ":q<cr>")
 call MapKeys("<c-@>", "v")
+"" https://stackoverflow.com/a/20579322/2338672
+let s:presentation_enabled = 0
+function! PresentationToggle()
+    if s:presentation_enabled
+        Goyo
+	Limelight!
+	silent !xdotool key ctrl+0
+        let s:presentation_enabled = 0
+    else
+        Goyo
+	Limelight
+	silent !xdotool key --repeat 5 ctrl+equal
+        let s:presentation_enabled = 1
+    endif
+endfunction
+call MapKeys("<c-x><c-p>", ":call PresentationToggle()<cr>")
 
 " git
 call MapKeys("<c-g><c-d>", "<plug>(GitGutterPreviewHunk)")

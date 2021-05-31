@@ -277,9 +277,11 @@ vlc
 w3m
 which
 wireguard-tools
+wmctrl
 wpa_supplicant
 xclip
 xdg-user-dirs-gtk
+xdotool
 xf86-video-intel
 xsel
 yarn
