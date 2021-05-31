@@ -162,8 +162,8 @@ function! PresentationToggle()
     else
         Goyo
 	Limelight
-	silent !xdotool key --repeat 5 ctrl+plus
-	silent !xdotool key --repeat 5 ctrl+equal
+	silent !xdotool key --repeat 4 ctrl+plus
+	silent !xdotool key --repeat 4 ctrl+equal
         let s:presentation_enabled = 1
     endif
 endfunction
