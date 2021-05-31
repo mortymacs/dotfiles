@@ -163,8 +163,8 @@ function! PresentationToggle()
     let s:presentation_enabled = 0
   else
 	Limelight
-	silent !xdotool key --repeat 2 ctrl+plus
-	silent !xdotool key --repeat 2 ctrl+equal
+	silent !xdotool key --repeat 4 ctrl+plus
+	silent !xdotool key --repeat 4 ctrl+equal
     let s:presentation_enabled = 1
   endif
 endfunction
