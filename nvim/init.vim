@@ -213,8 +213,8 @@ call MapKeys("<c-t><c-a>", ":Pytest file<cr>")
 " python - isort
 let g:vim_isort_map = ''
 let g:isort_command = 'isort'
-call MapKeys("<c-c><c-i>", ":Isort<cr>")
-autocmd BufWritePre *.py execute ':Isort'
+call MapKeys("<c-c><c-i>", ":Isort --profile black<cr>")
+autocmd BufWritePre *.py execute ':Isort --profile black'
 " python - black
 call MapKeys("<c-c><c-r>", ":Black<cr>")
 autocmd BufWritePre *.py execute ':Black'
