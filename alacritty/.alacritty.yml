@@ -6,17 +6,17 @@ window:
 
 # Font configuration (changes require restart).
 font:
-  size: 13
+  size: 14
   normal:
-    family: Consolas # CodeNewRoman Nerd Font Mono
-    style: Medium
+    family: CodeNewRoman Nerd Font Mono
+    style: Regular
 
   bold:
-    family: Consolas # CodeNewRoman Nerd Font Mono
+    family: CodeNewRoman Nerd Font Mono
     style: Bold
 
   italic:
-    family: Consolas # CodeNewRoman Nerd Font Mono
+    family: CodeNewRoman Nerd Font Mono
     style: Italic
 
 # Color configuration.

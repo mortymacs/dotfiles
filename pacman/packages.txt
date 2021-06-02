@@ -262,10 +262,13 @@ tracker3-miners
 trash-cli
 tree
 ttf-droid
+ttf-fantasque-sans-mono
 ttf-fira-mono
 ttf-hack
 ttf-jetbrains-mono
+ttf-monofur
 ttf-nerd-fonts-symbols-mono
+ttf-roboto-mono
 ttf-ubuntu-font-family
 vagrant
 valgrind
