@@ -191,7 +191,7 @@ noremap! <c-bs> <c-w>
 noremap! <c-h> <c-w>
 "" goto the beginning and end of a line.
 call MapKeys("<c-e>", "<s-$>")
-call MapKeys("<c-w>", "<s-^>")
+call MapKeys("<c-a>", "<s-^>")
 
 " code
 call MapKeys("<c-c><c-h>", "<plug>Zeavim")
