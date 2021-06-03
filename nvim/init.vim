@@ -167,7 +167,7 @@ call MapKeys("<s-left>", ":tabprevious<cr>")
 call MapKeys("<c-x><c-s>", ":w<cr>")
 call MapKeys("<c-x><c-q>", ":q<cr>")
 call MapKeys("<c-@>", "v")
-call MapKeys("<c-d>", "yyp<cr>")
+call MapKeys("<c-d>", "yyp")
 "" https://stackoverflow.com/a/20579322/2338672
 let s:presentation_enabled = 0
 function! PresentationToggle()
