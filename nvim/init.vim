@@ -45,6 +45,7 @@ Plug 'vim-test/vim-test'
 Plug 'stsewd/sphinx.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/goyo.vim'
+Plug 'voldikss/vim-floaterm'
 call plug#end()
 
 " https://stackoverflow.com/a/43595915/2338672
@@ -70,6 +71,19 @@ let g:airline_left_sep = ' '
 let g:airline_right_sep = ' '
 let g:airline_left_alt_sep = ' '
 let g:airline_right_alt_sep = ' '
+
+" terminal
+let g:floaterm_height = 0.5
+let g:floaterm_width = 1.0
+let g:floaterm_position = "bottom"
+let g:floaterm_wintype = "float"
+let g:floaterm_autohide = 1
+let g:floaterm_keymap_toggle = "<c-x><c-r>"
+let g:floaterm_keymap_new = "<c-x><c-n>"
+let g:floaterm_keymap_prev = "<c-x><c-left>"
+let g:floaterm_keymap_next = "<c-x><c-right>"
+let g:floaterm_keymap_kill = "<c-x><c-k>"
+let g:floaterm_opener = "tabe"
 
 " coc.vim
 "" https://github.com/neoclide/coc.nvim/issues/318#issuecomment-451331078
@@ -153,6 +167,7 @@ call MapKeys("<s-left>", ":tabprevious<cr>")
 call MapKeys("<c-x><c-s>", ":w<cr>")
 call MapKeys("<c-x><c-q>", ":q<cr>")
 call MapKeys("<c-@>", "v")
+call MapKeys("<c-d>", "yyp<cr>")
 "" https://stackoverflow.com/a/20579322/2338672
 let s:presentation_enabled = 0
 function! PresentationToggle()
