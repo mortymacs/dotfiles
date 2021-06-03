@@ -182,6 +182,7 @@ obs-studio
 openbsd-netcat
 operator-sdk
 orca
+p7zip
 pacman
 parallel
 patch
