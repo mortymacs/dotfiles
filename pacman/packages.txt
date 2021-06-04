@@ -251,6 +251,8 @@ systemd-resolvconf
 tailscale
 terraform
 texinfo
+texlive-core
+texlive-latexextra
 the_silver_searcher
 tig
 tmux
