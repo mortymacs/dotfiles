@@ -164,6 +164,9 @@ call MapKeys("<s-right>", ":tabnext<cr>")
 call MapKeys("<s-left>", ":tabprevious<cr>")
 
 " general
+"" select
+call MapKeys("<c-space>", "v")  " v$
+call MapKeys("<s-v>", "v0o$")
 call MapKeys("<c-x><c-s>", ":w<cr>")
 call MapKeys("<c-x><c-q>", ":q<cr>")
 call MapKeys("<c-@>", "v")
