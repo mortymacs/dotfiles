@@ -293,6 +293,7 @@ xsel
 yarn
 yelp
 youtube-dl
+yq
 z
 zart
 zsh
