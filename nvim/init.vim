@@ -46,6 +46,7 @@ Plug 'stsewd/sphinx.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'voldikss/vim-floaterm'
+Plug 'sotte/presenting.vim'
 call plug#end()
 
 " https://stackoverflow.com/a/43595915/2338672
