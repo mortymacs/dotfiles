@@ -17,7 +17,7 @@ alias cat="bat"
 alias f="fzf --cycle -i --preview 'bat {-1} --color=always'"
 alias rmc="rm -rf CMakeFiles/ Testing/ CMakeCache.txt *.cmake Makefile compile_commands.json *.cbp"
 alias u="yay -Syu && vv -c :PlugUpdate +quitall && vv -c :CocUpdateSync +quitall && vv -c :BlackUpgrade +quitall"
-alias o="vv \`f\`"
+alias o="v \`f\`"
 alias diff="ydiff -s --wrap"
 alias tgz='rpyc ; tar --exclude='.venv' --exclude='.git' --exclude='.gitignore' --exclude='.kube' -zcvf `basename $PWD`.tar.gz ./*'
 alias cb="xclip -selection clipboard"
