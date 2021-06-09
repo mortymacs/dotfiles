@@ -135,6 +135,7 @@ htop
 httpie
 hugo
 inetutils
+inkscape
 intel-ucode
 ipython
 iw
