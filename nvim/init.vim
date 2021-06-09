@@ -57,6 +57,12 @@ function! MapKeys(keys, rhs)
         execute map_command . a:keys '<esc>' . a:rhs
     endfor
 endfunction
+function! NorMapKeys(keys, rhs)
+    for normap_command in ['nnoremap', 'inoremap']
+        execute normap_command . a:keys '<esc>' . a:rhs
+    endfor
+    execute 'vnoremap' . a:keys '' . a:rhs
+endfunction
 
 " theme
 set termguicolors     " enable true colors support
@@ -220,9 +226,7 @@ call MapKeys("<c-c><c-g>", ":Glow<CR>")
 call MapKeys("<c-c><c-r>", "gg=G<c-o><c-o>")
 "" https://unix.stackexchange.com/a/75431/204066
 autocmd BufWritePre * :%s/\s\+$//e
-nnoremap <c-c><c-s> :call NERDComment('cc', 'toggle')<cr>
-inoremap <c-c><c-s> :call NERDComment('cc', 'toggle')<cr>
-vnoremap <c-c><c-s> :call NERDComment('cc', 'toggle')<cr>
+call NorMapKeys("<c-c><c-s>", ":call NERDComment('cc', 'toggle')<cr>")
 
 " python
 call MapKeys("<c-c><c-p>", ":!python %<cr>")
