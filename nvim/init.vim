@@ -47,6 +47,7 @@ Plug 'junegunn/limelight.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'voldikss/vim-floaterm'
 Plug 'sotte/presenting.vim'
+Plug 'martinda/Jenkinsfile-vim-syntax'
 call plug#end()
 
 " https://stackoverflow.com/a/43595915/2338672

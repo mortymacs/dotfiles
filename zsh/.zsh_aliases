@@ -51,10 +51,12 @@ alias psql="pgcli"
 alias mysql="mycli"
 
 # ---------------------------------------------- editor
-alias vv="PYTHONPATH=$(pwd):$PYTHONPATH nvim"
-alias v="vv ."
-alias ee="PYTHONPATH=$(pwd):$PYTHONPATH emacs"
-alias e="ee ."
+#alias vv="PYTHONPATH=$(pwd):$PYTHONPATH nvim"
+alias vim="nvim"
+alias v="nvim"
+alias vv="v ."
+alias e="emacs"
+alias ee="e ."
 
 # ---------------------------------------------- tmux
 alias t='basename $(pwd) | xargs tmux new-session -d -s && tmux attach'
@@ -73,4 +75,3 @@ alias whereiam='echo $(curl -s http://ip-api.com/json | jq -r ".country,.city")'
 #alias next="gcalcli agenda --military --nostarted --calendar=morteza '`date --date="today" +"%a %b %d"`' '`date --date="tomorrow" +"%a %b %d"`' | cut -d ' ' -f 2- | head -2 | tail -1 | sed -e 's/^[[:space:]]*//'"
 #alias week="c calw --calendar=morteza"
 #alias month="c calm --calendar=morteza"
-
