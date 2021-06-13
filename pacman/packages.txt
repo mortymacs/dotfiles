@@ -176,7 +176,6 @@ net-tools
 network-manager-applet
 networkmanager
 networkmanager-openvpn
-nginx
 nlohmann-json
 noto-fonts
 ntfs-3g
