@@ -140,6 +140,7 @@ intel-ucode
 ipython
 iw
 jdk-openjdk
+jenkins
 jq
 k9s
 kcachegrind
