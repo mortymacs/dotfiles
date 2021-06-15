@@ -60,7 +60,7 @@ export TERM="xterm-256color"
 
 # https://unix.stackexchange.com/a/177979
 export EDITOR=nvim
-export VISUAL=vim
+export VISUAL=nvim
 
 # bat
 export BAT_THEME="1337"
