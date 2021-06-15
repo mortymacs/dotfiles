@@ -16,6 +16,7 @@ jid
 kafka
 kubectl-df-pv
 kubespy
+lazydocker
 mailspring
 mattermost-desktop
 mtodo
