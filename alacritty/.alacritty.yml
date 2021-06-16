@@ -20,31 +20,32 @@ font:
     style: Italic
 
 # Color configuration.
-# https://github.com/challenger-deep-theme/alacritty
+# https://github.com/eendroroy/alacritty-theme
+# Colors (Tomorrow Night Bright)
 colors:
   # Default colors
   primary:
-    background: '0x1b182c'
-    foreground: '0xcbe3e7'
+    background: '0x000000'
+    foreground: '0xeaeaea'
 
   # Normal colors
   normal:
-    black:   '0x100e23'
-    red:     '0xff8080'
-    green:   '0x95ffa4'
-    yellow:  '0xffe9aa'
-    blue:    '0x91ddff'
-    magenta: '0xc991e1'
-    cyan:    '0xaaffe4'
-    white:   '0xcbe3e7'
+    black:   '0x000000'
+    red:     '0xd54e53'
+    green:   '0xb9ca4a'
+    yellow:  '0xe6c547'
+    blue:    '0x7aa6da'
+    magenta: '0xc397d8'
+    cyan:    '0x70c0ba'
+    white:   '0x424242'
 
   # Bright colors
   bright:
-    black:   '0x565575'
-    red:     '0xff5458'
-    green:   '0x62d196'
-    yellow:  '0xffb378'
-    blue:    '0x65b2ff'
-    magenta: '0x906cff'
-    cyan:    '0x63f2f1'
-    white:   '0xa6b3cc'
+    black:   '0x666666'
+    red:     '0xff3334'
+    green:   '0x9ec400'
+    yellow:  '0xe7c547'
+    blue:    '0x7aa6da'
+    magenta: '0xb77ee0'
+    cyan:    '0x54ced6'
+    white:   '0x2a2a2a'
