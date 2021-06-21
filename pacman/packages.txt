@@ -209,6 +209,7 @@ python-pip
 python-poetry
 python-pudb
 python-py-cpuinfo
+python-pydantic
 python-pylint
 python-pynvim
 python-pytest
