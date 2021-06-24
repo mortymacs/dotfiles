@@ -37,7 +37,6 @@ skypeforlinux-stable-bin
 slack-desktop
 spotify
 sqlfluff
-visual-studio-code-bin
 yaru-gnome-shell-theme
 yaru-gtk-theme
 yaru-icon-theme
