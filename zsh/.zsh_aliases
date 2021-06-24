@@ -2,7 +2,7 @@
 alias grep="grep -n --color"
 alias gg="rg -i --pretty -g '!*/test/*' -g '!*/tests/*' -g '!*/docs/*' -g '!*/examples/*' -g '!*.md'"
 alias rm="trash"
-alias ls="lsd"
+alias ls="exa --git -lh --octal-permissions --color-scale"
 alias reload="source ~/.zshrc"
 ## http://www.bashoneliners.com/oneliners/235/
 mkcd(){ mkdir -p "$1" && cd "$1" }

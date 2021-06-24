@@ -156,7 +156,6 @@ linux-firmware
 lld
 lldb
 llvm
-lsd
 lsof
 lxd
 m4
