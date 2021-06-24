@@ -1,15 +1,35 @@
 [user]
 	name = Morteza NourelahiAlamdari
 	email = m@0t1.me
+
 [core]
 	excludesfile = ~/.gitignore
-	pager = diff-so-fancy | less -RFX
-	editor = nvim
+    editor = nvim
+
+[pager]
+    diff = delta
+    log = delta
+    reflog = delta
+    show = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    features = side-by-side line-numbers decorations
+    whitespace-error-style = 22 reverse
+
+;[delta "decorations"]
+    ;commit-decoration-style = bold yellow box ul
+    ;file-style = bold yellow ul
+    ;file-decoration-style = none
+
 [alias]
 	tree = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
 	work = config user.email \"m.nourelahialamdari@kopano.com\"
 	del-local = branch -d
 	del-all = branch -D
+
 [push]
 	default = current
 

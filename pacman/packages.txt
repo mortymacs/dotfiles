@@ -43,6 +43,7 @@ emacs-nox
 eog
 epiphany
 evince
+exa
 fakeroot
 fasd
 fcgi

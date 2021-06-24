@@ -6,6 +6,7 @@ dive
 docker-machine-driver-kvm2
 dry-bin
 duf
+git-delta-bin
 git-extras
 glow
 google-cloud-cpp
