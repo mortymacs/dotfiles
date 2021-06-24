@@ -37,6 +37,7 @@ discord
 docker
 docker-compose
 docker-machine
+dog
 doxygen
 efibootmgr
 emacs-nox
@@ -135,6 +136,7 @@ hq
 htop
 httpie
 hugo
+hyperfine
 inetutils
 inkscape
 intel-ucode
@@ -192,6 +194,7 @@ perf
 pitivi
 pkgconf
 prettyping
+procs
 prometheus
 pyenv
 pypy3

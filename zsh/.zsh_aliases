@@ -24,9 +24,12 @@ alias cb="xclip -selection clipboard"
 alias kp="ps aux | peco | awk '{print \$2}' | xargs kill -9"
 alias ap="ps aux | peco"
 rme(){ ls | \grep -v "$1" | xargs rm -rf }
+alias ps="procs"
+alias dig="dog"
+alias du="dust -b"
 
 # ---------------------------------------------- server
-alias p="ping 8.8.8.8"
+alias p="gping 8.8.8.8"
 alias s="ssh mort@159.65.192.108"
 alias ms="minikube start --vm-driver kvm2"
 alias k="kubectl"

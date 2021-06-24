@@ -1,11 +1,13 @@
 anydesk-bin
 atuin
+bottom-bin
 chrome-gnome-shell
 czmq-git
 dive
 docker-machine-driver-kvm2
 dry-bin
 duf
+dust
 git-delta-bin
 git-extras
 glow
@@ -20,6 +22,7 @@ kubespy
 lazydocker
 mailspring
 mattermost-desktop
+mcfly
 mtodo
 mycli
 nats-server

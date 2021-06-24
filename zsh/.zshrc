@@ -73,3 +73,6 @@ export FZF_DEFAULT_COMMAND='fd --type f'
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 setopt MENU_COMPLETE
 setopt no_list_ambiguous
+
+export MCFLY_FUZZY=true
+eval "$(mcfly init zsh)"
