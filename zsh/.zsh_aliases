@@ -27,6 +27,7 @@ rme(){ ls | \grep -v "$1" | xargs rm -rf }
 alias ps="procs"
 alias dig="dog"
 alias du="dust -b"
+alias less="less -N"
 
 # ---------------------------------------------- server
 alias p="gping 8.8.8.8"

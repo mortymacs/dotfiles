@@ -140,6 +140,7 @@ hyperfine
 inetutils
 inkscape
 intel-ucode
+iotop
 ipython
 iw
 jdk-openjdk
