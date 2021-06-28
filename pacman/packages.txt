@@ -2,6 +2,7 @@ ack
 alacritty
 arc-icon-theme
 arc-solid-gtk-theme
+asciinema
 atop
 autoconf
 automake
