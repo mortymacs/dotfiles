@@ -6,6 +6,7 @@ asciinema
 atop
 autoconf
 automake
+autopep8
 awesome-terminal-fonts
 baobab
 base
@@ -299,6 +300,7 @@ xdg-user-dirs-gtk
 xdotool
 xf86-video-intel
 xsel
+yapf
 yarn
 yelp
 youtube-dl

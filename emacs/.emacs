@@ -61,6 +61,9 @@
 ;  )
 ;(add-hook 'python-mode-hook #'prog-python-mode)
 
+;; ---------------------------------------------- python
+(elpy-enable)
+
 ;; ---------------------------------------------- c/c++
 ;; source: https://stackoverflow.com/a/663636/2338672
 ;; coding standard
