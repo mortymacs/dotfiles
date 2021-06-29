@@ -59,7 +59,7 @@ alias mysql="mycli"
 alias vim="nvim"
 alias v="nvim"
 alias vv="v ."
-alias e="emacs"
+alias e="emacsclient"
 alias ee="e ."
 
 # ---------------------------------------------- tmux

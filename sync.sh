@@ -10,8 +10,8 @@ cp ~/.tmux.conf tmux/
 cp ~/.alacritty.yml alacritty/
 
 # emacs
-#cp ~/.emacs ./emacs/
-#cp /home/morteza/.emacs.d/{functions.el,keybindings.el,theme.el} emacs/.emacs.d/
+cp ~/.emacs ./emacs/
+cp ~/.emacs.d/{functions.el,keybindings.el,theme.el} emacs/.emacs.d/
 
 # vim
 #cp ~/.vimrc vim/
