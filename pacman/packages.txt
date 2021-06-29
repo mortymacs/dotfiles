@@ -192,6 +192,7 @@ pacman
 parallel
 patch
 perf
+pidgin
 pitivi
 pkgconf
 prettyping
