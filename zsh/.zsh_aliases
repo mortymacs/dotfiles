@@ -55,11 +55,10 @@ alias psql="pgcli"
 alias mysql="mycli"
 
 # ---------------------------------------------- editor
-#alias vv="PYTHONPATH=$(pwd):$PYTHONPATH nvim"
 alias vim="nvim"
 alias v="nvim"
 alias vv="v ."
-alias e="emacsclient"
+alias e="emacsclient -c"
 alias ee="e ."
 
 # ---------------------------------------------- tmux
