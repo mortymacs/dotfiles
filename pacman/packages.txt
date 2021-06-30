@@ -224,6 +224,7 @@ python-pytest
 python-pytz
 python-requests-oauthlib
 python-rich
+python-scipy
 python-sh
 python-sphinx
 python-tqdm
