@@ -20,6 +20,8 @@ set nowritebackup
 set updatetime=300
 filetype plugin on
 filetype plugin indent on    " required
+"" https://superuser.com/a/35421/298390
+set whichwrap+=<,>,[,]
 
 " package management
 call plug#begin('~/.vim/plugged')
