@@ -83,6 +83,7 @@ let g:airline_left_alt_sep = ' '
 let g:airline_right_alt_sep = ' '
 
 " terminal
+let g:floaterm_title = "$1/$2"
 let g:floaterm_height = 0.5
 let g:floaterm_width = 1.0
 let g:floaterm_position = "bottom"
@@ -94,6 +95,7 @@ let g:floaterm_keymap_prev = "<c-x><c-left>"
 let g:floaterm_keymap_next = "<c-x><c-right>"
 let g:floaterm_keymap_kill = "<c-x><c-k>"
 let g:floaterm_opener = "tabe"
+hi FloatermBorder ctermbg=black
 
 " coc.vim
 "" https://github.com/neoclide/coc.nvim/issues/318#issuecomment-451331078
