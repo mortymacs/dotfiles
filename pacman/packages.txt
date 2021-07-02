@@ -198,7 +198,6 @@ pkgconf
 prettyping
 procs
 prometheus
-pyenv
 pypy3
 python-black
 python-build
