@@ -50,6 +50,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'voldikss/vim-floaterm'
 Plug 'sotte/presenting.vim'
 Plug 'martinda/Jenkinsfile-vim-syntax'
+Plug 'npxbr/glow.nvim', {'do': ':GlowInstall', 'branch': 'main'}
 call plug#end()
 
 " https://stackoverflow.com/a/43595915/2338672
@@ -231,6 +232,7 @@ call MapKeys("<c-c><c-r>", "gg=G<c-o><c-o>")
 "" https://unix.stackexchange.com/a/75431/204066
 autocmd BufWritePre * :%s/\s\+$//e
 call NorMapKeys("<c-c><c-s>", ":call NERDComment('cc', 'toggle')<cr>")
+call MapKeys("<c-c><c-m>", ":Glow<cr>")
 
 " python
 call MapKeys("<c-c><c-p>", ":!python %<cr>")
