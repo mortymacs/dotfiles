@@ -11,8 +11,6 @@ dust
 git-delta-bin
 git-extras
 glow
-google-cloud-cpp
-google-crc32c
 hotspot
 insomnia-bin
 jid
