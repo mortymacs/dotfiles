@@ -56,15 +56,15 @@ call plug#end()
 " https://stackoverflow.com/a/43595915/2338672
 " https://stackoverflow.com/a/13854888/2338672
 function! MapKeys(keys, rhs)
-    for map_command in ['map', 'map!']
-        execute map_command . a:keys '<esc>' . a:rhs
-    endfor
+  for map_command in ['map', 'map!']
+    execute map_command . a:keys '<esc>' . a:rhs
+  endfor
 endfunction
 function! NorMapKeys(keys, rhs)
-    for normap_command in ['nnoremap', 'inoremap']
-        execute normap_command . a:keys '<esc>' . a:rhs
-    endfor
-    execute 'vnoremap' . a:keys '' . a:rhs
+  for normap_command in ['nnoremap', 'inoremap']
+    execute normap_command . a:keys '<esc>' . a:rhs
+  endfor
+  execute 'vnoremap' . a:keys '' . a:rhs
 endfunction
 
 " theme
@@ -113,6 +113,7 @@ set autoindent
 set complete+=s
 "" reformat the whole buffer
 call MapKeys("<c-c><c-l>", "gg=G<cr>")
+call MapKeys("<c-m-l>", "gg=G<cr>")
 
 " fzf
 "" https://github.com/universal-ctags/ctags/issues/218#issuecomment-72355190
@@ -189,13 +190,13 @@ let s:presentation_enabled = 0
 function! PresentationToggle()
   Goyo
   if s:presentation_enabled
-	Limelight!
-	silent !xdotool key ctrl+0
+    Limelight!
+    silent !xdotool key ctrl+0
     let s:presentation_enabled = 0
   else
-	Limelight
-	silent !xdotool key --repeat 4 ctrl+plus
-	silent !xdotool key --repeat 4 ctrl+equal
+    Limelight
+    silent !xdotool key --repeat 4 ctrl+plus
+    silent !xdotool key --repeat 4 ctrl+equal
     let s:presentation_enabled = 1
   endif
 endfunction
