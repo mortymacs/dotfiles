@@ -1,5 +1,6 @@
 ack
 alacritty
+ali
 arc-icon-theme
 arc-solid-gtk-theme
 asciinema
