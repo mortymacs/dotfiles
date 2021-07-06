@@ -43,7 +43,6 @@ docker-machine
 dog
 doxygen
 efibootmgr
-emacs-nox
 eog
 epiphany
 evince
