@@ -3,6 +3,9 @@ window:
   dimensions:
     columns: 120
     lines: 30
+  decorations: None
+
+background_opacity: 0.9
 
 # Font configuration (changes require restart).
 font:
