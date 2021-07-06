@@ -51,6 +51,9 @@ Plug 'voldikss/vim-floaterm'
 Plug 'sotte/presenting.vim'
 Plug 'martinda/Jenkinsfile-vim-syntax'
 Plug 'npxbr/glow.nvim', {'do': ':GlowInstall', 'branch': 'main'}
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 call plug#end()
 
 " https://stackoverflow.com/a/43595915/2338672
@@ -97,6 +100,9 @@ let g:floaterm_keymap_next = "<c-x><c-right>"
 let g:floaterm_keymap_kill = "<c-x><c-k>"
 let g:floaterm_opener = "tabe"
 hi FloatermBorder ctermbg=black
+
+" Telescope
+call MapKeys("<c-x><c-g>", ":Telescope live_grep<cr>")
 
 " coc.vim
 "" https://github.com/neoclide/coc.nvim/issues/318#issuecomment-451331078
