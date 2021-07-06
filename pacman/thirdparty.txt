@@ -10,6 +10,7 @@ duf
 dust
 git-delta-bin
 git-extras
+gitstatus
 glow
 hotspot
 insomnia-bin

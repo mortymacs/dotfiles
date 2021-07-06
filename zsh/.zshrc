@@ -8,6 +8,7 @@ fi
 export QT_QPA_PLATFORMTHEME=qt5ct
 
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/gitstatus/gitstatus.prompt.zsh
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 source $HOME/.zsh_aliases
 #source $HOME/.local/bin/forgit.plugin.zsh
