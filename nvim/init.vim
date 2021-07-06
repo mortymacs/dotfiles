@@ -178,6 +178,7 @@ call MapKeys("<s-right>", ":tabnext<cr>")
 call MapKeys("<s-left>", ":tabprevious<cr>")
 
 " general
+call MapKeys("<c-g>", "<esc>")
 "" select
 call MapKeys("<c-space>", "v")  " v$
 call MapKeys("<m-space>", "v0o$")
