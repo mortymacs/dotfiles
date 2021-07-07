@@ -149,6 +149,8 @@ jdk-openjdk
 jq
 k9s
 kcachegrind
+keybase
+keybase-gui
 krita
 kubectl
 kubectx
