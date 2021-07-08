@@ -50,7 +50,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'voldikss/vim-floaterm'
 Plug 'sotte/presenting.vim'
 Plug 'martinda/Jenkinsfile-vim-syntax'
-Plug 'npxbr/glow.nvim', {'do': ':GlowInstall', 'branch': 'main'}
+Plug 'npxbr/glow.nvim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
@@ -82,12 +82,6 @@ hi SignColumn ctermbg=NONE guibg=NONE
 
 " powerline
 let g:airline_powerline_fonts = 1
-"let g:airline#extensions#tabline#left_sep = ' '
-"let g:airline#extensions#tabline#left_alt_sep = ' '
-"let g:airline_left_sep = ' '
-"let g:airline_right_sep = ' '
-"let g:airline_left_alt_sep = ' '
-"let g:airline_right_alt_sep = ' '
 
 " terminal
 let g:floaterm_title = "$1/$2"

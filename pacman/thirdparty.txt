@@ -13,7 +13,6 @@ git-extras
 gitstatus
 glow
 hotspot
-insomnia-bin
 jid
 kafka
 kubectl-df-pv
