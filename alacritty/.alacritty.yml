@@ -5,7 +5,7 @@ window:
     lines: 30
   decorations: None
 
-background_opacity: 0.9
+background_opacity: 0.95
 
 # Font configuration (changes require restart).
 font:
