@@ -54,7 +54,21 @@ Plug 'npxbr/glow.nvim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'norcalli/nvim-colorizer.lua'
+Plug 'luochen1990/rainbow'
+Plug 'famiu/bufdelete.nvim'
+Plug 'ryanoasis/vim-devicons'
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'itchyny/vim-cursorword'
+Plug 'sindrets/diffview.nvim'
+Plug 'f-person/git-blame.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'romgrk/barbar.nvim'
 call plug#end()
+
+" Color
+lua require'colorizer'.setup()
+let g:rainbow_active = 1
 
 " https://stackoverflow.com/a/43595915/2338672
 " https://stackoverflow.com/a/13854888/2338672
@@ -166,7 +180,7 @@ call MapKeys("<c-s-left>", ":vertical resize +1<cr>")
 call MapKeys("<c-s-right>", ":vertical resize -1<cr>")
 
 " buffer
-call MapKeys("<c-x><c-e>", ":bd<cr>")
+call MapKeys("<c-x><c-e>", ":Bd!<cr>")
 
 " clipboard
 "" https://superuser.com/a/921975
@@ -177,8 +191,22 @@ nmap <c-c><c-v> :call setreg("\"",system("xclip -o -selection clipboard"))<cr>p
 let g:airline#extensions#tabline#enabled = 1
 "" https://github.com/vim-airline/vim-airline/issues/1688#issuecomment-373459776
 let g:airline_powerline_fonts = 1
-call MapKeys("<s-right>", ":tabnext<cr>")
-call MapKeys("<s-left>", ":tabprevious<cr>")
+call MapKeys("<s-right>", ":BufferNext<cr>")
+call MapKeys("<s-left>", ":BufferPrevious<cr>")
+call MapKeys("<c-x><c-q>", ":BufferClose<cr>")
+call MapKeys("<m-1>", ":BufferGoto 1<cr>")
+call MapKeys("<m-2>", ":BufferGoto 2<cr>")
+call MapKeys("<m-3>", ":BufferGoto 3<cr>")
+call MapKeys("<m-4>", ":BufferGoto 4<cr>")
+call MapKeys("<m-5>", ":BufferGoto 5<cr>")
+call MapKeys("<m-6>", ":BufferGoto 6<cr>")
+call MapKeys("<m-7>", ":BufferGoto 7<cr>")
+call MapKeys("<m-8>", ":BufferGoto 8<cr>")
+call MapKeys("<m-9>", ":BufferGoto 9<cr>")
+let bufferline = get(g:, 'bufferline', {})
+let bufferline.animation = v:false
+let bufferline.closable = v:false
+let bufferline.clickable = v:false
 
 " general
 call MapKeys("<c-g>", "<esc>")
@@ -186,7 +214,6 @@ call MapKeys("<c-g>", "<esc>")
 call MapKeys("<c-space>", "v")  " v$
 call MapKeys("<m-space>", "v0o$")
 call MapKeys("<c-x><c-s>", ":w<cr>")
-call MapKeys("<c-x><c-q>", ":q<cr>")
 call MapKeys("<c-@>", "v")
 call MapKeys("<c-d>", "yyp")
 "" https://stackoverflow.com/a/20579322/2338672
@@ -207,9 +234,21 @@ endfunction
 call MapKeys("<c-x><c-p>", ":call PresentationToggle()<cr>")
 
 " git
-call MapKeys("<c-g><c-d>", "<plug>(GitGutterPreviewHunk)")
+call MapKeys("<c-g><c-h>", "<plug>(GitGutterPreviewHunk)")
 call MapKeys("<c-g><c-u>", "<plug>(GitGutterUndoHunk)")
 call MapKeys("<c-g><c-l>", "<plug>(GitGutterStageHunk)")
+"" https://stackoverflow.com/a/20579322/2338672
+let s:diff_view_enabled = 0
+function! DiffViewToggle()
+  if s:diff_view_enabled
+    DiffviewClose
+    let s:diff_view_enabled = 0
+  else
+    DiffviewOpen
+    let s:diff_view_enabled = 1
+  endif
+endfunction
+call MapKeys("<c-g><c-s>", ":call DiffViewToggle()<cr>")
 "" https://github.com/longsleep/bin-scripts/blob/master/config/vimrc
 " auto wrap git commit messages
 au FileType gitcommit set tw=72
