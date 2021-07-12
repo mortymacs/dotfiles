@@ -12,15 +12,15 @@ background_opacity: 0.95
 font:
   size: 13
   normal:
-    family: Jetbrains Mono
-    style: Regular
+    family: Source Code Pro
+    style: Medium
 
   bold:
-    family: Jetbrains Mono
+    family: Source Code Pro
     style: Bold
 
   italic:
-    family: Jetbrains Mono
+    family: Source Code Pro
     style: Italic
 
   offset:
