@@ -280,6 +280,7 @@ trash-cli
 tree
 ttf-droid
 ttf-fantasque-sans-mono
+ttf-fira-code
 ttf-fira-mono
 ttf-hack
 ttf-jetbrains-mono
