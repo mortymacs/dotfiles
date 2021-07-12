@@ -118,7 +118,7 @@ leave_broot = false
 
 [[verbs]]
 invocation = "create {subpath}"
-execution = "$EDITOR {directory}/{subpath}"
+execution = "nvim {directory}/{subpath}"
 leave_broot = false
 
 [[verbs]]
