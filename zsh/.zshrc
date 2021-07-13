@@ -64,7 +64,7 @@ export EDITOR=nvim
 export VISUAL=nvim
 
 # bat
-export BAT_THEME="1337"
+export BAT_THEME="Coldark-Dark"
 
 # fzf
 export FZF_DEFAULT_COMMAND='fd --type f'
