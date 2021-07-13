@@ -8,24 +8,23 @@ window:
 background_opacity: 0.95
 
 # Font configuration (changes require restart).
-# backup font: "CodeNewRoman Nerd Font Mono" with offset y:3
 font:
-  size: 13
+  size: 14
   normal:
-    family: Source Code Pro
-    style: Medium
+    family: CodeNewRoman Nerd Font Mono
+    style: Regular
 
   bold:
-    family: Source Code Pro
+    family: CodeNewRoman Nerd Font Mono
     style: Semibold
 
   italic:
-    family: Source Code Pro
+    family: CodeNewRoman Nerd Font Mono
     style: Italic
 
   offset:
     x: 0
-    y: 0
+    y: 3
 
 # Color configuration.
 # https://github.com/eendroroy/alacritty-theme
