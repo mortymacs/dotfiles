@@ -59,6 +59,7 @@ flake8
 flameshot
 flex
 fmt
+fontforge
 fzf
 gawk
 gcc
