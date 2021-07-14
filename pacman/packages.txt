@@ -71,6 +71,7 @@ gedit
 gettext
 gimp
 git
+git-delta
 gitg
 github-cli
 glade

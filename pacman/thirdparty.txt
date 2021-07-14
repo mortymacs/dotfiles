@@ -8,7 +8,6 @@ docker-machine-driver-kvm2
 dry-bin
 duf
 dust
-git-delta-bin
 git-extras
 gitstatus
 glow
