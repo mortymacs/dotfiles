@@ -33,7 +33,6 @@ shc
 skypeforlinux-stable-bin
 slack-desktop
 spotify
-sqlfluff
 yaru-gnome-shell-theme
 yaru-gtk-theme
 yaru-icon-theme
