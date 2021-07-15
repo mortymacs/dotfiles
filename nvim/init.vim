@@ -95,7 +95,13 @@ hi Normal guibg=NONE ctermbg=NONE
 hi SignColumn ctermbg=NONE guibg=NONE
 
 " powerline
-let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = ' '
+let g:airline_powerline_fonts = 0
+let g:airline_left_sep = ' '
+let g:airline_right_sep = ' '
+let g:airline_left_alt_sep = ' '
+let g:airline_right_alt_sep = ' '
 
 " terminal
 let g:floaterm_title = "$1/$2"
@@ -288,7 +294,7 @@ call MapKeys("<c-t><c-a>", ":Pytest file<cr>")
 let g:vim_isort_map = ''
 let g:isort_command = 'isort'
 call MapKeys("<c-c><c-i>", ":Isort --profile black<cr>")
-autocmd BufWritePre *.py execute ':Isort --profile black'
+"autocmd BufWritePre *.py execute ':Isort --profile black'
 " python - black
 call MapKeys("<c-c><c-r>", ":Black<cr>")
-autocmd BufWritePre *.py execute ':Black'
+"autocmd BufWritePre *.py execute ':Black'

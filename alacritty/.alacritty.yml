@@ -8,24 +8,23 @@ window:
 background_opacity: 0.95
 
 # Font configuration (changes require restart).
-# Backup font: CodeNewRoman Nerd Font Mono , offset.y:3
 font:
-  size: 13
+  size: 14
   normal:
-    family: Hack
+    family: CodeNewRoman Nerd Font Mono
     style: Regular
 
   bold:
-    family: Hack
+    family: CodeNewRoman Nerd Font Mono
     style: Bold
 
   italic:
-    family: Hack
+    family: CodeNewRoman Nerd Font Mono
     style: Italic
 
   offset:
     x: 0
-    y: 0
+    y: 3
 
 # Color configuration.
 # https://github.com/alacritty/alacritty/wiki/Color-schemes
