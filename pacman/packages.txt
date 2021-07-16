@@ -299,6 +299,7 @@ vlc
 w3m
 which
 wireguard-tools
+wkhtmltopdf
 wmctrl
 wpa_supplicant
 xclip

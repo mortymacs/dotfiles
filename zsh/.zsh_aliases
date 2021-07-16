@@ -28,6 +28,8 @@ alias ps="procs"
 alias dig="dog"
 alias du="dust -b"
 alias less="less -N"
+website-capture(){ wkhtmltoimage --format png --quality 100 "$1" "$1".png }
+http-server(){ python -m http.server "$1" }
 
 # ---------------------------------------------- server
 alias p="gping 8.8.8.8"
