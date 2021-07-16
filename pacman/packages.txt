@@ -28,6 +28,7 @@ cgdb
 cheese
 chromium
 clang
+cloc
 cppcheck
 ctags
 ctop

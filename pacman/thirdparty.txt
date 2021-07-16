@@ -30,6 +30,7 @@ pingtop
 python-configparser
 python-panwid
 shc
+silicon
 skypeforlinux-stable-bin
 slack-desktop
 spotify
