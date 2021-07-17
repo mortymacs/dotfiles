@@ -73,6 +73,7 @@ gnome-books
 gnome-boxes
 gnome-calculator
 gnome-calendar
+gnome-characters
 gnome-clocks
 gnome-color-manager
 gnome-contacts
