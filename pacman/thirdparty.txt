@@ -23,7 +23,6 @@ mcfly
 mtodo
 mycli
 nats-server
-nvm
 peco
 pgcli
 python-configparser
