@@ -43,7 +43,6 @@ bindkey ';5C' forward-word
 bindkey ';3C' forward-word
 
 [[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
-# eval "$(atuin init zsh)"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -54,7 +53,7 @@ source /home/mort/.config/broot/launcher/bash/br
 export GOPATH="$HOME/.local/share/go"
 export GOMODCACHE="$HOME/.local/share/go/pkg/mod"
 
-source /usr/share/nvm/init-nvm.sh
+eval "$(direnv hook zsh)"
 
 # https://stackoverflow.com/a/22481496
 export TERM="xterm-256color"

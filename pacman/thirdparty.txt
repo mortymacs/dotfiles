@@ -3,6 +3,7 @@ atuin
 bottom-bin
 chrome-gnome-shell
 czmq-git
+direnv
 dive
 docker-machine-driver-kvm2
 dry-bin
@@ -13,7 +14,6 @@ gitstatus
 glow
 hotspot
 jid
-kafka
 kubectl-df-pv
 kubespy
 lazydocker
@@ -26,17 +26,12 @@ nats-server
 nvm
 peco
 pgcli
-pingtop
 python-configparser
 python-panwid
 shc
 skypeforlinux-stable-bin
 slack-desktop
 spotify
-yaru-gnome-shell-theme
-yaru-gtk-theme
-yaru-icon-theme
 yay
 ydiff
-zart
 zeal
