@@ -252,6 +252,7 @@ screen
 sed
 shellcheck
 shotwell
+silicon
 simple-scan
 smem
 spatialindex
@@ -314,7 +315,6 @@ yelp
 youtube-dl
 yq
 z
-zart
 zsh
 zsh-autosuggestions
 zsh-completions

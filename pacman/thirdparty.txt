@@ -30,7 +30,6 @@ pingtop
 python-configparser
 python-panwid
 shc
-silicon
 skypeforlinux-stable-bin
 slack-desktop
 spotify
@@ -39,4 +38,5 @@ yaru-gtk-theme
 yaru-icon-theme
 yay
 ydiff
+zart
 zeal
