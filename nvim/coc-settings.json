@@ -6,5 +6,5 @@
       "rootPatterns": ["Cargo.toml"]
     }
   },
-  "python.pythonPath": "/home/mort/venv/bin/python"
+  "diagnostic.displayByAle": true
 }

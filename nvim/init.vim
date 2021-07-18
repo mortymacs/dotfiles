@@ -64,6 +64,7 @@ Plug 'sindrets/diffview.nvim'
 Plug 'f-person/git-blame.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'romgrk/barbar.nvim'
+Plug 'dense-analysis/ale'
 call plug#end()
 
 " Color
@@ -298,3 +299,6 @@ call MapKeys("<c-c><c-i>", ":Isort --profile black<cr>")
 " python - black
 call MapKeys("<c-c><c-r>", ":Black<cr>")
 "autocmd BufWritePre *.py execute ':Black'
+
+" ALE
+let g:ale_disable_lsp = 1
