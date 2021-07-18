@@ -61,6 +61,7 @@ export TERM="xterm-256color"
 # https://unix.stackexchange.com/a/177979
 export EDITOR=nvim
 export VISUAL=nvim
+export TERMINAL=alacritty
 
 # bat
 export BAT_THEME="Coldark-Dark"
