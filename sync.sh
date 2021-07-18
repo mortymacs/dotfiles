@@ -35,6 +35,10 @@ pacman -Qqem > pacman/thirdparty.txt
 # docker
 cp ~/.docker/config.json docker/
 
+# upddate gnome settings.
+gsettings set org.gnome.desktop.default-applications.terminal exec /usr/bin/alacritty
+gsettings set org.gnome.desktop.default-applications.terminal exec-arg ""
+
 # push changes.
 git status
 git add .
