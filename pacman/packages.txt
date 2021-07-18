@@ -132,6 +132,7 @@ htop
 httpie
 hugo
 hyperfine
+i3-wm
 inetutils
 intel-ucode
 iotop
