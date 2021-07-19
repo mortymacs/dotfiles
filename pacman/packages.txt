@@ -39,6 +39,7 @@ docker-compose
 docker-machine
 dog
 doxygen
+dust
 efibootmgr
 eog
 epiphany
