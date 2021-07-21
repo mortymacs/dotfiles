@@ -21,7 +21,6 @@ broot
 btrfs-progs
 cgdb
 cheese
-chromium
 clang
 cloc
 cppcheck
@@ -235,6 +234,7 @@ sed
 shellcheck
 shotwell
 silicon
+sleuthkit
 smem
 spdlog
 sshfs
@@ -245,7 +245,9 @@ sysbench
 syslog-ng
 systemd-resolvconf
 tailscale
+telegram-desktop
 terraform
+testdisk
 texinfo
 texlive-core
 texlive-latexextra

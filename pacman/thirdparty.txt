@@ -1,7 +1,6 @@
 anydesk-bin
 atuin
 bottom-bin
-chrome-gnome-shell
 czmq-git
 direnv
 dive
