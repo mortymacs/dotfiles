@@ -186,7 +186,7 @@ call MapKeys("<c-s-left>", ":vertical resize +1<cr>")
 call MapKeys("<c-s-right>", ":vertical resize -1<cr>")
 
 " buffer
-call MapKeys("<c-x><c-e>", ":Bd!<cr>")
+call MapKeys("<c-x><c-e>", ":bd!<cr>")
 
 " clipboard
 "" https://superuser.com/a/921975
