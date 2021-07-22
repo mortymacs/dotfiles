@@ -132,6 +132,7 @@ htop
 httpie
 hugo
 hyperfine
+iftop
 inetutils
 intel-ucode
 iotop
@@ -256,6 +257,7 @@ tig
 tmux
 tmuxp
 totem
+traceroute
 tracker
 tracker-miners
 tracker3
