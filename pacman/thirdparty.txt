@@ -1,6 +1,5 @@
 anydesk-bin
 atuin
-bottom-bin
 czmq-git
 direnv
 dive
@@ -16,7 +15,6 @@ kubectl-df-pv
 kubespy
 lazydocker
 mailspring
-mattermost-desktop
 mcfly
 mtodo
 mycli

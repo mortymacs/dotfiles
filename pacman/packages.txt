@@ -16,6 +16,7 @@ bind
 binutils
 bison
 boost
+bottom
 bpython
 broot
 btrfs-progs
@@ -28,6 +29,7 @@ ctags
 ctop
 cython
 dconf-editor
+delve
 dia
 dialog
 diff-so-fancy
@@ -137,6 +139,7 @@ inetutils
 intel-ucode
 iotop
 ipython
+irssi
 iw
 jdk-openjdk
 jq
