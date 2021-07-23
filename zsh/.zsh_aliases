@@ -42,7 +42,9 @@ alias ms="minikube start --vm-driver kvm2"
 alias k="kubectl"
 alias kx="kubectx"
 ## http://www.bashoneliners.com/oneliners/252/
-alias ddc="docker images -q -f dangling=true | xargs --no-run-if-empty --delim='\n' docker rmi -f"
+alias dic="docker images -q -f dangling=true | xargs --no-run-if-empty --delim='\n' docker rmi -f"
+dcr(){ docker run -ti --rm "$1" "${2:-bash}" }
+dca(){ docker exec -ti "$1" "${2:-bash}" }
 
 # ---------------------------------------------- development
 ## https://github.com/universal-ctags/ctags/issues/218#issuecomment-72355190

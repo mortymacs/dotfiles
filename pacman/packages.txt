@@ -185,6 +185,7 @@ parallel
 patch
 peco
 perf
+picom
 pkgconf
 prettyping
 procs
