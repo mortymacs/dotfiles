@@ -66,6 +66,7 @@ gdm
 geary
 gedit
 gettext
+ghex
 gimp
 git
 git-delta
