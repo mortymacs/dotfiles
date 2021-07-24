@@ -130,6 +130,7 @@ gvfs-smb
 gzip
 heaptrack
 helm
+hexedit
 hq
 htop
 httpie
