@@ -1,39 +1,48 @@
-#!/bin/sh
+#!/bin/bash
 
 # zsh
-cp ~/{.zshrc,.zsh_aliases,.p10k.zsh} zsh/
+cp "$HOME"/{.zshrc,.zsh_aliases,.p10k.zsh} zsh/
 
 # tmux
-cp ~/.tmux.conf tmux/
+cp "$HOME"/.tmux.conf tmux/
 
 # Alacritty
-cp ~/.alacritty.yml alacritty/
+cp "$HOME"/.alacritty.yml alacritty/
 
 # nvim
-cp ~/.config/nvim/{init.vim,coc-settings.json} nvim/
+cp "$HOME"/.config/nvim/{init.vim,coc-settings.json} nvim/
 
 # coc
-cp ~/.config/coc/extensions/package.json coc/
+cp "$HOME"/.config/coc/extensions/package.json coc/
 
 # gdb, pdb
-cp ~/.gdbinit gdb/
-cp ~/.pdbrc pdb/
+cp "$HOME"/.gdbinit gdb/
+cp "$HOME"/.pdbrc pdb/
 
 # git
-cp ~/{.gitconfig,.gitignore} git/
+cp "$HOME"/{.gitconfig,.gitignore} git/
 
 # tig
-cp ~/.tigrc tig/
+cp "$HOME"/.tigrc tig/
 
 # broot
-cp ~/.config/broot/conf.toml broot/
+cp "$HOME"/.config/broot/conf.toml broot/
 
 # packages
 pacman -Qqen > pacman/packages.txt
 pacman -Qqem > pacman/thirdparty.txt
 
 # docker
-cp ~/.docker/config.json docker/
+cp "$HOME"/.docker/config.json docker/
+
+# Gnome shell extensions
+cp -R "$HOME"/.local/share/gnome-shell/{extensions,application_state} gnome/extensions
+
+# Fonts
+cp -R "$HOME"/.local/share/fonts/{Code\ New\ Roman\ Nerd\ Font\ Complete\ Mono.otf,Code\ New\ Roman\ Bold\ Nerd\ Font\ Complete\ Mono.otf,Code\ New\ Roman\ Italic\ Nerd\ Font\ Complete\ Mono.otf} gnome/fonts/
+
+# Background
+cp "$HOME"/Pictures/wallpaper.jpg gnome/
 
 # upddate gnome settings.
 gsettings set org.gnome.desktop.default-applications.terminal exec /usr/bin/alacritty

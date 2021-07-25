@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+Copyright © 2020, 2021 Aleksandr Mezin
+
+This file is part of ddterm GNOME Shell extension.
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<interface>
+  <!-- interface-requires gtk+ 3.0 -->
+  <menu id="terminal-popup">
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">Open Hyperlink</attribute>
+        <attribute name="action">terminal.open-hyperlink</attribute>
+        <attribute name="hidden-when">action-disabled</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Copy Hyperlink Address</attribute>
+        <attribute name="action">terminal.copy-hyperlink</attribute>
+        <attribute name="hidden-when">action-disabled</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Copy File Path</attribute>
+        <attribute name="action">terminal.copy-filename</attribute>
+        <attribute name="hidden-when">action-disabled</attribute>
+      </item>
+    </section>
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">Copy</attribute>
+        <attribute name="action">terminal.copy</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Copy HTML</attribute>
+        <attribute name="action">terminal.copy-html</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Paste</attribute>
+        <attribute name="action">terminal.paste</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Select All</attribute>
+        <attribute name="action">terminal.select-all</attribute>
+      </item>
+    </section>
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">Reset</attribute>
+        <attribute name="action">terminal.reset</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Reset and Clear</attribute>
+        <attribute name="action">terminal.reset-and-clear</attribute>
+      </item>
+    </section>
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">Close</attribute>
+        <attribute name="action">page.close</attribute>
+      </item>
+    </section>
+    <section>
+      <submenu>
+        <attribute name="label" translatable="yes">New Tab</attribute>
+        <item>
+          <attribute name="label" translatable="yes">New Tab Before Current Tab</attribute>
+          <attribute name="action">win.new-tab-before-current</attribute>
+        </item>
+        <item>
+          <attribute name="label" translatable="yes">New Tab After Current Tab</attribute>
+          <attribute name="action">win.new-tab-after-current</attribute>
+        </item>
+        <item>
+          <attribute name="label" translatable="yes">New Tab Before First Tab</attribute>
+          <attribute name="action">win.new-tab-front</attribute>
+        </item>
+        <item>
+          <attribute name="label" translatable="yes">New Tab After Last Tab</attribute>
+          <attribute name="action">win.new-tab</attribute>
+        </item>
+      </submenu>
+    </section>
+    <submenu>
+      <attribute name="label" translatable="yes">Preferences</attribute>
+      <section>
+        <item>
+          <attribute name="label" translatable="yes">Preferences...</attribute>
+          <attribute name="action">app.preferences</attribute>
+        </item>
+      </section>
+      <section>
+        <item>
+          <attribute name="label" translatable="yes">Above All Windows</attribute>
+          <attribute name="action">app.window-above</attribute>
+        </item>
+        <item>
+          <attribute name="label" translatable="yes">On All Workspaces</attribute>
+          <attribute name="action">app.window-stick</attribute>
+        </item>
+        <item>
+          <attribute name="label" translatable="yes">Maximize Window</attribute>
+          <attribute name="action">app.window-maximize</attribute>
+        </item>
+        <item>
+          <attribute name="label" translatable="yes">Transparent Background</attribute>
+          <attribute name="action">app.transparent-background</attribute>
+        </item>
+      </section>
+      <section>
+        <item>
+          <attribute name="label" translatable="yes">Hide When Application Loses Focus</attribute>
+          <attribute name="action">app.hide-when-focus-lost</attribute>
+        </item>
+        <item>
+          <attribute name="label" translatable="yes">Hide When Esc Key Is Pressed</attribute>
+          <attribute name="action">app.hide-window-on-esc</attribute>
+        </item>
+      </section>
+      <section>
+        <item>
+          <attribute name="label" translatable="yes">Scroll On Output</attribute>
+          <attribute name="action">app.scroll-on-output</attribute>
+        </item>
+        <item>
+          <attribute name="label" translatable="yes">Scroll On Keystroke</attribute>
+          <attribute name="action">app.scroll-on-keystroke</attribute>
+        </item>
+      </section>
+      <section>
+        <item>
+          <attribute name="label" translatable="yes">Preserve Working Directory In New Tabs</attribute>
+          <attribute name="action">app.preserve-working-directory</attribute>
+        </item>
+      </section>
+      <section>
+        <item>
+          <attribute name="label" translatable="yes">Enable Keyboard Shortcuts</attribute>
+          <attribute name="action">app.shortcuts-enabled</attribute>
+        </item>
+      </section>
+    </submenu>
+  </menu>
+  <menu id="tab-popup">
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">Use Custom Tab Title</attribute>
+        <attribute name="action">page.use-custom-title</attribute>
+        <attribute name="target" type="b">true</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Use Default Tab Title</attribute>
+        <attribute name="action">page.use-custom-title</attribute>
+        <attribute name="target" type="b">false</attribute>
+      </item>
+    </section>
+    <item>
+      <attribute name="label" translatable="yes">Close</attribute>
+      <attribute name="action">page.close</attribute>
+    </item>
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">New Tab Before This Tab</attribute>
+        <attribute name="action">page.new-tab-before</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">New Tab After This Tab</attribute>
+        <attribute name="action">page.new-tab-after</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">New Tab Before First Tab</attribute>
+        <attribute name="action">win.new-tab-front</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">New Tab After Last Tab</attribute>
+        <attribute name="action">win.new-tab</attribute>
+      </item>
+    </section>
+    <item>
+      <attribute name="label" translatable="yes">Preferences...</attribute>
+      <attribute name="action">app.preferences</attribute>
+    </item>
+  </menu>
+</interface>
