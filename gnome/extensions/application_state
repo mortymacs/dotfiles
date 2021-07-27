@@ -4,12 +4,12 @@
     <application id="gnome-control-center.desktop" score="42.6875" last-seen="1627417883"/>
     <application id="skypeforlinux.desktop" score="791.1361402310431" last-seen="1627417787"/>
     <application id="org.gnome.Weather.desktop" score="5" last-seen="1627306489"/>
-    <application id="firefox.desktop" score="23513.954768180847" last-seen="1627424216"/>
+    <application id="firefox.desktop" score="23513.954768180847" last-seen="1627427344"/>
     <application id="org.gnome.tweaks.desktop" score="24.875" last-seen="1627210113"/>
-    <application id="Alacritty.desktop" score="16870.067541122437" last-seen="1627427093"/>
+    <application id="Alacritty.desktop" score="16897.067541122437" last-seen="1627427350"/>
     <application id="vlc.desktop" score="26" last-seen="1627235528"/>
     <application id="discord.desktop" score="65" last-seen="1627327589"/>
-    <application id="org.gnome.Geary.desktop" score="1559.8190216422081" last-seen="1627427093"/>
+    <application id="org.gnome.Geary.desktop" score="1563.8190216422081" last-seen="1627427217"/>
     <application id="org.gnome.Software.desktop" score="0" last-seen="1627424421"/>
     <application id="slack.desktop" score="136.85508580785245" last-seen="1627421778"/>
     <application id="virtualbox.desktop" score="19" last-seen="1627333268"/>
