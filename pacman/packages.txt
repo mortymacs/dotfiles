@@ -6,7 +6,6 @@ atop
 autoconf
 automake
 autopep8
-awesome
 awesome-terminal-fonts
 baobab
 base
@@ -35,7 +34,6 @@ dia
 dialog
 diff-so-fancy
 discord
-dmenu
 docker
 docker-compose
 docker-machine
