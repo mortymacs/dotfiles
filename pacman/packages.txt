@@ -7,7 +7,6 @@ autoconf
 automake
 autopep8
 awesome-terminal-fonts
-baobab
 base
 bash-bats
 bash-bats-support
@@ -73,7 +72,6 @@ git-delta
 github-cli
 gnome-backgrounds
 gnome-books
-gnome-boxes
 gnome-calculator
 gnome-calendar
 gnome-characters
@@ -141,7 +139,6 @@ inetutils
 intel-ucode
 iotop
 ipython
-irssi
 iw
 jdk-openjdk
 jq
@@ -190,12 +187,10 @@ parallel
 patch
 peco
 perf
-picom
 pkgconf
 prettyping
 procs
 pyenv
-pypy3
 python-black
 python-build
 python-cherrypy
@@ -224,11 +219,6 @@ python-sh
 python-sphinx
 python-tqdm
 python-vmprof
-qemu-arch-extra
-qemu-block-gluster
-qemu-block-iscsi
-qemu-block-rbd
-qemu-guest-agent
 redis
 ripgrep
 rust
@@ -282,7 +272,6 @@ virtualbox
 virtualbox-guest-iso
 virtualbox-guest-utils
 vlc
-w3m
 which
 wireguard-tools
 wkhtmltopdf
@@ -295,7 +284,6 @@ xf86-video-intel
 xsel
 yapf
 yelp
-youtube-dl
 yq
 z
 zsh

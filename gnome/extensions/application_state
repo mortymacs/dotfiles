@@ -1,31 +1,32 @@
 <?xml version="1.0"?>
 <application-state>
   <context id="">
-    <application id="spotify.desktop" score="119.23424097336829" last-seen="1627414677"/>
-    <application id="org.gnome.gedit.desktop" score="130.14495877269655" last-seen="1627156759"/>
-    <application id="org.gnome.Evince.desktop" score="570.992919921875" last-seen="1627417806"/>
-    <application id="org.gnome.tweaks.desktop" score="24.875" last-seen="1627210113"/>
-    <application id="piavpn.desktop" score="4" last-seen="1626936433"/>
-    <application id="telegramdesktop.desktop" score="668.5" last-seen="1627039660"/>
-    <application id="org.gnome.FileRoller.desktop" score="18.056177292019129" last-seen="1627288930"/>
-    <application id="org.gnome.Terminal.desktop" score="885.61557127403353" last-seen="1627216711"/>
-    <application id="Mailspring.desktop" score="39.370436280965805" last-seen="1627389295"/>
     <application id="gnome-control-center.desktop" score="42.6875" last-seen="1627417883"/>
-    <application id="discord.desktop" score="65" last-seen="1627327589"/>
-    <application id="org.gnome.Nautilus.desktop" score="1116.95479596424" last-seen="1627401897"/>
-    <application id="slack.desktop" score="135.85508580785245" last-seen="1627417793"/>
-    <application id="anydesk.desktop" score="4782.0031773597002" last-seen="1627414065"/>
-    <application id="org.gnome.Weather.desktop" score="5" last-seen="1627306489"/>
-    <application id="org.gnome.Calendar.desktop" score="0.5" last-seen="1627375028"/>
     <application id="skypeforlinux.desktop" score="791.1361402310431" last-seen="1627417787"/>
-    <application id="firefox.desktop" score="22745.954768180847" last-seen="1627417879"/>
+    <application id="org.gnome.Weather.desktop" score="5" last-seen="1627306489"/>
+    <application id="firefox.desktop" score="23513.954768180847" last-seen="1627424216"/>
+    <application id="org.gnome.tweaks.desktop" score="24.875" last-seen="1627210113"/>
+    <application id="Alacritty.desktop" score="16870.067541122437" last-seen="1627427093"/>
     <application id="vlc.desktop" score="26" last-seen="1627235528"/>
+    <application id="discord.desktop" score="65" last-seen="1627327589"/>
+    <application id="org.gnome.Geary.desktop" score="1559.8190216422081" last-seen="1627427093"/>
+    <application id="org.gnome.Software.desktop" score="0" last-seen="1627424421"/>
+    <application id="slack.desktop" score="136.85508580785245" last-seen="1627421778"/>
     <application id="virtualbox.desktop" score="19" last-seen="1627333268"/>
-    <application id="keybase.desktop" score="1547.15625" last-seen="1627400167"/>
+    <application id="piavpn.desktop" score="4" last-seen="1626936433"/>
     <application id="org.gnome.Calculator.desktop" score="48" last-seen="1626948820"/>
-    <application id="Alacritty.desktop" score="16344.067541122437" last-seen="1627417364"/>
-    <application id="org.gnome.GHex.desktop" score="168" last-seen="1627233152"/>
     <application id="org.gnome.Extensions.desktop" score="17" last-seen="1627400573"/>
-    <application id="org.gnome.Geary.desktop" score="1559.8190216422081" last-seen="1627417832"/>
+    <application id="org.gnome.Terminal.desktop" score="885.61557127403353" last-seen="1627216711"/>
+    <application id="org.gnome.Calendar.desktop" score="0.5" last-seen="1627375028"/>
+    <application id="spotify.desktop" score="119.23424097336829" last-seen="1627414677"/>
+    <application id="gpick.desktop" score="0" last-seen="1627426808"/>
+    <application id="org.gnome.Nautilus.desktop" score="1116.95479596424" last-seen="1627401897"/>
+    <application id="org.gnome.FileRoller.desktop" score="18.056177292019129" last-seen="1627288930"/>
+    <application id="org.gnome.Evince.desktop" score="570.992919921875" last-seen="1627417806"/>
+    <application id="keybase.desktop" score="1547.15625" last-seen="1627400167"/>
+    <application id="anydesk.desktop" score="4782.0031773597002" last-seen="1627414065"/>
+    <application id="org.gnome.GHex.desktop" score="168" last-seen="1627233152"/>
+    <application id="org.gnome.gedit.desktop" score="130.14495877269655" last-seen="1627156759"/>
+    <application id="telegramdesktop.desktop" score="668.5" last-seen="1627039660"/>
   </context>
 </application-state>
