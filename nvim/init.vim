@@ -147,7 +147,7 @@ call MapKeys("<c-x><c-b>", ":Buffers<cr>")
 
 " nerdtree
 call MapKeys("<c-x><c-l>", ":NERDTreeToggle<cr>")
-let g:NERDTreeIgnore=['\.pyc$', '\~$', 'venv', '.git', '__pycache__', '.tags']
+let g:NERDTreeIgnore=['\.pyc$', '\~$', 'venv', '.git', '__pycache__', '.tags', 'tags']
 let g:nerdtree_tabs_focus_on_files=1
 "" https://stackoverflow.com/a/60465641/2338672
 let NERDTreeCustomOpenArgs={'file':{'where': 't'}}

@@ -6,6 +6,7 @@ atop
 autoconf
 automake
 autopep8
+awesome
 awesome-terminal-fonts
 baobab
 base
@@ -34,6 +35,7 @@ dia
 dialog
 diff-so-fancy
 discord
+dmenu
 docker
 docker-compose
 docker-machine
@@ -136,6 +138,10 @@ htop
 httpie
 hugo
 hyperfine
+i3-wm
+i3blocks
+i3lock
+i3status
 iftop
 inetutils
 intel-ucode
