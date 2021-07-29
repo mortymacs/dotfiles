@@ -1,32 +1,33 @@
 <?xml version="1.0"?>
 <application-state>
   <context id="">
-    <application id="spotify.desktop" score="59.617120486684144" last-seen="1627460534"/>
-    <application id="keybase.desktop" score="1719.578125" last-seen="1627510080"/>
+    <application id="spotify.desktop" score="80.617120486684144" last-seen="1627568694"/>
+    <application id="keybase.desktop" score="1929.578125" last-seen="1627586795"/>
     <application id="org.gnome.Evince.desktop" score="285.4964599609375" last-seen="1627417806"/>
     <application id="org.gnome.tweaks.desktop" score="12.4375" last-seen="1627210113"/>
-    <application id="piavpn.desktop" score="2" last-seen="1626936433"/>
     <application id="org.gnome.Software.desktop" score="0" last-seen="1627424421"/>
     <application id="gpick.desktop" score="0" last-seen="1627426808"/>
     <application id="telegramdesktop.desktop" score="334.25" last-seen="1627039660"/>
-    <application id="org.gnome.Terminal.desktop" score="442.80778563701676" last-seen="1627508153"/>
-    <application id="anydesk.desktop" score="3474.0015886798501" last-seen="1627510556"/>
+    <application id="org.gnome.gedit.desktop" score="85.072479386348277" last-seen="1627569097"/>
+    <application id="org.gnome.Terminal.desktop" score="450.80778563701676" last-seen="1627563095"/>
+    <application id="anydesk.desktop" score="3963.0015886798501" last-seen="1627591965"/>
     <application id="gnome-control-center.desktop" score="21.34375" last-seen="1627468365"/>
-    <application id="org.gnome.Calendar.desktop" score="0.25" last-seen="1627375028"/>
-    <application id="org.gnome.FileRoller.desktop" score="10.028088646009564" last-seen="1627508159"/>
     <application id="discord.desktop" score="32.5" last-seen="1627327589"/>
-    <application id="slack.desktop" score="89.427542903926224" last-seen="1627541228"/>
+    <application id="org.gnome.Calendar.desktop" score="0.25" last-seen="1627375028"/>
+    <application id="com.obsproject.Studio.desktop" score="13" last-seen="1627588172"/>
+    <application id="slack.desktop" score="89.427542903926224" last-seen="1627594840"/>
     <application id="org.gnome.Weather.desktop" score="2.5" last-seen="1627306489"/>
-    <application id="org.gnome.GHex.desktop" score="84" last-seen="1627233152"/>
-    <application id="skypeforlinux.desktop" score="397.56807011552155" last-seen="1627541217"/>
-    <application id="org.gnome.Calculator.desktop" score="28" last-seen="1627500761"/>
-    <application id="firefox.desktop" score="13687.477384090424" last-seen="1627542410"/>
-    <application id="vlc.desktop" score="13" last-seen="1627235528"/>
+    <application id="org.gnome.FileRoller.desktop" score="10.028088646009564" last-seen="1627508159"/>
+    <application id="skypeforlinux.desktop" score="419.56807011552155" last-seen="1627594834"/>
+    <application id="shotwell.desktop" score="0" last-seen="1627588228"/>
+    <application id="firefox.desktop" score="18183.477384090424" last-seen="1627594871"/>
+    <application id="vlc.desktop" score="23" last-seen="1627588223"/>
     <application id="virtualbox.desktop" score="53.5" last-seen="1627462032"/>
-    <application id="org.gnome.Nautilus.desktop" score="565.97739798212001" last-seen="1627508258"/>
-    <application id="Alacritty.desktop" score="9100.0337705612183" last-seen="1627542397"/>
-    <application id="org.gnome.gedit.desktop" score="68.072479386348277" last-seen="1627460511"/>
+    <application id="org.gnome.Nautilus.desktop" score="598.97739798212001" last-seen="1627594875"/>
+    <application id="org.gnome.Calculator.desktop" score="28" last-seen="1627500761"/>
+    <application id="Alacritty.desktop" score="10576.033770561218" last-seen="1627589900"/>
+    <application id="org.gnome.GHex.desktop" score="84" last-seen="1627233152"/>
     <application id="org.gnome.Extensions.desktop" score="8.5" last-seen="1627400573"/>
-    <application id="org.gnome.Geary.desktop" score="812.90951082110405" last-seen="1627541286"/>
+    <application id="org.gnome.Geary.desktop" score="854.90951082110405" last-seen="1627590393"/>
   </context>
 </application-state>

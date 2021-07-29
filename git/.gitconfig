@@ -26,6 +26,7 @@
 	work = config user.email \"m.nourelahialamdari@kopano.com\"
 	del-local = branch -d
 	del-all = branch -D
+    show-files = diff-tree --no-commit-id --name-only -r
 
 [push]
 	default = current

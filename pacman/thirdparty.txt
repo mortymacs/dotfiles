@@ -1,5 +1,6 @@
 anydesk-bin
 atuin
+bashdb
 czmq-git
 direnv
 dive

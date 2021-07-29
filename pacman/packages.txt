@@ -10,6 +10,7 @@ awesome-terminal-fonts
 base
 bash-bats
 bash-bats-support
+bash-completion
 bat
 bind
 binutils
