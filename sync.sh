@@ -33,7 +33,7 @@ pacman -Qqen > pacman/packages.txt
 pacman -Qqem > pacman/thirdparty.txt
 
 # docker
-cp "$HOME"/.docker/config.json docker/
+cat "$HOME"/.docker/config.json | jq 'del(.auths)' | tee docker/config.json
 
 # Gnome shell extensions
 cp -R "$HOME"/.local/share/gnome-shell/{extensions,application_state} gnome/extensions
