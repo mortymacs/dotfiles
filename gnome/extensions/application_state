@@ -14,20 +14,20 @@
     <application id="org.gnome.Calendar.desktop" score="0.25" last-seen="1627375028"/>
     <application id="org.gnome.gedit.desktop" score="112.07247938634828" last-seen="1627632933"/>
     <application id="com.obsproject.Studio.desktop" score="13" last-seen="1627588172"/>
-    <application id="slack.desktop" score="93.427542903926224" last-seen="1627626235"/>
+    <application id="slack.desktop" score="98.427542903926224" last-seen="1627637594"/>
     <application id="org.gnome.Weather.desktop" score="2.5" last-seen="1627306489"/>
     <application id="org.gnome.GHex.desktop" score="84" last-seen="1627233152"/>
     <application id="skypeforlinux.desktop" score="419.56807011552155" last-seen="1627626202"/>
     <application id="org.gnome.Terminal.desktop" score="450.80778563701676" last-seen="1627563095"/>
     <application id="discord.desktop" score="32.5" last-seen="1627327589"/>
     <application id="shotwell.desktop" score="0" last-seen="1627588228"/>
-    <application id="keybase.desktop" score="2260.578125" last-seen="1627633570"/>
+    <application id="keybase.desktop" score="2264.578125" last-seen="1627638486"/>
     <application id="org.gnome.Nautilus.desktop" score="598.97739798212001" last-seen="1627594875"/>
     <application id="vlc.desktop" score="23" last-seen="1627588223"/>
-    <application id="firefox.desktop" score="18602.477384090424" last-seen="1627634988"/>
+    <application id="firefox.desktop" score="18853.477384090424" last-seen="1627641528"/>
     <application id="virtualbox.desktop" score="53.5" last-seen="1627462032"/>
     <application id="org.gnome.Calculator.desktop" score="28" last-seen="1627500761"/>
-    <application id="Alacritty.desktop" score="10970.033770561218" last-seen="1627634975"/>
-    <application id="org.gnome.Geary.desktop" score="856.90951082110405" last-seen="1627631780"/>
+    <application id="Alacritty.desktop" score="11601.033770561218" last-seen="1627641518"/>
+    <application id="org.gnome.Geary.desktop" score="858.90951082110405" last-seen="1627640626"/>
   </context>
 </application-state>
