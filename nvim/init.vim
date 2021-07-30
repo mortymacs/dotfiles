@@ -268,13 +268,15 @@ call MapKeys("<c-e>", "<s-$>")
 call MapKeys("<c-a>", "<s-^>")
 
 " code
-call MapKeys("<c-c><c-h>", "<plug>Zeavim")
-call MapKeys("<c-c><c-g>", ":Glow<CR>")
+"" https://vim.fandom.com/wiki/Shifting_blocks_visually
+call NorMapKeys("<tab>", ">>")
+call NorMapKeys("<s-tab>", "<<_")
+call NorMapKeys("<c-c><c-s>", ":call nerdcommenter#Comment('cc', 'toggle')<cr>")
 "" https://vim.fandom.com/wiki/Fix_indentation
 call MapKeys("<c-c><c-r>", "gg=G<c-o><c-o>")
 "" https://unix.stackexchange.com/a/75431/204066
 autocmd BufWritePre * :%s/\s\+$//e
-call NorMapKeys("<c-c><c-s>", ":call nerdcommenter#Comment('cc', 'toggle')<cr>")
+call MapKeys("<c-c><c-h>", "<plug>Zeavim")
 call MapKeys("<c-c><c-m>", ":Glow<cr>")
 
 " python

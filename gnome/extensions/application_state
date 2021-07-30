@@ -8,8 +8,8 @@
     <application id="org.gnome.Software.desktop" score="0" last-seen="1627424421"/>
     <application id="gpick.desktop" score="0" last-seen="1627426808"/>
     <application id="org.gnome.Extensions.desktop" score="8.5" last-seen="1627400573"/>
-    <application id="org.gnome.FileRoller.desktop" score="10.028088646009564" last-seen="1627508159"/>
-    <application id="anydesk.desktop" score="3963.0015886798501" last-seen="1627591965"/>
+    <application id="org.gnome.FileRoller.desktop" score="55.028088646009564" last-seen="1627662756"/>
+    <application id="anydesk.desktop" score="5043.0015886798501" last-seen="1627671949"/>
     <application id="gnome-control-center.desktop" score="21.34375" last-seen="1627468365"/>
     <application id="org.gnome.Calendar.desktop" score="0.25" last-seen="1627375028"/>
     <application id="org.gnome.gedit.desktop" score="116.07247938634828" last-seen="1627646259"/>
@@ -22,12 +22,13 @@
     <application id="discord.desktop" score="32.5" last-seen="1627327589"/>
     <application id="shotwell.desktop" score="0" last-seen="1627588228"/>
     <application id="keybase.desktop" score="2685.578125" last-seen="1627651003"/>
-    <application id="org.gnome.Nautilus.desktop" score="598.97739798212001" last-seen="1627594875"/>
-    <application id="vlc.desktop" score="23" last-seen="1627588223"/>
-    <application id="firefox.desktop" score="19280.477384090424" last-seen="1627651000"/>
+    <application id="org.gnome.Nautilus.desktop" score="742.97739798212001" last-seen="1627663904"/>
+    <application id="vlc.desktop" score="42" last-seen="1627662125"/>
+    <application id="firefox.desktop" score="20885.477384090424" last-seen="1627671955"/>
+    <application id="org.gnome.Totem.desktop" score="0" last-seen="1627653835"/>
     <application id="virtualbox.desktop" score="53.5" last-seen="1627462032"/>
     <application id="org.gnome.Calculator.desktop" score="28" last-seen="1627500761"/>
-    <application id="Alacritty.desktop" score="12045.033770561218" last-seen="1627649980"/>
-    <application id="org.gnome.Geary.desktop" score="860.90951082110405" last-seen="1627649974"/>
+    <application id="Alacritty.desktop" score="12053.033770561218" last-seen="1627663890"/>
+    <application id="org.gnome.Geary.desktop" score="894.90951082110405" last-seen="1627671525"/>
   </context>
 </application-state>
