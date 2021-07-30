@@ -274,7 +274,7 @@ call MapKeys("<c-c><c-g>", ":Glow<CR>")
 call MapKeys("<c-c><c-r>", "gg=G<c-o><c-o>")
 "" https://unix.stackexchange.com/a/75431/204066
 autocmd BufWritePre * :%s/\s\+$//e
-call NorMapKeys("<c-c><c-s>", ":call NERDComment('cc', 'toggle')<cr>")
+call NorMapKeys("<c-c><c-s>", ":call nerdcommenter#Comment('cc', 'toggle')<cr>")
 call MapKeys("<c-c><c-m>", ":Glow<cr>")
 
 " python
