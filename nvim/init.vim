@@ -115,10 +115,11 @@ let g:floaterm_keymap_new = "<c-x><c-n>"
 let g:floaterm_keymap_prev = "<c-x><c-left>"
 let g:floaterm_keymap_next = "<c-x><c-right>"
 let g:floaterm_keymap_kill = "<c-x><c-k>"
+let g:floaterm_keymap_kill = "<c-x><c-up>"
 let g:floaterm_opener = "tabe"
 hi FloatermBorder ctermbg=black
 
-" Telescope
+" telescope
 call MapKeys("<c-x><c-g>", ":Telescope live_grep<cr>")
 
 " coc.vim

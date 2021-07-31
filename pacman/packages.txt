@@ -41,6 +41,7 @@ dog
 doxygen
 dust
 efibootmgr
+elasticsearch
 eog
 epiphany
 evince
