@@ -1,34 +1,34 @@
 <?xml version="1.0"?>
 <application-state>
   <context id="">
-    <application id="spotify.desktop" score="90.617120486684144" last-seen="1627649244"/>
-    <application id="org.gnome.Geary.desktop" score="927.90951082110405" last-seen="1627751177"/>
-    <application id="org.gnome.Evince.desktop" score="842.4964599609375" last-seen="1627757911"/>
-    <application id="org.gnome.tweaks.desktop" score="12.4375" last-seen="1627210113"/>
-    <application id="org.gnome.FileRoller.desktop" score="55.028088646009564" last-seen="1627744011"/>
+    <application id="spotify.desktop" score="45.308560243342072" last-seen="1627649244"/>
+    <application id="org.gnome.Evince.desktop" score="962.24822998046875" last-seen="1627839293"/>
+    <application id="org.gnome.tweaks.desktop" score="6.21875" last-seen="1627210113"/>
+    <application id="org.gnome.FileRoller.desktop" score="27.514044323004782" last-seen="1627744011"/>
     <application id="org.gnome.Software.desktop" score="0" last-seen="1627424421"/>
     <application id="gpick.desktop" score="0" last-seen="1627426808"/>
-    <application id="anydesk.desktop" score="5830.0015886798501" last-seen="1627758005"/>
-    <application id="gnome-control-center.desktop" score="21.34375" last-seen="1627734790"/>
-    <application id="org.gnome.Calendar.desktop" score="0.25" last-seen="1627375028"/>
-    <application id="org.gnome.eog.desktop" score="42" last-seen="1627728928"/>
-    <application id="com.obsproject.Studio.desktop" score="13" last-seen="1627588172"/>
-    <application id="org.gnome.gedit.desktop" score="116.07247938634828" last-seen="1627646259"/>
-    <application id="slack.desktop" score="138.42754290392622" last-seen="1627755134"/>
-    <application id="org.gnome.Weather.desktop" score="2.5" last-seen="1627306489"/>
-    <application id="org.gnome.GHex.desktop" score="84" last-seen="1627233152"/>
-    <application id="org.gnome.Calculator.desktop" score="29" last-seen="1627751098"/>
-    <application id="Alacritty.desktop" score="13466.033770561218" last-seen="1627755178"/>
-    <application id="org.gnome.Terminal.desktop" score="450.80778563701676" last-seen="1627563095"/>
-    <application id="skypeforlinux.desktop" score="423.56807011552155" last-seen="1627753128"/>
-    <application id="keybase.desktop" score="2689.578125" last-seen="1627736472"/>
-    <application id="org.gnome.Nautilus.desktop" score="842.97739798212001" last-seen="1627755708"/>
+    <application id="org.gnome.Extensions.desktop" score="4.25" last-seen="1627400573"/>
+    <application id="firefox.desktop" score="13879.738692045212" last-seen="1627839055"/>
+    <application id="anydesk.desktop" score="3616.5007943399251" last-seen="1627839208"/>
+    <application id="gnome-control-center.desktop" score="10.671875" last-seen="1627734790"/>
+    <application id="org.gnome.Calendar.desktop" score="0.125" last-seen="1627375028"/>
+    <application id="org.gnome.eog.desktop" score="21" last-seen="1627728928"/>
+    <application id="com.obsproject.Studio.desktop" score="6.5" last-seen="1627588172"/>
+    <application id="org.gnome.gedit.desktop" score="58.036239693174139" last-seen="1627646259"/>
+    <application id="slack.desktop" score="82.713771451963112" last-seen="1627829198"/>
+    <application id="org.gnome.Weather.desktop" score="1.25" last-seen="1627306489"/>
+    <application id="org.gnome.GHex.desktop" score="42" last-seen="1627233152"/>
+    <application id="org.gnome.Calculator.desktop" score="14.5" last-seen="1627751098"/>
+    <application id="Alacritty.desktop" score="6812.5168852806091" last-seen="1627839265"/>
+    <application id="org.gnome.Terminal.desktop" score="225.40389281850838" last-seen="1627563095"/>
+    <application id="skypeforlinux.desktop" score="211.78403505776078" last-seen="1627803335"/>
+    <application id="keybase.desktop" score="1347.2890625" last-seen="1627803456"/>
+    <application id="org.gnome.Nautilus.desktop" score="443.48869899106001" last-seen="1627813497"/>
     <application id="shotwell.desktop" score="0" last-seen="1627588228"/>
-    <application id="discord.desktop" score="32.5" last-seen="1627327589"/>
+    <application id="discord.desktop" score="16.25" last-seen="1627327589"/>
+    <application id="vlc.desktop" score="21" last-seen="1627729224"/>
     <application id="org.gnome.Totem.desktop" score="0" last-seen="1627653835"/>
-    <application id="vlc.desktop" score="42" last-seen="1627729224"/>
-    <application id="org.gnome.Extensions.desktop" score="8.5" last-seen="1627400573"/>
-    <application id="firefox.desktop" score="23753.477384090424" last-seen="1627757912"/>
-    <application id="virtualbox.desktop" score="53.5" last-seen="1627462032"/>
+    <application id="org.gnome.Geary.desktop" score="644.95475541055202" last-seen="1627839205"/>
+    <application id="virtualbox.desktop" score="26.75" last-seen="1627462032"/>
   </context>
 </application-state>
