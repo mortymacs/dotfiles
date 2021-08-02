@@ -85,6 +85,10 @@ function! NorMapKeys(keys, rhs)
   execute 'vnoremap' . a:keys '' . a:rhs
 endfunction
 
+" general
+"" https://stackoverflow.com/a/19877212/2338672
+nnoremap <silent> <Esc><Esc> <Esc>:nohlsearch<CR><Esc>
+
 " theme
 set termguicolors     " enable true colors support
 let ayucolor="dark"   " for dark version of theme
