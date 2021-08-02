@@ -97,6 +97,7 @@ gnome-settings-daemon
 gnome-shell
 gnome-shell-extensions
 gnome-software
+gnome-sound-recorder
 gnome-system-monitor
 gnome-terminal
 gnome-themes-extra

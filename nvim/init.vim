@@ -64,6 +64,7 @@ Plug 'sindrets/diffview.nvim'
 Plug 'f-person/git-blame.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'dense-analysis/ale'
+Plug 'romgrk/barbar.nvim'
 call plug#end()
 
 " Color
@@ -187,7 +188,7 @@ call MapKeys("<c-s-left>", ":vertical resize +1<cr>")
 call MapKeys("<c-s-right>", ":vertical resize -1<cr>")
 
 " buffer
-call MapKeys("<c-x><c-e>", ":bd!<cr>")
+call MapKeys("<c-x><c-e>", ":Bd!<cr>")
 
 " clipboard
 "" https://superuser.com/a/921975
@@ -195,14 +196,22 @@ vmap <c-c><c-c> y:call system("xclip -i -selection clipboard", getreg("\""))<cr>
 nmap <c-c><c-v> :call setreg("\"",system("xclip -o -selection clipboard"))<cr>p
 
 " tabbar
+" tabbar
 let g:airline#extensions#tabline#enabled = 1
 "" https://github.com/vim-airline/vim-airline/issues/1688#issuecomment-373459776
 let g:airline_powerline_fonts = 1
-call MapKeys("<s-right>", ":tabnext<cr>")
-call MapKeys("<s-left>", ":tabprevious<cr>")
-call MapKeys("<c-x><c-q>", ":tabclose<cr>")
-call MapKeys("<c-m-right>", ":bn<cr>")
-call MapKeys("<c-m-left>", ":bp<cr>")
+call MapKeys("<s-right>", ":BufferNext<cr>")
+call MapKeys("<s-left>", ":BufferPrevious<cr>")
+call MapKeys("<c-x><c-q>", ":BufferClose<cr>")
+call MapKeys("<m-1>", ":BufferGoto 1<cr>")
+call MapKeys("<m-2>", ":BufferGoto 2<cr>")
+call MapKeys("<m-3>", ":BufferGoto 3<cr>")
+call MapKeys("<m-4>", ":BufferGoto 4<cr>")
+call MapKeys("<m-5>", ":BufferGoto 5<cr>")
+call MapKeys("<m-6>", ":BufferGoto 6<cr>")
+call MapKeys("<m-7>", ":BufferGoto 7<cr>")
+call MapKeys("<m-8>", ":BufferGoto 8<cr>")
+call MapKeys("<m-9>", ":BufferGoto 9<cr>")
 let bufferline = get(g:, 'bufferline', {})
 let bufferline.animation = v:false
 let bufferline.closable = v:false
