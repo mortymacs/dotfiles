@@ -135,7 +135,7 @@ call MapKeys("<c-c><c-e>", "<c-o>")
 " code indent
 "" https://github.com/jelly/Dotfiles/blob/master/.vimrc
 autocmd FileType python,cucumber set expandtab shiftwidth=4 softtabstop=4
-autocmd FileType c,cpp,h,html,css,vim,yaml,json set expandtab shiftwidth=2 softtabstop=2
+autocmd FileType c,cpp,h,html,css,vim,yaml,yml,json set expandtab shiftwidth=2 softtabstop=2
 set cindent
 set smartindent
 set autoindent
