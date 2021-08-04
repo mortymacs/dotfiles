@@ -283,8 +283,11 @@ call MapKeys("<c-a>", "<s-^>")
 
 " code
 "" https://vim.fandom.com/wiki/Shifting_blocks_visually
-call NorMapKeys("<tab>", ">>")
-call NorMapKeys("<s-tab>", "<<_")
+nnoremap <Tab> >>_
+nnoremap <S-Tab> <<_
+inoremap <S-Tab> <C-D>
+vnoremap <Tab> >gv
+vnoremap <S-Tab> <gv
 call NorMapKeys("<c-c><c-s>", ":call nerdcommenter#Comment('cc', 'toggle')<cr>")
 "" https://vim.fandom.com/wiki/Fix_indentation
 call MapKeys("<c-c><c-r>", "gg=G<c-o><c-o>")
