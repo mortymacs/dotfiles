@@ -36,7 +36,7 @@ pacman -Qqem > pacman/thirdparty.txt
 cat "$HOME"/.docker/config.json | jq 'del(.auths)' | tee docker/config.json
 
 # Gnome shell extensions
-cp -R "$HOME"/.local/share/gnome-shell/{extensions,application_state} gnome/extensions
+cp -R "$HOME"/.local/share/gnome-shell/extensions gnome/extensions
 
 # Fonts
 cp -R "$HOME"/.local/share/fonts/{Code\ New\ Roman\ Nerd\ Font\ Complete\ Mono.otf,Code\ New\ Roman\ Bold\ Nerd\ Font\ Complete\ Mono.otf,Code\ New\ Roman\ Italic\ Nerd\ Font\ Complete\ Mono.otf} gnome/fonts/
