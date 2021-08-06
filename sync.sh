@@ -49,7 +49,7 @@ gsettings set org.gnome.desktop.default-applications.terminal exec /usr/bin/alac
 gsettings set org.gnome.desktop.default-applications.terminal exec-arg ""
 
 # push changes.
-git status
+git status -s
 git add .
 git commit -m "Update dotfiles"
-git push
+git push -q
