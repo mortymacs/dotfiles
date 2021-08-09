@@ -23,6 +23,7 @@ btrfs-progs
 caddy
 cgdb
 cheese
+chromium
 clang
 cloc
 cppcheck
