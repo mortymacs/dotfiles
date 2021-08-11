@@ -11,6 +11,7 @@ git-extras
 gitstatus
 glow
 google-chrome
+google-crc32c
 hotspot
 jid
 kubectl-df-pv
