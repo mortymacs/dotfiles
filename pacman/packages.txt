@@ -165,6 +165,7 @@ lxd
 m4
 make
 man-db
+mariadb
 mariadb-clients
 massif-visualizer
 maven
