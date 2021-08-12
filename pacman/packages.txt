@@ -153,6 +153,7 @@ keybase-gui
 kubectl
 kubectx
 libev
+libreoffice-fresh
 libtool
 linux
 linux-firmware
