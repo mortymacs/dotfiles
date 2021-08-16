@@ -3,7 +3,8 @@ window:
   dimensions:
     columns: 120
     lines: 30
-  decorations: None
+  decorations: full
+  gtk_theme_variant: dark
 
 background_opacity: 0.95
 
