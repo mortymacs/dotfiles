@@ -35,7 +35,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ayu-theme/ayu-vim'
 Plug 'tpope/vim-surround'
-Plug 'mileszs/ack.vim'
 Plug 'KabbAmine/zeavim.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'MattesGroeger/vim-bookmarks'
@@ -53,7 +52,6 @@ Plug 'martinda/Jenkinsfile-vim-syntax'
 Plug 'npxbr/glow.nvim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'luochen1990/rainbow'
 Plug 'famiu/bufdelete.nvim'
@@ -124,8 +122,8 @@ let g:floaterm_keymap_kill = "<c-x><c-up>"
 let g:floaterm_opener = "tabe"
 hi FloatermBorder ctermbg=black
 
-" telescope
-call MapKeys("<c-x><c-g>", ":Telescope live_grep<cr>")
+" search
+call MapKeys("<c-x><c-g>", ":Ag<cr>")
 
 " coc.vim
 "" https://github.com/neoclide/coc.nvim/issues/318#issuecomment-451331078
