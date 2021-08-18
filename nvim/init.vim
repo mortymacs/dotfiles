@@ -145,7 +145,7 @@ call MapKeys("<c-m-l>", "gg=G<cr>")
 " fzf
 "" https://github.com/universal-ctags/ctags/issues/218#issuecomment-72355190
 let g:fzf_tags_command='fd | ctags --links=no -L-'
-call MapKeys("<c-x><c-f>", ":GFiles<cr>")
+call MapKeys("<c-x><c-f>", ":Files<cr>")
 call MapKeys("<c-x><c-t>", ":Tags<cr>")
 call MapKeys("<c-x><c-b>", ":Buffers<cr>")
 
