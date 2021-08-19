@@ -36,6 +36,11 @@ code-capture() { silicon "$1" -o $(basename "${1%%.*}.png") --no-window-controls
 alias code-info="cloc"
 alias br="br -dp"
 
+# ---------------------------------------------- git
+alias gs="git status"
+alias gd="git diff"
+alias gp="git push"
+
 # ---------------------------------------------- server
 alias p="gping 8.8.8.8"
 alias s="ssh mort@159.65.192.108"
