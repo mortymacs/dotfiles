@@ -291,6 +291,7 @@ xf86-video-intel
 xsel
 yapf
 yelp
+youtube-dl
 yq
 z
 zsh
