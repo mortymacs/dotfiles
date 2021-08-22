@@ -129,6 +129,8 @@ call MapKeys("<c-x><c-g>", ":Ag<cr>")
 "" https://github.com/neoclide/coc.nvim/issues/318#issuecomment-451331078
 call MapKeys("<c-c><c-d>", ":call CocActionAsync('jumpDefinition', 'drop')<cr>")
 call MapKeys("<c-c><c-e>", "<c-o>")
+"" https://github.com/neoclide/coc.nvim/issues/2202#issuecomment-662969193
+inoremap <c-q> <c-\><c-o>:call CocActionAsync('showSignatureHelp')<cr>
 
 " code indent
 "" https://github.com/jelly/Dotfiles/blob/master/.vimrc
