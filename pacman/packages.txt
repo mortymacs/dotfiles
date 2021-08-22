@@ -140,6 +140,7 @@ hugo
 hyperfine
 iftop
 inetutils
+inotify-tools
 intel-ucode
 iotop
 ipython
@@ -240,6 +241,7 @@ silicon
 sleuthkit
 smem
 spdlog
+sqlitebrowser
 sshfs
 step-cli
 sudo
