@@ -17,6 +17,7 @@ jid
 kubectl-df-pv
 kubespy
 lazydocker
+libcsptr
 mcfly
 mtodo
 mycli
