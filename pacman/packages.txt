@@ -241,7 +241,6 @@ silicon
 sleuthkit
 smem
 spdlog
-sqlitebrowser
 sshfs
 step-cli
 sudo
