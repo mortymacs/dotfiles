@@ -40,6 +40,7 @@ docker-compose
 docker-machine
 dog
 doxygen
+duf
 dust
 efibootmgr
 elasticsearch
@@ -184,7 +185,7 @@ net-tools
 network-manager-applet
 networkmanager
 networkmanager-openvpn
-newsflash
+newsboat
 nlohmann-json
 ntfs-3g
 obs-studio

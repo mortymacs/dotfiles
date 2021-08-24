@@ -6,7 +6,6 @@ direnv
 dive
 docker-machine-driver-kvm2
 dry-bin
-duf
 git-extras
 gitstatus
 glow
