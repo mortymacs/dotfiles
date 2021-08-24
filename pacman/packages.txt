@@ -184,6 +184,7 @@ net-tools
 network-manager-applet
 networkmanager
 networkmanager-openvpn
+newsflash
 nlohmann-json
 ntfs-3g
 obs-studio
