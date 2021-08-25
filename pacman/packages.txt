@@ -63,6 +63,7 @@ fontforge
 fzf
 gawk
 gcc
+gcc-ada
 gdb
 gdb-dashboard
 gdm
