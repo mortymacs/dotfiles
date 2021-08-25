@@ -9,7 +9,7 @@ rm -rf tmux/*
 cp "$HOME"/.tmux.conf tmux/
 
 # Alacritty
-rm -rm alacritty/*
+rm -rf alacritty/*
 cp "$HOME"/.alacritty.yml alacritty/
 
 # nvim
