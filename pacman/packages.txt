@@ -43,7 +43,6 @@ doxygen
 duf
 dust
 efibootmgr
-elasticsearch
 eog
 epiphany
 evince
@@ -123,6 +122,7 @@ grilo-plugins
 groff
 grpc
 gtest
+gtk-engine-murrine
 gvfs
 gvfs-afc
 gvfs-goa
