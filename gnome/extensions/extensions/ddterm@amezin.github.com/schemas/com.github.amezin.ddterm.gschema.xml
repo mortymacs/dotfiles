@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <enum id="com.github.amezin.ddterm.Command">
+    <value nick="user-shell" value="0" />
+    <value nick="user-shell-login" value="1" />
+    <value nick="custom-command" value="2" />
+  </enum>
+
+  <enum id="com.github.amezin.ddterm.TextBlinkMode">
+    <value nick="never" value="0"/>
+    <value nick="focused" value="1"/>
+    <value nick="unfocused" value="2"/>
+    <value nick="always" value="3"/>
+  </enum>
+
+  <enum id="com.github.amezin.ddterm.CursorBlinkMode">
+    <value nick="system" value="0"/>
+    <value nick="on" value="1"/>
+    <value nick="off" value="2"/>
+  </enum>
+
+  <enum id="com.github.amezin.ddterm.CursorShape">
+    <value nick="block" value="0"/>
+    <value nick="ibeam" value="1"/>
+    <value nick="underline" value="2"/>
+  </enum>
+
+  <enum id="com.github.amezin.ddterm.ThemeVariant">
+    <value nick="system" value="0"/>
+    <value nick="light" value="1"/>
+    <value nick="dark" value="2"/>
+  </enum>
+
+  <enum id="com.github.amezin.ddterm.TabsbarPolicy">
+    <value nick="always" value="0"/>
+    <value nick="automatic" value="1"/>
+    <value nick="never" value="2"/>
+  </enum>
+
+  <enum id="com.github.amezin.ddterm.TabPosition">
+    <value nick="left" value="0"/>
+    <value nick="right" value="1"/>
+    <value nick="top" value="2"/>
+    <value nick="bottom" value="3"/>
+  </enum>
+
+  <enum id="com.github.amezin.ddterm.WindowPosition">
+    <value nick="top" value="0"/>
+    <value nick="bottom" value="1"/>
+    <value nick="left" value="2"/>
+    <value nick="right" value="3"/>
+  </enum>
+
+  <enum id="com.github.amezin.ddterm.WindowMonitor">
+    <value nick="current" value="0"/>
+    <value nick="primary" value="1"/>
+    <value nick="focus" value="2"/>
+    <value nick="connector" value="3"/>
+  </enum>
+
+  <enum id="com.github.amezin.ddterm.EraseBinding">
+    <value nick="auto" value="0"/>
+    <value nick="ascii-backspace" value="1"/>
+    <value nick="ascii-delete" value="2"/>
+    <value nick="delete-sequence" value="3"/>
+    <value nick="tty" value="4"/>
+  </enum>
+
+  <enum id="com.github.amezin.ddterm.CJKWidth">
+    <value nick="narrow" value="1"/>
+    <value nick="wide" value="2"/>
+  </enum>
+
+  <enum id="com.github.amezin.ddterm.WindowTypeHint">
+    <value nick="normal" value="0"/>
+    <value nick="dialog" value="1"/>
+    <value nick="menu" value="2"/>
+    <value nick="toolbar" value="3"/>
+    <value nick="splashscreen" value="4"/>
+    <value nick="utility" value="5"/>
+    <value nick="dock" value="6"/>
+    <value nick="dropdown-menu" value="8"/>
+    <value nick="popup-menu" value="9"/>
+    <value nick="tooltip" value="10"/>
+    <value nick="notification" value="11"/>
+    <value nick="combo" value="12"/>
+  </enum>
+
+  <enum id="com.github.amezin.ddterm.AnimationMode">
+    <value nick="disable" value="0"/>
+
+    <value nick="linear" value="1"/>
+
+    <value nick="ease-in-quad" value="2"/>
+    <value nick="ease-out-quad" value="3"/>
+    <value nick="ease-in-out-quad" value="4"/>
+
+    <value nick="ease-in-cubic" value="5"/>
+    <value nick="ease-out-cubic" value="6"/>
+    <value nick="ease-in-out-cubic" value="7"/>
+
+    <value nick="ease-in-quart" value="8"/>
+    <value nick="ease-out-quart" value="9"/>
+    <value nick="ease-in-out-quart" value="10"/>
+
+    <value nick="ease-in-quint" value="11"/>
+    <value nick="ease-out-quint" value="12"/>
+    <value nick="ease-in-out-quint" value="13"/>
+
+    <value nick="ease-in-sine" value="14"/>
+    <value nick="ease-out-sine" value="15"/>
+    <value nick="ease-in-out-sine" value="16"/>
+
+    <value nick="ease-in-expo" value="17"/>
+    <value nick="ease-out-expo" value="18"/>
+    <value nick="ease-in-out-expo" value="19"/>
+
+    <value nick="ease-in-circ" value="20"/>
+    <value nick="ease-out-circ" value="21"/>
+    <value nick="ease-in-out-circ" value="22"/>
+
+    <value nick="ease-in-elastic" value="23"/>
+    <value nick="ease-out-elastic" value="24"/>
+    <value nick="ease-in-out-elastic" value="25"/>
+
+    <value nick="ease-in-back" value="26"/>
+    <value nick="ease-out-back" value="27"/>
+    <value nick="ease-in-out-back" value="28"/>
+
+    <value nick="ease-in-bounce" value="29"/>
+    <value nick="ease-out-bounce" value="30"/>
+    <value nick="ease-in-out-bounce" value="31"/>
+  </enum>
+
+  <enum id="com.github.amezin.ddterm.PanelIconType">
+    <value nick="none" value="0"/>
+    <value nick="menu-button" value="1"/>
+    <value nick="toggle-button" value="2"/>
+  </enum>
+
+  <schema path="/com/github/amezin/ddterm/" id="com.github.amezin.ddterm">
+    <key name="window-size" type="d">
+      <default>0.6</default>
+      <range min="0.0" max="1.0"/>
+    </key>
+    <key name="window-maximize" type="b">
+      <default>false</default>
+    </key>
+    <key name="window-position" enum="com.github.amezin.ddterm.WindowPosition">
+      <default>'top'</default>
+    </key>
+    <key name="window-monitor" enum="com.github.amezin.ddterm.WindowMonitor">
+      <default>'current'</default>
+    </key>
+    <key name="window-monitor-connector" type="s">
+      <default>''</default>
+    </key>
+    <key name="panel-icon-type" enum="com.github.amezin.ddterm.PanelIconType">
+      <default>'menu-button'</default>
+    </key>
+    <key name="theme-variant" enum="com.github.amezin.ddterm.ThemeVariant">
+      <default>'system'</default>
+    </key>
+    <key name="window-above" type="b">
+      <default>true</default>
+    </key>
+    <key name="window-stick" type="b">
+      <default>true</default>
+    </key>
+    <key name="window-skip-taskbar" type="b">
+      <default>true</default>
+    </key>
+    <key name="hide-when-focus-lost" type="b">
+      <default>false</default>
+    </key>
+    <key name="pointer-autohide" type="b">
+      <default>false</default>
+    </key>
+    <key name="force-x11-gdk-backend" type="b">
+      <default>false</default>
+    </key>
+    <key name="window-type-hint" enum="com.github.amezin.ddterm.WindowTypeHint">
+      <default>'normal'</default>
+    </key>
+    <key name="window-resizable" type="b">
+      <default>true</default>
+    </key>
+
+    <key name="override-window-animation" type="b">
+      <default>true</default>
+    </key>
+    <key name="show-animation" enum="com.github.amezin.ddterm.AnimationMode">
+      <default>'linear'</default>
+    </key>
+    <key name="hide-animation" enum="com.github.amezin.ddterm.AnimationMode">
+      <default>'linear'</default>
+    </key>
+
+    <key name="tab-policy" enum="com.github.amezin.ddterm.TabsbarPolicy">
+      <default>'always'</default>
+    </key>
+    <key name="tab-position" enum="com.github.amezin.ddterm.TabPosition">
+      <default>'bottom'</default>
+    </key>
+    <key name="tab-expand" type="b">
+      <default>true</default>
+    </key>
+    <key name="tab-close-buttons" type="b">
+      <default>true</default>
+    </key>
+    <key name="new-tab-button" type="b">
+      <default>true</default>
+    </key>
+    <key name="new-tab-front-button" type="b">
+      <default>false</default>
+    </key>
+    <key name="tab-switcher-popup" type="b">
+      <default>true</default>
+    </key>
+    <key name="tab-title-template" type="s">
+      <default>"{{#if switch-shortcut}}&lt;span alpha=\"50%\"&gt;{{switch-shortcut}}&lt;/span&gt; {{/if}}{{window-title}}"</default>
+    </key>
+
+    <key name="custom-font" type="s">
+      <default>"Monospace Regular 10"</default>
+    </key>
+    <key name="use-system-font" type="b">
+      <default>true</default>
+    </key>
+    <key name="text-blink-mode" enum="com.github.amezin.ddterm.TextBlinkMode">
+      <default>'always'</default>
+    </key>
+    <key name="cursor-blink-mode" enum="com.github.amezin.ddterm.CursorBlinkMode">
+      <default>'system'</default>
+    </key>
+    <key name="cursor-shape" enum="com.github.amezin.ddterm.CursorShape">
+      <default>'block'</default>
+    </key>
+    <key name="allow-hyperlink" type="b">
+      <default>true</default>
+    </key>
+    <key name="audible-bell" type="b">
+      <default>true</default>
+    </key>
+    <key name="detect-urls" type="b">
+      <default>true</default>
+    </key>
+    <key name="detect-urls-as-is" type="b">
+      <default>true</default>
+    </key>
+    <key name="detect-urls-file" type="b">
+      <default>true</default>
+    </key>
+    <key name="detect-urls-http" type="b">
+      <default>true</default>
+    </key>
+    <key name="detect-urls-voip" type="b">
+      <default>true</default>
+    </key>
+    <key name="detect-urls-email" type="b">
+      <default>true</default>
+    </key>
+    <key name="detect-urls-news-man" type="b">
+      <default>true</default>
+    </key>
+
+    <key name="use-theme-colors" type="b">
+      <default>true</default>
+    </key>
+    <key name="foreground-color" type="s">
+      <default>'#171421'</default>
+    </key>
+    <key name="background-color" type="s">
+      <default>'#ffffff'</default>
+    </key>
+    <key name="bold-color" type="s">
+      <default>'#000000'</default>
+    </key>
+    <key name="bold-color-same-as-fg" type="b">
+      <default>true</default>
+    </key>
+    <key name="cursor-colors-set" type="b">
+      <default>false</default>
+    </key>
+    <key name="cursor-background-color" type="s">
+      <default>'#000000'</default>
+    </key>
+    <key name="cursor-foreground-color" type="s">
+      <default>'#ffffff'</default>
+    </key>
+    <key name="highlight-colors-set" type="b">
+      <default>false</default>
+    </key>
+    <key name="highlight-background-color" type="s">
+      <default>'#000000'</default>
+    </key>
+    <key name="highlight-foreground-color" type="s">
+      <default>'#ffffff'</default>
+    </key>
+    <key name="transparent-background" type="b">
+      <default>true</default>
+    </key>
+    <key name="background-opacity" type="d">
+      <default>0.9</default>
+      <range min="0.0" max="1.0"/>
+    </key>
+    <key name="palette" type="as">
+      <default>['#171421',
+                '#c01c28',
+                '#26a269',
+                '#a2734c',
+                '#12488b',
+                '#a347ba',
+                '#2aa1b3',
+                '#d0cfcc',
+                '#5e5c64',
+                '#f66151',
+                '#33da7a',
+                '#e9ad0c',
+                '#2a7bde',
+                '#c061cb',
+                '#33c7de',
+                '#ffffff']</default>
+    </key>
+    <key name="bold-is-bright" type="b">
+      <default>false</default>
+    </key>
+
+    <key name="command" enum="com.github.amezin.ddterm.Command">
+      <default>'user-shell'</default>
+    </key>
+    <key name="custom-command" type="s">
+      <default>''</default>
+    </key>
+    <key name="preserve-working-directory" type="b">
+      <default>true</default>
+    </key>
+
+    <key name="show-scrollbar" type="b">
+      <default>true</default>
+    </key>
+    <key name="scroll-on-output" type="b">
+      <default>false</default>
+    </key>
+    <key name="scroll-on-keystroke" type="b">
+      <default>true</default>
+    </key>
+    <key name="scrollback-unlimited" type="b">
+      <default>false</default>
+    </key>
+    <key name="scrollback-lines" type="i">
+      <default>10000</default>
+      <range min="0" max="1000000000"/>
+    </key>
+
+    <key name="backspace-binding" enum="com.github.amezin.ddterm.EraseBinding">
+      <default>'ascii-delete'</default>
+    </key>
+    <key name="delete-binding" enum="com.github.amezin.ddterm.EraseBinding">
+      <default>'delete-sequence'</default>
+    </key>
+    <key name="cjk-utf8-ambiguous-width" enum="com.github.amezin.ddterm.CJKWidth">
+      <default>'narrow'</default>
+    </key>
+
+    <key name="shortcuts-enabled" type="b">
+      <default>true</default>
+    </key>
+
+    <key name="ddterm-toggle-hotkey" type="as">
+      <default><![CDATA[['F12']]]></default>
+    </key>
+    <key name="ddterm-activate-hotkey" type="as">
+      <default><![CDATA[[]]]></default>
+    </key>
+    <key name="shortcut-window-hide" type="as">
+      <default><![CDATA[[]]]></default>
+    </key>
+    <key name="shortcut-toggle-maximize" type="as">
+      <default><![CDATA[['F11']]]></default>
+    </key>
+    <key name="shortcut-toggle-transparent-background" type="as">
+      <default><![CDATA[[]]]></default>
+    </key>
+    <key name="hide-window-on-esc" type="b">
+      <default>false</default>
+    </key>
+    <key name="shortcut-terminal-copy" type="as">
+      <default><![CDATA[['<Ctrl><Shift>c']]]></default>
+    </key>
+    <key name="shortcut-terminal-copy-html" type="as">
+      <default><![CDATA[[]]]></default>
+    </key>
+    <key name="shortcut-terminal-paste" type="as">
+      <default><![CDATA[['<Ctrl><Shift>v']]]></default>
+    </key>
+    <key name="shortcut-terminal-select-all" type="as">
+      <default><![CDATA[[]]]></default>
+    </key>
+    <key name="shortcut-terminal-reset" type="as">
+      <default><![CDATA[[]]]></default>
+    </key>
+    <key name="shortcut-terminal-reset-and-clear" type="as">
+      <default><![CDATA[[]]]></default>
+    </key>
+    <key name="shortcut-win-new-tab" type="as">
+      <default><![CDATA[['<Ctrl><Shift>n']]]></default>
+    </key>
+    <key name="shortcut-win-new-tab-front" type="as">
+      <default><![CDATA[[]]]></default>
+    </key>
+    <key name="shortcut-win-new-tab-before-current" type="as">
+      <default><![CDATA[[]]]></default>
+    </key>
+    <key name="shortcut-win-new-tab-after-current" type="as">
+      <default><![CDATA[[]]]></default>
+    </key>
+    <key name="shortcut-page-close" type="as">
+      <default><![CDATA[['<Ctrl><Shift>q']]]></default>
+    </key>
+    <key name="shortcut-prev-tab" type="as">
+      <default><![CDATA[['<Ctrl>Page_Up']]]></default>
+    </key>
+    <key name="shortcut-next-tab" type="as">
+      <default><![CDATA[['<Ctrl>Page_Down']]]></default>
+    </key>
+    <key name="shortcut-set-custom-tab-title" type="as">
+      <default><![CDATA[[]]]></default>
+    </key>
+    <key name="shortcut-reset-tab-title" type="as">
+      <default><![CDATA[[]]]></default>
+    </key>
+
+    <key name="shortcut-switch-to-tab-1" type="as">
+      <default><![CDATA[['<Alt>1']]]></default>
+    </key>
+    <key name="shortcut-switch-to-tab-2" type="as">
+      <default><![CDATA[['<Alt>2']]]></default>
+    </key>
+    <key name="shortcut-switch-to-tab-3" type="as">
+      <default><![CDATA[['<Alt>3']]]></default>
+    </key>
+    <key name="shortcut-switch-to-tab-4" type="as">
+      <default><![CDATA[['<Alt>4']]]></default>
+    </key>
+    <key name="shortcut-switch-to-tab-5" type="as">
+      <default><![CDATA[['<Alt>5']]]></default>
+    </key>
+    <key name="shortcut-switch-to-tab-6" type="as">
+      <default><![CDATA[['<Alt>6']]]></default>
+    </key>
+    <key name="shortcut-switch-to-tab-7" type="as">
+      <default><![CDATA[['<Alt>7']]]></default>
+    </key>
+    <key name="shortcut-switch-to-tab-8" type="as">
+      <default><![CDATA[['<Alt>8']]]></default>
+    </key>
+    <key name="shortcut-switch-to-tab-9" type="as">
+      <default><![CDATA[['<Alt>9']]]></default>
+    </key>
+    <key name="shortcut-switch-to-tab-10" type="as">
+      <default><![CDATA[['<Alt>0']]]></default>
+    </key>
+  </schema>
+</schemalist>

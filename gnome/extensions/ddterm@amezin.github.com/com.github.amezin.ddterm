@@ -1,5 +1,0 @@
-#!/bin/sh
-
-me_dir="$(CDPATH='' cd -- "$(dirname -- "$0")" && pwd)"
-
-exec gjs "${me_dir}/application.js" "$@"

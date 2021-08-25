@@ -47,10 +47,11 @@ rm -rf docker/*
 cat "$HOME"/.docker/config.json | jq 'del(.auths)' | tee docker/config.json
 
 # Gnome shell extensions
-rm -rf gnome/*
+rm -rf gnome/extensions/*
 cp -R "$HOME"/.local/share/gnome-shell/extensions gnome/extensions
 
 # Fonts
+rm -rf gnome/fonts/*
 cp -R "$HOME"/.local/share/fonts/{Code\ New\ Roman\ Nerd\ Font\ Complete\ Mono.otf,Code\ New\ Roman\ Bold\ Nerd\ Font\ Complete\ Mono.otf,Code\ New\ Roman\ Italic\ Nerd\ Font\ Complete\ Mono.otf} gnome/fonts/
 
 # Background
