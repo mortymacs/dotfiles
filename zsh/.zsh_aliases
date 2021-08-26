@@ -35,6 +35,7 @@ http-server(){ python -m http.server "$1" }
 code-capture() { silicon "$1" -o $(basename "${1%%.*}.png") --no-window-controls --font "Fira Code" --background '#fff0' --theme Coldark-Dark }
 alias code-info="cloc"
 alias br="br -dp"
+socket-to-http() { socat TCP-LISTEN:"${2:-80}",reuseaddr,fork UNIX-CLIENT:"${1}" }
 
 # ---------------------------------------------- git
 alias gs="git status"

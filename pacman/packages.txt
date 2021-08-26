@@ -243,6 +243,7 @@ shotwell
 silicon
 sleuthkit
 smem
+socat
 spdlog
 sshfs
 step-cli
@@ -283,6 +284,7 @@ virtualbox
 virtualbox-guest-iso
 virtualbox-guest-utils
 vlc
+websocat
 which
 wireguard-tools
 wkhtmltopdf

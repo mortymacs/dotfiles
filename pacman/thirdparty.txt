@@ -22,7 +22,6 @@ mcfly
 mtodo
 mycli
 nats-server
-orchis-theme-git
 pgcli
 python-configparser
 python-panwid
