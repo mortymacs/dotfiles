@@ -36,7 +36,7 @@ code-capture() { silicon "$1" -o $(basename "${1%%.*}.png") --no-window-controls
 alias code-info="cloc"
 alias br="br -dp"
 # https://stackoverflow.com/a/27229914/2338672
-socket-to-http() { socat TCP-LISTEN:"${2:-80}",reuseaddr,fork UNIX-CLIENT:"${1}" }
+socket-to-http() { socat TCP-LISTEN:"${2:-8000}",reuseaddr,fork UNIX-CLIENT:"${1}" }
 
 # ---------------------------------------------- git
 alias gs="git status"
