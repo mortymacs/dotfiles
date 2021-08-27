@@ -193,6 +193,7 @@ obs-studio
 openbsd-netcat
 p7zip
 pacman
+pacman-contrib
 parallel
 patch
 peco

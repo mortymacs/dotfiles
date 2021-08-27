@@ -1,0 +1,190 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-08-17 09:53+0200\n"
+"PO-Revision-Date: 2021-01-23 19:04+0300\n"
+"Last-Translator: Dmitry K <dkabishchev@ya.ru>\n"
+"Language-Team: \n"
+"Language: ru_RU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Poedit 1.8.8\n"
+
+#: extension.js:117
+msgid "Settings"
+msgstr "Настройки"
+
+#: extension.js:118 extension.js:488
+msgid "Update now"
+msgstr "Обновить сейчас"
+
+#: extension.js:119
+msgid "Open package manager"
+msgstr "Открыть пакетный менеджер"
+
+#: extension.js:123
+msgid "Checking"
+msgstr "Проверка"
+
+#: extension.js:134
+msgid "Check now"
+msgstr "Проверить сейчас"
+
+#: extension.js:161
+msgid "Waiting first check"
+msgstr "Ожидаем первой проверки"
+
+#: extension.js:334
+#, javascript-format
+msgid "%d update pending"
+msgid_plural "%d updates pending"
+msgstr[0] "%d обновление в ожидании"
+msgstr[1] "%d обновления в ожидании"
+msgstr[2] "%d обновлений в ожидании"
+
+#: extension.js:349 extension.js:355
+msgid "New Arch Linux Update"
+msgid_plural "New Arch Linux Updates"
+msgstr[0] "Новое обновление Arch Linux"
+msgstr[1] "Новые обновления Arch Linux"
+msgstr[2] "Новые обновления Arch Linux"
+
+#: extension.js:356
+#, javascript-format
+msgid "There is %d update pending"
+msgid_plural "There are %d updates pending"
+msgstr[0] "Обнаружено %d обновление"
+msgstr[1] "Обнаружено %d обновления"
+msgstr[2] "Обнаружено %d обновлений"
+
+#: extension.js:374
+msgid ""
+"Note : you have to install pacman-contrib to use the 'checkupdates' script."
+msgstr "Обратите внимание: для работы скрипта 'checkupdates' "
+"необходимо установить пакет pacman-contrib."
+
+#: extension.js:376
+msgid "Error"
+msgstr "Ошибка"
+
+#: extension.js:381
+msgid "Up to date :)"
+msgstr "В актуальном состоянии :)"
+
+#: prefs.xml:62
+msgid "Checking for updates"
+msgstr "Проверка обновлений"
+
+#: prefs.xml:86
+msgid "Time to wait before first check (seconds)"
+msgstr "Время ожидания до первой проверки (секунды)"
+
+#: prefs.xml:105
+msgid "Interval between updates check (minutes)"
+msgstr "Интервал между проверкой обновлений (минуты)"
+
+#: prefs.xml:124
+msgid "Strip out versions numbers"
+msgstr "Вырезать номера версий"
+
+#: prefs.xml:146
+msgid "Indicator"
+msgstr "Индикатор"
+
+#: prefs.xml:161
+msgid "Always visible"
+msgstr "Всегда отображать"
+
+#: prefs.xml:180
+msgid "Use build-in icons"
+msgstr "Использовать встроенные иконки"
+
+#: prefs.xml:199
+msgid "Show updates count on indicator"
+msgstr "Показывать количество обновлений на индикаторе"
+
+#: prefs.xml:219
+msgid ""
+"Auto-expand updates list if updates count is less than this number (0 to "
+"disable)"
+msgstr ""
+"Авторасширение списка обновлений, если количество меньше указанного числа (0 "
+"- выключено)"
+
+#: prefs.xml:239
+msgid "Position in Panel"
+msgstr "Расположение на панели"
+
+#: prefs.xml:253
+msgid "Left"
+msgstr "Слева"
+
+#: prefs.xml:254
+msgid "Center"
+msgstr "По центру"
+
+#: prefs.xml:255
+msgid "Right"
+msgstr "Справа"
+
+#: prefs.xml:278
+msgid "Notification"
+msgstr "Уведомление"
+
+#: prefs.xml:293
+msgid "Send a notification when new updates are available"
+msgstr "Отправить уведомление, когда новые обновления доступны"
+
+#: prefs.xml:312
+msgid "Use transient notifications (auto dismiss)"
+msgstr "Использовать вcплывающие уведомления"
+
+#: prefs.xml:331
+msgid "How much information to show on notifications"
+msgstr "Как много информации отображать в уведомлениях"
+
+#: prefs.xml:339
+msgid "Count only"
+msgstr "Только количество"
+
+#: prefs.xml:340
+msgid "New updates names"
+msgstr "Имена обновляемых пакетов"
+
+#: prefs.xml:341
+msgid "All updates names"
+msgstr "Все имена обновляемых пакетов"
+
+#: prefs.xml:356
+msgid "Basic settings"
+msgstr "Настройки"
+
+#: prefs.xml:372
+msgid "Command to check for package updates"
+msgstr "Команда для проверки обновлений пакетов"
+
+#: prefs.xml:389
+msgid "Command to update packages"
+msgstr "Команда для обновления пакетов"
+
+#: prefs.xml:406
+msgid "Pacman local directory path - To detect when new packages are installed"
+msgstr ""
+"Локальная директория pacman - для определения новых пакетов для установки"
+
+#: prefs.xml:423
+msgid "Command to open package manager (optional)"
+msgstr "Команда для обновления пакетов"
+
+#: prefs.xml:440
+msgid "Advanced settings"
+msgstr "Расширенные настройки"

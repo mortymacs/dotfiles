@@ -1,0 +1,188 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Mikko Heikkilä <mikheik@gmail.com>, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-08-17 09:53+0200\n"
+"PO-Revision-Date: 2018-10-30 20:48+0200\n"
+"Last-Translator: Mikko Heikkilä <mikheik@gmail.com>\n"
+"Language-Team: \n"
+"Language: fi_FI\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Gtranslator 2.91.7\n"
+
+#: extension.js:117
+msgid "Settings"
+msgstr "Asetukset"
+
+#: extension.js:118 extension.js:488
+msgid "Update now"
+msgstr "Päivitä"
+
+#: extension.js:119
+msgid "Open package manager"
+msgstr "Avaa paketinhallinta"
+
+#: extension.js:123
+msgid "Checking"
+msgstr "Tarkastetaan"
+
+#: extension.js:134
+msgid "Check now"
+msgstr "Tarkasta päivitykset"
+
+#: extension.js:161
+msgid "Waiting first check"
+msgstr "Odotetaan hetki"
+
+#: extension.js:334
+#, javascript-format
+msgid "%d update pending"
+msgid_plural "%d updates pending"
+msgstr[0] "%d päivitys saatavilla"
+msgstr[1] "%d päivitystä saatavilla"
+
+#: extension.js:349 extension.js:355
+msgid "New Arch Linux Update"
+msgid_plural "New Arch Linux Updates"
+msgstr[0] "Uusi Arch Linux päivitys"
+msgstr[1] "Uusia Arch Linux päivityksiä"
+
+#: extension.js:356
+#, javascript-format
+msgid "There is %d update pending"
+msgid_plural "There are %d updates pending"
+msgstr[0] "%d uusi päivitys odottamassa"
+msgstr[1] "%d uutta päivitystä odottamassa"
+
+#: extension.js:374
+msgid ""
+"Note : you have to install pacman-contrib to use the 'checkupdates' script."
+msgstr ""
+"Huom! checkupdates-komentosarja vaatii pacman-contrib paketin asentamisen."
+
+#: extension.js:376
+msgid "Error"
+msgstr "Virhe"
+
+#: extension.js:381
+msgid "Up to date :)"
+msgstr "Ei uusia päivityksiä"
+
+#: prefs.xml:62
+msgid "Checking for updates"
+msgstr "Päivityksien tarkastaminen"
+
+#: prefs.xml:86
+msgid "Time to wait before first check (seconds)"
+msgstr "Odota ennen ensimmäistä tarkastusta (sekuntia)"
+
+#: prefs.xml:105
+msgid "Interval between updates check (minutes)"
+msgstr "Tauko ennen seuraavaa tarkastusta (minuuttia)"
+
+#: prefs.xml:124
+msgid "Strip out versions numbers"
+msgstr "Älä näytä versionumerointia"
+
+#: prefs.xml:146
+msgid "Indicator"
+msgstr "Ilmoitusalue"
+
+#: prefs.xml:161
+msgid "Always visible"
+msgstr "Aina näkyvillä"
+
+#: prefs.xml:180
+msgid "Use build-in icons"
+msgstr ""
+
+#: prefs.xml:199
+msgid "Show updates count on indicator"
+msgstr "Näytä päivitysten määrä ilmoitusalueella"
+
+#: prefs.xml:219
+msgid ""
+"Auto-expand updates list if updates count is less than this number (0 to "
+"disable)"
+msgstr ""
+"Näytä lista päivitettävistä paketeista, jos niitä on vähemmän kuin (0 poista "
+"käytöstä)"
+
+#: prefs.xml:239
+msgid "Position in Panel"
+msgstr ""
+
+#: prefs.xml:253
+msgid "Left"
+msgstr ""
+
+#: prefs.xml:254
+msgid "Center"
+msgstr ""
+
+#: prefs.xml:255
+msgid "Right"
+msgstr ""
+
+#: prefs.xml:278
+msgid "Notification"
+msgstr "Ilmoitus"
+
+#: prefs.xml:293
+msgid "Send a notification when new updates are available"
+msgstr "Ilmoita uusista päivityksistä"
+
+#: prefs.xml:312
+msgid "Use transient notifications (auto dismiss)"
+msgstr "Katoavat ilmoitukset"
+
+#: prefs.xml:331
+msgid "How much information to show on notifications"
+msgstr "Ilmoitusten sisältö"
+
+#: prefs.xml:339
+msgid "Count only"
+msgstr "Päivitysten määrä"
+
+#: prefs.xml:340
+msgid "New updates names"
+msgstr "Uudet päivitykset"
+
+#: prefs.xml:341
+msgid "All updates names"
+msgstr "Kaikki päivtykset"
+
+#: prefs.xml:356
+msgid "Basic settings"
+msgstr "Asetukset"
+
+#: prefs.xml:372
+msgid "Command to check for package updates"
+msgstr "Komento päivityksien tarkastamiseksi"
+
+#: prefs.xml:389
+msgid "Command to update packages"
+msgstr "Komento pakettien päivittämiseksi"
+
+#: prefs.xml:406
+msgid "Pacman local directory path - To detect when new packages are installed"
+msgstr ""
+"Pacmanin paikallinen hakemistopolku - uusien asennettujen pakettien "
+"havaitsemiseksi"
+
+#: prefs.xml:423
+msgid "Command to open package manager (optional)"
+msgstr "Komento paketinhallinnan avaamiseksi (ei pakollinen)"
+
+#: prefs.xml:440
+msgid "Advanced settings"
+msgstr "Lisäasetukset"
