@@ -187,6 +187,7 @@ network-manager-applet
 networkmanager
 networkmanager-openvpn
 newsboat
+nginx
 nlohmann-json
 ntfs-3g
 obs-studio
