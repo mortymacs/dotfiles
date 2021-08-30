@@ -140,6 +140,7 @@ htop
 httpie
 hugo
 hyperfine
+iaito
 iftop
 inetutils
 inotify-tools
@@ -231,6 +232,8 @@ python-sh
 python-sphinx
 python-tqdm
 python-vmprof
+r2ghidra
+radare2
 redis
 ripgrep
 rust
