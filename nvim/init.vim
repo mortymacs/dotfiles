@@ -286,6 +286,7 @@ inoremap <S-Tab> <C-D>
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
 call NorMapKeys("<c-c><c-s>", ":call nerdcommenter#Comment('cc', 'toggle')<cr>")
+call NorMapKeys("<c-/>", ":call nerdcommenter#Comment('cc', 'toggle')<cr>")
 "" https://vim.fandom.com/wiki/Fix_indentation
 call MapKeys("<c-c><c-r>", "gg=G<c-o><c-o>")
 "" https://unix.stackexchange.com/a/75431/204066
