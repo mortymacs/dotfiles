@@ -20,7 +20,6 @@ bottom
 bpython
 broot
 btrfs-progs
-caddy
 cgdb
 cheese
 clang
