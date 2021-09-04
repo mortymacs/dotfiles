@@ -1,6 +1,5 @@
 ack
 alacritty
-ali
 asciinema
 atop
 autoconf
@@ -17,7 +16,6 @@ binutils
 bison
 boost
 bottom
-bpython
 broot
 btrfs-progs
 cgdb
@@ -205,9 +203,7 @@ python-cherrypy
 python-dask
 python-diff-cover
 python-distributed
-python-ipdb
 python-isort
-python-kivy
 python-kubernetes
 python-lxml
 python-memory-profiler
