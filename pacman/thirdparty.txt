@@ -20,6 +20,7 @@ mcfly
 mtodo
 mycli
 nats-server
+palanteer
 python-configparser
 python-panwid
 shc
