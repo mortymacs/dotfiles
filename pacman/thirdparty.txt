@@ -9,7 +9,6 @@ dry-bin
 git-extras
 gitstatus
 glow
-google-chrome
 google-crc32c
 hotspot
 jid
@@ -21,7 +20,6 @@ mcfly
 mtodo
 mycli
 nats-server
-pgcli
 python-configparser
 python-panwid
 shc

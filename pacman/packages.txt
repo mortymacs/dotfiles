@@ -22,6 +22,7 @@ broot
 btrfs-progs
 cgdb
 cheese
+chromium
 clang
 cloc
 cppcheck
@@ -164,12 +165,9 @@ lld
 lldb
 llvm
 lsof
-lxd
 m4
 make
 man-db
-mariadb
-mariadb-clients
 massif-visualizer
 maven
 meld
@@ -185,7 +183,6 @@ net-tools
 network-manager-applet
 networkmanager
 networkmanager-openvpn
-newsboat
 nginx
 nlohmann-json
 ntfs-3g
@@ -252,7 +249,6 @@ sshfs
 step-cli
 sudo
 sushi
-sysbench
 syslog-ng
 systemd-resolvconf
 tailscale
@@ -288,6 +284,7 @@ virtualbox-guest-iso
 virtualbox-guest-utils
 vlc
 websocat
+wget
 which
 wireguard-tools
 wkhtmltopdf
