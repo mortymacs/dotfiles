@@ -5,7 +5,6 @@ chrome-gnome-shell
 czmq-git
 direnv
 dive
-docker-machine-driver-kvm2
 dry-bin
 git-extras
 gitstatus

@@ -174,7 +174,6 @@ massif-visualizer
 maven
 meld
 memcached
-minikube
 moreutils
 mtr
 mutter
