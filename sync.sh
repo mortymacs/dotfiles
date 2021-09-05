@@ -47,8 +47,8 @@ rm -rf docker/*
 cat "$HOME"/.docker/config.json | jq 'del(.auths)' | tee docker/config.json
 
 # Liferea
-rm -rf liferea/*
-cp -R "$HOME"/.config/liferea/ liferea/
+rm -rf liferea
+cp -R "$HOME"/.config/liferea/ .
 
 # Gnome shell extensions
 rm -rf gnome/extensions/*
