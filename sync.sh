@@ -46,6 +46,10 @@ pacman -Qqem > pacman/thirdparty.txt
 rm -rf docker/*
 cat "$HOME"/.docker/config.json | jq 'del(.auths)' | tee docker/config.json
 
+# Liferea
+rm -rf liferea/*
+cp -R "$HOME"/.config/liferea/ liferea/
+
 # Gnome shell extensions
 rm -rf gnome/extensions/*
 cp -R "$HOME"/.local/share/gnome-shell/extensions gnome/extensions
