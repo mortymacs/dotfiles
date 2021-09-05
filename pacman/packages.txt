@@ -291,7 +291,6 @@ xdg-user-dirs-gtk
 xdotool
 xf86-video-intel
 xsel
-yaml-cpp
 yapf
 yelp
 youtube-dl
