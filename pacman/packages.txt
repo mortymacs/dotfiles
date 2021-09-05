@@ -55,7 +55,6 @@ flake8
 flameshot
 flex
 fmt
-fontforge
 fzf
 gawk
 gcc
@@ -137,7 +136,6 @@ htop
 httpie
 hugo
 hyperfine
-iaito
 iftop
 inetutils
 inotify-tools
@@ -156,6 +154,7 @@ kubectx
 libev
 libreoffice-fresh
 libtool
+liferea
 linux
 linux-firmware
 lld
@@ -244,6 +243,7 @@ sshfs
 step-cli
 sudo
 sushi
+syntax-highlighting
 syslog-ng
 systemd-resolvconf
 tailscale
@@ -265,6 +265,7 @@ tracker3
 tracker3-miners
 trash-cli
 tree
+ttf-dejavu
 ttf-fira-code
 ttf-fira-mono
 ttf-fira-sans
