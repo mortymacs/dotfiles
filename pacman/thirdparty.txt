@@ -28,6 +28,10 @@ skypeforlinux-stable-bin
 slack-desktop
 spotify
 xxd-standalone
+yaru-gnome-shell-theme
+yaru-gtk-theme
+yaru-icon-theme
+yaru-metacity-theme
 yay
 ydiff
 zeal
