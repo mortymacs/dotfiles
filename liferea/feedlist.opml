@@ -18,7 +18,7 @@
       <outline title="Comics" text="Comics" description="Comics" type="folder" id="yyxsmwe" sortColumn="time" collapsed="true">
         <outline title="xkcd" text="xkcd" description="xkcd" type="atom" id="fyebcul" sortColumn="time" xmlUrl="https://xkcd.com/atom.xml" htmlUrl="https://xkcd.com/" updateInterval="-1" collapsed="true"/>
       </outline>
-      <outline title="General" text="General" description="General" type="folder" id="ppcqlqq" sortColumn="time" expanded="true">
+      <outline title="General" text="General" description="General" type="folder" id="ppcqlqq" sortColumn="time" collapsed="true">
         <outline title="PCWorld" text="PCWorld" description="PCWorld" type="rss" id="hehiugn" sortColumn="time" xmlUrl="https://www.pcworld.com/index.rss" htmlUrl="https://www.pcworld.com" updateInterval="-1" collapsed="true"/>
       </outline>
     </outline>
