@@ -30,8 +30,10 @@ spotify
 xxd-standalone
 yaru-gnome-shell-theme
 yaru-gtk-theme
+yaru-gtksourceview-theme
 yaru-icon-theme
 yaru-metacity-theme
+yaru-session
 yay
 ydiff
 zeal
