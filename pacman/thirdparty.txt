@@ -21,7 +21,9 @@ mtodo
 mycli
 nats-server
 palanteer
+python-bench-it
 python-configparser
+python-oyaml
 python-panwid
 shc
 skypeforlinux-stable-bin

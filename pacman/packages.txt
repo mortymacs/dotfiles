@@ -213,6 +213,7 @@ python-py-cpuinfo
 python-pydantic
 python-pylint
 python-pynvim
+python-pytest
 python-pytz
 python-requests-oauthlib
 python-rich
