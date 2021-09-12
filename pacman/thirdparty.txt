@@ -9,6 +9,7 @@ dry-bin
 git-extras
 gitstatus
 glow
+google-cloud-cpp
 google-crc32c
 hotspot
 jid
