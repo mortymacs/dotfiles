@@ -21,6 +21,10 @@
       <outline title="General" text="General" description="General" type="folder" id="ppcqlqq" sortColumn="time" collapsed="true">
         <outline title="PCWorld" text="PCWorld" description="PCWorld" type="rss" id="hehiugn" sortColumn="time" xmlUrl="https://www.pcworld.com/index.rss" htmlUrl="https://www.pcworld.com" updateInterval="-1" collapsed="true"/>
       </outline>
+      <outline title="Aerospace" text="Aerospace" description="Aerospace" type="folder" id="rtpqysq" sortColumn="time" expanded="true">
+        <outline title="NASA Breaking News" text="NASA Breaking News" description="NASA Breaking News" type="rss" id="asbrrxh" sortColumn="time" xmlUrl="https://www.nasa.gov/rss/dyn/breaking_news.rss" htmlUrl="http://www.nasa.gov/" updateInterval="-1" collapsed="true"/>
+        <outline title="NASA Image of the Day" text="NASA Image of the Day" description="NASA Image of the Day" type="rss" id="rjrfwcb" sortColumn="time" xmlUrl="https://www.nasa.gov/rss/dyn/lg_image_of_the_day.rss" htmlUrl="http://www.nasa.gov/" updateInterval="-1" collapsed="true"/>
+      </outline>
     </outline>
     <outline title="Unread" text="Unread" description="Unread" type="vfolder" id="tixplld" sortColumn="time" matchType="any" unreadOnly="false" collapsed="true">
       <outline type="rule" text="Read status" rule="unread" value="" additive="true"/>

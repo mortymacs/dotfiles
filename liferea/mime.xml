@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<types>
+  <type cmd="xdg-open" mime="image/jpeg"/>
+  <type cmd="xdg-open" mime="image/png"/>
+</types>
