@@ -26,6 +26,7 @@
     del-local = branch -d
     del-all = branch -D
     show-files = diff-tree --no-commit-id --name-only -r
+    status-lines = diff --stat
 
 [push]
     default = current
