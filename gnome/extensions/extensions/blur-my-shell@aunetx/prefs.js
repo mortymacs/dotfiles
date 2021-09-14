@@ -18,11 +18,14 @@ const BlurMyShellPrefsWidget = GObject.registerClass({
         'blur_overview',
         'blur_lockscreen',
         'blur_appfolders',
+        'blur_window_list',
         'hacks_level0',
         'hacks_level1',
         'hacks_level2',
         'dash_opacity_scale',
+        'appfolder_dialog_opacity_scale',
         'static_blur',
+        'hidetopbar',
         'debug_mode'
     ],
 }, class BlurMyShellPrefsWidget extends Gtk.Box {
@@ -50,17 +53,17 @@ const BlurMyShellPrefsWidget = GObject.registerClass({
         // ! blur appfolders
         this._blur_appfolders.set_active(config.BLUR_APPFOLDERS.get());
 
+        // ! blur window list
+        this._blur_window_list.set_active(config.BLUR_WINDOW_LIST.get());
+
         // ! dash hacks
         if (config.HACKS_LEVEL.get() == 0) {
             this._hacks_level0.set_active(true);
-        }
-        else if (config.HACKS_LEVEL.get() == 1) {
+        } else if (config.HACKS_LEVEL.get() == 1) {
             this._hacks_level1.set_active(true);
-        }
-        else if (config.HACKS_LEVEL.get() == 2) {
+        } else if (config.HACKS_LEVEL.get() == 2) {
             this._hacks_level2.set_active(true);
-        }
-        else {
+        } else {
             this._log(`hack level out-of-bound: ${hack_level}, defaulting to 1.`);
             this._hacks_level0.set_active(true);
         }
@@ -68,8 +71,14 @@ const BlurMyShellPrefsWidget = GObject.registerClass({
         // ! dash opacity
         this._dash_opacity_scale.set_value(config.DASH_OPACITY.get());
 
+        // ! appfolder dialog opacity
+        this._appfolder_dialog_opacity_scale.set_value(config.APPFOLDER_DIALOG_OPACITY.get());
+
         // ! static panel blur
         this._static_blur.set_active(config.STATIC_BLUR.get());
+
+        // ! hidetopbar compatibility
+        this._hidetopbar.set_active(config.HIDETOPBAR.get());
 
         // ! debug mode
         this._debug_mode.set_active(config.DEBUG.get());
@@ -110,6 +119,11 @@ const BlurMyShellPrefsWidget = GObject.registerClass({
         config.BLUR_APPFOLDERS.set(value);
     }
 
+    blur_window_list_toggled(w) {
+        let value = w.get_active();
+        config.BLUR_WINDOW_LIST.set(value);
+    }
+
     hacks_level0_toggled(w) {
         let is_active = w.get_active();
         if (is_active) { config.HACKS_LEVEL.set(0) }
@@ -130,9 +144,19 @@ const BlurMyShellPrefsWidget = GObject.registerClass({
         config.DASH_OPACITY.set(value);
     }
 
+    appfolder_dialog_opacity_changed(w) {
+        let value = w.get_value();
+        config.APPFOLDER_DIALOG_OPACITY.set(value);
+    }
+
     static_blur_toggled(w) {
         let value = w.get_active();
         config.STATIC_BLUR.set(value);
+    }
+
+    hidetopbar_toggled(w) {
+        let value = w.get_active();
+        config.HIDETOPBAR.set(value);
     }
 
     debug_mode_toggled(w) {
@@ -146,7 +170,7 @@ const BlurMyShellPrefsWidget = GObject.registerClass({
     }
 });
 
-function init() { }
+function init() {}
 
 function buildPrefsWidget() {
     return new BlurMyShellPrefsWidget();
