@@ -6,7 +6,7 @@ window:
   decorations: full
   gtk_theme_variant: dark
 
-background_opacity: 0.95
+background_opacity: 0.98
 
 # Font configuration (changes require restart).
 font:
