@@ -18,7 +18,7 @@ alias cat="bat"
 ## https://medium.com/@GroundControl/better-git-diffs-with-fzf-89083739a9cb
 alias f="fzf --cycle -i --preview 'bat {-1} --color=always'"
 alias rmc="rm -rf CMakeFiles/ Testing/ CMakeCache.txt *.cmake Makefile compile_commands.json *.cbp"
-alias u="yay -Syu && v -c :PlugUpgrade +quitall && v -c :PlugUpdate +quitall && v -c :CocUpdateSync +quitall && v -c :BlackUpgrade +quitall && z dot && ./sync.sh"
+alias u="yay -Syu && v -c :PlugUpgrade +quitall && v -c :PlugUpdate +quitall && v -c :CocUpdateSync +quitall && v -c :BlackUpgrade +quitall && z dot && ./sync.sh && cd -"
 alias o="v \`f || echo '-c :quitall'\`"
 alias diff="ydiff -s --wrap"
 alias tgz='rpyc ; tar --exclude='.venv' --exclude='.git' --exclude='.gitignore' --exclude='.kube' -zcvf `basename $PWD`.tar.gz ./*'
