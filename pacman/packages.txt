@@ -18,6 +18,7 @@ boost
 bottom
 broot
 btrfs-progs
+cbindgen
 cgdb
 cheese
 chromium
