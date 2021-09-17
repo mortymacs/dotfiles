@@ -63,6 +63,7 @@ Plug 'f-person/git-blame.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'dense-analysis/ale'
 Plug 'romgrk/barbar.nvim'
+Plug 'mhinz/vim-startify'
 call plug#end()
 
 " Color
