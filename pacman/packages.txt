@@ -156,6 +156,7 @@ keybase-gui
 kube-linter
 kubectl
 kubectx
+kubelet
 libev
 libreoffice-fresh
 libtool
