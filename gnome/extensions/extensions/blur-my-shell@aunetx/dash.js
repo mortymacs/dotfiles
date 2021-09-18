@@ -6,8 +6,6 @@ const Main = imports.ui.main;
 const Me = imports.misc.extensionUtils.getCurrentExtension();
 const Settings = Me.imports.settings;
 
-const default_sigma = 30;
-const default_brightness = 0.6;
 
 var DashBlur = class DashBlur {
     constructor(connections, prefs) {
@@ -30,7 +28,7 @@ var DashBlur = class DashBlur {
         this._log("removing blur from dash");
 
         if (Main.overview.dash.constructor.name == "Dash") {
-            if (!Main.screenShield.locked) {
+            if (Main.screenShield && !Main.screenShield.locked) {
                 try {
                     Main.overview.dash.get_child_at_index(0).style = null;
                 } catch (e) {
