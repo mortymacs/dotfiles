@@ -34,6 +34,8 @@ dia
 dialog
 diff-so-fancy
 discord
+dmidecode
+dnsmasq
 docker
 docker-compose
 docker-machine
@@ -142,6 +144,7 @@ inetutils
 inotify-tools
 intel-ucode
 iotop
+iptables-nft
 ipython
 iw
 jdk-openjdk
@@ -156,6 +159,7 @@ kubectx
 libev
 libreoffice-fresh
 libtool
+libvirt
 liferea
 linux
 linux-firmware
@@ -225,6 +229,7 @@ python-sh
 python-sphinx
 python-tqdm
 python-vmprof
+qemu
 r2ghidra
 radare2
 redis
@@ -279,9 +284,6 @@ ttf-ubuntu-font-family
 vagrant
 valgrind
 vino
-virtualbox
-virtualbox-guest-iso
-virtualbox-guest-utils
 vlc
 websocat
 wget
