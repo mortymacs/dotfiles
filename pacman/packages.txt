@@ -150,6 +150,7 @@ k9s
 kcachegrind
 keybase
 keybase-gui
+kube-linter
 kubectl
 kubectx
 libev
@@ -293,6 +294,7 @@ xdg-user-dirs-gtk
 xdotool
 xf86-video-intel
 xsel
+yamllint
 yapf
 yelp
 youtube-dl
