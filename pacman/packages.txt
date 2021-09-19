@@ -294,6 +294,7 @@ wkhtmltopdf
 wmctrl
 wpa_supplicant
 xclip
+xdg-desktop-portal-gtk
 xdg-user-dirs-gtk
 xdotool
 xf86-video-intel
