@@ -498,6 +498,30 @@ along with ddterm GNOME Shell extension.  If not, see <http://www.gnu.org/licens
         <col id="3">0</col>
       </row>
       <row>
+        <col id="0">shortcut-window-size-inc</col>
+        <col id="1" translatable="yes">Increase Window Height</col>
+        <col id="2">0</col>
+        <col id="3">0</col>
+      </row>
+      <row>
+        <col id="0">shortcut-window-size-dec</col>
+        <col id="1" translatable="yes">Decrease Window Height</col>
+        <col id="2">0</col>
+        <col id="3">0</col>
+      </row>
+      <row>
+        <col id="0">shortcut-background-opacity-inc</col>
+        <col id="1" translatable="yes">Increase Background Opacity</col>
+        <col id="2">0</col>
+        <col id="3">0</col>
+      </row>
+      <row>
+        <col id="0">shortcut-background-opacity-dec</col>
+        <col id="1" translatable="yes">Decrease Background Opacity</col>
+        <col id="2">0</col>
+        <col id="3">0</col>
+      </row>
+      <row>
         <col id="0">shortcut-toggle-transparent-background</col>
         <col id="1" translatable="yes">Enable/Disable Background Transparency</col>
         <col id="2">0</col>
@@ -590,6 +614,24 @@ along with ddterm GNOME Shell extension.  If not, see <http://www.gnu.org/licens
       <row>
         <col id="0">shortcut-reset-tab-title</col>
         <col id="1" translatable="yes">Reset Tab Title</col>
+        <col id="2">0</col>
+        <col id="3">0</col>
+      </row>
+      <row>
+        <col id="0">shortcut-find</col>
+        <col id="1" translatable="yes">Find</col>
+        <col id="2">0</col>
+        <col id="3">0</col>
+      </row>
+      <row>
+        <col id="0">shortcut-find-next</col>
+        <col id="1" translatable="yes">Find Next</col>
+        <col id="2">0</col>
+        <col id="3">0</col>
+      </row>
+      <row>
+        <col id="0">shortcut-find-prev</col>
+        <col id="1" translatable="yes">Find Previous</col>
         <col id="2">0</col>
         <col id="3">0</col>
       </row>
@@ -1063,7 +1105,7 @@ You&apos;ll have to close all tabs for this option to take effect.</property>
             <property name="title" translatable="yes">Window</property>
           </packing>
         </child>
-        <!-- n-columns=2 n-rows=10 -->
+        <!-- n-columns=2 n-rows=11 -->
         <child>
           <object class="GtkGrid">
             <property name="visible">1</property>
@@ -1172,7 +1214,7 @@ You&apos;ll have to close all tabs for this option to take effect.</property>
               </object>
               <packing>
                 <property name="left-attach">0</property>
-                <property name="top-attach">7</property>
+                <property name="top-attach">8</property>
               </packing>
             </child>
             <child>
@@ -1186,7 +1228,7 @@ You&apos;ll have to close all tabs for this option to take effect.</property>
               </object>
               <packing>
                 <property name="left-attach">1</property>
-                <property name="top-attach">7</property>
+                <property name="top-attach">8</property>
               </packing>
             </child>
             <child>
@@ -1229,7 +1271,7 @@ Following helpers are available:
               </object>
               <packing>
                 <property name="left-attach">0</property>
-                <property name="top-attach">9</property>
+                <property name="top-attach">10</property>
                 <property name="width">2</property>
               </packing>
             </child>
@@ -1243,7 +1285,7 @@ Following helpers are available:
               </object>
               <packing>
                 <property name="left-attach">1</property>
-                <property name="top-attach">8</property>
+                <property name="top-attach">9</property>
               </packing>
             </child>
             <child>
@@ -1285,6 +1327,21 @@ Following helpers are available:
               <packing>
                 <property name="left-attach">1</property>
                 <property name="top-attach">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkCheckButton" id="show_tab_border">
+                <property name="label" translatable="yes">Show border</property>
+                <property name="visible">1</property>
+                <property name="can-focus">1</property>
+                <property name="action-name">settings.notebook-border</property>
+                <property name="use-underline">1</property>
+                <property name="draw-indicator">1</property>
+              </object>
+              <packing>
+                <property name="left-attach">0</property>
+                <property name="top-attach">7</property>
+                <property name="width">2</property>
               </packing>
             </child>
           </object>
@@ -1555,7 +1612,7 @@ Following helpers are available:
             <property name="position">2</property>
           </packing>
         </child>
-        <!-- n-columns=2 n-rows=7 -->
+        <!-- n-columns=2 n-rows=8 -->
         <child>
           <object class="GtkGrid">
             <property name="visible">1</property>
@@ -2166,6 +2223,19 @@ Following helpers are available:
               <packing>
                 <property name="left-attach">0</property>
                 <property name="top-attach">6</property>
+                <property name="width">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="copy_gnome_terminal_profile_button">
+                <property name="label" translatable="yes">Copy profile from GNOME Terminal</property>
+                <property name="visible">1</property>
+                <property name="can-focus">1</property>
+                <property name="receives-default">1</property>
+              </object>
+              <packing>
+                <property name="left-attach">0</property>
+                <property name="top-attach">7</property>
                 <property name="width">2</property>
               </packing>
             </child>

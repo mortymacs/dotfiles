@@ -443,6 +443,30 @@
         <col id="3">0</col>
       </row>
       <row>
+        <col id="0">shortcut-window-size-inc</col>
+        <col id="1" translatable="yes">Increase Window Height</col>
+        <col id="2">0</col>
+        <col id="3">0</col>
+      </row>
+      <row>
+        <col id="0">shortcut-window-size-dec</col>
+        <col id="1" translatable="yes">Decrease Window Height</col>
+        <col id="2">0</col>
+        <col id="3">0</col>
+      </row>
+      <row>
+        <col id="0">shortcut-background-opacity-inc</col>
+        <col id="1" translatable="yes">Increase Background Opacity</col>
+        <col id="2">0</col>
+        <col id="3">0</col>
+      </row>
+      <row>
+        <col id="0">shortcut-background-opacity-dec</col>
+        <col id="1" translatable="yes">Decrease Background Opacity</col>
+        <col id="2">0</col>
+        <col id="3">0</col>
+      </row>
+      <row>
         <col id="0">shortcut-toggle-transparent-background</col>
         <col id="1" translatable="yes">Enable/Disable Background Transparency</col>
         <col id="2">0</col>
@@ -535,6 +559,24 @@
       <row>
         <col id="0">shortcut-reset-tab-title</col>
         <col id="1" translatable="yes">Reset Tab Title</col>
+        <col id="2">0</col>
+        <col id="3">0</col>
+      </row>
+      <row>
+        <col id="0">shortcut-find</col>
+        <col id="1" translatable="yes">Find</col>
+        <col id="2">0</col>
+        <col id="3">0</col>
+      </row>
+      <row>
+        <col id="0">shortcut-find-next</col>
+        <col id="1" translatable="yes">Find Next</col>
+        <col id="2">0</col>
+        <col id="3">0</col>
+      </row>
+      <row>
+        <col id="0">shortcut-find-prev</col>
+        <col id="1" translatable="yes">Find Previous</col>
         <col id="2">0</col>
         <col id="3">0</col>
       </row>
@@ -1033,7 +1075,7 @@ You&apos;ll have to close all tabs for this option to take effect.</property>
                     <property name="mnemonic-widget">tab_title_template_text_view</property>
                     <layout>
                       <property name="column">0</property>
-                      <property name="row">7</property>
+                      <property name="row">8</property>
                     </layout>
                   </object>
                 </child>
@@ -1045,7 +1087,7 @@ You&apos;ll have to close all tabs for this option to take effect.</property>
                     <property name="monospace">1</property>
                     <layout>
                       <property name="column">1</property>
-                      <property name="row">7</property>
+                      <property name="row">8</property>
                     </layout>
                   </object>
                 </child>
@@ -1081,7 +1123,7 @@ Following helpers are available:
                     </property>
                     <layout>
                       <property name="column">0</property>
-                      <property name="row">9</property>
+                      <property name="row">10</property>
                       <property name="column-span">2</property>
                     </layout>
                   </object>
@@ -1093,7 +1135,7 @@ Following helpers are available:
                     <property name="use-underline">1</property>
                     <layout>
                       <property name="column">1</property>
-                      <property name="row">8</property>
+                      <property name="row">9</property>
                     </layout>
                   </object>
                 </child>
@@ -1130,6 +1172,18 @@ Following helpers are available:
                     <layout>
                       <property name="column">1</property>
                       <property name="row">1</property>
+                    </layout>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkCheckButton" id="show_tab_border">
+                    <property name="label" translatable="yes">Show border</property>
+                    <property name="action-name">settings.notebook-border</property>
+                    <property name="use-underline">1</property>
+                    <layout>
+                      <property name="column">0</property>
+                      <property name="row">7</property>
+                      <property name="column-span">2</property>
                     </layout>
                   </object>
                 </child>
@@ -1845,6 +1899,17 @@ Following helpers are available:
                     <layout>
                       <property name="column">0</property>
                       <property name="row">6</property>
+                      <property name="column-span">2</property>
+                    </layout>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkButton" id="copy_gnome_terminal_profile_button">
+                    <property name="label" translatable="yes">Copy profile from GNOME Terminal</property>
+                    <property name="receives-default">1</property>
+                    <layout>
+                      <property name="column">0</property>
+                      <property name="row">7</property>
                       <property name="column-span">2</property>
                     </layout>
                   </object>

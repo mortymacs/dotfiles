@@ -306,8 +306,8 @@ function enable() {
     extension_connections.connect(settings, 'changed::window-position', update_window_position);
     extension_connections.connect(settings, 'changed::window-skip-taskbar', set_skip_taskbar);
     extension_connections.connect(settings, 'changed::window-maximize', set_window_maximized);
-    extension_connections.connect(settings, 'changed::window-monitor', () => update_monitor_index());
-    extension_connections.connect(settings, 'changed::window-monitor-connector', () => update_monitor_index());
+    extension_connections.connect(settings, 'changed::window-monitor', update_monitor_index);
+    extension_connections.connect(settings, 'changed::window-monitor-connector', update_monitor_index);
     extension_connections.connect(settings, 'changed::override-window-animation', setup_animation_overrides);
     extension_connections.connect(settings, 'changed::show-animation', update_show_animation);
     extension_connections.connect(settings, 'changed::hide-animation', update_hide_animation);
@@ -494,12 +494,6 @@ function setup_animation_overrides() {
     if (!current_window)
         return;
 
-    // Dialogs have different animation time. Other windows have no default animation.
-    // Our custom animation time must match shell's default animation, otherwise
-    // completed_map()/completed_destroy() will be called at wrong time.
-    if (current_window.window_type !== Meta.WindowType.NORMAL)
-        return;
-
     if (!settings.get_boolean('override-window-animation'))
         return;
 
@@ -529,38 +523,41 @@ function override_map_animation(wm, actor) {
     if (!check_current_window() || actor !== current_window.get_compositor_private())
         return;
 
-    if (!show_animation) {
-        actor.remove_all_transitions();
+    if (!show_animation)
         return;
-    }
 
-    actor.set_pivot_point(animation_pivot_x, animation_pivot_y);
+    const func = () => {
+        actor.set_pivot_point(animation_pivot_x, animation_pivot_y);
 
-    const scale_x_anim = actor.get_transition('scale-x');
+        const scale_x_anim = actor.get_transition('scale-x');
 
-    if (scale_x_anim) {
-        scale_x_anim.set_from(animation_scale_x);
-        scale_x_anim.set_to(1.0);
-        scale_x_anim.progress_mode = show_animation;
-    }
+        if (scale_x_anim) {
+            scale_x_anim.set_from(animation_scale_x);
+            scale_x_anim.set_to(1.0);
+            scale_x_anim.progress_mode = show_animation;
+        }
 
-    const scale_y_anim = actor.get_transition('scale-y');
+        const scale_y_anim = actor.get_transition('scale-y');
 
-    if (scale_y_anim) {
-        scale_y_anim.set_from(animation_scale_y);
-        scale_y_anim.set_to(1.0);
-        scale_y_anim.progress_mode = show_animation;
-    }
+        if (scale_y_anim) {
+            scale_y_anim.set_from(animation_scale_y);
+            scale_y_anim.set_to(1.0);
+            scale_y_anim.progress_mode = show_animation;
+        }
+    };
+
+    if (Main.wm._waitForOverviewToHide)
+        Main.wm._waitForOverviewToHide().then(func);
+    else
+        func();
 }
 
 function override_unmap_animation(wm, actor) {
     if (!check_current_window() || actor !== current_window.get_compositor_private())
         return;
 
-    if (!hide_animation) {
-        actor.remove_all_transitions();
+    if (!hide_animation)
         return;
-    }
 
     actor.set_pivot_point(animation_pivot_x, animation_pivot_y);
 
@@ -687,18 +684,11 @@ function get_monitor_index() {
     return global.display.get_current_monitor();
 }
 
-function update_monitor_index(force = false) {
-    const new_monitor_index = get_monitor_index();
+function update_monitor_index() {
+    current_monitor_index = get_monitor_index();
 
-    if (!force && new_monitor_index === current_monitor_index)
-        return;
-
-    current_monitor_index = new_monitor_index;
-
-    if (current_window) {
-        if (force || current_window.get_monitor() !== current_monitor_index)
-            current_window.move_to_monitor(current_monitor_index);
-    }
+    if (current_window)
+        current_window.move_to_monitor(current_monitor_index);
 
     update_workarea();
 }
@@ -737,14 +727,10 @@ function set_current_window(win) {
 
     setup_maximized_handlers();
 
-    update_monitor_index(true);
+    update_monitor_index();
 
     // Setting up animations early, so 'current_window_mapped' will be 'false'
     // in the 'map' handler (animation's handler will run before 'map_handler_id'.
-    // 'notify::window-type' could move animation's handler after 'map_handler_id',
-    // but that should not be a significant issue: the window will most likely be
-    // already visible, and 'destroy' handler does not need any specific ordering.
-    current_window_connections.connect(win, 'notify::window-type', setup_animation_overrides);
     setup_animation_overrides();
 
     const map_handler_id = current_window_connections.connect(global.window_manager, 'map', (wm, actor) => {

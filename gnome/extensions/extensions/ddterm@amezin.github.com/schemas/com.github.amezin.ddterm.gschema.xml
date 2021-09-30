@@ -217,6 +217,9 @@
     <key name="tab-switcher-popup" type="b">
       <default>true</default>
     </key>
+    <key name="notebook-border" type="b">
+      <default>true</default>
+    </key>
     <key name="tab-title-template" type="s">
       <default>"{{#if switch-shortcut}}&lt;span alpha=\"50%\"&gt;{{switch-shortcut}}&lt;/span&gt; {{/if}}{{window-title}}"</default>
     </key>
@@ -376,6 +379,18 @@
     <key name="shortcut-window-hide" type="as">
       <default><![CDATA[[]]]></default>
     </key>
+    <key name="shortcut-window-size-inc" type="as">
+      <default><![CDATA[['<Ctrl>Down']]]></default>
+    </key>
+    <key name="shortcut-window-size-dec" type="as">
+      <default><![CDATA[['<Ctrl>Up']]]></default>
+    </key>
+    <key name="shortcut-background-opacity-inc" type="as">
+      <default><![CDATA[[]]]></default>
+    </key>
+    <key name="shortcut-background-opacity-dec" type="as">
+      <default><![CDATA[[]]]></default>
+    </key>
     <key name="shortcut-toggle-maximize" type="as">
       <default><![CDATA[['F11']]]></default>
     </key>
@@ -429,6 +444,15 @@
     </key>
     <key name="shortcut-reset-tab-title" type="as">
       <default><![CDATA[[]]]></default>
+    </key>
+    <key name="shortcut-find" type="as">
+      <default><![CDATA[['<Ctrl><Shift>F']]]></default>
+    </key>
+    <key name="shortcut-find-next" type="as">
+      <default><![CDATA[['<Ctrl><Shift>G']]]></default>
+    </key>
+    <key name="shortcut-find-prev" type="as">
+      <default><![CDATA[['<Ctrl><Shift>H']]]></default>
     </key>
 
     <key name="shortcut-switch-to-tab-1" type="as">

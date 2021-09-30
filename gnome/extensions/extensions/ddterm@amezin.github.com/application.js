@@ -143,6 +143,10 @@ const Application = GObject.registerClass(
             this.update_theme();
 
             this.setup_shortcut('shortcut-window-hide', 'win.hide');
+            this.setup_shortcut('shortcut-window-size-inc', 'win.window-size-inc');
+            this.setup_shortcut('shortcut-window-size-dec', 'win.window-size-dec');
+            this.setup_shortcut('shortcut-background-opacity-inc', 'win.background-opacity-inc');
+            this.setup_shortcut('shortcut-background-opacity-dec', 'win.background-opacity-dec');
             this.setup_shortcut('shortcut-toggle-maximize', 'app.window-maximize');
             this.setup_shortcut('shortcut-toggle-transparent-background', 'app.transparent-background');
             this.setup_shortcut('shortcut-terminal-copy', 'terminal.copy');
@@ -160,6 +164,9 @@ const Application = GObject.registerClass(
             this.setup_shortcut('shortcut-next-tab', 'win.next-tab');
             this.setup_shortcut('shortcut-set-custom-tab-title', 'page.use-custom-title(true)');
             this.setup_shortcut('shortcut-reset-tab-title', 'page.use-custom-title(false)');
+            this.setup_shortcut('shortcut-find', 'terminal.find');
+            this.setup_shortcut('shortcut-find-next', 'terminal.find-next');
+            this.setup_shortcut('shortcut-find-prev', 'terminal.find-prev');
 
             for (let i = 0; i < 10; i += 1)
                 this.setup_shortcut(`shortcut-switch-to-tab-${i + 1}`, `win.switch-to-tab(${i})`);

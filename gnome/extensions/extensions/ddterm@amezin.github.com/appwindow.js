@@ -74,7 +74,6 @@ var AppWindow = GObject.registerClass(
                     this.disconnect(this.draw_handler_id);
             });
 
-            this.method_handler(this.settings, 'changed::background-opacity', this.update_app_paintable);
             this.method_handler(this.settings, 'changed::transparent-background', this.update_app_paintable);
             this.update_app_paintable();
 
@@ -106,6 +105,26 @@ var AppWindow = GObject.registerClass(
             this.method_handler(this.settings, 'changed::window-resizable', this.update_resize_boxes);
             this.method_handler(this.settings, 'changed::window-position', this.update_resize_boxes);
             this.update_resize_boxes();
+
+            const HEIGHT_MOD = 0.05;
+            this.simple_action('window-size-dec', () => {
+                if (this.settings.get_boolean('window-maximize'))
+                    this.settings.set_double('window-size', 1.0 - HEIGHT_MOD);
+                else
+                    this.adjust_double_setting('window-size', -HEIGHT_MOD);
+            });
+            this.simple_action('window-size-inc', () => {
+                if (!this.settings.get_boolean('window-maximize'))
+                    this.adjust_double_setting('window-size', HEIGHT_MOD);
+            });
+
+            const OPACITY_MOD = 0.05;
+            this.simple_action('background-opacity-dec', () => {
+                this.adjust_double_setting('background-opacity', -OPACITY_MOD);
+            });
+            this.simple_action('background-opacity-inc', () => {
+                this.adjust_double_setting('background-opacity', OPACITY_MOD);
+            });
 
             this.tab_select_action = new Gio.PropertyAction({
                 name: 'switch-to-tab',
@@ -149,6 +168,8 @@ var AppWindow = GObject.registerClass(
 
             this.method_handler(this.settings, 'changed::tab-expand', this.update_tab_expand);
 
+            this.bind_settings_ro('notebook-border', this.notebook, 'show-border');
+
             this.method_handler(this.notebook, 'page-added', this.tab_switcher_add);
             this.method_handler(this.notebook, 'page-removed', this.tab_switcher_remove);
             this.method_handler(this.notebook, 'page-reordered', this.tab_switcher_reorder);
@@ -178,6 +199,12 @@ var AppWindow = GObject.registerClass(
             this.signal_connect(action, 'activate', func);
             this.add_action(action);
             return action;
+        }
+
+        adjust_double_setting(name, difference, min = 0.0, max = 1.0) {
+            const current = this.settings.get_double(name);
+            const new_setting = current + difference;
+            this.settings.set_double(name, Math.min(Math.max(new_setting, min), max));
         }
 
         update_tab_bar_visibility() {
@@ -257,8 +284,7 @@ var AppWindow = GObject.registerClass(
         }
 
         update_app_paintable() {
-            this.app_paintable = this.settings.get_boolean('transparent-background') &&
-                                 this.settings.get_double('background-opacity') < 1.0;
+            this.app_paintable = this.settings.get_boolean('transparent-background');
 
             if (this.app_paintable) {
                 if (this.draw_handler_id === null)
@@ -267,6 +293,8 @@ var AppWindow = GObject.registerClass(
                 this.disconnect(this.draw_handler_id);
                 this.draw_handler_id = null;
             }
+
+            this.queue_draw();
         }
 
         remove_page(page) {
