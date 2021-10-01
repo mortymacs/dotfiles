@@ -100,7 +100,7 @@ var AppIndicator = class AppIndicatorsAppIndicator {
         try {
             await this._proxy.init_async(GLib.PRIORITY_DEFAULT, this._cancellable);
             this._checkIfReady();
-            this._checkMenuReady();
+            this._checkNeededProperties();
         } catch (e) {
             if (!e.matches(Gio.IOErrorEnum, Gio.IOErrorEnum.CANCELLED))
                 Util.Logger.warn(`While initalizing proxy for ${this._uniqueId}: ${e}`);
@@ -111,7 +111,7 @@ var AppIndicator = class AppIndicatorsAppIndicator {
         let wasReady = this.isReady;
         let isReady = false;
 
-        if (this.hasNameOwner && this.menuPath)
+        if (this.hasNameOwner && this.id && this.menuPath)
             isReady = true;
 
         this.isReady = isReady;
@@ -130,8 +130,8 @@ var AppIndicator = class AppIndicatorsAppIndicator {
         return false;
     }
 
-    async _checkMenuReady() {
-        if (this.menuPath)
+    async _checkNeededProperties() {
+        if (this.id && this.menuPath)
             return true;
 
         const cancellable = this._cancellable;
@@ -140,17 +140,18 @@ var AppIndicator = class AppIndicatorsAppIndicator {
                 GLib.PRIORITY_DEFAULT_IDLE, cancellable);
             // eslint-disable-next-line no-await-in-loop
             await this._delayCheck;
+            Util.refreshPropertyOnProxy(this._proxy, 'Id');
             Util.refreshPropertyOnProxy(this._proxy, 'Menu');
         }
 
-        return !!this.menuPath;
+        return this.id && this.menuPath;
     }
 
     _nameOwnerChanged() {
         if (!this.hasNameOwner)
             this._checkIfReady();
         else
-            this._checkMenuReady();
+            this._checkNeededProperties();
 
         this.emit('name-owner-changed');
     }
@@ -296,16 +297,22 @@ var AppIndicator = class AppIndicatorsAppIndicator {
     _onPropertiesChanged(_proxy, changed, _invalidated) {
         let props = Object.keys(changed.unpack());
         let signalsToEmit = new Set();
+        const checkIfReadyChanged = () => {
+            if (checkIfReadyChanged.value === undefined)
+                checkIfReadyChanged.value = this._checkIfReady();
+            return checkIfReadyChanged.value;
+        };
 
         props.forEach(property => {
             // some property changes require updates on our part,
             // a few need to be passed down to the displaying code
+            if (property === 'Id')
+                checkIfReadyChanged();
 
             // all these can mean that the icon has to be changed
             if (property.startsWith('Icon') ||
                 property.startsWith('AttentionIcon'))
                 signalsToEmit.add('icon');
-
 
             // same for overlays
             if (property.startsWith('OverlayIcon'))
@@ -322,7 +329,7 @@ var AppIndicator = class AppIndicatorsAppIndicator {
                 signalsToEmit.add('label');
 
             if (property === 'Menu') {
-                if (!this._checkIfReady() && this.isReady)
+                if (!checkIfReadyChanged() && this.isReady)
                     signalsToEmit.add('menu');
             }
 
@@ -401,6 +408,7 @@ class AppIndicatorsIconActor extends St.Icon {
         this.height = iconSize * themeContext.scale_factor;
 
         this._indicator     = indicator;
+        this._customIcons   = new Map();
         this._iconSize      = iconSize;
         this._iconCache     = new IconCache.IconCache();
         this._cancellable   = new Gio.Cancellable();
@@ -412,6 +420,10 @@ class AppIndicatorsIconActor extends St.Icon {
 
         const settings = SettingsManager.getDefaultGSettings();
         Util.connectSmart(settings, 'changed::icon-size', this, this._invalidateIcon);
+        Util.connectSmart(settings, 'changed::custom-icons', this, () => {
+            this._updateCustomIcons();
+            this._invalidateIcon();
+        });
 
         Util.connectSmart(themeContext, 'notify::scale-factor', this, tc => {
             this.height = iconSize * tc.scale_factor;
@@ -420,13 +432,16 @@ class AppIndicatorsIconActor extends St.Icon {
 
         Util.connectSmart(this._indicator, 'ready', this, () => {
             this._updateIconClass();
+            this._updateCustomIcons();
             this._invalidateIcon();
         });
 
         Util.connectSmart(Util.getDefaultTheme(), 'changed', this, this._invalidateIcon);
 
-        if (indicator.isReady)
+        if (indicator.isReady) {
+            this._updateCustomIcons();
             this._invalidateIcon();
+        }
 
         this.connect('destroy', () => {
             this._iconCache.destroy();
@@ -727,22 +742,46 @@ class AppIndicatorsIconActor extends St.Icon {
 
         const [name, pixmap, theme] = icon;
         let gicon = null;
+        const commonArgs = [theme, iconType, iconSize];
+
+        if (this._customIcons.size) {
+            let customIcon = this._customIcons.get(iconType);
+            gicon = await this._createIcon(customIcon, null, ...commonArgs);
+
+            if (!gicon) {
+                customIcon = this._customIcons.get(SNIconType.NORMAL);
+                gicon = await this._createIcon(customIcon, null, ...commonArgs);
+            }
+        } else {
+            gicon = await this._createIcon(name, pixmap, ...commonArgs);
+        }
+
         try {
-            if (name && name.length) {
-                gicon = await this._cacheOrCreateIconByName(iconSize, name, theme);
-                if (!gicon && pixmap)
-                    gicon = await this._createIconFromPixmap(iconSize, pixmap, iconType);
-            } else if (pixmap) {
-                gicon = await this._createIconFromPixmap(iconSize, pixmap, iconType);
+            this._setGicon(iconType, gicon, iconSize);
+        } catch (e) {
+            logError(e, 'Setting GIcon failed');
+        }
+    }
+
+    // updates the base icon
+    async _createIcon(name, pixmap, theme, iconType, iconSize) {
+        try {
+            if (name) {
+                const gicon = await this._cacheOrCreateIconByName(iconSize, name, theme);
+                if (gicon)
+                    return gicon;
             }
 
-            this._setGicon(iconType, gicon, iconSize);
+            if (pixmap)
+                return this._createIconFromPixmap(iconSize, pixmap, iconType);
         } catch (e) {
             /* We handle the error messages already */
             if (!e.matches(Gio.IOErrorEnum, Gio.IOErrorEnum.CANCELLED) &&
                 !e.matches(Gio.IOErrorEnum, Gio.IOErrorEnum.PENDING))
                 Util.Logger.debug(`${this._indicator.id}, Impossible to load icon: ${e}`);
         }
+
+        return null;
     }
 
     // updates the base icon
@@ -799,5 +838,18 @@ class AppIndicatorsIconActor extends St.Icon {
             this._iconSize = this._defaultIconSize;
             delete this._defaultIconSize;
         }
+    }
+
+    _updateCustomIcons() {
+        const settings = SettingsManager.getDefaultGSettings();
+        this._customIcons.clear();
+
+        settings.get_value('custom-icons').deep_unpack().forEach(customIcons => {
+            const [indicatorId, normalIcon, attentionIcon] = customIcons;
+            if (this._indicator.id === indicatorId) {
+                this._customIcons.set(SNIconType.NORMAL, normalIcon);
+                this._customIcons.set(SNIconType.ATTENTION, attentionIcon);
+            }
+        });
     }
 });

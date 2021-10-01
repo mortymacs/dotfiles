@@ -54,10 +54,14 @@ var StatusNotifierWatcher = class AppIndicatorsStatusNotifierWatcher {
         this._items = new Map();
 
         this._dbusImpl.emit_signal('StatusNotifierHostRegistered', null);
-        this._seekStatusNotifierItems();
+        this._seekStatusNotifierItems().catch(e => {
+            if (!e.matches(Gio.IOErrorEnum, Gio.IOErrorEnum.CANCELLED))
+                logError(e, 'Looking for StatusNotifierItem\'s');
+        });
     }
 
     _acquiredName() {
+        this._everAcquiredName = true;
         this._watchDog.nameAcquired = true;
     }
 
@@ -192,7 +196,6 @@ var StatusNotifierWatcher = class AppIndicatorsStatusNotifierWatcher {
         // FIXME: this is useless if the path name disappears while the bus stays alive (not unheard of)
         if (this._items.has(id))
             this._remove(id);
-
     }
 
     _remove(id) {

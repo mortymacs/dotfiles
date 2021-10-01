@@ -20,6 +20,7 @@ const Clutter = imports.gi.Clutter;
 const GObject = imports.gi.GObject;
 const St = imports.gi.St;
 
+const AppDisplay = imports.ui.appDisplay;
 const Main = imports.ui.main;
 const Panel = imports.ui.panel;
 const PanelMenu = imports.ui.panelMenu;
@@ -30,6 +31,7 @@ const Extension = ExtensionUtils.getCurrentExtension();
 const AppIndicator = Extension.imports.appIndicator;
 const DBusMenu = Extension.imports.dbusMenu;
 const Util = Extension.imports.util;
+const PromiseUtils = Extension.imports.promiseUtils;
 const SettingsManager = Extension.imports.settingsManager;
 
 const BaseStatusIcon = GObject.registerClass(
@@ -290,9 +292,23 @@ class AppIndicatorsIndicatorTrayIcon extends BaseStatusIcon {
         this.add_style_class_name('appindicator-icon');
         this.add_style_class_name('tray-icon');
 
-        this._icon.reactive = true;
-        Util.connectSmart(this._icon, 'button-release-event', this, (_actor, event) => {
+        this.connect('button-press-event', (_actor, _event) => {
+            this.add_style_pseudo_class('active');
+            return Clutter.EVENT_PROPAGATE;
+        });
+        this.connect('button-release-event', (_actor, event) => {
             this._icon.click(event);
+            this.remove_style_pseudo_class('active');
+            return Clutter.EVENT_PROPAGATE;
+        });
+        this.connect('key-press-event', (_actor, event) => {
+            this.add_style_pseudo_class('active');
+            this._icon.click(event);
+            return Clutter.EVENT_PROPAGATE;
+        });
+        this.connect('key-release-event', (_actor, event) => {
+            this._icon.click(event);
+            this.remove_style_pseudo_class('active');
             return Clutter.EVENT_PROPAGATE;
         });
 
@@ -324,6 +340,73 @@ class AppIndicatorsIndicatorTrayIcon extends BaseStatusIcon {
 
     get uniqueId() {
         return `legacy:${this._icon.wm_class}:${this._icon.pid}`;
+    }
+
+    vfunc_navigate_focus(from, direction) {
+        this.grab_key_focus();
+        return super.vfunc_navigate_focus(from, direction);
+    }
+
+    _getSimulatedButtonEvent(touchEvent) {
+        const event = Clutter.Event.new(Clutter.EventType.BUTTON_RELEASE);
+        event.set_button(1);
+        event.set_time(touchEvent.time);
+        event.set_flags(touchEvent.flags);
+        event.set_stage(touchEvent.stage);
+        event.set_source(touchEvent.source);
+        event.set_coords(touchEvent.x, touchEvent.y);
+        event.set_state(touchEvent.modifier_state);
+        return event;
+    }
+
+    vfunc_touch_event(touchEvent) {
+        // Under X11 we rely on emulated pointer events
+        if (!imports.gi.Meta.is_wayland_compositor())
+            return Clutter.EVENT_PROPAGATE;
+
+        const slot = touchEvent.sequence.get_slot();
+
+        if (!this._touchPressSlot &&
+            touchEvent.type === Clutter.EventType.TOUCH_BEGIN) {
+            const buttonEvent = this._getSimulatedButtonEvent(touchEvent);
+            this.add_style_pseudo_class('active');
+            this._touchPressSlot = slot;
+            this._touchDelayPromise = new PromiseUtils.TimeoutPromise(
+                AppDisplay.MENU_POPUP_TIMEOUT);
+            this._touchDelayPromise.then(() => {
+                delete this._touchDelayPromise;
+                delete this._touchPressSlot;
+                buttonEvent.set_button(3);
+                this._icon.click(buttonEvent);
+                this.remove_style_pseudo_class('active');
+            });
+        } else if (touchEvent.type === Clutter.EventType.TOUCH_END &&
+                   this._touchPressSlot === slot) {
+            delete this._touchPressSlot;
+            if (this._touchDelayPromise) {
+                this._touchDelayPromise.cancel();
+                delete this._touchDelayPromise;
+            }
+
+            this._icon.click(this._getSimulatedButtonEvent(touchEvent));
+            this.remove_style_pseudo_class('active');
+        } else if (touchEvent.type === Clutter.EventType.TOUCH_UPDATE &&
+                   this._touchPressSlot === slot) {
+            this.add_style_pseudo_class('active');
+        }
+
+        return Clutter.EVENT_PROPAGATE;
+    }
+
+    vfunc_leave_event(crossingEvent) {
+        this.remove_style_pseudo_class('active');
+
+        if (this._touchDelayPromise) {
+            this._touchDelayPromise.cancel();
+            delete this._touchDelayPromise;
+        }
+
+        return super.vfunc_leave_event(crossingEvent);
     }
 
     _updateIconSize() {
