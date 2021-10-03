@@ -231,6 +231,11 @@ python-sphinx
 python-tqdm
 python-vmprof
 qemu
+qemu-arch-extra
+qemu-block-gluster
+qemu-block-iscsi
+qemu-block-rbd
+qemu-guest-agent
 r2ghidra
 radare2
 redis
