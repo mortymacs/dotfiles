@@ -19,7 +19,6 @@ kubespy
 lazydocker
 libcsptr
 mcfly
-mtodo
 mycli
 nats-server
 palanteer
