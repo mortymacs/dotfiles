@@ -45,7 +45,6 @@ alias gp="git push"
 
 # ---------------------------------------------- server
 alias p="gping 8.8.8.8"
-alias s="ssh mort@159.65.192.108"
 alias ms="minikube start --vm-driver kvm2"
 alias k="kubectl"
 alias kx="kubectx"
