@@ -240,6 +240,7 @@ r2ghidra
 radare2
 redis
 ripgrep
+rofi
 rust
 rust-analyzer
 rust-bindgen
