@@ -190,6 +190,7 @@ networkmanager-openvpn
 nginx
 nlohmann-json
 ntfs-3g
+nuitka
 obs-studio
 openbsd-netcat
 p7zip
