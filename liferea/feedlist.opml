@@ -5,7 +5,7 @@
   </head>
   <body>
     <outline title="Tech" text="Tech" description="Tech" type="folder" id="pacqmbq" sortColumn="title" sortReversed="false" expanded="true">
-      <outline title="Open Source" text="Open Source" description="Open Source" type="folder" id="jsexyac" sortColumn="time" collapsed="true">
+      <outline title="Open Source" text="Open Source" description="Open Source" type="folder" id="jsexyac" sortColumn="time" expanded="true">
         <outline title="Arch Linux: Recent news updates" text="Arch Linux: Recent news updates" description="Arch Linux: Recent news updates" type="rss" id="blqeglf" sortColumn="time" xmlUrl="https://archlinux.org/feeds/news/" htmlUrl="https://archlinux.org/news/" updateInterval="-1" collapsed="true"/>
         <outline title="Planet Arch Linux" text="Planet Arch Linux" description="Planet Arch Linux" type="rss" id="hpeokje" sortColumn="time" xmlUrl="https://archlinux.org/feeds/planet/" htmlUrl="https://archlinux.org/planet/" updateInterval="-1" collapsed="true"/>
         <outline title="OMG! Ubuntu!" text="OMG! Ubuntu!" description="OMG! Ubuntu!" type="rss" id="nqqmjri" sortColumn="time" xmlUrl="https://www.omgubuntu.co.uk/feed" htmlUrl="https://www.omgubuntu.co.uk" updateInterval="-1" collapsed="true"/>
