@@ -150,6 +150,23 @@ var AppWindow = GObject.registerClass(
                     this.notebook.set_current_page(current - 1);
             });
 
+            this.simple_action('move-tab-prev', () => {
+                const current = this.notebook.get_current_page();
+
+                if (current === 0)
+                    this.notebook.reorder_child(this.notebook.get_nth_page(current), this.notebook.get_n_pages() - 1);
+                else
+                    this.notebook.reorder_child(this.notebook.get_nth_page(current), current - 1);
+            });
+            this.simple_action('move-tab-next', () => {
+                const current = this.notebook.get_current_page();
+
+                if (current === this.notebook.get_n_pages() - 1)
+                    this.notebook.reorder_child(this.notebook.get_nth_page(current), 0);
+                else
+                    this.notebook.reorder_child(this.notebook.get_nth_page(current), current + 1);
+            });
+
             this.bind_settings_ro('new-tab-button', this.new_tab_button, 'visible');
             this.bind_settings_ro('new-tab-front-button', this.new_tab_front_button, 'visible');
             this.bind_settings_ro('tab-switcher-popup', this.tab_switch_button, 'visible');
@@ -174,9 +191,9 @@ var AppWindow = GObject.registerClass(
             this.method_handler(this.notebook, 'page-removed', this.tab_switcher_remove);
             this.method_handler(this.notebook, 'page-reordered', this.tab_switcher_reorder);
 
-            this.method_handler(this.settings, 'changed::window-type-hint', this.update_hints);
-            this.method_handler(this.settings, 'changed::window-skip-taskbar', this.update_hints);
-            this.update_hints();
+            this.bind_settings_ro('window-type-hint', this, 'type-hint');
+            this.bind_settings_ro('window-skip-taskbar', this, 'skip-taskbar-hint');
+            this.bind_settings_ro('window-skip-taskbar', this, 'skip-pager-hint');
 
             this.suppress_delete_id = this.connect('delete-event', () => {
                 this.hide();
@@ -239,8 +256,8 @@ var AppWindow = GObject.registerClass(
                 this.notebook.child_set_property(this.notebook.get_nth_page(i), 'tab-expand', this.settings.get_boolean('tab-expand'));
         }
 
-        update_tab_shortcut_labels(_source, _child = null, start_page = 0) {
-            for (let i = start_page; i < this.notebook.get_n_pages(); i++) {
+        update_tab_shortcut_labels() {
+            for (let i = 0; i < this.notebook.get_n_pages(); i++) {
                 const shortcuts = this.application.get_accels_for_action(`win.switch-to-tab(${i})`);
                 const shortcut = shortcuts && shortcuts.length > 0 ? shortcuts[0] : null;
                 this.notebook.get_nth_page(i).switch_shortcut = shortcut;
@@ -409,16 +426,6 @@ var AppWindow = GObject.registerClass(
             const items = this.tab_switch_menu_box.get_children();
             for (let i = start_page_num; i < items.length; i++)
                 items[i].action_target = GLib.Variant.new_int32(i);
-        }
-
-        update_hints() {
-            this.type_hint = util.enum_from_settings(
-                this.settings.get_string('window-type-hint'),
-                Gdk.WindowTypeHint
-            );
-            // skip_taskbar_hint only works with type_hint == Gdk.WindowTypeHint.Normal
-            this.skip_taskbar_hint = this.settings.get_boolean('window-skip-taskbar');
-            this.skip_pager_hint = this.settings.get_boolean('window-skip-taskbar');
         }
 
         new_tab_before(page) {

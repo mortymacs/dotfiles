@@ -551,6 +551,18 @@
         <col id="3">0</col>
       </row>
       <row>
+        <col id="0">shortcut-move-tab-prev</col>
+        <col id="1" translatable="yes">Move Tab to Previous Position</col>
+        <col id="2">0</col>
+        <col id="3">0</col>
+      </row>
+      <row>
+        <col id="0">shortcut-move-tab-next</col>
+        <col id="1" translatable="yes">Move Tab to Next Position</col>
+        <col id="2">0</col>
+        <col id="3">0</col>
+      </row>
+      <row>
         <col id="0">shortcut-set-custom-tab-title</col>
         <col id="1" translatable="yes">Set Custom Tab Title</col>
         <col id="2">0</col>
@@ -652,6 +664,7 @@
     <property name="page-increment">0.10</property>
   </object>
   <template class="Gjs_PrefsWidget" parent="GtkBox">
+    <property name="can-focus">0</property>
     <property name="hexpand">1</property>
     <property name="vexpand">1</property>
     <child>
@@ -661,9 +674,10 @@
     </child>
     <child>
       <object class="GtkStack" id="stack">
+        <property name="transition-type">slide-up-down</property>
         <child>
           <object class="GtkStackPage">
-            <property name="title" translatable="yes">Window</property>
+            <property name="title" translatable="yes">Position and Size</property>
             <property name="child">
               <object class="GtkGrid">
                 <property name="margin-start">10</property>
@@ -673,13 +687,152 @@
                 <property name="row-spacing">10</property>
                 <property name="column-spacing">10</property>
                 <child>
+                  <object class="GtkLabel">
+                    <property name="halign">start</property>
+                    <property name="label" translatable="yes">Window _size:</property>
+                    <property name="use-underline">1</property>
+                    <property name="mnemonic-widget">window_size_scale</property>
+                    <layout>
+                      <property name="column">0</property>
+                      <property name="row">5</property>
+                    </layout>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkScale" id="window_size_scale">
+                    <property name="draw-value">1</property>
+                    <property name="hexpand">1</property>
+                    <property name="adjustment">window_size_adjustment</property>
+                    <property name="show-fill-level">1</property>
+                    <property name="round-digits">2</property>
+                    <property name="digits">2</property>
+                    <layout>
+                      <property name="column">1</property>
+                      <property name="row">5</property>
+                    </layout>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkLabel">
+                    <property name="halign">start</property>
+                    <property name="label" translatable="yes">_Window position:</property>
+                    <property name="use-underline">1</property>
+                    <property name="mnemonic-widget">window_pos_combo</property>
+                    <layout>
+                      <property name="column">0</property>
+                      <property name="row">4</property>
+                    </layout>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkComboBoxText" id="window_pos_combo">
+                    <property name="hexpand">1</property>
+                    <items>
+                      <item id="top" translatable="yes">Top</item>
+                      <item id="bottom" translatable="yes">Bottom</item>
+                      <item id="left" translatable="yes">Left</item>
+                      <item id="right" translatable="yes">Right</item>
+                    </items>
+                    <layout>
+                      <property name="column">1</property>
+                      <property name="row">4</property>
+                    </layout>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkCheckButton" id="window_monitor_current_radio">
+                    <property name="label" translatable="yes">On the monitor that contains the mouse pointer</property>
+                    <property name="use-underline">1</property>
+                    <layout>
+                      <property name="column">0</property>
+                      <property name="row">0</property>
+                      <property name="column-span">2</property>
+                    </layout>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkCheckButton" id="window_monitor_primary_radio">
+                    <property name="label" translatable="yes">On the _primary monitor</property>
+                    <property name="use-underline">1</property>
+                    <property name="group">window_monitor_current_radio</property>
+                    <layout>
+                      <property name="column">0</property>
+                      <property name="row">1</property>
+                      <property name="column-span">2</property>
+                    </layout>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkCheckButton" id="window_monitor_focus_radio">
+                    <property name="label" translatable="yes">On the monitor with keyboard _focus</property>
+                    <property name="use-underline">1</property>
+                    <property name="group">window_monitor_current_radio</property>
+                    <layout>
+                      <property name="column">0</property>
+                      <property name="row">2</property>
+                      <property name="column-span">2</property>
+                    </layout>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkCheckButton" id="window_monitor_connector_radio">
+                    <property name="label" translatable="yes">On _monitor:</property>
+                    <property name="use-underline">1</property>
+                    <property name="group">window_monitor_current_radio</property>
+                    <layout>
+                      <property name="column">0</property>
+                      <property name="row">3</property>
+                    </layout>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkBox">
+                    <property name="hexpand">1</property>
+                    <property name="orientation">vertical</property>
+                    <child>
+                      <object class="GtkComboBoxText" id="monitor_combo"/>
+                    </child>
+                    <layout>
+                      <property name="column">1</property>
+                      <property name="row">3</property>
+                    </layout>
+                  </object>
+                </child>
+              </object>
+            </property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkStackPage">
+            <property name="title" translatable="yes">Behavior</property>
+            <property name="child">
+              <object class="GtkGrid">
+                <property name="margin-start">10</property>
+                <property name="margin-end">10</property>
+                <property name="margin-top">10</property>
+                <property name="margin-bottom">10</property>
+                <property name="row-spacing">10</property>
+                <property name="column-spacing">10</property>
+                <child>
+                  <object class="GtkCheckButton">
+                    <property name="label" translatable="yes">_Resizable</property>
+                    <property name="action-name">settings.window-resizable</property>
+                    <property name="use-underline">1</property>
+                    <layout>
+                      <property name="column">0</property>
+                      <property name="row">0</property>
+                      <property name="column-span">2</property>
+                    </layout>
+                  </object>
+                </child>
+                <child>
                   <object class="GtkCheckButton" id="window_above_check">
                     <property name="label" translatable="yes">_Above all windows</property>
                     <property name="action-name">settings.window-above</property>
                     <property name="use-underline">1</property>
                     <layout>
                       <property name="column">0</property>
-                      <property name="row">7</property>
+                      <property name="row">1</property>
                       <property name="column-span">2</property>
                     </layout>
                   </object>
@@ -691,19 +844,7 @@
                     <property name="use-underline">1</property>
                     <layout>
                       <property name="column">0</property>
-                      <property name="row">8</property>
-                      <property name="column-span">2</property>
-                    </layout>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkCheckButton" id="window_skip_taskbar_check">
-                    <property name="label" translatable="yes">Exclude window from _overview/task bar</property>
-                    <property name="action-name">settings.window-skip-taskbar</property>
-                    <property name="use-underline">1</property>
-                    <layout>
-                      <property name="column">0</property>
-                      <property name="row">11</property>
+                      <property name="row">2</property>
                       <property name="column-span">2</property>
                     </layout>
                   </object>
@@ -715,7 +856,7 @@
                     <property name="use-underline">1</property>
                     <layout>
                       <property name="column">0</property>
-                      <property name="row">9</property>
+                      <property name="row">3</property>
                       <property name="column-span">2</property>
                     </layout>
                   </object>
@@ -727,7 +868,19 @@
                     <property name="use-underline">1</property>
                     <layout>
                       <property name="column">0</property>
-                      <property name="row">10</property>
+                      <property name="row">4</property>
+                      <property name="column-span">2</property>
+                    </layout>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkCheckButton" id="window_skip_taskbar_check">
+                    <property name="label" translatable="yes">Exclude from _overview/task bar</property>
+                    <property name="action-name">settings.window-skip-taskbar</property>
+                    <property name="use-underline">1</property>
+                    <layout>
+                      <property name="column">0</property>
+                      <property name="row">5</property>
                       <property name="column-span">2</property>
                     </layout>
                   </object>
@@ -739,7 +892,7 @@
                     <property name="use-underline">1</property>
                     <layout>
                       <property name="column">0</property>
-                      <property name="row">15</property>
+                      <property name="row">6</property>
                       <property name="column-span">2</property>
                     </layout>
                   </object>
@@ -752,7 +905,7 @@ You&apos;ll have to close all tabs for this option to take effect.</property>
                     <property name="use-underline">1</property>
                     <layout>
                       <property name="column">0</property>
-                      <property name="row">16</property>
+                      <property name="row">7</property>
                       <property name="column-span">2</property>
                     </layout>
                   </object>
@@ -760,17 +913,18 @@ You&apos;ll have to close all tabs for this option to take effect.</property>
                 <child>
                   <object class="GtkLabel">
                     <property name="halign">start</property>
-                    <property name="label" translatable="yes">Window _type hint (X11 only):</property>
+                    <property name="label" translatable="yes">Window type _hint (X11 only):</property>
                     <property name="use-underline">1</property>
                     <property name="mnemonic-widget">window_type_hint_combo</property>
                     <layout>
                       <property name="column">0</property>
-                      <property name="row">17</property>
+                      <property name="row">8</property>
                     </layout>
                   </object>
                 </child>
                 <child>
                   <object class="GtkComboBoxText" id="window_type_hint_combo">
+                    <property name="hexpand">1</property>
                     <items>
                       <item id="normal" translatable="yes">Normal</item>
                       <item id="dialog" translatable="yes">Dialog</item>
@@ -787,54 +941,33 @@ You&apos;ll have to close all tabs for this option to take effect.</property>
                     </items>
                     <layout>
                       <property name="column">1</property>
-                      <property name="row">17</property>
+                      <property name="row">8</property>
                     </layout>
                   </object>
                 </child>
-                <child>
-                  <object class="GtkLabel">
-                    <property name="halign">start</property>
-                    <property name="label" translatable="yes">Window _size:</property>
-                    <property name="use-underline">1</property>
-                    <property name="mnemonic-widget">window_size_scale</property>
-                    <layout>
-                      <property name="column">0</property>
-                      <property name="row">5</property>
-                    </layout>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkScale" id="window_size_scale">
-                    <property name="draw-value">1</property>
-                    <property name="adjustment">window_size_adjustment</property>
-                    <property name="show-fill-level">1</property>
-                    <property name="round-digits">2</property>
-                    <property name="digits">2</property>
-                    <layout>
-                      <property name="column">1</property>
-                      <property name="row">5</property>
-                    </layout>
-                  </object>
-                </child>
+              </object>
+            </property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkStackPage">
+            <property name="title" translatable="yes">Animation</property>
+            <property name="child">
+              <object class="GtkGrid">
+                <property name="margin-start">10</property>
+                <property name="margin-end">10</property>
+                <property name="margin-top">10</property>
+                <property name="margin-bottom">10</property>
+                <property name="row-spacing">10</property>
+                <property name="column-spacing">10</property>
                 <child>
                   <object class="GtkCheckButton">
-                    <property name="label" translatable="yes">_Resizable window</property>
-                    <property name="action-name">settings.window-resizable</property>
-                    <property name="use-underline">1</property>
-                    <layout>
-                      <property name="column">0</property>
-                      <property name="row">6</property>
-                      <property name="column-span">2</property>
-                    </layout>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkCheckButton">
-                    <property name="label" translatable="yes">Override default window animations</property>
+                    <property name="label" translatable="yes">_Override default window animations</property>
                     <property name="action-name">settings.override-window-animation</property>
+                    <property name="use-underline">1</property>
                     <layout>
                       <property name="column">0</property>
-                      <property name="row">12</property>
+                      <property name="row">0</property>
                       <property name="column-span">2</property>
                     </layout>
                   </object>
@@ -842,25 +975,18 @@ You&apos;ll have to close all tabs for this option to take effect.</property>
                 <child>
                   <object class="GtkLabel">
                     <property name="halign">start</property>
-                    <property name="label" translatable="yes">Show animation:</property>
+                    <property name="label" translatable="yes">_Show animation:</property>
+                    <property name="use-underline">1</property>
+                    <property name="mnemonic-widget">show_animation_combo</property>
                     <layout>
                       <property name="column">0</property>
-                      <property name="row">13</property>
-                    </layout>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkLabel">
-                    <property name="halign">start</property>
-                    <property name="label" translatable="yes">Hide animation:</property>
-                    <layout>
-                      <property name="column">0</property>
-                      <property name="row">14</property>
+                      <property name="row">1</property>
                     </layout>
                   </object>
                 </child>
                 <child>
                   <object class="GtkBox">
+                    <property name="hexpand">1</property>
                     <property name="orientation">vertical</property>
                     <child>
                       <object class="GtkComboBox" id="show_animation_combo">
@@ -876,12 +1002,25 @@ You&apos;ll have to close all tabs for this option to take effect.</property>
                     </child>
                     <layout>
                       <property name="column">1</property>
-                      <property name="row">13</property>
+                      <property name="row">1</property>
+                    </layout>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkLabel">
+                    <property name="halign">start</property>
+                    <property name="label" translatable="yes">_Hide animation:</property>
+                    <property name="use-underline">1</property>
+                    <property name="mnemonic-widget">hide_animation_combo</property>
+                    <layout>
+                      <property name="column">0</property>
+                      <property name="row">2</property>
                     </layout>
                   </object>
                 </child>
                 <child>
                   <object class="GtkBox">
+                    <property name="hexpand">1</property>
                     <property name="orientation">vertical</property>
                     <child>
                       <object class="GtkComboBox" id="hide_animation_combo">
@@ -897,85 +1036,7 @@ You&apos;ll have to close all tabs for this option to take effect.</property>
                     </child>
                     <layout>
                       <property name="column">1</property>
-                      <property name="row">14</property>
-                    </layout>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkLabel">
-                    <property name="halign">start</property>
-                    <property name="label" translatable="yes">Window position:</property>
-                    <layout>
-                      <property name="column">0</property>
-                      <property name="row">4</property>
-                    </layout>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkComboBoxText" id="window_pos_combo">
-                    <items>
-                      <item id="top" translatable="yes">Top</item>
-                      <item id="bottom" translatable="yes">Bottom</item>
-                      <item id="left" translatable="yes">Left</item>
-                      <item id="right" translatable="yes">Right</item>
-                    </items>
-                    <layout>
-                      <property name="column">1</property>
-                      <property name="row">4</property>
-                    </layout>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkCheckButton" id="window_monitor_current_radio">
-                    <property name="label" translatable="yes">On the monitor that contains the mouse pointer</property>
-                    <layout>
-                      <property name="column">0</property>
-                      <property name="row">0</property>
-                      <property name="column-span">2</property>
-                    </layout>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkCheckButton" id="window_monitor_primary_radio">
-                    <property name="label" translatable="yes">On the primary monitor</property>
-                    <property name="group">window_monitor_current_radio</property>
-                    <layout>
-                      <property name="column">0</property>
-                      <property name="row">1</property>
-                      <property name="column-span">2</property>
-                    </layout>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkCheckButton" id="window_monitor_focus_radio">
-                    <property name="label" translatable="yes">On the monitor with keyboard focus</property>
-                    <property name="group">window_monitor_current_radio</property>
-                    <layout>
-                      <property name="column">0</property>
                       <property name="row">2</property>
-                      <property name="column-span">2</property>
-                    </layout>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkCheckButton" id="window_monitor_connector_radio">
-                    <property name="label" translatable="yes">On monitor:</property>
-                    <property name="group">window_monitor_current_radio</property>
-                    <layout>
-                      <property name="column">0</property>
-                      <property name="row">3</property>
-                    </layout>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkBox">
-                    <property name="orientation">vertical</property>
-                    <child>
-                      <object class="GtkComboBoxText" id="monitor_combo"/>
-                    </child>
-                    <layout>
-                      <property name="column">1</property>
-                      <property name="row">3</property>
                     </layout>
                   </object>
                 </child>
@@ -1056,6 +1117,7 @@ You&apos;ll have to close all tabs for this option to take effect.</property>
                 </child>
                 <child>
                   <object class="GtkComboBoxText" id="tab_policy_combo">
+                    <property name="hexpand">1</property>
                     <items>
                       <item id="always" translatable="yes">Always</item>
                       <item id="automatic" translatable="yes">Automatic</item>
@@ -1113,7 +1175,9 @@ Following variables are available:
 
 Following helpers are available:
 - &lt;tt&gt;filename-from-uri&lt;/tt&gt;
-- &lt;tt&gt;hostname-from-uri&lt;/tt&gt;</property>
+- &lt;tt&gt;hostname-from-uri&lt;/tt&gt;
+- &lt;tt&gt;truncate-chars&lt;/tt&gt;
+      example: &lt;tt&gt;{{truncate-chars window-title 20}}&lt;/tt&gt;</property>
                             <property name="use-markup">1</property>
                             <property name="wrap">1</property>
                             <property name="xalign">0</property>
@@ -1163,6 +1227,7 @@ Following helpers are available:
                 </child>
                 <child>
                   <object class="GtkComboBoxText" id="tab_position_combo">
+                    <property name="hexpand">1</property>
                     <items>
                       <item id="bottom" translatable="yes">Bottom</item>
                       <item id="top" translatable="yes">Top</item>
@@ -1250,6 +1315,7 @@ Following helpers are available:
                 </child>
                 <child>
                   <object class="GtkComboBoxText" id="text_blink_mode_combo">
+                    <property name="hexpand">1</property>
                     <items>
                       <item id="never" translatable="yes">Never</item>
                       <item id="focused" translatable="yes">When focused</item>
@@ -1264,6 +1330,7 @@ Following helpers are available:
                 </child>
                 <child>
                   <object class="GtkComboBoxText" id="cursor_shape_combo">
+                    <property name="hexpand">1</property>
                     <items>
                       <item id="block" translatable="yes">Block</item>
                       <item id="ibeam" translatable="yes">I-Beam</item>
@@ -1277,6 +1344,7 @@ Following helpers are available:
                 </child>
                 <child>
                   <object class="GtkComboBoxText" id="cursor_blink_mode_combo">
+                    <property name="hexpand">1</property>
                     <items>
                       <item id="system" translatable="yes">Default</item>
                       <item id="on" translatable="yes">Enabled</item>
@@ -1314,6 +1382,7 @@ Following helpers are available:
                 </child>
                 <child>
                   <object class="GtkBox">
+                    <property name="hexpand">1</property>
                     <child>
                       <object class="GtkFontButton" id="font_chooser">
                         <property name="receives-default">1</property>
@@ -1417,6 +1486,7 @@ Following helpers are available:
                 </child>
                 <child>
                   <object class="GtkComboBoxText" id="theme_variant_combo">
+                    <property name="hexpand">1</property>
                     <items>
                       <item id="system" translatable="yes">Default</item>
                       <item id="light" translatable="yes">Light</item>
@@ -1646,7 +1716,7 @@ Following helpers are available:
                   </object>
                 </child>
                 <child>
-                  <object class="GtkCheckButton">
+                  <object class="GtkCheckButton" id="background_opacity_check">
                     <property name="label" translatable="yes">_Background opacity:</property>
                     <property name="action-name">settings.transparent-background</property>
                     <property name="use-underline">1</property>
@@ -1658,6 +1728,7 @@ Following helpers are available:
                 </child>
                 <child>
                   <object class="GtkBox">
+                    <property name="hexpand">1</property>
                     <child>
                       <object class="GtkScale" id="opacity_scale">
                         <property name="hexpand">1</property>
@@ -1689,6 +1760,7 @@ Following helpers are available:
                 </child>
                 <child>
                   <object class="GtkComboBox" id="palette_combo">
+                    <property name="hexpand">1</property>
                     <property name="model">palette_list</property>
                     <child>
                       <object class="GtkCellRendererText"/>
@@ -1704,6 +1776,7 @@ Following helpers are available:
                 </child>
                 <child>
                   <object class="GtkGrid" id="palette">
+                    <property name="halign">start</property>
                     <property name="row-spacing">10</property>
                     <property name="column-spacing">10</property>
                     <property name="row-homogeneous">1</property>
@@ -1885,9 +1958,8 @@ Following helpers are available:
                       </object>
                     </child>
                     <layout>
-                      <property name="column">0</property>
+                      <property name="column">1</property>
                       <property name="row">5</property>
-                      <property name="column-span">2</property>
                     </layout>
                   </object>
                 </child>
@@ -2123,6 +2195,7 @@ Following helpers are available:
                 </child>
                 <child>
                   <object class="GtkComboBox" id="backspace_binding_combo">
+                    <property name="hexpand">1</property>
                     <property name="model">erase_binding_list</property>
                     <property name="id-column">1</property>
                     <child>
@@ -2139,6 +2212,7 @@ Following helpers are available:
                 </child>
                 <child>
                   <object class="GtkComboBox" id="delete_binding_combo">
+                    <property name="hexpand">1</property>
                     <property name="model">erase_binding_list</property>
                     <property name="id-column">1</property>
                     <child>
@@ -2155,6 +2229,7 @@ Following helpers are available:
                 </child>
                 <child>
                   <object class="GtkComboBoxText" id="ambiguous_width_combo">
+                    <property name="hexpand">1</property>
                     <items>
                       <item id="narrow" translatable="yes">Narrow</item>
                       <item id="wide" translatable="yes">Wide</item>
@@ -2306,6 +2381,7 @@ Following helpers are available:
                 </child>
                 <child>
                   <object class="GtkComboBoxText" id="panel_icon_type_combo">
+                    <property name="hexpand">1</property>
                     <items>
                       <item id="none" translatable="yes">None</item>
                       <item id="menu-button" translatable="yes">With popup menu</item>
@@ -2324,4 +2400,12 @@ Following helpers are available:
       </object>
     </child>
   </template>
+  <object class="GtkSizeGroup">
+    <widgets>
+      <widget name="bold_color_check"/>
+      <widget name="cursor_color_check"/>
+      <widget name="highlight_color_check"/>
+      <widget name="background_opacity_check"/>
+    </widgets>
+  </object>
 </interface>

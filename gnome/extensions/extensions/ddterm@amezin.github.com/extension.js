@@ -19,122 +19,69 @@
 
 'use strict';
 
-/* exported init enable disable settings current_window target_rect_for_workarea_size toggle connect disconnect */
+/* exported init enable disable settings toggle window_manager */
 
-const { GLib, GObject, Gio, Atk, Clutter, Meta, Shell, St } = imports.gi;
+const { GLib, Gio, Meta, Shell } = imports.gi;
 const ByteArray = imports.byteArray;
-const Signals = imports.signals;
 const Main = imports.ui.main;
-const PanelMenu = imports.ui.panelMenu;
-const PopupMenu = imports.ui.popupMenu;
+
 const Me = imports.misc.extensionUtils.getCurrentExtension();
-const { util } = Me.imports;
+const { ConnectionSet } = Me.imports.connectionset;
+const { PanelIconProxy } = Me.imports.panelicon;
+const { WindowManager } = Me.imports.wm;
 
 let tests = null;
 
 var settings = null;
-
-var current_window = null;
-var current_workarea = null;
-var current_monitor_scale = 1;
-var current_target_rect = null;
-var current_monitor_index = 0;
-var current_window_mapped = false;
-
-let bus_watch_id = null;
-let dbus_action_group = null;
+var window_manager = null;
 
 let wayland_client = null;
 let subprocess = null;
 
-let show_animation = Clutter.AnimationMode.LINEAR;
-let hide_animation = Clutter.AnimationMode.LINEAR;
-
-let resize_x = false;
-let right_or_bottom = false;
-let animation_pivot_x = 0.5;
-let animation_pivot_y = 0;
-let animation_scale_x = 1.0;
-let animation_scale_y = 0.0;
-
 let panel_icon = null;
+let app_dbus = null;
+
+let connections = null;
+let window_connections = null;
+let dbus_interface = null;
 
 const APP_ID = 'com.github.amezin.ddterm';
 const APP_DBUS_PATH = '/com/github/amezin/ddterm';
 const WINDOW_PATH_PREFIX = `${APP_DBUS_PATH}/window/`;
-const SUBPROCESS_ARGV = [Me.dir.get_child('com.github.amezin.ddterm').get_path(), '--undecorated'];
 const IS_WAYLAND_COMPOSITOR = Meta.is_wayland_compositor();
 const USE_WAYLAND_CLIENT = Meta.WaylandClient && IS_WAYLAND_COMPOSITOR;
 const SIGINT = 2;
 
-const PanelIconPopupMenu = GObject.registerClass(
-    class PanelIconPopupMenu extends PanelMenu.Button {
-        _init() {
-            super._init(null, 'ddterm');
+class AppDBusWatch {
+    constructor() {
+        this.action_group = null;
 
-            this.add_actor(new St.Icon({
-                icon_name: 'utilities-terminal',
-                style_class: 'system-status-icon',
-            }));
-            this.add_style_class_name('panel-status-button');
-
-            this.toggle_item = new PopupMenu.PopupSwitchMenuItem('Show', current_window !== null);
-            this.menu.addMenuItem(this.toggle_item);
-            this.toggle_item.connect('toggled', (_, value) => {
-                if (value !== (current_window !== null))
-                    toggle();
-            });
-
-            this.preferences_item = new PopupMenu.PopupMenuItem('Preferences...');
-            this.menu.addMenuItem(this.preferences_item);
-            this.preferences_item.connect('activate', () => {
-                if (dbus_action_group)
-                    dbus_action_group.activate_action('preferences', null);
-                else
-                    imports.misc.extensionUtils.openPrefs();
-            });
-        }
-
-        update() {
-            this.toggle_item.setToggleState(current_window !== null);
-        }
+        this.watch_id = Gio.bus_watch_name(
+            Gio.BusType.SESSION,
+            APP_ID,
+            Gio.BusNameWatcherFlags.NONE,
+            this._appeared.bind(this),
+            this._disappeared.bind(this)
+        );
     }
-);
 
-const PanelIconToggleButton = GObject.registerClass(
-    class PanelIconToggleButton extends PanelMenu.Button {
-        _init() {
-            super._init(null, 'ddterm', true);
-            this.accessible_role = Atk.Role.TOGGLE_BUTTON;
-
-            this.add_actor(new St.Icon({
-                icon_name: 'utilities-terminal',
-                style_class: 'system-status-icon',
-            }));
-            this.add_style_class_name('panel-status-button');
-
-            this.update();
-        }
-
-        update() {
-            if (current_window !== null) {
-                this.add_style_pseudo_class('active');
-                this.add_accessible_state(Atk.StateType.CHECKED);
-            } else {
-                this.remove_style_pseudo_class('active');
-                this.remove_accessible_state(Atk.StateType.CHECKED);
-            }
-        }
-
-        vfunc_event(event) {
-            if (event.type() === Clutter.EventType.BUTTON_PRESS ||
-                event.type() === Clutter.EventType.TOUCH_BEGIN)
-                toggle();
-
-            return Clutter.EVENT_PROPAGATE;
-        }
+    _appeared(connection, name) {
+        this.action_group = Gio.DBusActionGroup.get(connection, name, APP_DBUS_PATH);
     }
-);
+
+    _disappeared() {
+        this.action_group = null;
+    }
+
+    unwatch() {
+        if (this.watch_id) {
+            Gio.bus_unwatch_name(this.watch_id);
+            this.watch_id = null;
+        }
+
+        this.action_group = null;
+    }
+}
 
 class ExtensionDBusInterface {
     constructor() {
@@ -143,31 +90,13 @@ class ExtensionDBusInterface {
     }
 
     BeginResizeVertical() {
-        geometry_fixup_connections.disconnect();
-
-        if (!current_window || !current_window.maximized_vertically)
-            return;
-
-        // There is a update_window_geometry() call after successful unmaximize.
-        // It must set window size to 100%.
-        settings.set_double('window-size', 1.0);
-
-        Main.wm.skipNextEffect(current_window.get_compositor_private());
-        current_window.unmaximize(Meta.MaximizeFlags.VERTICAL);
-        schedule_geometry_fixup(current_window);
+        if (window_manager)
+            window_manager.unmaximize_for_resize(Meta.MaximizeFlags.VERTICAL);
     }
 
     BeginResizeHorizontal() {
-        geometry_fixup_connections.disconnect();
-
-        if (!current_window || !current_window.maximized_horizontally)
-            return;
-
-        settings.set_double('window-size', 1.0);
-
-        Main.wm.skipNextEffect(current_window.get_compositor_private());
-        current_window.unmaximize(Meta.MaximizeFlags.HORIZONTAL);
-        schedule_geometry_fixup(current_window);
+        if (window_manager)
+            window_manager.unmaximize_for_resize(Meta.MaximizeFlags.HORIZONTAL);
     }
 
     Toggle() {
@@ -178,8 +107,6 @@ class ExtensionDBusInterface {
         activate();
     }
 }
-
-const DBUS_INTERFACE = new ExtensionDBusInterface();
 
 class WaylandClientStub {
     constructor(subprocess_launcher) {
@@ -201,66 +128,6 @@ class WaylandClientStub {
     }
 }
 
-class ConnectionSet {
-    constructor() {
-        this.connections = [];
-    }
-
-    add(object, handler_id) {
-        this.connections.push({ object, handler_id });
-        return handler_id;
-    }
-
-    connect(object, signal, callback) {
-        return this.add(object, object.connect(signal, callback));
-    }
-
-    disconnect(object = null, handler_id = null) {
-        if (handler_id) {
-            this.connections = this.connections.filter(
-                c => c.handler_id !== handler_id || c.object !== object
-            );
-            try {
-                object.disconnect(handler_id);
-            } catch (ex) {
-                logError(ex, `Can't disconnect handler ${handler_id} on object ${object}`);
-            }
-            return;
-        }
-
-        while (this.connections.length) {
-            const c = this.connections.pop();
-            try {
-                c.object.disconnect(c.handler_id);
-            } catch (ex) {
-                logError(ex, `Can't disconnect handler ${c.handler_id} on object ${c.object}`);
-            }
-        }
-    }
-}
-
-const extension_connections = new ConnectionSet();
-const current_window_connections = new ConnectionSet();
-const current_window_maximized_connections = new ConnectionSet();
-const animation_overrides_connections = new ConnectionSet();
-const hide_when_focus_lost_connections = new ConnectionSet();
-const update_size_setting_on_grab_end_connections = new ConnectionSet();
-const geometry_fixup_connections = new ConnectionSet();
-
-class ExtensionSignals {
-}
-Signals.addSignalMethods(ExtensionSignals.prototype);
-
-const extension_signals = new ExtensionSignals();
-
-function connect(name, callback) {
-    return extension_signals.connect(name, callback);
-}
-
-function disconnect(id) {
-    return extension_signals.disconnect(id);
-}
-
 function init() {
     try {
         tests = Me.imports.test.extension_tests;
@@ -270,7 +137,6 @@ function init() {
 }
 
 function enable() {
-    extension_connections.disconnect();
     settings = imports.misc.extensionUtils.getSettings();
 
     Main.wm.addKeybinding(
@@ -288,106 +154,99 @@ function enable() {
         activate
     );
 
-    stop_dbus_watch();
-    bus_watch_id = Gio.bus_watch_name(
-        Gio.BusType.SESSION,
-        APP_ID,
-        Gio.BusNameWatcherFlags.NONE,
-        dbus_appeared,
-        dbus_disappeared
-    );
+    app_dbus = new AppDBusWatch();
 
-    extension_connections.connect(global.display, 'window-created', handle_window_created);
-    extension_connections.connect(global.display, 'workareas-changed', update_workarea);
-    extension_connections.connect(settings, 'changed::window-above', set_window_above);
-    extension_connections.connect(settings, 'changed::window-stick', set_window_stick);
-    extension_connections.connect(settings, 'changed::window-size', update_target_rect);
-    extension_connections.connect(settings, 'changed::window-size', disable_window_maximize_setting);
-    extension_connections.connect(settings, 'changed::window-position', update_window_position);
-    extension_connections.connect(settings, 'changed::window-skip-taskbar', set_skip_taskbar);
-    extension_connections.connect(settings, 'changed::window-maximize', set_window_maximized);
-    extension_connections.connect(settings, 'changed::window-monitor', update_monitor_index);
-    extension_connections.connect(settings, 'changed::window-monitor-connector', update_monitor_index);
-    extension_connections.connect(settings, 'changed::override-window-animation', setup_animation_overrides);
-    extension_connections.connect(settings, 'changed::show-animation', update_show_animation);
-    extension_connections.connect(settings, 'changed::hide-animation', update_hide_animation);
-    extension_connections.connect(settings, 'changed::hide-when-focus-lost', setup_hide_when_focus_lost);
-    extension_connections.connect(settings, 'changed::panel-icon-type', setup_panel_icon);
+    connections = new ConnectionSet();
+    window_connections = new ConnectionSet();
 
-    update_workarea();
-    update_window_position();
-    update_show_animation();
-    update_hide_animation();
-    setup_animation_overrides();
-    setup_hide_when_focus_lost();
+    connections.connect(global.display, 'window-created', handle_window_created);
+    connections.connect(settings, 'changed::window-skip-taskbar', set_skip_taskbar);
 
-    setup_update_size_setting_on_grab_end();
+    window_manager = new WindowManager({ settings });
 
-    DBUS_INTERFACE.dbus.export(Gio.DBus.session, '/org/gnome/Shell/Extensions/ddterm');
+    connections.connect(window_manager, 'hide-request', () => {
+        if (app_dbus.action_group)
+            app_dbus.action_group.activate_action('hide', null);
+    });
+
+    dbus_interface = new ExtensionDBusInterface();
+    dbus_interface.dbus.export(Gio.DBus.session, '/org/gnome/Shell/Extensions/ddterm');
+
+    panel_icon = new PanelIconProxy();
+    settings.bind('panel-icon-type', panel_icon, 'type', Gio.SettingsBindFlags.GET | Gio.SettingsBindFlags.NO_SENSITIVITY);
+
+    connections.connect(panel_icon, 'toggle', (_, value) => {
+        if (value !== (window_manager.current_window !== null))
+            toggle();
+    });
+
+    connections.connect(panel_icon, 'open-preferences', () => {
+        if (app_dbus.action_group)
+            app_dbus.action_group.activate_action('preferences', null);
+        else
+            imports.misc.extensionUtils.openPrefs();
+    });
+
+    connections.connect(window_manager, 'window-changed', () => {
+        panel_icon.active = window_manager.current_window !== null;
+    });
+
+    Meta.get_window_actors(global.display).forEach(actor => {
+        handle_window_created(global.display, actor.meta_window);
+    });
 
     if (tests)
         tests.enable();
-
-    setup_panel_icon();
 }
 
 function disable() {
-    remove_panel_icon();
+    if (tests)
+        tests.disable();
 
-    DBUS_INTERFACE.dbus.unexport();
+    Main.wm.removeKeybinding('ddterm-toggle-hotkey');
+    Main.wm.removeKeybinding('ddterm-activate-hotkey');
+
+    if (dbus_interface) {
+        dbus_interface.dbus.unexport();
+        dbus_interface = null;
+    }
 
     if (Main.sessionMode.allowExtensions) {
         // Stop the app only if the extension isn't being disabled because of
         // lock screen/switch to other mode where extensions aren't allowed.
         // Because when the session switches back to normal mode we want to
         // keep all open terminals.
-        if (dbus_action_group)
-            dbus_action_group.activate_action('quit', null);
+        if (app_dbus && app_dbus.action_group)
+            app_dbus.action_group.activate_action('quit', null);
         else if (subprocess)
             subprocess.send_signal(SIGINT);
     }
 
-    stop_dbus_watch();
-    dbus_action_group = null;
-
-    Main.wm.removeKeybinding('ddterm-toggle-hotkey');
-    Main.wm.removeKeybinding('ddterm-activate-hotkey');
-
-    extension_connections.disconnect();
-    animation_overrides_connections.disconnect();
-    hide_when_focus_lost_connections.disconnect();
-    update_size_setting_on_grab_end_connections.disconnect();
-    current_window_maximized_connections.disconnect();
-
-    if (tests)
-        tests.disable();
-}
-
-function setup_panel_icon() {
-    const mode = settings.get_string('panel-icon-type');
-    if (mode === 'menu-button') {
-        if (!(panel_icon instanceof PanelIconPopupMenu)) {
-            remove_panel_icon();
-            panel_icon = new PanelIconPopupMenu();
-            Main.panel.addToStatusArea('ddterm', panel_icon);
-        }
-    } else if (mode === 'toggle-button') {
-        if (!(panel_icon instanceof PanelIconToggleButton)) {
-            remove_panel_icon();
-            panel_icon = new PanelIconToggleButton();
-            Main.panel.addToStatusArea('ddterm', panel_icon);
-        }
-    } else {
-        remove_panel_icon();
+    if (app_dbus) {
+        app_dbus.unwatch();
+        app_dbus = null;
     }
-}
 
-function remove_panel_icon() {
-    if (!panel_icon)
-        return;
+    if (window_connections) {
+        window_connections.disconnect();
+        window_connections = null;
+    }
 
-    panel_icon.destroy();
-    panel_icon = null;
+    if (window_manager) {
+        window_manager.disable();
+        window_manager = null;
+    }
+
+    if (connections) {
+        connections.disconnect();
+        connections = null;
+    }
+
+    if (panel_icon) {
+        Gio.Settings.unbind(panel_icon, 'type');
+        panel_icon.remove();
+        panel_icon = null;
+    }
 }
 
 function spawn_app() {
@@ -399,15 +258,18 @@ function spawn_app() {
     const context = global.create_app_launch_context(0, -1);
     subprocess_launcher.set_environ(context.get_environment());
 
-    let argv = SUBPROCESS_ARGV;
+    let argv = [
+        Me.dir.get_child(APP_ID).get_path(),
+        '--undecorated',
+    ];
 
     if (settings.get_boolean('force-x11-gdk-backend')) {
         const prev_gdk_backend = subprocess_launcher.getenv('GDK_BACKEND');
 
         if (prev_gdk_backend === null)
-            argv = argv.concat(['--unset-gdk-backend']);
+            argv.push('--unset-gdk-backend');
         else
-            argv = argv.concat(['--reset-gdk-backend', prev_gdk_backend]);
+            argv.push('--reset-gdk-backend', prev_gdk_backend);
 
         subprocess_launcher.setenv('GDK_BACKEND', 'x11', true);
     }
@@ -437,164 +299,33 @@ function subprocess_terminated(source) {
 }
 
 function toggle() {
-    if (dbus_action_group)
-        dbus_action_group.activate_action('toggle', null);
+    if (app_dbus.action_group)
+        app_dbus.action_group.activate_action('toggle', null);
     else
         spawn_app();
 }
 
 function activate() {
-    if (current_window)
-        Main.activateWindow(current_window);
+    if (window_manager.current_window)
+        Main.activateWindow(window_manager.current_window);
     else
         toggle();
 }
 
-function dbus_appeared(connection, name) {
-    dbus_action_group = Gio.DBusActionGroup.get(connection, name, APP_DBUS_PATH);
-}
-
-function dbus_disappeared() {
-    dbus_action_group = null;
-}
-
 function handle_window_created(display, win) {
     const handler_ids = [
-        win.connect('notify::gtk-application-id', set_current_window),
-        win.connect('notify::gtk-window-object-path', set_current_window),
+        window_connections.connect(win, 'notify::gtk-application-id', check_window),
+        window_connections.connect(win, 'notify::gtk-window-object-path', check_window),
     ];
 
     const disconnect_handlers = () => {
-        handler_ids.forEach(handler => win.disconnect(handler));
+        handler_ids.forEach(handler => window_connections.disconnect(win, handler));
     };
 
-    handler_ids.push(win.connect('unmanaging', disconnect_handlers));
-    handler_ids.push(win.connect('unmanaged', disconnect_handlers));
+    handler_ids.push(window_connections.connect(win, 'unmanaging', disconnect_handlers));
+    handler_ids.push(window_connections.connect(win, 'unmanaged', disconnect_handlers));
 
-    set_current_window(win);
-}
-
-function check_current_window(match = null) {
-    if (current_window === null) {
-        logError(new Error('current_window should be non-null'));
-        return false;
-    }
-
-    if (match !== null && current_window !== match) {
-        logError(new Error(`current_window should be ${match}, but it is ${current_window}`));
-        return false;
-    }
-
-    return true;
-}
-
-function setup_animation_overrides() {
-    animation_overrides_connections.disconnect();
-
-    if (!current_window)
-        return;
-
-    if (!settings.get_boolean('override-window-animation'))
-        return;
-
-    if (current_window_mapped)
-        animation_overrides_connections.connect(global.window_manager, 'destroy', override_unmap_animation);
-    else
-        animation_overrides_connections.connect(global.window_manager, 'map', override_map_animation);
-}
-
-function animation_mode_from_settings(key) {
-    const nick = settings.get_string(key);
-    if (nick === 'disable')
-        return null;
-
-    return util.enum_from_settings(nick, Clutter.AnimationMode);
-}
-
-function update_show_animation() {
-    show_animation = animation_mode_from_settings('show-animation');
-}
-
-function update_hide_animation() {
-    hide_animation = animation_mode_from_settings('hide-animation');
-}
-
-function override_map_animation(wm, actor) {
-    if (!check_current_window() || actor !== current_window.get_compositor_private())
-        return;
-
-    if (!show_animation)
-        return;
-
-    const func = () => {
-        actor.set_pivot_point(animation_pivot_x, animation_pivot_y);
-
-        const scale_x_anim = actor.get_transition('scale-x');
-
-        if (scale_x_anim) {
-            scale_x_anim.set_from(animation_scale_x);
-            scale_x_anim.set_to(1.0);
-            scale_x_anim.progress_mode = show_animation;
-        }
-
-        const scale_y_anim = actor.get_transition('scale-y');
-
-        if (scale_y_anim) {
-            scale_y_anim.set_from(animation_scale_y);
-            scale_y_anim.set_to(1.0);
-            scale_y_anim.progress_mode = show_animation;
-        }
-    };
-
-    if (Main.wm._waitForOverviewToHide)
-        Main.wm._waitForOverviewToHide().then(func);
-    else
-        func();
-}
-
-function override_unmap_animation(wm, actor) {
-    if (!check_current_window() || actor !== current_window.get_compositor_private())
-        return;
-
-    if (!hide_animation)
-        return;
-
-    actor.set_pivot_point(animation_pivot_x, animation_pivot_y);
-
-    const scale_x_anim = actor.get_transition('scale-x');
-
-    if (scale_x_anim) {
-        scale_x_anim.set_to(animation_scale_x);
-        scale_x_anim.progress_mode = hide_animation;
-    }
-
-    const scale_y_anim = actor.get_transition('scale-y');
-
-    if (scale_y_anim) {
-        scale_y_anim.set_to(animation_scale_y);
-        scale_y_anim.progress_mode = hide_animation;
-    }
-}
-
-function hide_when_focus_lost() {
-    if (!check_current_window() || current_window.is_hidden())
-        return;
-
-    const win = global.display.focus_window;
-    if (win !== null) {
-        if (current_window === win || current_window.is_ancestor_of_transient(win))
-            return;
-    }
-
-    if (dbus_action_group)
-        dbus_action_group.activate_action('hide', null);
-}
-
-function setup_hide_when_focus_lost() {
-    hide_when_focus_lost_connections.disconnect();
-
-    if (current_window && settings.get_boolean('hide-when-focus-lost'))
-        hide_when_focus_lost_connections.connect(global.display, 'notify::focus-window', hide_when_focus_lost);
+    check_window(win);
 }
 
 function is_ddterm_window(win) {
@@ -614,372 +345,21 @@ function is_ddterm_window(win) {
     );
 }
 
-function set_window_above() {
-    if (current_window === null)
-        return;
-
-    const should_be_above = settings.get_boolean('window-above');
-    // Both make_above() and unmake_above() raise the window, so check is necessary
-    if (current_window.above === should_be_above)
-        return;
-
-    if (should_be_above)
-        current_window.make_above();
-    else
-        current_window.unmake_above();
-}
-
-function set_window_stick() {
-    if (current_window === null)
-        return;
-
-    if (settings.get_boolean('window-stick'))
-        current_window.stick();
-    else
-        current_window.unstick();
-}
-
 function set_skip_taskbar() {
-    if (!current_window || !wayland_client)
+    if (!wayland_client || !window_manager.current_window)
         return;
 
     if (settings.get_boolean('window-skip-taskbar'))
-        wayland_client.hide_from_window_list(current_window);
+        wayland_client.hide_from_window_list(window_manager.current_window);
     else
-        wayland_client.show_in_window_list(current_window);
+        wayland_client.show_in_window_list(window_manager.current_window);
 }
 
-function update_workarea() {
-    if (current_monitor_index >= global.display.get_n_monitors()) {
-        update_monitor_index();
-        return;
-    }
-
-    current_workarea = Main.layoutManager.getWorkAreaForMonitor(current_monitor_index);
-    current_monitor_scale = global.display.get_monitor_scale(current_monitor_index);
-
-    update_target_rect();
-}
-
-function get_monitor_index() {
-    if (settings.get_string('window-monitor') === 'primary') {
-        if (Main.layoutManager.primaryIndex >= 0)
-            return Main.layoutManager.primaryIndex;
-    }
-
-    if (settings.get_string('window-monitor') === 'focus') {
-        if (Main.layoutManager.focusIndex >= 0)
-            return Main.layoutManager.focusIndex;
-    }
-
-    if (settings.get_string('window-monitor') === 'connector') {
-        const monitor_manager = Meta.MonitorManager.get();
-        if (monitor_manager) {
-            const index = monitor_manager.get_monitor_for_connector(settings.get_string('window-monitor-connector'));
-            if (index >= 0)
-                return index;
-        }
-    }
-
-    return global.display.get_current_monitor();
-}
-
-function update_monitor_index() {
-    current_monitor_index = get_monitor_index();
-
-    if (current_window)
-        current_window.move_to_monitor(current_monitor_index);
-
-    update_workarea();
-}
-
-function setup_maximized_handlers() {
-    current_window_maximized_connections.disconnect();
-
-    if (!current_window)
-        return;
-
-    if (resize_x)
-        current_window_maximized_connections.connect(current_window, 'notify::maximized-horizontally', handle_maximized_horizontally);
-    else
-        current_window_maximized_connections.connect(current_window, 'notify::maximized-vertically', handle_maximized_vertically);
-}
-
-function set_current_window(win) {
-    if (!is_ddterm_window(win)) {
-        release_window(win);
-        return;
-    }
-
-    if (win === current_window)
-        return;
-
-    release_window(current_window);
-
-    current_window = win;
-    extension_signals.emit('window-changed');
-
-    current_window_connections.connect(win, 'unmanaged', release_window);
-    current_window_connections.connect(win, 'unmanaging', () => {
-        if (settings.get_boolean('override-window-animation') && !hide_animation)
-            Main.wm.skipNextEffect(current_window.get_compositor_private());
-    });
-
-    setup_maximized_handlers();
-
-    update_monitor_index();
-
-    // Setting up animations early, so 'current_window_mapped' will be 'false'
-    // in the 'map' handler (animation's handler will run before 'map_handler_id'.
-    setup_animation_overrides();
-
-    const map_handler_id = current_window_connections.connect(global.window_manager, 'map', (wm, actor) => {
-        if (check_current_window() && actor === current_window.get_compositor_private()) {
-            current_window_mapped = true;
-            current_window_connections.disconnect(global.window_manager, map_handler_id);
-            setup_animation_overrides();
-
-            if (win.get_client_type() === Meta.WindowClientType.WAYLAND) {
-                current_window.move_to_monitor(current_monitor_index);
-                update_window_geometry();
-            }
-        }
-    });
-
-    if (settings.get_boolean('override-window-animation') && !show_animation)
-        Main.wm.skipNextEffect(current_window.get_compositor_private());
-
-    setup_update_size_setting_on_grab_end();
-    setup_hide_when_focus_lost();
-
-    Main.activateWindow(win);
-
-    set_window_above();
-    set_window_stick();
-    set_skip_taskbar();
-
-    if (settings.get_boolean('window-maximize'))
-        win.maximize(Meta.MaximizeFlags.BOTH);
-
-    if (panel_icon)
-        panel_icon.update();
-}
-
-function update_window_position() {
-    const position = settings.get_string('window-position');
-
-    resize_x = position === 'left' || position === 'right';
-    right_or_bottom = position === 'right' || position === 'bottom';
-
-    const resizing_direction_pivot = right_or_bottom ? 1.0 : 0.0;
-    animation_pivot_x = resize_x ? resizing_direction_pivot : 0.5;
-    animation_pivot_y = !resize_x ? resizing_direction_pivot : 0.5;
-
-    animation_scale_x = resize_x ? 0.0 : 1.0;
-    animation_scale_y = resize_x ? 1.0 : 0.0;
-
-    setup_maximized_handlers();
-    update_target_rect();
-}
-
-function target_rect_for_workarea_size(workarea, monitor_scale, size) {
-    const target_rect = workarea.copy();
-
-    if (resize_x) {
-        target_rect.width *= size;
-        target_rect.width -= target_rect.width % monitor_scale;
-
-        if (right_or_bottom)
-            target_rect.x += workarea.width - target_rect.width;
+function check_window(win) {
+    if (is_ddterm_window(win)) {
+        window_manager.manage_window(win);
+        set_skip_taskbar();
     } else {
-        target_rect.height *= size;
-        target_rect.height -= target_rect.height % monitor_scale;
-
-        if (right_or_bottom)
-            target_rect.y += workarea.height - target_rect.height;
-    }
-
-    return target_rect;
-}
-
-function update_target_rect() {
-    if (!current_workarea)
-        return;
-
-    current_target_rect = target_rect_for_workarea_size(
-        current_workarea,
-        current_monitor_scale,
-        settings.get_double('window-size')
-    );
-
-    update_window_geometry();
-}
-
-function schedule_geometry_fixup(win) {
-    if (!check_current_window(win) || win.get_client_type() !== Meta.WindowClientType.WAYLAND)
-        return;
-
-    geometry_fixup_connections.disconnect();
-    geometry_fixup_connections.connect(win, 'position-changed', update_window_geometry);
-    geometry_fixup_connections.connect(win, 'size-changed', update_window_geometry);
-}
-
-function unmaximize_done() {
-    settings.set_boolean('window-maximize', false);
-    update_window_geometry();
-
-    // https://github.com/amezin/gnome-shell-extension-ddterm/issues/48
-    if (settings.get_boolean('window-above')) {
-        // Without unmake_above(), make_above() won't actually take effect (?!)
-        current_window.unmake_above();
-        set_window_above();
-    }
-
-    if (!current_window_mapped) {
-        if (settings.get_boolean('override-window-animation') && !show_animation)
-            Main.wm.skipNextEffect(current_window.get_compositor_private());
-    }
-}
-
-function handle_maximized_vertically(win) {
-    if (!check_current_window(win))
-        return;
-
-    if (!win.maximized_vertically) {
-        unmaximize_done();
-        return;
-    }
-
-    if (settings.get_boolean('window-maximize'))
-        return;
-
-    if (current_target_rect.height < current_workarea.height) {
-        Main.wm.skipNextEffect(current_window.get_compositor_private());
-        win.unmaximize(Meta.MaximizeFlags.VERTICAL);
-    } else {
-        settings.set_boolean('window-maximize', true);
-    }
-}
-
-function handle_maximized_horizontally(win) {
-    if (!check_current_window(win))
-        return;
-
-    if (!win.maximized_horizontally) {
-        unmaximize_done();
-        return;
-    }
-
-    if (settings.get_boolean('window-maximize'))
-        return;
-
-    if (current_target_rect.width < current_workarea.width) {
-        Main.wm.skipNextEffect(current_window.get_compositor_private());
-        win.unmaximize(Meta.MaximizeFlags.HORIZONTAL);
-    } else {
-        settings.set_boolean('window-maximize', true);
-    }
-}
-
-function move_resize_window(win, target_rect) {
-    win.move_resize_frame(false, target_rect.x, target_rect.y, target_rect.width, target_rect.height);
-    extension_signals.emit('move-resize-requested', target_rect);
-}
-
-function set_window_maximized() {
-    if (!current_window)
-        return;
-
-    const is_maximized = resize_x ? current_window.maximized_horizontally : current_window.maximized_vertically;
-    const should_maximize = settings.get_boolean('window-maximize');
-    if (is_maximized === should_maximize)
-        return;
-
-    if (should_maximize) {
-        current_window.maximize(Meta.MaximizeFlags.BOTH);
-    } else {
-        current_window.unmaximize(resize_x ? Meta.MaximizeFlags.HORIZONTAL : Meta.MaximizeFlags.VERTICAL);
-        schedule_geometry_fixup(current_window);
-    }
-}
-
-function disable_window_maximize_setting() {
-    if (current_target_rect.height < current_workarea.height || current_target_rect.width < current_workarea.width)
-        settings.set_boolean('window-maximize', false);
-}
-
-function update_window_geometry() {
-    geometry_fixup_connections.disconnect();
-
-    if (!current_window)
-        return;
-
-    if (settings.get_boolean('window-maximize'))
-        return;
-
-    if (current_window.maximized_horizontally && current_target_rect.width < current_workarea.width) {
-        Main.wm.skipNextEffect(current_window.get_compositor_private());
-        current_window.unmaximize(Meta.MaximizeFlags.HORIZONTAL);
-        return;
-    }
-
-    if (current_window.maximized_vertically && current_target_rect.height < current_workarea.height) {
-        Main.wm.skipNextEffect(current_window.get_compositor_private());
-        current_window.unmaximize(Meta.MaximizeFlags.VERTICAL);
-        return;
-    }
-
-    move_resize_window(current_window, current_target_rect);
-}
-
-function update_size_setting_on_grab_end(display, p0, p1) {
-    // On Mutter <=3.38 p0 is display too. On 40 p0 is the window.
-    const win = p0 instanceof Meta.Window ? p0 : p1;
-
-    if (win !== current_window)
-        return;
-
-    if (!resize_x && current_window.maximized_vertically)
-        return;
-
-    if (resize_x && current_window.maximized_horizontally)
-        return;
-
-    const frame_rect = win.get_frame_rect();
-    const size = resize_x ? frame_rect.width / current_workarea.width : frame_rect.height / current_workarea.height;
-    settings.set_double('window-size', Math.min(1.0, size));
-}
-
-function setup_update_size_setting_on_grab_end() {
-    update_size_setting_on_grab_end_connections.disconnect();
-
-    if (current_window)
-        update_size_setting_on_grab_end_connections.connect(global.display, 'grab-op-end', update_size_setting_on_grab_end);
-}
-
-function release_window(win) {
-    if (!win || win !== current_window)
-        return;
-
-    current_window_connections.disconnect();
-    current_window_maximized_connections.disconnect();
-    geometry_fixup_connections.disconnect();
-
-    current_window = null;
-    current_window_mapped = false;
-    extension_signals.emit('window-changed');
-
-    update_size_setting_on_grab_end_connections.disconnect();
-    hide_when_focus_lost_connections.disconnect();
-    animation_overrides_connections.disconnect();
-
-    if (panel_icon)
-        panel_icon.update();
-}
-
-function stop_dbus_watch() {
-    if (bus_watch_id) {
-        Gio.bus_unwatch_name(bus_watch_id);
-        bus_watch_id = null;
+        window_manager.release_window(win);
     }
 }

@@ -606,6 +606,18 @@ along with ddterm GNOME Shell extension.  If not, see <http://www.gnu.org/licens
         <col id="3">0</col>
       </row>
       <row>
+        <col id="0">shortcut-move-tab-prev</col>
+        <col id="1" translatable="yes">Move Tab to Previous Position</col>
+        <col id="2">0</col>
+        <col id="3">0</col>
+      </row>
+      <row>
+        <col id="0">shortcut-move-tab-next</col>
+        <col id="1" translatable="yes">Move Tab to Next Position</col>
+        <col id="2">0</col>
+        <col id="3">0</col>
+      </row>
+      <row>
         <col id="0">shortcut-set-custom-tab-title</col>
         <col id="1" translatable="yes">Set Custom Tab Title</col>
         <col id="2">0</col>
@@ -708,7 +720,7 @@ along with ddterm GNOME Shell extension.  If not, see <http://www.gnu.org/licens
   </object>
   <template class="Gjs_PrefsWidget" parent="GtkBox">
     <property name="visible">True</property>
-    <property name="can-focus">True</property>
+    <property name="can-focus">False</property>
     <property name="hexpand">True</property>
     <property name="vexpand">True</property>
     <child>
@@ -726,161 +738,17 @@ along with ddterm GNOME Shell extension.  If not, see <http://www.gnu.org/licens
     <child>
       <object class="GtkStack" id="stack">
         <property name="visible">1</property>
-        <property name="can-focus">1</property>
-        <!-- n-columns=2 n-rows=18 -->
+        <property name="transition-type">slide-up-down</property>
+        <!-- n-columns=2 n-rows=6 -->
         <child>
           <object class="GtkGrid">
             <property name="visible">1</property>
-            <property name="can-focus">1</property>
             <property name="margin-start">10</property>
             <property name="margin-end">10</property>
             <property name="margin-top">10</property>
             <property name="margin-bottom">10</property>
             <property name="row-spacing">10</property>
             <property name="column-spacing">10</property>
-            <child>
-              <object class="GtkCheckButton" id="window_above_check">
-                <property name="label" translatable="yes">_Above all windows</property>
-                <property name="visible">1</property>
-                <property name="can-focus">1</property>
-                <property name="action-name">settings.window-above</property>
-                <property name="use-underline">1</property>
-                <property name="draw-indicator">1</property>
-              </object>
-              <packing>
-                <property name="left-attach">0</property>
-                <property name="top-attach">7</property>
-                <property name="width">2</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkCheckButton" id="window_stick_check">
-                <property name="label" translatable="yes">On all _workspaces</property>
-                <property name="visible">1</property>
-                <property name="can-focus">1</property>
-                <property name="action-name">settings.window-stick</property>
-                <property name="use-underline">1</property>
-                <property name="draw-indicator">1</property>
-              </object>
-              <packing>
-                <property name="left-attach">0</property>
-                <property name="top-attach">8</property>
-                <property name="width">2</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkCheckButton" id="window_skip_taskbar_check">
-                <property name="label" translatable="yes">Exclude window from _overview/task bar</property>
-                <property name="visible">1</property>
-                <property name="can-focus">1</property>
-                <property name="action-name">settings.window-skip-taskbar</property>
-                <property name="use-underline">1</property>
-                <property name="draw-indicator">1</property>
-              </object>
-              <packing>
-                <property name="left-attach">0</property>
-                <property name="top-attach">11</property>
-                <property name="width">2</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkCheckButton" id="hide_when_focus_lost_check">
-                <property name="label" translatable="yes">Hide when the application loses _focus</property>
-                <property name="visible">1</property>
-                <property name="can-focus">1</property>
-                <property name="action-name">settings.hide-when-focus-lost</property>
-                <property name="use-underline">1</property>
-                <property name="draw-indicator">1</property>
-              </object>
-              <packing>
-                <property name="left-attach">0</property>
-                <property name="top-attach">9</property>
-                <property name="width">2</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkCheckButton" id="hide_window_on_esc_check">
-                <property name="label" translatable="yes">Hide when _Esc key is pressed</property>
-                <property name="visible">1</property>
-                <property name="can-focus">1</property>
-                <property name="action-name">settings.hide-window-on-esc</property>
-                <property name="use-underline">1</property>
-                <property name="draw-indicator">1</property>
-              </object>
-              <packing>
-                <property name="left-attach">0</property>
-                <property name="top-attach">10</property>
-                <property name="width">2</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkCheckButton" id="pointer_autohide_check">
-                <property name="label" translatable="yes">Hide mouse _pointer when typing</property>
-                <property name="visible">1</property>
-                <property name="can-focus">1</property>
-                <property name="action-name">settings.pointer-autohide</property>
-                <property name="use-underline">1</property>
-                <property name="draw-indicator">1</property>
-              </object>
-              <packing>
-                <property name="left-attach">0</property>
-                <property name="top-attach">15</property>
-                <property name="width">2</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkCheckButton" id="force_gdk_x11_check">
-                <property name="label" translatable="yes">Force _X11 GDK backend (XWayland).
-You&apos;ll have to close all tabs for this option to take effect.</property>
-                <property name="visible">1</property>
-                <property name="can-focus">1</property>
-                <property name="action-name">settings.force-x11-gdk-backend</property>
-                <property name="use-underline">1</property>
-                <property name="draw-indicator">1</property>
-              </object>
-              <packing>
-                <property name="left-attach">0</property>
-                <property name="top-attach">16</property>
-                <property name="width">2</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkLabel">
-                <property name="visible">1</property>
-                <property name="halign">start</property>
-                <property name="label" translatable="yes">Window _type hint (X11 only):</property>
-                <property name="use-underline">1</property>
-                <property name="mnemonic-widget">window_type_hint_combo</property>
-              </object>
-              <packing>
-                <property name="left-attach">0</property>
-                <property name="top-attach">17</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkComboBoxText" id="window_type_hint_combo">
-                <property name="visible">1</property>
-                <property name="can-focus">1</property>
-                <items>
-                  <item id="normal" translatable="yes">Normal</item>
-                  <item id="dialog" translatable="yes">Dialog</item>
-                  <item id="splashscreen" translatable="yes">Splash screen</item>
-                  <item id="utility" translatable="yes">Utility</item>
-                  <item id="dock" translatable="yes">Dock</item>
-                  <item id="dropdown-menu" translatable="yes">Dropdown menu</item>
-                  <item id="menu" translatable="yes">Menu</item>
-                  <item id="toolbar" translatable="yes">Toolbar</item>
-                  <item id="popup-menu" translatable="yes">Popup menu</item>
-                  <item id="tooltip" translatable="yes">Tooltip</item>
-                  <item id="notification" translatable="yes">Notification</item>
-                  <item id="combo" translatable="yes">Combo</item>
-                </items>
-              </object>
-              <packing>
-                <property name="left-attach">1</property>
-                <property name="top-attach">17</property>
-              </packing>
-            </child>
             <child>
               <object class="GtkLabel">
                 <property name="visible">1</property>
@@ -898,6 +766,7 @@ You&apos;ll have to close all tabs for this option to take effect.</property>
               <object class="GtkScale" id="window_size_scale">
                 <property name="visible">1</property>
                 <property name="can-focus">1</property>
+                <property name="hexpand">1</property>
                 <property name="adjustment">window_size_adjustment</property>
                 <property name="show-fill-level">1</property>
                 <property name="round-digits">2</property>
@@ -909,107 +778,12 @@ You&apos;ll have to close all tabs for this option to take effect.</property>
               </packing>
             </child>
             <child>
-              <object class="GtkCheckButton">
-                <property name="label" translatable="yes">_Resizable window</property>
+              <object class="GtkLabel">
                 <property name="visible">1</property>
-                <property name="can-focus">1</property>
-                <property name="action-name">settings.window-resizable</property>
+                <property name="halign">start</property>
+                <property name="label" translatable="yes">_Window position:</property>
                 <property name="use-underline">1</property>
-                <property name="draw-indicator">1</property>
-              </object>
-              <packing>
-                <property name="left-attach">0</property>
-                <property name="top-attach">6</property>
-                <property name="width">2</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkCheckButton">
-                <property name="label" translatable="yes">Override default window animations</property>
-                <property name="visible">1</property>
-                <property name="can-focus">1</property>
-                <property name="action-name">settings.override-window-animation</property>
-                <property name="draw-indicator">1</property>
-              </object>
-              <packing>
-                <property name="left-attach">0</property>
-                <property name="top-attach">12</property>
-                <property name="width">2</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkLabel">
-                <property name="visible">1</property>
-                <property name="halign">start</property>
-                <property name="label" translatable="yes">Show animation:</property>
-              </object>
-              <packing>
-                <property name="left-attach">0</property>
-                <property name="top-attach">13</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkLabel">
-                <property name="visible">1</property>
-                <property name="halign">start</property>
-                <property name="label" translatable="yes">Hide animation:</property>
-              </object>
-              <packing>
-                <property name="left-attach">0</property>
-                <property name="top-attach">14</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkBox">
-                <property name="visible">1</property>
-                <property name="orientation">vertical</property>
-                <child>
-                  <object class="GtkComboBox" id="show_animation_combo">
-                    <property name="visible">1</property>
-                    <property name="model">animation_mode_list</property>
-                    <property name="id-column">1</property>
-                    <child>
-                      <object class="GtkCellRendererText"/>
-                      <attributes>
-                        <attribute name="text">0</attribute>
-                      </attributes>
-                    </child>
-                  </object>
-                </child>
-              </object>
-              <packing>
-                <property name="left-attach">1</property>
-                <property name="top-attach">13</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkBox">
-                <property name="visible">1</property>
-                <property name="orientation">vertical</property>
-                <child>
-                  <object class="GtkComboBox" id="hide_animation_combo">
-                    <property name="visible">1</property>
-                    <property name="model">animation_mode_list</property>
-                    <property name="id-column">1</property>
-                    <child>
-                      <object class="GtkCellRendererText"/>
-                      <attributes>
-                        <attribute name="text">0</attribute>
-                      </attributes>
-                    </child>
-                  </object>
-                </child>
-              </object>
-              <packing>
-                <property name="left-attach">1</property>
-                <property name="top-attach">14</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkLabel">
-                <property name="visible">1</property>
-                <property name="halign">start</property>
-                <property name="label" translatable="yes">Window position:</property>
+                <property name="mnemonic-widget">window_pos_combo</property>
               </object>
               <packing>
                 <property name="left-attach">0</property>
@@ -1019,6 +793,7 @@ You&apos;ll have to close all tabs for this option to take effect.</property>
             <child>
               <object class="GtkComboBoxText" id="window_pos_combo">
                 <property name="visible">1</property>
+                <property name="hexpand">1</property>
                 <items>
                   <item id="top" translatable="yes">Top</item>
                   <item id="bottom" translatable="yes">Bottom</item>
@@ -1036,6 +811,7 @@ You&apos;ll have to close all tabs for this option to take effect.</property>
                 <property name="label" translatable="yes">On the monitor that contains the mouse pointer</property>
                 <property name="visible">1</property>
                 <property name="can-focus">1</property>
+                <property name="use-underline">1</property>
                 <property name="draw-indicator">1</property>
               </object>
               <packing>
@@ -1046,9 +822,10 @@ You&apos;ll have to close all tabs for this option to take effect.</property>
             </child>
             <child>
               <object class="GtkRadioButton" id="window_monitor_primary_radio">
-                <property name="label" translatable="yes">On the primary monitor</property>
+                <property name="label" translatable="yes">On the _primary monitor</property>
                 <property name="visible">1</property>
                 <property name="can-focus">1</property>
+                <property name="use-underline">1</property>
                 <property name="draw-indicator">1</property>
                 <property name="group">window_monitor_current_radio</property>
               </object>
@@ -1060,9 +837,10 @@ You&apos;ll have to close all tabs for this option to take effect.</property>
             </child>
             <child>
               <object class="GtkRadioButton" id="window_monitor_focus_radio">
-                <property name="label" translatable="yes">On the monitor with keyboard focus</property>
+                <property name="label" translatable="yes">On the monitor with keyboard _focus</property>
                 <property name="visible">1</property>
                 <property name="can-focus">1</property>
+                <property name="use-underline">1</property>
                 <property name="draw-indicator">1</property>
                 <property name="group">window_monitor_current_radio</property>
               </object>
@@ -1074,9 +852,10 @@ You&apos;ll have to close all tabs for this option to take effect.</property>
             </child>
             <child>
               <object class="GtkRadioButton" id="window_monitor_connector_radio">
-                <property name="label" translatable="yes">On monitor:</property>
+                <property name="label" translatable="yes">On _monitor:</property>
                 <property name="visible">1</property>
                 <property name="can-focus">1</property>
+                <property name="use-underline">1</property>
                 <property name="draw-indicator">1</property>
                 <property name="group">window_monitor_current_radio</property>
               </object>
@@ -1088,6 +867,7 @@ You&apos;ll have to close all tabs for this option to take effect.</property>
             <child>
               <object class="GtkBox">
                 <property name="visible">1</property>
+                <property name="hexpand">1</property>
                 <property name="orientation">vertical</property>
                 <child>
                   <object class="GtkComboBoxText" id="monitor_combo">
@@ -1102,14 +882,292 @@ You&apos;ll have to close all tabs for this option to take effect.</property>
             </child>
           </object>
           <packing>
-            <property name="title" translatable="yes">Window</property>
+            <property name="title" translatable="yes">Position and Size</property>
+          </packing>
+        </child>
+        <!-- n-columns=2 n-rows=9 -->
+        <child>
+          <object class="GtkGrid">
+            <property name="visible">1</property>
+            <property name="margin-start">10</property>
+            <property name="margin-end">10</property>
+            <property name="margin-top">10</property>
+            <property name="margin-bottom">10</property>
+            <property name="row-spacing">10</property>
+            <property name="column-spacing">10</property>
+            <child>
+              <object class="GtkCheckButton">
+                <property name="label" translatable="yes">_Resizable</property>
+                <property name="visible">1</property>
+                <property name="can-focus">1</property>
+                <property name="action-name">settings.window-resizable</property>
+                <property name="use-underline">1</property>
+                <property name="draw-indicator">1</property>
+              </object>
+              <packing>
+                <property name="left-attach">0</property>
+                <property name="top-attach">0</property>
+                <property name="width">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkCheckButton" id="window_above_check">
+                <property name="label" translatable="yes">_Above all windows</property>
+                <property name="visible">1</property>
+                <property name="can-focus">1</property>
+                <property name="action-name">settings.window-above</property>
+                <property name="use-underline">1</property>
+                <property name="draw-indicator">1</property>
+              </object>
+              <packing>
+                <property name="left-attach">0</property>
+                <property name="top-attach">1</property>
+                <property name="width">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkCheckButton" id="window_stick_check">
+                <property name="label" translatable="yes">On all _workspaces</property>
+                <property name="visible">1</property>
+                <property name="can-focus">1</property>
+                <property name="action-name">settings.window-stick</property>
+                <property name="use-underline">1</property>
+                <property name="draw-indicator">1</property>
+              </object>
+              <packing>
+                <property name="left-attach">0</property>
+                <property name="top-attach">2</property>
+                <property name="width">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkCheckButton" id="hide_when_focus_lost_check">
+                <property name="label" translatable="yes">Hide when the application loses _focus</property>
+                <property name="visible">1</property>
+                <property name="can-focus">1</property>
+                <property name="action-name">settings.hide-when-focus-lost</property>
+                <property name="use-underline">1</property>
+                <property name="draw-indicator">1</property>
+              </object>
+              <packing>
+                <property name="left-attach">0</property>
+                <property name="top-attach">3</property>
+                <property name="width">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkCheckButton" id="hide_window_on_esc_check">
+                <property name="label" translatable="yes">Hide when _Esc key is pressed</property>
+                <property name="visible">1</property>
+                <property name="can-focus">1</property>
+                <property name="action-name">settings.hide-window-on-esc</property>
+                <property name="use-underline">1</property>
+                <property name="draw-indicator">1</property>
+              </object>
+              <packing>
+                <property name="left-attach">0</property>
+                <property name="top-attach">4</property>
+                <property name="width">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkCheckButton" id="window_skip_taskbar_check">
+                <property name="label" translatable="yes">Exclude from _overview/task bar</property>
+                <property name="visible">1</property>
+                <property name="can-focus">1</property>
+                <property name="action-name">settings.window-skip-taskbar</property>
+                <property name="use-underline">1</property>
+                <property name="draw-indicator">1</property>
+              </object>
+              <packing>
+                <property name="left-attach">0</property>
+                <property name="top-attach">5</property>
+                <property name="width">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkCheckButton" id="pointer_autohide_check">
+                <property name="label" translatable="yes">Hide mouse _pointer when typing</property>
+                <property name="visible">1</property>
+                <property name="can-focus">1</property>
+                <property name="action-name">settings.pointer-autohide</property>
+                <property name="use-underline">1</property>
+                <property name="draw-indicator">1</property>
+              </object>
+              <packing>
+                <property name="left-attach">0</property>
+                <property name="top-attach">6</property>
+                <property name="width">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkCheckButton" id="force_gdk_x11_check">
+                <property name="label" translatable="yes">Force _X11 GDK backend (XWayland).
+You&apos;ll have to close all tabs for this option to take effect.</property>
+                <property name="visible">1</property>
+                <property name="can-focus">1</property>
+                <property name="action-name">settings.force-x11-gdk-backend</property>
+                <property name="use-underline">1</property>
+                <property name="draw-indicator">1</property>
+              </object>
+              <packing>
+                <property name="left-attach">0</property>
+                <property name="top-attach">7</property>
+                <property name="width">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel">
+                <property name="visible">1</property>
+                <property name="halign">start</property>
+                <property name="label" translatable="yes">Window type _hint (X11 only):</property>
+                <property name="use-underline">1</property>
+                <property name="mnemonic-widget">window_type_hint_combo</property>
+              </object>
+              <packing>
+                <property name="left-attach">0</property>
+                <property name="top-attach">8</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkComboBoxText" id="window_type_hint_combo">
+                <property name="visible">1</property>
+                <property name="hexpand">1</property>
+                <items>
+                  <item id="normal" translatable="yes">Normal</item>
+                  <item id="dialog" translatable="yes">Dialog</item>
+                  <item id="splashscreen" translatable="yes">Splash screen</item>
+                  <item id="utility" translatable="yes">Utility</item>
+                  <item id="dock" translatable="yes">Dock</item>
+                  <item id="dropdown-menu" translatable="yes">Dropdown menu</item>
+                  <item id="menu" translatable="yes">Menu</item>
+                  <item id="toolbar" translatable="yes">Toolbar</item>
+                  <item id="popup-menu" translatable="yes">Popup menu</item>
+                  <item id="tooltip" translatable="yes">Tooltip</item>
+                  <item id="notification" translatable="yes">Notification</item>
+                  <item id="combo" translatable="yes">Combo</item>
+                </items>
+              </object>
+              <packing>
+                <property name="left-attach">1</property>
+                <property name="top-attach">8</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="title" translatable="yes">Behavior</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <!-- n-columns=2 n-rows=3 -->
+        <child>
+          <object class="GtkGrid">
+            <property name="visible">1</property>
+            <property name="margin-start">10</property>
+            <property name="margin-end">10</property>
+            <property name="margin-top">10</property>
+            <property name="margin-bottom">10</property>
+            <property name="row-spacing">10</property>
+            <property name="column-spacing">10</property>
+            <child>
+              <object class="GtkCheckButton">
+                <property name="label" translatable="yes">_Override default window animations</property>
+                <property name="visible">1</property>
+                <property name="can-focus">1</property>
+                <property name="action-name">settings.override-window-animation</property>
+                <property name="use-underline">1</property>
+                <property name="draw-indicator">1</property>
+              </object>
+              <packing>
+                <property name="left-attach">0</property>
+                <property name="top-attach">0</property>
+                <property name="width">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel">
+                <property name="visible">1</property>
+                <property name="halign">start</property>
+                <property name="label" translatable="yes">_Show animation:</property>
+                <property name="use-underline">1</property>
+                <property name="mnemonic-widget">show_animation_combo</property>
+              </object>
+              <packing>
+                <property name="left-attach">0</property>
+                <property name="top-attach">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkBox">
+                <property name="visible">1</property>
+                <property name="hexpand">1</property>
+                <property name="orientation">vertical</property>
+                <child>
+                  <object class="GtkComboBox" id="show_animation_combo">
+                    <property name="visible">1</property>
+                    <property name="model">animation_mode_list</property>
+                    <property name="id-column">1</property>
+                    <child>
+                      <object class="GtkCellRendererText"/>
+                      <attributes>
+                        <attribute name="text">0</attribute>
+                      </attributes>
+                    </child>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="left-attach">1</property>
+                <property name="top-attach">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel">
+                <property name="visible">1</property>
+                <property name="halign">start</property>
+                <property name="label" translatable="yes">_Hide animation:</property>
+                <property name="use-underline">1</property>
+                <property name="mnemonic-widget">hide_animation_combo</property>
+              </object>
+              <packing>
+                <property name="left-attach">0</property>
+                <property name="top-attach">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkBox">
+                <property name="visible">1</property>
+                <property name="hexpand">1</property>
+                <property name="orientation">vertical</property>
+                <child>
+                  <object class="GtkComboBox" id="hide_animation_combo">
+                    <property name="visible">1</property>
+                    <property name="model">animation_mode_list</property>
+                    <property name="id-column">1</property>
+                    <child>
+                      <object class="GtkCellRendererText"/>
+                      <attributes>
+                        <attribute name="text">0</attribute>
+                      </attributes>
+                    </child>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="left-attach">1</property>
+                <property name="top-attach">2</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="title" translatable="yes">Animation</property>
+            <property name="position">2</property>
           </packing>
         </child>
         <!-- n-columns=2 n-rows=11 -->
         <child>
           <object class="GtkGrid">
             <property name="visible">1</property>
-            <property name="can-focus">1</property>
             <property name="margin-start">10</property>
             <property name="margin-end">10</property>
             <property name="margin-top">10</property>
@@ -1192,7 +1250,7 @@ You&apos;ll have to close all tabs for this option to take effect.</property>
             <child>
               <object class="GtkComboBoxText" id="tab_policy_combo">
                 <property name="visible">1</property>
-                <property name="can-focus">1</property>
+                <property name="hexpand">1</property>
                 <items>
                   <item id="always" translatable="yes">Always</item>
                   <item id="automatic" translatable="yes">Automatic</item>
@@ -1241,11 +1299,9 @@ You&apos;ll have to close all tabs for this option to take effect.</property>
                 <child>
                   <object class="GtkViewport">
                     <property name="visible">1</property>
-                    <property name="can-focus">1</property>
                     <child>
                       <object class="GtkLabel">
                         <property name="visible">1</property>
-                        <property name="can-focus">1</property>
                         <property name="halign">start</property>
                         <property name="label" translatable="yes">Tab title is generated from &lt;a href=&quot;https://handlebarsjs.com/guide/&quot;&gt;handlebars.js&lt;/a&gt; template. &lt;a href=&quot;https://developer.gnome.org/pango/stable/pango-Markup.html&quot;&gt;Pango markup&lt;/a&gt; can be used to format the title.
 
@@ -1260,7 +1316,9 @@ Following variables are available:
 
 Following helpers are available:
 - &lt;tt&gt;filename-from-uri&lt;/tt&gt;
-- &lt;tt&gt;hostname-from-uri&lt;/tt&gt;</property>
+- &lt;tt&gt;hostname-from-uri&lt;/tt&gt;
+- &lt;tt&gt;truncate-chars&lt;/tt&gt;
+      example: &lt;tt&gt;{{truncate-chars window-title 20}}&lt;/tt&gt;</property>
                         <property name="use-markup">1</property>
                         <property name="wrap">1</property>
                         <property name="xalign">0</property>
@@ -1317,6 +1375,7 @@ Following helpers are available:
             <child>
               <object class="GtkComboBoxText" id="tab_position_combo">
                 <property name="visible">1</property>
+                <property name="hexpand">1</property>
                 <items>
                   <item id="bottom" translatable="yes">Bottom</item>
                   <item id="top" translatable="yes">Top</item>
@@ -1347,14 +1406,13 @@ Following helpers are available:
           </object>
           <packing>
             <property name="title" translatable="yes">Tabs</property>
-            <property name="position">1</property>
+            <property name="position">3</property>
           </packing>
         </child>
         <!-- n-columns=2 n-rows=8 -->
         <child>
           <object class="GtkGrid">
             <property name="visible">1</property>
-            <property name="can-focus">1</property>
             <property name="margin-start">10</property>
             <property name="margin-end">10</property>
             <property name="margin-top">10</property>
@@ -1416,7 +1474,7 @@ Following helpers are available:
             <child>
               <object class="GtkComboBoxText" id="text_blink_mode_combo">
                 <property name="visible">1</property>
-                <property name="can-focus">1</property>
+                <property name="hexpand">1</property>
                 <items>
                   <item id="never" translatable="yes">Never</item>
                   <item id="focused" translatable="yes">When focused</item>
@@ -1432,7 +1490,7 @@ Following helpers are available:
             <child>
               <object class="GtkComboBoxText" id="cursor_shape_combo">
                 <property name="visible">1</property>
-                <property name="can-focus">1</property>
+                <property name="hexpand">1</property>
                 <items>
                   <item id="block" translatable="yes">Block</item>
                   <item id="ibeam" translatable="yes">I-Beam</item>
@@ -1447,7 +1505,7 @@ Following helpers are available:
             <child>
               <object class="GtkComboBoxText" id="cursor_blink_mode_combo">
                 <property name="visible">1</property>
-                <property name="can-focus">1</property>
+                <property name="hexpand">1</property>
                 <items>
                   <item id="system" translatable="yes">Default</item>
                   <item id="on" translatable="yes">Enabled</item>
@@ -1492,7 +1550,7 @@ Following helpers are available:
             <child>
               <object class="GtkBox">
                 <property name="visible">1</property>
-                <property name="can-focus">1</property>
+                <property name="hexpand">1</property>
                 <child>
                   <object class="GtkFontButton" id="font_chooser">
                     <property name="visible">1</property>
@@ -1609,14 +1667,13 @@ Following helpers are available:
           </object>
           <packing>
             <property name="title" translatable="yes">Text</property>
-            <property name="position">2</property>
+            <property name="position">4</property>
           </packing>
         </child>
         <!-- n-columns=2 n-rows=8 -->
         <child>
           <object class="GtkGrid">
             <property name="visible">1</property>
-            <property name="can-focus">1</property>
             <property name="margin-start">10</property>
             <property name="margin-end">10</property>
             <property name="margin-top">10</property>
@@ -1639,7 +1696,7 @@ Following helpers are available:
             <child>
               <object class="GtkComboBoxText" id="theme_variant_combo">
                 <property name="visible">1</property>
-                <property name="can-focus">1</property>
+                <property name="hexpand">1</property>
                 <items>
                   <item id="system" translatable="yes">Default</item>
                   <item id="light" translatable="yes">Light</item>
@@ -1670,7 +1727,6 @@ Following helpers are available:
             <child>
               <object class="GtkGrid" id="color_scheme_editor">
                 <property name="visible">1</property>
-                <property name="can-focus">1</property>
                 <property name="row-spacing">10</property>
                 <property name="column-spacing">10</property>
                 <child>
@@ -1758,11 +1814,9 @@ Following helpers are available:
                 <child>
                   <object class="GtkBox">
                     <property name="visible">1</property>
-                    <property name="can-focus">1</property>
                     <child>
                       <object class="GtkComboBox" id="color_scheme_combo">
                         <property name="visible">1</property>
-                        <property name="can-focus">1</property>
                         <property name="model">color_scheme_list</property>
                         <child>
                           <object class="GtkCellRendererText"/>
@@ -1782,7 +1836,6 @@ Following helpers are available:
                 <child>
                   <object class="GtkBox">
                     <property name="visible">1</property>
-                    <property name="can-focus">1</property>
                     <property name="halign">center</property>
                     <child>
                       <object class="GtkColorButton" id="foreground_color">
@@ -1801,7 +1854,6 @@ Following helpers are available:
                 <child>
                   <object class="GtkBox">
                     <property name="visible">1</property>
-                    <property name="can-focus">1</property>
                     <property name="halign">center</property>
                     <child>
                       <object class="GtkColorButton" id="background_color">
@@ -1820,7 +1872,6 @@ Following helpers are available:
                 <child>
                   <object class="GtkBox">
                     <property name="visible">1</property>
-                    <property name="can-focus">1</property>
                     <property name="halign">center</property>
                     <child>
                       <object class="GtkColorButton" id="bold_color">
@@ -1839,7 +1890,6 @@ Following helpers are available:
                 <child>
                   <object class="GtkBox">
                     <property name="visible">1</property>
-                    <property name="can-focus">1</property>
                     <property name="halign">center</property>
                     <child>
                       <object class="GtkColorButton" id="cursor_foreground_color">
@@ -1858,7 +1908,6 @@ Following helpers are available:
                 <child>
                   <object class="GtkBox">
                     <property name="visible">1</property>
-                    <property name="can-focus">1</property>
                     <property name="halign">center</property>
                     <child>
                       <object class="GtkColorButton" id="cursor_background_color">
@@ -1877,7 +1926,6 @@ Following helpers are available:
                 <child>
                   <object class="GtkBox">
                     <property name="visible">1</property>
-                    <property name="can-focus">1</property>
                     <property name="halign">center</property>
                     <child>
                       <object class="GtkColorButton" id="highlight_foreground_color">
@@ -1896,7 +1944,6 @@ Following helpers are available:
                 <child>
                   <object class="GtkBox">
                     <property name="visible">1</property>
-                    <property name="can-focus">1</property>
                     <property name="halign">center</property>
                     <child>
                       <object class="GtkColorButton" id="highlight_background_color">
@@ -1920,7 +1967,7 @@ Following helpers are available:
               </packing>
             </child>
             <child>
-              <object class="GtkCheckButton">
+              <object class="GtkCheckButton" id="background_opacity_check">
                 <property name="label" translatable="yes">_Background opacity:</property>
                 <property name="visible">1</property>
                 <property name="can-focus">1</property>
@@ -1936,7 +1983,7 @@ Following helpers are available:
             <child>
               <object class="GtkBox">
                 <property name="visible">1</property>
-                <property name="can-focus">1</property>
+                <property name="hexpand">1</property>
                 <child>
                   <object class="GtkScale" id="opacity_scale">
                     <property name="width-request">200</property>
@@ -1973,7 +2020,7 @@ Following helpers are available:
             <child>
               <object class="GtkComboBox" id="palette_combo">
                 <property name="visible">1</property>
-                <property name="can-focus">1</property>
+                <property name="hexpand">1</property>
                 <property name="model">palette_list</property>
                 <child>
                   <object class="GtkCellRendererText"/>
@@ -1991,7 +2038,7 @@ Following helpers are available:
             <child>
               <object class="GtkGrid" id="palette">
                 <property name="visible">1</property>
-                <property name="can-focus">1</property>
+                <property name="halign">start</property>
                 <property name="row-spacing">10</property>
                 <property name="column-spacing">10</property>
                 <property name="row-homogeneous">1</property>
@@ -2206,9 +2253,8 @@ Following helpers are available:
                 </child>
               </object>
               <packing>
-                <property name="left-attach">0</property>
+                <property name="left-attach">1</property>
                 <property name="top-attach">5</property>
-                <property name="width">2</property>
               </packing>
             </child>
             <child>
@@ -2242,14 +2288,13 @@ Following helpers are available:
           </object>
           <packing>
             <property name="title" translatable="yes">Colors</property>
-            <property name="position">3</property>
+            <property name="position">5</property>
           </packing>
         </child>
         <!-- n-columns=2 n-rows=4 -->
         <child>
           <object class="GtkGrid">
             <property name="visible">1</property>
-            <property name="can-focus">1</property>
             <property name="margin-start">10</property>
             <property name="margin-end">10</property>
             <property name="margin-top">10</property>
@@ -2302,7 +2347,6 @@ Following helpers are available:
             <child>
               <object class="GtkBox">
                 <property name="visible">1</property>
-                <property name="can-focus">1</property>
                 <property name="hexpand">1</property>
                 <child>
                   <object class="GtkEntry" id="custom_command_entry">
@@ -2334,14 +2378,13 @@ Following helpers are available:
           </object>
           <packing>
             <property name="title" translatable="yes">Command</property>
-            <property name="position">4</property>
+            <property name="position">6</property>
           </packing>
         </child>
         <!-- n-columns=2 n-rows=4 -->
         <child>
           <object class="GtkGrid">
             <property name="visible">1</property>
-            <property name="can-focus">1</property>
             <property name="margin-start">10</property>
             <property name="margin-end">10</property>
             <property name="margin-top">10</property>
@@ -2409,7 +2452,6 @@ Following helpers are available:
             <child>
               <object class="GtkBox">
                 <property name="visible">1</property>
-                <property name="can-focus">1</property>
                 <property name="spacing">10</property>
                 <child>
                   <object class="GtkSpinButton" id="scrollback_spin">
@@ -2439,14 +2481,13 @@ Following helpers are available:
           </object>
           <packing>
             <property name="title" translatable="yes">Scrolling</property>
-            <property name="position">5</property>
+            <property name="position">7</property>
           </packing>
         </child>
         <!-- n-columns=2 n-rows=4 -->
         <child>
           <object class="GtkGrid">
             <property name="visible">1</property>
-            <property name="can-focus">1</property>
             <property name="margin-start">10</property>
             <property name="margin-end">10</property>
             <property name="margin-top">10</property>
@@ -2495,7 +2536,7 @@ Following helpers are available:
             <child>
               <object class="GtkComboBox" id="backspace_binding_combo">
                 <property name="visible">1</property>
-                <property name="can-focus">1</property>
+                <property name="hexpand">1</property>
                 <property name="model">erase_binding_list</property>
                 <property name="id-column">1</property>
                 <child>
@@ -2513,7 +2554,7 @@ Following helpers are available:
             <child>
               <object class="GtkComboBox" id="delete_binding_combo">
                 <property name="visible">1</property>
-                <property name="can-focus">1</property>
+                <property name="hexpand">1</property>
                 <property name="model">erase_binding_list</property>
                 <property name="id-column">1</property>
                 <child>
@@ -2531,7 +2572,7 @@ Following helpers are available:
             <child>
               <object class="GtkComboBoxText" id="ambiguous_width_combo">
                 <property name="visible">1</property>
-                <property name="can-focus">1</property>
+                <property name="hexpand">1</property>
                 <items>
                   <item id="narrow" translatable="yes">Narrow</item>
                   <item id="wide" translatable="yes">Wide</item>
@@ -2559,13 +2600,12 @@ Following helpers are available:
           </object>
           <packing>
             <property name="title" translatable="yes">Compatibility</property>
-            <property name="position">6</property>
+            <property name="position">8</property>
           </packing>
         </child>
         <child>
           <object class="GtkBox">
             <property name="visible">1</property>
-            <property name="can-focus">1</property>
             <property name="margin-start">10</property>
             <property name="margin-end">10</property>
             <property name="margin-top">10</property>
@@ -2682,7 +2722,7 @@ Following helpers are available:
           </object>
           <packing>
             <property name="title" translatable="yes">Keyboard Shortcuts</property>
-            <property name="position">7</property>
+            <property name="position">9</property>
           </packing>
         </child>
         <!-- n-columns=2 n-rows=1 -->
@@ -2709,6 +2749,7 @@ Following helpers are available:
             <child>
               <object class="GtkComboBoxText" id="panel_icon_type_combo">
                 <property name="visible">1</property>
+                <property name="hexpand">1</property>
                 <items>
                   <item id="none" translatable="yes">None</item>
                   <item id="menu-button" translatable="yes">With popup menu</item>
@@ -2723,7 +2764,7 @@ Following helpers are available:
           </object>
           <packing>
             <property name="title" translatable="yes">Panel Icon</property>
-            <property name="position">8</property>
+            <property name="position">10</property>
           </packing>
         </child>
       </object>
@@ -2734,4 +2775,12 @@ Following helpers are available:
       </packing>
     </child>
   </template>
+  <object class="GtkSizeGroup">
+    <widgets>
+      <widget name="bold_color_check"/>
+      <widget name="cursor_color_check"/>
+      <widget name="highlight_color_check"/>
+      <widget name="background_opacity_check"/>
+    </widgets>
+  </object>
 </interface>
