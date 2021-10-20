@@ -251,6 +251,7 @@ screen
 sed
 shellcheck
 shotwell
+signal-desktop
 silicon
 sleuthkit
 smem
