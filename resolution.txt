@@ -1,0 +1,4 @@
+Orientation: Landscape
+Resolution: 3200 x 1800 (16:9)
+Refresh Rate: 59.94 Hz
+Scale: 200%
