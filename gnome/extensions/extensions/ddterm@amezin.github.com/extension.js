@@ -46,10 +46,9 @@ let window_connections = null;
 let dbus_interface = null;
 
 const APP_ID = 'com.github.amezin.ddterm';
+const APP_WMCLASS = 'Com.github.amezin.ddterm';
 const APP_DBUS_PATH = '/com/github/amezin/ddterm';
 const WINDOW_PATH_PREFIX = `${APP_DBUS_PATH}/window/`;
-const IS_WAYLAND_COMPOSITOR = Meta.is_wayland_compositor();
-const USE_WAYLAND_CLIENT = Meta.WaylandClient && IS_WAYLAND_COMPOSITOR;
 const SIGINT = 2;
 
 class AppDBusWatch {
@@ -106,25 +105,14 @@ class ExtensionDBusInterface {
     Activate() {
         activate();
     }
-}
 
-class WaylandClientStub {
-    constructor(subprocess_launcher) {
-        this.subprocess_launcher = subprocess_launcher;
-    }
-
-    spawnv(_display, argv) {
-        return this.subprocess_launcher.spawnv(argv);
-    }
-
-    hide_from_window_list(_win) {
-    }
-
-    show_in_window_list(_win) {
-    }
-
-    owns_window(_win) {
-        return true;
+    get TargetRect() {
+        if (window_manager) {
+            const r = window_manager.target_rect;
+            return [r.x, r.y, r.width, r.height];
+        } else {
+            return [0, 0, 0, 0];
+        }
     }
 }
 
@@ -159,7 +147,7 @@ function enable() {
     connections = new ConnectionSet();
     window_connections = new ConnectionSet();
 
-    connections.connect(global.display, 'window-created', handle_window_created);
+    connections.connect(global.display, 'window-created', (_, win) => watch_window(win));
     connections.connect(settings, 'changed::window-skip-taskbar', set_skip_taskbar);
 
     window_manager = new WindowManager({ settings });
@@ -187,12 +175,16 @@ function enable() {
             imports.misc.extensionUtils.openPrefs();
     });
 
-    connections.connect(window_manager, 'window-changed', () => {
+    connections.connect(window_manager, 'notify::current-window', () => {
         panel_icon.active = window_manager.current_window !== null;
     });
 
+    connections.connect(window_manager, 'notify::target-rect', () => {
+        dbus_interface.dbus.emit_property_changed('TargetRect', new GLib.Variant('(iiii)', dbus_interface.TargetRect));
+    });
+
     Meta.get_window_actors(global.display).forEach(actor => {
-        handle_window_created(global.display, actor.meta_window);
+        watch_window(actor.meta_window);
     });
 
     if (tests)
@@ -247,6 +239,8 @@ function disable() {
         panel_icon.remove();
         panel_icon = null;
     }
+
+    settings = null;
 }
 
 function spawn_app() {
@@ -274,13 +268,20 @@ function spawn_app() {
         subprocess_launcher.setenv('GDK_BACKEND', 'x11', true);
     }
 
-    if (USE_WAYLAND_CLIENT && subprocess_launcher.getenv('GDK_BACKEND') !== 'x11')
+    if (Meta.WaylandClient &&
+        Meta.is_wayland_compositor() &&
+        subprocess_launcher.getenv('GDK_BACKEND') !== 'x11')
         wayland_client = Meta.WaylandClient.new(subprocess_launcher);
     else
-        wayland_client = new WaylandClientStub(subprocess_launcher);
+        wayland_client = null;
 
     printerr(`Starting ddterm app: ${JSON.stringify(argv)}`);
-    subprocess = wayland_client.spawnv(global.display, argv);
+
+    if (wayland_client)
+        subprocess = wayland_client.spawnv(global.display, argv);
+    else
+        subprocess = subprocess_launcher.spawnv(argv);
+
     subprocess.wait_async(null, subprocess_terminated);
 }
 
@@ -288,17 +289,20 @@ function subprocess_terminated(source) {
     if (subprocess === source) {
         subprocess = null;
         wayland_client = null;
+    }
 
-        if (source.get_if_signaled()) {
-            const signum = source.get_term_sig();
-            printerr(`ddterm app killed by signal ${signum} (${GLib.strsignal(signum)})`);
-        } else {
-            printerr(`ddterm app exited with status ${source.get_exit_status()}`);
-        }
+    if (source.get_if_signaled()) {
+        const signum = source.get_term_sig();
+        printerr(`ddterm app killed by signal ${signum} (${GLib.strsignal(signum)})`);
+    } else {
+        printerr(`ddterm app exited with status ${source.get_exit_status()}`);
     }
 }
 
 function toggle() {
+    if (!window_manager.current_window)
+        window_manager.update_monitor_index();
+
     if (app_dbus.action_group)
         app_dbus.action_group.activate_action('toggle', null);
     else
@@ -312,39 +316,6 @@ function activate() {
         toggle();
 }
 
-function handle_window_created(display, win) {
-    const handler_ids = [
-        window_connections.connect(win, 'notify::gtk-application-id', check_window),
-        window_connections.connect(win, 'notify::gtk-window-object-path', check_window),
-    ];
-
-    const disconnect_handlers = () => {
-        handler_ids.forEach(handler => window_connections.disconnect(win, handler));
-    };
-
-    handler_ids.push(window_connections.connect(win, 'unmanaging', disconnect_handlers));
-    handler_ids.push(window_connections.connect(win, 'unmanaged', disconnect_handlers));
-
-    check_window(win);
-}
-
-function is_ddterm_window(win) {
-    if (!wayland_client) {
-        // On X11, shell can be restarted, and the app will keep running.
-        // Accept windows from previously launched app instances.
-        if (IS_WAYLAND_COMPOSITOR)
-            return false;
-    } else if (!wayland_client.owns_window(win)) {
-        return false;
-    }
-
-    return (
-        win.gtk_application_id === APP_ID &&
-        win.gtk_window_object_path &&
-        win.gtk_window_object_path.startsWith(WINDOW_PATH_PREFIX)
-    );
-}
-
 function set_skip_taskbar() {
     if (!wayland_client || !window_manager.current_window)
         return;
@@ -355,11 +326,56 @@ function set_skip_taskbar() {
         wayland_client.show_in_window_list(window_manager.current_window);
 }
 
-function check_window(win) {
-    if (is_ddterm_window(win)) {
-        window_manager.manage_window(win);
-        set_skip_taskbar();
-    } else {
-        window_manager.release_window(win);
-    }
+function watch_window(win) {
+    const handler_ids = [];
+
+    const disconnect = () => {
+        while (handler_ids.length > 0)
+            window_connections.disconnect(win, handler_ids.pop());
+    };
+
+    const check = () => {
+        disconnect();
+
+        if (wayland_client) {
+            if (!wayland_client.owns_window(win))
+                return;
+        } else if (subprocess) {
+            const pid = win.get_pid();
+            if (pid > 0 && pid.toString() !== subprocess.get_identifier())
+                return;
+        }
+
+        const wm_class = win.wm_class;
+        if (wm_class) {
+            if (wm_class !== APP_WMCLASS && wm_class !== APP_ID)
+                return;
+
+            const gtk_application_id = win.gtk_application_id;
+            if (gtk_application_id) {
+                if (gtk_application_id !== APP_ID)
+                    return;
+
+                const gtk_window_object_path = win.gtk_window_object_path;
+                if (gtk_window_object_path) {
+                    if (gtk_window_object_path.startsWith(WINDOW_PATH_PREFIX)) {
+                        window_manager.manage_window(win);
+                        set_skip_taskbar();
+                    }
+
+                    return;
+                }
+            }
+        }
+
+        handler_ids.push(
+            window_connections.connect(win, 'notify::gtk-application-id', check),
+            window_connections.connect(win, 'notify::gtk-window-object-path', check),
+            window_connections.connect(win, 'notify::wm-class', check),
+            window_connections.connect(win, 'unmanaging', disconnect),
+            window_connections.connect(win, 'unmanaged', disconnect)
+        );
+    };
+
+    check();
 }
