@@ -21,6 +21,7 @@ btrfs-progs
 cbindgen
 cgdb
 cheese
+chezmoi
 chromium
 clang
 cloc
