@@ -258,6 +258,7 @@ sleuthkit
 smem
 socat
 spdlog
+sqlitebrowser
 sshfs
 step-cli
 sudo
