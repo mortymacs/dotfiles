@@ -176,6 +176,7 @@ massif-visualizer
 maven
 meld
 memcached
+metasploit
 minikube
 moreutils
 mtr
