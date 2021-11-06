@@ -29,6 +29,7 @@ python-bench-it
 python-configparser
 python-oyaml
 python-panwid
+redis-desktop-manager
 shc
 skypeforlinux-stable-bin
 slack-desktop
