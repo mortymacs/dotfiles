@@ -5,7 +5,6 @@ binocle
 chart-testing
 chrome-gnome-shell
 czmq-git
-datree
 direnv
 dive
 dropbox
