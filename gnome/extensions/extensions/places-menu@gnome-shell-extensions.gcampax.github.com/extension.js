@@ -8,12 +8,11 @@ const Main = imports.ui.main;
 const PanelMenu = imports.ui.panelMenu;
 const PopupMenu = imports.ui.popupMenu;
 
-const Gettext = imports.gettext.domain('gnome-shell-extensions');
-const _ = Gettext.gettext;
-const N_ = x => x;
-
 const Me = ExtensionUtils.getCurrentExtension();
 const PlaceDisplay = Me.imports.placeDisplay;
+
+const _ = ExtensionUtils.gettext;
+const N_ = x => x;
 
 const PLACE_ICON_SIZE = 16;
 
@@ -133,12 +132,14 @@ class PlacesMenu extends PanelMenu.Button {
     }
 });
 
+/** */
 function init() {
     ExtensionUtils.initTranslations();
 }
 
 let _indicator;
 
+/** */
 function enable() {
     _indicator = new PlacesMenu();
 
@@ -148,6 +149,7 @@ function enable() {
     Main.panel.addToStatusArea('places-menu', _indicator, pos, 'left');
 }
 
+/** */
 function disable() {
     _indicator.destroy();
 }

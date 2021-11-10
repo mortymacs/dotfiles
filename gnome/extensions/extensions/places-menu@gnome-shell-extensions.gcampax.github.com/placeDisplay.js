@@ -3,11 +3,11 @@
 const { Gio, GLib, Shell } = imports.gi;
 const Signals = imports.signals;
 
+const ExtensionUtils = imports.misc.extensionUtils;
 const Main = imports.ui.main;
 const ShellMountOperation = imports.ui.shellMountOperation;
 
-const Gettext = imports.gettext.domain('gnome-shell-extensions');
-const _ = Gettext.gettext;
+const _ = ExtensionUtils.gettext;
 const N_ = x => x;
 
 const BACKGROUND_SCHEMA = 'org.gnome.desktop.background';
