@@ -227,6 +227,7 @@ python-pylint
 python-pynvim
 python-pytest
 python-pytz
+python-qtconsole
 python-requests-oauthlib
 python-rich
 python-scipy
