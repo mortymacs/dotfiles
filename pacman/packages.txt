@@ -29,7 +29,6 @@ cppcheck
 ctags
 ctop
 cython
-datree
 dconf-editor
 delve
 dia
