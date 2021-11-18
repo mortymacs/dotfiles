@@ -1,7 +1,6 @@
 anydesk-bin
 atuin
 bashdb
-binocle
 chart-testing
 chrome-gnome-shell
 czmq-git
