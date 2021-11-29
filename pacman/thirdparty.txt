@@ -33,7 +33,6 @@ shc
 skypeforlinux-stable-bin
 slack-desktop
 spotify
-sqlfluff
 xxd-standalone
 yay
 ydiff
