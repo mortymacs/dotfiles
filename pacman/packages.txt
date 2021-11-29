@@ -35,6 +35,7 @@ delve
 dia
 dialog
 diff-so-fancy
+direnv
 discord
 dmidecode
 dnsmasq

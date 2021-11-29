@@ -4,7 +4,6 @@ bashdb
 chart-testing
 chrome-gnome-shell
 czmq-git
-direnv
 dive
 dropbox
 dry-bin
