@@ -299,6 +299,10 @@ ttf-ubuntu-font-family
 vagrant
 valgrind
 vino
+virtualbox
+virtualbox-guest-iso
+virtualbox-guest-utils
+virtualbox-host-modules-arch
 vlc
 websocat
 wget
