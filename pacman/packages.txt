@@ -57,6 +57,7 @@ fd
 file
 file-roller
 findutils
+firefox
 flake8
 flameshot
 flex
@@ -264,6 +265,7 @@ socat
 spdlog
 sqlitebrowser
 sshfs
+sshpass
 step-cli
 sudo
 sushi
