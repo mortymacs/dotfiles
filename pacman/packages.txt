@@ -206,6 +206,7 @@ patch
 peco
 perf
 pkgconf
+postgresql
 prettyping
 procs
 pyenv
