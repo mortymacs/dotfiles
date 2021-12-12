@@ -1,5 +1,4 @@
 anydesk-bin
-atuin
 bashdb
 chart-testing
 chrome-gnome-shell
@@ -10,7 +9,6 @@ dry-bin
 git-extras
 gitstatus
 glow
-google-cloud-cpp
 google-crc32c
 hotspot
 insomnia-bin
@@ -23,6 +21,7 @@ mcfly
 mycli
 nats-server
 palanteer
+pgcli
 python-bench-it
 python-configparser
 python-oyaml

@@ -2,6 +2,7 @@ ack
 alacritty
 asciinema
 atop
+atuin
 autoconf
 automake
 autopep8

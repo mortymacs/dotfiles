@@ -21,7 +21,7 @@ alias rmc="rm -rf CMakeFiles/ Testing/ CMakeCache.txt *.cmake Makefile compile_c
 alias u="yay -Syu && v -c :PlugUpgrade +quitall && v -c :PlugUpdate +quitall && v -c :CocUpdateSync +quitall && v -c :BlackUpgrade +quitall && z dot && ./sync.sh && cd -"
 alias o="v \`f || echo '-c :quitall'\`"
 alias diff="ydiff -s --wrap"
-alias tgz='rpyc ; tar --exclude='.venv' --exclude='.git' --exclude='.gitignore' --exclude='.kube' -zcvf `basename $PWD`.tar.gz ./*'
+alias tgz='rpyc && rm -f `basename $PWD`.tar.gz && tar --exclude='.venv' --exclude='.git' --exclude='.gitignore' --exclude='.kube' -zcvf `basename $PWD`.tar.gz ./*'
 alias cb="xclip -selection clipboard"
 alias kp="\ps aux | peco | awk '{print \$2}' | xargs kill -9"
 alias ap="\ps aux | peco"
