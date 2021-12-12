@@ -259,6 +259,7 @@ screen
 sed
 shellcheck
 shotwell
+shutter
 signal-desktop
 silicon
 sleuthkit
