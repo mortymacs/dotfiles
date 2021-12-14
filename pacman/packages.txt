@@ -43,6 +43,7 @@ dnsmasq
 docker
 docker-compose
 docker-machine
+docker-scan
 dog
 doxygen
 duf
