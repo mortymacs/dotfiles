@@ -179,6 +179,7 @@ make
 man-db
 massif-visualizer
 maven
+mcfly
 meld
 memcached
 metasploit

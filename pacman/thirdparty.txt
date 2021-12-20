@@ -17,7 +17,6 @@ kubectl-df-pv
 kubespy
 lazydocker
 libcsptr
-mcfly
 mycli
 nats-server
 palanteer
