@@ -31,6 +31,7 @@ cppcheck
 ctags
 ctop
 cython
+darktable
 dconf-editor
 delve
 dia
