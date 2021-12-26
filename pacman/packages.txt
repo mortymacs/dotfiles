@@ -301,7 +301,6 @@ ttf-fira-code
 ttf-fira-mono
 ttf-fira-sans
 ttf-hack
-ttf-jetbrains-mono
 ttf-nerd-fonts-symbols-mono
 ttf-ubuntu-font-family
 vagrant
