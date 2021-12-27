@@ -23,7 +23,6 @@ btrfs-progs
 cbindgen
 cgdb
 cheese
-chezmoi
 chromium
 clang
 cloc
@@ -36,7 +35,6 @@ delve
 dia
 dialog
 diff-so-fancy
-direnv
 discord
 dmidecode
 dnsmasq
@@ -67,7 +65,6 @@ fmt
 fzf
 gawk
 gcc
-gcc-ada
 gdb
 gdb-dashboard
 gdm
@@ -116,7 +113,6 @@ gnome-video-effects
 gnome-weather
 go
 gopls
-gparted
 gperf
 gperftools
 gpick
@@ -164,7 +160,6 @@ kubectl
 kubectx
 kubelet
 libev
-libreoffice-fresh
 libtool
 libvirt
 liferea
@@ -182,7 +177,6 @@ maven
 mcfly
 meld
 memcached
-metasploit
 minikube
 moreutils
 mtr
@@ -195,11 +189,9 @@ net-tools
 network-manager-applet
 networkmanager
 networkmanager-openvpn
-nginx
 nlohmann-json
 ntfs-3g
 nuitka
-obs-studio
 openbsd-netcat
 p7zip
 pacman
@@ -209,7 +201,6 @@ patch
 peco
 perf
 pkgconf
-postgresql
 prettyping
 procs
 pyenv
@@ -261,14 +252,12 @@ screen
 sed
 shellcheck
 shotwell
-shutter
 signal-desktop
 silicon
 sleuthkit
 smem
 socat
 spdlog
-sqlitebrowser
 sshfs
 sshpass
 step-cli
@@ -277,7 +266,6 @@ sushi
 syntax-highlighting
 syslog-ng
 systemd-resolvconf
-tailscale
 telegram-desktop
 terraform
 testdisk

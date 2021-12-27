@@ -53,8 +53,6 @@ source /home/mort/.config/broot/launcher/bash/br
 export GOPATH="$HOME/.local/share/go"
 export GOMODCACHE="$HOME/.local/share/go/pkg/mod"
 
-eval "$(direnv hook zsh)"
-
 # https://stackoverflow.com/a/22481496
 export TERM="xterm-256color"
 
