@@ -241,6 +241,7 @@ qemu-guest-agent
 r2ghidra
 radare2
 redis
+revive
 ripgrep
 rofi
 rust
@@ -260,6 +261,7 @@ socat
 spdlog
 sshfs
 sshpass
+staticcheck
 step-cli
 sudo
 sushi
