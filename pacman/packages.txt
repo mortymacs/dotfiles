@@ -68,6 +68,7 @@ gcc
 gdb
 gdb-dashboard
 gdm
+geary
 gedit
 gettext
 ghex
