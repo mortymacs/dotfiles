@@ -193,6 +193,7 @@ qemu-block-rbd
 qemu-guest-agent
 r2ghidra
 radare2
+ranger
 redis
 revive
 ripgrep

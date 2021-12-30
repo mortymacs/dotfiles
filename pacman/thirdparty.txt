@@ -18,7 +18,6 @@ lazydocker
 libcsptr
 ly
 mycli
-nats-server
 palanteer
 pgcli
 python-bench-it
