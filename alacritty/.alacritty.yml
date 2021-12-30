@@ -10,7 +10,7 @@ background_opacity: 0.98
 
 # Font configuration (changes require restart).
 font:
-  size: 14
+  size: 15
   normal:
     family: CodeNewRoman Nerd Font Mono
     style: Regular

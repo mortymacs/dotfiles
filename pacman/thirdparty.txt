@@ -1,7 +1,6 @@
 anydesk-bin
 bashdb
 chart-testing
-chrome-gnome-shell
 czmq-git
 dive
 dropbox
@@ -17,6 +16,7 @@ kubectl-df-pv
 kubespy
 lazydocker
 libcsptr
+ly
 mycli
 nats-server
 palanteer
