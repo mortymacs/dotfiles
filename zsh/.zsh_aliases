@@ -11,6 +11,12 @@ mkcd(){ mkdir -p "$1" && cd "$1" }
 atree(){ tar -tf "$1" | tree --fromfile . }
 rmr(){ [ -n "$1" ] && (fd -I "$1" | xargs rm -rf --) }
 
+# ---------------------------------------------- Monitors
+# https://blog.summercat.com/configuring-mixed-dpi-monitors-with-xrandr.html
+# https://www.youtube.com/watch?v=wu2NWw2wPaA
+alias external-monitor="xrandr --output DP1 --scale 1x1 --output eDP1 --off && xrandr --dpi 100 --output DP1 --auto && i3-msg restart > /dev/null"
+alias internal-monitor="xrandr --dpi 200 --output eDP1 --auto --output DP1 --off && i3-msg restart > /dev/null"
+
 # ---------------------------------------------- utility
 alias pdf="evince"
 alias ascii="graph-easy --from=dot --as_ascii"
