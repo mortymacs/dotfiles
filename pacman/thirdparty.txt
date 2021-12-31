@@ -15,11 +15,13 @@ jid
 kubectl-df-pv
 kubespy
 lazydocker
+lf
 libcsptr
 ly
 mycli
 palanteer
 pgcli
+polybar
 python-bench-it
 python-configparser
 python-oyaml
@@ -29,6 +31,7 @@ shc
 skypeforlinux-stable-bin
 slack-desktop
 spotify
+tre-command
 xxd-standalone
 yay
 ydiff

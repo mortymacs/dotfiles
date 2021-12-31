@@ -1,5 +1,6 @@
 ack
 alacritty
+alsa-utils
 asciinema
 atop
 atuin
@@ -54,6 +55,7 @@ exa
 fakeroot
 fcgi
 fd
+feh
 file
 file-roller
 findutils
@@ -136,6 +138,10 @@ htop
 httpie
 hugo
 hyperfine
+i3-wm
+i3blocks
+i3lock
+i3status
 iftop
 inetutils
 inotify-tools
