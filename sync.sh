@@ -8,7 +8,7 @@ cp "$HOME"/{.zshrc,.zsh_aliases,.p10k.zsh} zsh/
 rm -rf tmux/*
 cp "$HOME"/.tmux.conf tmux/
 
-# Alacritty
+# alacritty
 rm -rf alacritty/*
 cp "$HOME"/.alacritty.yml alacritty/
 
@@ -46,24 +46,17 @@ pacman -Qqem > pacman/thirdparty.txt
 rm -rf docker/*
 cat "$HOME"/.docker/config.json | jq 'del(.auths)' | tee docker/config.json
 
-# Liferea
+# liferea
 rm -rf liferea
 cp -R "$HOME"/.config/liferea/ .
 
-# Gnome shell extensions
-rm -rf gnome/extensions/*
-cp -R "$HOME"/.local/share/gnome-shell/extensions gnome/extensions
+# i3
+rm -rf i3
+cp -R "$HOME"/.config/i3/ .
 
 # Fonts
 rm -rf gnome/fonts/*
 cp -R "$HOME"/.local/share/fonts/{Code\ New\ Roman\ Nerd\ Font\ Complete\ Mono.otf,Code\ New\ Roman\ Bold\ Nerd\ Font\ Complete\ Mono.otf,Code\ New\ Roman\ Italic\ Nerd\ Font\ Complete\ Mono.otf} gnome/fonts/
-
-# Background
-cp "$HOME"/Pictures/wallpaper.jpg gnome/
-
-# upddate gnome settings.
-gsettings set org.gnome.desktop.default-applications.terminal exec /usr/bin/alacritty
-gsettings set org.gnome.desktop.default-applications.terminal exec-arg ""
 
 # push changes.
 git status -s

@@ -31,6 +31,7 @@ shc
 skypeforlinux-stable-bin
 slack-desktop
 spotify
+spotify-tui
 tre-command
 xxd-standalone
 yay

@@ -46,11 +46,13 @@ alias br="br -dp"
 socket-to-http() { socat TCP-LISTEN:"${2:-8000}",reuseaddr,fork UNIX-CLIENT:"${1}" }
 # https://www.howtogeek.com/414574/how-to-burn-an-iso-file-to-a-usb-drive-in-linux/
 iso-to-usb() { sudo dd bs=4M if="${1}" of="${2}" conv=fdatasync status=progress }
+alias calc="qalc"
 
 # ---------------------------------------------- git
 alias gs="git status"
 alias gd="git diff"
 alias gp="git push"
+alias gch="git branch -a | fzf | tr -d '[:space:]' | xargs git checkout"
 
 # ---------------------------------------------- server
 alias p="gping 8.8.8.8"
