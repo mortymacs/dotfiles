@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# x
+rm -rf x/*
+cp "$HOME"/.xinitrc x/
+
 # zsh
 rm -rf zsh/*
 cp "$HOME"/{.zshrc,.zsh_aliases,.p10k.zsh} zsh/
