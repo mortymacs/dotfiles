@@ -13,7 +13,6 @@ google-crc32c
 hotspot
 insomnia-bin
 jid
-kubectl-df-pv
 kubespy
 lazydocker
 lf
@@ -31,7 +30,6 @@ shc
 skypeforlinux-stable-bin
 slack-desktop
 spotify
-spotify-tui
 tre-command
 twmn-git
 xxd-standalone
