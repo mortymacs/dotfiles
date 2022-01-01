@@ -46,17 +46,13 @@ pacman -Qqem > pacman/thirdparty.txt
 rm -rf docker/*
 cat "$HOME"/.docker/config.json | jq 'del(.auths)' | tee docker/config.json
 
-# liferea
-rm -rf liferea
-cp -R "$HOME"/.config/liferea/ .
-
 # i3
 rm -rf i3
 cp -R "$HOME"/.config/i3/ .
 
-# Fonts
-rm -rf gnome/fonts/*
-cp -R "$HOME"/.local/share/fonts/{Code\ New\ Roman\ Nerd\ Font\ Complete\ Mono.otf,Code\ New\ Roman\ Bold\ Nerd\ Font\ Complete\ Mono.otf,Code\ New\ Roman\ Italic\ Nerd\ Font\ Complete\ Mono.otf} gnome/fonts/
+# fonts
+rm -rf fonts/*
+cp -R "$HOME"/.local/share/fonts/{Code\ New\ Roman\ Nerd\ Font\ Complete\ Mono.otf,Code\ New\ Roman\ Bold\ Nerd\ Font\ Complete\ Mono.otf,Code\ New\ Roman\ Italic\ Nerd\ Font\ Complete\ Mono.otf} fonts/
 
 # push changes.
 git status -s
