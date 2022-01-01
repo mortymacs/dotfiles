@@ -272,7 +272,6 @@ sushi
 syntax-highlighting
 syslog-ng
 systemd-resolvconf
-telegram-desktop
 terraform
 testdisk
 texinfo
