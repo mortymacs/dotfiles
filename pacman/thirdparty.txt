@@ -22,7 +22,6 @@ ly
 mycli
 palanteer
 pgcli
-polybar
 python-bench-it
 python-configparser
 python-oyaml
