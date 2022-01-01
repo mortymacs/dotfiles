@@ -89,13 +89,11 @@ class ExtensionDBusInterface {
     }
 
     BeginResizeVertical() {
-        if (window_manager)
-            window_manager.unmaximize_for_resize(Meta.MaximizeFlags.VERTICAL);
+        window_manager.unmaximize_for_resize(Meta.MaximizeFlags.VERTICAL);
     }
 
     BeginResizeHorizontal() {
-        if (window_manager)
-            window_manager.unmaximize_for_resize(Meta.MaximizeFlags.HORIZONTAL);
+        window_manager.unmaximize_for_resize(Meta.MaximizeFlags.HORIZONTAL);
     }
 
     Toggle() {
@@ -106,13 +104,21 @@ class ExtensionDBusInterface {
         activate();
     }
 
+    GetTargetRect() {
+        /*
+         * Don't want to track mouse pointer continuously, so try to update the
+         * index manually in multiple places. Also, Meta.CursorTracker doesn't
+         * seem to work properly in X11 session.
+         */
+        if (!window_manager.current_window)
+            window_manager.update_monitor_index();
+
+        const r = window_manager.target_rect;
+        return [r.x, r.y, r.width, r.height];
+    }
+
     get TargetRect() {
-        if (window_manager) {
-            const r = window_manager.target_rect;
-            return [r.x, r.y, r.width, r.height];
-        } else {
-            return [0, 0, 0, 0];
-        }
+        return this.GetTargetRect();
     }
 }
 

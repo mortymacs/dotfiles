@@ -664,11 +664,11 @@
     <property name="page-increment">0.10</property>
   </object>
   <template class="Gjs_PrefsWidget" parent="GtkBox">
-    <property name="can-focus">0</property>
     <property name="hexpand">1</property>
     <property name="vexpand">1</property>
     <child>
       <object class="GtkStackSidebar">
+        <property name="focusable">1</property>
         <property name="stack">stack</property>
       </object>
     </child>
@@ -701,6 +701,7 @@
                 <child>
                   <object class="GtkScale" id="window_size_scale">
                     <property name="draw-value">1</property>
+                    <property name="focusable">1</property>
                     <property name="hexpand">1</property>
                     <property name="adjustment">window_size_adjustment</property>
                     <property name="show-fill-level">1</property>
@@ -816,6 +817,7 @@
                 <child>
                   <object class="GtkCheckButton">
                     <property name="label" translatable="yes">_Resizable</property>
+                    <property name="focusable">1</property>
                     <property name="action-name">settings.window-resizable</property>
                     <property name="use-underline">1</property>
                     <layout>
@@ -828,6 +830,7 @@
                 <child>
                   <object class="GtkCheckButton" id="window_above_check">
                     <property name="label" translatable="yes">_Above all windows</property>
+                    <property name="focusable">1</property>
                     <property name="action-name">settings.window-above</property>
                     <property name="use-underline">1</property>
                     <layout>
@@ -840,6 +843,7 @@
                 <child>
                   <object class="GtkCheckButton" id="window_stick_check">
                     <property name="label" translatable="yes">On all _workspaces</property>
+                    <property name="focusable">1</property>
                     <property name="action-name">settings.window-stick</property>
                     <property name="use-underline">1</property>
                     <layout>
@@ -852,6 +856,7 @@
                 <child>
                   <object class="GtkCheckButton" id="hide_when_focus_lost_check">
                     <property name="label" translatable="yes">Hide when the application loses _focus</property>
+                    <property name="focusable">1</property>
                     <property name="action-name">settings.hide-when-focus-lost</property>
                     <property name="use-underline">1</property>
                     <layout>
@@ -864,6 +869,7 @@
                 <child>
                   <object class="GtkCheckButton" id="hide_window_on_esc_check">
                     <property name="label" translatable="yes">Hide when _Esc key is pressed</property>
+                    <property name="focusable">1</property>
                     <property name="action-name">settings.hide-window-on-esc</property>
                     <property name="use-underline">1</property>
                     <layout>
@@ -876,6 +882,7 @@
                 <child>
                   <object class="GtkCheckButton" id="window_skip_taskbar_check">
                     <property name="label" translatable="yes">Exclude from _overview/task bar</property>
+                    <property name="focusable">1</property>
                     <property name="action-name">settings.window-skip-taskbar</property>
                     <property name="use-underline">1</property>
                     <layout>
@@ -888,6 +895,7 @@
                 <child>
                   <object class="GtkCheckButton" id="pointer_autohide_check">
                     <property name="label" translatable="yes">Hide mouse _pointer when typing</property>
+                    <property name="focusable">1</property>
                     <property name="action-name">settings.pointer-autohide</property>
                     <property name="use-underline">1</property>
                     <layout>
@@ -901,6 +909,7 @@
                   <object class="GtkCheckButton" id="force_gdk_x11_check">
                     <property name="label" translatable="yes">Force _X11 GDK backend (XWayland).
 You&apos;ll have to close all tabs for this option to take effect.</property>
+                    <property name="focusable">1</property>
                     <property name="action-name">settings.force-x11-gdk-backend</property>
                     <property name="use-underline">1</property>
                     <layout>
@@ -963,6 +972,7 @@ You&apos;ll have to close all tabs for this option to take effect.</property>
                 <child>
                   <object class="GtkCheckButton">
                     <property name="label" translatable="yes">_Override default window animations</property>
+                    <property name="focusable">1</property>
                     <property name="action-name">settings.override-window-animation</property>
                     <property name="use-underline">1</property>
                     <layout>
@@ -1058,6 +1068,7 @@ You&apos;ll have to close all tabs for this option to take effect.</property>
                 <child>
                   <object class="GtkCheckButton" id="expand_tabs_check">
                     <property name="label" translatable="yes">Expand tab _headers</property>
+                    <property name="focusable">1</property>
                     <property name="action-name">settings.tab-expand</property>
                     <property name="use-underline">1</property>
                     <layout>
@@ -1070,6 +1081,7 @@ You&apos;ll have to close all tabs for this option to take effect.</property>
                 <child>
                   <object class="GtkCheckButton" id="show_tab_close_buttons_check">
                     <property name="label" translatable="yes">Show _close buttons</property>
+                    <property name="focusable">1</property>
                     <property name="action-name">settings.tab-close-buttons</property>
                     <property name="use-underline">1</property>
                     <layout>
@@ -1082,6 +1094,7 @@ You&apos;ll have to close all tabs for this option to take effect.</property>
                 <child>
                   <object class="GtkCheckButton" id="show_new_tab_button_check">
                     <property name="label" translatable="yes">&quot;_New Tab (Last)&quot; button</property>
+                    <property name="focusable">1</property>
                     <property name="action-name">settings.new-tab-button</property>
                     <property name="use-underline">1</property>
                     <layout>
@@ -1094,6 +1107,7 @@ You&apos;ll have to close all tabs for this option to take effect.</property>
                 <child>
                   <object class="GtkCheckButton" id="show_tab_switcher_check">
                     <property name="label" translatable="yes">Tab _switcher popup</property>
+                    <property name="focusable">1</property>
                     <property name="action-name">settings.tab-switcher-popup</property>
                     <property name="use-underline">1</property>
                     <layout>
@@ -1143,6 +1157,7 @@ You&apos;ll have to close all tabs for this option to take effect.</property>
                 </child>
                 <child>
                   <object class="GtkTextView" id="tab_title_template_text_view">
+                    <property name="focusable">1</property>
                     <property name="hexpand">1</property>
                     <property name="wrap-mode">word</property>
                     <property name="buffer">tab_title_template_buffer</property>
@@ -1155,6 +1170,7 @@ You&apos;ll have to close all tabs for this option to take effect.</property>
                 </child>
                 <child>
                   <object class="GtkScrolledWindow">
+                    <property name="focusable">1</property>
                     <property name="propagate-natural-width">1</property>
                     <property name="propagate-natural-height">1</property>
                     <property name="child">
@@ -1176,8 +1192,8 @@ Following variables are available:
 Following helpers are available:
 - &lt;tt&gt;filename-from-uri&lt;/tt&gt;
 - &lt;tt&gt;hostname-from-uri&lt;/tt&gt;
-- &lt;tt&gt;truncate-chars&lt;/tt&gt;
-      example: &lt;tt&gt;{{truncate-chars window-title 20}}&lt;/tt&gt;</property>
+- &lt;tt&gt;ellipsize&lt;/tt&gt; or &lt;tt&gt;truncate-chars&lt;/tt&gt;
+      example: &lt;tt&gt;{{ellipsize window-title 20}}&lt;/tt&gt;</property>
                             <property name="use-markup">1</property>
                             <property name="wrap">1</property>
                             <property name="xalign">0</property>
@@ -1195,6 +1211,7 @@ Following helpers are available:
                 <child>
                   <object class="GtkButton" id="reset_tab_title_button">
                     <property name="label" translatable="yes">_Reset to default</property>
+                    <property name="focusable">1</property>
                     <property name="receives-default">1</property>
                     <property name="use-underline">1</property>
                     <layout>
@@ -1206,6 +1223,7 @@ Following helpers are available:
                 <child>
                   <object class="GtkCheckButton" id="show_new_tab_front_button_check">
                     <property name="label" translatable="yes">&quot;_New Tab (First)&quot; button</property>
+                    <property name="focusable">1</property>
                     <property name="action-name">settings.new-tab-front-button</property>
                     <property name="use-underline">1</property>
                     <layout>
@@ -1243,6 +1261,7 @@ Following helpers are available:
                 <child>
                   <object class="GtkCheckButton" id="show_tab_border">
                     <property name="label" translatable="yes">Show border</property>
+                    <property name="focusable">1</property>
                     <property name="action-name">settings.notebook-border</property>
                     <property name="use-underline">1</property>
                     <layout>
@@ -1270,6 +1289,7 @@ Following helpers are available:
                 <child>
                   <object class="GtkCheckButton" id="custom_font_check">
                     <property name="label" translatable="yes">Custom _font:</property>
+                    <property name="focusable">1</property>
                     <property name="use-underline">1</property>
                     <layout>
                       <property name="column">0</property>
@@ -1359,6 +1379,7 @@ Following helpers are available:
                 <child>
                   <object class="GtkCheckButton" id="allow_hyperlink_check">
                     <property name="label" translatable="yes">Allow _hyperlinks</property>
+                    <property name="focusable">1</property>
                     <property name="action-name">settings.allow-hyperlink</property>
                     <property name="use-underline">1</property>
                     <layout>
@@ -1371,6 +1392,7 @@ Following helpers are available:
                 <child>
                   <object class="GtkCheckButton" id="audible_bell_check">
                     <property name="label" translatable="yes">Audible _bell</property>
+                    <property name="focusable">1</property>
                     <property name="action-name">settings.audible-bell</property>
                     <property name="use-underline">1</property>
                     <layout>
@@ -1385,6 +1407,7 @@ Following helpers are available:
                     <property name="hexpand">1</property>
                     <child>
                       <object class="GtkFontButton" id="font_chooser">
+                        <property name="focusable">1</property>
                         <property name="receives-default">1</property>
                         <property name="font">Sans 12</property>
                         <property name="use-font">1</property>
@@ -1400,6 +1423,7 @@ Following helpers are available:
                 <child>
                   <object class="GtkCheckButton">
                     <property name="label" translatable="yes">Detect _URLs</property>
+                    <property name="focusable">1</property>
                     <property name="action-name">settings.detect-urls</property>
                     <property name="use-underline">1</property>
                     <layout>
@@ -1417,36 +1441,42 @@ Following helpers are available:
                     <child>
                       <object class="GtkCheckButton">
                         <property name="label" translatable="yes">Detect raw URLs (scheme://netloc/path)</property>
+                        <property name="focusable">1</property>
                         <property name="action-name">settings.detect-urls-as-is</property>
                       </object>
                     </child>
                     <child>
                       <object class="GtkCheckButton">
                         <property name="label" translatable="yes">Detect file: URLs</property>
+                        <property name="focusable">1</property>
                         <property name="action-name">settings.detect-urls-file</property>
                       </object>
                     </child>
                     <child>
                       <object class="GtkCheckButton">
                         <property name="label" translatable="yes">Detect HTTP URLs</property>
+                        <property name="focusable">1</property>
                         <property name="action-name">settings.detect-urls-http</property>
                       </object>
                     </child>
                     <child>
                       <object class="GtkCheckButton">
                         <property name="label" translatable="yes">Detect VoIP URLs</property>
+                        <property name="focusable">1</property>
                         <property name="action-name">settings.detect-urls-voip</property>
                       </object>
                     </child>
                     <child>
                       <object class="GtkCheckButton">
                         <property name="label" translatable="yes">Detect E-mail addresses</property>
+                        <property name="focusable">1</property>
                         <property name="action-name">settings.detect-urls-email</property>
                       </object>
                     </child>
                     <child>
                       <object class="GtkCheckButton">
                         <property name="label" translatable="yes">Detect news:/man: URLs</property>
+                        <property name="focusable">1</property>
                         <property name="action-name">settings.detect-urls-news-man</property>
                       </object>
                     </child>
@@ -1501,6 +1531,7 @@ Following helpers are available:
                 <child>
                   <object class="GtkCheckButton" id="theme_colors_check">
                     <property name="label" translatable="yes">Use colors from system _theme</property>
+                    <property name="focusable">1</property>
                     <property name="action-name">settings.use-theme-colors</property>
                     <property name="use-underline">1</property>
                     <layout>
@@ -1545,6 +1576,7 @@ Following helpers are available:
                     <child>
                       <object class="GtkCheckButton" id="bold_color_check">
                         <property name="label" translatable="yes">Bold color:</property>
+                        <property name="focusable">1</property>
                         <layout>
                           <property name="column">0</property>
                           <property name="row">3</property>
@@ -1554,6 +1586,7 @@ Following helpers are available:
                     <child>
                       <object class="GtkCheckButton" id="cursor_color_check">
                         <property name="label" translatable="yes">Cursor color:</property>
+                        <property name="focusable">1</property>
                         <property name="action-name">settings.cursor-colors-set</property>
                         <layout>
                           <property name="column">0</property>
@@ -1564,6 +1597,7 @@ Following helpers are available:
                     <child>
                       <object class="GtkCheckButton" id="highlight_color_check">
                         <property name="label" translatable="yes">Highlight color:</property>
+                        <property name="focusable">1</property>
                         <property name="action-name">settings.highlight-colors-set</property>
                         <layout>
                           <property name="column">0</property>
@@ -1608,6 +1642,7 @@ Following helpers are available:
                         <property name="halign">center</property>
                         <child>
                           <object class="GtkColorButton" id="foreground_color">
+                            <property name="focusable">1</property>
                             <property name="receives-default">1</property>
                             <property name="title" translatable="yes">Foreground Color</property>
                           </object>
@@ -1623,6 +1658,7 @@ Following helpers are available:
                         <property name="halign">center</property>
                         <child>
                           <object class="GtkColorButton" id="background_color">
+                            <property name="focusable">1</property>
                             <property name="receives-default">1</property>
                             <property name="title" translatable="yes">Background Color</property>
                           </object>
@@ -1638,6 +1674,7 @@ Following helpers are available:
                         <property name="halign">center</property>
                         <child>
                           <object class="GtkColorButton" id="bold_color">
+                            <property name="focusable">1</property>
                             <property name="receives-default">1</property>
                             <property name="title" translatable="yes">Bold Color</property>
                           </object>
@@ -1653,6 +1690,7 @@ Following helpers are available:
                         <property name="halign">center</property>
                         <child>
                           <object class="GtkColorButton" id="cursor_foreground_color">
+                            <property name="focusable">1</property>
                             <property name="receives-default">1</property>
                             <property name="title" translatable="yes">Cursor Foreground Color</property>
                           </object>
@@ -1668,6 +1706,7 @@ Following helpers are available:
                         <property name="halign">center</property>
                         <child>
                           <object class="GtkColorButton" id="cursor_background_color">
+                            <property name="focusable">1</property>
                             <property name="receives-default">1</property>
                             <property name="title" translatable="yes">Cursor Background Color</property>
                           </object>
@@ -1683,6 +1722,7 @@ Following helpers are available:
                         <property name="halign">center</property>
                         <child>
                           <object class="GtkColorButton" id="highlight_foreground_color">
+                            <property name="focusable">1</property>
                             <property name="receives-default">1</property>
                             <property name="title" translatable="yes">Highlight Foreground Color</property>
                           </object>
@@ -1698,6 +1738,7 @@ Following helpers are available:
                         <property name="halign">center</property>
                         <child>
                           <object class="GtkColorButton" id="highlight_background_color">
+                            <property name="focusable">1</property>
                             <property name="receives-default">1</property>
                             <property name="title" translatable="yes">Highlight Background Color</property>
                           </object>
@@ -1718,6 +1759,7 @@ Following helpers are available:
                 <child>
                   <object class="GtkCheckButton" id="background_opacity_check">
                     <property name="label" translatable="yes">_Background opacity:</property>
+                    <property name="focusable">1</property>
                     <property name="action-name">settings.transparent-background</property>
                     <property name="use-underline">1</property>
                     <layout>
@@ -1734,6 +1776,7 @@ Following helpers are available:
                         <property name="hexpand">1</property>
                         <property name="draw-value">1</property>
                         <property name="width-request">200</property>
+                        <property name="focusable">1</property>
                         <property name="adjustment">opacity_adjustment</property>
                         <property name="show-fill-level">1</property>
                         <property name="round-digits">2</property>
@@ -1783,6 +1826,7 @@ Following helpers are available:
                     <property name="column-homogeneous">1</property>
                     <child>
                       <object class="GtkColorButton" id="palette0">
+                        <property name="focusable">1</property>
                         <property name="receives-default">1</property>
                         <property name="title" translatable="yes">Palette Color 0</property>
                         <property name="show-editor">1</property>
@@ -1794,6 +1838,7 @@ Following helpers are available:
                     </child>
                     <child>
                       <object class="GtkColorButton" id="palette1">
+                        <property name="focusable">1</property>
                         <property name="receives-default">1</property>
                         <property name="title" translatable="yes">Palette Color 1</property>
                         <property name="show-editor">1</property>
@@ -1805,6 +1850,7 @@ Following helpers are available:
                     </child>
                     <child>
                       <object class="GtkColorButton" id="palette2">
+                        <property name="focusable">1</property>
                         <property name="receives-default">1</property>
                         <property name="title" translatable="yes">Palette Color 2</property>
                         <property name="show-editor">1</property>
@@ -1816,6 +1862,7 @@ Following helpers are available:
                     </child>
                     <child>
                       <object class="GtkColorButton" id="palette3">
+                        <property name="focusable">1</property>
                         <property name="receives-default">1</property>
                         <property name="title" translatable="yes">Palette Color 3</property>
                         <property name="show-editor">1</property>
@@ -1827,6 +1874,7 @@ Following helpers are available:
                     </child>
                     <child>
                       <object class="GtkColorButton" id="palette4">
+                        <property name="focusable">1</property>
                         <property name="receives-default">1</property>
                         <property name="title" translatable="yes">Palette Color 4</property>
                         <property name="show-editor">1</property>
@@ -1838,6 +1886,7 @@ Following helpers are available:
                     </child>
                     <child>
                       <object class="GtkColorButton" id="palette5">
+                        <property name="focusable">1</property>
                         <property name="receives-default">1</property>
                         <property name="title" translatable="yes">Palette Color 5</property>
                         <property name="show-editor">1</property>
@@ -1849,6 +1898,7 @@ Following helpers are available:
                     </child>
                     <child>
                       <object class="GtkColorButton" id="palette6">
+                        <property name="focusable">1</property>
                         <property name="receives-default">1</property>
                         <property name="title" translatable="yes">Palette Color 6</property>
                         <property name="show-editor">1</property>
@@ -1860,6 +1910,7 @@ Following helpers are available:
                     </child>
                     <child>
                       <object class="GtkColorButton" id="palette7">
+                        <property name="focusable">1</property>
                         <property name="receives-default">1</property>
                         <property name="title" translatable="yes">Palette Color 7</property>
                         <property name="show-editor">1</property>
@@ -1871,6 +1922,7 @@ Following helpers are available:
                     </child>
                     <child>
                       <object class="GtkColorButton" id="palette8">
+                        <property name="focusable">1</property>
                         <property name="receives-default">1</property>
                         <property name="title" translatable="yes">Palette Color 8</property>
                         <property name="show-editor">1</property>
@@ -1882,6 +1934,7 @@ Following helpers are available:
                     </child>
                     <child>
                       <object class="GtkColorButton" id="palette9">
+                        <property name="focusable">1</property>
                         <property name="receives-default">1</property>
                         <property name="title" translatable="yes">Palette Color 9</property>
                         <property name="show-editor">1</property>
@@ -1893,6 +1946,7 @@ Following helpers are available:
                     </child>
                     <child>
                       <object class="GtkColorButton" id="palette10">
+                        <property name="focusable">1</property>
                         <property name="receives-default">1</property>
                         <property name="title" translatable="yes">Palette Color 10</property>
                         <property name="show-editor">1</property>
@@ -1904,6 +1958,7 @@ Following helpers are available:
                     </child>
                     <child>
                       <object class="GtkColorButton" id="palette11">
+                        <property name="focusable">1</property>
                         <property name="receives-default">1</property>
                         <property name="title" translatable="yes">Palette Color 11</property>
                         <property name="show-editor">1</property>
@@ -1915,6 +1970,7 @@ Following helpers are available:
                     </child>
                     <child>
                       <object class="GtkColorButton" id="palette12">
+                        <property name="focusable">1</property>
                         <property name="receives-default">1</property>
                         <property name="title" translatable="yes">Palette Color 12</property>
                         <property name="show-editor">1</property>
@@ -1926,6 +1982,7 @@ Following helpers are available:
                     </child>
                     <child>
                       <object class="GtkColorButton" id="palette13">
+                        <property name="focusable">1</property>
                         <property name="receives-default">1</property>
                         <property name="title" translatable="yes">Palette Color 13</property>
                         <property name="show-editor">1</property>
@@ -1937,6 +1994,7 @@ Following helpers are available:
                     </child>
                     <child>
                       <object class="GtkColorButton" id="palette14">
+                        <property name="focusable">1</property>
                         <property name="receives-default">1</property>
                         <property name="title" translatable="yes">Palette Color 14</property>
                         <property name="show-editor">1</property>
@@ -1948,6 +2006,7 @@ Following helpers are available:
                     </child>
                     <child>
                       <object class="GtkColorButton" id="palette15">
+                        <property name="focusable">1</property>
                         <property name="receives-default">1</property>
                         <property name="title" translatable="yes">Palette Color 15</property>
                         <property name="show-editor">1</property>
@@ -1966,6 +2025,7 @@ Following helpers are available:
                 <child>
                   <object class="GtkCheckButton" id="bold_is_bright_check">
                     <property name="label" translatable="yes">Show bold text in _bright colors</property>
+                    <property name="focusable">1</property>
                     <property name="action-name">settings.bold-is-bright</property>
                     <property name="use-underline">1</property>
                     <layout>
@@ -1978,6 +2038,7 @@ Following helpers are available:
                 <child>
                   <object class="GtkButton" id="copy_gnome_terminal_profile_button">
                     <property name="label" translatable="yes">Copy profile from GNOME Terminal</property>
+                    <property name="focusable">1</property>
                     <property name="receives-default">1</property>
                     <layout>
                       <property name="column">0</property>
@@ -2040,6 +2101,7 @@ Following helpers are available:
                     <property name="hexpand">1</property>
                     <child>
                       <object class="GtkEntry" id="custom_command_entry">
+                        <property name="focusable">1</property>
                         <property name="hexpand">1</property>
                       </object>
                     </child>
@@ -2052,6 +2114,7 @@ Following helpers are available:
                 <child>
                   <object class="GtkCheckButton">
                     <property name="label" translatable="yes">Preserve working directory</property>
+                    <property name="focusable">1</property>
                     <property name="action-name">settings.preserve-working-directory</property>
                     <layout>
                       <property name="column">0</property>
@@ -2078,6 +2141,7 @@ Following helpers are available:
                 <child>
                   <object class="GtkCheckButton" id="show_scrollbar_check">
                     <property name="label" translatable="yes">Show _scrollbar</property>
+                    <property name="focusable">1</property>
                     <property name="action-name">settings.show-scrollbar</property>
                     <property name="use-underline">1</property>
                     <layout>
@@ -2090,6 +2154,7 @@ Following helpers are available:
                 <child>
                   <object class="GtkCheckButton" id="scroll_on_output_check">
                     <property name="label" translatable="yes">Scroll on _output</property>
+                    <property name="focusable">1</property>
                     <property name="action-name">settings.scroll-on-output</property>
                     <property name="use-underline">1</property>
                     <layout>
@@ -2102,6 +2167,7 @@ Following helpers are available:
                 <child>
                   <object class="GtkCheckButton" id="scoll_on_keystroke_check">
                     <property name="label" translatable="yes">Scroll on _keystroke</property>
+                    <property name="focusable">1</property>
                     <property name="action-name">settings.scroll-on-keystroke</property>
                     <property name="use-underline">1</property>
                     <layout>
@@ -2114,6 +2180,7 @@ Following helpers are available:
                 <child>
                   <object class="GtkCheckButton" id="limit_scrollback_check">
                     <property name="label" translatable="yes">_Limit scrollback to:</property>
+                    <property name="focusable">1</property>
                     <property name="use-underline">1</property>
                     <layout>
                       <property name="column">0</property>
@@ -2126,6 +2193,7 @@ Following helpers are available:
                     <property name="spacing">10</property>
                     <child>
                       <object class="GtkSpinButton" id="scrollback_spin">
+                        <property name="focusable">1</property>
                         <property name="adjustment">scrollback_adjustment</property>
                         <property name="snap-to-ticks">1</property>
                         <property name="numeric">1</property>
@@ -2243,6 +2311,7 @@ Following helpers are available:
                 <child>
                   <object class="GtkButton" id="reset_compatibility_button">
                     <property name="label" translatable="yes">_Reset Compatibility Options to Defaults</property>
+                    <property name="focusable">1</property>
                     <property name="receives-default">1</property>
                     <property name="use-underline">1</property>
                     <layout>
@@ -2269,8 +2338,10 @@ Following helpers are available:
                 <property name="spacing">10</property>
                 <child>
                   <object class="GtkScrolledWindow">
+                    <property name="focusable">1</property>
                     <property name="child">
                       <object class="GtkTreeView">
+                        <property name="focusable">1</property>
                         <property name="model">global_shortcuts_list</property>
                         <property name="search-column">0</property>
                         <child internal-child="selection">
@@ -2310,6 +2381,7 @@ Following helpers are available:
                 <child>
                   <object class="GtkCheckButton" id="enable_shortcuts_check">
                     <property name="label" translatable="yes">_Enable application shortcuts</property>
+                    <property name="focusable">1</property>
                     <property name="action-name">settings.shortcuts-enabled</property>
                     <property name="use-underline">1</property>
                   </object>
@@ -2317,8 +2389,10 @@ Following helpers are available:
                 <child>
                   <object class="GtkScrolledWindow">
                     <property name="vexpand">1</property>
+                    <property name="focusable">1</property>
                     <property name="child">
                       <object class="GtkTreeView" id="shortcuts_treeview">
+                        <property name="focusable">1</property>
                         <property name="model">shortcuts_list</property>
                         <child internal-child="selection">
                           <object class="GtkTreeSelection"/>

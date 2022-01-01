@@ -32,6 +32,7 @@ along with ddterm GNOME Shell extension.  If not, see <http://www.gnu.org/licens
   </object>
   <object class="GtkEventBox" id="tab_label">
     <property name="visible">1</property>
+    <property name="visible-window">0</property>
     <child>
       <object class="GtkBox">
         <property name="visible">1</property>
@@ -50,6 +51,7 @@ along with ddterm GNOME Shell extension.  If not, see <http://www.gnu.org/licens
           <object class="GtkButton" id="close_button">
             <property name="visible">1</property>
             <property name="can-focus">1</property>
+            <property name="focus-on-click">0</property>
             <property name="receives-default">1</property>
             <property name="action-name">page.close</property>
             <property name="image">close_icon</property>

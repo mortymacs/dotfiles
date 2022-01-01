@@ -9,24 +9,24 @@ window:
 background_opacity: 0.98
 
 # Font configuration (changes require restart).
-# Alternative font: CodeNewRoman Nerd Font Mono
+# Alternative font: JetBrains Mono
 font:
   size: 14
   normal:
-    family: JetBrains Mono
-    style: Medium
+    family: CodeNewRoman Nerd Font Mono
+    style: Regular
 
   bold:
-    family: JetBrains Mono
+    family: CodeNewRoman Nerd Font Mono
     style: Bold
 
   italic:
-    family: JetBrains Mono
+    family: CodeNewRoman Nerd Font Mono
     style: Italic
 
   offset:
     x: 0
-    y: 0
+    y: 3
 
 # Color configuration.
 # https://github.com/alacritty/alacritty/wiki/Color-schemes
