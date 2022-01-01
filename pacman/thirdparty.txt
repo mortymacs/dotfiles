@@ -34,6 +34,7 @@ slack-desktop
 spotify
 spotify-tui
 tre-command
+twmn-git
 xxd-standalone
 yay
 ydiff
