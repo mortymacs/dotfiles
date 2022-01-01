@@ -51,8 +51,9 @@ rm -rf lf
 cp -R "$HOME"/.config/lf/ .
 
 # i3
-rm -rf i3
+rm -rf i3 i3status
 cp -R "$HOME"/.config/i3/ .
+cp -R "$HOME"/.config/i3status/ .
 
 # fonts
 rm -rf fonts/*
