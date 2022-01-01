@@ -46,6 +46,10 @@ pacman -Qqem > pacman/thirdparty.txt
 rm -rf docker/*
 cat "$HOME"/.docker/config.json | jq 'del(.auths)' | tee docker/config.json
 
+# lf
+rm -rf lf
+cp -R "$HOME"/.config/lf/ .
+
 # i3
 rm -rf i3
 cp -R "$HOME"/.config/i3/ .

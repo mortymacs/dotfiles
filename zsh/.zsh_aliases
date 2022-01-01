@@ -1,74 +1,93 @@
-# ---------------------------------------------- general
-alias grep="grep -n --color"
-alias gg="rg -i --pretty -g '!*/test/*' -g '!*/tests/*' -g '!*/docs/*' -g '!*/examples/*' -g '!*.md'"
-alias rm="trash"
+# general
 alias ls="exa --git -lh --octal-permissions --color-scale"
 alias l="ls"
-alias reload="source ~/.zshrc"
+alias rm="trash"
 ## http://www.bashoneliners.com/oneliners/235/
 mkcd(){ mkdir -p "$1" && cd "$1" }
 ## https://superuser.com/a/1545418/298390
-atree(){ tar -tf "$1" | tree --fromfile . }
+tar-tree(){ tar -tf "$1" | tree --fromfile . }
 rmr(){ [ -n "$1" ] && (fd -I "$1" | xargs rm -rf --) }
+rme(){ ls | \grep -v "$1" | xargs rm -rf }
+alias du="dust -b"
 
-# ---------------------------------------------- Monitors
+# text
+alias grep="grep -n --color"
+alias gg="rg -i --pretty -g '!*/test/*' -g '!*/tests/*' -g '!*/docs/*' -g '!*/examples/*' -g '!*.md'"
+alias cat="bat"
+alias less="less -N"
+
+# mics
+alias reload="source ~/.zshrc"
+website-capture(){ wkhtmltoimage --format png --quality 100 "$1" "$1".png }
+# https://stackoverflow.com/a/27229914/2338672
+socket-to-http() { socat TCP-LISTEN:"${2:-8000}",reuseaddr,fork UNIX-CLIENT:"${1}" }
+# https://www.howtogeek.com/414574/how-to-burn-an-iso-file-to-a-usb-drive-in-linux/
+iso-to-usb() { sudo dd bs=4M if="${1}" of="${2}" conv=fdatasync status=progress }
+
+# system
+alias u="yay -Syu && v -c :PlugUpgrade +quitall && v -c :PlugUpdate +quitall && v -c :CocUpdateSync +quitall && v -c :BlackUpgrade +quitall && z dot && ./sync.sh && cd -"
+
+# monitor
 # https://blog.summercat.com/configuring-mixed-dpi-monitors-with-xrandr.html
 # https://www.youtube.com/watch?v=wu2NWw2wPaA
 alias external-monitor="xrandr --output DP1 --scale 1x1 --output eDP1 --off && xrandr --dpi 100 --output DP1 --auto && i3-msg restart > /dev/null"
 alias internal-monitor="xrandr --dpi 200 --output eDP1 --auto --output DP1 --off && i3-msg restart > /dev/null"
 
-# ---------------------------------------------- utility
+# utility
 alias pdf="evince"
 alias ascii="graph-easy --from=dot --as_ascii"
-alias cat="bat"
 alias fm="lf"
 ## https://medium.com/@GroundControl/better-git-diffs-with-fzf-89083739a9cb
 alias f="fzf --cycle -i --preview 'bat {-1} --color=always'"
-alias rmc="rm -rf CMakeFiles/ Testing/ CMakeCache.txt *.cmake Makefile compile_commands.json *.cbp"
-alias u="yay -Syu && v -c :PlugUpgrade +quitall && v -c :PlugUpdate +quitall && v -c :CocUpdateSync +quitall && v -c :BlackUpgrade +quitall && z dot && ./sync.sh && cd -"
 alias o="v \`f || echo '-c :quitall'\`"
-alias diff="ydiff -s --wrap"
-alias tgz='rpyc && rm -f `basename $PWD`.tar.gz && tar --exclude='.venv' --exclude='.git' --exclude='.gitignore' --exclude='.kube' -zcvf `basename $PWD`.tar.gz ./*'
 alias cb="xclip -selection clipboard"
+alias calc="qalc"
+alias br="br -dp"
+
+# process
 alias kp="\ps aux | peco | awk '{print \$2}' | xargs kill -9"
 alias ap="\ps aux | peco"
-rme(){ ls | \grep -v "$1" | xargs rm -rf }
 alias ps="procs"
-alias dig="dog"
-alias du="dust -b"
-alias less="less -N"
-website-capture(){ wkhtmltoimage --format png --quality 100 "$1" "$1".png }
-http-server(){ python -m http.server "$1" }
-code-capture() { silicon "$1" -o $(basename "${1%%.*}.png") --no-window-controls --font "Fira Code" --background '#fff0' --theme Coldark-Dark }
-alias code-info="cloc"
-alias br="br -dp"
-# https://stackoverflow.com/a/27229914/2338672
-socket-to-http() { socat TCP-LISTEN:"${2:-8000}",reuseaddr,fork UNIX-CLIENT:"${1}" }
-# https://www.howtogeek.com/414574/how-to-burn-an-iso-file-to-a-usb-drive-in-linux/
-iso-to-usb() { sudo dd bs=4M if="${1}" of="${2}" conv=fdatasync status=progress }
-alias calc="qalc"
 
-# ---------------------------------------------- git
+# compression
+alias tgz='rpyc && rm -f `basename $PWD`.tar.gz && tar --exclude='.venv' --exclude='.git' --exclude='.gitignore' --exclude='.kube' -zcvf `basename $PWD`.tar.gz ./*'
+
+# git
 alias gs="git status"
 alias gd="git diff"
 alias gp="git push"
 alias gch="git branch -a | fzf | tr -d '[:space:]' | xargs git checkout"
+alias diff="ydiff -s --wrap"
 
-# ---------------------------------------------- server
+# server/proxy
 alias p="gping 8.8.8.8"
+alias x='export http_proxy="http://127.0.0.1:8118"'
+alias dx='export http_proxy=""'
+alias whereiam='echo $(curl -s http://ip-api.com/json | jq -r ".country,.city")'
+alias dig="dog"
+
+# k8s
 alias ms="minikube start --vm-driver kvm2"
 alias k="kubectl"
 alias kx="kubectx"
+
+# docker
 ## http://www.bashoneliners.com/oneliners/252/
 alias dic="docker images -q -f dangling=true | xargs --no-run-if-empty --delim='\n' docker rmi -f"
 dcr(){ docker run -ti --rm "$1" "${2:-bash}" }
 dca(){ docker exec -ti "$1" "${2:-bash}" }
 
-# ---------------------------------------------- development
+# development
 ## https://github.com/universal-ctags/ctags/issues/218#issuecomment-72355190
 alias gt="fd | ctags --links=no -L-"
+http-server(){ python -m http.server "$1" }
+code-capture() { silicon "$1" -o $(basename "${1%%.*}.png") --no-window-controls --font "Fira Code" --background '#fff0' --theme Coldark-Dark }
+alias code-info="cloc"
 
-# ---------------------------------------------- python
+# c/c++
+alias rmc="rm -rf CMakeFiles/ Testing/ CMakeCache.txt *.cmake Makefile compile_commands.json *.cbp"
+
+# python
 alias a="[ -d .venv ] || python -m venv .venv ; [ -d .venv ] && source ./.venv/bin/activate"
 alias as="[ -d .venv ] || python -m venv .venv --system-site-packages ; [ -d .venv ] && source ./.venv/bin/activate"
 alias d="deactivate"
@@ -78,33 +97,28 @@ alias py="python -q"
 alias rpyc="fd -I __pycache__ | xargs rm -rf --"
 alias rpy="fd -I '(build|dist|__pycache__|egg-info)' | xargs rm -rf --"
 
-# ---------------------------------------------- db
+# db
 alias psql="pgcli"
 alias mysql="mycli"
 
-# ---------------------------------------------- editor
+# editor
 alias vim="nvim"
 alias v="nvim"
 alias vv="v ."
 alias hexedit="hexedit -s -m --color"
 
-# ---------------------------------------------- tmux
+# tmux
 alias t='basename $(pwd) | xargs tmux new-session -d -s && tmux attach'
 alias tl="tmux ls -F \#S"
 alias ta="tmux attach"
 alias tq="tl | xargs -n 1 tmux kill-session -t ; tl"
 
-# ---------------------------------------------- proxy
-alias x='export http_proxy="http://127.0.0.1:8118"'
-alias dx='export http_proxy=""'
-alias whereiam='echo $(curl -s http://ip-api.com/json | jq -r ".country,.city")'
-
-# ---------------------------------------------- calendar
+# messenger
 alias irc="irssi"
 
-# ---------------------------------------------- calendar
-#alias c="gcalcli"
-#alias today="c agenda --calendar=morteza '`date --date=\"today\" +\"%a %b %d\"`' '`date --date=\"tomorrow\" +\"%a %b %d\"`'"
-#alias next="gcalcli agenda --military --nostarted --calendar=morteza '`date --date="today" +"%a %b %d"`' '`date --date="tomorrow" +"%a %b %d"`' | cut -d ' ' -f 2- | head -2 | tail -1 | sed -e 's/^[[:space:]]*//'"
-#alias week="c calw --calendar=morteza"
-#alias month="c calm --calendar=morteza"
+# calendar
+alias c="gcalcli"
+alias today="c agenda '`date --date=\"today\" +\"%a %b %d\"`' '`date --date=\"tomorrow\" +\"%a %b %d\"`'"
+alias next="c agenda --military --nostarted '`date --date="today" +"%a %b %d"`' '`date --date="tomorrow" +"%a %b %d"`' | cut -d ' ' -f 2- | head -2 | tail -1 | sed -e 's/^[[:space:]]*//'"
+alias week="c calw"
+alias month="c calm"

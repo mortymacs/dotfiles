@@ -5,6 +5,7 @@ czmq-git
 dive
 dropbox
 dry-bin
+gcalcli
 git-extras
 gitstatus
 glow

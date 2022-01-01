@@ -78,3 +78,6 @@ eval "$(mcfly init zsh)"
 
 # https://github.com/romkatv/powerlevel10k/issues/1474#issuecomment-875062137
 export ZLE_RPROMPT_INDENT=0
+
+# lf
+source ~/.config/lf/icon
