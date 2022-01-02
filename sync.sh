@@ -59,9 +59,9 @@ rm -rf rofi
 cp -R "$HOME"/.config/rofi/ .
 
 # i3
-rm -rf i3 i3status twmn
+rm -rf i3 i3status-rust twmn
 cp -R "$HOME"/.config/i3/ .
-cp -R "$HOME"/.config/i3status/ .
+cp -R "$HOME"/.config/i3status-rust/ .
 cp -R "$HOME"/.config/twmn/ .
 
 # fonts

@@ -123,3 +123,6 @@ alias today="c agenda '`date --date=\"today\" +\"%a %b %d\"`' '`date --date=\"to
 alias next="c agenda --military --nostarted '`date --date="today" +"%a %b %d"`' '`date --date="tomorrow" +"%a %b %d"`' | cut -d ' ' -f 2- | head -2 | tail -1 | sed -e 's/^[[:space:]]*//'"
 alias week="c calw"
 alias month="c calm"
+
+# device.
+function vf() { i3-volume -an -t i3status-rs -u SIGUSR1 set "$1" }

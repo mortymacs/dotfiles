@@ -17,6 +17,7 @@ bind
 binocle
 binutils
 bison
+blueman
 boost
 bottom
 broot
@@ -92,7 +93,7 @@ hyperfine
 i3-wm
 i3blocks
 i3lock
-i3status
+i3status-rust
 iftop
 inetutils
 inotify-tools
@@ -156,6 +157,8 @@ picom
 pkgconf
 prettyping
 procs
+pulseaudio
+pulseaudio-alsa
 pyenv
 python-black
 python-build
