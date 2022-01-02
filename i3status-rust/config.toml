@@ -2,6 +2,11 @@ theme = "native"
 icons = "awesome"
 
 [[block]]
+block = "docker"
+interval = 2
+format = "{running}/{total}"
+
+[[block]]
 block = "disk_space"
 path = "/"
 alias = "/"
@@ -32,6 +37,11 @@ block = "sound"
 #command = "i3-volume output \"%i %v %p\n\""
 #on_click = "i3-volume mute"
 #signal = 10
+
+[[block]]
+block = "battery"
+interval = 10
+format = "{percentage}"
 
 [[block]]
 block = "time"
