@@ -100,6 +100,7 @@ alias rpy="fd -I '(build|dist|__pycache__|egg-info)' | xargs rm -rf --"
 # db
 alias psql="pgcli"
 alias mysql="mycli"
+alias sqlite="litecli"
 
 # editor
 alias vim="nvim"

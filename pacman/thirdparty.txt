@@ -17,6 +17,7 @@ kubespy
 lazydocker
 lf
 libcsptr
+litecli
 ly
 mycli
 palanteer
