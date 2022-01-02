@@ -81,10 +81,3 @@ export ZLE_RPROMPT_INDENT=0
 
 # lf
 source ~/.config/lf/icon
-
-# ssh
-# https://computingforgeeks.com/configure-i3-ssh-passphrase/
-if [[ "$TTY" == "/dev/tty1" ]]; then
-    ssh-agent startx
-fi
-cat ~/.ssh/id_rsa | SSH_ASKPASS="$HOME/.passfile" ssh-add - &>/dev/null

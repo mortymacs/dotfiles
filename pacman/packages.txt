@@ -253,7 +253,6 @@ wireguard-tools
 wkhtmltopdf
 wmctrl
 wpa_supplicant
-x11-ssh-askpass
 xclip
 xdotool
 xf86-video-intel
