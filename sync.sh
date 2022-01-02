@@ -54,6 +54,10 @@ cat "$HOME"/.docker/config.json | jq 'del(.auths)' | tee docker/config.json
 rm -rf lf
 cp -R "$HOME"/.config/lf/ .
 
+# rofi
+rm -rf rofi
+cp -R "$HOME"/.config/rofi/ .
+
 # i3
 rm -rf i3 i3status twmn
 cp -R "$HOME"/.config/i3/ .
