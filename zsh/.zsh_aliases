@@ -31,7 +31,7 @@ alias u="yay -Syu && v -c :PlugUpgrade +quitall && v -c :PlugUpdate +quitall && 
 # https://blog.summercat.com/configuring-mixed-dpi-monitors-with-xrandr.html
 # https://www.youtube.com/watch?v=wu2NWw2wPaA
 alias external-monitor="xrandr --output DP1 --scale 1x1 --output eDP1 --off && xrandr --dpi 100 --output DP1 --auto && i3-msg restart > /dev/null"
-alias internal-monitor="xrandr --dpi 200 --output eDP1 --auto --output DP1 --off && i3-msg restart > /dev/null"
+alias internal-monitor="xrandr --dpi 100 --output eDP1 --mode 2048x1152 --output DP1 --off && i3-msg restart > /dev/null"
 
 # utility
 alias pdf="evince"
