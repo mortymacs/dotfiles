@@ -34,8 +34,6 @@ cython
 dconf-editor
 delve
 dialog
-diff-so-fancy
-discord
 dmidecode
 dnsmasq
 docker
@@ -54,7 +52,6 @@ fd
 feh
 file
 findutils
-firefox
 flake8
 flameshot
 flex
@@ -106,8 +103,6 @@ jdk-openjdk
 jq
 k9s
 kcachegrind
-keybase
-keybase-gui
 kube-linter
 kubectl
 kubectx
@@ -116,7 +111,6 @@ libev
 libqalculate
 libtool
 libvirt
-liferea
 linux
 linux-firmware
 lld
@@ -144,7 +138,6 @@ networkmanager
 networkmanager-openvpn
 nlohmann-json
 ntfs-3g
-nuitka
 openbsd-netcat
 p7zip
 pacman
@@ -155,11 +148,7 @@ peco
 perf
 picom
 pkgconf
-prettyping
 procs
-pulseaudio
-pulseaudio-alsa
-pyenv
 python-black
 python-build
 python-cherrypy
@@ -207,7 +196,6 @@ scour
 screen
 sed
 shellcheck
-signal-desktop
 silicon
 sleuthkit
 smem
@@ -243,12 +231,7 @@ ttf-jetbrains-mono
 ttf-nerd-fonts-symbols-mono
 ttf-ubuntu-font-family
 unzip
-vagrant
 valgrind
-virtualbox
-virtualbox-guest-iso
-virtualbox-guest-utils
-virtualbox-host-modules-arch
 websocat
 wget
 which

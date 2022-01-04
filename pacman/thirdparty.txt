@@ -28,8 +28,6 @@ python-configparser
 python-oyaml
 redis-desktop-manager
 shc
-skypeforlinux-stable-bin
-slack-desktop
 spotify
 tre-command
 twmn-git
