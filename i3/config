@@ -198,3 +198,9 @@ exec_always --no-startup-id pkill twmnd; twmnd
 
 # Bluetooth.
 exec_always --no-startup-id pkill blueman-applet; blueman-applet
+
+# Flameshot
+exec_always --no-startup-id pkill flameshot; flameshot
+
+# Dropbox
+exec --no-startup-id pkill dropbox; dropbox

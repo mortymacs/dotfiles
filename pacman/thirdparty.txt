@@ -9,10 +9,8 @@ gcalcli
 git-extras
 gitstatus
 glow
-google-crc32c
 hotspot
 i3-volume
-insomnia-bin
 jid
 kubespy
 lazydocker
@@ -26,7 +24,6 @@ pgcli
 python-bench-it
 python-configparser
 python-oyaml
-redis-desktop-manager
 shc
 spotify
 tre-command
