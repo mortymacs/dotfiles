@@ -27,6 +27,7 @@ cgdb
 chromium
 clang
 cloc
+cmake
 cppcheck
 ctags
 ctop
