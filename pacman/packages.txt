@@ -177,6 +177,7 @@ python-sh
 python-sphinx
 python-tqdm
 python-vmprof
+python-wheel
 qemu
 qemu-arch-extra
 qemu-block-gluster
@@ -189,6 +190,7 @@ redis
 revive
 ripgrep
 rofi
+ruby-bundler
 rust
 rust-analyzer
 rust-bindgen
