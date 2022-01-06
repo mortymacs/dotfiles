@@ -197,10 +197,10 @@ bindsym $mod+l exec i3lock -c 111111
 exec_always --no-startup-id pkill twmnd; twmnd
 
 # Bluetooth.
-exec_always --no-startup-id pkill blueman-applet; blueman-applet
+exec --no-startup-id pkill blueman-applet; blueman-applet
 
 # Flameshot
-exec_always --no-startup-id pkill flameshot; flameshot
+exec --no-startup-id pkill flameshot; flameshot
 
 # Dropbox
 exec --no-startup-id pkill dropbox; dropbox
