@@ -204,3 +204,6 @@ exec_always --no-startup-id pkill flameshot; flameshot
 
 # Dropbox
 exec --no-startup-id pkill dropbox; dropbox
+
+# Zeal
+exec --no-startup-id pkill zeal; zeal
