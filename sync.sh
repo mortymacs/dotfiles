@@ -16,10 +16,6 @@ cp "$HOME"/.tmux.conf tmux/
 rm -rf alacritty/*
 cp "$HOME"/.alacritty.yml alacritty/
 
-# wezterm
-rm -rf wezterm
-cp -R "$HOME"/.config/wezterm .
-
 # nvim
 rm -rf nvim/*
 cp "$HOME"/.config/nvim/{init.vim,coc-settings.json} nvim/

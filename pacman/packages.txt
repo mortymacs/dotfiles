@@ -237,7 +237,6 @@ ttf-ubuntu-font-family
 unzip
 valgrind
 websocat
-wezterm
 wget
 which
 wireguard-tools

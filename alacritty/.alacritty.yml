@@ -1,17 +1,24 @@
+# Env variables.
+env:
+  # https://github.com/alacritty/alacritty/issues/3424#issue-576635376
+  WINIT_X11_SCALE_FACTOR: "1"
+
 # Window configuration (changes require restart).
 window:
   dimensions:
     columns: 120
     lines: 30
   decorations: full
-  gtk_theme_variant: dark
+  padding:
+    x: 10
+    y: 10
 
 background_opacity: 0.98
 
 # Font configuration (changes require restart).
 # Alternative font: JetBrains Mono
 font:
-  size: 14
+  size: 15
   normal:
     family: CodeNewRoman Nerd Font Mono
     style: Regular
