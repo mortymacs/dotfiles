@@ -18,7 +18,7 @@ cp "$HOME"/.alacritty.yml alacritty/
 
 # wezterm
 rm -rf wezterm
-cp "$HOME"/.config/wezterm .
+cp -R "$HOME"/.config/wezterm .
 
 # nvim
 rm -rf nvim/*
