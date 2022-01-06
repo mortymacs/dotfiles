@@ -9,6 +9,7 @@ gcalcli
 git-extras
 gitstatus
 glow
+google-crc32c
 hotspot
 i3-volume
 jid

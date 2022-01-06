@@ -53,6 +53,7 @@ fd
 feh
 file
 findutils
+firefox
 flake8
 flameshot
 flex
@@ -230,12 +231,14 @@ ttf-fira-code
 ttf-fira-mono
 ttf-fira-sans
 ttf-hack
+ttf-iosevka-nerd
 ttf-jetbrains-mono
 ttf-nerd-fonts-symbols-mono
 ttf-ubuntu-font-family
 unzip
 valgrind
 websocat
+wezterm
 wget
 which
 wireguard-tools
