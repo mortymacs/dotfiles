@@ -53,7 +53,6 @@ fd
 feh
 file
 findutils
-firefox
 flake8
 flameshot
 flex
