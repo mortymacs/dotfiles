@@ -204,3 +204,8 @@ exec --no-startup-id pkill dropbox; dropbox
 
 # Zeal
 exec --no-startup-id pkill zeal; zeal
+
+# Clipboard
+# https://wiki.archlinux.org/title/Greenclip
+exec --no-startup-id greenclip daemon>/dev/null
+bindsym $mod+c exec --no-startup-id rofi -modi "clipboard:greenclip print" -show clipboard
