@@ -1,10 +1,3 @@
 {
-  "languageserver": {
-    "rust": {
-      "command": "rust-analyzer",
-      "filetypes": ["rust"],
-      "rootPatterns": ["Cargo.toml"]
-    }
-  },
-  "diagnostic.displayByAle": true
+  "rust-analyzer.server.path": "rust-analyzer"
 }
