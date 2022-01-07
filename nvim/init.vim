@@ -57,7 +57,7 @@ Plug 'luochen1990/rainbow'
 Plug 'famiu/bufdelete.nvim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'kyazdani42/nvim-web-devicons'
-Plug 'itchyny/vim-cursorword'
+Plug 'RRethy/vim-illuminate'
 Plug 'sindrets/diffview.nvim'
 Plug 'f-person/git-blame.nvim'
 Plug 'nvim-lua/plenary.nvim'
@@ -266,6 +266,8 @@ call MapKeys("<c-g><c-s>", ":call DiffViewToggle()<cr>")
 au FileType gitcommit set tw=72
 
 " text
+call MapKeys("<c-f>", ":Lines<cr>")
+
 "" https://stackoverflow.com/a/63887462/2338672
 nnoremap <s-m-down> :m .+1<cr>==
 nnoremap <s-m-up>   :m .-2<cr>==
