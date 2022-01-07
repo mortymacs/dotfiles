@@ -24,7 +24,6 @@ broot
 btrfs-progs
 cbindgen
 cgdb
-chromium
 clang
 cloc
 cmake
