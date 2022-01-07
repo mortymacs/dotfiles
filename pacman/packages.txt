@@ -32,7 +32,6 @@ cppcheck
 ctags
 ctop
 cython
-dconf-editor
 delve
 dialog
 dmidecode
@@ -125,7 +124,6 @@ man-db
 massif-visualizer
 maven
 mcfly
-meld
 memcached
 minikube
 moreutils
@@ -147,7 +145,6 @@ parallel
 patch
 peco
 perf
-picom
 pkgconf
 procs
 python-black
