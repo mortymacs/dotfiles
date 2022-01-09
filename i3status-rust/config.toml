@@ -32,6 +32,13 @@ interval = 1
 format = "{1m}"
 
 [[block]]
+block = "music"
+player = "spotify"
+buttons = ["prev", "play", "next"]
+format = "{title}"
+on_collapsed_click = "spotify"
+
+[[block]]
 block = "sound"
 #block = "custom"
 #command = "i3-volume output \"%i %v %p\n\""
