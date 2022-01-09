@@ -100,6 +100,7 @@ iptables-nft
 ipython
 iw
 jdk-openjdk
+jemalloc
 jq
 k9s
 kcachegrind
@@ -184,7 +185,6 @@ qemu-block-rbd
 qemu-guest-agent
 r2ghidra
 radare2
-redis
 revive
 ripgrep
 rofi
