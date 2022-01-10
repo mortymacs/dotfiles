@@ -33,6 +33,7 @@ alias uc="yay -Syu && v -c :PlugUpgrade +quitall && v -c :PlugUpdate +quitall &&
 # https://www.youtube.com/watch?v=wu2NWw2wPaA
 alias external-monitor="xrandr --output DP1 --scale 1x1 --output eDP1 --off && xrandr --dpi 100 --output DP1 --auto && i3-msg restart > /dev/null"
 alias internal-monitor="xrandr --dpi 100 --output eDP1 --mode 2048x1152 --output DP1 --off && i3-msg restart > /dev/null"
+function monitor() { [[ "$1" == "1" ]] && internal-monitor || external-monitor }
 
 # utility
 alias pdf="evince"
