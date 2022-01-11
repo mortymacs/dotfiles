@@ -34,3 +34,4 @@ xxd-standalone
 yay
 ydiff
 zeal
+zsh-theme-powerlevel10k-git
