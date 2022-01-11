@@ -1,4 +1,4 @@
 configuration {
     font: "fira sans 15";
 }
-@theme "Monokai"
+@theme "Arc-Dark"
