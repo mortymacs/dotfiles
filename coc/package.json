@@ -4,7 +4,7 @@
     "coc-cmake": ">=0.2.0",
     "coc-go": ">=1.1.0",
     "coc-html": ">=1.6.0",
-    "coc-java": ">=1.5.4",
+    "coc-java": ">=1.5.5",
     "coc-json": ">=1.4.1",
     "coc-pyright": ">=1.1.206",
     "coc-rust-analyzer": ">=0.59.1",
