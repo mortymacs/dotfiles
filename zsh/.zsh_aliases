@@ -82,7 +82,7 @@ dca(){ docker exec -ti "$1" "${2:-bash}" }
 # development
 ## https://github.com/universal-ctags/ctags/issues/218#issuecomment-72355190
 alias gt="fd | ctags --links=no -L-"
-http-server(){ python -m http.server "$1" }
+http-server(){ python -m http.server "$1" & firefox http://localhost:"$1" }
 code-capture() { silicon "$1" -o $(basename "${1%%.*}.png") --no-window-controls --font "Fira Code" --background '#fff0' --theme Coldark-Dark }
 alias code-info="cloc"
 
