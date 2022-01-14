@@ -9,6 +9,7 @@ tar-tree(){ tar -tf "$1" | tree --fromfile . }
 rmr(){ [ -n "$1" ] && (fd -I "$1" | xargs rm -rf --) }
 rme(){ ls | \grep -v "$1" | xargs rm -rf }
 alias du="dust -b"
+alias df="du"
 
 # text
 alias grep="grep -n --color"
