@@ -142,6 +142,7 @@ set autoindent
 set complete+=s
 "" reformat the whole buffer
 call MapKeys("<c-c><c-l>", "gg=G<cr>")
+autocmd FileType python call MapKeys("<c-m-l>", ":Black<cr>")
 call MapKeys("<c-m-l>", "gg=G<cr>")
 
 " fzf
