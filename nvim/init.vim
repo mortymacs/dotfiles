@@ -142,7 +142,6 @@ set autoindent
 set complete+=s
 "" reformat the whole buffer
 call MapKeys("<c-c><c-l>", "gg=G<cr>")
-autocmd FileType python call MapKeys("<c-m-l>", ":Black<cr>")
 call MapKeys("<c-m-l>", "gg=G<cr>")
 
 " fzf
@@ -298,6 +297,11 @@ call MapKeys("<c-c><c-h>", "<plug>Zeavim")
 call MapKeys("<c-c><c-m>", ":Glow<cr>")
 
 " python
+function! ReformatBuffer()
+  Black
+  Isort --profile black
+endfunction
+autocmd FileType python call MapKeys("<c-m-l>", ":call ReformatBuffer()<cr>")
 call MapKeys("<c-c><c-p>", ":!python %<cr>")
 call MapKeys("<c-t><c-c>", ":Pytest class<cr>")
 call MapKeys("<c-t><c-m>", ":Pytest method<cr>")
