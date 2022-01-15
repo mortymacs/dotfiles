@@ -25,15 +25,14 @@ set whichwrap+=<,>,[,]
 
 " package management
 call plug#begin('~/.vim/plugged')
+Plug 'ayu-theme/ayu-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'preservim/nerdtree'
 Plug 'preservim/tagbar'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'ayu-theme/ayu-vim'
 Plug 'tpope/vim-surround'
 Plug 'KabbAmine/zeavim.vim'
 Plug 'editorconfig/editorconfig-vim'
@@ -59,7 +58,6 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'RRethy/vim-illuminate'
 Plug 'sindrets/diffview.nvim'
-Plug 'f-person/git-blame.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'dense-analysis/ale'
 Plug 'romgrk/barbar.nvim'
