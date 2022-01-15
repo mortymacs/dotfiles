@@ -188,7 +188,7 @@ default_floating_border pixel
 exec_always --no-startup-id feh --bg-scale $HOME/.config/i3/wallpaper.jpg
 
 # Lock.
-bindsym $mod+l exec i3lock -c 111111
+bindsym $mod+l exec i3lock -c 111111 --show-failed-attempts
 
 # Notification.
 exec_always --no-startup-id pkill twmnd; twmnd
