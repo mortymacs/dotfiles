@@ -81,3 +81,7 @@ export ZLE_RPROMPT_INDENT=0
 
 # lf
 source ~/.config/lf/icon
+
+# welcome
+figlet -f mini 'Hi Mort!' | lolcat -f
+curl -s 'https://zenquotes.io/api/random' | jq -r '.[] | .q + " - " + .a' | lolcat -f

@@ -49,6 +49,7 @@ fakeroot
 fcgi
 fd
 feh
+figlet
 file
 findutils
 firefox
@@ -117,6 +118,7 @@ linux-firmware
 lld
 lldb
 llvm
+lolcat
 lsof
 lua
 m4
@@ -187,6 +189,7 @@ r2ghidra
 radare2
 revive
 ripgrep
+ripgrep-all
 rofi
 ruby-bundler
 rust

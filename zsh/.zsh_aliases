@@ -13,7 +13,7 @@ alias df="du"
 
 # text
 alias grep="grep -n --color"
-alias gg="rg -i --pretty -g '!*/test/*' -g '!*/tests/*' -g '!*/docs/*' -g '!*/examples/*' -g '!*.md'"
+alias gg="rga -i --pretty"
 alias cat="bat"
 alias less="less -N"
 
