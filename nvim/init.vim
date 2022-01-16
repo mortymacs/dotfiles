@@ -63,7 +63,6 @@ Plug 'dense-analysis/ale'
 Plug 'romgrk/barbar.nvim'
 Plug 'mhinz/vim-startify'
 Plug 'chentau/marks.nvim'
-Plug 'mracos/mermaid.vim'
 call plug#end()
 
 " Color
