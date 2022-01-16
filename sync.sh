@@ -16,6 +16,10 @@ cp "$HOME"/.tmux.conf tmux/
 rm -rf alacritty/*
 cp "$HOME"/.alacritty.yml alacritty/
 
+# btop
+rm -rf btop
+cp -R "$HOME"/.config/btop/ .
+
 # nvim
 rm -rf nvim/*
 cp "$HOME"/.config/nvim/{init.vim,coc-settings.json} nvim/
