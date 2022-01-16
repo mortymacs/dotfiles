@@ -21,6 +21,7 @@ blueman
 boost
 bottom
 broot
+btop
 btrfs-progs
 cbindgen
 cgdb
