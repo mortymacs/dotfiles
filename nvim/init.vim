@@ -63,6 +63,7 @@ Plug 'dense-analysis/ale'
 Plug 'romgrk/barbar.nvim'
 Plug 'mhinz/vim-startify'
 Plug 'chentau/marks.nvim'
+Plug 'Yggdroot/indentLine'
 call plug#end()
 
 " Color
