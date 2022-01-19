@@ -99,7 +99,7 @@ hi Normal guibg=NONE ctermbg=NONE
 hi SignColumn ctermbg=NONE guibg=NONE
 
 " powerline
-let g:airline_theme="tomorrow"
+let g:airline_theme="night_owl"
 
 " terminal
 let g:floaterm_title = "$1/$2"
