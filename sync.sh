@@ -62,12 +62,6 @@ cp -R "$HOME"/.config/lf/ .
 rm -rf rofi
 cp -R "$HOME"/.config/rofi/ .
 
-# i3
-rm -rf i3 i3status-rust twmn
-cp -R "$HOME"/.config/i3/ .
-cp -R "$HOME"/.config/i3status-rust/ .
-cp -R "$HOME"/.config/twmn/ .
-
 # fonts
 rm -rf fonts/*
 cp -R "$HOME"/.local/share/fonts/{Code\ New\ Roman\ Nerd\ Font\ Complete\ Mono.otf,Code\ New\ Roman\ Bold\ Nerd\ Font\ Complete\ Mono.otf,Code\ New\ Roman\ Italic\ Nerd\ Font\ Complete\ Mono.otf} fonts/
