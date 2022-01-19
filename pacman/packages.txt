@@ -219,6 +219,7 @@ texinfo
 texlive-core
 texlive-latexextra
 the_silver_searcher
+thunar
 tig
 tmux
 tmuxp
