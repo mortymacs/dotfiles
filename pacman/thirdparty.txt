@@ -28,6 +28,7 @@ shc
 spotify
 tre-command
 twmn-git
+ulauncher
 xxd-standalone
 yay
 ydiff

@@ -239,7 +239,6 @@ radare2
 revive
 ripgrep
 ripgrep-all
-rofi
 ruby-bundler
 rust
 rust-analyzer
