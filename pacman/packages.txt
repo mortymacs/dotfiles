@@ -1,6 +1,5 @@
 ack
 alacritty
-alsa-utils
 asciinema
 atop
 atuin
@@ -18,7 +17,6 @@ bind
 binocle
 binutils
 bison
-blueman
 boost
 bottom
 broot
@@ -101,6 +99,7 @@ gnome-screenshot
 gnome-session
 gnome-settings-daemon
 gnome-shell
+gnome-shell-extension-appindicator
 gnome-shell-extensions
 gnome-software
 gnome-system-monitor
