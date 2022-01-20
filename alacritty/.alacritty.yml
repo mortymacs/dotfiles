@@ -10,8 +10,8 @@ window:
     lines: 30
   decorations: none
   padding:
-    x: 10
-    y: 10
+    x: 0
+    y: 0
 
 background_opacity: 0.98
 
