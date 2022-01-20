@@ -62,6 +62,11 @@ cp -R "$HOME"/.config/lf/ .
 rm -rf rofi
 cp -R "$HOME"/.config/rofi/ .
 
+# gnome
+rm -rf gnome/*
+dconf dump / > gnome/dconf-dump.ini
+cp ~/.config/wallpaper.jpg gnome/
+
 # fonts
 rm -rf fonts/*
 cp -R "$HOME"/.local/share/fonts/{Code\ New\ Roman\ Nerd\ Font\ Complete\ Mono.otf,Code\ New\ Roman\ Bold\ Nerd\ Font\ Complete\ Mono.otf,Code\ New\ Roman\ Italic\ Nerd\ Font\ Complete\ Mono.otf} fonts/

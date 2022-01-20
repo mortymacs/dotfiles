@@ -33,7 +33,7 @@ font:
 
   offset:
     x: 0
-    y: 3
+    y: 7
 
 # Color configuration.
 # https://github.com/alacritty/alacritty/wiki/Color-schemes
