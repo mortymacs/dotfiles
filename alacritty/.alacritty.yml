@@ -8,7 +8,7 @@ window:
   dimensions:
     columns: 120
     lines: 30
-  decorations: full
+  decorations: none
   padding:
     x: 10
     y: 10
