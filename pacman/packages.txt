@@ -52,7 +52,6 @@ exa
 fakeroot
 fcgi
 fd
-feh
 figlet
 file
 file-roller
@@ -248,6 +247,7 @@ scour
 screen
 sed
 shellcheck
+shotwell
 silicon
 simple-scan
 sleuthkit
@@ -300,6 +300,7 @@ wkhtmltopdf
 wmctrl
 wpa_supplicant
 xclip
+xdg-desktop-portal-gnome
 xdg-user-dirs-gtk
 xdotool
 xf86-video-intel
