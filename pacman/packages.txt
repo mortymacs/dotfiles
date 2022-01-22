@@ -292,6 +292,7 @@ unrar
 unzip
 valgrind
 vino
+vlc
 websocat
 wget
 which
