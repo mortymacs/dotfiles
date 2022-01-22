@@ -14,7 +14,6 @@ hotspot
 jid
 kubespy
 lazydocker
-lf
 libcsptr
 litecli
 mycli
@@ -23,7 +22,6 @@ pgcli
 python-bench-it
 python-configparser
 python-oyaml
-rofi-greenclip
 shc
 spotify
 tre-command

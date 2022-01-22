@@ -54,14 +54,6 @@ pacman -Qqem > pacman/thirdparty.txt
 rm -rf docker/*
 cat "$HOME"/.docker/config.json | jq 'del(.auths)' | tee docker/config.json
 
-# lf
-rm -rf lf
-cp -R "$HOME"/.config/lf/ .
-
-# rofi
-rm -rf rofi
-cp -R "$HOME"/.config/rofi/ .
-
 # gnome
 rm -rf gnome/*
 dconf dump / > gnome/dconf-dump.ini
