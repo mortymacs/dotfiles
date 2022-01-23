@@ -13,8 +13,8 @@ rm -rf tmux/*
 cp "$HOME"/.tmux.conf tmux/
 
 # alacritty
-rm -rf alacritty/*
-cp "$HOME"/.alacritty.yml alacritty/
+rm -rf alacritty
+cp "$HOME"/.config/alacritty/ .
 
 # btop
 rm -rf btop
