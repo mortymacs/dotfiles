@@ -13,6 +13,7 @@ google-cloud-cpp
 google-crc32c
 hotspot
 jid
+kooha
 kubespy
 lazydocker
 libcsptr
@@ -22,12 +23,14 @@ palanteer
 pgcli
 python-bench-it
 python-configparser
+python-gaphor
 python-oyaml
 shc
 spotify
 tre-command
 twmn-git
 ulauncher
+wike
 xxd-standalone
 yay
 ydiff

@@ -8,10 +8,11 @@ window:
   dimensions:
     columns: 120
     lines: 30
-  decorations: none
+  decorations: full
   padding:
     x: 0
     y: 0
+  gtk_theme_variant: dark
 
 background_opacity: 0.98
 
