@@ -58,7 +58,6 @@ file-roller
 findutils
 firefox
 flake8
-flameshot
 flex
 fmt
 fzf
