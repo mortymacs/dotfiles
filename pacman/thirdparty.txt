@@ -27,7 +27,6 @@ python-oyaml
 shc
 spotify
 tre-command
-twmn-git
 ulauncher
 wike
 xxd-standalone

@@ -1,9 +1,5 @@
 #!/bin/bash
 
-# x
-rm -rf x/*
-cp "$HOME"/.xinitrc x/
-
 # zsh
 rm -rf zsh/*
 cp "$HOME"/{.zshrc,.zsh_aliases,.p10k.zsh} zsh/
@@ -14,7 +10,7 @@ cp "$HOME"/.tmux.conf tmux/
 
 # alacritty
 rm -rf alacritty
-cp "$HOME"/.config/alacritty/ .
+cp -R "$HOME"/.config/alacritty/ .
 
 # btop
 rm -rf btop
