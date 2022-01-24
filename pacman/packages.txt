@@ -74,6 +74,7 @@ gimp
 git
 git-delta
 github-cli
+glow
 gnome-backgrounds
 gnome-books
 gnome-boxes
