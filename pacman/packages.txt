@@ -14,7 +14,6 @@ bash-bats-support
 bash-completion
 bat
 bind
-binocle
 binutils
 bison
 boost
