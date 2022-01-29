@@ -119,6 +119,7 @@ groff
 grpc
 gtest
 gtk-engine-murrine
+guake
 gvfs
 gvfs-afc
 gvfs-goa

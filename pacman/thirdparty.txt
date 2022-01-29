@@ -26,6 +26,7 @@ python-gaphor
 python-oyaml
 shc
 spotify
+tiledb
 tre-command
 ulauncher
 wike
