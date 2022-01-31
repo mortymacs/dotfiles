@@ -29,7 +29,6 @@ spotify
 tiledb
 tre-command
 ulauncher
-wike
 xxd-standalone
 yay
 ydiff
