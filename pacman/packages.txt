@@ -67,6 +67,7 @@ gdb-dashboard
 gdm
 geary
 gedit
+gendesk
 gettext
 ghex
 gimp
