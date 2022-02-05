@@ -82,3 +82,7 @@ export ZLE_RPROMPT_INDENT=0
 # welcome
 #figlet -f mini 'Hi Mort!' | lolcat -f
 #curl -s 'https://zenquotes.io/api/random' | jq -r '.[] | .q + " - " + .a' | lolcat -f
+#
+
+# tre
+tree() { command tre "$@" -e && source "/tmp/tre_aliases_$USER" 2>/dev/null; }
