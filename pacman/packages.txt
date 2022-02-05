@@ -151,6 +151,7 @@ jemalloc
 jq
 k9s
 kcachegrind
+kooha
 kube-linter
 kubectl
 kubectx

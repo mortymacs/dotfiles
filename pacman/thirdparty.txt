@@ -12,7 +12,6 @@ google-cloud-cpp
 google-crc32c
 hotspot
 jid
-kooha
 kubespy
 lazydocker
 libcsptr
