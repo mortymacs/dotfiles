@@ -27,6 +27,7 @@ cheese
 clang
 cloc
 cmake
+consul
 cppcheck
 ctags
 ctop

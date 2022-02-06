@@ -97,8 +97,7 @@ alias a="[ -d .venv ] || python -m venv .venv ; [ -d .venv ] && source ./.venv/b
 alias as="[ -d .venv ] || python -m venv .venv --system-site-packages ; [ -d .venv ] && source ./.venv/bin/activate"
 alias d="deactivate"
 alias up="pip list --outdated | awk '{ print \$1\"==\"\$3 }' | tail +3 | xargs pip install --upgrade"
-alias ipy="ipython --no-term-title --no-confirm-exit --no-banner --no-simple-prompt"
-alias py="python -q"
+alias py="ipython --no-term-title --no-confirm-exit --no-banner --no-simple-prompt"
 alias rpyc="fd -I __pycache__ | xargs rm -rf --"
 alias rpy="fd -I '(build|dist|__pycache__|egg-info)' | xargs rm -rf --"
 
