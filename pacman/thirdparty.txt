@@ -27,6 +27,7 @@ python-gaphor
 python-oyaml
 shc
 spotify
+teams
 tiledb
 tre-command
 ulauncher
