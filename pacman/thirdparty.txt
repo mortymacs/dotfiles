@@ -26,6 +26,7 @@ python-configparser
 python-gaphor
 python-oyaml
 shc
+slack-desktop
 spotify
 teams
 tiledb
@@ -35,4 +36,5 @@ xxd-standalone
 yay
 ydiff
 zeal
+zoom
 zsh-theme-powerlevel10k-git
