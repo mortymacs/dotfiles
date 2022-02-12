@@ -34,6 +34,7 @@ ctop
 cython
 delve
 dialog
+discord
 dmidecode
 dnsmasq
 docker
@@ -251,6 +252,7 @@ screen
 sed
 shellcheck
 shotwell
+signal-desktop
 silicon
 simple-scan
 sleuthkit
