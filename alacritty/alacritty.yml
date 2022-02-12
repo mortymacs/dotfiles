@@ -38,10 +38,9 @@ font:
 # https://github.com/alacritty/alacritty/wiki/Color-schemes
 # Colors (Night Owl)
 colors:
-   # Default colors
+  # Default colors
   primary:
-    # background: '#011627'
-    background: '#111213'
+    background: '#060604'
     foreground: '#d6deeb'
 
   cursor:
@@ -51,7 +50,7 @@ colors:
   selection:
     background: '#1b90dd'
 
-   # Normal colors
+  # Normal colors
   normal:
     black:   '#011627'
     red:     '#ef5350'
@@ -62,7 +61,7 @@ colors:
     cyan:    '#21c7a8'
     white:   '#ffffff'
 
-   # Bright colors
+  # Bright colors
   bright:
     black:   '#575656'
     red:     '#ef5350'
