@@ -14,6 +14,7 @@ google-crc32c
 hotspot
 insomnia-bin
 jid
+jless
 kubespy
 lazydocker
 libcsptr
@@ -26,6 +27,7 @@ python-configparser
 python-gaphor
 python-oyaml
 shc
+skypeforlinux-stable-bin
 slack-desktop
 spotify
 teams
