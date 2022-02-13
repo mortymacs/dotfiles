@@ -31,6 +31,7 @@ consul
 cppcheck
 ctags
 ctop
+cxxopts
 cython
 delve
 dialog
