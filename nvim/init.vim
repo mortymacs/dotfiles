@@ -315,3 +315,6 @@ call MapKeys("<c-c><c-r>", ":Black<cr>")
 
 " ALE
 let g:ale_disable_lsp = 1
+
+" CMake
+autocmd BufWritePost CMakeLists.txt execute '! cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1'
