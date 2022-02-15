@@ -56,8 +56,6 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'luochen1990/rainbow'
 Plug 'famiu/bufdelete.nvim'
-Plug 'ryanoasis/vim-devicons'
-Plug 'kyazdani42/nvim-web-devicons'
 Plug 'RRethy/vim-illuminate'
 Plug 'sindrets/diffview.nvim'
 Plug 'nvim-lua/plenary.nvim'
@@ -102,6 +100,8 @@ hi SignColumn ctermbg=NONE guibg=NONE
 
 " powerline
 let g:airline_theme="night_owl"
+"" https://github.com/vim-airline/vim-airline/issues/1688#issuecomment-373459776
+let g:airline_powerline_fonts = 1
 
 " terminal
 let g:floaterm_title = "$1/$2"
@@ -196,8 +196,6 @@ nmap <c-c><c-v> :call setreg("\"",system("xclip -o -selection clipboard"))<cr>p
 " tabbar
 " tabbar
 let g:airline#extensions#tabline#enabled = 1
-"" https://github.com/vim-airline/vim-airline/issues/1688#issuecomment-373459776
-let g:airline_powerline_fonts = 1
 call MapKeys("<s-right>", ":BufferNext<cr>")
 call MapKeys("<s-left>", ":BufferPrevious<cr>")
 call MapKeys("<c-x><c-q>", ":BufferClose<cr>")
@@ -211,6 +209,7 @@ call MapKeys("<m-7>", ":BufferGoto 7<cr>")
 call MapKeys("<m-8>", ":BufferGoto 8<cr>")
 call MapKeys("<m-9>", ":BufferGoto 9<cr>")
 let bufferline = get(g:, 'bufferline', {})
+let bufferline.icons = v:false
 let bufferline.animation = v:false
 let bufferline.closable = v:false
 let bufferline.clickable = v:false
