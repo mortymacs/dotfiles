@@ -1,4 +1,4 @@
-" general
+" General
 filetype off                 " required
 syntax on
 set mouse-=a
@@ -25,52 +25,66 @@ set whichwrap+=<,>,[,]
 
 " package management
 call plug#begin('~/.vim/plugged')
+" Theme and colorscheme.
 Plug 'ayu-theme/ayu-vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'vim-airline/vim-airline-themes'
+Plug 'norcalli/nvim-colorizer.lua'
+
+" Tabbar
+Plug 'romgrk/barbar.nvim'
+
+" Status
+Plug 'vim-airline/vim-airline'
+
+" File and search.
 Plug 'junegunn/fzf.vim'
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'preservim/tagbar'
-Plug 'airblade/vim-gitgutter'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'tpope/vim-surround'
-Plug 'KabbAmine/zeavim.vim'
 Plug 'MattesGroeger/vim-bookmarks'
+Plug 'famiu/bufdelete.nvim'
+
+" Text
+Plug 'tpope/vim-surround'
+Plug 'RRethy/vim-illuminate'
+Plug 'Yggdroot/indentLine'
+
+" Git
+Plug 'airblade/vim-gitgutter'
+Plug 'sindrets/diffview.nvim'
+
+" Development
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'KabbAmine/zeavim.vim'
 Plug 'preservim/nerdcommenter'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'voldikss/vim-floaterm'
+Plug 'luochen1990/rainbow'
 
 " Python
 Plug 'stsewd/isort.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'psf/black'
 Plug 'alfredodeza/pytest.vim'
 Plug 'stsewd/sphinx.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'dense-analysis/ale'
 
 " Golang
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 Plug 'martinda/Jenkinsfile-vim-syntax'
 Plug 'vim-test/vim-test'
+Plug 'npxbr/glow.nvim'
 
+" Project
+Plug 'mhinz/vim-startify'
+
+" Misc
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'sotte/presenting.vim'
-Plug 'npxbr/glow.nvim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
-Plug 'norcalli/nvim-colorizer.lua'
-Plug 'luochen1990/rainbow'
-Plug 'famiu/bufdelete.nvim'
-Plug 'RRethy/vim-illuminate'
-Plug 'sindrets/diffview.nvim'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'dense-analysis/ale'
-Plug 'romgrk/barbar.nvim'
-Plug 'mhinz/vim-startify'
-Plug 'chentau/marks.nvim'
-Plug 'Yggdroot/indentLine'
 call plug#end()
 
 " Color
@@ -91,11 +105,7 @@ function! NorMapKeys(keys, rhs)
   execute 'vnoremap' . a:keys '' . a:rhs
 endfunction
 
-" general
-"" https://stackoverflow.com/a/19877212/2338672
-nnoremap <silent> <Esc><Esc> <Esc>:nohlsearch<CR><Esc>
-
-" theme
+" Theme and colorscheme.
 set termguicolors     " enable true colors support
 let ayucolor="dark"   " for dark version of theme
 colorscheme ayu
@@ -104,13 +114,13 @@ set cmdheight=1
 "" https://stackoverflow.com/a/37720708/2338672
 hi Normal guibg=NONE ctermbg=NONE
 hi SignColumn ctermbg=NONE guibg=NONE
-
-" powerline
+"" https://stackoverflow.com/a/19877212/2338672
+nnoremap <silent> <Esc><Esc> <Esc>:nohlsearch<CR><Esc>
 let g:airline_theme="night_owl"
 "" https://github.com/vim-airline/vim-airline/issues/1688#issuecomment-373459776
 let g:airline_powerline_fonts = 1
 
-" terminal
+" Terminal
 let g:floaterm_title = "$1/$2"
 let g:floaterm_height = 0.5
 let g:floaterm_width = 1.0
@@ -126,7 +136,8 @@ let g:floaterm_keymap_kill = "<c-x><c-up>"
 let g:floaterm_opener = "tabe"
 hi FloatermBorder ctermbg=black
 
-" search
+" Search
+call MapKeys("<c-f>", ":Lines<cr>")
 call MapKeys("<c-x><c-g>", ":Ag<cr>")
 
 " coc.vim
@@ -136,7 +147,7 @@ call MapKeys("<c-c><c-e>", "<c-o>")
 "" https://github.com/neoclide/coc.nvim/issues/2202#issuecomment-662969193
 inoremap <c-q> <c-\><c-o>:call CocActionAsync('showSignatureHelp')<cr>
 
-" code indent
+" Code indent
 "" https://github.com/jelly/Dotfiles/blob/master/.vimrc
 autocmd FileType python,cucumber set expandtab shiftwidth=4 softtabstop=4
 autocmd FileType c,cpp,h,html,css,vim,yaml,yml,json set expandtab shiftwidth=2 softtabstop=2
@@ -155,14 +166,14 @@ call MapKeys("<c-x><c-f>", ":Files<cr>")
 call MapKeys("<c-x><c-t>", ":Tags<cr>")
 call MapKeys("<c-x><c-b>", ":Buffers<cr>")
 
-" nerdtree
+" NERDTree
 call MapKeys("<c-x><c-l>", ":NERDTreeToggle<cr>")
 let g:NERDTreeIgnore=['\.pyc$', '\~$', '.venv', '.git', '__pycache__', '.tags', 'tags']
 
-" tagbar
+" Tagbar
 call MapKeys("<c-x><c-i>", ":TagbarToggle<cr>")
 
-" window
+" Window
 "" https://vim.fandom.com/wiki/Maximize_window_and_return_to_previous_split_structure
 function! MaximizeWindowToggle()
   if exists("s:maximize_session")
@@ -192,16 +203,15 @@ call MapKeys("<c-s-down>", ":resize +1<cr>")
 call MapKeys("<c-s-left>", ":vertical resize +1<cr>")
 call MapKeys("<c-s-right>", ":vertical resize -1<cr>")
 
-" buffer
+" Buffer
 call MapKeys("<c-x><c-e>", ":Bd!<cr>")
 
-" clipboard
+" Clipboard
 "" https://superuser.com/a/921975
 vmap <c-c><c-c> y:call system("xclip -i -selection clipboard", getreg("\""))<cr>:call system("xclip -i", getreg("\""))<cr>
 nmap <c-c><c-v> :call setreg("\"",system("xclip -o -selection clipboard"))<cr>p
 
-" tabbar
-" tabbar
+" Tabbar
 let g:airline#extensions#tabline#enabled = 1
 call MapKeys("<s-right>", ":BufferNext<cr>")
 call MapKeys("<s-left>", ":BufferPrevious<cr>")
@@ -221,7 +231,7 @@ let bufferline.animation = v:false
 let bufferline.closable = v:false
 let bufferline.clickable = v:false
 
-" general
+" Hotkeys general
 call MapKeys("<c-g>", "<esc>")
 "" select
 call MapKeys("<c-space>", "v")  " v$
@@ -246,7 +256,7 @@ function! PresentationToggle()
 endfunction
 call MapKeys("<c-x><c-p>", ":call PresentationToggle()<cr>")
 
-" git
+" Git
 call MapKeys("<c-g><c-h>", "<plug>(GitGutterPreviewHunk)")
 call MapKeys("<c-g><c-u>", "<plug>(GitGutterUndoHunk)")
 call MapKeys("<c-g><c-l>", "<plug>(GitGutterStageHunk)")
@@ -266,9 +276,6 @@ call MapKeys("<c-g><c-s>", ":call DiffViewToggle()<cr>")
 " auto wrap git commit messages
 au FileType gitcommit set tw=72
 
-" text
-call MapKeys("<c-f>", ":Lines<cr>")
-
 "" https://stackoverflow.com/a/63887462/2338672
 nnoremap <s-m-down> :m .+1<cr>==
 nnoremap <s-m-up>   :m .-2<cr>==
@@ -283,7 +290,7 @@ noremap! <c-h> <c-w>
 call MapKeys("<c-e>", "<s-$>")
 call MapKeys("<c-a>", "<s-^>")
 
-" code
+" Development.
 "" https://vim.fandom.com/wiki/Shifting_blocks_visually
 nnoremap <Tab> >>_
 nnoremap <S-Tab> <<_
@@ -299,7 +306,7 @@ autocmd BufWritePre * :%s/\s\+$//e
 call MapKeys("<c-c><c-h>", "<plug>Zeavim")
 call MapKeys("<c-c><c-m>", ":Glow<cr>")
 
-" python
+" Python
 function! ReformatBuffer()
   Black
   Isort --profile black
@@ -310,7 +317,7 @@ call MapKeys("<c-t><c-c>", ":Pytest class<cr>")
 call MapKeys("<c-t><c-m>", ":Pytest method<cr>")
 call MapKeys("<c-t><c-f>", ":Pytest function<cr>")
 call MapKeys("<c-t><c-a>", ":Pytest file<cr>")
-" python - isort
+" isort
 let g:vim_isort_map = ''
 let g:isort_command = 'isort'
 call MapKeys("<c-c><c-i>", ":Isort --profile black<cr>")
