@@ -1,7 +1,7 @@
 " general
 filetype off                 " required
 syntax on
-set mouse=a
+set mouse-=a
 set number
 set cursorline
 set nocompatible             " be iMproved, required
@@ -37,19 +37,26 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-surround'
 Plug 'KabbAmine/zeavim.vim'
-Plug 'editorconfig/editorconfig-vim'
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'preservim/nerdcommenter'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'voldikss/vim-floaterm'
+
+" Python
 Plug 'stsewd/isort.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'psf/black'
 Plug 'alfredodeza/pytest.vim'
-Plug 'vim-test/vim-test'
 Plug 'stsewd/sphinx.nvim', { 'do': ':UpdateRemotePlugins' }
+
+" Golang
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
+Plug 'martinda/Jenkinsfile-vim-syntax'
+Plug 'vim-test/vim-test'
+
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/goyo.vim'
-Plug 'voldikss/vim-floaterm'
 Plug 'sotte/presenting.vim'
-Plug 'martinda/Jenkinsfile-vim-syntax'
 Plug 'npxbr/glow.nvim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
@@ -314,6 +321,9 @@ call MapKeys("<c-c><c-r>", ":Black<cr>")
 
 " ALE
 let g:ale_disable_lsp = 1
+
+" Golang
+autocmd FileType go call MapKeys("<c-m-l>", ":GoFmt<cr>")
 
 " CMake
 autocmd BufWritePost CMakeLists.txt execute '! cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1'
