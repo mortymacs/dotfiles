@@ -27,8 +27,8 @@ socket-to-http() { socat TCP-LISTEN:"${2:-8000}",reuseaddr,fork UNIX-CLIENT:"${1
 iso-to-usb() { sudo dd bs=4M if="${1}" of="${2}" conv=fdatasync status=progress }
 
 # system
-alias u="yay -Syu && v -c :PlugUpgrade +quitall && v -c :PlugUpdate +quitall && v -c :CocUpdateSync +quitall && v -c :BlackUpgrade +quitall && z dot && ./sync.sh && cd - && pacman -Qdt"
-alias uc="yay -Syu && v -c :PlugUpgrade +quitall && v -c :PlugUpdate +quitall && v -c :CocUpdateSync +quitall && v -c :BlackUpgrade +quitall && z dot && ./sync.sh && cd - && sudo pacman -Scc --noconfirm && pacman -Qdt"
+alias u="yay -Syu && v -c :PlugUpgrade +quitall && v -c :PlugUpdate +quitall && v -c :CocUpdateSync +quitall && v -c :BlackUpgrade +quitall && z dotfiles && ./sync.sh && cd - && pacman -Qdt"
+alias uc="yay -Syu && v -c :PlugUpgrade +quitall && v -c :PlugUpdate +quitall && v -c :CocUpdateSync +quitall && v -c :BlackUpgrade +quitall && z dotfiles && ./sync.sh && cd - && sudo pacman -Scc --noconfirm && pacman -Qdt"
 alias top="btop"
 
 # monitor

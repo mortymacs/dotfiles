@@ -1,9 +1,22 @@
+# General
+init-doc
+log/
+tmp/
+
+# Build
+dist/
+
+# Python
 venv
 .venv
+*pyc
+*.egg-info/
+__pycached__/
+.mypy_cache
+
+# C/C++
 .tags
 tags
-*pyc
-dist/
 *~
 *.o
 *.so
@@ -11,15 +24,16 @@ dist/
 CMakeCache.txt
 CMakeFiles/
 cmake-build-debug/
-*.egg-info/
-*.swp
-__pycached__/
-.bundle
 compile_commands.json
 .ccls
-Gemfile.lock
-.mypy_cache
-local.sh
+
+# Editors/IDE
 .vim
+*.swp
 .idea
-init-doc
+
+# Misc
+.bundle
+Gemfile.lock
+*.plist
+.cache

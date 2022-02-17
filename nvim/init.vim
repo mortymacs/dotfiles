@@ -38,9 +38,8 @@ Plug 'vim-airline/vim-airline'
 
 " File and search.
 Plug 'junegunn/fzf.vim'
-Plug 'preservim/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'kyazdani42/nvim-tree.lua'
 Plug 'preservim/tagbar'
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'famiu/bufdelete.nvim'
@@ -166,9 +165,37 @@ call MapKeys("<c-x><c-f>", ":Files<cr>")
 call MapKeys("<c-x><c-t>", ":Tags<cr>")
 call MapKeys("<c-x><c-b>", ":Buffers<cr>")
 
-" NERDTree
-call MapKeys("<c-x><c-l>", ":NERDTreeToggle<cr>")
-let g:NERDTreeIgnore=['\.pyc$', '\~$', '.venv', '.git', '__pycache__', '.tags', 'tags']
+" file manager
+let g:nvim_tree_special_files = { 'Makefile': 1, 'CMakeLists.txt': 1 }
+let g:nvim_tree_show_icons = {
+    \ 'git': 1,
+    \ 'folders': 1,
+    \ 'files': 0,
+    \ 'folder_arrows': 0,
+    \ }
+let g:nvim_tree_icons = {
+    \ 'git': {
+    \   'unstaged': "✗",
+    \   'staged': "✓",
+    \   'unmerged': "",
+    \   'renamed': "➜",
+    \   'untracked': "★",
+    \   'deleted': "",
+    \   'ignored': "◌"
+    \   },
+    \ 'folder': {
+    \   'arrow_open': "",
+    \   'arrow_closed': "",
+    \   'default': "",
+    \   'open': "",
+    \   'empty': "",
+    \   'empty_open': "",
+    \   'symlink': "",
+    \   'symlink_open': "",
+    \   }
+    \ }
+lua require'nvim-tree'.setup()
+call MapKeys("<c-x><c-l>", ":NvimTreeToggle<cr>")
 
 " Tagbar
 call MapKeys("<c-x><c-i>", ":TagbarToggle<cr>")
