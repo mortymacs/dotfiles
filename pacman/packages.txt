@@ -163,7 +163,6 @@ libev
 libqalculate
 libtool
 libvirt
-libxml++2.6
 linux
 linux-firmware
 lld
