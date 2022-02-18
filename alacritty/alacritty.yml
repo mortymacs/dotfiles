@@ -18,22 +18,22 @@ window:
 # Font configuration (changes require restart).
 # Alternative font: CodeNewRoman Nerd Font Mono
 font:
-  size: 13
+  size: 14
   normal:
-    family: Hack
-    style: Regular
+    family: CodeNewRoman Nerd Font Mono
+    style: Medium
 
   bold:
-    family: Hack
+    family: CodeNewRoman Nerd Font Mono
     style: Bold
 
   italic:
-    family: Hack
+    family: CodeNewRoman Nerd Font Mono
     style: Italic
 
   offset:
     x: 0
-    y: 0
+    y: 3
 
 # Color configuration.
 # https://github.com/eendroroy/alacritty-theme

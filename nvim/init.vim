@@ -60,6 +60,14 @@ Plug 'preservim/nerdcommenter'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'voldikss/vim-floaterm'
 Plug 'luochen1990/rainbow'
+Plug 'martinda/Jenkinsfile-vim-syntax'
+Plug 'vim-test/vim-test'
+Plug 'npxbr/glow.nvim'
+
+" C/C++
+Plug 'google/vim-maktaba'
+Plug 'google/vim-codefmt'
+Plug 'google/vim-glaive'
 
 " Python
 Plug 'stsewd/isort.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -70,10 +78,6 @@ Plug 'dense-analysis/ale'
 
 " Golang
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-
-Plug 'martinda/Jenkinsfile-vim-syntax'
-Plug 'vim-test/vim-test'
-Plug 'npxbr/glow.nvim'
 
 " Project
 Plug 'mhinz/vim-startify'
@@ -117,7 +121,7 @@ hi SignColumn ctermbg=NONE guibg=NONE
 nnoremap <silent> <Esc><Esc> <Esc>:nohlsearch<CR><Esc>
 let g:airline_theme="night_owl"
 "" https://github.com/vim-airline/vim-airline/issues/1688#issuecomment-373459776
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 0
 
 " Terminal
 let g:floaterm_title = "$1/$2"
@@ -332,6 +336,9 @@ call MapKeys("<c-c><c-r>", "gg=G<c-o><c-o>")
 autocmd BufWritePre * :%s/\s\+$//e
 call MapKeys("<c-c><c-h>", "<plug>Zeavim")
 call MapKeys("<c-c><c-m>", ":Glow<cr>")
+
+" C/C++
+autocmd FileType c,cpp call MapKeys("<c-m-l>", ":FormatCode clang-format<cr>")
 
 " Python
 function! ReformatBuffer()

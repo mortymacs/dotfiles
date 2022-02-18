@@ -2,6 +2,7 @@ act
 anydesk-bin
 bashdb
 chart-testing
+cpr
 czmq-git
 dive
 dropbox
