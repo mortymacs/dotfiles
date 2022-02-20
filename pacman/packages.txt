@@ -214,6 +214,7 @@ python-isort
 python-kubernetes
 python-lxml
 python-memory-profiler
+python-oyaml
 python-pandas
 python-pip
 python-poetry
