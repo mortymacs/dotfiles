@@ -217,7 +217,6 @@ python-memory-profiler
 python-oyaml
 python-pandas
 python-pip
-python-poetry
 python-pudb
 python-py-cpuinfo
 python-pydantic
