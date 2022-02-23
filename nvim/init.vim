@@ -27,14 +27,13 @@ set whichwrap+=<,>,[,]
 call plug#begin('~/.vim/plugged')
 " Theme and colorscheme.
 Plug 'ayu-theme/ayu-vim'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'norcalli/nvim-colorizer.lua'
 
 " Tabbar
 Plug 'romgrk/barbar.nvim'
 
 " Status
-Plug 'vim-airline/vim-airline'
+Plug 'nvim-lualine/lualine.nvim'
 
 " File and search.
 Plug 'junegunn/fzf.vim'
@@ -119,9 +118,9 @@ hi Normal guibg=NONE ctermbg=NONE
 hi SignColumn ctermbg=NONE guibg=NONE
 "" https://stackoverflow.com/a/19877212/2338672
 nnoremap <silent> <Esc><Esc> <Esc>:nohlsearch<CR><Esc>
-let g:airline_theme="night_owl"
-"" https://github.com/vim-airline/vim-airline/issues/1688#issuecomment-373459776
-let g:airline_powerline_fonts = 0
+lua << END
+require('lualine').setup()
+END
 
 " Terminal
 let g:floaterm_title = "$1/$2"
@@ -174,29 +173,8 @@ let g:nvim_tree_special_files = { 'Makefile': 1, 'CMakeLists.txt': 1 }
 let g:nvim_tree_show_icons = {
     \ 'git': 1,
     \ 'folders': 1,
-    \ 'files': 0,
+    \ 'files': 1,
     \ 'folder_arrows': 0,
-    \ }
-let g:nvim_tree_icons = {
-    \ 'git': {
-    \   'unstaged': "✗",
-    \   'staged': "✓",
-    \   'unmerged': "",
-    \   'renamed': "➜",
-    \   'untracked': "★",
-    \   'deleted': "",
-    \   'ignored': "◌"
-    \   },
-    \ 'folder': {
-    \   'arrow_open': "",
-    \   'arrow_closed': "",
-    \   'default': "",
-    \   'open': "",
-    \   'empty': "",
-    \   'empty_open': "",
-    \   'symlink': "",
-    \   'symlink_open': "",
-    \   }
     \ }
 lua require'nvim-tree'.setup()
 call MapKeys("<c-x><c-l>", ":NvimTreeToggle<cr>")
