@@ -27,7 +27,6 @@ cheese
 clang
 cloc
 cmake
-consul
 cppcheck
 ctags
 ctop
@@ -149,7 +148,6 @@ iotop
 iptables-nft
 ipython
 iw
-jdk-openjdk
 jemalloc
 jq
 k9s
@@ -175,7 +173,6 @@ m4
 make
 man-db
 massif-visualizer
-maven
 mcfly
 memcached
 minikube
