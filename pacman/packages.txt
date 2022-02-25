@@ -13,6 +13,7 @@ bash-bats
 bash-bats-support
 bash-completion
 bat
+bcc
 bind
 binutils
 bison
