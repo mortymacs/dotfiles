@@ -15,7 +15,6 @@ google-crc32c
 hotspot
 insomnia-bin
 jid
-jless
 kubespy
 lazydocker
 libcsptr
@@ -34,6 +33,7 @@ teams
 tiledb
 tre-command
 ulauncher
+wait4x
 xxd-standalone
 yay
 ydiff

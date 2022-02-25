@@ -150,6 +150,7 @@ iptables-nft
 ipython
 iw
 jemalloc
+jless
 jq
 k9s
 kcachegrind
