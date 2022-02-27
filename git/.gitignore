@@ -5,6 +5,7 @@ tmp/
 
 # Build
 dist/
+*.out
 
 # Python
 venv
