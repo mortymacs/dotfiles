@@ -38,3 +38,5 @@ compile_commands.json
 Gemfile.lock
 *.plist
 .cache
+*.sqlite3
+*.spec
