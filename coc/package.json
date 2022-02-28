@@ -7,7 +7,7 @@
     "coc-java": ">=1.5.5",
     "coc-json": ">=1.4.1",
     "coc-pyright": ">=1.1.223",
-    "coc-rust-analyzer": ">=0.60.0",
+    "coc-rust-analyzer": ">=0.60.1",
     "coc-sh": ">=0.6.1",
     "coc-snippets": ">=2.5.4"
   }
