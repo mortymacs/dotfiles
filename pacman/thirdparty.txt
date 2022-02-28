@@ -28,12 +28,14 @@ python-gaphor
 shc
 skypeforlinux-stable-bin
 slack-desktop
+slides
 spotify
 teams
 tiledb
 tre-command
 ulauncher
 wait4x
+wishlist
 xxd-standalone
 yay
 ydiff
