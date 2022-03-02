@@ -4,6 +4,7 @@ bashdb
 chart-testing
 cpr
 czmq-git
+datree-bin
 dive
 dropbox
 dry-bin
