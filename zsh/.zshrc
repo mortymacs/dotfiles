@@ -51,6 +51,7 @@ autoload ztodo
 source /home/mort/.config/broot/launcher/bash/br
 
 export GOPATH="$HOME/.local/share/go"
+export GOROOT="$HOME/.local/share/go"
 export GOMODCACHE="$HOME/.local/share/go/pkg/mod"
 
 # https://stackoverflow.com/a/22481496
