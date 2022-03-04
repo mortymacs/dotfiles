@@ -1,5 +1,7 @@
 ack
 alacritty
+ansible
+ansible-lint
 asciinema
 atop
 atuin
