@@ -175,6 +175,7 @@ m4
 make
 man-db
 massif-visualizer
+maturin
 mcfly
 memcached
 minikube
