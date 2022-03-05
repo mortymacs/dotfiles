@@ -9,6 +9,6 @@
     "coc-pyright": ">=1.1.223",
     "coc-rust-analyzer": ">=0.60.1",
     "coc-sh": ">=0.6.1",
-    "coc-snippets": ">=2.5.7"
+    "coc-snippets": ">=2.5.8"
   }
 }
