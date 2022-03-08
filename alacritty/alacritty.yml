@@ -16,19 +16,18 @@ window:
   gtk_theme_variant: dark
 
 # Font configuration (changes require restart).
-# Alternative font: CodeNewRoman Nerd Font Mono
 font:
-  size: 13
+  size: 14
   normal:
-    family: Jetbrains Mono
+    family: CodeNewRoman Nerd Font Mono
     style: Regular
 
   bold:
-    family: Jetbrains Mono
+    family: CodeNewRoman Nerd Font Mono
     style: Bold
 
   italic:
-    family: Jetbrains Mono
+    family: CodeNewRoman Nerd Font Mono
     style: Italic
 
   offset:

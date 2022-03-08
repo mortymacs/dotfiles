@@ -120,7 +120,17 @@ hi SignColumn ctermbg=NONE guibg=NONE
 "" https://stackoverflow.com/a/19877212/2338672
 nnoremap <silent> <Esc><Esc> <Esc>:nohlsearch<CR><Esc>
 lua << END
-require('lualine').setup()
+require('lualine').setup{
+  options = {
+    component_separators = '',
+    section_separators = '',
+  },
+  sections = {
+    lualine_a = {
+      {'mode', fmt = function(str) return ' ' end, padding = 0},
+    },
+  },
+}
 END
 
 " Terminal
@@ -176,8 +186,8 @@ call MapKeys("<c-x><c-b>", ":Buffers<cr>")
 let g:nvim_tree_special_files = { 'Makefile': 1, 'CMakeLists.txt': 1 }
 let g:nvim_tree_show_icons = {
     \ 'git': 1,
-    \ 'folders': 1,
-    \ 'files': 1,
+    \ 'folders': 0,
+    \ 'files': 0,
     \ 'folder_arrows': 0,
     \ }
 lua require'nvim-tree'.setup()
