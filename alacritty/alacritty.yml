@@ -20,15 +20,15 @@ window:
 font:
   size: 13
   normal:
-    family: Hack
+    family: Jetbrains Mono
     style: Regular
 
   bold:
-    family: Hack
+    family: Jetbrains Mono
     style: Bold
 
   italic:
-    family: Hack
+    family: Jetbrains Mono
     style: Italic
 
   offset:

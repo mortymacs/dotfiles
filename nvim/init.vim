@@ -62,6 +62,7 @@ Plug 'luochen1990/rainbow'
 Plug 'martinda/Jenkinsfile-vim-syntax'
 Plug 'vim-test/vim-test'
 Plug 'npxbr/glow.nvim'
+Plug 'pechorin/any-jump.vim'
 
 " C/C++
 Plug 'google/vim-maktaba'
@@ -140,7 +141,10 @@ hi FloatermBorder ctermbg=black
 
 " Search
 call MapKeys("<c-f>", ":Lines<cr>")
+call MapKeys("<c-c><c-t>", ":AnyJump<cr>")
+call MapKeys("<c-c><c-g>", ":AnyJumpArg ")
 call MapKeys("<c-x><c-g>", ":Ag<cr>")
+let g:any_jump_disable_default_keybindings = 1
 
 " coc.vim
 "" https://github.com/neoclide/coc.nvim/issues/318#issuecomment-451331078
