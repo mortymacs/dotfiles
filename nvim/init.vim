@@ -129,6 +129,8 @@ require('lualine').setup{
     lualine_a = {
       {'mode', fmt = function(str) return ' ' end, padding = 0},
     },
+    lualine_y = {'%p%%'},
+    lualine_z = {'%l'},
   },
 }
 END
