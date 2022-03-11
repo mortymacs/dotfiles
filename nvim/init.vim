@@ -126,11 +126,12 @@ require('lualine').setup{
     section_separators = '',
   },
   sections = {
-    lualine_a = {
-      {'mode', fmt = function(str) return ' ' end, padding = 0},
-    },
-    lualine_y = {'%p%%'},
-    lualine_z = {'%l'},
+    lualine_a = {{'filename', color={bg='#0f1419',fg=''}}},
+    lualine_b = {},
+    lualine_c = {},
+    lualine_x = {'filetype', 'branch', 'diff', 'diagnostics'},
+    lualine_y = {{'%p%%', color={bg='#0f1419',fg=''}}},
+    lualine_z = {},
   },
 }
 END
@@ -188,8 +189,8 @@ call MapKeys("<c-x><c-b>", ":Buffers<cr>")
 let g:nvim_tree_special_files = { 'Makefile': 1, 'CMakeLists.txt': 1 }
 let g:nvim_tree_show_icons = {
     \ 'git': 1,
-    \ 'folders': 0,
-    \ 'files': 0,
+    \ 'folders': 1,
+    \ 'files': 1,
     \ 'folder_arrows': 0,
     \ }
 lua require'nvim-tree'.setup()
