@@ -9,6 +9,7 @@ dive
 dropbox
 dry-bin
 gcalcli
+ghq
 git-extras
 gitstatus
 google-cloud-cpp

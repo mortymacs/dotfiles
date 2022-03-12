@@ -83,6 +83,9 @@ function extract()
 }
 
 # git
+alias p="ghq"
+# https://github.com/x-motemen/ghq/issues/294#issuecomment-662071100
+pj(){ cd $(p list -p | fzf -1 -e) }
 alias gs="git status"
 alias gd="git diff"
 alias gp="git push"
@@ -90,7 +93,7 @@ alias gch="git branch -a | fzf | tr -d '[:space:]' | xargs git checkout"
 alias diff="ydiff -s --wrap"
 
 # server/proxy
-alias p="gping 8.8.8.8"
+alias ping="gping"
 alias x='export http_proxy="http://127.0.0.1:8118"'
 alias dx='export http_proxy=""'
 alias whereiam='echo $(curl -s http://ip-api.com/json | jq -r ".country,.city")'

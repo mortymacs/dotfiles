@@ -71,5 +71,8 @@ export FZF_DEFAULT_COMMAND='fd --type f'
 export MCFLY_FUZZY=true
 eval "$(mcfly init zsh)"
 
+# Ghq.
+export GHQ_ROOT="$HOME/Workspaces"
+
 # Starship.
 eval "$(starship init zsh)"
