@@ -265,6 +265,7 @@ socat
 spdlog
 sshfs
 sshpass
+starship
 staticcheck
 step-cli
 sudo

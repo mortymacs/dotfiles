@@ -2,7 +2,11 @@
 
 # zsh
 rm -rf zsh/*
-cp "$HOME"/{.zshrc,.zsh_aliases,.p10k.zsh} zsh/
+cp "$HOME"/{.zshrc,.zsh_aliases} zsh/
+
+# ~/.config/starship.toml
+rm -rf starship/*
+cp -R "$HOME"/.config/starship.toml starship/
 
 # tmux
 rm -rf tmux/*

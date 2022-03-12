@@ -1,0 +1,63 @@
+format = """$character\
+$directory\
+$sudo\
+$vcsh\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+"""
+
+right_format = """
+$cmake\
+$golang\
+$helm\
+$lua\
+$python\
+$red\
+$rust\
+$container\
+$docker_context\
+$kubernetes\
+$terraform\
+$vagrant\
+$aws\
+$gcloud\
+$env_var\
+$cmd_duration\
+$line_break\
+$jobs\
+$status\
+"""
+
+continuation_prompt = ">>"
+add_newline = false
+
+[character]
+success_symbol = "[>](green)"
+error_symbol = "[>](red)"
+
+[directory]
+style = "cyan"
+
+[git_status]
+deleted = "x"
+renamed = ">>"
+staged = "+"
+modified = "!"
+stashed = "$"
+untracked = "?"
+conflicted = "="
+style = "red"
+
+[git_branch]
+style = "purple"
+
+[python]
+symbol = "py:"
+style = "yellow"
+
+[golang]
+symbol = "go:"
+style = "yellow"

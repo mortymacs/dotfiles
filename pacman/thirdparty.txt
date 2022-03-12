@@ -42,4 +42,3 @@ yay
 ydiff
 zeal
 zoom
-zsh-theme-powerlevel10k-git
