@@ -27,6 +27,7 @@ btrfs-progs
 cbindgen
 cgdb
 cheese
+chezmoi
 clang
 cloc
 cmake
