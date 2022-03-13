@@ -1,3 +1,4 @@
 {
-  "psFormat": "table {{.ID}}\\t{{.Names}}\\t\\t{{.Status}}\\t{{.Ports}}"
+  "psFormat": "table {{.ID}}\\t{{.Names}}\\t\\t{{.Status}}\\t{{.Ports}}",
+  "imagesFormat": "table {{.Repository}}\\t\\t{{.Tag}}\\t{{.CreatedSince}}\\t{{.Size}}"
 }

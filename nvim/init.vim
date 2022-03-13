@@ -88,6 +88,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'sotte/presenting.vim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
+Plug 'preservim/vimux'
 call plug#end()
 
 " Color
@@ -158,6 +159,12 @@ call MapKeys("<c-c><c-t>", ":AnyJump<cr>")
 call MapKeys("<c-c><c-g>", ":AnyJumpArg ")
 call MapKeys("<c-x><c-g>", ":Ag<cr>")
 let g:any_jump_disable_default_keybindings = 1
+
+" Test.
+let test#strategy = "floaterm"
+call MapKeys("<c-t><c-n>", ":TestNearest<cr>")
+call MapKeys("<c-t><c-f>", ":TestFile<cr>")
+call MapKeys("<c-t><c-s>", ":TestSuite<cr>")
 
 " coc.vim
 "" https://github.com/neoclide/coc.nvim/issues/318#issuecomment-451331078

@@ -27,7 +27,6 @@ btrfs-progs
 cbindgen
 cgdb
 cheese
-chezmoi
 clang
 cloc
 cmake
@@ -213,6 +212,7 @@ python-cherrypy
 python-dask
 python-diff-cover
 python-distributed
+python-ipdb
 python-isort
 python-kubernetes
 python-lxml
