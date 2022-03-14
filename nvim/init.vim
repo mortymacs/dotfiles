@@ -163,8 +163,8 @@ let g:any_jump_disable_default_keybindings = 1
 " Test.
 let test#strategy = "floaterm"
 call MapKeys("<c-t><c-n>", ":TestNearest<cr>")
-call MapKeys("<c-t><c-f>", ":TestFile<cr>")
 call MapKeys("<c-t><c-s>", ":TestSuite<cr>")
+call MapKeys("<c-t><c-l>", ":TestLast<cr>")
 
 " coc.vim
 "" https://github.com/neoclide/coc.nvim/issues/318#issuecomment-451331078
