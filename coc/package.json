@@ -1,13 +1,13 @@
 {
   "dependencies": {
-    "coc-clangd": ">=0.20.1",
+    "coc-clangd": ">=0.21.0",
     "coc-cmake": ">=0.2.0",
     "coc-go": ">=1.1.0",
     "coc-html": ">=1.6.1",
     "coc-java": ">=1.5.5",
     "coc-json": ">=1.4.1",
-    "coc-pyright": ">=1.1.229",
-    "coc-rust-analyzer": ">=0.61.0",
+    "coc-pyright": ">=1.1.231",
+    "coc-rust-analyzer": ">=0.61.1",
     "coc-sh": ">=0.6.1",
     "coc-snippets": ">=3.0.4"
   }
