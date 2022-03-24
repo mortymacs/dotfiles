@@ -9,6 +9,7 @@ autoconf
 automake
 autopep8
 awesome-terminal-fonts
+aws-cli
 baobab
 base
 bash-bats
