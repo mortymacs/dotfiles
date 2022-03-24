@@ -50,6 +50,9 @@ stashed = "$"
 untracked = "?"
 conflicted = "="
 style = "red"
+ahead = ""
+behind = ""
+diverged = ""
 
 [git_branch]
 style = "purple"

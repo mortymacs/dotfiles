@@ -146,15 +146,9 @@ alias tl="tmux ls -F \#S"
 alias ta="tmux attach"
 alias tq="tl | xargs -n 1 tmux kill-session -t ; tl"
 
-# messenger
-alias irc="irssi"
-
 # calendar
 alias c="gcalcli"
 alias today="c agenda '`date --date=\"today\" +\"%a %b %d\"`' '`date --date=\"tomorrow\" +\"%a %b %d\"`'"
 alias next="c agenda --military --nostarted '`date --date="today" +"%a %b %d"`' '`date --date="tomorrow" +"%a %b %d"`' | cut -d ' ' -f 2- | head -2 | tail -1 | sed -e 's/^[[:space:]]*//'"
 alias week="c calw"
 alias month="c calm"
-
-# device.
-function vf() { i3-volume -an -t i3status-rs -u SIGUSR1 set "$1" }
