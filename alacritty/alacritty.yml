@@ -16,23 +16,24 @@ window:
   gtk_theme_variant: dark
 
 # Font configuration (changes require restart).
+# Alternative font: CodeNewRoman Nerd Font Mono
 font:
-  size: 14
+  size: 13
   normal:
-    family: CodeNewRoman Nerd Font Mono
-    style: Regular
+    family: Source Code Pro
+    style: Medium
 
   bold:
-    family: CodeNewRoman Nerd Font Mono
+    family: Source Code Pro
     style: Bold
 
   italic:
-    family: CodeNewRoman Nerd Font Mono
+    family: Source Code Pro
     style: Italic
 
   offset:
     x: 0
-    y: 3
+    y: 0
 
 # Color configuration.
 # https://github.com/eendroroy/alacritty-theme
