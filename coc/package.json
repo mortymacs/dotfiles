@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "coc-clangd": ">=0.21.0",
-    "coc-cmake": ">=0.2.0",
+    "coc-cmake": ">=0.2.1",
     "coc-go": ">=1.1.0",
     "coc-html": ">=1.6.1",
     "coc-java": ">=1.5.5",
