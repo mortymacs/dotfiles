@@ -21,7 +21,7 @@ font:
   size: 14
   normal:
     family: Jetbrains Mono
-    style: Regular
+    style: Medium
 
   bold:
     family: Jetbrains Mono
