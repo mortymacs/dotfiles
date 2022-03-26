@@ -24,16 +24,16 @@ font:
     style: Regular
 
   bold:
-    family: CodeNewRoman Nerd Font Mono
+    family: Jetbrains Mono
     style: Bold
 
   italic:
-    family: CodeNewRoman Nerd Font Mono
+    family: Jetbrains Mono
     style: Italic
 
   offset:
     x: 0
-    y: 3
+    y: 1
 
 # Color configuration.
 # https://github.com/eendroroy/alacritty-theme
