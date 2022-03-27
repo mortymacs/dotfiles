@@ -72,6 +72,7 @@ gdb
 gdb-dashboard
 gdm
 geary
+geckodriver
 gedit
 gendesk
 gettext
