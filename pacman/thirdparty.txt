@@ -33,6 +33,7 @@ slack-desktop
 slides
 spotify
 teams
+terraform-ls
 tiledb
 tre-command
 ulauncher

@@ -79,6 +79,9 @@ Plug 'dense-analysis/ale'
 " Golang
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
+" DevOps
+Plug 'hashivim/vim-terraform'
+
 " Project
 Plug 'mhinz/vim-startify'
 
@@ -370,3 +373,6 @@ autocmd FileType go call MapKeys("<c-m-l>", ":GoFmt<cr>")
 
 " CMake
 autocmd BufWritePost CMakeLists.txt execute '! cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1'
+
+" Terraform
+autocmd FileType terraform call MapKeys("<c-m-l>", ":TerraformFmt<cr>")
