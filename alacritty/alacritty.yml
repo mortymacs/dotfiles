@@ -15,6 +15,10 @@ window:
     y: 10
   gtk_theme_variant: dark
 
+cursor:
+  style:
+    shape: Beam
+
 # Font configuration (changes require restart).
 # Alternative font: CodeNewRoman Nerd Font Mono
 font:
@@ -44,6 +48,10 @@ colors:
     background: '0x0A0E14'
     foreground: '0xB3B1AD'
 
+  cursor:
+    text: '0x0A0E14'
+    cursor: '0xC2D94C'
+
   # Normal colors
   normal:
     black:   '0x01060E'
@@ -51,7 +59,7 @@ colors:
     green:   '0x91B362'
     yellow:  '0xF9AF4F'
     blue:    '0x53BDFA'
-    magenta: '0xFAE994'
+    magenta: '0x906cff'
     cyan:    '0x90E1C6'
     white:   '0xC7C7C7'
 
@@ -62,6 +70,6 @@ colors:
     green:   '0xC2D94C'
     yellow:  '0xFFB454'
     blue:    '0x59C2FF'
-    magenta: '0xFFEE99'
+    magenta: '0xc991e1'
     cyan:    '0x95E6CB'
     white:   '0xFFFFFF'
