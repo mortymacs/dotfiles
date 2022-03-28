@@ -208,6 +208,8 @@ call MapKeys("<c-x><c-l>", ":NvimTreeToggle<cr>")
 
 " Tagbar
 call MapKeys("<c-x><c-i>", ":TagbarToggle<cr>")
+let g:tagbar_sort = 0
+let g:tagbar_show_balloon = 0
 
 " Window
 "" https://vim.fandom.com/wiki/Maximize_window_and_return_to_previous_split_structure
