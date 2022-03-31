@@ -2,9 +2,7 @@ act
 anydesk-bin
 bashdb
 chart-testing
-cpr
 czmq-git
-datree-bin
 dive
 dropbox
 dry-bin
@@ -26,7 +24,6 @@ palanteer
 pgcli
 python-bench-it
 python-configparser
-python-gaphor
 shc
 skypeforlinux-stable-bin
 slack-desktop

@@ -63,6 +63,7 @@ Plug 'martinda/Jenkinsfile-vim-syntax'
 Plug 'vim-test/vim-test'
 Plug 'npxbr/glow.nvim'
 Plug 'pechorin/any-jump.vim'
+Plug 'dense-analysis/ale'
 
 " C/C++
 Plug 'google/vim-maktaba'
@@ -74,7 +75,6 @@ Plug 'stsewd/isort.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'psf/black'
 Plug 'alfredodeza/pytest.vim'
 Plug 'stsewd/sphinx.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'dense-analysis/ale'
 
 " Golang
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
@@ -121,6 +121,8 @@ set cmdheight=1
 "" https://stackoverflow.com/a/37720708/2338672
 hi Normal guibg=NONE ctermbg=NONE
 hi SignColumn ctermbg=NONE guibg=NONE
+"" https://stackoverflow.com/a/40411893/2338672
+hi EndOfBuffer ctermfg=black guifg=black
 "" https://stackoverflow.com/a/19877212/2338672
 nnoremap <silent> <Esc><Esc> <Esc>:nohlsearch<CR><Esc>
 lua << END
@@ -169,12 +171,15 @@ call MapKeys("<c-t><c-n>", ":TestNearest<cr>")
 call MapKeys("<c-t><c-s>", ":TestSuite<cr>")
 call MapKeys("<c-t><c-l>", ":TestLast<cr>")
 
-" coc.vim
-"" https://github.com/neoclide/coc.nvim/issues/318#issuecomment-451331078
-call MapKeys("<c-c><c-d>", ":call CocActionAsync('jumpDefinition', 'drop')<cr>")
+" Coc.nvim
+inoremap <silent><expr> <c-space> coc#refresh()
+call MapKeys("<c-c><c-d>", "<Plug>(coc-definition)")
+call MapKeys("<c-c><c-i>", "<Plug>(coc-implementation)")
+call MapKeys("<c-c><c-r>", "<Plug>(coc-references)")
 call MapKeys("<c-c><c-e>", "<c-o>")
 "" https://github.com/neoclide/coc.nvim/issues/2202#issuecomment-662969193
 inoremap <c-q> <c-\><c-o>:call CocActionAsync('showSignatureHelp')<cr>
+autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Code indent
 "" https://github.com/jelly/Dotfiles/blob/master/.vimrc
@@ -188,14 +193,14 @@ set complete+=s
 call MapKeys("<c-c><c-l>", "gg=G<cr>")
 call MapKeys("<c-m-l>", "gg=G<cr>")
 
-" fzf
+" Fzf
 "" https://github.com/universal-ctags/ctags/issues/218#issuecomment-72355190
 let g:fzf_tags_command='fd | ctags --links=no -L-'
 call MapKeys("<c-x><c-f>", ":Files<cr>")
 call MapKeys("<c-x><c-t>", ":Tags<cr>")
 call MapKeys("<c-x><c-b>", ":Buffers<cr>")
 
-" file manager
+" File manager
 let g:nvim_tree_special_files = { 'Makefile': 1, 'CMakeLists.txt': 1 }
 let g:nvim_tree_show_icons = {
     \ 'git': 1,
@@ -272,8 +277,7 @@ let bufferline.clickable = v:false
 " Hotkeys general
 call MapKeys("<c-g>", "<esc>")
 "" select
-call MapKeys("<c-space>", "v")  " v$
-call MapKeys("<m-space>", "v0o$")
+call MapKeys("<m-space>", "v") " v$ v0o$
 call MapKeys("<c-x><c-s>", ":w<cr>")
 call MapKeys("<c-@>", "v")
 call MapKeys("<c-d>", "yyp")
@@ -314,6 +318,7 @@ call MapKeys("<c-g><c-s>", ":call DiffViewToggle()<cr>")
 " auto wrap git commit messages
 au FileType gitcommit set tw=72
 
+" Text
 "" https://stackoverflow.com/a/63887462/2338672
 nnoremap <s-m-down> :m .+1<cr>==
 nnoremap <s-m-up>   :m .-2<cr>==
@@ -343,6 +348,7 @@ call MapKeys("<c-c><c-r>", "gg=G<c-o><c-o>")
 autocmd BufWritePre * :%s/\s\+$//e
 call MapKeys("<c-c><c-h>", "<plug>Zeavim")
 call MapKeys("<c-c><c-m>", ":Glow<cr>")
+let g:ale_disable_lsp = 1
 
 " C/C++
 autocmd FileType c,cpp call MapKeys("<c-m-l>", ":FormatCode clang-format<cr>")
@@ -353,22 +359,14 @@ function! ReformatBuffer()
   Isort --profile black
 endfunction
 autocmd FileType python call MapKeys("<c-m-l>", ":call ReformatBuffer()<cr>")
-call MapKeys("<c-c><c-p>", ":!python %<cr>")
-call MapKeys("<c-t><c-c>", ":Pytest class<cr>")
-call MapKeys("<c-t><c-m>", ":Pytest method<cr>")
-call MapKeys("<c-t><c-f>", ":Pytest function<cr>")
-call MapKeys("<c-t><c-a>", ":Pytest file<cr>")
+autocmd FileType python call MapKeys("<c-c><c-p>", ":!python %<cr>")
+autocmd FileType python call MapKeys("<c-t><c-c>", ":Pytest class<cr>")
+autocmd FileType python call MapKeys("<c-t><c-m>", ":Pytest method<cr>")
+autocmd FileType python call MapKeys("<c-t><c-f>", ":Pytest function<cr>")
+autocmd FileType python call MapKeys("<c-t><c-a>", ":Pytest file<cr>")
 " isort
 let g:vim_isort_map = ''
 let g:isort_command = 'isort'
-call MapKeys("<c-c><c-i>", ":Isort --profile black<cr>")
-"autocmd BufWritePre *.py execute ':Isort --profile black'
-" python - black
-call MapKeys("<c-c><c-r>", ":Black<cr>")
-"autocmd BufWritePre *.py execute ':Black'
-
-" ALE
-let g:ale_disable_lsp = 1
 
 " Golang
 autocmd FileType go call MapKeys("<c-m-l>", ":GoFmt<cr>")
