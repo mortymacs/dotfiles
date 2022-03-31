@@ -55,9 +55,9 @@ rm -rf docker/*
 cat "$HOME"/.docker/config.json | jq 'del(.auths)' | tee docker/config.json
 
 # gnome
-#rm -rf gnome/*
-#dconf dump / > gnome/dconf-dump.ini
-#cp ~/.config/wallpaper.jpg gnome/
+rm -rf gnome/*
+dconf dump / > gnome/dconf-dump.ini
+cp ~/.config/wallpaper.jpg gnome/
 
 # fonts
 rm -rf fonts/*

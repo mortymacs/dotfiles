@@ -33,11 +33,9 @@ teams
 terraform-ls
 tiledb
 tre-command
-ulauncher
 wait4x
 wishlist
 xxd-standalone
 yay
 ydiff
-zeal
 zoom
