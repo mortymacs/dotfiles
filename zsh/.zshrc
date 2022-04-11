@@ -1,7 +1,5 @@
-# General.
-# https://github.com/romkatv/powerlevel10k/issues/1474#issuecomment-875062137
-export ZLE_RPROMPT_INDENT=0
-export PATH=$PATH:/home/mort/.gem/ruby/2.7.0/bin/:/home/mort/.local/bin
+# Env.
+source $HOME/.zshenv
 
 # History.
 HISTFILE=$HOME/.zsh_history
@@ -20,12 +18,11 @@ setopt COMPLETE_ALIASES
 setopt HIST_IGNORE_SPACE
 setopt no_list_ambiguous
 
-# Zsh plugins.
+# Plugins.
 source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/gitstatus/gitstatus.prompt.zsh
-source $HOME/.zsh_aliases
 
 # Text.
 # https://unix.stackexchange.com/a/258661/204066
@@ -40,43 +37,17 @@ bindkey ';3D' backward-word
 bindkey ';5C' forward-word
 bindkey ';3C' forward-word
 
-# Qt.
-export QT_QPA_PLATFORMTHEME=qt5ct
-
 # Z.
 [[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
 
 # Broot.
-source /home/mort/.config/broot/launcher/bash/br
-
-# Golang.
-export GOPATH="$HOME/.local/share/go"
-export GOMODCACHE="$HOME/.local/share/go/pkg/mod"
-
-# Python.
-# https://www.andreagrandi.it/2018/10/16/using-ipdb-with-python-37-breakpoint/
-export PYTHONBREAKPOINT=ipdb.set_trace
-
-# https://stackoverflow.com/a/22481496
-export TERM="xterm-256color"
-
-# Editors.
-export VISUAL=nvim
-export EDITOR=nvim
-export TERMINAL=alacritty
-
-# Bat
-export BAT_THEME="Coldark-Dark"
-
-# Fzf.
-export FZF_DEFAULT_COMMAND='fd --type f'
+source $HOME/.config/broot/launcher/bash/br
 
 # Mcfly.
-export MCFLY_FUZZY=true
 eval "$(mcfly init zsh)"
-
-# Ghq.
-export GHQ_ROOT="$HOME/Workspaces"
 
 # Starship.
 eval "$(starship init zsh)"
+
+# Aliases.
+source $HOME/.zsh_aliases

@@ -1,4 +1,0 @@
-# https://stackoverflow.com/a/41084751/2338672
-import pdb
-import rlcompleter
-pdb.Pdb.complete=rlcompleter.Completer(locals()).complete
