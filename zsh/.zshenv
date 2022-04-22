@@ -8,6 +8,7 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 # Golang.
 export GOPATH="$HOME/.local/share/go"
 export GOMODCACHE="$HOME/.local/share/go/pkg/mod"
+export GOPRIVATE=""
 
 # Python.
 # https://www.andreagrandi.it/2018/10/16/using-ipdb-with-python-37-breakpoint/

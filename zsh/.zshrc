@@ -37,8 +37,8 @@ bindkey ';3D' backward-word
 bindkey ';5C' forward-word
 bindkey ';3C' forward-word
 
-# Z.
-[[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
+# Zoxide.
+eval "$(zoxide init zsh)"
 
 # Broot.
 source $HOME/.config/broot/launcher/bash/br

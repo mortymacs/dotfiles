@@ -2,5 +2,6 @@
   "answerclean": "A",
   "answerdiff": "N",
   "cleanafter": true,
-  "provides": false
+  "provides": false,
+  "answerupgrade": "A"
 }

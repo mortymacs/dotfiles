@@ -20,7 +20,6 @@ cursor:
     shape: Beam
 
 # Font configuration (changes require restart).
-# Alternative font: CodeNewRoman Nerd Font Mono
 font:
   size: 14
   normal:

@@ -74,7 +74,6 @@ Plug 'google/vim-glaive'
 Plug 'stsewd/isort.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'psf/black'
 Plug 'alfredodeza/pytest.vim'
-Plug 'stsewd/sphinx.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " Golang
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
@@ -157,6 +156,7 @@ let g:floaterm_keymap_kill = "<c-x><c-k>"
 let g:floaterm_keymap_kill = "<c-x><c-up>"
 let g:floaterm_opener = "tabe"
 hi FloatermBorder ctermbg=black
+call MapKeys("<c-x><c-r>", "FloatermToggle<cr>")
 
 " Search
 call MapKeys("<c-f>", ":Lines<cr>")
@@ -356,7 +356,7 @@ autocmd FileType c,cpp call MapKeys("<c-m-l>", ":FormatCode clang-format<cr>")
 " Python
 function! ReformatBuffer()
   Black
-  Isort --profile black
+  "Isort --profile black
 endfunction
 autocmd FileType python call MapKeys("<c-m-l>", ":call ReformatBuffer()<cr>")
 autocmd FileType python call MapKeys("<c-c><c-p>", ":!python %<cr>")
@@ -368,8 +368,19 @@ autocmd FileType python call MapKeys("<c-t><c-a>", ":Pytest file<cr>")
 let g:vim_isort_map = ''
 let g:isort_command = 'isort'
 
-" Golang
+" Go
+let g:go_auto_type_info = 0
 autocmd FileType go call MapKeys("<c-m-l>", ":GoFmt<cr>")
+"" Refactor
+autocmd FileType go call MapKeys("<c-r><c-n>", ":GoRename<cr>")
+autocmd FileType go call MapKeys("<c-r><c-c>", ":GoCallers<cr>")
+"" Debug
+"autocmd FileType go call MapKeys("<c-d><c-r>", ":GoDebugStart .<cr>")
+"autocmd FileType go call MapKeys("<c-d><c-b>", ":GoDebugBreakpoint<cr>")
+"autocmd FileType go call MapKeys("<c-d><c-c>", ":GoDebugContinue<cr>")
+"autocmd FileType go call MapKeys("<c-d><c-n>", ":GoDebugNext<cr>")
+"autocmd FileType go call MapKeys("<c-d><c-s>", ":GoDebugStep<cr>")
+"autocmd FileType go call MapKeys("<c-d><c-f>", ":GoDebugStepOut<cr>")
 
 " CMake
 autocmd BufWritePost CMakeLists.txt execute '! cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1'

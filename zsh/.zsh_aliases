@@ -76,9 +76,14 @@ function extract()
 }
 
 # Git.
-alias p="ghq"
-# https://github.com/x-motemen/ghq/issues/294#issuecomment-662071100
-pj(){ cd $(p list -p | fzf -1 -e) }
+p(){
+    if [ "$#" -eq 0 ]; then
+        # https://github.com/x-motemen/ghq/issues/294#issuecomment-662071100
+        cd "$(p list -p | fzf -1 -e)"
+    else
+        ghq "$@"
+    fi
+}
 alias gs="git status"
 alias gd="git diff"
 alias gp="git push"
@@ -121,11 +126,6 @@ alias up="pip list --outdated | awk '{ print \$1\"==\"\$3 }' | tail +3 | xargs p
 alias py="ipython --no-term-title --no-confirm-exit --no-banner --no-simple-prompt"
 alias rpyc="fd -I __pycache__ | xargs rm -rf --"
 alias rpy="fd -I '(build|dist|__pycache__|egg-info)' | xargs rm -rf --"
-
-# Db.
-alias psql="pgcli"
-alias mysql="mycli"
-alias sqlite="litecli"
 
 # Editor.
 alias vim="nvim"

@@ -5,9 +5,8 @@
     "coc-go": ">=1.3.0",
     "coc-html": ">=1.6.1",
     "coc-json": ">=1.4.1",
-    "coc-pyright": ">=1.1.232",
-    "coc-rust-analyzer": ">=0.61.2",
-    "coc-sh": ">=0.6.1",
-    "coc-snippets": ">=3.0.8"
+    "coc-pyright": ">=1.1.235",
+    "coc-rust-analyzer": ">=0.62.0",
+    "coc-sh": ">=0.6.1"
   }
 }
