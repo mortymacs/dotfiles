@@ -117,6 +117,7 @@ let ayucolor="dark"   " for dark version of theme
 colorscheme ayu
 "" https://stackoverflow.com/a/15648665/2338672
 set cmdheight=1
+set laststatus=3
 "" https://stackoverflow.com/a/37720708/2338672
 hi Normal guibg=NONE ctermbg=NONE
 hi SignColumn ctermbg=NONE guibg=NONE

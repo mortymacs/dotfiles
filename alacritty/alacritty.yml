@@ -9,10 +9,10 @@ window:
   dimensions:
     columns: 120
     lines: 30
-  decorations: none
+  decorations: full
   padding:
-    x: 10
-    y: 10
+    x: 0
+    y: 0
   gtk_theme_variant: dark
 
 cursor:
@@ -36,7 +36,7 @@ font:
 
   offset:
     x: 0
-    y: 3
+    y: 2
 
 # Color configuration.
 # https://github.com/eendroroy/alacritty-theme
