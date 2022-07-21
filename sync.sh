@@ -2,11 +2,11 @@
 
 # zsh
 rm -rf zsh/*
-cp "$HOME"/{.zshrc,.zsh_aliases} zsh/
+cp "$HOME"/{.zshrc,.zsh_aliases,.zshenv} zsh/
 
 # ~/.config/starship.toml
 rm -rf starship/*
-cp -R "$HOME"/.config/starship.toml starship/
+cp "$HOME"/.config/starship.toml starship/
 
 # tmux
 rm -rf tmux/*
@@ -29,13 +29,16 @@ rm -rf coc/*
 cp "$HOME"/.config/coc/extensions/package.json coc/
 
 # gdb, pdb
-rm -rf gdb/* pdb/*
+rm -rf gdb/*
 cp "$HOME"/.gdbinit gdb/
-cp "$HOME"/.pdbrc pdb/
 
 # git
 rm -rf git/*
 cp "$HOME"/{.gitconfig,.gitignore} git/
+
+# delta
+rm -rf delta/*
+cp "$HOME"/.config/delta/themes.gitconfig delta/
 
 # tig
 rm -rf tig/*
@@ -44,6 +47,30 @@ cp "$HOME"/.tigrc tig/
 # broot
 rm -rf broot/*
 cp "$HOME"/.config/broot/conf.toml broot/
+
+# rofi
+rm -rf rofi
+cp -R "$HOME"/.config/rofi/ .
+
+# picom
+rm -rf picom/*
+cp "$HOME"/.config/picom.conf picom/
+
+# i3
+rm -rf i3
+cp -R "$HOME"/.config/i3/ .
+
+# i3status-rs
+rm -rf i3status-rust
+cp -R "$HOME"/.config/i3status-rust .
+
+# flameshot
+rm -rf flameshot/*
+cp "$HOME"/.config/flameshot/flameshot.ini flameshot/
+
+# yay
+rm -rf yay/*
+cp "$HOME"/.config/yay/config.json yay/
 
 # packages
 rm -rf pacman/*
@@ -54,16 +81,12 @@ pacman -Qqem > pacman/thirdparty.txt
 rm -rf docker/*
 cat "$HOME"/.docker/config.json | jq 'del(.auths)' | tee docker/config.json
 
-# gnome
-rm -rf gnome/*
-dconf dump / > gnome/dconf-dump.ini
-cp ~/.config/wallpaper.jpg gnome/
-
 # fonts
 rm -rf fonts/*
 cp -R "$HOME"/.local/share/fonts/{Code\ New\ Roman\ Nerd\ Font\ Complete\ Mono.otf,Code\ New\ Roman\ Bold\ Nerd\ Font\ Complete\ Mono.otf,Code\ New\ Roman\ Italic\ Nerd\ Font\ Complete\ Mono.otf} fonts/
 
 # push changes.
+exit
 git status -s
 git add .
 git commit -m "Update dotfiles"

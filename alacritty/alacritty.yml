@@ -2,14 +2,17 @@
 env:
   # https://github.com/alacritty/alacritty/issues/3424#issue-576635376
   WINIT_X11_SCALE_FACTOR: "1"
+  # https://github.com/catppuccin/alacritty
+  TERM: xterm-256color
 
 # Window configuration (changes require restart).
 window:
-  opacity: 0.98
+  opacity: 0.90
   dimensions:
     columns: 120
     lines: 30
   decorations: full
+  dynamic_padding: false
   padding:
     x: 0
     y: 0
@@ -19,37 +22,43 @@ cursor:
   style:
     shape: Beam
 
-# Font configuration (changes require restart).
+mouse:
+  hide_when_typing: true
+
+selection:
+  save_to_clipboard: true
+
+# Alternative font: CodeNewRoman Nerd Font Mono
+font_name: &font_name CodeNewRoman Nerd Font Mono
 font:
   size: 14
   normal:
-    family: CodeNewRoman Nerd Font Mono
+    family: *font_name
     style: Regular
 
   bold:
-    family: CodeNewRoman Nerd Font Mono
+    family: *font_name
     style: Bold
 
   italic:
-    family: CodeNewRoman Nerd Font Mono
+    family: *font_name
     style: Italic
 
   offset:
     x: 0
     y: 2
 
+  glyph_offset:
+    x: 0
+    y: -1
+
 # Color configuration.
-# https://github.com/eendroroy/alacritty-theme
-# Colors (Ayu Dark)
+# https://github.com/eendroroy/alacritty-theme/ (Ayu Dark)
 colors:
   # Default colors
   primary:
-    background: '0x000000'
+    background: '0x0A0E14'
     foreground: '0xB3B1AD'
-
-  cursor:
-    text: '0x0A0E14'
-    cursor: '0xC2D94C'
 
   # Normal colors
   normal:
@@ -58,7 +67,7 @@ colors:
     green:   '0x91B362'
     yellow:  '0xF9AF4F'
     blue:    '0x53BDFA'
-    magenta: '0x906cff'
+    magenta: '0x403659'
     cyan:    '0x90E1C6'
     white:   '0xC7C7C7'
 
@@ -69,6 +78,6 @@ colors:
     green:   '0xC2D94C'
     yellow:  '0xFFB454'
     blue:    '0x59C2FF'
-    magenta: '0xc991e1'
+    magenta: '0x3B2B63'
     cyan:    '0x95E6CB'
     white:   '0xFFFFFF'

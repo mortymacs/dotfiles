@@ -10,13 +10,17 @@ rmr(){ [ -n "$1" ] && (fd -I "$1" | xargs rm -rf --) }
 rme(){ ls | \grep -v "$1" | xargs rm -rf }
 alias du="dust -b"
 alias df="du"
-tree() { command tre "$@" -e && source "/tmp/tre_aliases_$USER" 2>/dev/null; }
+alias diff="difft"
+alias watch="viddy"
 
 # Text.
 alias grep="grep -n --color"
-alias gg="rga -i --pretty"
+alias gg="rga -i -n --pretty"
+function gf(){ gg "$1" -g "$2" }
+function gfa(){ gg "$1" -g "*.$2" }
 alias cat="bat"
 alias less="less -N"
+alias man="PAGER=most man"
 
 # Mics.
 alias reload="source ~/.zshrc"
@@ -27,9 +31,26 @@ socket-to-http() { socat TCP-LISTEN:"${2:-8000}",reuseaddr,fork UNIX-CLIENT:"${1
 iso-to-usb() { sudo dd bs=4M if="${1}" of="${2}" conv=fdatasync status=progress }
 
 # System.
-alias u="yay -Syu && v -c :PlugUpgrade +quitall && v -c :PlugUpdate +quitall && v -c :CocUpdateSync +quitall && v -c :BlackUpgrade +quitall && pacman -Qdt"
+alias u="yay -Syu --noconfirm && v -c :PlugUpgrade +quitall && v -c :PlugUpdate +quitall && v -c :CocUpdateSync +quitall && v -c :BlackUpgrade +quitall && pacman -Qdt"
 alias uc="yay -Syu && v -c :PlugUpgrade +quitall && v -c :PlugUpdate +quitall && v -c :CocUpdateSync +quitall && v -c :BlackUpgrade +quitall && sudo pacman -Scc --noconfirm && pacman -Qdt"
 alias top="btop"
+function cleanup() {
+    docker system prune
+    sudo pacman -Scc
+    sudo paccache -r
+}
+
+# monitor
+# https://blog.summercat.com/configuring-mixed-dpi-monitors-with-xrandr.html
+# https://www.youtube.com/watch?v=wu2NWw2wPaA
+EXTERNAL_MONITOR=$(xrandr | \grep ' connected' | tail -1 | cut -d' ' -f1)
+function external-monitor() {
+    xrandr --output ${EXTERNAL_MONITOR} --scale 1x1 --output eDP1 --off && xrandr --dpi 100 --output ${EXTERNAL_MONITOR} --auto && i3-msg restart > /dev/null\
+}
+function internal-monitor() {
+    xrandr --dpi 100 --output eDP1 --mode 2048x1152 --output ${EXTERNAL_MONITOR} --off && i3-msg restart > /dev/null
+}
+function monitor() { [[ "$1" == "1" ]] && internal-monitor || external-monitor }
 
 # Utility.
 alias pdf="evince"
@@ -84,14 +105,11 @@ p(){
         ghq "$@"
     fi
 }
-alias gs="git status"
-alias gd="git diff"
-alias gp="git push"
 alias gch="git branch -a | fzf | tr -d '[:space:]' | xargs git checkout"
 alias diff="ydiff -s --wrap"
 
 # Server/Proxy.
-alias ping="gping"
+alias ping="gping --vertical-margin 0"
 alias x='export http_proxy="http://127.0.0.1:8118"'
 alias dx='export http_proxy=""'
 alias whereiam='echo $(curl -s http://ip-api.com/json | jq -r ".country,.city")'
@@ -105,8 +123,23 @@ alias kx="kubectx"
 # Docker.
 ## http://www.bashoneliners.com/oneliners/252/
 alias dic="docker images -q -f dangling=true | xargs --no-run-if-empty --delim='\n' docker rmi -f"
-dcr(){ docker run -ti --rm "$1" "${2:-bash}" }
-dca(){ docker exec -ti "$1" "${2:-bash}" }
+dcr(){ docker run --rm "${@:2}" "$1" }
+dca(){ docker run -ti --rm "${@:2}" "$1" sh }
+dce(){ docker exec -ti "$1" "${2:-bash}" }
+
+# DB.
+function redis-server() {
+    docker run -d --rm -p 6379:6379 --name redis redis:alpine redis-server
+}
+function mysql-server() {
+    docker run -d --rm -p 3306:3306 --name mysql -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE="${1:-db}" -e MYSQL_USER=user -e MYSQL_PASSWORD=secret mysql
+}
+function elasticsearch-server() {
+    docker run -d --rm -p 9200:9200 -p 9300:9300 --name elasticsearch -e 'discovery.type=single-node' -e 'xpack.security.enabled=false' elasticsearch:8.3.1
+}
+function postgresql-server() {
+    docker run -d --rm -p 5432:5432 --name postgresql -e POSTGRES_DB="${1:-db}" -e POSTGRES_USER=user -e POSTGRES_PASSWORD=secret postgres
+}
 
 # Development.
 ## https://github.com/universal-ctags/ctags/issues/218#issuecomment-72355190
@@ -130,11 +163,12 @@ alias rpy="fd -I '(build|dist|__pycache__|egg-info)' | xargs rm -rf --"
 # Editor.
 alias vim="nvim"
 alias v="nvim"
-alias vv="v ."
+alias e="emacsclient -nw -c"
+alias ee="emacs -nw"
 alias hexedit="hexedit -s -m --color"
 
 # Tmux.
-alias t='basename $(pwd) | xargs tmux new-session -d -s && tmux attach'
+alias t='basename $(pwd) | xargs tmux new-session -d -s || echo $(basename $(dirname $(pwd)))/$(basename $(pwd)) | xargs tmux new-session -d -s ; tmux attach'
 alias tl="tmux ls -F \#S"
 alias ta="tmux attach"
 alias tq="tl | xargs -n 1 tmux kill-session -t ; tl"

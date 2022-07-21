@@ -1,5 +1,6 @@
 # Env.
 source $HOME/.zshenv
+[ -e "$HOME/.zshenv_private" ] && source $HOME/.zshenv
 
 # History.
 HISTFILE=$HOME/.zsh_history
@@ -22,7 +23,6 @@ setopt no_list_ambiguous
 source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/gitstatus/gitstatus.prompt.zsh
 
 # Text.
 # https://unix.stackexchange.com/a/258661/204066

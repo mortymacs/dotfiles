@@ -4,6 +4,7 @@ log/
 tmp/
 
 # Build
+bin/
 dist/
 *.out
 
@@ -32,6 +33,11 @@ compile_commands.json
 .vim
 *.swp
 .idea
+.vscode
+
+# Helm
+Chart.lock
+charts/
 
 # Misc
 .bundle
@@ -40,3 +46,4 @@ Gemfile.lock
 .cache
 *.sqlite3
 *.spec
+.*

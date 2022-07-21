@@ -1,13 +1,16 @@
-format = """$character\
-$directory\
+format = """
 $sudo\
+$username\
+[](bg:#DA627D fg:#B93C89)\
+$directory\
+[](fg:#DA627D bg:#403659)\
 $vcsh\
 $git_branch\
 $git_commit\
 $git_state\
 $git_metrics\
 $git_status\
-"""
+[](fg:#403659) """
 
 right_format = """
 $cmake\
@@ -34,28 +37,39 @@ $status\
 continuation_prompt = ">>"
 add_newline = false
 
+[username]
+show_always = true
+style_user = "bg:#B93C89 fg:#FFFFFF"
+style_root = "bg:#B93C89 fg:#FFFFFF"
+format = '[ $user ]($style)'
+
 [character]
 success_symbol = "[>](green)"
 error_symbol = "[>](red)"
 
 [directory]
-style = "cyan"
+style = "bg:#DA627D fg:#FFFFFF"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
 
 [git_status]
 deleted = "x"
 renamed = ">>"
 staged = "+"
 modified = "!"
-stashed = "$"
 untracked = "?"
 conflicted = "="
-style = "red"
 ahead = ""
 behind = ""
 diverged = ""
+style = "bg:#403659 fg:#FFFFFF"
+format = '[[($all_status$ahead_behind)](bg:#403659)]($style)'
 
 [git_branch]
-style = "purple"
+symbol = ""
+style = "bg:#403659"
+format = '[[ $symbol $branch ](bg:#403659)]($style)'
 
 [python]
 symbol = "py:"

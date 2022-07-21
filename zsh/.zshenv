@@ -3,12 +3,17 @@
 export ZLE_RPROMPT_INDENT=0
 
 # Qt.
+export QT_QPA_PLATFORM=xcb
 export QT_QPA_PLATFORMTHEME=qt5ct
+
+# GUI
+# https://github.com/alacritty/alacritty/issues/3299#issuecomment-582789847
+export WINIT_UNIX_BACKEND=x11
+export XDG_SESSION_TYPE=x11
 
 # Golang.
 export GOPATH="$HOME/.local/share/go"
 export GOMODCACHE="$HOME/.local/share/go/pkg/mod"
-export GOPRIVATE=""
 
 # Python.
 # https://www.andreagrandi.it/2018/10/16/using-ipdb-with-python-37-breakpoint/
@@ -23,7 +28,7 @@ export EDITOR=nvim
 export TERMINAL=alacritty
 
 # Bat
-export BAT_THEME="Coldark-Dark"
+export BAT_THEME="Monokai Extended"
 
 # Fzf.
 export FZF_DEFAULT_COMMAND='fd --type f'

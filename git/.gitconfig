@@ -1,25 +1,27 @@
 [user]
     name = Morteza NourelahiAlamdari
-    email = m@0t1.me
+    email = mort.nourelahialamdari@company.info
 
 [core]
     excludesfile = ~/.gitignore
     editor = nvim
+    pager = delta
 
 [pager]
     diff = delta
     log = delta
     reflog = delta
     show = delta
+    blame = delta
 
 [interactive]
     diffFilter = delta --color-only
 
 [delta]
-    features = side-by-side line-numbers decorations
-    whitespace-error-style = 22 reverse
+    features = decorations mantis-shrimp
     line-numbers = true
     side-by-side = true
+    dark = true
 
 [alias]
     tree = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
@@ -30,3 +32,6 @@
 
 [push]
     default = current
+
+[include]
+    path = ~/.config/delta/themes.gitconfig

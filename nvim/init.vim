@@ -64,6 +64,8 @@ Plug 'vim-test/vim-test'
 Plug 'npxbr/glow.nvim'
 Plug 'pechorin/any-jump.vim'
 Plug 'dense-analysis/ale'
+Plug 'lukas-reineke/indent-blankline.nvim'
+Plug 'KabbAmine/zeavim.vim'
 
 " C/C++
 Plug 'google/vim-maktaba'
@@ -77,6 +79,9 @@ Plug 'alfredodeza/pytest.vim'
 
 " Golang
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
+" PHP
+Plug 'phpactor/phpactor', {'for': 'php', 'tag': '*', 'do': 'composer install --no-dev -o'}
 
 " DevOps
 Plug 'hashivim/vim-terraform'
@@ -96,6 +101,9 @@ call plug#end()
 " Color
 lua require'colorizer'.setup()
 let g:rainbow_active = 1
+let s:rainbow_conf = {
+\ 'ctermfgs': ['lightblue', 'lightyellow', 'lightcyan', 'lightmagenta', 'orangered', 'burlywood1', 'brown1', 'darkorchid1', 'deeppink2']
+\}
 
 " https://stackoverflow.com/a/43595915/2338672
 " https://stackoverflow.com/a/13854888/2338672
@@ -113,7 +121,7 @@ endfunction
 
 " Theme and colorscheme.
 set termguicolors     " enable true colors support
-let ayucolor="dark"   " for dark version of theme
+let ayucolor="dark"
 colorscheme ayu
 "" https://stackoverflow.com/a/15648665/2338672
 set cmdheight=1
@@ -128,17 +136,8 @@ nnoremap <silent> <Esc><Esc> <Esc>:nohlsearch<CR><Esc>
 lua << END
 require('lualine').setup{
   options = {
-    component_separators = '',
-    section_separators = '',
-  },
-  sections = {
-    lualine_a = {{'filename', color={bg='#0f1419',fg=''}}},
-    lualine_b = {},
-    lualine_c = {},
-    lualine_x = {'filetype', 'branch', 'diff', 'diagnostics'},
-    lualine_y = {{'%p%%', color={bg='#0f1419',fg=''}}},
-    lualine_z = {},
-  },
+    theme = "ayu_dark"
+  }
 }
 END
 
@@ -202,18 +201,25 @@ call MapKeys("<c-x><c-t>", ":Tags<cr>")
 call MapKeys("<c-x><c-b>", ":Buffers<cr>")
 
 " File manager
-let g:nvim_tree_special_files = { 'Makefile': 1, 'CMakeLists.txt': 1 }
-let g:nvim_tree_show_icons = {
-    \ 'git': 1,
-    \ 'folders': 1,
-    \ 'files': 1,
-    \ 'folder_arrows': 0,
-    \ }
-lua require'nvim-tree'.setup()
+lua << END
+require('nvim-tree').setup{
+  renderer = {
+    icons = {
+      show = {
+        file = true,
+        folder = true,
+        folder_arrow = true,
+        git = true,
+      },
+    },
+    special_files = {"Makefile", "CMakeLists.txt", "Cargo.toml"},
+  },
+}
+END
 call MapKeys("<c-x><c-l>", ":NvimTreeToggle<cr>")
 
 " Tagbar
-call MapKeys("<c-x><c-i>", ":TagbarToggle<cr>")
+call MapKeys("<c-c><c-a>", ":TagbarToggle<cr>")
 let g:tagbar_sort = 0
 let g:tagbar_show_balloon = 0
 
@@ -372,6 +378,8 @@ let g:isort_command = 'isort'
 " Go
 let g:go_auto_type_info = 0
 autocmd FileType go call MapKeys("<c-m-l>", ":GoFmt<cr>")
+autocmd FileType go call MapKeys("<c-c><c-i>", ":GoImplements<cr>")
+autocmd FileType go call MapKeys("<c-c><c-r>", ":GoReferrers<cr>")
 "" Refactor
 autocmd FileType go call MapKeys("<c-r><c-n>", ":GoRename<cr>")
 autocmd FileType go call MapKeys("<c-r><c-c>", ":GoCallers<cr>")
@@ -383,8 +391,25 @@ autocmd FileType go call MapKeys("<c-r><c-c>", ":GoCallers<cr>")
 "autocmd FileType go call MapKeys("<c-d><c-s>", ":GoDebugStep<cr>")
 "autocmd FileType go call MapKeys("<c-d><c-f>", ":GoDebugStepOut<cr>")
 
+" PHP
+autocmd FileType php call MapKeys("<c-c><c-d>", ":PhpactorGotoDefinition<cr>")
+autocmd FileType php call MapKeys("<c-c><c-i>", ":PhpactorGotoImplementations<cr>")
+autocmd FileType php call MapKeys("<c-c><c-r>", ":PhpactorFindReferences<cr>")
+
 " CMake
 autocmd BufWritePost CMakeLists.txt execute '! cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1'
 
 " Terraform
 autocmd FileType terraform call MapKeys("<c-m-l>", ":TerraformFmt<cr>")
+
+" XML
+"" https://gist.github.com/ptitfred/3402279
+function! PrettyXML()
+  silent %!xmllint --format --encode UTF-8 --recover - 2>/dev/null
+endfunction
+command! Fxml call PrettyXML()
+
+autocmd FileType xml call MapKeys("<c-m-l>", ":Fxml<cr>")
+
+" JSON
+autocmd FileType json call MapKeys("<c-m-l>", ":%!jq<cr>")
