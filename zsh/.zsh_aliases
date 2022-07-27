@@ -10,8 +10,6 @@ rmr(){ [ -n "$1" ] && (fd -I "$1" | xargs rm -rf --) }
 rme(){ ls | \grep -v "$1" | xargs rm -rf }
 alias du="dust -b"
 alias df="du"
-alias diff="difft"
-alias watch="viddy"
 
 # Text.
 alias grep="grep -n --color"
@@ -54,7 +52,6 @@ function monitor() { [[ "$1" == "1" ]] && internal-monitor || external-monitor }
 alias internal-monitor-scale="xrandr --output ${INTERNAL_MONITOR} --mode 2560x1440"
 
 # Utility.
-alias pdf="evince"
 alias ascii="graph-easy --from=dot --as_ascii"
 alias fm="lf"
 ## https://medium.com/@GroundControl/better-git-diffs-with-fzf-89083739a9cb
@@ -107,7 +104,7 @@ p(){
     fi
 }
 alias gch="git branch -a | fzf | tr -d '[:space:]' | xargs git checkout"
-alias diff="ydiff -s --wrap"
+alias diff="delta"
 
 # Server/Proxy.
 alias ping="gping --vertical-margin 0"
@@ -117,7 +114,6 @@ alias whereiam='echo $(curl -s http://ip-api.com/json | jq -r ".country,.city")'
 alias dig="dog"
 
 # K8s.
-alias ms="minikube start --vm-driver kvm2"
 alias k="kubectl"
 alias kx="kubectx"
 
@@ -150,22 +146,15 @@ code-capture() { silicon "$1" -o $(basename "${1%%.*}.png") --no-window-controls
 alias code-info="cloc"
 
 # C/C++.
-alias rmc="rm -rf CMakeFiles/ Testing/ CMakeCache.txt *.cmake Makefile compile_commands.json *.cbp"
+alias rcpp="rm -rf CMakeFiles/ Testing/ CMakeCache.txt *.cmake Makefile compile_commands.json *.cbp"
 
 # Python.
-alias a="[ -d .venv ] || python -m venv .venv ; [ -d .venv ] && source ./.venv/bin/activate"
-alias as="[ -d .venv ] || python -m venv .venv --system-site-packages ; [ -d .venv ] && source ./.venv/bin/activate"
-alias d="deactivate"
-alias up="pip list --outdated | awk '{ print \$1\"==\"\$3 }' | tail +3 | xargs pip install --upgrade"
 alias py="ipython --no-term-title --no-confirm-exit --no-banner --no-simple-prompt"
-alias rpyc="fd -I __pycache__ | xargs rm -rf --"
 alias rpy="fd -I '(build|dist|__pycache__|egg-info)' | xargs rm -rf --"
 
 # Editor.
 alias vim="nvim"
 alias v="nvim"
-alias e="emacsclient -nw -c"
-alias ee="emacs -nw"
 alias hexedit="hexedit -s -m --color"
 
 # Tmux.
@@ -174,9 +163,3 @@ alias tl="tmux ls -F \#S"
 alias ta="tmux attach"
 alias tq="tl | xargs -n 1 tmux kill-session -t ; tl"
 
-# Calendar.
-alias c="gcalcli"
-alias today="c agenda '`date --date=\"today\" +\"%a %b %d\"`' '`date --date=\"tomorrow\" +\"%a %b %d\"`'"
-alias next="c agenda --military --nostarted '`date --date="today" +"%a %b %d"`' '`date --date="tomorrow" +"%a %b %d"`' | cut -d ' ' -f 2- | head -2 | tail -1 | sed -e 's/^[[:space:]]*//'"
-alias week="c calw"
-alias month="c calm"

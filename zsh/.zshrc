@@ -1,6 +1,6 @@
 # Env.
 source $HOME/.zshenv
-[ -e "$HOME/.zshenv_private" ] && source $HOME/.zshenv
+[ -e "$HOME/.zshenv_private" ] && source $HOME/.zshenv_private
 
 # History.
 HISTFILE=$HOME/.zsh_history
