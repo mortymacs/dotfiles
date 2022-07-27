@@ -51,3 +51,4 @@ eval "$(starship init zsh)"
 
 # Aliases.
 source $HOME/.zsh_aliases
+

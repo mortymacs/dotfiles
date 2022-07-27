@@ -1,0 +1,22 @@
+[global]
+    font = Anek Latin Medium 10
+    markup = full
+    frame_width = 1
+    frame_color = "#f3f2f2"
+    corner_radius = 0
+
+[urgency_low]
+    background = "#26282b"
+    foreground = "#888888"
+    timeout = 10
+
+[urgency_normal]
+    background = "#26282b"
+    foreground = "#ffffff"
+    timeout = 10
+
+[urgency_critical]
+    background = "#DA627D"
+    foreground = "#ffffff"
+    frame_color = "#B93C89"
+    timeout = 0

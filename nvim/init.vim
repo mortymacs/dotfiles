@@ -80,9 +80,6 @@ Plug 'alfredodeza/pytest.vim'
 " Golang
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
-" PHP
-Plug 'phpactor/phpactor', {'for': 'php', 'tag': '*', 'do': 'composer install --no-dev -o'}
-
 " DevOps
 Plug 'hashivim/vim-terraform'
 
@@ -390,11 +387,6 @@ autocmd FileType go call MapKeys("<c-r><c-c>", ":GoCallers<cr>")
 "autocmd FileType go call MapKeys("<c-d><c-n>", ":GoDebugNext<cr>")
 "autocmd FileType go call MapKeys("<c-d><c-s>", ":GoDebugStep<cr>")
 "autocmd FileType go call MapKeys("<c-d><c-f>", ":GoDebugStepOut<cr>")
-
-" PHP
-autocmd FileType php call MapKeys("<c-c><c-d>", ":PhpactorGotoDefinition<cr>")
-autocmd FileType php call MapKeys("<c-c><c-i>", ":PhpactorGotoImplementations<cr>")
-autocmd FileType php call MapKeys("<c-c><c-r>", ":PhpactorFindReferences<cr>")
 
 " CMake
 autocmd BufWritePost CMakeLists.txt execute '! cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1'

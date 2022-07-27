@@ -1,9 +1,5 @@
-# Env variables.
 env:
-  # https://github.com/alacritty/alacritty/issues/3424#issue-576635376
   WINIT_X11_SCALE_FACTOR: "1"
-  # https://github.com/catppuccin/alacritty
-  TERM: xterm-256color
 
 # Window configuration (changes require restart).
 window:
@@ -46,11 +42,11 @@ font:
 
   offset:
     x: 0
-    y: 2
+    y: 4
 
   glyph_offset:
     x: 0
-    y: -1
+    y: 0
 
 # Color configuration.
 # https://github.com/eendroroy/alacritty-theme/ (Ayu Dark)

@@ -36,14 +36,14 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec env WINIT_UNIX_BACKEND=x11 alacritty msg create-window 2>/dev/null || alacritty
+bindsym $mod+Return exec alacritty msg create-window 2>/dev/null || alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
 #bindsym $mod+d exec --no-startup-id dmenu_run
-bindsym $mod+d exec --no-startup-id rofi -show run -font "Anek Latin Medium 10"
+bindsym $mod+d exec --no-startup-id rofi -show run -font "Anek Latin Medium 12"
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -179,18 +179,11 @@ client.background       #ffffff
 exec_always --no-startup-id feh --bg-scale $HOME/.config/i3/wallpaper.jpg
 
 # Lock.
-exec_always --no-startup-id xautolock -time 3 -locker 'i3lock -c 111111 -e -f'
+exec_always --no-startup-id xautolock -time 30 -locker 'i3lock -c 111111 -e -f'
 bindsym $mod+l exec i3lock -c 111111 -e -f
-
-# Effect.
-exec_always --no-startup-id pkill picom; picom --experimental-backends
 
 # Bluetooth.
 exec --no-startup-id pkill blueman-applet; blueman-applet
-
-# Guake.
-exec_always --no-startup-id pkill guake; guake
-bindsym $mod+Shift+Return exec guake-toggle
 
 # Flameshot.
 exec --no-startup-id pkill flameshot; flameshot
@@ -207,3 +200,6 @@ bindsym $mod+c exec --no-startup-id rofi -modi "clipboard:greenclip print" -show
 
 # Mount.
 exec_always --no-startup-id pkill udiskie; udiskie
+
+# Monitor
+exec_always --no-startup-id xrandr --output eDP-1 --mode 2560x1440

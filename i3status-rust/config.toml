@@ -57,19 +57,3 @@ block = "time"
 interval = 5
 format = "%a %d/%m %R"
 
-[[block]]
-block = "custom"
-command = "echo "
-on_click = "flameshot gui"
-
-[[block]]
-block = "custom"
-command = "echo "
-on_click = "zeal"
-
-[[block]]
-block = "custom"
-command = "echo "
-on_click = "shutdown now"
-
-
