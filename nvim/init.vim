@@ -73,7 +73,6 @@ Plug 'google/vim-codefmt'
 Plug 'google/vim-glaive'
 
 " Python
-Plug 'stsewd/isort.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'psf/black'
 Plug 'alfredodeza/pytest.vim'
 
@@ -138,7 +137,7 @@ require('lualine').setup{
 }
 END
 
-" Terminal
+" Terminal.
 let g:floaterm_title = "$1/$2"
 let g:floaterm_height = 0.5
 let g:floaterm_width = 1.0
@@ -155,7 +154,7 @@ let g:floaterm_opener = "tabe"
 hi FloatermBorder ctermbg=black
 call MapKeys("<c-x><c-r>", "FloatermToggle<cr>")
 
-" Search
+" Search.
 call MapKeys("<c-f>", ":Lines<cr>")
 call MapKeys("<c-c><c-t>", ":AnyJump<cr>")
 call MapKeys("<c-c><c-g>", ":AnyJumpArg ")
@@ -168,7 +167,9 @@ call MapKeys("<c-t><c-n>", ":TestNearest<cr>")
 call MapKeys("<c-t><c-s>", ":TestSuite<cr>")
 call MapKeys("<c-t><c-l>", ":TestLast<cr>")
 
-" Coc.nvim
+" Coc.nvim.
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+      \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 inoremap <silent><expr> <c-space> coc#refresh()
 call MapKeys("<c-c><c-d>", "<Plug>(coc-definition)")
 call MapKeys("<c-c><c-i>", "<Plug>(coc-implementation)")
@@ -178,7 +179,7 @@ call MapKeys("<c-c><c-e>", "<c-o>")
 inoremap <c-q> <c-\><c-o>:call CocActionAsync('showSignatureHelp')<cr>
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
-" Code indent
+" Code indent.
 "" https://github.com/jelly/Dotfiles/blob/master/.vimrc
 autocmd FileType python,cucumber set expandtab shiftwidth=4 softtabstop=4
 autocmd FileType c,cpp,h,html,css,vim,yaml,yml,json set expandtab shiftwidth=2 softtabstop=2
@@ -190,14 +191,14 @@ set complete+=s
 call MapKeys("<c-c><c-l>", "gg=G<cr>")
 call MapKeys("<c-m-l>", "gg=G<cr>")
 
-" Fzf
+" Fzf.
 "" https://github.com/universal-ctags/ctags/issues/218#issuecomment-72355190
 let g:fzf_tags_command='fd | ctags --links=no -L-'
 call MapKeys("<c-x><c-f>", ":Files<cr>")
 call MapKeys("<c-x><c-t>", ":Tags<cr>")
 call MapKeys("<c-x><c-b>", ":Buffers<cr>")
 
-" File manager
+" File manager.
 lua << END
 require('nvim-tree').setup{
   renderer = {
@@ -215,12 +216,12 @@ require('nvim-tree').setup{
 END
 call MapKeys("<c-x><c-l>", ":NvimTreeToggle<cr>")
 
-" Tagbar
+" Tagbar.
 call MapKeys("<c-c><c-a>", ":TagbarToggle<cr>")
 let g:tagbar_sort = 0
 let g:tagbar_show_balloon = 0
 
-" Window
+" Window.
 "" https://vim.fandom.com/wiki/Maximize_window_and_return_to_previous_split_structure
 function! MaximizeWindowToggle()
   if exists("s:maximize_session")
@@ -250,15 +251,15 @@ call MapKeys("<c-s-down>", ":resize +1<cr>")
 call MapKeys("<c-s-left>", ":vertical resize +1<cr>")
 call MapKeys("<c-s-right>", ":vertical resize -1<cr>")
 
-" Buffer
+" Buffer.
 call MapKeys("<c-x><c-e>", ":Bd!<cr>")
 
-" Clipboard
+" Clipboard.
 "" https://superuser.com/a/921975
 vmap <c-c><c-c> y:call system("xclip -i -selection clipboard", getreg("\""))<cr>:call system("xclip -i", getreg("\""))<cr>
 nmap <c-c><c-v> :call setreg("\"",system("xclip -o -selection clipboard"))<cr>p
 
-" Tabbar
+" Tabbar.
 let g:airline#extensions#tabline#enabled = 1
 call MapKeys("<s-right>", ":BufferNext<cr>")
 call MapKeys("<s-left>", ":BufferPrevious<cr>")
@@ -278,9 +279,9 @@ let bufferline.animation = v:false
 let bufferline.closable = v:false
 let bufferline.clickable = v:false
 
-" Hotkeys general
+" Hotkeys general.
 call MapKeys("<c-g>", "<esc>")
-"" select
+"" select.
 call MapKeys("<m-space>", "v") " v$ v0o$
 call MapKeys("<c-x><c-s>", ":w<cr>")
 call MapKeys("<c-@>", "v")
@@ -302,7 +303,7 @@ function! PresentationToggle()
 endfunction
 call MapKeys("<c-x><c-p>", ":call PresentationToggle()<cr>")
 
-" Git
+" Git.
 call MapKeys("<c-g><c-h>", "<plug>(GitGutterPreviewHunk)")
 call MapKeys("<c-g><c-u>", "<plug>(GitGutterUndoHunk)")
 call MapKeys("<c-g><c-l>", "<plug>(GitGutterStageHunk)")
@@ -322,7 +323,7 @@ call MapKeys("<c-g><c-s>", ":call DiffViewToggle()<cr>")
 " auto wrap git commit messages
 au FileType gitcommit set tw=72
 
-" Text
+" Text.
 "" https://stackoverflow.com/a/63887462/2338672
 nnoremap <s-m-down> :m .+1<cr>==
 nnoremap <s-m-up>   :m .-2<cr>==
@@ -352,15 +353,18 @@ call MapKeys("<c-c><c-r>", "gg=G<c-o><c-o>")
 autocmd BufWritePre * :%s/\s\+$//e
 call MapKeys("<c-c><c-h>", "<plug>Zeavim")
 call MapKeys("<c-c><c-m>", ":Glow<cr>")
-let g:ale_disable_lsp = 1
 
-" C/C++
+" ALE.
+let g:ale_disable_lsp = 1
+let g:ale_python_isort_options = '--profile black'
+
+" C/C++.
 autocmd FileType c,cpp call MapKeys("<c-m-l>", ":FormatCode clang-format<cr>")
 
-" Python
+" Python.
 function! ReformatBuffer()
   Black
-  "Isort --profile black
+  ALEFix isort
 endfunction
 autocmd FileType python call MapKeys("<c-m-l>", ":call ReformatBuffer()<cr>")
 autocmd FileType python call MapKeys("<c-c><c-p>", ":!python %<cr>")
@@ -368,19 +372,16 @@ autocmd FileType python call MapKeys("<c-t><c-c>", ":Pytest class<cr>")
 autocmd FileType python call MapKeys("<c-t><c-m>", ":Pytest method<cr>")
 autocmd FileType python call MapKeys("<c-t><c-f>", ":Pytest function<cr>")
 autocmd FileType python call MapKeys("<c-t><c-a>", ":Pytest file<cr>")
-" isort
-let g:vim_isort_map = ''
-let g:isort_command = 'isort'
 
-" Go
+" Go.
 let g:go_auto_type_info = 0
 autocmd FileType go call MapKeys("<c-m-l>", ":GoFmt<cr>")
 autocmd FileType go call MapKeys("<c-c><c-i>", ":GoImplements<cr>")
 autocmd FileType go call MapKeys("<c-c><c-r>", ":GoReferrers<cr>")
-"" Refactor
+"" Refactor.
 autocmd FileType go call MapKeys("<c-r><c-n>", ":GoRename<cr>")
 autocmd FileType go call MapKeys("<c-r><c-c>", ":GoCallers<cr>")
-"" Debug
+"" Debug.
 "autocmd FileType go call MapKeys("<c-d><c-r>", ":GoDebugStart .<cr>")
 "autocmd FileType go call MapKeys("<c-d><c-b>", ":GoDebugBreakpoint<cr>")
 "autocmd FileType go call MapKeys("<c-d><c-c>", ":GoDebugContinue<cr>")
@@ -388,13 +389,13 @@ autocmd FileType go call MapKeys("<c-r><c-c>", ":GoCallers<cr>")
 "autocmd FileType go call MapKeys("<c-d><c-s>", ":GoDebugStep<cr>")
 "autocmd FileType go call MapKeys("<c-d><c-f>", ":GoDebugStepOut<cr>")
 
-" CMake
+" CMake.
 autocmd BufWritePost CMakeLists.txt execute '! cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1'
 
-" Terraform
+" Terraform.
 autocmd FileType terraform call MapKeys("<c-m-l>", ":TerraformFmt<cr>")
 
-" XML
+" XML.
 "" https://gist.github.com/ptitfred/3402279
 function! PrettyXML()
   silent %!xmllint --format --encode UTF-8 --recover - 2>/dev/null
@@ -403,5 +404,5 @@ command! Fxml call PrettyXML()
 
 autocmd FileType xml call MapKeys("<c-m-l>", ":Fxml<cr>")
 
-" JSON
+" JSON.
 autocmd FileType json call MapKeys("<c-m-l>", ":%!jq<cr>")

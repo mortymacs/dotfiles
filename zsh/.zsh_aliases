@@ -43,10 +43,10 @@ function cleanup() {
 INTERNAL_MONITOR=$(xrandr | \grep primary | cut -d' ' -f1)
 EXTERNAL_MONITOR=$(xrandr | \grep ' connected' | tail -1 | cut -d' ' -f1)
 function external-monitor() {
-    xrandr --output "${EXTERNAL_MONITOR}" --scale 1x1 --output "${INTERNAL_MONITOR}" --off && xrandr --dpi 100 --output ${EXTERNAL_MONITOR} --auto && i3-msg restart > /dev/null\
+    xrandr --output "${EXTERNAL_MONITOR}" --scale 1x1 --output "${INTERNAL_MONITOR}" --off && xrandr --output $INTERNAL_MONITOR --off
 }
 function internal-monitor() {
-    xrandr --dpi 100 --output "${INTERNAL_MONITOR}" --mode 2048x1152 --output ${EXTERNAL_MONITOR} --off && i3-msg restart > /dev/null
+    xrandr --dpi 100 --output "${INTERNAL_MONITOR}" --mode 2048x1152 --output ${EXTERNAL_MONITOR} --off && xrandr --output $EXTERNAL_MONITOR --off && i3-msg restart > /dev/null
 }
 function monitor() { [[ "$1" == "1" ]] && internal-monitor || external-monitor }
 alias internal-monitor-scale="xrandr --output ${INTERNAL_MONITOR} --mode 2560x1440"
@@ -149,13 +149,13 @@ alias code-info="cloc"
 alias rcpp="rm -rf CMakeFiles/ Testing/ CMakeCache.txt *.cmake Makefile compile_commands.json *.cbp"
 
 # Python.
-alias py="ipython --no-term-title --no-confirm-exit --no-banner --no-simple-prompt"
+alias py="ipython --no-term-title --no-confirm-exit --no-banner --no-simple-prompt --PlainTextFormatter.pprint=True --TerminalInteractiveShell.highlighting_style=monokai"
 alias rpy="fd -I '(build|dist|__pycache__|egg-info)' | xargs rm -rf --"
 
 # Editor.
 alias vim="nvim"
 alias v="nvim"
-alias hexedit="hexedit -s -m --color"
+alias hex="hexyl"
 
 # Tmux.
 alias t='basename $(pwd) | xargs tmux new-session -d -s || echo $(basename $(dirname $(pwd)))/$(basename $(pwd)) | xargs tmux new-session -d -s ; tmux attach'

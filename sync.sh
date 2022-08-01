@@ -4,7 +4,7 @@
 rm -rf zsh/*
 cp "$HOME"/{.zshrc,.zsh_aliases,.zshenv} zsh/
 
-# ~/.config/starship.toml
+# starship
 rm -rf starship/*
 cp "$HOME"/.config/starship.toml starship/
 
@@ -47,6 +47,10 @@ cp "$HOME"/.tigrc tig/
 # broot
 rm -rf broot/*
 cp "$HOME"/.config/broot/conf.toml broot/
+
+# most
+rm -rf most/*
+cp "$HOME"/.mostrc most/
 
 # rofi
 rm -rf rofi

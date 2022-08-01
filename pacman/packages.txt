@@ -53,6 +53,7 @@ grpc
 grpc-cli
 gzip
 helm
+hexyl
 hq
 httpie
 hugo
