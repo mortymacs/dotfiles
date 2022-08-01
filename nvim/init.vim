@@ -381,13 +381,6 @@ autocmd FileType go call MapKeys("<c-c><c-r>", ":GoReferrers<cr>")
 "" Refactor.
 autocmd FileType go call MapKeys("<c-r><c-n>", ":GoRename<cr>")
 autocmd FileType go call MapKeys("<c-r><c-c>", ":GoCallers<cr>")
-"" Debug.
-"autocmd FileType go call MapKeys("<c-d><c-r>", ":GoDebugStart .<cr>")
-"autocmd FileType go call MapKeys("<c-d><c-b>", ":GoDebugBreakpoint<cr>")
-"autocmd FileType go call MapKeys("<c-d><c-c>", ":GoDebugContinue<cr>")
-"autocmd FileType go call MapKeys("<c-d><c-n>", ":GoDebugNext<cr>")
-"autocmd FileType go call MapKeys("<c-d><c-s>", ":GoDebugStep<cr>")
-"autocmd FileType go call MapKeys("<c-d><c-f>", ":GoDebugStepOut<cr>")
 
 " CMake.
 autocmd BufWritePost CMakeLists.txt execute '! cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1'
