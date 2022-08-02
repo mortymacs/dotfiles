@@ -1,7 +1,6 @@
 dive
 dry-bin
 ghq
-go-swagger
 kind-bin
 kubespy
 lazydocker

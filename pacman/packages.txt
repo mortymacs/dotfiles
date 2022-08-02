@@ -101,6 +101,7 @@ python
 python-black
 python-isort
 python-poetry
+revive
 ripgrep
 ripgrep-all
 rofi
