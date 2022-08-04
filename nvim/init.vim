@@ -1,4 +1,4 @@
-" General
+" General.
 filetype off                 " required
 syntax on
 set mouse-=a
@@ -23,16 +23,16 @@ filetype plugin indent on    " required
 "" https://superuser.com/a/35421/298390
 set whichwrap+=<,>,[,]
 
-" package management
+" Package.
 call plug#begin('~/.vim/plugged')
 " Theme and colorscheme.
 Plug 'ayu-theme/ayu-vim'
 Plug 'norcalli/nvim-colorizer.lua'
 
-" Tabbar
+" Tabbar.
 Plug 'romgrk/barbar.nvim'
 
-" Status
+" Status.
 Plug 'nvim-lualine/lualine.nvim'
 
 " File and search.
@@ -43,17 +43,18 @@ Plug 'preservim/tagbar'
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'famiu/bufdelete.nvim'
 
-" Text
+" Text.
 Plug 'tpope/vim-surround'
 Plug 'RRethy/vim-illuminate'
 Plug 'Yggdroot/indentLine'
 
-" Git
+" Git.
 Plug 'airblade/vim-gitgutter'
 Plug 'sindrets/diffview.nvim'
 
-" Development
+" Development.
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'KabbAmine/zeavim.vim'
 Plug 'preservim/nerdcommenter'
 Plug 'editorconfig/editorconfig-vim'
@@ -61,40 +62,42 @@ Plug 'voldikss/vim-floaterm'
 Plug 'luochen1990/rainbow'
 Plug 'martinda/Jenkinsfile-vim-syntax'
 Plug 'vim-test/vim-test'
-Plug 'npxbr/glow.nvim'
 Plug 'pechorin/any-jump.vim'
 Plug 'dense-analysis/ale'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'KabbAmine/zeavim.vim'
 
-" C/C++
+" C/C++.
 Plug 'google/vim-maktaba'
 Plug 'google/vim-codefmt'
 Plug 'google/vim-glaive'
 
-" Python
+" Python.
 Plug 'psf/black'
 Plug 'alfredodeza/pytest.vim'
 
-" Golang
+" Go.
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
-" DevOps
+" DevOps.
 Plug 'hashivim/vim-terraform'
 
-" Project
+" Project.
 Plug 'mhinz/vim-startify'
 
-" Misc
-Plug 'junegunn/limelight.vim'
-Plug 'junegunn/goyo.vim'
+" Markdown.
+Plug 'godlygeek/tabular'
+Plug 'preservim/vim-markdown'
+Plug 'npxbr/glow.nvim'
+
+" Misc.
 Plug 'sotte/presenting.vim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'preservim/vimux'
 call plug#end()
 
-" Color
+" Color.
 lua require'colorizer'.setup()
 let g:rainbow_active = 1
 let s:rainbow_conf = {
@@ -286,22 +289,6 @@ call MapKeys("<m-space>", "v") " v$ v0o$
 call MapKeys("<c-x><c-s>", ":w<cr>")
 call MapKeys("<c-@>", "v")
 call MapKeys("<c-d>", "yyp")
-"" https://stackoverflow.com/a/20579322/2338672
-let s:presentation_enabled = 0
-function! PresentationToggle()
-  Goyo
-  if s:presentation_enabled
-    Limelight!
-    silent !xdotool key ctrl+0
-    let s:presentation_enabled = 0
-  else
-    Limelight
-    silent !xdotool key --repeat 4 ctrl+plus
-    silent !xdotool key --repeat 4 ctrl+equal
-    let s:presentation_enabled = 1
-  endif
-endfunction
-call MapKeys("<c-x><c-p>", ":call PresentationToggle()<cr>")
 
 " Git.
 call MapKeys("<c-g><c-h>", "<plug>(GitGutterPreviewHunk)")
@@ -322,6 +309,39 @@ call MapKeys("<c-g><c-s>", ":call DiffViewToggle()<cr>")
 "" https://github.com/longsleep/bin-scripts/blob/master/config/vimrc
 " auto wrap git commit messages
 au FileType gitcommit set tw=72
+
+" Tree-Sitter.
+lua << END
+require('nvim-treesitter.configs').setup {
+  ensure_installed = {
+    "c",
+    "cpp",
+    "rust",
+    "go",
+    "python",
+    "lua",
+    "bash",
+    "cmake",
+    "make",
+    "sql",
+    "latex",
+    "markdown",
+    "dockerfile",
+    "hcl",
+    "json",
+    "yaml",
+    "toml",
+    "regex",
+    "http"
+  },
+  sync_install = false,
+  auto_install = true,
+  highlight = {
+    enable = true,
+    additional_vim_regex_highlighting = false
+  }
+}
+END
 
 " Text.
 "" https://stackoverflow.com/a/63887462/2338672
@@ -378,7 +398,7 @@ let g:go_auto_type_info = 0
 autocmd FileType go call MapKeys("<c-m-l>", ":GoFmt<cr>")
 autocmd FileType go call MapKeys("<c-c><c-i>", ":GoImplements<cr>")
 autocmd FileType go call MapKeys("<c-c><c-r>", ":GoReferrers<cr>")
-"" Refactor.
+"" Refactor
 autocmd FileType go call MapKeys("<c-r><c-n>", ":GoRename<cr>")
 autocmd FileType go call MapKeys("<c-r><c-c>", ":GoCallers<cr>")
 
@@ -399,3 +419,7 @@ autocmd FileType xml call MapKeys("<c-m-l>", ":Fxml<cr>")
 
 " JSON.
 autocmd FileType json call MapKeys("<c-m-l>", ":%!jq<cr>")
+
+" Markdown.
+let g:vim_markdown_folding_disabled = 1
+

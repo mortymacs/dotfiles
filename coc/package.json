@@ -5,7 +5,7 @@
     "coc-go": ">=1.3.0",
     "coc-html": ">=1.6.1",
     "coc-json": ">=1.5.0",
-    "coc-pyright": ">=1.1.262",
+    "coc-pyright": ">=1.1.265",
     "coc-rust-analyzer": ">=0.65.3",
     "coc-sh": ">=0.7.0",
     "coc-texlab": ">=3.2.0",
