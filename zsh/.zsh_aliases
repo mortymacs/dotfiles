@@ -29,8 +29,7 @@ socket-to-http() { socat TCP-LISTEN:"${2:-8000}",reuseaddr,fork UNIX-CLIENT:"${1
 iso-to-usb() { sudo dd bs=4M if="${1}" of="${2}" conv=fdatasync status=progress }
 
 # System.
-alias u="yay -Syu --noconfirm && v -c :PlugUpgrade +quitall && v -c :PlugUpdate +quitall && v -c :CocUpdateSync +quitall && v -c :BlackUpgrade +quitall && pacman -Qdt"
-alias uc="yay -Syu && v -c :PlugUpgrade +quitall && v -c :PlugUpdate +quitall && v -c :CocUpdateSync +quitall && v -c :BlackUpgrade +quitall && sudo pacman -Scc --noconfirm && pacman -Qdt"
+alias u="yay -Syu --noconfirm && v -c :PlugUpgrade +quitall && v -c :PlugUpdate +quitall && v -c :CocUpdateSync +quitall && v -c :BlackUpgrade +quitall && v -c :TSUpdateSync +quitall && pacman -Qdt"
 alias top="btop"
 function cleanup() {
     docker system prune
@@ -67,7 +66,7 @@ alias ap="\ps aux | peco"
 alias ps="procs"
 
 # Compression.
-alias tgz='rpyc && rm -f `basename $PWD`.tar.gz && tar --exclude='.git' --exclude='.gitignore' --exclude-vcs-ignores -zcvf `basename $PWD`.tar.gz ./*'
+alias tgz='rpy && rm -f `basename $PWD`.tar.gz && tar --exclude='.git' --exclude='.gitignore' --exclude-vcs-ignores -zcvf `basename $PWD`.tar.gz ./*'
 # https://gitlab.com/dwt1/dotfiles/-/blob/master/.bashrc
 function extract()
 {

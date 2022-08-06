@@ -24,7 +24,6 @@ mouse:
 selection:
   save_to_clipboard: true
 
-# Alternative font: CodeNewRoman Nerd Font Mono
 font_name: &font_name CodeNewRoman Nerd Font Mono
 font:
   size: 14
