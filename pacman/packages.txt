@@ -1,4 +1,5 @@
 alacritty
+asciinema
 autoconf
 automake
 aws-cli
@@ -27,6 +28,7 @@ exa
 fakeroot
 fd
 feh
+figlet
 file
 findutils
 firefox
@@ -83,7 +85,6 @@ mcfly
 most
 mtr
 mypy
-nano
 neovim
 network-manager-applet
 networkmanager
