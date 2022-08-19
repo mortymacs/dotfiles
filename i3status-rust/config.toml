@@ -8,7 +8,7 @@ name = "none"
 
 [[block]]
 block = "custom"
-command = '''echo $(curl -s http://ip-api.com/json | jq -r ".country,.city")'''
+command = '''echo $(curl -s http://ip-api.com/json | jq -r ".countryCode")'''
 interval = 10
 
 [[block]]
