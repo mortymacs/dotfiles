@@ -29,7 +29,7 @@ export EDITOR=nvim
 export TERMINAL=alacritty
 
 # Bat
-export BAT_THEME="Monokai Extended"
+export BAT_THEME="ansi"
 
 # Fzf.
 export FZF_DEFAULT_COMMAND='fd --type f'

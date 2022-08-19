@@ -7,6 +7,11 @@ separator = " "
 name = "none"
 
 [[block]]
+block = "custom"
+command = '''echo $(curl -s http://ip-api.com/json | jq -r ".country,.city")'''
+interval = 10
+
+[[block]]
 block = "docker"
 interval = 2
 format = "{running} {total} {images}"

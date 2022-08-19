@@ -26,7 +26,7 @@ set whichwrap+=<,>,[,]
 " Package.
 call plug#begin('~/.vim/plugged')
 " Theme and colorscheme.
-Plug 'ayu-theme/ayu-vim'
+Plug 'pineapplegiant/spaceduck', { 'branch': 'main' }
 Plug 'norcalli/nvim-colorizer.lua'
 
 " Tabbar.
@@ -120,8 +120,11 @@ endfunction
 
 " Theme and colorscheme.
 set termguicolors     " enable true colors support
-let ayucolor="dark"
-colorscheme ayu
+set background=dark
+colorscheme spaceduck
+let g:lightline = { 'colorscheme': 'spaceduck' }
+"" https://stackoverflow.com/a/17506351
+hi Vertsplit guibg=NONE guifg=#30365F
 "" https://stackoverflow.com/a/15648665/2338672
 set cmdheight=1
 set laststatus=3
@@ -135,7 +138,7 @@ nnoremap <silent> <Esc><Esc> <Esc>:nohlsearch<CR><Esc>
 lua << END
 require('lualine').setup{
   options = {
-    theme = "ayu_dark"
+    theme = "spaceduck"
   }
 }
 END

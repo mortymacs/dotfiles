@@ -54,7 +54,7 @@ alias internal-monitor-scale="xrandr --output ${INTERNAL_MONITOR} --mode 2560x14
 alias ascii="graph-easy --from=dot --as_ascii"
 alias fm="lf"
 ## https://medium.com/@GroundControl/better-git-diffs-with-fzf-89083739a9cb
-alias f="fzf --cycle -i --preview 'bat {-1} --color=always'"
+alias f="fzf-tmux --cycle -i --preview 'bat {-1} --color=always'"
 alias o="v \`f || echo '-c :quitall'\`"
 alias cb="xclip -selection clipboard"
 alias calc="qalc"
@@ -97,12 +97,12 @@ function extract()
 p(){
     if [ "$#" -eq 0 ]; then
         # https://github.com/x-motemen/ghq/issues/294#issuecomment-662071100
-        cd "$(p list -p | fzf -1 -e)"
+        cd "$(p list -p | fzf-tmux -1 -e)"
     else
         ghq "$@"
     fi
 }
-alias gch="git branch -a | fzf | tr -d '[:space:]' | xargs git checkout"
+alias gch="git branch -a | fzf-tmux | tr -d '[:space:]' | xargs git checkout"
 alias diff="delta"
 
 # Server/Proxy.

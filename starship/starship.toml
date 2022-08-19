@@ -71,6 +71,16 @@ symbol = ""
 style = "bg:#403659"
 format = '[[ $symbol $branch ](bg:#403659)]($style)'
 
+[git_commit]
+tag_disabled = false
+tag_symbol = " 笠"
+style = "bold bg:#403659 fg:#5ccc96"
+format = '[\($hash$tag\) ](bold bg:#403659 fg:#5ccc96)($style)'
+
+[git_state]
+style = "bold bg:#403659 fg:#e39400"
+format = '[\([$state( $progress_current/$progress_total)\) ](bold bg:#403659 fg:#e39400)]($style)'
+
 [python]
 symbol = "py:"
 style = "yellow"
