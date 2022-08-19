@@ -148,7 +148,7 @@ alias code-info="cloc"
 alias rcpp="rm -rf CMakeFiles/ Testing/ CMakeCache.txt *.cmake Makefile compile_commands.json *.cbp"
 
 # Python.
-alias py="ipython --no-term-title --no-confirm-exit --no-banner --no-simple-prompt --PlainTextFormatter.pprint=True --TerminalInteractiveShell.highlighting_style=monokai"
+alias py="ipython --no-term-title --no-confirm-exit --no-banner --no-simple-prompt --PlainTextFormatter.pprint=True --TerminalInteractiveShell.highlighting_style=material"
 alias rpy="fd -I '(build|dist|__pycache__|egg-info)' | xargs rm -rf --"
 
 # Editor.
