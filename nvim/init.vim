@@ -174,6 +174,11 @@ call MapKeys("<c-t><c-s>", ":TestSuite<cr>")
 call MapKeys("<c-t><c-l>", ":TestLast<cr>")
 
 " Coc.nvim.
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#pum#next(1):
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
       \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 inoremap <silent><expr> <c-space> coc#refresh()
@@ -184,6 +189,7 @@ call MapKeys("<c-c><c-e>", "<c-o>")
 "" https://github.com/neoclide/coc.nvim/issues/2202#issuecomment-662969193
 inoremap <c-q> <c-\><c-o>:call CocActionAsync('showSignatureHelp')<cr>
 autocmd CursorHold * silent call CocActionAsync('highlight')
+call MapKeys("<c-m-l>", "<Plug>(coc-codeaction)")
 
 " Code indent.
 "" https://github.com/jelly/Dotfiles/blob/master/.vimrc
@@ -413,6 +419,7 @@ autocmd FileType go call MapKeys("<c-c><c-r>", ":GoReferrers<cr>")
 "" Refactor
 autocmd FileType go call MapKeys("<c-r><c-n>", ":GoRename<cr>")
 autocmd FileType go call MapKeys("<c-r><c-c>", ":GoCallers<cr>")
+autocmd FileType go call MapKeys("<c-c><c-k>", ":GoDoc<cr>")
 
 " CMake.
 autocmd BufWritePost CMakeLists.txt execute '! cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1'
