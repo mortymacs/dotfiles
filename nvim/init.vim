@@ -6,22 +6,23 @@ set number
 set cursorline
 set nocompatible             " be iMproved, required
 set termguicolors            " enable true colors support
-set nowrap
 "" https://stackoverflow.com/a/2054674/2338672
 set tabstop=4
 set shiftwidth=4
 set expandtab
 "" https://stackoverflow.com/a/11560415/2338672
 set backspace=2
-set updatetime=500
 set hidden
 set nobackup
 set nowritebackup
 set updatetime=300
+set signcolumn=yes
+
 filetype plugin on
 filetype plugin indent on    " required
 "" https://superuser.com/a/35421/298390
 set whichwrap+=<,>,[,]
+set nowrap
 
 " Package.
 call plug#begin('~/.vim/plugged')
@@ -119,7 +120,6 @@ function! NorMapKeys(keys, rhs)
 endfunction
 
 " Theme and colorscheme.
-set termguicolors     " enable true colors support
 set background=dark
 colorscheme spaceduck
 let g:lightline = { 'colorscheme': 'spaceduck' }
@@ -217,6 +217,15 @@ require('nvim-tree').setup{
       },
     },
     special_files = {"Makefile", "CMakeLists.txt", "Cargo.toml"},
+  },
+  filters = {
+    custom = {".git"},
+  },
+  git = {
+    enable = true,
+    ignore = true,
+    show_on_dirs = false,
+    timeout = 400,
   },
 }
 END

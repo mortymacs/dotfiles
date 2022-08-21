@@ -104,6 +104,7 @@ p(){
 }
 alias gch="git branch -a | fzf-tmux | tr -d '[:space:]' | xargs git checkout"
 alias diff="delta"
+alias blame="git blame \`f\`"
 
 # Server/Proxy.
 alias ping="gping --vertical-margin 0"
