@@ -131,6 +131,9 @@ set laststatus=3
 "" https://stackoverflow.com/a/37720708/2338672
 hi Normal guibg=NONE ctermbg=NONE
 hi SignColumn ctermbg=NONE guibg=NONE
+"" https://stackoverflow.com/a/63382382
+autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE
+autocmd vimenter * hi EndOfBuffer guibg=NONE ctermbg=NONE
 "" https://stackoverflow.com/a/40411893/2338672
 hi EndOfBuffer ctermfg=black guifg=black
 "" https://stackoverflow.com/a/19877212/2338672
@@ -174,11 +177,6 @@ call MapKeys("<c-t><c-s>", ":TestSuite<cr>")
 call MapKeys("<c-t><c-l>", ":TestLast<cr>")
 
 " Coc.nvim.
-inoremap <silent><expr> <TAB>
-      \ coc#pum#visible() ? coc#pum#next(1):
-      \ CheckBackspace() ? "\<Tab>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
       \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 inoremap <silent><expr> <c-space> coc#refresh()
@@ -222,16 +220,41 @@ require('nvim-tree').setup{
         git = true,
       },
     },
-    special_files = {"Makefile", "CMakeLists.txt", "Cargo.toml"},
+    special_files = {"Makefile", "CMakeLists.txt", "Cargo.toml", "go.mod"},
   },
   filters = {
-    custom = {".git"},
+    custom = {"^\\.git"},
+  },
+  live_filter = {
+    prefix = "[FILTER]: ",
+    always_show_folders = false,
   },
   git = {
     enable = true,
     ignore = true,
     show_on_dirs = false,
     timeout = 400,
+  },
+  view = {
+    mappings = {
+      list = {
+        { key = "<cr>",   action = "edit" },
+        { key = "v",      action = "vsplit" },
+        { key = "h",      action = "split" },
+        { key = "<tab>",  action = "preview" },
+        { key = "g",      action = "refresh" },
+        { key = "n",      action = "create" },
+        { key = "d",      action = "remove" },
+        { key = "r",      action = "rename" },
+        { key = "x",      action = "cut" },
+        { key = "c",      action = "copy" },
+        { key = "p",      action = "paste" },
+        { key = "bp",     action = "bulk_move" },
+        { key = "y",      action = "copy_name" },
+        { key = "Y",      action = "copy_absolute_path" },
+        { key = "/",      action = "search_node" },
+      },
+    },
   },
 }
 END
