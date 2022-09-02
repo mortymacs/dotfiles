@@ -100,6 +100,7 @@ call plug#end()
 
 " Color.
 lua require'colorizer'.setup()
+autocmd BufWritePost * :ColorizerAttachToBuffer
 let g:rainbow_active = 1
 let s:rainbow_conf = {
 \ 'ctermfgs': ['lightblue', 'lightyellow', 'lightcyan', 'lightmagenta', 'orangered', 'burlywood1', 'brown1', 'darkorchid1', 'deeppink2']
