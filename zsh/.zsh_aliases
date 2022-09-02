@@ -10,6 +10,7 @@ rmr(){ [ -n "$1" ] && (fd -I "$1" | xargs rm -rf --) }
 rme(){ ls | \grep -v "$1" | xargs rm -rf }
 alias du="dust -b"
 alias df="du"
+alias watch="viddy"
 
 # Text.
 alias grep="grep -n --color"
@@ -113,9 +114,10 @@ alias dx='export http_proxy=""'
 alias whereiam='echo $(curl -s http://ip-api.com/json | jq -r ".country,.city")'
 alias dig="dog"
 
-# K8s.
-alias k="kubectl"
-alias kx="kubectx"
+# Kubernetes
+source <(kubectl completion zsh)
+alias kubectl="kubecolor"
+compdef kubecolor=kubectl
 
 # Docker.
 ## http://www.bashoneliners.com/oneliners/252/
