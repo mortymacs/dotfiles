@@ -125,7 +125,7 @@ trash-cli
 tree
 ttf-cascadia-code
 ttf-joypixels
-ttf-nerd-fonts-symbols-mono
+ttf-nerd-fonts-symbols-1000-em
 udiskie
 unrar
 unzip

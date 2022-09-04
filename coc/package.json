@@ -1,12 +1,12 @@
 {
   "dependencies": {
-    "coc-clangd": ">=0.23.0",
+    "coc-clangd": ">=0.24.0",
     "coc-cmake": ">=0.2.1",
     "coc-go": ">=1.3.0",
     "coc-html": ">=1.6.1",
-    "coc-json": ">=1.6.0",
-    "coc-pyright": ">=1.1.265",
-    "coc-rust-analyzer": ">=0.65.3",
+    "coc-json": ">=1.6.1",
+    "coc-pyright": ">=1.1.269",
+    "coc-rust-analyzer": ">=0.67.1",
     "coc-sh": ">=0.7.0",
     "coc-texlab": ">=3.2.0",
     "coc-yaml": ">=1.8.0"
