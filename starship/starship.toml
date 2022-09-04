@@ -67,7 +67,7 @@ format = '[[($all_status$ahead_behind)](bg:#526CA3)]($style)'
 
 [git_branch]
 symbol = ""
-style = "bg:#526CA3"
+style = "bg:#526CA3 fg:#FFFFFF"
 format = '[[ $symbol $branch ](bg:#526CA3)]($style)'
 
 [git_commit]

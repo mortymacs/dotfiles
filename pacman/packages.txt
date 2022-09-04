@@ -69,6 +69,7 @@ intel-ucode
 iotop
 ipython
 iwd
+jhead
 jless
 jq
 kubectl
@@ -102,6 +103,7 @@ python
 python-black
 python-isort
 python-poetry
+python-setuptools
 revive
 ripgrep
 ripgrep-all
