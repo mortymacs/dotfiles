@@ -1,6 +1,7 @@
 dive
 dry-bin
 ghq
+google-crc32c
 kind-bin
 kubespy
 lazydocker

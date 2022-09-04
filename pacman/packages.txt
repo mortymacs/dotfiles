@@ -89,6 +89,7 @@ mypy
 neovim
 network-manager-applet
 networkmanager
+nlohmann-json
 nodejs
 npm
 pacman
@@ -96,6 +97,7 @@ patch
 peco
 perf
 pkgconf
+privoxy
 pulseaudio
 pulsemixer
 pwgen
@@ -123,6 +125,8 @@ the_silver_searcher
 tig
 tmux
 tmuxp
+tor
+torsocks
 trash-cli
 tree
 ttf-cascadia-code
