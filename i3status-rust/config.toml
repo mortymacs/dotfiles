@@ -1,30 +1,20 @@
 [theme]
 name = "dracula"
 [theme.overrides]
-separator = " "
+separator = ""
 
 [icons]
 name = "none"
 
 [[block]]
-block = "custom"
-command = '''echo $(curl -s http://ip-api.com/json | jq -r ".countryCode")'''
-interval = 10
-
-[[block]]
 block = "docker"
 interval = 2
 format = "{running} {total} {images}"
-
-[[block]]
-block = "disk_space"
-path = "/"
-alias = "/"
-info_type = "available"
-unit = "GB"
-interval = 20
-warning = 20.0
-alert = 10.0
+[block.theme_overrides]
+idle_fg = "#b3a1e6"
+good_fg = "#b3a1e6"
+[block.icons_overrides]
+docker = ""
 
 [[block]]
 block = "memory"
@@ -61,4 +51,21 @@ format = ""
 block = "time"
 interval = 5
 format = "%a %d/%m %R"
+[block.icons_overrides]
+time = ""
 
+[[block]]
+block = "custom"
+command = '''echo $(curl -s http://ip-api.com/json | jq -r ".countryCode")'''
+interval = 30
+[block.theme_overrides]
+idle_fg = "#5ccc96"
+good_fg = "#5ccc96"
+
+[[block]]
+block = "custom"
+command = '''echo $(torify curl -s http://ip-api.com/json | jq -r ".countryCode")'''
+interval = 30
+[block.theme_overrides]
+idle_fg = "#f2ce00"
+good_fg = "#f2ce00"

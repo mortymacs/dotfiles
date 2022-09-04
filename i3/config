@@ -187,9 +187,11 @@ exec --no-startup-id pkill blueman-applet; blueman-applet
 
 # Flameshot.
 exec --no-startup-id pkill flameshot; flameshot
+bindsym $mod+Shift+s exec --no-startup-id flameshot gui
 
 # Dropbox.
 exec --no-startup-id pkill dropbox; dropbox
+bindsym $mod+Shift+z exec --no-startup-id zeal
 
 # Zeal.
 exec --no-startup-id pkill zeal; zeal
