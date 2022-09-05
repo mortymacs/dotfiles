@@ -16,6 +16,7 @@ ctop
 cue
 cython
 delve
+dex
 dialog
 docker
 docker-compose
