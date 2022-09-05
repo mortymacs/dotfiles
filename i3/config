@@ -182,19 +182,12 @@ exec_always --no-startup-id feh --bg-scale $HOME/.config/i3/wallpaper.jpg
 exec_always --no-startup-id xautolock -time 30 -locker 'i3lock -c 111111 -e -f'
 bindsym $mod+l exec i3lock -c 111111 -e -f
 
-# Bluetooth.
-exec --no-startup-id pkill blueman-applet; blueman-applet
-
 # Flameshot.
 exec --no-startup-id pkill flameshot; flameshot
 bindsym $mod+Shift+s exec --no-startup-id flameshot gui
 
-# Dropbox.
-exec --no-startup-id pkill dropbox; dropbox
-bindsym $mod+Shift+z exec --no-startup-id zeal
-
 # Zeal.
-exec --no-startup-id pkill zeal; zeal
+bindsym $mod+Shift+z exec --no-startup-id zeal
 
 # Clipboard.
 exec --no-startup-id greenclip daemon>/dev/null
