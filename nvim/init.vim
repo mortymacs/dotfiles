@@ -308,6 +308,7 @@ let g:airline#extensions#tabline#enabled = 1
 call MapKeys("<s-right>", ":BufferNext<cr>")
 call MapKeys("<s-left>", ":BufferPrevious<cr>")
 call MapKeys("<c-x><c-q>", ":BufferClose<cr>")
+call MapKeys("<c-x><c-a>", ":tabnew<cr>")
 call MapKeys("<m-1>", ":BufferGoto 1<cr>")
 call MapKeys("<m-2>", ":BufferGoto 2<cr>")
 call MapKeys("<m-3>", ":BufferGoto 3<cr>")
@@ -318,7 +319,8 @@ call MapKeys("<m-7>", ":BufferGoto 7<cr>")
 call MapKeys("<m-8>", ":BufferGoto 8<cr>")
 call MapKeys("<m-9>", ":BufferGoto 9<cr>")
 let bufferline = get(g:, 'bufferline', {})
-let bufferline.icons = v:false
+let bufferline.icons = v:true
+let bufferline.auto_hide = v:true
 let bufferline.animation = v:false
 let bufferline.closable = v:false
 let bufferline.clickable = v:false
