@@ -37,19 +37,15 @@ function cleanup() {
     sudo pacman -Scc
 }
 
-# monitor
-# https://blog.summercat.com/configuring-mixed-dpi-monitors-with-xrandr.html
-# https://www.youtube.com/watch?v=wu2NWw2wPaA
+# Monitor.
 INTERNAL_MONITOR=$(xrandr | \grep primary | cut -d' ' -f1)
 EXTERNAL_MONITOR=$(xrandr | \grep ' connected' | tail -1 | cut -d' ' -f1)
-function external-monitor() {
-    xrandr --output "${EXTERNAL_MONITOR}" --scale 1x1 --output "${INTERNAL_MONITOR}" --off && xrandr --output $INTERNAL_MONITOR --off
+function monitor-external() {
+    xrandr --output "${INTERNAL_MONITOR}" --off --output "${EXTERNAL_MONITOR}" --mode 1920x1080 --pos 0x0 --rotate normal
 }
-function internal-monitor() {
-    xrandr --dpi 100 --output "${INTERNAL_MONITOR}" --mode 2048x1152 --output ${EXTERNAL_MONITOR} --off && xrandr --output $EXTERNAL_MONITOR --off && i3-msg restart > /dev/null
+function monitor-internal() {
+    xrandr --output "${INTERNAL_MONITOR}" --primary --mode 2048x1152 --pos 0x0 --rotate normal --output "${EXTERNAL_MONITOR}" --off
 }
-function monitor() { [[ "$1" == "1" ]] && internal-monitor || external-monitor }
-alias internal-monitor-scale="xrandr --output ${INTERNAL_MONITOR} --mode 2560x1440"
 
 # Utility.
 alias ascii="graph-easy --from=dot --as_ascii"
