@@ -66,7 +66,6 @@ Plug 'vim-test/vim-test'
 Plug 'pechorin/any-jump.vim'
 Plug 'dense-analysis/ale'
 Plug 'lukas-reineke/indent-blankline.nvim'
-Plug 'KabbAmine/zeavim.vim'
 
 " C/C++.
 Plug 'google/vim-maktaba'
@@ -419,6 +418,8 @@ call MapKeys("<c-c><c-m>", ":Glow<cr>")
 " ALE.
 let g:ale_disable_lsp = 1
 let g:ale_python_isort_options = '--profile black'
+let g:ale_set_loclist = 0
+let g:ale_set_quickfix = 1
 
 " C/C++.
 autocmd FileType c,cpp call MapKeys("<c-m-l>", ":FormatCode clang-format<cr>")

@@ -12,6 +12,10 @@ export WINIT_UNIX_BACKEND=x11
 export XDG_SESSION_TYPE=x11
 export WINIT_X11_SCALE_FACTOR=2
 
+# Python.
+# https://github.com/python-poetry/poetry/issues/5250#issuecomment-1067193647
+export PYTHON_KEYRING_BACKEND=keyring.backends.fail.Keyring
+
 # Golang.
 export GOPATH="$HOME/.local/share/go"
 export GOMODCACHE="$HOME/.local/share/go/pkg/mod"
