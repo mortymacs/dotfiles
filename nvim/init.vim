@@ -30,6 +30,9 @@ call plug#begin('~/.vim/plugged')
 Plug 'pineapplegiant/spaceduck', { 'branch': 'main' }
 Plug 'norcalli/nvim-colorizer.lua'
 
+" Scroll.
+Plug 'karb94/neoscroll.nvim'
+
 " Tabbar.
 Plug 'romgrk/barbar.nvim'
 
@@ -144,6 +147,15 @@ require('lualine').setup{
     theme = "spaceduck"
   }
 }
+END
+
+" Scroll.
+lua << END
+require('neoscroll').setup{}
+local t = {}
+t['<C-Up>'] = {'scroll', {'-vim.wo.scroll', 'true', '250'}}
+t['<C-Down>'] = {'scroll', { 'vim.wo.scroll', 'true', '250'}}
+require('neoscroll.config').set_mappings(t)
 END
 
 " Terminal.
