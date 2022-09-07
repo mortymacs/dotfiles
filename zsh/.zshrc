@@ -51,4 +51,4 @@ eval "$(starship init zsh)"
 
 # Aliases.
 source $HOME/.zsh_aliases
-
+[ -e "$HOME/.zsh_aliases_private" ] && source "$HOME/.zsh_aliases_private"
