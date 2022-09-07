@@ -144,7 +144,6 @@ vulkan-intel
 wget
 which
 wireless_tools
-xautolock
 xclip
 xorg-server
 xorg-xinit
