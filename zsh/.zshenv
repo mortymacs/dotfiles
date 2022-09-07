@@ -33,7 +33,7 @@ export EDITOR=nvim
 export TERMINAL=alacritty
 
 # Bat
-export BAT_THEME="ansi"
+export BAT_THEME='gruvbox-dark'
 
 # Fzf.
 export FZF_DEFAULT_COMMAND='fd --type f'
