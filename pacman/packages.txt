@@ -11,6 +11,7 @@ broot
 btop
 clang
 cmake
+cmatrix
 ctags
 ctop
 cue
@@ -18,6 +19,7 @@ cython
 delve
 dex
 dialog
+diskonaut
 docker
 docker-compose
 dog
@@ -87,6 +89,7 @@ mcfly
 most
 mtr
 mypy
+ncdu
 neovim
 network-manager-applet
 networkmanager
@@ -145,6 +148,7 @@ xautolock
 xclip
 xorg-server
 xorg-xinit
+xplr
 xss-lock
 yq
 zip

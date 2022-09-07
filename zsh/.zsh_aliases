@@ -49,13 +49,25 @@ function monitor-internal() {
 
 # Utility.
 alias ascii="graph-easy --from=dot --as_ascii"
-alias fm="lf"
 ## https://medium.com/@GroundControl/better-git-diffs-with-fzf-89083739a9cb
 alias f="fzf-tmux --cycle -i --preview 'bat {-1} --color=always'"
 alias o="v \`f || echo '-c :quitall'\`"
 alias cb="xclip -selection clipboard"
 alias calc="qalc"
 alias br="br -dp"
+
+# Disk.
+alias disk-usage="ncdu"
+alias disk-usage-i="diskonaut"
+alias fm="xplr"
+z(){
+    if [ "$#" -eq 0 ]; then
+        # https://github.com/x-motemen/ghq/issues/294#issuecomment-662071100
+        cd "$(zoxide query -i)"
+    else
+        cd "$(zoxide query $@)"
+    fi
+}
 
 # Process.
 alias kp="\ps aux | peco | awk '{print \$2}' | xargs kill -9"
