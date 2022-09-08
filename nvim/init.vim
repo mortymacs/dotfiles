@@ -61,7 +61,6 @@ Plug 'sindrets/diffview.nvim'
 Plug 'f-person/git-blame.nvim'
 
 " Orgmode.
-Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'nvim-orgmode/orgmode'
 
 " Development.
