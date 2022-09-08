@@ -3,6 +3,7 @@ dry-bin
 ghq
 google-crc32c
 kind-bin
+kubecolor
 kubespy
 lazydocker
 ly
