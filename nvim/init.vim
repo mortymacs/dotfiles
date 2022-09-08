@@ -39,6 +39,9 @@ Plug 'romgrk/barbar.nvim'
 " Status.
 Plug 'nvim-lualine/lualine.nvim'
 
+" Notification.
+Plug 'rcarriga/nvim-notify'
+
 " File and search.
 Plug 'junegunn/fzf.vim'
 Plug 'kyazdani42/nvim-web-devicons'
@@ -48,13 +51,18 @@ Plug 'MattesGroeger/vim-bookmarks'
 Plug 'famiu/bufdelete.nvim'
 
 " Text.
-Plug 'tpope/vim-surround'
+Plug 'kylechui/nvim-surround'
 Plug 'RRethy/vim-illuminate'
 Plug 'Yggdroot/indentLine'
 
 " Git.
 Plug 'airblade/vim-gitgutter'
 Plug 'sindrets/diffview.nvim'
+Plug 'f-person/git-blame.nvim'
+
+" Orgmode.
+Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'nvim-orgmode/orgmode'
 
 " Development.
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -158,6 +166,27 @@ t['<C-Down>'] = {'scroll', { 'vim.wo.scroll', 'true', '250'}}
 require('neoscroll.config').set_mappings(t)
 END
 
+" Notification.
+lua << END
+vim.notify = require("notify")
+END
+
+" Orgmode.
+lua << EOF
+require('orgmode').setup_ts_grammar()
+require'nvim-treesitter.configs'.setup {
+  highlight = {
+    enable = true,
+    additional_vim_regex_highlighting = {'org'},
+  },
+  ensure_installed = {'org'},
+}
+require('orgmode').setup({
+  org_agenda_files = {'~/Dropbox/org/*', '~/my-orgs/**/*'},
+  org_default_notes_file = '~/Dropbox/org/refile.org',
+})
+EOF
+
 " Terminal.
 let g:floaterm_title = "$1/$2"
 let g:floaterm_height = 0.5
@@ -212,6 +241,18 @@ set complete+=s
 "" reformat the whole buffer
 call MapKeys("<c-c><c-l>", "gg=G<cr>")
 call MapKeys("<c-m-l>", "gg=G<cr>")
+
+" Surround.
+lua << END
+  require("nvim-surround").setup()
+  -- https://github.com/kylechui/nvim-surround/issues/134#issuecomment-1209789260
+  vim.keymap.set('n', '"', '<cmd>norm ysiw"<cr>')
+  vim.keymap.set('n', '\'', '<cmd>norm ysiw\'<cr>')
+  vim.keymap.set('n', '(', '<cmd>norm ysiw)<cr>')
+  vim.keymap.set('n', '{', '<cmd>norm ysiw}<cr>')
+  vim.keymap.set('n', '[', '<cmd>norm ysiw]<cr>')
+  vim.keymap.set('n', '<', '<cmd>norm ysiw><cr>')
+END
 
 " Fzf.
 "" https://github.com/universal-ctags/ctags/issues/218#issuecomment-72355190
@@ -364,6 +405,15 @@ call MapKeys("<c-g><c-s>", ":call DiffViewToggle()<cr>")
 "" https://github.com/longsleep/bin-scripts/blob/master/config/vimrc
 " auto wrap git commit messages
 au FileType gitcommit set tw=72
+let g:gitgutter_sign_added = '|'
+let g:gitgutter_sign_modified = '|'
+let g:gitgutter_sign_removed = '|'
+let g:gitgutter_sign_removed_first_line = '|'
+let g:gitgutter_sign_removed_above_and_below = '|'
+let g:gitgutter_sign_modified_removed = '|'
+hi link GitGutterChangeLine DiffText
+hi link GitGutterChangeLineNr Underlined
+hi link GitGutterAddIntraLine DiffAdd
 
 " Tree-Sitter.
 lua << END
