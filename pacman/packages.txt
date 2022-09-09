@@ -116,6 +116,7 @@ ripgrep-all
 rofi
 rust
 rust-analyzer
+rustscan
 sed
 shellcheck
 silicon

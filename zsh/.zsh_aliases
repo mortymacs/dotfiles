@@ -134,6 +134,9 @@ dcr(){ docker run --rm "${@:2}" "$1" }
 dca(){ docker run -ti --rm "${@:2}" "$1" sh }
 dce(){ docker exec -ti "$1" "${2:-bash}" }
 
+# Net.
+alias port-scan="rustscan"
+
 # DB.
 function redis-server() {
     docker run -d --rm -p 6379:6379 --name redis redis:alpine redis-server
