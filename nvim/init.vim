@@ -167,7 +167,9 @@ END
 
 " Notification.
 lua << END
-vim.notify = require("notify")
+require("notify").setup({
+  background_colour = "#0F0F19",
+})
 END
 
 " Orgmode.
