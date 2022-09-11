@@ -148,7 +148,6 @@ wireless_tools
 xclip
 xorg-server
 xorg-xinit
-xplr
 xss-lock
 yq
 zip
