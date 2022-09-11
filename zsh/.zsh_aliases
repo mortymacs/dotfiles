@@ -59,7 +59,7 @@ alias br="br -dp"
 # Disk.
 alias disk-usage="ncdu"
 alias disk-usage-i="diskonaut"
-alias fm="xplr"
+alias fm="br"
 z(){
     if [ "$#" -eq 0 ]; then
         # https://github.com/x-motemen/ghq/issues/294#issuecomment-662071100
