@@ -150,6 +150,7 @@ xorg-server
 xorg-xinit
 xss-lock
 yq
+zathura-pdf-mupdf
 zip
 zoxide
 zram-generator

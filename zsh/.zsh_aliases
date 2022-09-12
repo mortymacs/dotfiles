@@ -12,7 +12,7 @@ alias du="dust -b"
 alias df="du"
 alias watch="viddy"
 
-# Text.
+# Text/Document.
 alias grep="grep -n --color"
 alias gg="rga -i -n --pretty"
 function gf(){ gg "$1" -g "$2" }
@@ -20,6 +20,7 @@ function gfa(){ gg "$1" -g "*.$2" }
 alias cat="bat"
 alias less="less -N"
 alias man="PAGER=most man"
+alias pdf="zathura"
 
 # Mics.
 alias reload="source ~/.zshrc"
