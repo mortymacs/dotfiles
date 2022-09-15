@@ -437,6 +437,8 @@ require('nvim-treesitter.configs').setup {
     "json",
     "yaml",
     "toml",
+    "html",
+    "css",
     "regex",
     "http"
   },
