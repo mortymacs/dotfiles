@@ -32,8 +32,6 @@ compile_commands.json
 # Editors/IDE
 .vim
 *.swp
-.idea
-.vscode
 
 # Helm
 Chart.lock
@@ -46,4 +44,3 @@ Gemfile.lock
 .cache
 *.sqlite3
 *.spec
-.*
