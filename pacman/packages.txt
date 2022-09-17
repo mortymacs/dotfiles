@@ -151,6 +151,7 @@ xclip
 xorg-server
 xorg-xinit
 xss-lock
+yaml-language-server
 yq
 zathura-pdf-mupdf
 zip

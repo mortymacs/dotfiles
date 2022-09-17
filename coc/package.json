@@ -12,5 +12,8 @@
     "coc-sh": ">=0.7.0",
     "coc-texlab": ">=3.2.0",
     "coc-yaml": ">=1.8.0"
-  }
+  },
+  "disabled": [],
+  "locked": [],
+  "lastUpdate": 1663442949851
 }
