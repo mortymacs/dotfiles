@@ -60,6 +60,10 @@ cp -R "$HOME"/.config/rofi/ .
 rm -rf bspwm
 cp -R "$HOME"/.config/bspwm/ .
 
+# sxhkd
+rm -rf sxhkd
+cp -R "$HOME"/.config/sxhkd/ .
+
 # polybar
 rm -rf polybar
 cp -R "$HOME"/.config/polybar .
