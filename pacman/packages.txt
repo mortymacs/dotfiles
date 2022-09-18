@@ -65,10 +65,6 @@ hq
 httpie
 hugo
 hyperfine
-i3-wm
-i3blocks
-i3lock
-i3status-rust
 intel-media-driver
 intel-ucode
 iotop
@@ -154,6 +150,7 @@ wireless_tools
 xclip
 xorg-server
 xorg-xinit
+xsecurelock
 xss-lock
 yaml-language-server
 yq

@@ -44,5 +44,8 @@ export GHQ_ROOT="$HOME/Workspaces"
 # Mcfly.
 export MCFLY_FUZZY=true
 
+# Xsecurelock.
+export XSECURELOCK_FONT="CodeNewRoman Nerd Font Mono"
+
 # General.
 export PATH=$PATH:$HOME/.local/bin:$GOPATH/bin

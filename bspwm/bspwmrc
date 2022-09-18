@@ -12,7 +12,7 @@ polybar &
 
 # Lock screen.
 xset s 180
-xss-lock --transfer-sleep-lock -- i3lock --nofork -c 111111 -e -f &
+xss-lock --transfer-sleep-lock -- xsecurelock &
 
 # Background.
 feh --bg-scale $HOME/.config/bspwm/wallpaper.jpg &
