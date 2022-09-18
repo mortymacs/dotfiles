@@ -56,13 +56,13 @@ cp "$HOME"/.mostrc most/
 rm -rf rofi
 cp -R "$HOME"/.config/rofi/ .
 
-# i3
-rm -rf i3
-cp -R "$HOME"/.config/i3/ .
+# bspwm
+rm -rf bspwm
+cp -R "$HOME"/.config/bspwm/ .
 
-# i3status-rs
-rm -rf i3status-rust
-cp -R "$HOME"/.config/i3status-rust .
+# polybar
+rm -rf polybar
+cp -R "$HOME"/.config/polybar .
 
 # dunst
 rm -rf dunst

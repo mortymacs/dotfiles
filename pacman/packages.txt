@@ -1,4 +1,5 @@
 alacritty
+arandr
 asciinema
 autoconf
 automake
@@ -8,6 +9,7 @@ bat
 binutils
 bison
 broot
+bspwm
 btop
 clang
 cmake
@@ -101,6 +103,7 @@ patch
 peco
 perf
 pkgconf
+polybar
 privoxy
 pulseaudio
 pulsemixer
@@ -124,6 +127,7 @@ smartmontools
 starship
 staticcheck
 sudo
+sxhkd
 terraform
 texinfo
 the_silver_searcher
