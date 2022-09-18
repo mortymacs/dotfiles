@@ -17,8 +17,17 @@ xss-lock --transfer-sleep-lock -- xsecurelock &
 # Background.
 feh --bg-scale $HOME/.config/bspwm/wallpaper.jpg &
 
+# Screenshot.
+flameshot &
+
+# Clipboard.
+greenclip daemon>/dev/null &
+
+# Mount.
+udiskie &
+
 # Bspwm.
-bspc monitor -d 0 1 2 3 4 5 6 7 8 9
+bspc monitor -d 1 2 3 4 5 6 7 8 9 10
 
 bspc config border_width         2
 bspc config window_gap          10

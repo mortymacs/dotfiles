@@ -19,7 +19,6 @@ ctop
 cue
 cython
 delve
-dex
 dialog
 diskonaut
 docker

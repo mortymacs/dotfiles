@@ -2,11 +2,11 @@
 
 # Terminal.
 super + Return
-	alacritty msg create-window 2>/dev/null || alacritty
+    alacritty msg create-window 2>/dev/null || alacritty
 
 # Launcher.
 super + d
-	rofi -show run -font "Anek Latin Medium 12"
+    rofi -show run -font "Anek Latin Medium 12"
 
 # Clipboard.
 super + c
@@ -16,63 +16,66 @@ super + c
 super + shift + s
     flameshot gui
 
+super + shift + z
+    zeal
+
 # -- Sxhkd.
 
 # Reload.
 super + Escape
-	pkill -USR1 -x sxhkd
+    pkill -USR1 -x sxhkd
 
 # -- Bspwm.
 
 # Quit/restart.
 super + shift + e
-	bspc {quit,wm -r}
+    bspc {quit,wm -r}
 
 # Close.
 super + shift + q
-	bspc node -{c,k}
+    bspc node -{c,k}
 
 # Alternate between the tiled and monocle layout.
 super + s
-	bspc desktop -l next
+    bspc desktop -l next
 
 # swap the current node and the biggest window
 super + w + g
-	bspc node -s biggest.window
+    bspc node -s biggest.window
 
 # -- Focus/swap.
 
 # Focus.
 super + {Left,Down,Up,Right}
-	bspc node -f {west,south,north,east}
+    bspc node -f {west,south,north,east}
 
 # Swap.
 super + alt + {Left,Down,Up,Right}
-	bspc node -s {west,south,north,east}
+    bspc node -s {west,south,north,east}
 
 # -- Workspace.
 
 # Next/previous workspace.
 super + shift + {Left,Right}
-	bspc desktop -f {prev,next}.local
+    bspc desktop -f {prev,next}.local
 
 # Go to specific workspace.
 super + {1-9,0}
-	bspc desktop -f '^{1-9,10}'
+    bspc desktop -f '^{1-9,10}'
 
 # -- Preselect.
 
 # Preselect the direction.
 super + ctrl + {Left,Down,Up,Right}
-	bspc node -p {west,south,north,east}
+    bspc node -p {west,south,north,east}
 
 # Preselect the ratio.
 super + ctrl + {1-9}
-	bspc node -o 0.{1-9}
+    bspc node -o 0.{1-9}
 
 # cancel the preselection for the focused node
 super + ctrl + Escape
-	bspc node -p cancel
+    bspc node -p cancel
 
 # -- Move/resize.
 
