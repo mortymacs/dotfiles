@@ -15,7 +15,7 @@
   },
   "yaml.schemas": {
     /* Docker-Compose */
-    "https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json": ["/*.yaml", "/*.yml"],
+    "https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json": ["/docker-compose.yaml", "/docker-compose.yml"],
     /* Kubernetes */
     "kubernetes": ["/*.yaml", "/*.yml"],
     /* Argo */
