@@ -43,6 +43,10 @@ super + s
 super + w + g
     bspc node -s biggest.window
 
+# Lock screen.
+super + l
+    xsecurelock
+
 # -- Focus/swap.
 
 # Focus.
