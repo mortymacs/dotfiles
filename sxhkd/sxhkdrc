@@ -53,6 +53,12 @@ super + {Left,Down,Up,Right}
 super + alt + {Left,Down,Up,Right}
     bspc node -s {west,south,north,east}
 
+# Fullscreen/tiled.
+super + shift + Up
+    bspc node -t fullscreen
+super + shift + Down
+    bspc node -t tiled
+
 # -- Workspace.
 
 # Next/previous workspace.
