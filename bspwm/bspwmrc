@@ -39,4 +39,4 @@ bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
 # Application rules.
-bspc rule -a firefox desktop=1
+bspc rule -a firefox desktop=^1

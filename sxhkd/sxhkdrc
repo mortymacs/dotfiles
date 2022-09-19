@@ -22,7 +22,7 @@ super + shift + z
 # -- Sxhkd.
 
 # Reload.
-super + Escape
+super + shift + r
     pkill -USR1 -x sxhkd
 
 # -- Bspwm.
