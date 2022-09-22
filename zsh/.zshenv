@@ -46,6 +46,10 @@ export MCFLY_FUZZY=true
 
 # Xsecurelock.
 export XSECURELOCK_FONT="CodeNewRoman Nerd Font Mono"
+export XSECURELOCK_SHOW_KEYBOARD_LAYOUT=0
+export XSECURELOCK_DISCARD_FIRST_KEYPRESS=0
+export XSECURELOCK_SHOW_HOSTNAME=0
+export XSECURELOCK_SHOW_DATETIME=0
 
 # General.
 export PATH=$PATH:$HOME/.local/bin:$GOPATH/bin

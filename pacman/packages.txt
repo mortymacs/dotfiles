@@ -136,7 +136,6 @@ ttf-cascadia-code
 ttf-font-awesome
 ttf-joypixels
 ttf-nerd-fonts-symbols-2048-em-mono
-ttf-roboto
 udiskie
 unrar
 unzip

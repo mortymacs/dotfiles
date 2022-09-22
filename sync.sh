@@ -26,7 +26,7 @@ cp "$HOME"/.config/nvim/{init.vim,coc-settings.json} nvim/
 
 # coc
 rm -rf coc/*
-cp "$HOME"/.config/coc/extensions/package.json coc/
+cat "$HOME"/.config/coc/extensions/package.json | jq 'del(.lastUpdate)' | tee coc/package.json
 
 # gdb, pdb
 rm -rf gdb/*
