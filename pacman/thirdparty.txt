@@ -2,6 +2,7 @@ dive
 dry-bin
 ghq
 google-crc32c
+inxi
 kind-bin
 kubecolor
 kubespy

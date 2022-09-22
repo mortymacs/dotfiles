@@ -37,6 +37,7 @@ function cleanup() {
     docker system prune
     sudo pacman -Scc
 }
+alias sys="inxi"
 
 # Monitor.
 INTERNAL_MONITOR=$(xrandr | \grep primary | cut -d' ' -f1)
