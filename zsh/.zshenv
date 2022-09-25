@@ -23,6 +23,7 @@ export GOMODCACHE="$HOME/.local/share/go/pkg/mod"
 # Python.
 # https://www.andreagrandi.it/2018/10/16/using-ipdb-with-python-37-breakpoint/
 export PYTHONBREAKPOINT=ipdb.set_trace
+export PYENV_ROOT="$HOME/.pyenv"
 
 # https://stackoverflow.com/a/22481496
 export TERM="xterm-256color"
@@ -52,4 +53,4 @@ export XSECURELOCK_SHOW_HOSTNAME=0
 export XSECURELOCK_SHOW_DATETIME=0
 
 # General.
-export PATH=$PATH:$HOME/.local/bin:$GOPATH/bin
+export PATH="$PATH:$HOME/.local/bin:$GOPATH/bin:$PYENV_ROOT/bin:$PATH"
