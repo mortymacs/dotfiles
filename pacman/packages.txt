@@ -106,6 +106,7 @@ python
 python-black
 python-isort
 python-poetry
+python-pylint
 python-setuptools
 revive
 ripgrep

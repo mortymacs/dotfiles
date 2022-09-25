@@ -97,6 +97,10 @@ cp "$HOME/.config/Zeal/Zeal.conf" zeal/
 rm -rf fonts/*
 cp -R "$HOME"/.local/share/fonts/{Code\ New\ Roman\ Nerd\ Font\ Complete\ Mono.otf,Code\ New\ Roman\ Bold\ Nerd\ Font\ Complete\ Mono.otf,Code\ New\ Roman\ Italic\ Nerd\ Font\ Complete\ Mono.otf,'AnekLatin-VariableFont_wdth,wght.ttf'} fonts/
 
+# fonts config
+rm -tf fontconfig/*
+cp "$HOME/.config/fontconfig/fonts.conf" fontconfig/
+
 # push changes.
 git status -s
 git add .
