@@ -79,6 +79,7 @@ libva-intel-driver
 linux
 linux-firmware
 m4
+mage
 make
 man-db
 mcfly
