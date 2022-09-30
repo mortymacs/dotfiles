@@ -101,6 +101,10 @@ cp -R "$HOME"/.local/share/fonts/{Code\ New\ Roman\ Nerd\ Font\ Complete\ Mono.o
 rm -rf fontconfig/*
 cp "$HOME/.config/fontconfig/fonts.conf" fontconfig/
 
+# tmuxp
+rm -rf tmuxp
+cp -R "$HOME/.config/tmuxp" .
+
 # push changes.
 git status -s
 git add .

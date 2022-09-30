@@ -1,0 +1,8 @@
+---
+session_name: system
+windows:
+  - window_name: top
+    start_directory: ~/
+    panes:
+      - top
+
