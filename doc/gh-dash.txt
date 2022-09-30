@@ -1,0 +1,9 @@
+Install:
+```shell
+gh extension install dlvhdr/gh-dash
+```
+
+Test:
+```shell
+gh dash
+```
