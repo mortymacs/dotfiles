@@ -60,6 +60,10 @@ Plug 'airblade/vim-gitgutter'
 Plug 'sindrets/diffview.nvim'
 Plug 'f-person/git-blame.nvim'
 
+" Github.
+Plug 'pwntester/octo.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+
 " Orgmode.
 Plug 'nvim-orgmode/orgmode'
 
@@ -416,6 +420,11 @@ hi link GitGutterChangeLine DiffText
 hi link GitGutterChangeLineNr Underlined
 hi link GitGutterAddIntraLine DiffAdd
 
+" Github.
+lua << END
+require('octo').setup()
+END
+
 " Tree-Sitter.
 lua << END
 require('nvim-treesitter.configs').setup {
@@ -505,6 +514,8 @@ autocmd FileType python call MapKeys("<c-t><c-a>", ":Pytest file<cr>")
 
 " Go.
 let g:go_auto_type_info = 0
+let g:go_fmt_command="gopls"
+let g:go_gopls_gofumpt=1
 autocmd FileType go call MapKeys("<c-m-l>", ":GoFmt<cr>")
 autocmd FileType go call MapKeys("<c-c><c-i>", ":GoImplements<cr>")
 autocmd FileType go call MapKeys("<c-c><c-r>", ":GoReferrers<cr>")

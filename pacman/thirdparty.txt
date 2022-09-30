@@ -1,6 +1,7 @@
 dive
 dry-bin
 ghq
+gofumpt
 google-crc32c
 inxi
 kind-bin
