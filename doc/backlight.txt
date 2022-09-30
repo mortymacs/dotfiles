@@ -1,0 +1,13 @@
+Add currrent user into the video group:
+```shell
+sudo usermod -a -G video mort
+```
+
+Then enable the backlight:
+https://wiki.archlinux.org/title/Backlight#ACPI
+
+Add this config into `/etc/udev/rules.d/backlight.rules`
+```
+ACTION=="add", SUBSYSTEM=="backlight", RUN+="/bin/chgrp video $sys$devpath/brightness", RUN+="/bin/chmod g+w $sys$devpath/brightness"
+```
+
