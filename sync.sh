@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# xresources
+rm -rf xresources/*
+cp "$HOME/.Xresources" xresources/
+
 # zsh
 rm -rf zsh/*
 cp "$HOME"/{.zshrc,.zsh_aliases,.zshenv} zsh/

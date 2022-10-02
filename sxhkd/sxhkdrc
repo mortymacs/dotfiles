@@ -6,7 +6,7 @@ super + Return
 
 # Launcher.
 super + d
-    rofi -show run -font "Anek Latin Medium 12"
+    rofi -show run -font "Anek Latin 12"
 
 # Clipboard.
 super + c
