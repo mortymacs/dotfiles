@@ -10,7 +10,7 @@ super + d
 
 # Clipboard.
 super + c
-    rofi -modi "clipboard:greenclip print" -show clipboard -font "Anek Latin Medium 10"
+    rofi -modi "clipboard:greenclip print" -show clipboard -font "Anek Latin 12"
 
 # Screenshot.
 super + shift + s
