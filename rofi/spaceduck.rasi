@@ -31,7 +31,7 @@ mainbox {
 inputbar {
     background-color: @background;
     border: 0;
-    children: [prompt,entry];
+    children: [entry];
 }
 
 prompt {
@@ -49,6 +49,7 @@ entry {
 listview {
     background-color: @background;
     text-color: @foreground;
+    lines: 3;
     children: [element];
 }
 
