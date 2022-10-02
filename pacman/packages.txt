@@ -123,6 +123,7 @@ silicon
 smartmontools
 starship
 staticcheck
+strace
 sudo
 sxhkd
 terraform
