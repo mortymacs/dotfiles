@@ -1,7 +1,7 @@
 " General.
 filetype off                 " required
 syntax on
-set mouse-=a
+set mouse=
 set number
 set cursorline
 set nocompatible             " be iMproved, required
