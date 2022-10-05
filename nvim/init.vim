@@ -266,6 +266,18 @@ END
 call MapKeys("<c-x><c-f>", ":Telescope find_files<cr>")
 call MapKeys("<c-x><c-t>", ":Telescope tags<cr>")
 call MapKeys("<c-x><c-b>", ":Telescope buffers<cr>")
+lua << END
+require('telescope').setup{
+  defaults = {
+    layout_strategy = 'vertical',
+  },
+  pickers = {
+    find_files = {
+      theme = 'dropdown',
+    },
+  },
+}
+END
 
 " File manager.
 lua << END
