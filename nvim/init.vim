@@ -43,7 +43,8 @@ Plug 'nvim-lualine/lualine.nvim'
 Plug 'rcarriga/nvim-notify'
 
 " File and search.
-Plug 'junegunn/fzf.vim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.x' }
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'preservim/tagbar'
@@ -211,10 +212,11 @@ hi FloatermBorder ctermbg=black
 call MapKeys("<c-x><c-r>", "FloatermToggle<cr>")
 
 " Search.
-call MapKeys("<c-f>", ":Lines<cr>")
+call MapKeys("<c-f>", ":Telescope current_buffer_fuzzy_find<cr>")
 call MapKeys("<c-c><c-t>", ":AnyJump<cr>")
 call MapKeys("<c-c><c-g>", ":AnyJumpArg ")
-call MapKeys("<c-x><c-g>", ":Ag<cr>")
+call MapKeys("<c-x><c-g>", ":Telescope live_grep<cr>")
+call MapKeys("<c-x><c-d>", ":Telescope man_pages<cr>")
 let g:any_jump_disable_default_keybindings = 1
 
 " Test.
@@ -260,12 +262,10 @@ lua << END
   vim.keymap.set('n', '<', '<cmd>norm ysiw><cr>')
 END
 
-" Fzf.
-"" https://github.com/universal-ctags/ctags/issues/218#issuecomment-72355190
-let g:fzf_tags_command='fd | ctags --links=no -L-'
-call MapKeys("<c-x><c-f>", ":Files<cr>")
-call MapKeys("<c-x><c-t>", ":Tags<cr>")
-call MapKeys("<c-x><c-b>", ":Buffers<cr>")
+" Telescope.
+call MapKeys("<c-x><c-f>", ":Telescope find_files<cr>")
+call MapKeys("<c-x><c-t>", ":Telescope tags<cr>")
+call MapKeys("<c-x><c-b>", ":Telescope buffers<cr>")
 
 " File manager.
 lua << END
@@ -407,7 +407,11 @@ function! DiffViewToggle()
     let s:diff_view_enabled = 1
   endif
 endfunction
-call MapKeys("<c-g><c-s>", ":call DiffViewToggle()<cr>")
+call MapKeys("<c-g><c-d>", ":call DiffViewToggle()<cr>")
+call MapKeys("<c-g><c-s>", ":Telescope git_status<cr>")
+call MapKeys("<c-g><c-b>", ":Telescope git_branches<cr>")
+call MapKeys("<c-g><c-c>", ":Telescope git_commits<cr>")
+call MapKeys("<c-g><c-t>", ":Telescope git_stash<cr>")
 "" https://github.com/longsleep/bin-scripts/blob/master/config/vimrc
 " auto wrap git commit messages
 au FileType gitcommit set tw=72
