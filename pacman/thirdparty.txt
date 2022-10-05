@@ -2,6 +2,7 @@ dive
 dry-bin
 ghq
 gofumpt
+golangci-lint
 google-crc32c
 inxi
 kind-bin
