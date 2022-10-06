@@ -49,9 +49,5 @@ eval "$(mcfly init zsh)"
 # Starship.
 eval "$(starship init zsh)"
 
-# Pyenv.
-eval "$(pyenv init -)"
-
 # Aliases.
 source $HOME/.zsh_aliases
-[ -e "$HOME/.zsh_aliases_private" ] && source "$HOME/.zsh_aliases_private"

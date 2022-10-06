@@ -103,7 +103,6 @@ privoxy
 pulseaudio
 pulsemixer
 pwgen
-pyenv
 python
 python-black
 python-isort

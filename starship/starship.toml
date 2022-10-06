@@ -30,7 +30,6 @@ $aws\
 $gcloud\
 $env_var\
 $cmd_duration\
-$jobs\
 $status\
 """
 
