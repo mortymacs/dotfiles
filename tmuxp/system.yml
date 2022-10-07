@@ -1,8 +1,11 @@
 ---
 session_name: system
 windows:
-  - window_name: top
+  - window_name: process
     start_directory: ~/
     panes:
       - top
-
+  - window_name: kernel
+    start_directory: ~/
+    panes:
+      - sudo kmon

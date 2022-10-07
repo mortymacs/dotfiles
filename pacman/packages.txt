@@ -48,6 +48,7 @@ gettext
 git
 git-delta
 github-cli
+glibc
 glow
 go
 gopls
@@ -71,6 +72,7 @@ iwd
 jhead
 jless
 jq
+kmon
 kubectl
 kubectx
 libqalculate

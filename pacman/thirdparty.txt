@@ -1,3 +1,4 @@
+chart-testing
 dive
 dry-bin
 ghq
@@ -11,6 +12,7 @@ kubespy
 lazydocker
 ly
 nodejs-dockerfile-language-server
+python3-yamale
 rofi-greenclip
 spotify
 src-cli-bin

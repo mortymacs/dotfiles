@@ -76,7 +76,7 @@ z(){
 }
 
 # Process.
-alias kp="\ps aux | peco | awk '{print \$2}' | xargs kill -9"
+alias kp="\ps aux | peco | awk '{print \$2}' | xargs -r kill -9"
 alias ap="\ps aux | peco"
 alias ps="procs"
 
@@ -117,7 +117,7 @@ p(){
         ghq "$@"
     fi
 }
-alias gch='git branch -a | fzf-tmux | tr -d "[:space:]" | xargs git checkout'
+alias gch='git branch -a | fzf-tmux | tr -d "[:space:]" | xargs -r git checkout'
 alias diff='delta'
 alias blame="git blame \`f\`"
 
