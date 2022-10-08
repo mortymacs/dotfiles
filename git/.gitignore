@@ -35,7 +35,6 @@ compile_commands.json
 
 # Helm
 Chart.lock
-charts/
 
 # Misc
 .bundle
