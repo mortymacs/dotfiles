@@ -74,11 +74,11 @@ format = '[[ $symbol $branch ]($style)]($style)'
 [git_commit]
 tag_disabled = false
 tag_symbol = " 笠"
-style = "bold bg:#526CA3 fg:#5ccc96"
+style = "bold bg:#686f9a fg:#5ccc96"
 format = '[\($hash$tag\) ]($style)($style)'
 
 [git_state]
-style = "bold bg:#7a5ccc fg:#ecf0c1"
+style = "bold bg:#686f9a fg:#ecf0c1"
 format = '[\([$state( $progress_current/$progress_total)\) ]($style)]($style)'
 
 [python]
