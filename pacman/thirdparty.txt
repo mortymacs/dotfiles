@@ -6,6 +6,7 @@ gofumpt
 golangci-lint
 google-crc32c
 inxi
+jqp
 kind-bin
 kubecolor
 kubespy
