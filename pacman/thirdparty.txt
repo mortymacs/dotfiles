@@ -19,6 +19,7 @@ spotify
 src-cli-bin
 stern-bin
 terraform-ls
+vazirmatn-fonts
 yay
 ydiff
 zeal

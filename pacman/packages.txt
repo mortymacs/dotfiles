@@ -137,7 +137,6 @@ tor
 torsocks
 trash-cli
 tree
-ttf-cascadia-code
 ttf-font-awesome
 ttf-joypixels
 ttf-nerd-fonts-symbols-2048-em-mono
