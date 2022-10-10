@@ -93,6 +93,10 @@ pacman -Qqem > pacman/thirdparty.txt
 rm -rf docker/*
 cat "$HOME"/.docker/config.json | jq 'del(.auths)' | tee docker/config.json
 
+# peco
+rm -rf peco
+cp -R "$HOME/.config/peco" .
+
 # zeal
 rm -rf zeal/*
 cp "$HOME/.config/Zeal/Zeal.conf" zeal/
