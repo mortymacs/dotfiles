@@ -101,6 +101,7 @@ perf
 pkgconf
 polybar
 privoxy
+procs
 pulseaudio
 pulsemixer
 pwgen

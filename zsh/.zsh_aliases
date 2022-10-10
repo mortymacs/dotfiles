@@ -76,8 +76,12 @@ z(){
 }
 
 # Process.
-alias kp="\ps aux | peco | awk '{print \$2}' | xargs -r kill -9"
-alias ap="\ps aux | peco"
+kp() {
+    \ps auxf | peco --query "$1" | awk '{print $2}' | xargs -r kill -9
+}
+ap() {
+    \ps auxf | peco --query "$1"
+}
 alias ps="procs"
 
 # Compression.
