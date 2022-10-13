@@ -12,7 +12,6 @@ window:
   padding:
     x: 0
     y: 0
-  gtk_theme_variant: dark
 
 cursor:
   style:

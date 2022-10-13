@@ -5,6 +5,7 @@ ghq
 gofumpt
 golangci-lint
 google-crc32c
+gosec
 inxi
 jqp
 kind-bin
