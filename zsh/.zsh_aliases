@@ -77,10 +77,10 @@ z(){
 
 # Process.
 kp() {
-    \ps auxf | \grep -v peco | peco --query "$1" | awk '{print $2}' | xargs -r kill -9
+    \ps -eo pid,user,pcpu,pmem,command --sort -%cpu,-%mem | \grep -v peco | peco --query "$1" | awk '{print $1}' | xargs -r kill -9
 }
 ap() {
-    \ps auxf | \grep -v peco | peco --query "$1"
+    \ps -eo pid,user,pcpu,pmem,command --sort -%cpu,-%mem | \grep -v peco | peco --query "$1"
 }
 alias ps="procs"
 
