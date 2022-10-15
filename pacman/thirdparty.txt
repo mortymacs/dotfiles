@@ -24,4 +24,3 @@ vazirmatn-fonts
 yay
 ydiff
 zeal
-zsh-autocomplete
