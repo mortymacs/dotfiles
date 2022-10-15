@@ -9,7 +9,6 @@ SAVEHIST=10000
 setopt appendhistory
 
 # Auto completion.
-skip_global_compinit=1
 autoload -Uz compinit
 # https://medium.com/@dannysmith/little-thing-2-speeding-up-zsh-f1860390f92
 for dump in ~/.zcompdump(N.mh+24); do
