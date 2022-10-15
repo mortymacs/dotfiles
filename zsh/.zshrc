@@ -9,8 +9,14 @@ SAVEHIST=10000
 setopt appendhistory
 
 # Auto completion.
+skip_global_compinit=1
 autoload -Uz compinit
-compinit
+# https://medium.com/@dannysmith/little-thing-2-speeding-up-zsh-f1860390f92
+for dump in ~/.zcompdump(N.mh+24); do
+  compinit
+done
+compinit -C
+
 # https://unix.stackexchange.com/questions/185537/combining-zsh-s-tab-completion-with-case-insensitivity
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 zstyle ':completion::complete:*' gain-privileges 1

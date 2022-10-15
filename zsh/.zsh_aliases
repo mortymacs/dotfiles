@@ -40,14 +40,16 @@ function cleanup() {
 alias sys='inxi'
 
 # Monitor.
-INTERNAL_MONITOR=$(xrandr | \grep primary | cut -d' ' -f1)
-EXTERNAL_MONITOR=$(xrandr | \grep ' connected' | tail -1 | cut -d' ' -f1)
 function monitor-external() {
+    INTERNAL_MONITOR=$(xrandr | \grep primary | cut -d' ' -f1)
+    EXTERNAL_MONITOR=$(xrandr | \grep ' connected' | tail -1 | cut -d' ' -f1)
     xrandr --output "${INTERNAL_MONITOR}" --off --output "${EXTERNAL_MONITOR}" --mode 1920x1080 --pos 0x0 --rotate normal
     bspc config right_padding 640
     bspc config bottom_padding 360
 }
 function monitor-internal() {
+    INTERNAL_MONITOR=$(xrandr | \grep primary | cut -d' ' -f1)
+    EXTERNAL_MONITOR=$(xrandr | \grep ' connected' | tail -1 | cut -d' ' -f1)
     xrandr --output "${INTERNAL_MONITOR}" --primary --mode 2048x1152 --pos 0x0 --rotate normal --output "${EXTERNAL_MONITOR}" --off
     bspc config right_padding 0
     bspc config bottom_padding 0
