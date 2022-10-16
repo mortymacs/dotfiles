@@ -138,6 +138,7 @@ torsocks
 trash-cli
 tree
 ttf-font-awesome
+ttf-jetbrains-mono
 ttf-joypixels
 ttf-nerd-fonts-symbols-2048-em-mono
 udiskie

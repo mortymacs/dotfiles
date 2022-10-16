@@ -23,13 +23,13 @@ mouse:
 selection:
   save_to_clipboard: true
 
-# Alternative font: Roboto Mono
-font_name: &font_name CodeNewRoman Nerd Font Mono
+# Alternative font: CodeNewRoman Nerd Font Mono
+font_name: &font_name Jetbrains Mono
 font:
-  size: 14
+  size: 12
   normal:
     family: *font_name
-    style: Regular
+    style: Medium
 
   bold:
     family: *font_name
@@ -40,8 +40,8 @@ font:
     style: Italic
 
   offset:
-    x: 0
-    y: 3
+    x: -1
+    y: 0
 
   glyph_offset:
     x: 0
