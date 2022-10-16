@@ -6,11 +6,11 @@ super + Return
 
 # Launcher.
 super + d
-    rofi -show run -font "Anek Latin 12"
+    rofi -show run -font "Lexend 10"
 
 # Clipboard.
 super + c
-    rofi -modi "clipboard:greenclip print" -show clipboard -font "Anek Latin 12"
+    rofi -modi "clipboard:greenclip print" -show clipboard -font "Lexend 10"
 
 # Screenshot.
 super + shift + s
