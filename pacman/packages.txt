@@ -63,6 +63,7 @@ hq
 httpie
 hugo
 hyperfine
+inetutils
 intel-media-driver
 intel-ucode
 iotop
