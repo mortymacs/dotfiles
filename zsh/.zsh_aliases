@@ -127,6 +127,18 @@ alias gch='git branch -a | fzf-tmux | tr -d "[:space:]" | xargs -r git checkout'
 alias diff='delta'
 alias blame="git blame \`f\`"
 
+# Package.
+update-aur() {
+    NEW_VERSION="$1"
+    sed -i "s/^pkgver.*/pkgver="${NEW_VERSION}"/g" PKGBUILD
+    updpkgsums
+    makepkg && \
+        makepkg --printsrcinfo > .SRCINFO && \
+        git commit -m "Upgrade version to v${NEW_VERSION}" PKGBUILD .SRCINFO && \
+        git diff && \
+        git push
+}
+
 # Server/Proxy.
 alias ping='gping --vertical-margin 0'
 alias x='export http_proxy="http://127.0.0.1:8118"'

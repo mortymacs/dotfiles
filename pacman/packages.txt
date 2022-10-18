@@ -95,6 +95,7 @@ nlohmann-json
 nodejs
 npm
 pacman
+pacman-contrib
 patch
 peco
 perf
