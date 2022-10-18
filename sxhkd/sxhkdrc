@@ -12,6 +12,14 @@ super + d
 super + c
     rofi -modi "clipboard:greenclip print" -show clipboard -font "Lexend 10"
 
+# File manager.
+super + f
+   rofi -show filebrowser -font "Lexend 10"
+
+# Switch windows.
+super + Tab
+    rofi -show window -font "Lexend 10"
+
 # Screenshot.
 super + shift + s
     flameshot gui
@@ -35,10 +43,6 @@ super + shift + e
 super + shift + q
     bspc node -{c,k}
 
-# Alternate between the tiled and monocle layout.
-super + s
-    bspc desktop -l next
-
 # swap the current node and the biggest window
 super + w + g
     bspc node -s biggest.window
@@ -59,9 +63,9 @@ super + alt + {Left,Down,Up,Right}
 
 # Fullscreen/tiled.
 super + shift + Up
-    bspc node -t fullscreen
+    bspc desktop -l next
 super + shift + Down
-    bspc node -t tiled
+    bspc desktop -l prev
 
 # -- Workspace.
 
@@ -92,4 +96,3 @@ super + ctrl + Escape
 # Resize.
 super + shift + alt + {Left,Down,Up,Right}
     bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
-
