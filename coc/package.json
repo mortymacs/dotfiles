@@ -8,10 +8,11 @@
     "coc-json": ">=1.6.1",
     "coc-markdownlint": ">=1.26.0",
     "coc-pyright": ">=1.1.272",
-    "coc-rust-analyzer": ">=0.68.4",
+    "coc-rust-analyzer": ">=0.69.1",
     "coc-sh": ">=0.7.0",
     "coc-texlab": ">=3.2.0",
-    "coc-yaml": ">=1.8.0"
+    "coc-yaml": ">=1.8.0",
+    "coc-tsserver": ">=1.11.12"
   },
   "disabled": [],
   "locked": []
