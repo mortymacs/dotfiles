@@ -25,7 +25,7 @@ selection:
 
 font_name: &font_name CodeNewRoman Nerd Font Mono
 font:
-  size: 16
+  size: 18
   normal:
     family: *font_name
     style: Regular
@@ -40,7 +40,7 @@ font:
 
   offset:
     x: 0
-    y: 2
+    y: 3
 
   glyph_offset:
     x: 0
