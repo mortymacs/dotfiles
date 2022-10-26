@@ -1,5 +1,5 @@
 env:
-  WINIT_X11_SCALE_FACTOR: "1"
+  WINIT_X11_SCALE_FACTOR: "1.6"
 
 # Window configuration (changes require restart).
 window:
@@ -25,7 +25,6 @@ selection:
 
 font_name: &font_name CodeNewRoman Nerd Font Mono
 font:
-  size: 18
   normal:
     family: *font_name
     style: Regular
