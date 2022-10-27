@@ -1,5 +1,5 @@
 env:
-  WINIT_X11_SCALE_FACTOR: "1.6"
+  WINIT_X11_SCALE_FACTOR: "1.8"
 
 # Window configuration (changes require restart).
 window:
