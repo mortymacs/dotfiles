@@ -1,4 +1,5 @@
 alacritty
+arandr
 asciinema
 autoconf
 automake
