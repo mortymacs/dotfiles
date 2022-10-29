@@ -1,3 +1,4 @@
+breezex-cursor-theme
 chart-testing
 dive
 dry-bin
