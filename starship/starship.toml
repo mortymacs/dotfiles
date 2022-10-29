@@ -2,7 +2,7 @@
 format = """
 $sudo\
 $username\
-[](bg:#30365F fg:#ce6f8f)\
+[](bg:#30365F fg:#00a3cc)\
 $directory\
 [](fg:#30365F bg:#686f9a)\
 $vcsh\
@@ -39,8 +39,8 @@ add_newline = false
 
 [username]
 show_always = true
-style_user = "bg:#ce6f8f fg:#ecf0c1"
-style_root = "bg:#ce6f8f fg:#ecf0c1"
+style_user = "bg:#00a3cc fg:#ecf0c1"
+style_root = "bg:#00a3cc fg:#ecf0c1"
 format = '[ $user ]($style)'
 
 [character]
