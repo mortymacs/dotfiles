@@ -1,4 +1,5 @@
 alacritty
+arc-icon-theme
 asciinema
 autoconf
 automake

@@ -4,6 +4,10 @@
 rm -rf xresources/*
 cp "$HOME/.Xresources" xresources/
 
+# gtk
+rm -rf gtk3/
+cp -R "$HOME/.config/gtk-3.0/" gtk3
+
 # zsh
 rm -rf zsh/*
 cp "$HOME"/{.zshrc,.zsh_aliases,.zshenv} zsh/
