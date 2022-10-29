@@ -71,6 +71,7 @@ ipython
 iwd
 jhead
 jless
+jp2a
 jq
 kmon
 kubectl
@@ -140,7 +141,6 @@ torsocks
 trash-cli
 tree
 ttf-font-awesome
-ttf-jetbrains-mono
 ttf-joypixels
 ttf-nerd-fonts-symbols-2048-em-mono
 udiskie

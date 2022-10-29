@@ -13,6 +13,7 @@ kubecolor
 kubespy
 lazydocker
 ly
+mozillavpn
 nodejs-dockerfile-language-server
 python3-yamale
 rofi-greenclip

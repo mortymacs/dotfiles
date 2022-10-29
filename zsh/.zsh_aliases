@@ -47,8 +47,8 @@ function monitor-external() {
     INTERNAL_MONITOR=$(xrandr | \grep primary | cut -d' ' -f1)
     EXTERNAL_MONITOR=$(xrandr | \grep ' connected' | tail -1 | cut -d' ' -f1)
     xrandr --output "${INTERNAL_MONITOR}" --off --output "${EXTERNAL_MONITOR}" --mode 1920x1080 --pos 0x0 --rotate normal
-    bspc config right_padding 640
-    bspc config bottom_padding 360
+    bspc config right_padding 127
+    bspc config bottom_padding 71
 }
 function monitor-internal() {
     INTERNAL_MONITOR=$(xrandr | \grep primary | cut -d' ' -f1)

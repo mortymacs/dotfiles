@@ -8,7 +8,7 @@ xrandr --output eDP-1 --primary --mode 2048x1152 --pos 0x0 --rotate normal --out
 
 # Status bar.
 nm-applet &
-polybar &
+polybar main --log=error &
 
 # Lock screen.
 xset s 180

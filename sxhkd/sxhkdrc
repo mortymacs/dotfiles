@@ -6,19 +6,19 @@ super + Return
 
 # Launcher.
 super + d
-    rofi -show run -font "Lexend 12"
+    rofi -show run -font "Lexend 10"
 
 # Clipboard.
 super + c
-    rofi -modi "clipboard:greenclip print" -show clipboard -font "Lexend 12"
+    rofi -modi "clipboard:greenclip print" -show clipboard -font "Lexend 10"
 
 # File manager.
 super + f
-   rofi -show filebrowser -font "Lexend 12"
+   rofi -show filebrowser -font "Lexend 10"
 
 # Switch windows.
 super + Tab
-    rofi -show window -font "Lexend 12"
+    rofi -show window -font "Lexend 10"
 
 # Screenshot.
 super + shift + s

@@ -42,6 +42,13 @@ bindkey ';3D' backward-word
 bindkey ';5C' forward-word
 bindkey ';3C' forward-word
 
+# Fix cursor.
+# https://unix.stackexchange.com/a/496878
+_fix_cursor() {
+    echo -ne '\e[6 q'
+}
+precmd_functions+=(_fix_cursor)
+
 # Zoxide.
 eval "$(zoxide init zsh)"
 
