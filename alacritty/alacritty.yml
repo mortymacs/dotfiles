@@ -32,7 +32,7 @@ font:
 
   bold:
     family: *font_name
-    style: Medium
+    style: Bold
 
   italic:
     family: *font_name

@@ -71,7 +71,6 @@ ipython
 iwd
 jhead
 jless
-jp2a
 jq
 kmon
 kubectl
