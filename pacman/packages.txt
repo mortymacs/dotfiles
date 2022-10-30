@@ -155,6 +155,7 @@ wireless_tools
 xclip
 xorg-server
 xorg-xinit
+xorg-xsetroot
 xsecurelock
 xss-lock
 yaml-language-server
