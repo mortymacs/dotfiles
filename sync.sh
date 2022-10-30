@@ -9,7 +9,7 @@ rm -rf gtk3/
 cp -R "$HOME/.config/gtk-3.0/" gtk3
 
 # Icon
-rm -rf icons/*
+rm -rf icons/
 cp -R "$HOME/.icons/default/" icons
 
 # zsh
