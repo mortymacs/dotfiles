@@ -7,6 +7,7 @@ automake
 aws-cli
 base
 bat
+bind
 binutils
 bison
 broot
