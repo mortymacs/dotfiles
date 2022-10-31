@@ -23,6 +23,7 @@ src-cli-bin
 stern-bin
 terraform-ls
 vazirmatn-fonts
+wtfutil
 yay
 ydiff
 zeal
