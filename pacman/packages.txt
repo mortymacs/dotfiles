@@ -4,7 +4,7 @@ arc-icon-theme
 asciinema
 autoconf
 automake
-aws-cli
+aws-cli-v2
 base
 bat
 bind
@@ -152,6 +152,7 @@ valgrind
 vulkan-intel
 wget
 which
+whois
 wireless_tools
 xclip
 xorg-server
