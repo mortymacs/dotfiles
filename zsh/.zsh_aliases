@@ -81,13 +81,16 @@ z(){
 }
 
 # Process.
+alias ps="procs"
 kp() {
-    \ps -eo pid,user,pcpu,pmem,command --sort -%cpu,-%mem | \grep -v peco | peco --query "$1" | awk '{print $1}' | xargs -r kill -9
+    pid=$(ps -t --thread | \grep -v peco | peco --query "$1" | cut -d' ' -f3)
+    [[ "$pid" =~ "^[0-9]+$" ]] && kill -9 "$pid" || echo "invalid item!"
+    #\ps -eo pid,user,pcpu,pmem,command --sort -%cpu,-%mem | \grep -v peco | peco --query "$1" | awk '{print $1}' | xargs -r kill -9
 }
 ap() {
-    \ps -eo pid,user,pcpu,pmem,command --sort -%cpu,-%mem | \grep -v peco | peco --query "$1"
+    ps -t --thread | \grep -v peco | peco --query "$1"
+    #\ps -eo pid,user,pcpu,pmem,command --sort -%cpu,-%mem | \grep -v peco | peco --query "$1"
 }
-alias ps="procs"
 
 # Compression.
 alias tgz='rpy && rm -f `basename $PWD`.tar.gz && tar --exclude='.git' --exclude='.gitignore' --exclude-vcs-ignores -zcvf `basename $PWD`.tar.gz ./*'
