@@ -21,6 +21,7 @@ rofi-greenclip
 spotify
 src-cli-bin
 stern-bin
+terraform-docs-bin
 terraform-ls
 vazirmatn-fonts
 wtfutil

@@ -64,6 +64,10 @@ cp "$HOME"/.config/broot/conf.toml broot/
 rm -rf most/*
 cp "$HOME"/.mostrc most/
 
+# procs
+rm -rf procs
+cp -R "$HOME/.config/procs/" .
+
 # rofi
 rm -rf rofi
 cp -R "$HOME"/.config/rofi/ .
