@@ -92,7 +92,7 @@ Plug 'psf/black'
 Plug 'alfredodeza/pytest.vim'
 
 " Go.
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'fatih/vim-go'
 
 " DevOps.
 Plug 'hashivim/vim-terraform'
