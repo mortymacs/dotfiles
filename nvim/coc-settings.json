@@ -14,7 +14,7 @@
     },
     "sql": {
       "command": "sql-language-server",
-      "args" : ["up", "--method", "stdio"],
+      "args": ["up", "--method", "stdio"],
       "filetypes": ["sql", "db"]
     }
   },
