@@ -104,6 +104,7 @@ pacman-contrib
 patch
 peco
 perf
+pgcli
 pkgconf
 polybar
 privoxy
@@ -128,6 +129,7 @@ sed
 shellcheck
 silicon
 smartmontools
+sqlfluff
 starship
 staticcheck
 strace

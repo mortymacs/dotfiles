@@ -11,14 +11,19 @@
       "command": "docker-langserver",
       "args": ["--stdio"],
       "filetypes": ["dockerfile"]
+    },
+    "sql": {
+      "command": "sql-language-server",
+      "args" : ["up", "--method", "stdio"],
+      "filetypes": ["sql", "db"]
     }
   },
   "yaml.schemas": {
     /* Docker-Compose */
-    "https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json": ["/docker-compose.yaml", "/docker-compose.yml"],
+    "https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json": ["/docker-compose.yaml", "/docker-compose.yml"]
     /* Kubernetes */
-    "kubernetes": ["/*.yaml", "/*.yml"],
+    /* "kubernetes": ["/*.yaml", "/*.yml"], */
     /* Argo */
-    "https://raw.githubusercontent.com/argoproj/argo-workflows/master/api/jsonschema/schema.json": ["/*.yaml", "/*.yml"]
+    /* "https://raw.githubusercontent.com/argoproj/argo-workflows/master/api/jsonschema/schema.json": ["/*.yaml", "/*.yml"] */
   }
 }
