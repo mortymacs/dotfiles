@@ -13,8 +13,8 @@
       "filetypes": ["dockerfile"]
     },
     "sql": {
-      "command": "sql-language-server",
-      "args": ["up", "--method", "stdio"],
+      "module": "/usr/lib/node_modules/sql-language-server/dist/bin/cli.js",
+      "args": ["up", "--method", "node-ipc"],
       "filetypes": ["sql", "db"]
     }
   },

@@ -84,6 +84,7 @@ libtool
 libva-intel-driver
 linux
 linux-firmware
+lolcat
 m4
 mage
 make
@@ -145,6 +146,7 @@ tor
 torsocks
 trash-cli
 tree
+ttf-fira-code
 ttf-font-awesome
 ttf-joypixels
 ttf-nerd-fonts-symbols-2048-em-mono

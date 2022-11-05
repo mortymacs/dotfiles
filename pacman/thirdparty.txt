@@ -2,6 +2,7 @@ breezex-cursor-theme
 chart-testing
 dive
 dry-bin
+figlet-fonts
 ghq
 gofumpt
 golangci-lint
