@@ -32,6 +32,7 @@ compile_commands.json
 # Editors/IDE
 .vim
 *.swp
+.idea
 
 # Helm
 Chart.lock

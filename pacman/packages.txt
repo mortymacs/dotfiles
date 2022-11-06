@@ -42,6 +42,7 @@ flake8
 flameshot
 flex
 fmt
+fuse2
 fzf
 gawk
 gcc
