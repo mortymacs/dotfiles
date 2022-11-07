@@ -24,6 +24,7 @@ super + Tab
 super + shift + s
     flameshot gui
 
+# Zeal.
 super + shift + z
     zeal
 
@@ -99,5 +100,4 @@ super + shift + alt + {Left,Down,Up,Right}
 
 # Move node.
 super + shift + ctrl + {Left,Right}
-    # https://www.reddit.com/r/bspwm/comments/6jj6le/comment/djf1z2l/?utm_source=share&utm_medium=web2x&context=3
-    id=$(bspc query --nodes --node); bspc node --to-desktop {prev,next}; bspc desktop --focus {prev,next}; bspc node --focus ${id}
+    bspc node --to-desktop {prev,next}
