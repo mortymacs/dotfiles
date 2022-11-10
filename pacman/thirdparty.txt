@@ -15,7 +15,6 @@ kubecolor
 kubespy
 lazydocker
 ly
-mozillavpn
 nodejs-dockerfile-language-server
 nodejs-sql-language-server
 python3-yamale
