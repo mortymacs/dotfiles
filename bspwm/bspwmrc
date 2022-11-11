@@ -30,7 +30,7 @@ greenclip daemon>/dev/null &
 udiskie &
 
 # Bspwm.
-bspc monitor -d 1 2 3 4 5 6 7 8 9 10
+bspc monitor -d 0 1 2 3 4 5 6 7 8 9
 
 bspc config border_width         1
 # colors: https://github.com/pineapplegiant/spaceduck
@@ -49,4 +49,4 @@ bspc config gapless_monocle      true
 bspc config focus_follows_pointer false
 
 # Application rules.
-bspc rule -a firefox desktop=1
+bspc rule -a firefox desktop=0

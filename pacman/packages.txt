@@ -86,11 +86,13 @@ libva-intel-driver
 linux
 linux-firmware
 lolcat
+ltrace
 m4
 mage
 make
 man-db
 mcfly
+mkcert
 most
 mtr
 mypy
