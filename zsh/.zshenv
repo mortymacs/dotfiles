@@ -37,7 +37,7 @@ export BAT_THEME='gruvbox-dark'
 
 # Fzf.
 export FZF_DEFAULT_COMMAND='fd --type f'
-export FZF_DEFAULT_OPTS='--cycle --bind alt-up:preview-half-page-up,alt-down:preview-half-page-down --height ~50% --preview-window=noborder'
+export FZF_DEFAULT_OPTS='--inline-info --cycle --tabstop=4 --bind alt-up:preview-half-page-up,alt-down:preview-half-page-down --height ~50% --layout=reverse --preview-window=noborder'
 
 # Ghq.
 export GHQ_ROOT="$HOME/Workspaces"
