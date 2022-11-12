@@ -1,0 +1,86 @@
+diff --git a/config.def.h b/config.def.h
+index 8877e5c..e7ac327 100644
+--- a/config.def.h
++++ b/config.def.h
+@@ -5,8 +5,8 @@
+  *
+  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
+  */
+-static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
+-static int borderpx = 2;
++static char *font = "CodeNewRoman Nerd Font Mono:pixelsize=20:antialias=true:autohint=true";
++static int borderpx = 0;
+ 
+ /*
+  * What program is execed by st depends of these precedence rules:
+@@ -30,7 +30,7 @@ static float cwscale = 1.0;
+ static float chscale = 1.0;
+ /* Character rendering offsets in pixels */
+ static short cxoffset = 0;
+-static short cyoffset = 0;
++static short cyoffset = 2;
+ 
+ /*
+  * word delimiter string
+@@ -94,40 +94,39 @@ char *termname = "st-256color";
+  *
+  *	stty tabs
+  */
+-unsigned int tabspaces = 8;
++unsigned int tabspaces = 4;
+ 
+ /* Terminal colors (16 first used in escape sequence) */
+ static const char *colorname[] = {
+ 	/* 8 normal colors */
+-	"black",
+-	"red3",
+-	"green3",
+-	"yellow3",
+-	"blue2",
+-	"magenta3",
+-	"cyan3",
+-	"gray90",
++	"#000000",
++	"#e33400",
++	"#5ccc96",
++	"#b3a1e6",
++	"#00a3cc",
++	"#f2ce00",
++	"#7a5ccc",
++	"#686f9a",
+ 
+ 	/* 8 bright colors */
+-	"gray50",
+-	"red",
+-	"green",
+-	"yellow",
+-	"#5c5cff",
+-	"magenta",
+-	"cyan",
+-	"white",
++	"#686f9a",
++	"#e33400",
++	"#5ccc96",
++	"#b3a1e6",
++	"#00a3cc",
++	"#f2ce00",
++	"#7a5ccc",
++	"#f0f1ce",
+ 
+ 	[255] = 0,
+ 
+ 	/* more colors can be added after 255 to use with DefaultXX */
+-	"#cccccc",
+-	"#555555",
+-	"gray90", /* default foreground colour */
+-	"black", /* default background colour */
++	"#ecf0c1",
++	"#0f111b",
++	"#ecf0c1", /* default foreground colour */
++	"#0f111b", /* default background colour */
+ };
+ 
+-
+ /*
+  * Default colors (colorname index)
+  * foreground, background, cursor, reverse cursor

@@ -89,3 +89,5 @@ style = "yellow"
 symbol = "go:"
 style = "yellow"
 
+[aws]
+symbol = ""
