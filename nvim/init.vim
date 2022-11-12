@@ -84,6 +84,7 @@ Plug 'lukas-reineke/indent-blankline.nvim'
 
 " C/C++.
 Plug 'google/vim-maktaba'
+Plug 'google/vim-coverage'
 Plug 'google/vim-codefmt'
 Plug 'google/vim-glaive'
 
