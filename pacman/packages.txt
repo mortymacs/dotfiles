@@ -92,7 +92,6 @@ mage
 make
 man-db
 mcfly
-mkcert
 most
 mtr
 mypy

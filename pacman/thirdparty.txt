@@ -6,7 +6,6 @@ figlet-fonts
 ghq
 gofumpt
 golangci-lint
-google-crc32c
 gosec
 inxi
 jqp
