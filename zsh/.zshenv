@@ -30,7 +30,7 @@ export TERM="xterm-256color"
 # Editors.
 export VISUAL=nvim
 export EDITOR=nvim
-export TERMINAL=alacritty
+export TERMINAL=st
 
 # Bat
 export BAT_THEME='gruvbox-dark'
