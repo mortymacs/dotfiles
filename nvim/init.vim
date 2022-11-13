@@ -493,6 +493,7 @@ noremap! <c-h> <c-w>
 "" goto the beginning and end of a line.
 call MapKeys("<c-e>", "<s-$>")
 call MapKeys("<c-a>", "<s-^>")
+imap <m-bs> <c-w>
 
 " Development.
 "" https://vim.fandom.com/wiki/Shifting_blocks_visually
