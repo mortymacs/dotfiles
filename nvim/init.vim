@@ -271,10 +271,11 @@ lua << END
 require('telescope').setup{
   defaults = {
     layout_strategy = 'vertical',
+    borderchars = { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
   },
   pickers = {
     find_files = {
-      theme = 'dropdown',
+      borderchars = { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
     },
   },
 }
