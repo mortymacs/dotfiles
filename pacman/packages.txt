@@ -12,6 +12,7 @@ bison
 broot
 bspwm
 btop
+ccls
 clang
 cmake
 cmatrix
