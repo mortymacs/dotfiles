@@ -57,7 +57,18 @@ function monitor-internal() {
     bspc config right_padding 0
     bspc config bottom_padding 0
 }
-
+monitor() {
+    target=$(\cat <<EOF | fzf
+external
+internal
+EOF
+)
+    if [[ "$target" == "external" ]]; then
+        monitor-external
+    else
+        monitor-internal
+    fi
+}
 # Utility.
 alias ascii='graph-easy --from=dot --as_ascii'
 alias f="fzf --preview 'bat {} --style=numbers --color=always'"
