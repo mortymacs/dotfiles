@@ -8,7 +8,7 @@ index 8877e5c..e7ac327 100644
   */
 -static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
 -static int borderpx = 2;
-+static char *font = "Monospace:pixelsize=15:antialias=true:autohint=true";
++static char *font = "Monospace:pixelsize=17:antialias=true:autohint=true";
 +static int borderpx = 0;
 
  /*
@@ -18,7 +18,7 @@ index 8877e5c..e7ac327 100644
  /* Character rendering offsets in pixels */
  static short cxoffset = 0;
 -static short cyoffset = 0;
-+static short cyoffset = 0;
++static short cyoffset = 2;
 
  /*
   * word delimiter string

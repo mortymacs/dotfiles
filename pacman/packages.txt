@@ -148,7 +148,6 @@ torsocks
 trash-cli
 tree
 ttf-font-awesome
-ttf-jetbrains-mono
 ttf-joypixels
 ttf-nerd-fonts-symbols-2048-em-mono
 udiskie
@@ -167,6 +166,7 @@ xorg-xsetroot
 xsecurelock
 xss-lock
 yaml-language-server
+youtube-dl
 yq
 zathura-pdf-mupdf
 zip
