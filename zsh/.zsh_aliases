@@ -69,6 +69,7 @@ EOF
         monitor-internal
     fi
 }
+
 # Utility.
 alias ascii='graph-easy --from=dot --as_ascii'
 alias f="fzf --preview 'bat {} --style=numbers --color=always'"
@@ -158,6 +159,9 @@ alias x='export http_proxy="http://127.0.0.1:8118"'
 alias dx='export http_proxy=""'
 alias whereiam='echo $(curl -s http://ip-api.com/json | jq -r ".country,.city")'
 alias dig='dog'
+
+# Protocols.
+alias grpc="evans"
 
 # Kubernetes
 source <(kubectl completion zsh)
