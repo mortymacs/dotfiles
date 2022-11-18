@@ -29,10 +29,13 @@ cmake-build-debug/
 compile_commands.json
 .ccls
 
+# Go
+vendor/
+*.test
+
 # Editors/IDE
 .vim
 *.swp
-.idea
 
 # Helm
 Chart.lock
@@ -44,3 +47,10 @@ Gemfile.lock
 .cache
 *.sqlite3
 *.spec
+
+# Compressed
+*.zip
+*.tar.gz
+*.tgz
+*.rar
+*.7z
