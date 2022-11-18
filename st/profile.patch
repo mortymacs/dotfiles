@@ -8,13 +8,14 @@ index 8877e5c..e7ac327 100644
   */
 -static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
 -static int borderpx = 2;
-+static char *font = "Monospace:pixelsize=17:antialias=true:autohint=true";
++static char *font = "Monospace:pixelsize=19:antialias=true:autohint=true";
 +static int borderpx = 0;
 
  /*
   * What program is execed by st depends of these precedence rules:
 @@ -30,7 +30,7 @@ static float cwscale = 1.0;
- static float chscale = 1.0;
+-static float chscale = 1.0;
++static float chscale = 1.1;
  /* Character rendering offsets in pixels */
  static short cxoffset = 0;
 -static short cyoffset = 0;
@@ -75,9 +76,9 @@ index 8877e5c..e7ac327 100644
 -	"gray90", /* default foreground colour */
 -	"black", /* default background colour */
 +	"#ecf0c1",
-+	"#0f111b",
++	"#0f0f0f",
 +	"#ecf0c1", /* default foreground colour */
-+	"#0f111b", /* default background colour */
++	"#0f0f0f", /* default background colour */
  };
 
 -

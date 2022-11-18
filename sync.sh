@@ -24,10 +24,6 @@ cp "$HOME"/.config/starship.toml starship/
 rm -rf tmux/*
 cp "$HOME"/.tmux.conf tmux/
 
-# alacritty
-rm -rf alacritty
-cp -R "$HOME"/.config/alacritty/ .
-
 # btop
 rm -rf btop
 cp -R "$HOME"/.config/btop/ .
