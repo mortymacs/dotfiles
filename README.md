@@ -3,7 +3,7 @@
 My environment config. I tried to keep it minimal and simple as much as I could.
 
 <p align="center">
-    ![logo](./doc/logo.png)
+    <img src="./doc/logo.png" alt="Logo">
 </p>
 
 ## General config
@@ -36,5 +36,5 @@ To see the list of packages, please check the [`packages`](./packages) directory
 ## Screenshot
 
 <p align="center">
-    ![screenshot](./doc/screenshot.png)
+    <img src="./doc/screenshot.png" alt="Screenshot">
 </p>
