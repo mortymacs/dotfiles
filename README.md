@@ -11,23 +11,23 @@ My environment config. I tried to keep it minimal and simple as much as I could.
 | Category | Tool |
 |----------|------|
 | Distro | ArchLinux |
-| Display Manager | ly |
-| Window Manager | bspwm |
-| Hotkey daemon | sxhkd |
-| Status Bar | polybar |
-| Notification | dunst |
-| Terminal | st |
-| Shell | zsh |
-| Shell Prompt | starship |
+| Display Manager | Ly |
+| Window Manager | Bspwm |
+| Hotkey daemon | Sxhkd |
+| Status Bar | Polybar |
+| Notification | Dunst |
+| Terminal | St |
+| Shell | Zsh |
+| Shell Prompt | Starship |
 | Terminal Multiplexer | Tmux |
-| Editor/IDE | nvim |
+| Editor/IDE | Nvim |
 | DB | dbcli tools |
 | Fonts | Lexend, VarizMatn, CodeNewRoman |
-| File Manager | broot |
-| Launcher | rofi |
+| File Manager | Broot |
+| Launcher | Rofi |
 | Browser | Firefox |
 | GTK Theme | Arc Dark + BreezeX Light |
-| Doc | zeal |
+| Doc | Zeal |
 
 ## Packages
 
