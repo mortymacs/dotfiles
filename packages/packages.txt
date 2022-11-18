@@ -48,7 +48,6 @@ gcc
 gdb
 gdb-dashboard
 gettext
-gimp
 git
 git-delta
 github-cli
