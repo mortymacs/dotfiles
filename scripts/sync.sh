@@ -93,9 +93,9 @@ rm -rf yay/*
 cp "$HOME"/.config/yay/config.json yay/
 
 # packages
-rm -rf pacman/*
-pacman -Qqen > pacman/packages.txt
-pacman -Qqem > pacman/thirdparty.txt
+rm -rf packages/*
+pacman -Qqen > packages/packages.txt
+pacman -Qqem > packages/thirdparty.txt
 
 # docker
 rm -rf docker/*

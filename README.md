@@ -1,16 +1,27 @@
-# env-conf
-My environment config (editor, bash, ...)
+# dotfiles
 
-This is my environment config files.
+My environment config
 
-List of config files:
- * zsh
- * tmux
- * emacs
- * vim
- * gdb
- * git
- * tig
- * packages
+![logo](./doc/logo.jpg)
 
-Font: hack
+| Category | Tool |
+|----------|------|
+| Distro | ArchLinux |
+| Display Manager | ly |
+| Window Manager | bspwm |
+| Hotkey daemon | sxhkd |
+| Status Bar | polybar |
+| Notification | dunst |
+| Shell | zsh |
+| Shell Prompt | starship |
+| Terminal Multiplexer | Tmux |
+| Editor/IDE | nvim |
+| Terminal | st |
+| Fonts | Lexend, VarizMatn, CodeNewRoman |
+| File Manager | broot |
+| Launcher | rofi |
+| Browser | Firefox |
+| GTK Theme | Arc Dark + BreezeX Light |
+| Doc | zeal |
+
+To see the list of packages, please check the [`packages`](./packages) directory.
