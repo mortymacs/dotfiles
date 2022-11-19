@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# ly
+rm -rf ly/*
+cp /etc/ly/config.ini ly/
+
 # xresources
 rm -rf xresources/*
 cp "$HOME/.Xresources" xresources/
