@@ -546,7 +546,7 @@ autocmd FileType go call MapKeys("<c-c><c-k>", ":GoDoc<cr>")
 
 " Magefile.
 " https://vi.stackexchange.com/a/5202
-autocmd BufEnter magefile :setlocal filetype=go
+autocmd BufEnter Magefile :setlocal filetype=go
 
 " CMake.
 autocmd BufWritePost CMakeLists.txt execute '! cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1'
