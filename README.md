@@ -10,24 +10,26 @@ My environment config. I tried to keep it minimal and simple as much as I could.
 
 | Category | Tool |
 |----------|------|
-| Distro | ArchLinux |
-| Display Manager | Ly |
-| Window Manager | Bspwm |
-| Hotkey daemon | Sxhkd |
-| Status Bar | Polybar |
-| Notification | Dunst |
-| Terminal | St |
-| Shell | Zsh |
-| Shell Prompt | Starship |
-| Terminal Multiplexer | Tmux |
-| Editor/IDE | Nvim |
-| DB | dbcli tools |
-| Fonts | Lexend, VarizMatn, CodeNewRoman |
-| File Manager | Broot |
-| Launcher | Rofi |
-| Browser | Firefox |
-| GTK Theme | Arc Dark + BreezeX Light |
-| Doc | Zeal |
+| Distro | [ArchLinux](https://archlinux.org) |
+| Display Manager | [Ly](https://github.com/fairyglade/ly) |
+| Window Manager | [Bspwm](https://github.com/baskerville/bspwm) |
+| Hotkey daemon | [Sxhkd](https://github.com/baskerville/sxhkd) |
+| Status Bar | [Polybar](https://github.com/polybar/polybar) |
+| Notification | [Dunst](https://github.com/dunst-project/dunst) |
+| Terminal | [St](https://st.suckless.org) |
+| Shell | [Zsh](https://www.zsh.org) |
+| Shell Prompt | [Starship](https://github.com/starship/starship) |
+| Terminal Multiplexer | [Tmux](https://github.com/tmux/tmux) |
+| Editor/IDE | [Neovim](https://github.com/neovim/neovim) |
+| DB | [dbcli tools](https://github.com/dbcli) |
+| Fonts | [Lexend](https://github.com/googlefonts/lexend), [VarizMatn](https://github.com/rastikerdar/vazirmatn), [CodeNewRoman](https://github.com/ryanoasis/nerd-fonts) |
+| File Manager | [Broot](https://github.com/Canop/broot) |
+| Launcher | [Rofi](https://github.com/davatorium/rofi) |
+| Browser | [Firefox](https://www.mozilla.org) |
+| GTK Theme | [Arc Dark](https://github.com/jnsh/arc-theme) + [BreezeX Light](https://github.com/ful1e5/BreezeX_Cursor) |
+| Color Schema | [Spaceduck](https://github.com/pineapplegiant/spaceduck) |
+| Icon | [Arc Icon](https://github.com/horst3180/arc-icon-theme) |
+| Doc | [Zeal](https://github.com/zealdocs/zeal) |
 
 ## Packages
 

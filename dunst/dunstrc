@@ -1,22 +1,22 @@
 [global]
-    font = Anek Latin Medium 10
+    font = Lexend 10
     markup = full
     frame_width = 1
-    frame_color = "#f3f2f2"
+    frame_color = "#7a5ccc"
     corner_radius = 0
 
 [urgency_low]
-    background = "#26282b"
-    foreground = "#888888"
+    background = "#0f111b"
+    foreground = "#b3a1e6"
     timeout = 10
 
 [urgency_normal]
-    background = "#26282b"
-    foreground = "#ffffff"
+    background = "#0f111b"
+    foreground = "#ecf0c1"
     timeout = 10
 
 [urgency_critical]
-    background = "#DA627D"
-    foreground = "#ffffff"
+    background = "#0f111b"
+    foreground = "#ce6f8f"
     frame_color = "#B93C89"
     timeout = 0
