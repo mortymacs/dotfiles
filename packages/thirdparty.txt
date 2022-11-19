@@ -20,6 +20,7 @@ nodejs-dockerfile-language-server
 nodejs-sql-language-server
 python3-yamale
 rofi-greenclip
+skypeforlinux-stable-bin
 spotify
 src-cli-bin
 stern-bin
