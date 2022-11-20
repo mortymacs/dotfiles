@@ -40,6 +40,13 @@ vendor/
 # Helm
 Chart.lock
 
+# Compressed
+*.zip
+*.tar.gz
+*.tgz
+*.rar
+*.7z
+
 # Misc
 .bundle
 Gemfile.lock
@@ -47,10 +54,5 @@ Gemfile.lock
 .cache
 *.sqlite3
 *.spec
+*.lock
 
-# Compressed
-*.zip
-*.tar.gz
-*.tgz
-*.rar
-*.7z

@@ -150,6 +150,7 @@ tree
 ttf-font-awesome
 ttf-joypixels
 ttf-nerd-fonts-symbols-2048-em-mono
+typescript
 udiskie
 unrar
 unzip
