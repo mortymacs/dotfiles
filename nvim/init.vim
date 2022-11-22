@@ -238,6 +238,8 @@ call MapKeys("<c-c><c-e>", "<c-o>")
 inoremap <c-q> <c-\><c-o>:call CocActionAsync('showSignatureHelp')<cr>
 autocmd CursorHold * silent call CocActionAsync('highlight')
 call MapKeys("<c-m-l>", "<Plug>(coc-codeaction)")
+"" https://github.com/neoclide/coc.nvim/issues/2253#issuecomment-674788237
+call MapKeys("<c-c><c-q>", ":call CocAction('jumpDefinition', v:false)<CR>")
 
 " Code indent.
 "" https://github.com/jelly/Dotfiles/blob/master/.vimrc
