@@ -114,6 +114,7 @@ procs
 pulseaudio
 pulsemixer
 pwgen
+pyright
 python
 python-black
 python-isort
