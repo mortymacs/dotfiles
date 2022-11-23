@@ -37,6 +37,7 @@ iso-to-usb() { sudo dd bs=4M if="${1}" of="${2}" conv=fdatasync status=progress 
 alias u='yay -Syu --noconfirm && v -c :PlugUpgrade +quitall && v -c :PlugUpdate +quitall && v -c :CocUpdateSync +quitall && v -c :BlackUpgrade +quitall && v -c :TSUpdateSync +quitall && pacman -Qdt'
 alias top='btop'
 function cleanup() {
+    sudo trash-empty
     docker system prune
     sudo pacman -Scc
 }
