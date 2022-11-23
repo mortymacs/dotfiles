@@ -71,6 +71,7 @@ Plug 'nvim-orgmode/orgmode'
 " Development.
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'sheerun/vim-polyglot'
 Plug 'KabbAmine/zeavim.vim'
 Plug 'preservim/nerdcommenter'
 Plug 'editorconfig/editorconfig-vim'
