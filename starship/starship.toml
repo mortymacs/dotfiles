@@ -37,10 +37,6 @@ style_user = 'bg:#351431 fg:#ecf0c1'
 style_root = 'bg:#351431 fg:#ecf0c1'
 format = '[ $user ]($style)'
 
-[character]
-success_symbol = '[>](green)'
-error_symbol = '[>](red)'
-
 [directory]
 style = 'bg:#EB5E55 fg:#ecf0c1'
 format = '[ $path ]($style)'
