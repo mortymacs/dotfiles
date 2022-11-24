@@ -33,7 +33,7 @@ export EDITOR=nvim
 export TERMINAL=st
 
 # Bat
-export BAT_THEME='gruvbox-dark'
+export BAT_THEME='Monokai Extended Origin'
 
 # Fzf.
 export FZF_DEFAULT_COMMAND='fd --type f'
