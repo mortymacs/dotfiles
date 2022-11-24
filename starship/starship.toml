@@ -26,8 +26,7 @@ $aws\
 $terraform\
 $env_var\
 $cmd_duration\
-$jobs\
-"""
+$jobs"""
 
 continuation_prompt = '>>'
 add_newline = false
@@ -92,3 +91,13 @@ format = '[$profile(\[$region\])(\[$duration\])]($style)'
 [terraform]
 style = 'fg:#5ccc96'
 format = '[\[$workspace\]]($style)'
+
+[cmd_duration]
+format = '[$duration]($style)'
+show_notifications = true
+
+[jobs]
+symbol = '+'
+style = 'bold fg:#D81E5B'
+number_threshold = 1
+format = '[\[$symbol$number\]]($style)'
