@@ -7,6 +7,7 @@ tmp/
 bin/
 dist/
 *.out
+target/
 
 # Python
 venv
