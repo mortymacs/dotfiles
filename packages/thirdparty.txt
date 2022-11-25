@@ -24,6 +24,7 @@ skypeforlinux-stable-bin
 spotify
 src-cli-bin
 stern-bin
+tctl
 terraform-docs-bin
 terraform-ls
 vazirmatn-fonts

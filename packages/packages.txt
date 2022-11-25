@@ -41,6 +41,7 @@ flake8
 flameshot
 flex
 fmt
+fq
 fuse2
 fzf
 gawk
