@@ -96,6 +96,9 @@ Plug 'alfredodeza/pytest.vim'
 " Go.
 Plug 'fatih/vim-go'
 
+" Rust.
+Plug 'rust-lang/rust.vim'
+
 " DevOps.
 Plug 'hashivim/vim-terraform'
 
@@ -227,6 +230,18 @@ call MapKeys("<c-t><c-n>", ":TestNearest<cr>")
 call MapKeys("<c-t><c-s>", ":TestSuite<cr>")
 call MapKeys("<c-t><c-l>", ":TestLast<cr>")
 
+" Code indent.
+"" https://github.com/jelly/Dotfiles/blob/master/.vimrc
+autocmd FileType python,cucumber set expandtab shiftwidth=4 softtabstop=4
+autocmd FileType c,cpp,h,html,css,vim,yaml,yml,json set expandtab shiftwidth=2 softtabstop=2
+set cindent
+set smartindent
+set autoindent
+set complete+=s
+"" reformat the whole buffer
+call MapKeys("<c-c><c-l>", "gg=G<cr>")
+call MapKeys("<c-m-l>", "gg=G<cr>")
+
 " Coc.nvim.
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
       \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
@@ -241,18 +256,6 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 call MapKeys("<c-m-l>", "<Plug>(coc-codeaction)")
 "" https://github.com/neoclide/coc.nvim/issues/2253#issuecomment-674788237
 call MapKeys("<c-c><c-q>", ":call CocAction('jumpDefinition', v:false)<CR>")
-
-" Code indent.
-"" https://github.com/jelly/Dotfiles/blob/master/.vimrc
-autocmd FileType python,cucumber set expandtab shiftwidth=4 softtabstop=4
-autocmd FileType c,cpp,h,html,css,vim,yaml,yml,json set expandtab shiftwidth=2 softtabstop=2
-set cindent
-set smartindent
-set autoindent
-set complete+=s
-"" reformat the whole buffer
-call MapKeys("<c-c><c-l>", "gg=G<cr>")
-call MapKeys("<c-m-l>", "gg=G<cr>")
 
 " Surround.
 lua << END
@@ -546,6 +549,9 @@ autocmd FileType go call MapKeys("<c-c><c-r>", ":GoReferrers<cr>")
 autocmd FileType go call MapKeys("<c-r><c-n>", ":GoRename<cr>")
 autocmd FileType go call MapKeys("<c-r><c-c>", ":GoCallers<cr>")
 autocmd FileType go call MapKeys("<c-c><c-k>", ":GoDoc<cr>")
+
+" Rust.
+autocmd FileType rust call MapKeys("<c-m-l>", ":RustFmt<cr>")
 
 " Magefile.
 " https://vi.stackexchange.com/a/5202
