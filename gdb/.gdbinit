@@ -1,12 +1,10 @@
 # ---------------------------------------------- general
-#set substitute-path /build/glibc-4WA41p/glibc-2.30/ /opt/src/glibc-2.30/
-
+source /usr/share/gdb-dashboard/.gdbinit
 # ---------------------------------------------- layout
-dashboard -layout source breakpoints history memory stack threads variables
+dashboard -layout source memory threads variables
 
 # ---------------------------------------------- style
-dashboard -style syntax_highlighting 'monokai'
-dashboard -style divider_fill_char_primary '-'
+dashboard -style syntax_highlighting 'material'
 dashboard -style divider_fill_style_primary '32'
 dashboard -style divider_label_style_on_primary '1;93'
 dashboard -style style_low '10'

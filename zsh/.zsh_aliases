@@ -235,6 +235,13 @@ go-debug() {
     dlv debug "$1" --init <(echo "break $target_file:$target_line")
 }
 
+# Rust.
+rs-debug() {
+    target_file=$(fzf)
+    target_line=$(\cat -n "${target_file}" | fzf | awk '{print $1}')
+    rust-gdb -ex "b ${target_file}:$target_line" "$1"
+}
+
 # Editor.
 alias vim='nvim'
 alias v='nvim'
