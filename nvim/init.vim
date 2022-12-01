@@ -184,20 +184,13 @@ require("notify").setup({
 END
 
 " Orgmode.
-lua << EOF
+lua << END
 require('orgmode').setup_ts_grammar()
-require'nvim-treesitter.configs'.setup {
-  highlight = {
-    enable = true,
-    additional_vim_regex_highlighting = {'org'},
-  },
-  ensure_installed = {'org'},
-}
 require('orgmode').setup({
-  org_agenda_files = {'~/.config/orgmode/**/*'},
-  org_default_notes_file = '~/.config/orgmode/refile.org',
+  org_agenda_files = {'~/Documents/orgmode/**/*'},
+  org_default_notes_file = '~/Documents/orgmode/refile.org',
 })
-EOF
+END
 
 " Terminal.
 let g:floaterm_title = "$1/$2"
@@ -290,6 +283,12 @@ END
 " File manager.
 lua << END
 require('nvim-tree').setup{
+  sync_root_with_cwd = true,
+  respect_buf_cwd = true,
+  update_focused_file = {
+    enable = true,
+    update_root = true
+  },
   renderer = {
     icons = {
       show = {
@@ -474,13 +473,14 @@ require('nvim-treesitter.configs').setup {
     "html",
     "css",
     "regex",
-    "http"
+    "http",
+    "org"
   },
   sync_install = false,
   auto_install = true,
   highlight = {
     enable = true,
-    additional_vim_regex_highlighting = false
+    additional_vim_regex_highlighting = {'org'},
   }
 }
 END
