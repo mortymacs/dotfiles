@@ -54,7 +54,6 @@ Plug 'famiu/bufdelete.nvim'
 " Text.
 Plug 'kylechui/nvim-surround'
 Plug 'RRethy/vim-illuminate'
-Plug 'Yggdroot/indentLine'
 
 " Git.
 Plug 'airblade/vim-gitgutter'
