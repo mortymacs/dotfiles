@@ -176,6 +176,14 @@ t['<C-Down>'] = {'scroll', { 'vim.wo.scroll', 'true', '250'}}
 require('neoscroll.config').set_mappings(t)
 END
 
+" Splash screen.
+let g:startify_custom_header = startify#center(split(system('figlet -f colossal NVIM'), '\n'))
+let g:startify_lists = [
+  \ { 'type': 'files',     'header': ['   MRU']            },
+  \ { 'type': 'dir',       'header': ['   MRU '. getcwd()] },
+  \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
+  \ ]
+
 " Notification.
 lua << END
 require("notify").setup({
@@ -234,10 +242,17 @@ set complete+=s
 "" reformat the whole buffer
 call MapKeys("<c-c><c-l>", "gg=G<cr>")
 call MapKeys("<c-m-l>", "gg=G<cr>")
+lua << END
+vim.opt.list = true
+require("indent_blankline").setup {
+  show_current_context = true,
+  show_current_context_start = true,
+}
+END
 
 " Coc.nvim.
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
-      \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+  \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 inoremap <silent><expr> <c-space> coc#refresh()
 call MapKeys("<c-c><c-d>", "<Plug>(coc-definition)")
 call MapKeys("<c-c><c-i>", "<Plug>(coc-implementation)")
