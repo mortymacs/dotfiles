@@ -176,7 +176,7 @@ require('neoscroll.config').set_mappings(t)
 END
 
 " Splash screen.
-let g:startify_custom_header = startify#center(split(system('figlet -f colossal NVIM'), '\n'))
+let g:startify_custom_header = ""
 let g:startify_lists = [
   \ { 'type': 'files',     'header': ['   MRU']            },
   \ { 'type': 'dir',       'header': ['   MRU '. getcwd()] },
