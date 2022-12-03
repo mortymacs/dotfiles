@@ -41,6 +41,7 @@ bindkey ';5D' backward-word
 bindkey ';3D' backward-word
 bindkey ';5C' forward-word
 bindkey ';3C' forward-word
+bindkey '^[[P' delete-char
 
 # Fix cursor.
 # https://unix.stackexchange.com/a/496878
