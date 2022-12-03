@@ -20,6 +20,10 @@ cp -R "$HOME/.icons/" icons
 rm -rf zsh/*
 cp "$HOME"/{.zshrc,.zsh_aliases,.zshenv} zsh/
 
+# alacritty
+rm -rf alacritty/*
+cp "$HOME"/.config/alacritty/alacritty.yml alacritty/
+
 # starship
 rm -rf starship/*
 cp "$HOME"/.config/starship.toml starship/

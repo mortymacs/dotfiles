@@ -1,3 +1,4 @@
+alacritty
 arc-gtk-theme
 arc-icon-theme
 asciinema
