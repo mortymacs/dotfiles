@@ -9,6 +9,10 @@ windows:
     start_directory: ~/
     panes:
       - sudo kmon
+  - window_name: docker
+    start_directory: ~/
+    panes:
+      - ctop
   - window_name: network
     start_directory: ~/
     panes:
