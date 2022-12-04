@@ -10,6 +10,7 @@ bat
 bind
 binutils
 bison
+bmon
 broot
 bspwm
 btop

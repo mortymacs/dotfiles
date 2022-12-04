@@ -9,6 +9,14 @@ windows:
     start_directory: ~/
     panes:
       - sudo kmon
+  - window_name: network
+    start_directory: ~/
+    panes:
+      - sudo bmon
+  - window_name: service
+    start_directory: ~/
+    panes:
+      - sudo sysz
   - window_name: dashboard
     start_directory: ~/
     panes:

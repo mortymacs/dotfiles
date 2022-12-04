@@ -25,6 +25,7 @@ skypeforlinux-stable-bin
 spotify
 src-cli-bin
 stern-bin
+sysz
 tctl
 terraform-docs-bin
 terraform-ls
