@@ -2,6 +2,9 @@
 # https://github.com/romkatv/powerlevel10k/issues/1474#issuecomment-875062137
 export ZLE_RPROMPT_INDENT=0
 
+# Tmux.
+export TMUX_PLUGIN_MANAGER_PATH="$HOME"/.tmux/plugins/
+
 # Qt.
 export QT_QPA_PLATFORM=xcb
 export QT_QPA_PLATFORMTHEME=qt5ct
