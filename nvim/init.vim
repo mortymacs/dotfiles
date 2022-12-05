@@ -161,8 +161,16 @@ nnoremap <silent> <Esc><Esc> <Esc>:nohlsearch<CR><Esc>
 lua << END
 require('lualine').setup{
   options = {
-    theme = "spaceduck"
-  }
+    theme = "spaceduck",
+  },
+  sections = {
+    lualine_a = {{'filename', newfile_status = true, path = 1}},
+    lualine_b = {'branch', 'diff'},
+    lualine_c = {},
+    lualine_x = {},
+    lualine_y = {'filetype', 'filesize'},
+    lualine_z = {'progress'}
+  },
 }
 END
 

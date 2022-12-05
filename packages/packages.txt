@@ -121,6 +121,7 @@ pwgen
 python
 python-black
 python-build
+python-installer
 python-isort
 python-poetry
 python-pylint
