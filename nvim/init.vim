@@ -25,7 +25,7 @@ set whichwrap+=<,>,[,]
 set nowrap
 
 " Package.
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 " Theme and colorscheme.
 Plug 'pineapplegiant/spaceduck', { 'branch': 'main' }
 Plug 'norcalli/nvim-colorizer.lua'
