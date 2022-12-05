@@ -23,7 +23,8 @@ mouse:
 selection:
   save_to_clipboard: true
 
-font_name: &font_name CodeNewRoman Nerd Font Mono
+# Alternative font: CodeNewRoman Nerd Font Mono
+font_name: &font_name Ellograph CF
 font:
   size: 14
   normal:
@@ -40,11 +41,11 @@ font:
 
   offset:
     x: 0
-    y: 2
+    y: -2
 
   glyph_offset:
     x: 0
-    y: -1
+    y: 1
 
 # Color configuration.
 # https://github.com/pineapplegiant/spaceduck-terminal

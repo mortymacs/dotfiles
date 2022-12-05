@@ -3,7 +3,7 @@
 export ZLE_RPROMPT_INDENT=0
 
 # Tmux.
-export TMUX_PLUGIN_MANAGER_PATH="$HOME"/.tmux/plugins/
+export TMUX_PLUGIN_MANAGER_PATH="$HOME"/.config/tmux/plugins/
 
 # Qt.
 export QT_QPA_PLATFORM=xcb

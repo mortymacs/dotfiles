@@ -47,7 +47,7 @@ function u() {
   nvim -c :TSUpdateSync +quitall
 
   # Tmux packages.
-  "$HOME"/.tmux/plugins/tpm/bin/update_plugins all
+  "$HOME"/.config/tmux/plugins/tpm/bin/update_plugins all
 }
 alias top='btop'
 function cleanup() {
