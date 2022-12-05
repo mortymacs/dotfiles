@@ -30,7 +30,7 @@ cp "$HOME"/.config/starship.toml starship/
 
 # tmux
 rm -rf tmux/*
-cp "$HOME"/.tmux.conf tmux/
+cp "$HOME"/.config/tmux/tmux.conf tmux/
 
 # btop
 rm -rf btop
