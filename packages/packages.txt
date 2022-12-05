@@ -93,6 +93,7 @@ m4
 mage
 make
 man-db
+maturin
 mcfly
 most
 mtr
@@ -119,6 +120,7 @@ pulsemixer
 pwgen
 python
 python-black
+python-build
 python-isort
 python-poetry
 python-pylint

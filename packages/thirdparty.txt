@@ -19,6 +19,7 @@ lazydocker
 ly
 nodejs-dockerfile-language-server
 nodejs-sql-language-server
+python-ruff
 python3-yamale
 rofi-greenclip
 skypeforlinux-stable-bin
