@@ -59,9 +59,6 @@ go
 gopls
 gping
 grep
-groff
-grpc
-grpc-cli
 gzip
 helm
 hexyl
@@ -69,6 +66,7 @@ hq
 httpie
 hugo
 hyperfine
+imagemagick
 inetutils
 intel-media-driver
 intel-ucode
@@ -76,8 +74,6 @@ iotop
 ipcalc
 ipython
 iwd
-jhead
-jless
 jq
 kmon
 kubectl
@@ -93,7 +89,6 @@ m4
 mage
 make
 man-db
-maturin
 mcfly
 most
 mtr
@@ -120,8 +115,6 @@ pulsemixer
 pwgen
 python
 python-black
-python-build
-python-installer
 python-isort
 python-poetry
 python-pylint
@@ -130,8 +123,6 @@ revive
 ripgrep
 ripgrep-all
 rofi
-rust
-rust-analyzer
 rustscan
 sed
 shellcheck
@@ -172,7 +163,6 @@ xorg-xsetroot
 xsecurelock
 xss-lock
 yaml-language-server
-youtube-dl
 yq
 zathura-pdf-mupdf
 zip

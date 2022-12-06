@@ -2,7 +2,6 @@ breezex-cursor-theme
 chart-testing
 dive
 dry-bin
-evans-bin
 figlet-fonts
 ghq
 gofumpt
@@ -11,14 +10,12 @@ golines
 gosec
 insomnia-bin
 inxi
-jqp
 kind-bin
 kubecolor
 kubespy
 lazydocker
 ly
 nodejs-dockerfile-language-server
-nodejs-sql-language-server
 python-ruff
 python3-yamale
 rofi-greenclip
