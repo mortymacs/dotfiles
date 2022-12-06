@@ -22,7 +22,7 @@ My environment config. I tried to keep it minimal and simple as much as I could.
 | Terminal Multiplexer | [Tmux](https://github.com/tmux/tmux) |
 | Editor/IDE | [Neovim](https://github.com/neovim/neovim) |
 | DB | [dbcli tools](https://github.com/dbcli) |
-| Fonts | [Lexend](https://github.com/googlefonts/lexend), [VarizMatn](https://github.com/rastikerdar/vazirmatn), [CodeNewRoman](https://github.com/ryanoasis/nerd-fonts) |
+| Fonts | [Lexend](https://github.com/googlefonts/lexend), [VarizMatn](https://github.com/rastikerdar/vazirmatn), [Ellograph](https://connary.com/ellograph.html) |
 | File Manager | [Broot](https://github.com/Canop/broot) |
 | Launcher | [Rofi](https://github.com/davatorium/rofi) |
 | Browser | [Firefox](https://www.mozilla.org) |
@@ -31,6 +31,8 @@ My environment config. I tried to keep it minimal and simple as much as I could.
 | Icon | [Arc Icon](https://github.com/horst3180/arc-icon-theme) |
 | Wallpaper | [Unsplash](https://unsplash.com) |
 | Doc | [Zeal](https://github.com/zealdocs/zeal) |
+
+Alternative Monospace font: [CodeNewRoman](https://github.com/ryanoasis/nerd-fonts)
 
 ## Packages
 
