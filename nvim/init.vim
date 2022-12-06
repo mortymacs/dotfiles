@@ -43,8 +43,9 @@ Plug 'nvim-lualine/lualine.nvim'
 Plug 'rcarriga/nvim-notify'
 
 " File and search.
+Plug 'junegunn/fzf.vim'
 Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.x' }
+Plug 'nvim-telescope/telescope.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'preservim/tagbar'
@@ -62,13 +63,13 @@ Plug 'f-person/git-blame.nvim'
 
 " Github.
 Plug 'pwntester/octo.nvim'
-Plug 'nvim-telescope/telescope.nvim'
 
 " Orgmode.
 Plug 'nvim-orgmode/orgmode'
 
 " Development.
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'fannheyward/telescope-coc.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'sheerun/vim-polyglot'
 Plug 'KabbAmine/zeavim.vim'
@@ -162,6 +163,8 @@ lua << END
 require('lualine').setup{
   options = {
     theme = "spaceduck",
+    section_separators = '',
+    component_separators = '',
   },
   sections = {
     lualine_a = {{'filename', newfile_status = true, path = 1}},
@@ -287,10 +290,12 @@ lua << END
   vim.keymap.set('n', '<', '<cmd>norm ysiw><cr>')
 END
 
+" FZF.
+call MapKeys("<c-x><c-f>", ":Files<cr>")
+call MapKeys("<c-x><c-t>", ":Tags<cr>")
+call MapKeys("<c-x><c-b>", ":Buffers<cr>")
+
 " Telescope.
-call MapKeys("<c-x><c-f>", ":Telescope find_files<cr>")
-call MapKeys("<c-x><c-t>", ":Telescope tags<cr>")
-call MapKeys("<c-x><c-b>", ":Telescope buffers<cr>")
 lua << END
 require('telescope').setup{
   defaults = {
@@ -533,6 +538,7 @@ nnoremap <S-Tab> <<_
 inoremap <S-Tab> <C-D>
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
+call MapKeys("<c-c><c-w>", ":BTags<cr>")
 call NorMapKeys("<c-c><c-s>", ":call nerdcommenter#Comment('cc', 'toggle')<cr>")
 call NorMapKeys("<c-/>", ":call nerdcommenter#Comment('cc', 'toggle')<cr>")
 "" https://vim.fandom.com/wiki/Fix_indentation

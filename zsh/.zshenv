@@ -40,7 +40,7 @@ export BAT_THEME='Monokai Extended Origin'
 
 # Fzf.
 export FZF_DEFAULT_COMMAND='fd --type f'
-export FZF_DEFAULT_OPTS='--inline-info --cycle --tabstop=4 --bind alt-up:preview-half-page-up,alt-down:preview-half-page-down --height ~50% --layout=reverse --preview-window=noborder --color "hl+:#EB5E55,gutter:#0f0f0f,pointer:#D81E5B"'
+export FZF_DEFAULT_OPTS='--no-separator --inline-info --cycle --tabstop=4 --bind alt-up:preview-half-page-up,alt-down:preview-half-page-down --height ~50% --layout=reverse --preview-window=noborder --color "hl+:#EB5E55,gutter:#0f0f0f,pointer:#D81E5B"'
 
 # Ghq.
 export GHQ_ROOT="$HOME/Workspaces"
