@@ -48,6 +48,9 @@ function u() {
 
   # Tmux packages.
   "$HOME"/.config/tmux/plugins/tpm/bin/update_plugins all
+
+  # Firmware.
+  fwupdmgr get-updates
 }
 alias top='btop'
 function cleanup() {
