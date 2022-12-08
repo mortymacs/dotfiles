@@ -355,7 +355,7 @@ require('nvim-tree').setup{
         { key = "n",      action = "create" },
         { key = "d",      action = "remove" },
         { key = "r",      action = "rename" },
-        { key = "x",      action = "cut" },
+        { key = "m",      action = "cut" },
         { key = "c",      action = "copy" },
         { key = "p",      action = "paste" },
         { key = "bp",     action = "bulk_move" },
@@ -541,7 +541,6 @@ vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
 call MapKeys("<c-c><c-w>", ":BTags<cr>")
 call NorMapKeys("<c-c><c-s>", ":call nerdcommenter#Comment('cc', 'toggle')<cr>")
-call NorMapKeys("<c-/>", ":call nerdcommenter#Comment('cc', 'toggle')<cr>")
 "" https://vim.fandom.com/wiki/Fix_indentation
 call MapKeys("<c-c><c-r>", "gg=G<c-o><c-o>")
 "" https://unix.stackexchange.com/a/75431/204066
