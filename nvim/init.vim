@@ -344,6 +344,7 @@ require('nvim-tree').setup{
     timeout = 400,
   },
   view = {
+    hide_root_folder = true,
     mappings = {
       list = {
         { key = "<cr>",   action = "edit" },
