@@ -14,7 +14,8 @@
     "coc-yaml": ">=1.8.0",
     "coc-tsserver": ">=1.11.12",
     "coc-emoji": ">=1.3.1",
-    "coc-syntax": ">=1.2.4"
+    "coc-syntax": ">=1.2.4",
+    "coc-highlight": ">=2.0.4"
   },
   "disabled": [],
   "locked": []
