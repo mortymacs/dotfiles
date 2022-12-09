@@ -16,10 +16,8 @@ kubespy
 lazydocker
 ly
 nodejs-dockerfile-language-server
-python-ruff
 python3-yamale
 rofi-greenclip
-skypeforlinux-stable-bin
 spotify
 src-cli-bin
 stern-bin
@@ -32,4 +30,3 @@ viddy
 wtfutil
 yay
 ydiff
-zeal
