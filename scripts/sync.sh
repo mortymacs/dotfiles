@@ -120,7 +120,7 @@ cp "$HOME/.config/Zeal/Zeal.conf" zeal/
 # fonts
 rm -rf fonts/*
 cp "$HOME/.local/share/fonts/Lexend-VariableFont_wght.ttf" fonts/
-cp "$HOME/.local/share/fonts/'Code New Roman Nerd Font Complete Mono.otf'" fonts/
+cp "$HOME/.local/share/fonts/Code New Roman Nerd Font Complete Mono.otf" fonts/
 
 # fonts config
 rm -rf fontconfig/*
