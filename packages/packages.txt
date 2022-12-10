@@ -125,6 +125,7 @@ revive
 ripgrep
 ripgrep-all
 rofi
+ruff
 rustscan
 sed
 shellcheck
