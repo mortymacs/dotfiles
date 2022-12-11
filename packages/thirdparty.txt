@@ -3,6 +3,7 @@ chart-testing
 d2
 dive
 dry-bin
+emptty
 figlet-fonts
 ghq
 gofumpt
