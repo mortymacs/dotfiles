@@ -131,6 +131,7 @@ sed
 shellcheck
 silicon
 smartmontools
+sof-firmware
 sqlfluff
 starship
 staticcheck
