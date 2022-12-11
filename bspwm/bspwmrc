@@ -50,3 +50,5 @@ bspc config focus_follows_pointer false
 
 # Application rules.
 bspc rule -a firefox desktop=0
+bspc rule -a Microsoft\ Teams\ -\ Preview:\* desktop=0
+bspc rule -a Microsoft\ Teams\ -\ Preview:\* split_ratio 0.61
