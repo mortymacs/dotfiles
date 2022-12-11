@@ -10,6 +10,7 @@ gofumpt
 golangci-lint
 golines
 gosec
+gotags
 insomnia-bin
 inxi
 kind-bin
