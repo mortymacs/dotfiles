@@ -109,9 +109,9 @@ cat "$HOME"/.docker/config.json | jq 'del(.auths)' | tee docker/config.json
 rm -rf peco
 cp -R "$HOME/.config/peco" .
 
-# zeal
-rm -rf zeal/*
-cp "$HOME/.config/Zeal/Zeal.conf" zeal/
+# wtfutil
+rm -rf wtfutil/*
+cp "$HOME/.config/wtf/config.yml" wtfutil/
 
 # fonts
 rm -rf fonts/*
