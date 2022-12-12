@@ -1,0 +1,114 @@
+wtf:
+  colors:
+    border:
+      focusable: darkslateblue
+      focused: orange
+      normal: gray
+  grid:
+    columns: [32, 32, 32, 32, 90]
+    rows: [10, 10, 10, 4, 4, 90]
+  mods:
+    message:
+      enabled: true
+      type: cmdrunner
+      title: "Goal"
+      cmd: "figlet"
+      args: ["-f", "colossal", ' 0T1']
+      position:
+        top: 0
+        left: 0
+        height: 1
+        width: 1
+      refreshInterval: 10
+
+    important:
+      enabled: true
+      type: cmdrunner
+      title: "Notification"
+      cmd: "ls"
+      args: ["-lha"]
+      position:
+        top: 0
+        left: 1
+        height: 1
+        width: 2
+      refreshInterval: 10
+
+    clocks:
+      enabled: true
+      type: clocks
+      title: "Clocks"
+      timeFormat: "Jan 2 15:05"
+      dateFormat: ""
+      locations:
+        Amsterdam: "Europe/Amsterdam"
+        Tehran: "Asia/Tehran"
+        Newyork: "America/Newyork"
+        Sydney: "Australia/Sydney"
+        Turkey: "Asia/Istanbul"
+      sort: "alphabetical"
+      position:
+        top: 0
+        left: 3
+        height: 1
+        width: 1
+      refreshInterval: 15
+
+    urlcheck:
+      enabled: true
+      type: urlcheck
+      title: "URLs"
+      timeout: 25
+      urls:
+        - https://0t1.me
+        - https://0t1.dev
+      position:
+        top: 0
+        left: 4
+        height: 1
+        width: 1
+      refreshInterval: 30
+
+    packages:
+      enabled: true
+      type: feedreader
+      title: Packages
+      feeds:
+        - https://archlinux.org/feeds/packages/x86_64/
+      feedLimit: 20
+      position:
+        top: 1
+        left: 3
+        height: 2
+        width: 3
+      refreshInterval: 900
+
+    rss:
+      enabled: true
+      type: feedreader
+      title: RSS
+      feeds:
+        - https://archlinux.org/feeds/news/
+        - https://feeds.feedburner.com/TheHackersNews
+        - https://www.nist.gov/news-events/cybersecurity/rss.xml
+      feedLimit: 20
+      position:
+        top: 3
+        left: 0
+        height: 4
+        width: 4
+      refreshInterval: 900
+
+    status:
+      enabled: true
+      type: cmdrunner
+      title: "Status"
+      cmd: "ls"
+      args: ["-lha"]
+      position:
+        top: 3
+        left: 4
+        height: 3
+        width: 1
+      refreshInterval: 10
+
