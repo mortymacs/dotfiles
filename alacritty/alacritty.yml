@@ -26,7 +26,7 @@ selection:
 # Alternative font: CodeNewRoman Nerd Font Mono
 font_name: &font_name Ellograph CF
 font:
-  size: 13
+  size: 14
   normal:
     family: *font_name
     style: Regular
