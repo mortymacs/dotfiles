@@ -61,7 +61,7 @@ format = '[ $symbol $branch ]($style)'
 [git_commit]
 tag_disabled = false
 tag_symbol = ' 笠'
-style = 'bg:#D81E5B fg:#5ccc96'
+style = 'bg:#D81E5B fg:#ecf0c1'
 format = '[\($hash$tag\) ]($style)'
 
 [git_state]

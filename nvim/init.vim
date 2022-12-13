@@ -17,6 +17,11 @@ set nobackup
 set nowritebackup
 set updatetime=300
 set signcolumn=yes
+"" https://github.com/jelly/Dotfiles/blob/master/.vimrc
+set cindent
+set smartindent
+set autoindent
+set complete+=s
 
 filetype plugin on
 filetype plugin indent on    " required
@@ -64,9 +69,6 @@ Plug 'f-person/git-blame.nvim'
 " Github.
 Plug 'pwntester/octo.nvim'
 
-" Orgmode.
-Plug 'nvim-orgmode/orgmode'
-
 " Development.
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'fannheyward/telescope-coc.nvim'
@@ -96,9 +98,6 @@ Plug 'alfredodeza/pytest.vim'
 " Go.
 Plug 'fatih/vim-go'
 
-" Rust.
-Plug 'rust-lang/rust.vim'
-
 " DevOps.
 Plug 'hashivim/vim-terraform'
 
@@ -117,37 +116,38 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'preservim/vimux'
 call plug#end()
 
-" Color.
+source ~/.config/nvim/util.vim
+
+" ---------- Clipboard.
+"" https://superuser.com/a/921975
+vmap y y:call system("xclip -i -selection clipboard", getreg("\""))<cr>:call system("xclip -i", getreg("\""))<cr>
+nmap Y :call setreg("\"",system("xclip -o -selection clipboard"))<cr>p
+
+" ---------- Color.
+"" Theme.
+set background=dark
+colorscheme spaceduck
+
+"" Colorizer.
 lua require'colorizer'.setup()
 autocmd BufWritePost * :ColorizerAttachToBuffer
+
+"" Rainbow brackets.
 let g:rainbow_active = 1
 let s:rainbow_conf = {
 \ 'ctermfgs': ['lightblue', 'lightyellow', 'lightcyan', 'lightmagenta', 'orangered', 'burlywood1', 'brown1', 'darkorchid1', 'deeppink2']
 \}
 
-" https://stackoverflow.com/a/43595915/2338672
-" https://stackoverflow.com/a/13854888/2338672
-function! MapKeys(keys, rhs)
-  for map_command in ['map', 'map!']
-    execute map_command . a:keys '<esc>' . a:rhs
-  endfor
-endfunction
-function! NorMapKeys(keys, rhs)
-  for normap_command in ['nnoremap', 'inoremap']
-    execute normap_command . a:keys '<esc>' . a:rhs
-  endfor
-  execute 'vnoremap' . a:keys '' . a:rhs
-endfunction
-
-" Theme and colorscheme.
-set background=dark
-colorscheme spaceduck
 let g:lightline = { 'colorscheme': 'spaceduck' }
-"" https://stackoverflow.com/a/17506351
-hi Vertsplit guibg=NONE guifg=#30365F
+
+"" Command part.
 "" https://stackoverflow.com/a/15648665/2338672
 set cmdheight=1
 set laststatus=3
+
+"" Vim parts.
+"" https://stackoverflow.com/a/17506351
+hi Vertsplit guibg=NONE guifg=#30365F
 "" https://stackoverflow.com/a/37720708/2338672
 hi Normal guibg=NONE ctermbg=NONE
 hi SignColumn ctermbg=NONE guibg=NONE
@@ -157,8 +157,42 @@ autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE
 autocmd vimenter * hi EndOfBuffer guibg=NONE ctermbg=NONE
 "" https://stackoverflow.com/a/40411893/2338672
 hi EndOfBuffer ctermfg=black guifg=black
-"" https://stackoverflow.com/a/19877212/2338672
-nnoremap <silent> <Esc><Esc> <Esc>:nohlsearch<CR><Esc>
+
+"" Tree-Sitter.
+lua << END
+require('nvim-treesitter.configs').setup {
+  ensure_installed = {
+    "c",
+    "cpp",
+    "rust",
+    "go",
+    "python",
+    "lua",
+    "bash",
+    "cmake",
+    "make",
+    "sql",
+    "latex",
+    "markdown",
+    "dockerfile",
+    "hcl",
+    "json",
+    "yaml",
+    "toml",
+    "html",
+    "css",
+    "regex",
+    "http"
+  },
+  sync_install = false,
+  auto_install = true,
+  highlight = {
+    enable = true,
+  }
+}
+END
+
+" ---------- Status line.
 lua << END
 require('lualine').setup{
   options = {
@@ -177,24 +211,20 @@ require('lualine').setup{
 }
 END
 
-" Scroll.
-lua << END
-require('neoscroll').setup{}
-local t = {}
-t['<C-Up>'] = {'scroll', {'-vim.wo.scroll', 'true', '250'}}
-t['<C-Down>'] = {'scroll', { 'vim.wo.scroll', 'true', '250'}}
-require('neoscroll.config').set_mappings(t)
-END
+" ---------- Tabbar.
+let g:airline#extensions#tabline#enabled = 1
+call MapKeys("<s-right>",  ":BufferNext<cr>")
+call MapKeys("<s-left>",   ":BufferPrevious<cr>")
+call MapKeys("<c-x><c-q>", ":BufferClose<cr>")
+call MapKeys("<c-x><c-n>", ":tabnew<cr>")
+let bufferline = get(g:, 'bufferline', {})
+let bufferline.icons     = v:true
+let bufferline.auto_hide = v:true
+let bufferline.animation = v:false
+let bufferline.closable  = v:false
+let bufferline.clickable = v:false
 
-" Splash screen.
-let g:startify_custom_header = ""
-let g:startify_lists = [
-  \ { 'type': 'files',     'header': ['   MRU']            },
-  \ { 'type': 'dir',       'header': ['   MRU '. getcwd()] },
-  \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
-  \ ]
-
-" Notification.
+" ---------- Notification.
 lua << END
 require("notify").setup({
   background_colour = "#0F0F19",
@@ -204,113 +234,24 @@ require("notify").setup({
 })
 END
 
-" Orgmode.
+" ---------- Splash screen.
+let g:startify_custom_header = ""
+let g:startify_lists = [
+  \ { 'type': 'files',     'header': ['   MRU']            },
+  \ { 'type': 'dir',       'header': ['   MRU '. getcwd()] },
+  \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
+  \ ]
+
+" ---------- Scroll.
 lua << END
-require('orgmode').setup_ts_grammar()
-require('orgmode').setup({
-  org_agenda_files = {'~/Documents/orgmode/**/*'},
-  org_default_notes_file = '~/Documents/orgmode/refile.org',
-})
+require('neoscroll').setup{}
+local t       = {}
+t['<C-Up>']   = {'scroll', {'-vim.wo.scroll', 'true', '250'}}
+t['<C-Down>'] = {'scroll', {'vim.wo.scroll' , 'true', '250'}}
+require('neoscroll.config').set_mappings(t)
 END
 
-" Terminal.
-let g:floaterm_title = "$1/$2"
-let g:floaterm_height = 0.5
-let g:floaterm_width = 1.0
-let g:floaterm_position = "bottom"
-let g:floaterm_wintype = "float"
-let g:floaterm_autohide = 1
-let g:floaterm_keymap_toggle = "<c-x><c-r>"
-let g:floaterm_keymap_new = "<c-x><c-n>"
-let g:floaterm_keymap_prev = "<c-x><c-left>"
-let g:floaterm_keymap_next = "<c-x><c-right>"
-let g:floaterm_keymap_kill = "<c-x><c-k>"
-let g:floaterm_keymap_kill = "<c-x><c-up>"
-let g:floaterm_opener = "tabe"
-hi FloatermBorder ctermbg=black
-call MapKeys("<c-x><c-r>", "FloatermToggle<cr>")
-
-" Search.
-call MapKeys("<c-f>", ":Telescope current_buffer_fuzzy_find<cr>")
-call MapKeys("<c-c><c-t>", ":AnyJump<cr>")
-call MapKeys("<c-c><c-g>", ":AnyJumpArg ")
-call MapKeys("<c-x><c-g>", ":Telescope live_grep<cr>")
-call MapKeys("<c-x><c-d>", ":Telescope man_pages<cr>")
-let g:any_jump_disable_default_keybindings = 1
-
-" Test.
-let test#strategy = "floaterm"
-call MapKeys("<c-t><c-n>", ":TestNearest<cr>")
-call MapKeys("<c-t><c-s>", ":TestSuite<cr>")
-call MapKeys("<c-t><c-l>", ":TestLast<cr>")
-
-" Code indent.
-"" https://github.com/jelly/Dotfiles/blob/master/.vimrc
-autocmd FileType python,cucumber set expandtab shiftwidth=4 softtabstop=4
-autocmd FileType c,cpp,h,html,css,vim,yaml,yml,json set expandtab shiftwidth=2 softtabstop=2
-set cindent
-set smartindent
-set autoindent
-set complete+=s
-"" reformat the whole buffer
-call MapKeys("<c-c><c-l>", "gg=G<cr>")
-call MapKeys("<c-m-l>", "gg=G<cr>")
-lua << END
-vim.opt.list = true
-require("indent_blankline").setup {
-  show_current_context = true,
-  show_current_context_start = true,
-}
-END
-
-" Coc.nvim.
-inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
-  \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-inoremap <silent><expr> <c-space> coc#refresh()
-call MapKeys("<c-c><c-d>", "<Plug>(coc-definition)")
-call MapKeys("<c-c><c-i>", "<Plug>(coc-implementation)")
-call MapKeys("<c-c><c-r>", "<Plug>(coc-references)")
-call MapKeys("<c-c><c-e>", "<c-o>")
-"" https://github.com/neoclide/coc.nvim/issues/2202#issuecomment-662969193
-inoremap <c-q> <c-\><c-o>:call CocActionAsync('showSignatureHelp')<cr>
-autocmd CursorHold * silent call CocActionAsync('highlight')
-call MapKeys("<c-m-l>", "<Plug>(coc-codeaction)")
-"" https://github.com/neoclide/coc.nvim/issues/2253#issuecomment-674788237
-call MapKeys("<c-c><c-q>", ":call CocAction('jumpDefinition', v:false)<CR>")
-
-" Surround.
-lua << END
-  require("nvim-surround").setup()
-  -- https://github.com/kylechui/nvim-surround/issues/134#issuecomment-1209789260
-  vim.keymap.set('n', '"', '<cmd>norm ysiw"<cr>')
-  vim.keymap.set('n', '\'', '<cmd>norm ysiw\'<cr>')
-  vim.keymap.set('n', '(', '<cmd>norm ysiw)<cr>')
-  vim.keymap.set('n', '{', '<cmd>norm ysiw}<cr>')
-  vim.keymap.set('n', '[', '<cmd>norm ysiw]<cr>')
-  vim.keymap.set('n', '<', '<cmd>norm ysiw><cr>')
-END
-
-" FZF.
-call MapKeys("<c-x><c-f>", ":Files<cr>")
-call MapKeys("<c-x><c-t>", ":Tags<cr>")
-call MapKeys("<c-x><c-b>", ":Buffers<cr>")
-
-" Telescope.
-lua << END
-require('telescope').setup{
-  defaults = {
-    layout_strategy = 'vertical',
-    borderchars = { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
-  },
-  pickers = {
-    find_files = {
-      borderchars = { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
-    },
-  },
-}
-END
-
-" File manager.
+" ---------- File manager.
 lua << END
 require('nvim-tree').setup{
   sync_root_with_cwd = true,
@@ -328,10 +269,10 @@ require('nvim-tree').setup{
         git = true,
       },
     },
-    special_files = {"Makefile", "CMakeLists.txt", "Cargo.toml", "go.mod"},
+    special_files = {"Makefile", "CMakeLists.txt", "Magefile", "go.mod", "go.sum", "pyproject.toml"},
   },
   filters = {
-    custom = {"^\\.git"},
+    custom = {"^\\.git", "^\\.venv"},
   },
   live_filter = {
     prefix = "[FILTER]: ",
@@ -362,19 +303,97 @@ require('nvim-tree').setup{
         { key = "y",      action = "copy_name" },
         { key = "Y",      action = "copy_absolute_path" },
         { key = "/",      action = "search_node" },
+        { key = "<c-]>",      action = "close" },
       },
     },
   },
 }
 END
-call MapKeys("<c-x><c-l>", ":NvimTreeToggle<cr>")
+call MapKeys("<c-]>", ":NvimTreeToggle<cr>")
 
-" Tagbar.
+" ---------- Terminal.
+let g:floaterm_title = "$1/$2"
+let g:floaterm_height = 0.5
+let g:floaterm_width = 1.0
+let g:floaterm_position = "bottom"
+let g:floaterm_wintype = "float"
+let g:floaterm_autohide = 1
+let g:floaterm_keymap_toggle = "<c-t><Up>"
+let g:floaterm_keymap_new    = "<c-t><c-n>"
+let g:floaterm_keymap_prev   = "<c-t><Left>"
+let g:floaterm_keymap_next   = "<c-t><Right>"
+let g:floaterm_keymap_kill   = "<c-t><c-k>"
+let g:floaterm_opener = "tabe"
+hi FloatermBorder ctermbg=black
+
+" ---------- Search.
+call MapKeys("<c-f>", ":Telescope current_buffer_fuzzy_find<cr>")
+call MapKeys("<c-x><c-g>", ":Telescope live_grep<cr>")
+let g:any_jump_disable_default_keybindings = 1
+
+" ---------- Surround.
+lua << END
+  require("nvim-surround").setup()
+  -- https://github.com/kylechui/nvim-surround/issues/134#issuecomment-1209789260
+  vim.keymap.set('n', '"', '<cmd>norm ysiw"<cr>')
+  vim.keymap.set('n', '\'', '<cmd>norm ysiw\'<cr>')
+  vim.keymap.set('n', '(', '<cmd>norm ysiw)<cr>')
+  vim.keymap.set('n', '{', '<cmd>norm ysiw}<cr>')
+  vim.keymap.set('n', '[', '<cmd>norm ysiw]<cr>')
+  vim.keymap.set('n', '<', '<cmd>norm ysiw><cr>')
+END
+
+" ---------- FZF.
+call MapKeys("<c-x><c-f>", ":Files<cr>")
+call MapKeys("<c-x><c-t>", ":Tags<cr>")
+call MapKeys("<c-x><c-b>", ":Buffers<cr>")
+
+" ---------- Telescope.
+lua << END
+require('telescope').setup{
+  defaults = {
+    layout_strategy = 'vertical',
+    borderchars = { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
+  },
+  pickers = {
+    find_files = {
+      borderchars = { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
+    },
+  },
+  extensions = {
+    coc = {
+      prefer_locations = true,
+    }
+  },
+}
+require('telescope').load_extension('coc')
+END
+
+" ---------- Code indent.
+"" https://github.com/jelly/Dotfiles/blob/master/.vimrc
+autocmd FileType html,css,yaml,yml,json set expandtab shiftwidth=2 softtabstop=2
+lua << END
+vim.opt.list = true
+require("indent_blankline").setup {
+  show_current_context = true,
+  show_current_context_start = true,
+}
+END
+
+" ---------- LSP.
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+  \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+inoremap <silent><expr> <c-space> coc#refresh()
+"" https://github.com/neoclide/coc.nvim/issues/2202#issuecomment-662969193
+inoremap <c-q> <c-\><c-o>:call CocActionAsync('showSignatureHelp')<cr>
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" ---------- Tagbar.
 call MapKeys("<c-c><c-a>", ":TagbarToggle<cr>")
 let g:tagbar_sort = 0
 let g:tagbar_show_balloon = 0
 
-" Window.
+" ---------- Window.
 "" https://vim.fandom.com/wiki/Maximize_window_and_return_to_previous_split_structure
 function! MaximizeWindowToggle()
   if exists("s:maximize_session")
@@ -395,54 +414,107 @@ call MapKeys("<c-x><c-m>", ":call MaximizeWindowToggle()<cr>")
 call MapKeys("<c-x><c-v>", ":vsplit<cr>")
 call MapKeys("<c-x><c-h>", ":split<cr>")
 call MapKeys("<c-x><c-c>", ":close<cr>")
-call MapKeys("<m-up>", "<c-w><c-k>")
-call MapKeys("<m-down>", "<c-w><c-j>")
-call MapKeys("<m-left>", "<c-w><c-h>")
+
+"" Moving around panes.
+call MapKeys("<m-up>",    "<c-w><c-k>")
+call MapKeys("<m-down>",  "<c-w><c-j>")
+call MapKeys("<m-left>",  "<c-w><c-h>")
 call MapKeys("<m-right>", "<c-w><c-l>")
-call MapKeys("<c-s-up>", ":resize -1<cr>")
-call MapKeys("<c-s-down>", ":resize +1<cr>")
-call MapKeys("<c-s-left>", ":vertical resize +1<cr>")
+
+"" Resize panes.
+call MapKeys("<c-s-up>",    ":resize -1<cr>")
+call MapKeys("<c-s-down>",  ":resize +1<cr>")
+call MapKeys("<c-s-left>",  ":vertical resize +1<cr>")
 call MapKeys("<c-s-right>", ":vertical resize -1<cr>")
 
-" Buffer.
+"" Buffer.
 call MapKeys("<c-x><c-e>", ":Bd!<cr>")
 
-" Clipboard.
-"" https://superuser.com/a/921975
-vmap <c-c><c-c> y:call system("xclip -i -selection clipboard", getreg("\""))<cr>:call system("xclip -i", getreg("\""))<cr>
-nmap <c-c><c-v> :call setreg("\"",system("xclip -o -selection clipboard"))<cr>p
+" ---------- Git.
+"" https://github.com/longsleep/bin-scripts/blob/master/config/vimrc
+" auto wrap git commit messages
+au FileType gitcommit set tw=72
+let g:gitgutter_sign_added                   = '|'
+let g:gitgutter_sign_modified                = '|'
+let g:gitgutter_sign_removed                 = '|'
+let g:gitgutter_sign_removed_first_line      = '|'
+let g:gitgutter_sign_removed_above_and_below = '|'
+let g:gitgutter_sign_modified_removed        = '|'
+hi link GitGutterChangeLine DiffText
+hi link GitGutterChangeLineNr Underlined
+hi link GitGutterAddIntraLine DiffAdd
 
-" Tabbar.
-let g:airline#extensions#tabline#enabled = 1
-call MapKeys("<s-right>", ":BufferNext<cr>")
-call MapKeys("<s-left>", ":BufferPrevious<cr>")
-call MapKeys("<c-x><c-q>", ":BufferClose<cr>")
-call MapKeys("<c-x><c-a>", ":tabnew<cr>")
-call MapKeys("<m-1>", ":BufferGoto 1<cr>")
-call MapKeys("<m-2>", ":BufferGoto 2<cr>")
-call MapKeys("<m-3>", ":BufferGoto 3<cr>")
-call MapKeys("<m-4>", ":BufferGoto 4<cr>")
-call MapKeys("<m-5>", ":BufferGoto 5<cr>")
-call MapKeys("<m-6>", ":BufferGoto 6<cr>")
-call MapKeys("<m-7>", ":BufferGoto 7<cr>")
-call MapKeys("<m-8>", ":BufferGoto 8<cr>")
-call MapKeys("<m-9>", ":BufferGoto 9<cr>")
-let bufferline = get(g:, 'bufferline', {})
-let bufferline.icons = v:true
-let bufferline.auto_hide = v:true
-let bufferline.animation = v:false
-let bufferline.closable = v:false
-let bufferline.clickable = v:false
+" ---------- Github.
+lua << END
+require('octo').setup()
+END
 
-" Hotkeys general.
-call MapKeys("<c-g>", "<esc>")
+
+" ---------- Text.
+"" https://stackoverflow.com/a/63887462/2338672
+nnoremap <s-m-down> :m .+1<cr>==
+nnoremap <s-m-up>   :m .-2<cr>==
+inoremap <s-m-down> <esc>:m .+1<cr>==gi
+inoremap <s-m-up>   <esc>:m .-2<cr>==gi
+vnoremap <s-m-down> :m '>+1<cr>gv=gv
+vnoremap <s-m-up>   :m '<-2<cr>gv=gv
+"" https://vim.fandom.com/wiki/Map_Ctrl-Backspace_to_delete_previous_word
+noremap! <c-bs> <c-w>
+noremap! <c-h> <c-w>
+"" goto the beginning and end of a line.
+call MapKeys("<c-e>", "<s-$>")
+call MapKeys("<c-a>", "<s-^>")
+imap <m-bs> <c-w>
+
+" ---------- Development.
+"" https://vim.fandom.com/wiki/Shifting_blocks_visually
+nnoremap <Tab>   >>_
+nnoremap <S-Tab> <<_
+inoremap <S-Tab> <C-D>
+vnoremap <Tab>   >gv
+vnoremap <S-Tab> <gv
+call MapKeys("<c-c><c-w>", ":BTags<cr>")
+call MapKeys("<c-_>", ":call nerdcommenter#Comment('cc', 'toggle')<cr>")
+
+" ALE.
+let g:ale_disable_lsp = 1
+let g:ale_set_loclist = 0
+let g:ale_set_quickfix = 1
+
+" C.
+autocmd FileType c,h source ~/.config/nvim/file-type/c.vim
+
+" C++.
+autocmd FileType cpp,h source ~/.config/nvim/file-type/cpp.vim
+
+" Python.
+autocmd FileType python source ~/.config/nvim/file-type/python.vim
+
+" Go.
+autocmd FileType go source ~/.config/nvim/file-type/go.vim
+
+" Magefile.
+" https://vi.stackexchange.com/a/5202
+autocmd BufEnter Magefile :setlocal filetype=go
+
+" Terraform.
+autocmd FileType terraform source ~/.config/nvim/file-type/terraform.vim
+
+" Misc.
+source ~/.config/nvim/file-type/misc.vim
+
+" ---------- Hotkeys (misc).
 "" select.
 call MapKeys("<m-space>", "v") " v$ v0o$
-call MapKeys("<c-x><c-s>", ":w<cr>")
+call MapKeys("<c-s>", ":wa<cr>")
 call MapKeys("<c-@>", "v")
 call MapKeys("<c-d>", "yyp")
 
-" Git.
+"" Unselect highlighted words.
+""" https://stackoverflow.com/a/19877212/2338672
+nnoremap <silent> <Esc><Esc> <Esc>:nohlsearch<cr><Esc>
+
+"" Git.
 call MapKeys("<c-g><c-h>", "<plug>(GitGutterPreviewHunk)")
 call MapKeys("<c-g><c-u>", "<plug>(GitGutterUndoHunk)")
 call MapKeys("<c-g><c-l>", "<plug>(GitGutterStageHunk)")
@@ -462,153 +534,9 @@ call MapKeys("<c-g><c-s>", ":Telescope git_status<cr>")
 call MapKeys("<c-g><c-b>", ":Telescope git_branches<cr>")
 call MapKeys("<c-g><c-c>", ":Telescope git_commits<cr>")
 call MapKeys("<c-g><c-t>", ":Telescope git_stash<cr>")
-"" https://github.com/longsleep/bin-scripts/blob/master/config/vimrc
-" auto wrap git commit messages
-au FileType gitcommit set tw=72
-let g:gitgutter_sign_added = '|'
-let g:gitgutter_sign_modified = '|'
-let g:gitgutter_sign_removed = '|'
-let g:gitgutter_sign_removed_first_line = '|'
-let g:gitgutter_sign_removed_above_and_below = '|'
-let g:gitgutter_sign_modified_removed = '|'
-hi link GitGutterChangeLine DiffText
-hi link GitGutterChangeLineNr Underlined
-hi link GitGutterAddIntraLine DiffAdd
 
-" Github.
-lua << END
-require('octo').setup()
-END
-
-" Tree-Sitter.
-lua << END
-require('nvim-treesitter.configs').setup {
-  ensure_installed = {
-    "c",
-    "cpp",
-    "rust",
-    "go",
-    "python",
-    "lua",
-    "bash",
-    "cmake",
-    "make",
-    "sql",
-    "latex",
-    "markdown",
-    "dockerfile",
-    "hcl",
-    "json",
-    "yaml",
-    "toml",
-    "html",
-    "css",
-    "regex",
-    "http",
-    "org"
-  },
-  sync_install = false,
-  auto_install = true,
-  highlight = {
-    enable = true,
-    additional_vim_regex_highlighting = {'org'},
-  }
-}
-END
-
-" Text.
-"" https://stackoverflow.com/a/63887462/2338672
-nnoremap <s-m-down> :m .+1<cr>==
-nnoremap <s-m-up>   :m .-2<cr>==
-inoremap <s-m-down> <esc>:m .+1<cr>==gi
-inoremap <s-m-up>   <esc>:m .-2<cr>==gi
-vnoremap <s-m-down> :m '>+1<cr>gv=gv
-vnoremap <s-m-up>   :m '<-2<cr>gv=gv
-"" https://vim.fandom.com/wiki/Map_Ctrl-Backspace_to_delete_previous_word
-noremap! <c-bs> <c-w>
-noremap! <c-h> <c-w>
-"" goto the beginning and end of a line.
-call MapKeys("<c-e>", "<s-$>")
-call MapKeys("<c-a>", "<s-^>")
-imap <m-bs> <c-w>
-
-" Development.
-"" https://vim.fandom.com/wiki/Shifting_blocks_visually
-nnoremap <Tab> >>_
-nnoremap <S-Tab> <<_
-inoremap <S-Tab> <C-D>
-vnoremap <Tab> >gv
-vnoremap <S-Tab> <gv
-call MapKeys("<c-c><c-w>", ":BTags<cr>")
-call NorMapKeys("<c-c><c-s>", ":call nerdcommenter#Comment('cc', 'toggle')<cr>")
-"" https://vim.fandom.com/wiki/Fix_indentation
-call MapKeys("<c-c><c-r>", "gg=G<c-o><c-o>")
-"" https://unix.stackexchange.com/a/75431/204066
+" ---------- Events.
+"" Remove spaces (on save).
+""" https://unix.stackexchange.com/a/75431/204066
 autocmd BufWritePre * :%s/\s\+$//e
-call MapKeys("<c-c><c-h>", "<plug>Zeavim")
-call MapKeys("<c-c><c-m>", ":Glow<cr>")
-
-" ALE.
-let g:ale_disable_lsp = 1
-let g:ale_python_isort_options = '--profile black'
-let g:ale_set_loclist = 0
-let g:ale_set_quickfix = 1
-
-" C/C++.
-autocmd FileType c,cpp call MapKeys("<c-m-l>", ":FormatCode clang-format<cr>")
-
-" Python.
-function! ReformatBuffer()
-  Black
-  ALEFix isort
-endfunction
-autocmd FileType python call MapKeys("<c-m-l>", ":call ReformatBuffer()<cr>")
-autocmd FileType python call MapKeys("<c-c><c-p>", ":!python %<cr>")
-autocmd FileType python call MapKeys("<c-t><c-c>", ":Pytest class<cr>")
-autocmd FileType python call MapKeys("<c-t><c-m>", ":Pytest method<cr>")
-autocmd FileType python call MapKeys("<c-t><c-f>", ":Pytest function<cr>")
-autocmd FileType python call MapKeys("<c-t><c-a>", ":Pytest file<cr>")
-
-" Go.
-let g:go_auto_type_info = 0
-let g:go_gopls_gofumpt=1
-let g:go_fmt_command = "golines"
-let g:go_fmt_options = {
-  \ 'golines': '-m 128 --base-formatter gofumpt',
-  \ }
-autocmd FileType go call MapKeys("<c-m-l>", ":GoFmt<cr>")
-autocmd FileType go call MapKeys("<c-c><c-i>", ":GoImplements<cr>")
-autocmd FileType go call MapKeys("<c-c><c-r>", ":GoReferrers<cr>")
-"" Refactor
-autocmd FileType go call MapKeys("<c-r><c-n>", ":GoRename<cr>")
-autocmd FileType go call MapKeys("<c-r><c-c>", ":GoCallers<cr>")
-autocmd FileType go call MapKeys("<c-c><c-k>", ":GoDoc<cr>")
-
-" Rust.
-autocmd FileType rust call MapKeys("<c-m-l>", ":RustFmt<cr>")
-
-" Magefile.
-" https://vi.stackexchange.com/a/5202
-autocmd BufEnter Magefile :setlocal filetype=go
-
-" CMake.
-autocmd BufWritePost CMakeLists.txt execute '! cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1'
-
-" Terraform.
-autocmd FileType terraform call MapKeys("<c-m-l>", ":TerraformFmt<cr>")
-
-" XML.
-"" https://gist.github.com/ptitfred/3402279
-function! PrettyXML()
-  silent %!xmllint --format --encode UTF-8 --recover - 2>/dev/null
-endfunction
-command! Fxml call PrettyXML()
-
-autocmd FileType xml call MapKeys("<c-m-l>", ":Fxml<cr>")
-
-" JSON.
-autocmd FileType json call MapKeys("<c-m-l>", ":%!jq<cr>")
-
-" Markdown.
-let g:vim_markdown_folding_disabled = 1
 
