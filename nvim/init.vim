@@ -75,7 +75,7 @@ Plug 'fannheyward/telescope-coc.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'sheerun/vim-polyglot'
 Plug 'KabbAmine/zeavim.vim'
-Plug 'preservim/nerdcommenter'
+Plug 'terrortylor/nvim-comment'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'voldikss/vim-floaterm'
 Plug 'luochen1990/rainbow'
@@ -119,9 +119,9 @@ call plug#end()
 source ~/.config/nvim/util.vim
 
 " ---------- Clipboard.
-"" https://superuser.com/a/921975
-vmap y y:call system("xclip -i -selection clipboard", getreg("\""))<cr>:call system("xclip -i", getreg("\""))<cr>
-nmap Y :call setreg("\"",system("xclip -o -selection clipboard"))<cr>p
+vmap c y:call CopySelectedArea()<cr>
+vmap x x:call CopySelectedArea()<cr>
+nmap a :call Paste()<cr>p
 
 " ---------- Color.
 "" Theme.
@@ -474,13 +474,24 @@ nnoremap <S-Tab> <<_
 inoremap <S-Tab> <C-D>
 vnoremap <Tab>   >gv
 vnoremap <S-Tab> <gv
-call MapKeys("<c-c><c-w>", ":BTags<cr>")
-call MapKeys("<c-_>", ":call nerdcommenter#Comment('cc', 'toggle')<cr>")
+
+"" Comment.
+lua << END
+require('nvim_comment').setup({
+  comment_empty = false,
+  create_mappings = false,
+})
+END
+vmap "<c-_>" ":'<,'>CommentToggle<cr>"
+call NorMapKeys("<c-_>", ":CommentToggle<cr>:+1<cr>")
 
 " ALE.
 let g:ale_disable_lsp = 1
 let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
+
+"" Tags.
+call MapKeys("<c-c><c-w>", ":BTags<cr>")
 
 " C.
 autocmd FileType c,h source ~/.config/nvim/file-type/c.vim
@@ -506,10 +517,13 @@ source ~/.config/nvim/file-type/misc.vim
 
 " ---------- Hotkeys (misc).
 "" select.
-call MapKeys("<m-space>", "v") " v$ v0o$
-call MapKeys("<c-s>", ":wa<cr>")
+""" Other options: v$ v0o$
+nmap <c-space> v
 call MapKeys("<c-@>", "v")
 call MapKeys("<c-d>", "yyp")
+
+"" Save.
+call MapKeys("<c-s>", ":wa<cr>")
 
 "" Unselect highlighted words.
 """ https://stackoverflow.com/a/19877212/2338672

@@ -1,3 +1,16 @@
+"Utilities.
+
+function! CopySelectedArea()
+  "" https://superuser.com/a/921975
+  :call system("xclip -i -selection clipboard", getreg("\""))
+  :call system("xclip -i", getreg("\""))
+endfunction
+
+function Paste()
+  "" https://superuser.com/a/921975
+  :call setreg("\"",system("xclip -o -selection clipboard"))
+endfunction
+
 " https://stackoverflow.com/a/43595915/2338672
 " https://stackoverflow.com/a/13854888/2338672
 function! MapKeys(keys, rhs)
