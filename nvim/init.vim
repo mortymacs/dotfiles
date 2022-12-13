@@ -121,7 +121,7 @@ source ~/.config/nvim/util.vim
 " ---------- Clipboard.
 vmap c y:call CopySelectedArea()<cr>
 vmap x x:call CopySelectedArea()<cr>
-nmap a :call Paste()<cr>p
+nmap V :call Paste()<cr>p
 
 " ---------- Color.
 "" Theme.
