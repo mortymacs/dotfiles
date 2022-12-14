@@ -4,6 +4,7 @@
 let b:coc_root_patterns = ['.git', 'go.mod', 'go.sum', 'Makefile', 'Magefile']
 let g:go_auto_type_info = 0
 let g:go_gopls_gofumpt=1
+let g:go_gopls_enabled=0
 let g:go_fmt_command = "golines"
 let g:go_fmt_options = {'golines': '-m 128 --base-formatter gofumpt'}
 

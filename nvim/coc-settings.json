@@ -1,4 +1,5 @@
 {
+  "codeLens.enable": true,
   "languageserver": {
     "terraform": {
       "command": "terraform-ls",
@@ -10,7 +11,10 @@
       "command": "docker-langserver",
       "args": ["--stdio"],
       "filetypes": ["dockerfile"]
-    },
+    }
+  },
+  "go.goplsOptions": {
+     "completeUnimported": true
   },
   "yaml.schemas": {
     /* Docker-Compose */
