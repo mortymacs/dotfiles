@@ -11,7 +11,7 @@ My environment config. I tried to keep it minimal and simple as much as I could.
 | Category | Tool |
 |----------|------|
 | Distro | [ArchLinux](https://archlinux.org) |
-| Display Manager | [Emptty](https://github.com/tvrzna/emptty) |
+| Display Manager | [Ly](https://github.com/fairyglade/ly) |
 | Window Manager | [Bspwm](https://github.com/baskerville/bspwm) |
 | Hotkey daemon | [Sxhkd](https://github.com/baskerville/sxhkd) |
 | Status Bar | [Polybar](https://github.com/polybar/polybar) |

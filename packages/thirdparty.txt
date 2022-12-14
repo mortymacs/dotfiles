@@ -3,7 +3,6 @@ chart-testing
 d2
 dive
 dry-bin
-emptty
 figlet-fonts
 ghq
 gofumpt
@@ -17,6 +16,7 @@ kind-bin
 kubecolor
 kubespy
 lazydocker
+ly
 nodejs-dockerfile-language-server
 python3-yamale
 rofi-greenclip

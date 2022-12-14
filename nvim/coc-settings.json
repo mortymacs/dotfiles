@@ -1,5 +1,6 @@
 {
   "codeLens.enable": true,
+  "inlayHint.enable": true,
   "languageserver": {
     "terraform": {
       "command": "terraform-ls",
@@ -14,7 +15,25 @@
     }
   },
   "go.goplsOptions": {
-     "completeUnimported": true
+    "hints": {
+      "assignVariableTypes": true,
+      "compositeLiteralFields": true,
+      "compositeLiteralTypes": true,
+      "constantValues": true,
+      "functionTypeParameters": true,
+      "parameterNames": true,
+      "rangeVariableTypes": true
+    },
+    "codelenses": {
+      "gc_details": true,
+      "generate": true,
+      "vendor": true,
+      "regenerate_cgo": true,
+      "tidy": true,
+      "upgrade_dependency": true
+    },
+    "gofumpt": true,
+    "usePlaceholders": true
   },
   "yaml.schemas": {
     /* Docker-Compose */
