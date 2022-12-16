@@ -11,6 +11,7 @@ bind
 binutils
 bison
 bmon
+boost
 broot
 bspwm
 btop
@@ -84,6 +85,7 @@ kubectx
 libqalculate
 libtool
 libva-intel-driver
+libvips
 linux
 linux-firmware
 lolcat
@@ -127,6 +129,9 @@ ripgrep
 ripgrep-all
 rofi
 ruff
+rust
+rust-analyzer
+rust-bindgen
 rustscan
 sed
 shellcheck
