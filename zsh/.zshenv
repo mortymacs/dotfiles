@@ -33,7 +33,7 @@ export TERM="xterm-256color"
 # Editors.
 export VISUAL=nvim
 export EDITOR=nvim
-export TERMINAL=st
+export TERMINAL=alacritty
 
 # Bat
 export BAT_THEME='Monokai Extended Origin'
@@ -46,7 +46,10 @@ export FZF_DEFAULT_OPTS='--no-separator --inline-info --cycle --tabstop=4 --bind
 export GHQ_ROOT="$HOME/Workspaces"
 
 # Mcfly.
-export MCFLY_FUZZY=true
+export MCFLY_DISABLE_MENU=TRUE
+export MCFLY_RESULTS_SORT=LAST_RUN
+export MCFLY_RESULTS=50
+export MCFLY_FUZZY=3
 
 # Xsecurelock.
 export XSECURELOCK_FONT="Lexend"
