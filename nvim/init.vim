@@ -3,6 +3,7 @@ filetype off                 " required
 syntax on
 set mouse=
 set number
+set relativenumber
 set cursorline
 set nocompatible             " be iMproved, required
 set termguicolors            " enable true colors support
@@ -269,7 +270,7 @@ require('nvim-tree').setup{
         git = true,
       },
     },
-    special_files = {"Makefile", "CMakeLists.txt", "Magefile", "go.mod", "go.sum", "pyproject.toml"},
+    special_files = {"Makefile", "CMakeLists.txt", "Cargo.toml", "Magefile", "go.mod", "go.sum", "pyproject.toml"},
   },
   filters = {
     custom = {"^\\.git", "^\\.venv"},
@@ -287,6 +288,7 @@ require('nvim-tree').setup{
   view = {
     hide_root_folder = true,
     mappings = {
+      custom_only = true,
       list = {
         { key = "<cr>",       action = "edit" },
         { key = "v",          action = "vsplit" },
@@ -316,8 +318,8 @@ call MapKeys("<c-]>", ":NvimTreeToggle<cr>")
 let g:floaterm_title = "$1/$2"
 let g:floaterm_height = 0.5
 let g:floaterm_width = 1.0
-let g:floaterm_position = "bottom"
-let g:floaterm_wintype = "float"
+let g:floaterm_position = "botright"
+let g:floaterm_wintype = "split"
 let g:floaterm_autohide = 1
 let g:floaterm_keymap_toggle = "<c-t><Up>"
 let g:floaterm_keymap_new    = "<c-t><c-n>"
@@ -326,6 +328,8 @@ let g:floaterm_keymap_next   = "<c-t><Right>"
 let g:floaterm_keymap_kill   = "<c-t><c-k>"
 let g:floaterm_opener = "tabe"
 hi FloatermBorder ctermbg=black
+"" https://stackoverflow.com/a/63908546/2338672
+autocmd TermOpen * setlocal nonumber norelativenumber nocursorcolumn nocursorcolumn
 
 " ---------- Search.
 call MapKeys("<c-f>", ":Telescope current_buffer_fuzzy_find<cr>")

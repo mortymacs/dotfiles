@@ -173,6 +173,7 @@ xorg-xsetroot
 xsecurelock
 xss-lock
 yaml-language-server
+youtube-dl
 yq
 zathura-pdf-mupdf
 zip
