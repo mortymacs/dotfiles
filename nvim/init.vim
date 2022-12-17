@@ -503,11 +503,14 @@ autocmd FileType c,h source ~/.config/nvim/file-type/c.vim
 " C++.
 autocmd FileType cpp,h source ~/.config/nvim/file-type/cpp.vim
 
-" Python.
-autocmd FileType python source ~/.config/nvim/file-type/python.vim
+" Rust.
+autocmd FileType rust source ~/.config/nvim/file-type/rust.vim
 
 " Go.
 autocmd FileType go source ~/.config/nvim/file-type/go.vim
+
+" Python.
+autocmd FileType python source ~/.config/nvim/file-type/python.vim
 
 " Magefile.
 " https://vi.stackexchange.com/a/5202
