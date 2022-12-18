@@ -1,5 +1,6 @@
 {
   "codeLens.enable": true,
+  "codeLens.position": "eol",
   "inlayHint.enable": true,
   "rust-analyzer.server.path": "rust-analyzer",
   "languageserver": {

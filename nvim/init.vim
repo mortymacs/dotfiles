@@ -58,6 +58,9 @@ Plug 'preservim/tagbar'
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'famiu/bufdelete.nvim'
 
+" History.
+Plug 'mbbill/undotree'
+
 " Text.
 Plug 'kylechui/nvim-surround'
 Plug 'RRethy/vim-illuminate'
@@ -314,6 +317,9 @@ require('nvim-tree').setup{
 END
 call MapKeys("<c-]>", ":NvimTreeToggle<cr>")
 
+" ---------- History.
+call MapKeys("<c-x><c-u>", ":UndotreeToggle<cr>")
+
 " ---------- Terminal.
 let g:floaterm_title = "$1/$2"
 let g:floaterm_height = 0.5
@@ -329,7 +335,7 @@ let g:floaterm_keymap_kill   = "<c-t><c-k>"
 let g:floaterm_opener = "tabe"
 hi FloatermBorder ctermbg=black
 "" https://stackoverflow.com/a/63908546/2338672
-autocmd TermOpen * setlocal nonumber norelativenumber nocursorcolumn nocursorcolumn
+autocmd TermOpen * setlocal nonumber norelativenumber nocursorcolumn
 
 " ---------- Search.
 call MapKeys("<c-f>", ":Telescope current_buffer_fuzzy_find<cr>")
