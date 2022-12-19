@@ -5,7 +5,7 @@ source $HOME/.zshenv
 # History.
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=10000
-HISTORY_IGNORE='(rm *|shutdown *|reboot *)'
+HISTORY_IGNORE='(rm *|shutdown *|reboot *|sudo shutdown *|sudo reboot *)'
 SAVEHIST=10000
 setopt appendhistory
 
