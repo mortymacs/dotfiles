@@ -3,7 +3,7 @@
     email = m@0t1.me
 
 [core]
-    excludesfile = ~/.gitignore
+    excludesfile = ~/.config/git/ignore
     editor = nvim
     pager = delta
 
@@ -34,4 +34,4 @@
     default = current
 
 [include]
-    path = ~/.config/delta/themes.gitconfig
+    path = ~/.config/git/themes.gitconfig

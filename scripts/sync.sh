@@ -45,12 +45,8 @@ rm -rf gdb/*
 cp "$HOME"/.gdbinit gdb/
 
 # git
-rm -rf git/*
-cp "$HOME"/{.gitconfig,.gitignore} git/
-
-# delta
-rm -rf delta/*
-cp "$HOME"/.config/delta/themes.gitconfig delta/
+rm -rf git
+cp -R "$HOME"/.config/git/ .
 
 # tig
 rm -rf tig/*

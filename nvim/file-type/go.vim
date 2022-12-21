@@ -4,7 +4,7 @@
 let b:coc_root_patterns = ['.git', 'go.mod', 'go.sum', 'Makefile', 'Magefile']
 let g:go_auto_type_info = 0
 let g:go_gopls_gofumpt=1
-let g:go_gopls_enabled=0
+let g:go_gopls_enabled=1
 let g:go_fmt_command = "golines"
 let g:go_fmt_options = {'golines': '-m 128 --base-formatter gofumpt'}
 
@@ -28,7 +28,7 @@ call MapKeys("<c-c><c-r>", ":Telescope coc references_used<cr>")
 call MapKeys("<c-c><c-e>", "<Plug>(coc-rename)")
 
 "" Method signature.
-call MapKeys("<c-c><c-q>", ":call CocAction('jumpDefinition', v:false)<CR>")
+call MapKeys("<c-c><c-q>", ":call CocAction('jumpDefinition', v:false)<cr>")
 
 "" Method document.
 call MapKeys("<c-c><c-k>", ":GoDoc<cr>")

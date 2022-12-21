@@ -47,9 +47,9 @@ export GHQ_ROOT="$HOME/Workspaces"
 
 # Mcfly.
 export MCFLY_DISABLE_MENU=TRUE
-export MCFLY_RESULTS_SORT=LAST_RUN
+export MCFLY_RESULTS_SORT=RANK
 export MCFLY_RESULTS=50
-export MCFLY_FUZZY=3
+export MCFLY_FUZZY=2
 
 # Xsecurelock.
 export XSECURELOCK_FONT="Lexend"
