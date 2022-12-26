@@ -1,6 +1,10 @@
 ---
 session_name: system
 windows:
+  - window_name: dashboard
+    start_directory: ~/
+    panes:
+      - wtfutil
   - window_name: process
     start_directory: ~/
     panes:
@@ -17,11 +21,3 @@ windows:
     start_directory: ~/
     panes:
       - sudo bmon
-  - window_name: service
-    start_directory: ~/
-    panes:
-      - sudo sysz
-  - window_name: dashboard
-    start_directory: ~/
-    panes:
-      - wtfutil

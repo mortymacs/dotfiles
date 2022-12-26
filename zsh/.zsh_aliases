@@ -40,9 +40,7 @@ function u() {
   pacman -Qdt
 
   # NVim packages.
-  nvim -c :PlugUpgrade +quitall
-  nvim -c :PlugUpdate +quitall
-  nvim -c :CocUpdateSync +quitall
+  nvim -c :PackerSync +quitall
   nvim -c :BlackUpgrade +quitall
   nvim -c :TSUpdateSync +quitall
 

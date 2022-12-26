@@ -34,7 +34,7 @@ cp -R "$HOME"/.config/btop/ .
 
 # nvim
 rm -rf nvim/*
-cp -R "$HOME"/.config/nvim/{init.vim,util.vim,coc-settings.json,file-type} nvim/
+cp -R "$HOME"/.config/nvim/{init.lua,lua} nvim/
 
 # coc
 rm -rf coc/*

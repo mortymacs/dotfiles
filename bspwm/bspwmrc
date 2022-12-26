@@ -9,6 +9,9 @@ xrandr --output eDP-1 --primary --mode 2048x1152 --pos 0x0 --rotate normal --out
 # Mouse.
 xsetroot -cursor_name arrow
 
+# Bluetooth.
+blueman-applet &
+
 # Status bar.
 nm-applet &
 polybar main --log=error &
