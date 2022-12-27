@@ -8,7 +8,7 @@ cp "$HOME/.Xresources" xresources/
 rm -rf gtk3/
 cp -R "$HOME/.config/gtk-3.0/" gtk3
 
-# Icon
+# icon
 rm -rf icons/
 cp -R "$HOME/.icons/" icons
 
@@ -35,10 +35,6 @@ cp -R "$HOME"/.config/btop/ .
 # nvim
 rm -rf nvim/*
 cp -R "$HOME"/.config/nvim/{init.lua,lua} nvim/
-
-# coc
-rm -rf coc/*
-cat "$HOME"/.config/coc/extensions/package.json | jq 'del(.lastUpdate)' | tee coc/package.json
 
 # gdb, pdb
 rm -rf gdb/*
