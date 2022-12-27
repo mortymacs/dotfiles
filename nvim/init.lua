@@ -2,7 +2,7 @@
 require("vim")
 
 -- Packages
-require("package")
+vim.cmd [[ source ~/.config/nvim/lua/package.lua ]]
 
 -- Body
 require("scroll")

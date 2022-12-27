@@ -1,7 +1,6 @@
 air-bin
 breezex-cursor-theme
 chart-testing
-d2
 dive
 dry-bin
 figlet-fonts
