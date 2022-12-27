@@ -1,1 +1,3 @@
-color status #DADAE8 #403659
+color status     #DADAE8 #403659
+color underline  #00a3cc default
+color overstrike #b3a1e6 default

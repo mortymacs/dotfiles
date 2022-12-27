@@ -19,7 +19,6 @@ function gf(){ gg "$1" -g "$2" }
 function gfa(){ gg "$1" -g "*.$2" }
 alias cat='bat --style=full'
 alias less='less -N'
-alias man='PAGER=most man'
 alias pdf='zathura'
 
 # Picture.
@@ -196,10 +195,17 @@ alias port-scan='rustscan'
 
 # DB.
 function redis-server() {
-    docker run -d --rm -p 6379:6379 --name redis redis:alpine redis-server
+    docker run -d --rm \
+        -p 6379:6379 \
+        --hostname redis --name redis \
+        redis:alpine redis-server
 }
 function mysql-server() {
-    docker run -d --rm -p 3306:3306 --name mysql -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE="${1:-db}" -e MYSQL_USER=user -e MYSQL_PASSWORD=secret mysql
+    docker run -d --rm \
+        -p 3306:3306 \
+        --hostname mysql --name mysql \
+        -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE="${1:-db}" -e MYSQL_USER=user -e MYSQL_PASSWORD=secret \
+        mysql
 }
 function mysql() {
     if [ "$#" -eq "0" ]; then
@@ -210,10 +216,18 @@ function mysql() {
     fi
 }
 function elasticsearch-server() {
-    docker run -d --rm -p 9200:9200 -p 9300:9300 --name elasticsearch -e 'discovery.type=single-node' -e 'xpack.security.enabled=false' elasticsearch:8.3.1
+    docker run -d --rm \
+        -p 9200:9200 -p 9300:9300 \
+        --hostname elasticsearch --name elasticsearch \
+        -e 'discovery.type=single-node' -e 'xpack.security.enabled=false' \
+        elasticsearch:8.5.3
 }
 function postgresql-server() {
-    docker run -d --rm -p 5432:5432 --name postgresql -e POSTGRES_DB="${1:-db}" -e POSTGRES_USER=user -e POSTGRES_PASSWORD=secret postgres
+    docker run -d --rm \
+        -p 5432:5432 \
+        --hostname postgresql --name postgresql \
+        -e POSTGRES_DB="${1:-db}" -e POSTGRES_USER=user -e POSTGRES_PASSWORD=secret \
+        postgres
 }
 function postgresql() {
     if [ "$#" -eq "0" ]; then
@@ -267,4 +281,3 @@ alias t='basename $(pwd) | xargs tmux new-session -d -s || echo $(basename $(dir
 alias tl='tmux ls -F \#S'
 alias ta='tmux attach'
 alias tq='tl | xargs -n 1 tmux kill-session -t ; tl'
-

@@ -59,5 +59,8 @@ export XSECURELOCK_SHOW_HOSTNAME=0
 export XSECURELOCK_SHOW_USERNAME=0
 export XSECURELOCK_SHOW_DATETIME=0
 
+# Man
+export MANPAGER=most
+
 # General.
 export PATH="$PATH:$HOME/.local/bin:$GOPATH/bin"
