@@ -9,6 +9,11 @@ vim.api.nvim_set_hl(0, "SignColumn", {bg = ""})
 vim.api.nvim_set_hl(0, "VertSplit", {bg = "", fg = "#1b1c36"})
 vim.api.nvim_set_hl(0, "NonText", {bg = "", fg = ""})
 
+-- Git
+vim.api.nvim_set_hl(0, "GitSignsAdd", {bg = "", fg = "#5ccc96"})
+vim.api.nvim_set_hl(0, "GitSignsChange", {bg = "", fg = "#e39400"})
+vim.api.nvim_set_hl(0, "GitSignsDelete", {bg = "", fg = "#ce6f8f"})
+
 -- Terminal
 vim.api.nvim_set_hl(0, "FloatermBorder", {fg = "#1b1c36"})
 
