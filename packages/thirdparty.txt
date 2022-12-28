@@ -20,7 +20,6 @@ nodejs-dockerfile-language-server
 python3-yamale
 rofi-greenclip
 skypeforlinux-stable-bin
-spotify
 src-cli-bin
 stern-bin
 sysz
