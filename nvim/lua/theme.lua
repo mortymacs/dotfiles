@@ -3,10 +3,11 @@ vim.g.lightline = "{'colorscheme': 'spaceduck'}"
 
 -- Body
 vim.api.nvim_set_hl(0, "Normal", {bg = ""})
-vim.api.nvim_set_hl(0, "EndOfBuffer", {bg = ""})
+vim.api.nvim_set_hl(0, "EndOfBuffer", {bg = "", fg = "#0f0f0f"})
 vim.api.nvim_set_hl(0, "LineNr", {bg = "", fg = "#686f9a"})
 vim.api.nvim_set_hl(0, "SignColumn", {bg = ""})
 vim.api.nvim_set_hl(0, "VertSplit", {bg = "", fg = "#1b1c36"})
+vim.api.nvim_set_hl(0, "NonText", {bg = "", fg = ""})
 
 -- Terminal
 vim.api.nvim_set_hl(0, "FloatermBorder", {fg = "#1b1c36"})

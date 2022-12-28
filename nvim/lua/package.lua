@@ -43,6 +43,9 @@ return require('packer').startup(function(use)
   -- Terminal
   use "voldikss/vim-floaterm"
 
+  -- Trouble
+  use {"folke/trouble.nvim", wants = "nvim-web-devicons"}
+
   -- Development
   use "editorconfig/editorconfig-vim"
   use "npxbr/glow.nvim"

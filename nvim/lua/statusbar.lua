@@ -1,3 +1,4 @@
+-- Lualine
 require('lualine').setup({
   options = {
     theme = "spaceduck",
@@ -15,3 +16,6 @@ require('lualine').setup({
 })
 vim.cmd("set cmdheight=1")
 vim.cmd("set laststatus=3")
+
+-- Trouble
+require("trouble").setup()
