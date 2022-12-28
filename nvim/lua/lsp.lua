@@ -75,7 +75,9 @@ vim.g.go_auto_type_info = 0
 vim.g.go_gopls_gofumpt=1
 vim.g.go_gopls_enabled=1
 vim.g.go_fmt_command = "golines"
-vim.g.go_fmt_options = "{'golines': '-m 128 --base-formatter gofumpt'}"
+vim.g.go_fmt_options = {
+    golines = '-m 128 --base-formatter gofumpt'
+}
 vim.g.go_def_mapping_enabled = 0
 require('lspconfig').gopls.setup({
     capabilities = capabilities
@@ -104,7 +106,10 @@ require('nvim_comment').setup({
 vim.g.ale_disable_lsp = 1
 vim.g.ale_set_loclist = 0
 vim.g.ale_set_quickfix = 1
-vim.g.ale_fixers = "{'*': ['remove_trailing_lines', 'trim_whitespace'], 'python': ['black', 'isort']}"
+vim.g.ale_fixers = {
+    ["*"] = {"remove_trailing_lines", "trim_whitespace"},
+    python = {"black", "isort"},
+}
 
 -- Indent Blankline
 vim.opt.list = true
