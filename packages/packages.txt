@@ -89,6 +89,7 @@ libva-intel-driver
 libvips
 linux
 linux-firmware
+logrotate
 lolcat
 ltrace
 m4
