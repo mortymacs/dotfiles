@@ -16,6 +16,7 @@ boost
 broot
 bspwm
 btop
+cargo-flamegraph
 clang
 cmake
 cmatrix
