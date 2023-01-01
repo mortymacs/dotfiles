@@ -4,7 +4,6 @@ chart-testing
 dive
 dry-bin
 figlet-fonts
-fzf-tab-git
 ghq
 gofumpt
 golangci-lint
