@@ -16,7 +16,10 @@ boost
 broot
 bspwm
 btop
+cargo-audit
+cargo-edit
 cargo-flamegraph
+cargo-outdated
 clang
 cmake
 cmatrix

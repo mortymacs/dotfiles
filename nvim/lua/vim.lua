@@ -1,6 +1,5 @@
 -- Body
 vim.opt.nu = true
-vim.opt.rnu = true
 
 -- File, syntax and theme
 vim.opt.filetype = "on"

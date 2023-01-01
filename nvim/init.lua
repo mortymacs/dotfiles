@@ -5,6 +5,7 @@ require("vim")
 vim.cmd [[ source ~/.config/nvim/lua/package.lua ]]
 
 -- Body
+require("window")
 require("scroll")
 require("tabbar")
 require("statusbar")

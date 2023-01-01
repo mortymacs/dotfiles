@@ -17,18 +17,18 @@ for dump in ~/.zcompdump(N.mh+24); do
 done
 compinit -C
 
-# https://unix.stackexchange.com/questions/185537/combining-zsh-s-tab-completion-with-case-insensitivity
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
-zstyle ':completion::complete:*' gain-privileges 1
-setopt MENU_COMPLETE
-setopt COMPLETE_ALIASES
-setopt HIST_IGNORE_SPACE
-setopt no_list_ambiguous
-
 # Plugins.
 source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/fzf-tab-git/fzf-tab.plugin.zsh
+
+# Auto completion.
+zstyle ':completion:*:git-checkout:*' sort false
+zstyle ':completion:*:descriptions' format '[%d]'
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
+zstyle ':fzf-tab:*' switch-group ',' '.'
 
 # Text.
 # https://unix.stackexchange.com/a/258661/204066
