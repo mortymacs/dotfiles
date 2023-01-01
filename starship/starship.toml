@@ -15,11 +15,9 @@ $git_status\
 
 right_format = """
 $status\
-$python\
 $container\
 $kubernetes\
 $helm\
-$aws\
 $terraform\
 $env_var\
 $cmd_duration\
@@ -30,8 +28,8 @@ add_newline = false
 
 [username]
 show_always = true
-style_user = 'bg:#351431 fg:#ecf0c1'
-style_root = 'bg:#351431 fg:#ecf0c1'
+style_user = 'bg:#351431 fg:#EED3EB'
+style_root = 'bg:#351431 fg:#EED3EB'
 format = '[ $user ]($style)'
 
 [directory]
@@ -72,10 +70,6 @@ format = '[\($state( $progress_current/$progress_total)\) ]($style)'
 style = 'bold bg:#D81E5B fg:#ecf0c1'
 format = '[ $status ]($style)'
 disabled = false
-
-[python]
-style = 'fg:#e39400'
-format = '[\[$virtualenv\]]($style)'
 
 [aws]
 style = 'fg:#F0CEA0'
