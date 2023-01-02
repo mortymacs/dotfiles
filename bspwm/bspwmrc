@@ -1,4 +1,5 @@
 #! /bin/sh
+# colors: https://github.com/pineapplegiant/spaceduck
 
 # Keybinding.
 pgrep -x sxhkd > /dev/null || sxhkd &
@@ -33,23 +34,22 @@ greenclip daemon>/dev/null &
 udiskie &
 
 # Bspwm.
-bspc monitor -d 0 1 2 3 4 5 6 7 8 9
+bspc monitor -d 0 1 2 3 4
 
-bspc config border_width         1
-# colors: https://github.com/pineapplegiant/spaceduck
-bspc config focused_border_color \#7a5ccc
-bspc config normal_border_color  \#686f9a
-bspc config active_border_color  \#686f9a
+bspc config border_width          1
+bspc config focused_border_color  \#9A83D8
+bspc config normal_border_color   \#686f9a
+bspc config active_border_color   \#686f9a
+bspc config presel_feedback_color \#686f9a
 
 bspc config window_gap           5
-
 bspc config top_padding          25
 
 bspc config split_ratio          0.52
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
-bspc config focus_follows_pointer false
+bspc config focus_follows_pointer true
 
 # Application rules.
 bspc rule -a firefox desktop=0
