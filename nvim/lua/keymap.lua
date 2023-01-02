@@ -23,7 +23,7 @@ SetKeyMap("<c-f>", "<Cmd>Telescope current_buffer_fuzzy_find<cr>")
 
 -- File and directory
 SetKeyMap("<c-x><c-f>", "<Cmd>Files<cr>")
-SetKeyMap("<c-c><c-t>", "<Cmd>Tags<cr>")
+SetKeyMap("<c-x><c-d>", "<Cmd>Telescope file_browser<cr>")
 SetKeyMap("<c-x><c-b>", "<Cmd>Buffers<cr>")
 SetKeyMap("<c-]>",      "<Cmd>NvimTreeToggle<cr>")
 

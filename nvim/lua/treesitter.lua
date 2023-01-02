@@ -30,10 +30,4 @@ require('nvim-treesitter.configs').setup({
     enable = true,
     additional_vim_regex_highlighting = {'org'},
   },
-  rainbow = {
-    enable = true,
-    extended_mode = true,
-    max_file_lines = nil,
-    colors = {"#c5a3ff", "#ff5733", "#ff85ab", "#5a2790", "#d5465c", "#38a3a5", "#57cc99", "#80ed99"}
-  },
 })

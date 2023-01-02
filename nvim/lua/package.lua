@@ -26,10 +26,10 @@ return require('packer').startup(function(use)
 
   -- Treesitter
   use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
-  use "p00f/nvim-ts-rainbow"
 
   -- File Manager
   use {"nvim-tree/nvim-tree.lua", wants = "nvim-web-devicons", tag = "nightly"}
+  use { "nvim-telescope/telescope-file-browser.nvim" }
 
   -- FZF
   use "junegunn/fzf.vim"
