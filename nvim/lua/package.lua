@@ -8,9 +8,6 @@ return require('packer').startup(function(use)
   use {"pineapplegiant/spaceduck", branch = "main"}
   use "norcalli/nvim-colorizer.lua"
 
-  -- Window / pane
-  use {"nvim-zh/colorful-winsep.nvim"}
-
   -- Scroll
   use "karb94/neoscroll.nvim"
 
