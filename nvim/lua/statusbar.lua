@@ -4,6 +4,9 @@ require('lualine').setup({
     theme = "spaceduck",
     section_separators = '',
     component_separators = '',
+    disabled_filetypes = {
+      statusline = {"NvimTree"},
+    },
   },
   sections = {
     lualine_a = {{'filename', newfile_status = true, path = 1}},
