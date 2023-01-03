@@ -29,6 +29,7 @@
     del-all = branch -D
     show-files = diff-tree --no-commit-id --name-only -r
     status-lines = diff --stat
+    conflicts = diff --name-only --diff-filter=U --relative
 
 [push]
     default = current

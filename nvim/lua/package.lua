@@ -72,6 +72,12 @@ return require('packer').startup(function(use)
   use "dense-analysis/ale"
   use "hashivim/vim-terraform"
 
+  -- Markdown
+  use({
+    "iamcco/markdown-preview.nvim",
+    run = function() vim.fn["mkdp#util#install"]() end,
+  })
+
   -- Tag
   use "preservim/tagbar"
 
