@@ -44,9 +44,9 @@ SetKeyMap("<c-x><c-u>", "<Cmd>UndotreeToggle<cr>")
 
 -- Text
 -- other options: v$ v0o$
-SetKeyMap("<c-space>", "v", {"n"})
-SetKeyMap("<c-@>",     "v")
-SetKeyMap("<c-d>",     "yyp")
+SetKeyMap("<c-space>", "<esc>v", {"n"})
+SetKeyMap("<c-@>",     "<esc>v")
+SetKeyMap("<c-d>",     "<esc>yyp")
 
 -- https://stackoverflow.com/a/63887462/2338672
 SetKeyMap("<s-m-down>", "<Cmd>m .+1<cr>==",        {"n"})
