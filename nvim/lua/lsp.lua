@@ -58,17 +58,27 @@ cmp.setup.cmdline(':', {
   })
 })
 
+local lspSignatureConfig = {
+  hint_prefix = "🚥 ",
+  handler_opts = {
+    border = "single"
+  },
+}
+
 -- Set up lspconfig.
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 require('lspconfig').rust_analyzer.setup({
-    capabilities = capabilities
+    capabilities = capabilities,
+    on_attach = function(client, bufnr)
+        require "lsp_signature".on_attach(lspSignatureConfig, bufnr)
+    end,
 })
 require('lspconfig').pyright.setup({
-    capabilities = capabilities
+    capabilities = capabilities,
+    on_attach = function(client, bufnr)
+        require "lsp_signature".on_attach(lspSignatureConfig, bufnr)
+    end,
 })
-
--- Show method signature
--- vim.api.nvim_create_autocmd("CursorHold", {callback = vim.lsp.buf.signature_help})
 
 -- Go
 vim.g.go_auto_type_info = 0
@@ -80,7 +90,10 @@ vim.g.go_fmt_options = {
 }
 vim.g.go_def_mapping_enabled = 0
 require('lspconfig').gopls.setup({
-    capabilities = capabilities
+    capabilities = capabilities,
+    on_attach = function(client, bufnr)
+        require "lsp_signature".on_attach(lspSignatureConfig, bufnr)
+    end,
 })
 
 -- XML

@@ -134,6 +134,7 @@ revive
 ripgrep
 ripgrep-all
 rofi
+rofi-emoji
 ruff
 rust
 rust-analyzer

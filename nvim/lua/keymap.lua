@@ -53,8 +53,8 @@ SetKeyMap("<s-m-down>", "<Cmd>m .+1<cr>==",        {"n"})
 SetKeyMap("<s-m-up>",   "<Cmd>m .-2<cr>==",        {"n"})
 SetKeyMap("<s-m-down>", "<esc><Cmd>m .+1<cr>==gi", {"i"})
 SetKeyMap("<s-m-up>",   "<esc><Cmd>m .-2<cr>==gi", {"i"})
-SetKeyMap("<s-m-down>", "<Cmd>m '>+1<cr>gv=gv",    {"v"})
-SetKeyMap("<s-m-up>",   "<Cmd>m '<-2<cr>gv=gv",    {"v"})
+vim.cmd [[ vnoremap <s-m-down> :m '>+1<cr>gv=gv ]]
+vim.cmd [[ vnoremap <s-m-up>   :m '<-2<cr>gv=gv ]]
 
 -- https://vim.fandom.com/wiki/Map_Ctrl-Backspace_to_delete_previous_word
 SetKeyMap("<c-bs>", "<c-w>", {"n"})

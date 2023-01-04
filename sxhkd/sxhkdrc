@@ -16,6 +16,10 @@ super + c
 super + f
    rofi -show filebrowser -font "Lexend 10"
 
+# Emoji.
+super + e
+    rofi -modi emoji -show emoji
+
 # Switch windows.
 super + Tab
     rofi -show window -font "Lexend 10"
