@@ -94,6 +94,7 @@ SetKeyMap("<c-r><c-c>", "<Cmd>Telescope vim_bookmarks current_file<cr>")
 SetKeyMap("<c-r><c-a>", "<Cmd>Telescope vim_bookmarks all<cr>")
 
 -- Misc
-SetKeyMap("<c-s>", ":wa<cr>")
+SetKeyMap("<c-s>", "<esc>:wa<cr>")
+SetKeyMap("<c-q>", "<esc>:qa<cr>")
 -- https://stackoverflow.com/a/19877212/2338672
 SetKeyMap("<Esc><Esc>", "<Esc><Cmd>nohlsearch<cr><Esc>", {"n"})
