@@ -130,7 +130,6 @@ python-isort
 python-poetry
 python-pylint
 python-setuptools
-redis
 revive
 ripgrep
 ripgrep-all

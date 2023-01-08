@@ -96,6 +96,14 @@ require('lspconfig').gopls.setup({
     end,
 })
 
+-- YAML
+local yamlCfg = require("yaml-companion").setup({
+  builtin_matchers = {
+    kubernetes = { enabled = true },
+  },
+})
+require('lspconfig').yamlls.setup(yamlCfg)
+
 -- XML
 -- https://gist.github.com/ptitfred/3402279
 vim.api.nvim_create_autocmd("BufWritePre", {pattern = "*.xml", command = ":silent %!xmllint --format --encode UTF-8 --recover - 2>/dev/null"})

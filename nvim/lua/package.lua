@@ -6,6 +6,7 @@ return require('packer').startup(function(use)
 
   -- Theme
   use {"pineapplegiant/spaceduck", branch = "main"}
+  use {"projekt0n/github-nvim-theme"}
   use "norcalli/nvim-colorizer.lua"
 
   -- Scroll
@@ -44,7 +45,7 @@ return require('packer').startup(function(use)
   use "voldikss/vim-floaterm"
 
   -- Trouble
-  use {"folke/trouble.nvim", wants = "nvim-web-devicons"}
+  use {"folke/trouble.nvim", requires = "kyazdani42/nvim-web-devicons"}
 
   -- Development
   use "editorconfig/editorconfig-vim"
@@ -73,6 +74,16 @@ return require('packer').startup(function(use)
   use "dense-analysis/ale"
   use "hashivim/vim-terraform"
 
+  -- YAML
+  use {
+    "someone-stole-my-name/yaml-companion.nvim",
+    requires = {
+      { "neovim/nvim-lspconfig" },
+      { "nvim-lua/plenary.nvim" },
+      { "nvim-telescope/telescope.nvim" },
+    },
+  }
+
   -- Markdown
   use({
     "iamcco/markdown-preview.nvim",
@@ -98,6 +109,9 @@ return require('packer').startup(function(use)
   -- Bookmark
   use "MattesGroeger/vim-bookmarks"
   use "tom-anders/telescope-vim-bookmarks.nvim"
+
+  -- Keybinding
+  use "mrjones2014/legendary.nvim"
 
   -- Misc
   use "cappyzawa/trim.nvim"

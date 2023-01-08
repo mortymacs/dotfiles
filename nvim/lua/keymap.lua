@@ -1,4 +1,5 @@
 require("util")
+require('legendary').setup()
 
 -- Split and close panes
 SetKeyMap("<c-x><c-v>", "<Cmd>vsplit<cr>")
