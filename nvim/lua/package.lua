@@ -27,6 +27,7 @@ return require('packer').startup(function(use)
 
   -- Treesitter
   use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
+  use "nvim-treesitter/nvim-treesitter-context"
 
   -- File Manager
   use {"nvim-tree/nvim-tree.lua", wants = "nvim-web-devicons", tag = "nightly"}

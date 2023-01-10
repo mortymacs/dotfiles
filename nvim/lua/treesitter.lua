@@ -31,4 +31,5 @@ require('nvim-treesitter.configs').setup({
     additional_vim_regex_highlighting = {'org'},
   },
 })
+require("treesitter-context").setup()
 require("telescope").load_extension("yaml_schema")

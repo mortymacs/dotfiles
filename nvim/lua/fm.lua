@@ -7,6 +7,7 @@ vim.opt.termguicolors = true
 require('nvim-tree').setup({
   sync_root_with_cwd = true,
   respect_buf_cwd = true,
+  hijack_cursor = true,
   update_focused_file = {
     enable = true,
     update_root = true
@@ -37,6 +38,7 @@ require('nvim-tree').setup({
   },
   view = {
     hide_root_folder = true,
+    signcolumn = "no",
     mappings = {
       custom_only = true,
       list = {
@@ -60,8 +62,12 @@ require('nvim-tree').setup({
       },
     },
   },
+  actions = {
+    open_file = {
+      resize_window = false,
+    },
+  },
 })
-
 
 require("telescope").setup({
   defaults = {
