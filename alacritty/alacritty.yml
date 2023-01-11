@@ -7,11 +7,11 @@ window:
   dimensions:
     columns: 120
     lines: 30
-  decorations: full
+  decorations: none
   dynamic_padding: false
   padding:
-    x: 0
-    y: 0
+    x: 10
+    y: 10
 
 cursor:
   style:

@@ -35,6 +35,9 @@ vim.api.nvim_set_hl(0, "TelescopeResultNormal",  {bg = "#0f0f0f"})
 -- LSP
 vim.api.nvim_set_hl(0, "NormalFloat",  {bg = ""})
 
+-- FM
+vim.api.nvim_set_hl(0, "NvimTreeStatusLine", {bg = "", fg = ""})
+
 -- Bookmark
 vim.g.bookmark_sign = ''
 vim.g.bookmark_highlight_lines = 1

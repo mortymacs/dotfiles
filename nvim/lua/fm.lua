@@ -7,6 +7,7 @@ vim.opt.termguicolors = true
 require('nvim-tree').setup({
   sync_root_with_cwd = true,
   respect_buf_cwd = true,
+  disable_netrw = true,
   hijack_cursor = true,
   update_focused_file = {
     enable = true,
@@ -59,6 +60,38 @@ require('nvim-tree').setup({
         { key = "/",          action = "live_filter" },
         { key = "<c-f>",      action = "search_node" },
         { key = "<c-]>",      action = "close" },
+      },
+    },
+  },
+  renderer = {
+    icons = {
+      padding = " ",
+      symlink_arrow = "",
+      show = {
+        folder_arrow = false,
+      },
+      glyphs = {
+        folder = {
+          arrow_closed = "",
+          arrow_open = "",
+          default = "",
+          open = "",
+          empty = "",
+          empty_open = "",
+          symlink = "",
+          symlink_open = "",
+        },
+      },
+    },
+    indent_markers = {
+      enable = true,
+      inline_arrows = true,
+      icons = {
+        corner = "└",
+        edge = "│",
+        item = "│",
+        bottom = "─",
+        none = " ",
       },
     },
   },
