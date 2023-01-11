@@ -9,10 +9,6 @@ require('nvim-tree').setup({
   respect_buf_cwd = true,
   disable_netrw = true,
   hijack_cursor = true,
-  update_focused_file = {
-    enable = true,
-    update_root = true
-  },
   renderer = {
     icons = {
       show = {
@@ -66,9 +62,8 @@ require('nvim-tree').setup({
   renderer = {
     icons = {
       padding = " ",
-      symlink_arrow = "",
       show = {
-        folder_arrow = false,
+        folder_arrow = true,
       },
       glyphs = {
         folder = {

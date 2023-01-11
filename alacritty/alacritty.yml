@@ -3,15 +3,11 @@ env:
 
 # Window configuration (changes require restart).
 window:
-  opacity: 0.90
-  dimensions:
-    columns: 120
-    lines: 30
   decorations: none
   dynamic_padding: false
   padding:
-    x: 10
-    y: 10
+    x: 0
+    y: 0
 
 cursor:
   style:
