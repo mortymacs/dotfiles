@@ -1,7 +1,7 @@
 -- Lualine
 require('lualine').setup({
   options = {
-    theme = "auto",
+    theme = "ayu_dark",
     section_separators = "",
     component_separators = "",
     disabled_filetypes = {
