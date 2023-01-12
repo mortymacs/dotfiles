@@ -1,6 +1,8 @@
 require("github-theme").setup()
 vim.cmd.colorscheme("spaceduck")
-vim.g.lightline = "{'colorscheme': 'spaceduck'}"
+vim.g.lightline = {
+    colorscheme = 'spaceduck',
+}
 
 -- Body
 vim.api.nvim_set_hl(0, "Normal",      {bg = ""})
