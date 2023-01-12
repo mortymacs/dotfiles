@@ -18,6 +18,7 @@ return require('packer').startup(function(use)
 
   -- Statusbar
   use {"nvim-lualine/lualine.nvim", wants = "nvim-web-devicons"}
+  use "vimpostor/vim-tpipeline"
 
   -- Notification
   use "rcarriga/nvim-notify"
