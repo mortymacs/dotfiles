@@ -1,17 +1,19 @@
 # colors:
-# https://coolors.co/351431-eb5e55-e23e58-d81e5b-f3a712-f0cea0
+# https://coolors.co/1f2041-4b3f72-ffc857-119da4-19647e
 # https://github.com/pineapplegiant/spaceduck
 format = """
 $sudo\
 $username\
+[](fg:#1F2041 bg:#4B3F72)\
 $directory\
+[](fg:#4B3F72 bg:#119DA4)\
 $vcsh\
 $git_branch\
 $git_commit\
 $git_state\
 $git_metrics\
 $git_status\
-[](fg:#E23E58) """
+[](fg:#119DA4) """
 
 right_format = """
 $status\
@@ -28,12 +30,12 @@ add_newline = false
 
 [username]
 show_always = true
-style_user = 'bg:#351431 fg:#EED3EB'
-style_root = 'bg:#351431 fg:#EED3EB'
+style_user = 'bg:#1F2041 fg:#EED3EB'
+style_root = 'bg:#1F2041 fg:#EED3EB'
 format = '[ $user ]($style)'
 
 [directory]
-style = 'bg:#E23E58 fg:#ecf0c1'
+style = 'bg:#4B3F72 fg:#ecf0c1'
 format = '[ $path ]($style)'
 truncation_length = 3
 truncation_symbol = '…/'
@@ -48,26 +50,26 @@ conflicted = '='
 ahead = ''
 behind = ''
 diverged = ''
-style = 'bg:#D81E5B fg:#ecf0c1'
+style = 'bg:#119DA4 fg:#ecf0c1'
 format = '[$all_status$ahead_behind ]($style)'
 
 [git_branch]
 symbol = ''
-style = 'bg:#D81E5B fg:#ecf0c1'
+style = 'bg:#119DA4 fg:#ecf0c1'
 format = '[ $symbol $branch ]($style)'
 
 [git_commit]
 tag_disabled = false
 tag_symbol = ' 笠'
-style = 'bg:#D81E5B fg:#ecf0c1'
+style = 'bg:#119DA4 fg:#ecf0c1'
 format = '[\($hash$tag\) ]($style)'
 
 [git_state]
-style = 'bg:#D81E5B fg:#ecf0c1'
+style = 'bg:#119DA4 fg:#ecf0c1'
 format = '[\($state( $progress_current/$progress_total)\) ]($style)'
 
 [status]
-style = 'bold bg:#D81E5B fg:#ecf0c1'
+style = 'bold bg:#119DA4 fg:#ecf0c1'
 format = '[ $status ]($style)'
 disabled = false
 
@@ -84,6 +86,6 @@ format = '[$duration]($style)'
 
 [jobs]
 symbol = '+'
-style = 'bold fg:#D81E5B'
+style = 'bold fg:#19647E'
 number_threshold = 1
 format = '[\[$symbol$number\]]($style)'

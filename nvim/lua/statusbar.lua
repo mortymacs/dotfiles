@@ -2,7 +2,7 @@
 require('lualine').setup({
   options = {
     theme = "ayu_dark",
-    section_separators = "",
+    section_separators = {left = "", right = ""},
     component_separators = "",
     disabled_filetypes = {
       statusline = {"NvimTree"},
