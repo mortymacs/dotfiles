@@ -1,6 +1,3 @@
-env:
-  WINIT_X11_SCALE_FACTOR: "1"
-
 # Window configuration (changes require restart).
 window:
   decorations: none
