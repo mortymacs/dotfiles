@@ -13,7 +13,7 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 # https://github.com/alacritty/alacritty/issues/3299#issuecomment-582789847
 export WINIT_UNIX_BACKEND=x11
 export XDG_SESSION_TYPE=x11
-export WINIT_X11_SCALE_FACTOR=2
+export WINIT_X11_SCALE_FACTOR=1
 
 # Python.
 # https://github.com/python-poetry/poetry/issues/5250#issuecomment-1067193647
