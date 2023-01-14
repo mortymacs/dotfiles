@@ -243,7 +243,7 @@ function postgresql() {
 alias gt='fd | ctags --links=no -L-'
 http-server(){ python -m http.server "$1" & firefox http://localhost:"$1" }
 code-capture() { silicon "$1" -o $(basename "${1%%.*}.png") --no-window-controls --font "CodeNewRoman Nerd Font Mono" --background '#fff0' --theme Coldark-Dark }
-alias code-info='cloc'
+alias code-info='tokei'
 
 # C/C++.
 alias rcpp='rm -rf CMakeFiles/ Testing/ CMakeCache.txt *.cmake Makefile compile_commands.json *.cbp'

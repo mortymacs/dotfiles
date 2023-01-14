@@ -24,6 +24,9 @@ xss-lock --transfer-sleep-lock -- xsecurelock &
 # Background.
 feh --bg-fill "$HOME/.config/bspwm/wallpaper.jpg" &
 
+# Effect.
+#picom --daemon
+
 # Screenshot.
 flameshot &
 

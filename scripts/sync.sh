@@ -68,6 +68,10 @@ cp -R "$HOME"/.config/rofi/ .
 rm -rf bspwm
 cp -R "$HOME"/.config/bspwm/ .
 
+# picom
+rm -rf picom
+cp -R "$HOME/.config/picom/" .
+
 # sxhkd
 rm -rf sxhkd
 cp -R "$HOME"/.config/sxhkd/ .
