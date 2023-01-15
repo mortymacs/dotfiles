@@ -50,6 +50,7 @@ flex
 fmt
 fq
 fuse2
+fwupd
 fwupd-efi
 fzf
 gawk
