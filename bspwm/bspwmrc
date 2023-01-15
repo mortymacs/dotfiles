@@ -11,7 +11,7 @@ xrandr --output eDP-1 --primary --mode 2048x1152 --pos 0x0 --rotate normal --out
 xsetroot -cursor_name arrow
 
 # Bluetooth.
-blueman-applet &
+#blueman-applet &
 
 # Status bar.
 nm-applet &

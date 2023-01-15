@@ -10,7 +10,6 @@ bat
 bind
 binutils
 bison
-blueman
 bmon
 boost
 broot
@@ -51,7 +50,6 @@ flex
 fmt
 fq
 fuse2
-fwupd
 fwupd-efi
 fzf
 gawk
