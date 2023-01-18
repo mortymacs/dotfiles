@@ -114,6 +114,8 @@ rm -rf fonts/*
 cp "$HOME/.local/share/fonts/Lexend-VariableFont_wght.ttf" fonts/
 cp "$HOME/.local/share/fonts/Lexend-license.txt" fonts/
 cp "$HOME/.local/share/fonts/Code New Roman Nerd Font Complete Mono.otf" fonts/
+cp "$HOME/.local/share/fonts/Code New Roman Italic Nerd Font Complete Mono.otf" fonts/
+cp "$HOME/.local/share/fonts/Code New Roman Bold Nerd Font Complete Mono.otf" fonts/
 cp "$HOME/.local/share/fonts/CodeNewRoman-license.txt" fonts/
 
 # fonts config
