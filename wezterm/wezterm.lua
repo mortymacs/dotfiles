@@ -1,7 +1,5 @@
 local wezterm = require 'wezterm'
 return {
-  front_end = "OpenGL",
-
   -- Window
   window_decorations = "NONE",
   window_padding = {
@@ -17,11 +15,6 @@ return {
   show_new_tab_button_in_tab_bar = false,
   tab_bar_at_bottom = true,
   hide_tab_bar_if_only_one_tab = true,
-
-  -- Cursor
-  animation_fps = 1,
-  cursor_blink_ease_in = 'Constant',
-  cursor_blink_ease_out = 'Constant',
 
   -- Font
   font = wezterm.font 'monospace',
