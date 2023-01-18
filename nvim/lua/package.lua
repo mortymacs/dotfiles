@@ -92,6 +92,10 @@ return require('packer').startup(function(use)
     run = function() vim.fn["mkdp#util#install"]() end,
   })
 
+  -- Text
+  use "hrsh7th/nvim-insx"
+  use "echasnovski/mini.nvim"
+
   -- Tag
   use "preservim/tagbar"
 
@@ -115,6 +119,7 @@ return require('packer').startup(function(use)
 
   -- Keybinding
   use "mrjones2014/legendary.nvim"
+  use "folke/which-key.nvim"
 
   -- Misc
   use "cappyzawa/trim.nvim"

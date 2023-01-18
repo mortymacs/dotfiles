@@ -37,6 +37,10 @@ vim.opt.mouse = ""
 -- Clipboard
 vim.opt.clipboard = "unnamedplus"
 
+-- Timeout
+vim.opt.timeout = true
+vim.opt.timeoutlen = 300
+
 -- Misc
 vim.opt.hidden = true
 vim.opt.signcolumn = "yes"

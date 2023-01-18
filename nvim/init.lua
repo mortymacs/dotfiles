@@ -27,6 +27,9 @@ require("terminal")
 -- LSP
 require("lsp")
 
+-- Text
+require("text")
+
 -- Git
 require("git")
 
