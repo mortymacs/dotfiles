@@ -22,7 +22,7 @@ My environment config. I tried to keep it minimal and simple as much as I could.
 | Terminal Multiplexer | [Tmux](https://github.com/tmux/tmux) |
 | Editor/IDE | [Neovim](https://github.com/neovim/neovim) |
 | DB | [dbcli tools](https://github.com/dbcli) |
-| Fonts | General: [Lexend](https://github.com/googlefonts/lexend), Sans: [Anek Latin](https://github.com/EkType/Anek/) , Monospace: [Ellograph](https://connary.com/ellograph.html) |
+| Fonts | Display: [Lexend](https://github.com/googlefonts/lexend), Sans/Serif: [Anek Latin](https://github.com/EkType/Anek/) , Monospace: [Ellograph](https://connary.com/ellograph.html) |
 | File Manager | [Broot](https://github.com/Canop/broot) |
 | Launcher | [Rofi](https://github.com/davatorium/rofi) |
 | Browser | [Firefox](https://www.mozilla.org) |
