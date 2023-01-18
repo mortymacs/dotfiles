@@ -1,5 +1,8 @@
 local wezterm = require 'wezterm'
 return {
+  -- Wezterm
+  front_end = "OpenGL",
+
   -- Window
   window_decorations = "NONE",
   window_padding = {
