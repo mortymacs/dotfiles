@@ -10,6 +10,9 @@ window:
 cursor:
   style:
     shape: Beam
+    blinking: Always
+    blink_interval: 100
+    vi_mode_style: Beam
 
 mouse:
   hide_when_typing: true
@@ -17,20 +20,8 @@ mouse:
 selection:
   save_to_clipboard: true
 
-font_name: &font_name monospace
 font:
   size: 12.5
-  normal:
-    family: *font_name
-    style: Regular
-
-  bold:
-    family: *font_name
-    style: Bold
-
-  italic:
-    family: *font_name
-    style: Italic
 
   offset:
     x: 0
@@ -48,6 +39,14 @@ colors:
   primary:
     background: '#0f0f0f'
     foreground: '#ecf0c1'
+
+  cursor:
+    cursor:    '#4B3F72'
+
+  selection:
+    text:       '#ecf0c1'
+    background: '#1F2041'
+
   # Normal colors
   normal:
     black:   '#000000'
