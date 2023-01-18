@@ -33,7 +33,7 @@ export TERM="xterm-256color"
 # Editors.
 export VISUAL=nvim
 export EDITOR=nvim
-export TERMINAL=alacritty
+export TERMINAL=wezterm
 
 # Bat
 export BAT_THEME='Monokai Extended Origin'

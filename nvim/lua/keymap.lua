@@ -39,6 +39,7 @@ SetKeyMap("<c-g><c-s>", "<Cmd>Telescope git_status<cr>")
 SetKeyMap("<c-g><c-b>", "<Cmd>Telescope git_branches<cr>")
 SetKeyMap("<c-g><c-c>", "<Cmd>Telescope git_commits<cr>")
 SetKeyMap("<c-g><c-t>", "<Cmd>Telescope git_stash<cr>")
+SetKeyMap("<c-g><c-e>", "<esc><Cmd>GHInteractive<cr>")
 
 -- History
 SetKeyMap("<c-x><c-u>", "<Cmd>UndotreeToggle<cr>")

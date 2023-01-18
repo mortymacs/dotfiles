@@ -2,7 +2,7 @@
 
 # Terminal.
 super + Return
-    alacritty msg create-window 2>/dev/null || alacritty
+    wezterm
 
 # Launcher.
 super + d
