@@ -183,6 +183,7 @@ xclip
 xorg-server
 xorg-xinit
 xorg-xsetroot
+xplr
 xsecurelock
 xss-lock
 yaml-language-server
