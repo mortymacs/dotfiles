@@ -3,6 +3,7 @@ arc-icon-theme
 asciinema
 autoconf
 automake
+awesome
 aws-cli-v2
 base
 bat
@@ -93,6 +94,7 @@ linux
 linux-firmware
 lolcat
 ltrace
+luacheck
 m4
 mage
 make
@@ -169,6 +171,7 @@ udiskie
 unrar
 unzip
 valgrind
+viu
 vulkan-intel
 wezterm
 wget

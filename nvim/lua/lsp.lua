@@ -1,6 +1,9 @@
 -- Rust
 require('crates').setup()
 
+-- Fidget
+require("fidget").setup()
+
 local cmp = require'cmp'
 
 local kind_icons = {

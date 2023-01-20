@@ -53,6 +53,7 @@ return require('packer').startup(function(use)
   use "editorconfig/editorconfig-vim"
   use "npxbr/glow.nvim"
   use "RRethy/vim-illuminate"
+  use "j-hui/fidget.nvim"
 
   -- LSP
   use "neovim/nvim-lspconfig"

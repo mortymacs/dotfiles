@@ -1,6 +1,9 @@
 -- Body
 vim.opt.nu = true
 
+-- Cursor
+vim.opt.guicursor = { "a:ver1" }
+
 -- File, syntax and theme
 vim.opt.filetype = "on"
 vim.opt.compatible = false
