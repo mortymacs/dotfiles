@@ -96,6 +96,7 @@ lolcat
 ltrace
 lua-language-server
 luacheck
+luarocks
 m4
 mage
 make
