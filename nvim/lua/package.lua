@@ -76,6 +76,7 @@ return require('packer').startup(function(use)
   use "fatih/vim-go"
   use "dense-analysis/ale"
   use "hashivim/vim-terraform"
+  use "folke/neodev.nvim"
 
   -- YAML
   use {
@@ -124,4 +125,5 @@ return require('packer').startup(function(use)
 
   -- Misc
   use "cappyzawa/trim.nvim"
+  use "nacro90/numb.nvim"
 end)

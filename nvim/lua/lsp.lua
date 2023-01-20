@@ -4,8 +4,10 @@ require('crates').setup()
 -- Fidget
 require("fidget").setup()
 
-local cmp = require'cmp'
+-- Lua
+require("neodev").setup()
 
+-- Icon
 local kind_icons = {
   Text = '',
   Method = '',
@@ -34,6 +36,7 @@ local kind_icons = {
   TypeParameter = '',
 }
 
+local cmp = require('cmp')
 cmp.setup({
   snippet = {
     expand = function(args)
@@ -110,14 +113,11 @@ local lspSignatureConfig = {
 }
 
 -- Set up lspconfig.
+local lspconfig = require('lspconfig')
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
-require('lspconfig').rust_analyzer.setup({
-    capabilities = capabilities,
-    on_attach = function(client, bufnr)
-        require "lsp_signature".on_attach(lspSignatureConfig, bufnr)
-    end,
-})
-require('lspconfig').pyright.setup({
+
+-- Rust
+lspconfig.rust_analyzer.setup({
     capabilities = capabilities,
     on_attach = function(client, bufnr)
         require "lsp_signature".on_attach(lspSignatureConfig, bufnr)
@@ -133,7 +133,23 @@ vim.g.go_fmt_options = {
     golines = '-m 128 --base-formatter gofumpt'
 }
 vim.g.go_def_mapping_enabled = 0
-require('lspconfig').gopls.setup({
+lspconfig.gopls.setup({
+    capabilities = capabilities,
+    on_attach = function(client, bufnr)
+        require "lsp_signature".on_attach(lspSignatureConfig, bufnr)
+    end,
+})
+
+-- Lua
+lspconfig.sumneko_lua.setup({
+    capabilities = capabilities,
+    on_attach = function(client, bufnr)
+      require "lsp_signature".on_attach(lspSignatureConfig, bufnr)
+    end,
+})
+
+-- Python
+lspconfig.pyright.setup({
     capabilities = capabilities,
     on_attach = function(client, bufnr)
         require "lsp_signature".on_attach(lspSignatureConfig, bufnr)
@@ -146,7 +162,7 @@ local yamlCfg = require("yaml-companion").setup({
     kubernetes = { enabled = true },
   },
 })
-require('lspconfig').yamlls.setup(yamlCfg)
+lspconfig.yamlls.setup(yamlCfg)
 
 -- XML
 -- https://gist.github.com/ptitfred/3402279

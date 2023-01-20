@@ -94,6 +94,7 @@ linux
 linux-firmware
 lolcat
 ltrace
+lua-language-server
 luacheck
 m4
 mage
