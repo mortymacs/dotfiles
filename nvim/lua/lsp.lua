@@ -2,7 +2,14 @@
 require('crates').setup()
 
 -- Fidget
-require("fidget").setup()
+require("fidget").setup({
+  text = {
+      spinner = "dots_pulse",
+  },
+  window = {
+    border = "single"
+  },
+})
 
 -- Lua
 require("neodev").setup()

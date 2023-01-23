@@ -17,7 +17,7 @@ require('lualine').setup({
     lualine_z = {"progress"},
   },
 })
-vim.cmd("set cmdheight=0")
+vim.cmd("set cmdheight=1")
 vim.cmd("set laststatus=3")
 
 -- Trouble

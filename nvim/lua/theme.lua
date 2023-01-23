@@ -34,6 +34,10 @@ vim.api.nvim_set_hl(0, "TelescopePreviewNormal", {bg = "#0f0f0f"})
 vim.api.nvim_set_hl(0, "TelescopePromptNormal",  {bg = "#0f0f0f"})
 vim.api.nvim_set_hl(0, "TelescopeResultNormal",  {bg = "#0f0f0f"})
 
+-- Development
+vim.api.nvim_set_hl(0, "FidgetTitle", {bg = "#0f0f0f"})
+vim.api.nvim_set_hl(0, "FidgetTask",  {bg = "#0f0f0f"})
+
 -- LSP
 vim.api.nvim_set_hl(0, "Pmenu",                    {fg = "#ecf0c1", bg = "#1b263b"})
 vim.api.nvim_set_hl(0, "PmenuSel",                 {fg = "#EED8DA", bg = "#B5585F"})
