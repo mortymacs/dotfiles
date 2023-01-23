@@ -20,7 +20,7 @@ return require('packer').startup(function(use)
   use "rcarriga/nvim-notify"
 
   -- Splash screen
-  use "mhinz/vim-startify"
+  use {"goolord/alpha-nvim", requires = { 'nvim-tree/nvim-web-devicons' }}
 
   -- Treesitter
   use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
@@ -50,6 +50,7 @@ return require('packer').startup(function(use)
   use "npxbr/glow.nvim"
   use "RRethy/vim-illuminate"
   use "j-hui/fidget.nvim"
+  use "ggandor/leap.nvim"
 
   -- LSP
   use "neovim/nvim-lspconfig"
