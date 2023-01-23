@@ -9,16 +9,12 @@ return require('packer').startup(function(use)
   use {"projekt0n/github-nvim-theme"}
   use "norcalli/nvim-colorizer.lua"
 
-  -- Scroll
-  use "karb94/neoscroll.nvim"
-
   -- Tabbar
   use "nvim-tree/nvim-web-devicons"
   use {"romgrk/barbar.nvim", wants = "nvim-web-devicons"}
 
   -- Statusbar
   use {"nvim-lualine/lualine.nvim", wants = "nvim-web-devicons"}
-  use "vimpostor/vim-tpipeline"
 
   -- Notification
   use "rcarriga/nvim-notify"
