@@ -16,9 +16,9 @@ cp -R "$HOME/.icons/" icons
 rm -rf zsh/*
 cp "$HOME"/{.zshrc,.zsh_aliases,.zshenv} zsh/
 
-# wezterm
-rm -rf wezterm/
-cp -R "$HOME"/.config/wezterm/ .
+# alacritty
+rm -rf alacritty/
+cp -R "$HOME"/.config/alacritty .
 
 # starship
 rm -rf starship/*

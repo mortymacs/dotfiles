@@ -176,7 +176,6 @@ unzip
 valgrind
 viu
 vulkan-intel
-wezterm
 wget
 which
 whois
