@@ -116,7 +116,7 @@ cp "$HOME/.local/share/fonts/Lexend-license.txt" fonts/
 cp "$HOME/.local/share/fonts/AnekLatin.ttf" fonts/
 cp "$HOME/.local/share/fonts/AnekLatin-license.txt" fonts/
 
-# fonts config
+# fontconfig
 rm -rf fontconfig/*
 cp "$HOME/.config/fontconfig/fonts.conf" fontconfig/
 
