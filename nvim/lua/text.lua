@@ -22,6 +22,7 @@ require('mini.move').setup({
 -- Indentation
 require('mini.indentscope').setup({
     draw = {
-        delay = 10,
+        animation = require('mini.indentscope').gen_animation.none(),
     },
+    symbol = "│",
 })
