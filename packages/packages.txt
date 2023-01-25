@@ -173,6 +173,7 @@ ttf-nerd-fonts-symbols-2048-em-mono
 udiskie
 unrar
 unzip
+uwufetch
 valgrind
 viu
 vulkan-intel
