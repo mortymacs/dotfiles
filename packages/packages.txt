@@ -84,7 +84,6 @@ ipcalc
 ipython
 iwd
 jq
-kitty
 kmon
 kubectl
 kubectx
@@ -170,8 +169,6 @@ torsocks
 trash-cli
 tree
 ttf-font-awesome
-ttf-jetbrains-mono
-ttf-jetbrains-mono-nerd
 ttf-joypixels
 ttf-nerd-fonts-symbols-2048-em-mono
 udiskie
@@ -181,7 +178,6 @@ uwufetch
 valgrind
 viu
 vulkan-intel
-wezterm
 wget
 which
 whois
