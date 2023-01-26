@@ -84,6 +84,7 @@ ipcalc
 ipython
 iwd
 jq
+kitty
 kmon
 kubectl
 kubectx
@@ -156,6 +157,7 @@ staticcheck
 strace
 sudo
 sxhkd
+tealdeer
 terraform
 texinfo
 the_silver_searcher
@@ -168,6 +170,7 @@ torsocks
 trash-cli
 tree
 ttf-font-awesome
+ttf-jetbrains-mono
 ttf-jetbrains-mono-nerd
 ttf-joypixels
 ttf-nerd-fonts-symbols-2048-em-mono
@@ -178,6 +181,7 @@ uwufetch
 valgrind
 viu
 vulkan-intel
+wezterm
 wget
 which
 whois
