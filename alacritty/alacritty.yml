@@ -29,7 +29,7 @@ font:
 
   glyph_offset:
     x: 0
-    y: 0
+    y: 1
 
 # Color configuration.
 # https://github.com/pineapplegiant/spaceduck-terminal
