@@ -4,9 +4,6 @@ require('lualine').setup({
     theme = "ayu_mirage",
     section_separators = {left = "", right = ""},
     component_separators = "",
-    -- disabled_filetypes = {
-      -- statusline = {"NvimTree"},
-    -- },
     globalstatus = true,
   },
   sections = {
