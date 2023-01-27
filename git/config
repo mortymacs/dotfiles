@@ -18,7 +18,7 @@
     diffFilter = delta --color-only
 
 [delta]
-    features = decorations mantis-shrimp
+    features = decorations woolly-mammoth
     line-numbers = true
     side-by-side = true
     dark = true
