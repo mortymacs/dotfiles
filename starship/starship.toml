@@ -41,15 +41,6 @@ truncation_length = 3
 truncation_symbol = '…/'
 
 [git_status]
-deleted = 'x'
-renamed = '>>'
-staged = '+'
-modified = '!'
-untracked = '?'
-conflicted = '='
-ahead = ''
-behind = ''
-diverged = ''
 style = 'bg:#119DA4 fg:#ecf0c1'
 format = '[$all_status$ahead_behind ]($style)'
 
