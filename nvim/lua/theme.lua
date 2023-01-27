@@ -74,6 +74,9 @@ vim.api.nvim_set_hl(0, "CmpItemKindTypeParameter", {fg = "#E23E58"})
 -- FM
 vim.api.nvim_set_hl(0, "NvimTreeStatusLine", {bg = "", fg = ""})
 
+-- Mini
+vim.api.nvim_set_hl(0, "MiniIndentscopeSymbol", {fg = "#686f9a"})
+
 -- Bookmark
 vim.g.bookmark_sign = ''
 vim.g.bookmark_highlight_lines = 1

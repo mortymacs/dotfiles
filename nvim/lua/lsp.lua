@@ -28,6 +28,9 @@ for type, icon in pairs(signs) do
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
 
+-- Tags
+vim.g.fzf_tags_command = "fd | ctags -R --links=no -L-"
+
 -- Icon
 local kind_icons = {
   Text = '',
@@ -214,9 +217,3 @@ vim.g.ale_fixers = {
     ["*"] = {"remove_trailing_lines", "trim_whitespace"},
     python = {"black", "isort"},
 }
-
--- Indent Blankline
-require("indent_blankline").setup({
-  show_current_context = true,
-  show_current_context_start = true,
-})

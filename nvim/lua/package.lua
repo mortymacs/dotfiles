@@ -28,7 +28,7 @@ return require('packer').startup(function(use)
 
   -- File Manager
   use {"nvim-tree/nvim-tree.lua", wants = "nvim-web-devicons", tag = "nightly"}
-  use { "nvim-telescope/telescope-file-browser.nvim" }
+  use "nvim-telescope/telescope-file-browser.nvim"
 
   -- FZF
   use "junegunn/fzf.vim"
@@ -63,7 +63,6 @@ return require('packer').startup(function(use)
   use "hrsh7th/cmp-vsnip"
   use "hrsh7th/vim-vsnip"
   use "ray-x/lsp_signature.nvim"
-  use "lukas-reineke/indent-blankline.nvim"
   use "lukas-reineke/cmp-rg"
   use {
     "saecki/crates.nvim",
