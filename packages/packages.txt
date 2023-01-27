@@ -4,7 +4,6 @@ arc-icon-theme
 asciinema
 autoconf
 automake
-awesome
 aws-cli-v2
 base
 bat
