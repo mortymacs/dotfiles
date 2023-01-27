@@ -4,18 +4,16 @@
 format = """
 $sudo\
 $username\
-[](fg:#1F2041 bg:#4B3F72)\
+(fg:#1F2041 bg:#4B3F72)\
 $directory\
-[](fg:#4B3F72 bg:#119DA4)\
+(fg:#4B3F72 bg:#119DA4)\
 $vcsh\
 $git_branch\
 $git_commit\
 $git_state\
 $git_metrics\
-$git_status\
-[](fg:#119DA4) """
-
-right_format = """
+$git_status \
+$fill \
 $status\
 $container\
 $kubernetes\
@@ -23,10 +21,18 @@ $helm\
 $terraform\
 $env_var\
 $cmd_duration\
-$jobs"""
+$jobs\n$character\
+"""
 
 continuation_prompt = '>>'
 add_newline = false
+
+[fill]
+symbol = '-'
+style = 'fg:#30365F'
+
+[character]
+success_symbol = '[>](bold green)'
 
 [username]
 show_always = true
