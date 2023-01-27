@@ -97,6 +97,7 @@ require('nvim-tree').setup({
   },
 })
 
+-- Telescope
 require("telescope").setup({
   defaults = {
     layout_strategy = 'vertical',
