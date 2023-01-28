@@ -21,7 +21,7 @@ selection:
   save_to_clipboard: true
 
 font:
-  size: 14
+  size: 13
 
   offset:
     x: 0
