@@ -1,7 +1,6 @@
 air-bin
 breezex-cursor-theme
 chart-testing
-dive
 dry-bin
 figlet-fonts
 ghq
