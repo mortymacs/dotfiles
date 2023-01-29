@@ -21,7 +21,7 @@ return {
 
   -- Font
   font = wezterm.font 'monospace',
-  font_size = 12.5,
+  font_size = 13,
 
   -- Colors
   colors = {
