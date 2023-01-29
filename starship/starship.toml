@@ -33,6 +33,7 @@ style = 'fg:#30365F'
 
 [character]
 success_symbol = '[>](bold green)'
+error_symbol = '[>](bold red)'
 
 [username]
 show_always = true
@@ -51,7 +52,6 @@ style = 'bg:#119DA4 fg:#ecf0c1'
 format = '[$all_status$ahead_behind ]($style)'
 
 [git_branch]
-symbol = ''
 style = 'bg:#119DA4 fg:#ecf0c1'
 format = '[ $symbol $branch ]($style)'
 
