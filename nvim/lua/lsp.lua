@@ -7,6 +7,7 @@ require("fidget").setup({
       spinner = "dots_pulse",
   },
   window = {
+    blend = 0,
     border = "single"
   },
 })
