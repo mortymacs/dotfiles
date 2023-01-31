@@ -74,6 +74,11 @@ return require('packer').startup(function(use)
   use "hashivim/vim-terraform"
   use "folke/neodev.nvim"
   use "dnlhc/glance.nvim"
+  use {
+    "glepnir/lspsaga.nvim",
+    branch = "main",
+    requires = { "nvim-tree/nvim-web-devicons" }
+  }
 
   -- YAML
   use {

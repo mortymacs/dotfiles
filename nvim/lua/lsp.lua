@@ -230,3 +230,6 @@ require('glance').setup({
         folded = true,
     },
 })
+
+-- Saga
+require("lspsaga").setup()
