@@ -65,6 +65,7 @@ format = '[\($state($progress_current/$progress_total)\)]($style)'
 ahead = '󰁝'
 behind = '󰁅'
 diverged = '󰹹'
+deleted = 'x'
 style = 'bg:#119DA4 fg:#ecf0c1'
 format = '[$all_status$ahead_behind ]($style)'
 
