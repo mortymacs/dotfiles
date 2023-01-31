@@ -218,3 +218,15 @@ vim.g.ale_fixers = {
     ["*"] = {"remove_trailing_lines", "trim_whitespace"},
     python = {"black", "isort"},
 }
+
+-- Glance
+require('glance').setup({
+    preview_win_opts = {
+        cursorline = false,
+    },
+    folds = {
+        fold_closed = '>',
+        fold_open = 'v',
+        folded = true,
+    },
+})

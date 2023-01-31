@@ -76,9 +76,9 @@ SetKeyMap("<c-c><c-a>", "<Cmd>TagbarToggle<cr>")
 
 -- LSP
 SetKeyMap("<c-c><c-d>",     vim.lsp.buf.definition)
-SetKeyMap("<c-c><c-t>",     vim.lsp.buf.type_definition)
-SetKeyMap("<c-c><c-i>",     vim.lsp.buf.implementation)
-SetKeyMap("<c-c><c-r>",     builtin.lsp_references)
+SetKeyMap("<c-c><c-t>",     "<Cmd>Glance type_definitions<cr>")
+SetKeyMap("<c-c><c-i>",     "<Cmd>Glance implementations<cr>")
+SetKeyMap("<c-c><c-r>",     "<Cmd>Glance references<cr>")
 SetKeyMap("<c-c><c-e>",     vim.lsp.buf.rename)
 SetKeyMap("<c-c><c-k>",     vim.lsp.buf.document_symbol)
 SetKeyMap("<c-c><c-f>",     function() vim.lsp.buf.format { async = true } end)

@@ -73,6 +73,7 @@ return require('packer').startup(function(use)
   use "dense-analysis/ale"
   use "hashivim/vim-terraform"
   use "folke/neodev.nvim"
+  use "dnlhc/glance.nvim"
 
   -- YAML
   use {

@@ -25,7 +25,7 @@ vim.opt.expandtab = true
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.backspace = "2"
-vim.opt.list = true
+vim.opt.list = false
 
 -- Menu
 vim.opt.completeopt = "menu,menuone,noselect"
