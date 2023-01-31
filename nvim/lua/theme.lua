@@ -19,6 +19,7 @@ vim.api.nvim_set_hl(0, "GitSignsDelete", {bg = "", fg = "#ce6f8f"})
 
 -- Terminal
 vim.api.nvim_set_hl(0, "FloatermBorder", {fg = "#1b1c36"})
+vim.api.nvim_set_hl(0, "Floaterm",       {fg = "#1b1c36"})
 
 -- Notification
 vim.api.nvim_set_hl(0, "NotifyDEBUGBody",  {bg = "#0f0f0f"})

@@ -22,7 +22,8 @@ alias less='less -N'
 alias pdf='zathura'
 
 # Picture.
-alias pic="feh"
+alias pic="viu"
+alias pic-ascii="ascii-image-converter"
 
 # Mics.
 alias reload="source ~/.zshrc"
