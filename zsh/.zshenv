@@ -36,7 +36,7 @@ export EDITOR=nvim
 export TERMINAL=wezterm
 
 # Bat
-export BAT_THEME='Monokai Extended Origin'
+export BAT_THEME='ansi'
 
 # Fzf.
 export FZF_DEFAULT_COMMAND='fd --type f'
