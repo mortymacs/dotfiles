@@ -171,6 +171,7 @@ tree
 ttf-font-awesome
 ttf-joypixels
 ttf-nerd-fonts-symbols-2048-em-mono
+ttf-nerd-fonts-symbols-common
 udiskie
 unrar
 unzip
