@@ -33,7 +33,7 @@ export TERM="xterm-256color"
 # Editors.
 export VISUAL=nvim
 export EDITOR=nvim
-export TERMINAL=wezterm
+export TERMINAL=alacritty
 
 # Bat
 export BAT_THEME='ansi'
