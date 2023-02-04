@@ -1,6 +1,5 @@
 require("util")
 require('legendary').setup()
-local builtin = require('telescope.builtin')
 
 -- Split and close panes
 SetKeyMap("<c-x><c-v>", "<Cmd>vsplit<cr>")
@@ -8,10 +7,10 @@ SetKeyMap("<c-x><c-h>", "<Cmd>split<cr>")
 SetKeyMap("<c-x><c-c>", "<Cmd>close<cr>")
 
 -- Moving around panes
-SetKeyMap("<m-up>",    "<c-w><c-k>")
-SetKeyMap("<m-down>",  "<c-w><c-j>")
-SetKeyMap("<m-left>",  "<c-w><c-h>")
-SetKeyMap("<m-right>", "<c-w><c-l>")
+SetKeyMap("<m-up>",    "<esc><c-w><c-k>")
+SetKeyMap("<m-down>",  "<esc><c-w><c-j>")
+SetKeyMap("<m-left>",  "<esc><c-w><c-h>")
+SetKeyMap("<m-right>", "<esc><c-w><c-l>")
 
 -- Resize panes
 SetKeyMap("<c-s-up>",    "<Cmd>resize -1<cr>")
@@ -21,7 +20,7 @@ SetKeyMap("<c-s-right>", "<Cmd>vertical resize -1<cr>")
 
 -- Buffer
 SetKeyMap("<c-x><c-e>", ":Bd!<cr>")
-SetKeyMap("<c-f>", "<Cmd>Telescope current_buffer_fuzzy_find<cr>")
+SetKeyMap("<c-f>",      "<Cmd>Telescope current_buffer_fuzzy_find<cr>")
 
 -- File and directory
 SetKeyMap("<c-x><c-f>", "<Cmd>Files<cr>")
@@ -83,7 +82,7 @@ SetKeyMap("<c-c><c-r>",     "<Cmd>Glance references<cr>")
 SetKeyMap("<c-c><c-e>",     vim.lsp.buf.rename)
 SetKeyMap("<c-c><c-v>",     "<Cmd>Lspsaga lsp_finder<cr>")
 SetKeyMap("<c-c><c-k>",     "<Cmd>Lspsaga hover_doc<cr>")
-SetKeyMap("<c-c><c-f>",     function() vim.lsp.buf.format { async = true } end)
+SetKeyMap("<c-c><c-l>",     function() vim.lsp.buf.format { async = true } end)
 SetKeyMap("<c-_>",          ":'<,'>CommentToggle<cr>",                          {"v"})
 SetKeyMap("<c-_>",          "<Cmd>CommentToggle<cr>:+1<cr>",                    {"n"})
 SetKeyMap("<c-_>",          "<esc><Cmd>CommentToggle<cr>:+1<cr>",               {"i"})
