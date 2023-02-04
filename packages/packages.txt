@@ -1,3 +1,4 @@
+alacritty
 arc-gtk-theme
 arc-icon-theme
 asciinema
@@ -177,7 +178,6 @@ uwufetch
 valgrind
 viu
 vulkan-intel
-wezterm
 wget
 which
 whois
