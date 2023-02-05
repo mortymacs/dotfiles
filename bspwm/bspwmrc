@@ -1,17 +1,17 @@
 #! /bin/sh
 # colors: https://github.com/pineapplegiant/spaceduck
 
+# Monitor.
+bspc config merge_overlapping_monitors false
+
 # Keybinding.
 pgrep -x sxhkd > /dev/null || sxhkd &
-
-# Default resolution (laptop).
-xrandr --output eDP-1 --primary --mode 2048x1152 --pos 0x0 --rotate normal --output DP-1 --off --output DP-2 --off
 
 # Mouse.
 xsetroot -cursor_name arrow
 
 # Bluetooth.
-#blueman-applet &
+blueman-applet &
 
 # Status bar.
 nm-applet &
@@ -22,10 +22,7 @@ xset s 180
 xss-lock --transfer-sleep-lock -- xsecurelock &
 
 # Background.
-feh --bg-fill "$HOME/.config/bspwm/wallpaper.jpg" &
-
-# Effect.
-#picom --daemon
+feh --bg-fill "$HOME/.config/bspwm/wallpaper.jpg"
 
 # Screenshot.
 flameshot &

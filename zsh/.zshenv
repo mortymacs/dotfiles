@@ -62,5 +62,11 @@ export XSECURELOCK_SHOW_DATETIME=0
 # Man
 export MANPAGER=most
 
+# Monitors
+INTERNAL_MONITOR=$(xrandr | \grep primary | cut -d' ' -f1)
+INTERNAL_MONITOR_RESOLUTION=$(xrandr | \grep -A15 primary | \grep '59.99    59.98' | cut -d' ' -f4)
+EXTERNAL_MONITOR=$(xrandr | \grep ' connected' | tail -1 | cut -d' ' -f1)
+EXTERNAL_MONITOR_RESOLUTION=$(xrandr | \grep -A1 ' connected' | tail -1 | cut -d' ' -f4)
+
 # General.
 export PATH="$PATH:$HOME/.local/bin:$GOPATH/bin"
