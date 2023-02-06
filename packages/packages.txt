@@ -192,6 +192,7 @@ yaml-language-server
 youtube-dl
 yq
 zathura-pdf-mupdf
+zenity
 zip
 zoxide
 zram-generator
