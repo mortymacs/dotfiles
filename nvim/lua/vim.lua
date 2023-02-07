@@ -1,5 +1,5 @@
 -- Body
-vim.opt.nu = false
+vim.opt.nu = true
 
 -- Cursor
 vim.opt.guicursor = { "a:ver1" }
