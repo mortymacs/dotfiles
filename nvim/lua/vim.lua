@@ -15,6 +15,7 @@ vim.opt.background = "dark"
 -- Backup
 vim.opt.backup = false
 vim.opt.writebackup = false
+vim.opt.swapfile = false
 vim.opt.updatetime = 300
 
 -- Indentation
