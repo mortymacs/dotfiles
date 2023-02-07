@@ -11,7 +11,7 @@ dashboard.section.header.val = {
     "o8o        `8        `8'       o888o o8o        o888o",
 }
 dashboard.section.buttons.val = {
-    dashboard.button("e", "  New file",          "<cmd>ene <CR>"),
+    dashboard.button("n", "  New file",          "<cmd>ene <CR>"),
     dashboard.button("f", "  Find file",         "<Cmd>Files<cr>"),
     dashboard.button("t", "  Find tags",         "<Cmd>Tags<cr>"),
     dashboard.button("g", "  Find word",         "<Cmd>Telescope live_grep<cr>"),
