@@ -71,6 +71,11 @@ vim.api.nvim_set_hl(0, "CmpItemKindEnumMember",    {fg = "#F3A712"})
 vim.api.nvim_set_hl(0, "CmpItemKindInterface",     {fg = "#E23E58"})
 vim.api.nvim_set_hl(0, "CmpItemKindColor",         {fg = "#E23E58"})
 vim.api.nvim_set_hl(0, "CmpItemKindTypeParameter", {fg = "#E23E58"})
+vim.api.nvim_set_hl(0, "GlancePreviewNormal",      {bg = "#181818"})
+vim.api.nvim_set_hl(0, "GlancePreviewMatch",       {bg = "#181818"})
+vim.api.nvim_set_hl(0, "GlancePreviewSignColumn",  {bg = "#181818"})
+vim.api.nvim_set_hl(0, "GlancePreviewLineNr",      {bg = "#181818"})
+vim.api.nvim_set_hl(0, "GlanceListNormal",         {bg = "#181818"})
 
 -- FM
 vim.api.nvim_set_hl(0, "NvimTreeStatusLine", {bg = "", fg = ""})
