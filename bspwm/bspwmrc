@@ -22,7 +22,7 @@ xset s 180
 xss-lock --transfer-sleep-lock -- xsecurelock &
 
 # Background.
-feh --bg-fill "$HOME/.config/bspwm/wallpaper.jpg"
+hsetroot -solid '#0f0f0f'
 
 # Screenshot.
 flameshot &

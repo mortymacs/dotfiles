@@ -71,6 +71,7 @@ gzip
 helm
 hexyl
 hq
+hsetroot
 httpie
 hugo
 hyperfine
