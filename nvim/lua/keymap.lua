@@ -91,6 +91,7 @@ SetKeyMap("<c-c><c-Right>", vim.diagnostic.goto_next)
 SetKeyMap("<c-c><c-Left>",  vim.diagnostic.goto_prev)
 SetKeyMap("<c-c><c-s>",     "<Cmd>Tags<cr>")
 SetKeyMap("<c-c><c-f>",     "<Cmd>BTags<cr>")
+SetKeyMap("<c-c><c-p>",     "<Cmd>Lspsaga peek_definition<cr>")
 
 -- Bookmark
 SetKeyMap("<c-r><c-c>", "<Cmd>Telescope vim_bookmarks current_file<cr>")
