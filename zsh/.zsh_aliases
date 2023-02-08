@@ -91,7 +91,6 @@ monitor() {
 external
 internal
 EOF
-    feh --bg-fill "$HOME/.config/bspwm/wallpaper.jpg"
 )
     if [[ "$target" == "external" ]]; then
         monitor-external
