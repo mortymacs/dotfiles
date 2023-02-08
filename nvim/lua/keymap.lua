@@ -72,7 +72,7 @@ SetKeyMap("<Tab>",     ">gv",   {"v"})
 SetKeyMap("<S-Tab>",   "<gv",   {"v"})
 
 -- Tagbar
-SetKeyMap("<c-c><c-a>", "<Cmd>TagbarToggle<cr>")
+SetKeyMap("<c-c><c-a>", "<Cmd>Lspsaga outline<cr>")
 
 -- LSP
 SetKeyMap("<c-c><c-d>",     vim.lsp.buf.definition)
