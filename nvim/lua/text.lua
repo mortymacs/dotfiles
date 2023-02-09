@@ -27,3 +27,8 @@ require('mini.indentscope').setup({
     symbol = "│",
 })
 vim.api.nvim_create_autocmd("FileType", { pattern = {"alpha", "NvimTree"}, command = ":lua vim.b.miniindentscope_disable=true" })
+
+-- Highlight
+require('illuminate').configure({
+  filetypes_denylist = {"alpha", "NvimTree"},
+})
