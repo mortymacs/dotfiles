@@ -91,6 +91,7 @@ monitor() {
 external
 internal
 EOF
+    xsetroot -cursor_name arrow
 )
     if [[ "$target" == "external" ]]; then
         monitor-external
