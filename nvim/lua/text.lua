@@ -26,4 +26,4 @@ require('mini.indentscope').setup({
     },
     symbol = "│",
 })
-vim.api.nvim_create_autocmd("FileType", { pattern = "alpha", command = ":lua vim.b.miniindentscope_disable=true" })
+vim.api.nvim_create_autocmd("FileType", { pattern = {"alpha", "NvimTree"}, command = ":lua vim.b.miniindentscope_disable=true" })
