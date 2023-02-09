@@ -303,5 +303,12 @@ alias hex='hexyl'
 # Tmux.
 alias t='basename $(pwd) | xargs tmux new-session -d -s || echo $(basename $(dirname $(pwd)))/$(basename $(pwd)) | xargs tmux new-session -d -s ; tmux attach'
 alias tl='tmux ls -F \#S'
-alias ta='tmux attach'
+ta() {
+    if [ "$#" -eq "0" ]; then
+        session=$(tl | fzf)
+        [ ! -z "$session" ] && tmux attach -t "$session"
+    else
+        tmux attach -t "$@"
+    fi
+}
 alias tq='tl | xargs -n 1 tmux kill-session -t ; tl'
