@@ -170,6 +170,16 @@ alias gch='git branch -a | fzf | tr -d "[:space:]" | xargs -r git checkout'
 alias diff='delta'
 alias blame="git blame \`f\`"
 
+# Project
+function s() {
+    if [ "$#" -eq "0" ]; then
+        stack=$(tmuxp ls | fzf)
+        [ ! -z "$stack" ] && tmuxp load "$stack"
+    else
+        tmuxp load "$@"
+    fi
+}
+
 # Package.
 update-aur() {
     NEW_VERSION="$1"
