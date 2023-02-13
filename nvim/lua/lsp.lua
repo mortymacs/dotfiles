@@ -168,7 +168,7 @@ lspconfig.gopls.setup({
 })
 
 -- Lua
-lspconfig.sumneko_lua.setup({
+lspconfig.lua_ls.setup({
     capabilities = capabilities,
     on_attach = function(client, bufnr)
       require "lsp_signature".on_attach(lspSignatureConfig, bufnr)
