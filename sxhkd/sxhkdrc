@@ -24,6 +24,12 @@ super + e
 super + Tab
     rofi -show window -font "Lexend 10"
 
+# Switch monitors.
+super + shift + i
+    monitor-internal
+super + shift + c
+    monitor-external
+
 # Screenshot.
 super + shift + s
     flameshot gui

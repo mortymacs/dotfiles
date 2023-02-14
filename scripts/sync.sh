@@ -120,6 +120,10 @@ cp "$HOME/.config/fontconfig/fonts.conf" fontconfig/
 rm -rf tmuxp
 cp -R "$HOME/.config/tmuxp" .
 
+# bin
+rm -f bin/*
+cp "$HOME/.local/bin/{monitor-internal,monitor-external}" bin/
+
 # push changes.
 git status -s
 git add .
