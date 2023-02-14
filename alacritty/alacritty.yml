@@ -1,7 +1,6 @@
 # Window configuration (changes require restart).
 window:
   opacity: 1.0
-  decorations: full
   dynamic_padding: false
   padding:
     x: 0
