@@ -1,5 +1,5 @@
+-- DAP
 local dap = require("dap")
-require("dapui").setup()
 
 -- Go
 dap.adapters.delve = {
@@ -16,6 +16,22 @@ dap.configurations.go = {
     name = "Debug",
     request = "launch",
     program = "${file}"
+  },
+  {
+    type = "delve",
+    name = "Debug - custom path and args",
+    request = "launch",
+    program = function()
+      return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+    end,
+    cwd = '${workspaceFolder}',
+    args = function()
+      local args = {}
+      for arg in string.gmatch(vim.fn.input("Args: "), "%S+") do
+        table.insert(args, arg)
+      end
+      return args
+    end,
   },
   {
     type = "delve",
@@ -83,3 +99,41 @@ dap.configurations.python = {
     end,
   },
 }
+
+-- DAP UI
+require("dapui").setup({
+  layouts = {
+    {
+      elements = {
+        {
+          id = "breakpoints",
+          size = 0.10
+        },
+        {
+          id = "scopes",
+          size = 0.40
+        },
+        {
+          id = "stacks",
+          size = 0.40
+        },
+      },
+      position = "left",
+      size = 40
+    },
+    {
+      elements = {
+        {
+          id = "repl",
+          size = 0.5
+        },
+        {
+          id = "watches",
+          size = 0.5
+        }
+      },
+      position = "bottom",
+      size = 8
+    },
+  },
+})
