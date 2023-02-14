@@ -94,6 +94,9 @@ libva-intel-driver
 libvips
 linux
 linux-firmware
+linux-headers
+linux-lts-headers
+lldb
 lolcat
 ltrace
 lua-language-server
@@ -132,6 +135,7 @@ pwgen
 pyright
 python
 python-black
+python-debugpy
 python-isort
 python-poetry
 python-pylint
@@ -171,6 +175,7 @@ trash-cli
 tree
 ttf-joypixels
 ttf-nerd-fonts-symbols-2048-em-mono
+ttf-ubuntu-font-family
 udiskie
 unrar
 unzip
