@@ -29,7 +29,7 @@ My environment config. I tried to keep it minimal and simple as much as I could.
 | GTK Theme | [Arc Dark](https://github.com/jnsh/arc-theme) + [BreezeX Light](https://github.com/ful1e5/BreezeX_Cursor) |
 | Color Schema | [Spaceduck](https://github.com/pineapplegiant/spaceduck) + some customization |
 | Icon | [Arc Icon](https://github.com/horst3180/arc-icon-theme) |
-| Wallpaper | [Unsplash](https://unsplash.com) |
+| Wallpaper | [GNOME](https://gitlab.gnome.org/GNOME/gnome-backgrounds) |
 | Doc | [Zeal](https://github.com/zealdocs/zeal) |
 
 ## Packages
