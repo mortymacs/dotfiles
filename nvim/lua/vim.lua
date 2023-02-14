@@ -37,7 +37,7 @@ vim.opt.wrap = false
 vim.opt.whichwrap:append("<,>,h,l,[,]")
 
 -- Mouse
-vim.opt.mouse = ""
+vim.opt.mouse = "a"
 
 -- Clipboard
 vim.opt.clipboard = "unnamedplus"

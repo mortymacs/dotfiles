@@ -93,6 +93,10 @@ SetKeyMap("<c-c><c-s>",     "<Cmd>Tags<cr>")
 SetKeyMap("<c-c><c-f>",     "<Cmd>BTags<cr>")
 SetKeyMap("<c-c><c-p>",     "<Cmd>Lspsaga peek_definition<cr>")
 
+-- Debug
+SetKeyMap("<c-w><c-s>", function() require("dapui").toggle() end)
+SetKeyMap("<c-w><c-b>", "<Cmd>DapToggleBreakpoint<cr>")
+
 -- Bookmark
 SetKeyMap("<c-r><c-c>", "<Cmd>Telescope vim_bookmarks current_file<cr>")
 SetKeyMap("<c-r><c-a>", "<Cmd>Telescope vim_bookmarks all<cr>")

@@ -26,6 +26,9 @@ require("terminal")
 -- LSP
 require("lsp")
 
+-- Debug
+vim.cmd [[ source ~/.config/nvim/lua/debug.lua ]]
+
 -- Text
 require("text")
 

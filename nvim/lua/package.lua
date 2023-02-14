@@ -6,7 +6,7 @@ return require('packer').startup(function(use)
 
   -- Theme
   use {"pineapplegiant/spaceduck", branch = "main"}
-  use {"projekt0n/github-nvim-theme"}
+  use "projekt0n/github-nvim-theme"
   use "norcalli/nvim-colorizer.lua"
 
   -- Tabbar
@@ -52,6 +52,11 @@ return require('packer').startup(function(use)
   use "RRethy/vim-illuminate"
   use "j-hui/fidget.nvim"
   use "ggandor/leap.nvim"
+
+  -- Debug
+  use "mfussenegger/nvim-dap"
+  use {"rcarriga/nvim-dap-ui", requires = "mfussenegger/nvim-dap"}
+  use "leoluz/nvim-dap-go"
 
   -- LSP
   use "neovim/nvim-lspconfig"
