@@ -122,7 +122,8 @@ cp -R "$HOME/.config/tmuxp" .
 
 # bin
 rm -f bin/*
-cp "$HOME/.local/bin/{monitor-internal,monitor-external}" bin/
+cp "$HOME/.local/bin/monitor-internal" bin/
+cp "$HOME/.local/bin/monitor-external" bin/
 
 # push changes.
 git status -s
