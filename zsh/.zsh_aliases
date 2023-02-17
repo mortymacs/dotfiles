@@ -239,6 +239,15 @@ function postgresql() {
     fi
 }
 
+# LDAP.
+function ldap-server() {
+    docker run -d --rm \
+        -p 1389:1389 -p 1636:1636 \
+        --name openldap \
+        -e LDAP_ADMIN_USERNAME=admin -e LDAP_ADMIN_PASSWORD=secret -e LDAP_USERS=user -e LDAP_PASSWORDS=secret \
+        bitnami/openldap:latest
+}
+
 # Development.
 ## https://github.com/universal-ctags/ctags/issues/218#issuecomment-72355190
 alias gt='fd | ctags --links=no -L-'
