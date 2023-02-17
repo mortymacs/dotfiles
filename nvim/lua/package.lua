@@ -86,6 +86,9 @@ return require('packer').startup(function(use)
     requires = { "nvim-tree/nvim-web-devicons" }
   }
 
+  -- Rust
+  use "simrat39/rust-tools.nvim"
+
   -- YAML
   use {
     "someone-stole-my-name/yaml-companion.nvim",

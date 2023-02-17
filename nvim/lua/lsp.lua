@@ -152,6 +152,9 @@ lspconfig.rust_analyzer.setup({
     require "lsp_signature".on_attach(lspSignatureConfig, bufnr)
   end,
 })
+local rt = require("rust-tools")
+rt.setup()
+rt.inlay_hints.enable()
 
 -- Go
 vim.g.go_auto_type_info = 0
