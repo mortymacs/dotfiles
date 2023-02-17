@@ -157,6 +157,7 @@ rt.setup()
 rt.inlay_hints.enable()
 
 -- Go
+require('go').setup()
 vim.g.go_auto_type_info = 0
 vim.g.go_gopls_gofumpt = 1
 vim.g.go_gopls_enabled = 1

@@ -5,30 +5,30 @@ return require('packer').startup(function(use)
   use "wbthomason/packer.nvim"
 
   -- Theme
-  use {"pineapplegiant/spaceduck", branch = "main"}
+  use { "pineapplegiant/spaceduck", branch = "main" }
   use "projekt0n/github-nvim-theme"
   use "norcalli/nvim-colorizer.lua"
 
   -- Tabbar
   use "nvim-tree/nvim-web-devicons"
-  use {"romgrk/barbar.nvim", wants = "nvim-web-devicons"}
+  use { "romgrk/barbar.nvim", wants = "nvim-web-devicons" }
 
   -- Statusbar
-  use {"nvim-lualine/lualine.nvim", wants = "nvim-web-devicons"}
+  use { "nvim-lualine/lualine.nvim", wants = "nvim-web-devicons" }
 
   -- Notification
   use "rcarriga/nvim-notify"
 
   -- Splash screen
-  use {"goolord/alpha-nvim", requires = { 'nvim-tree/nvim-web-devicons' }}
+  use { "goolord/alpha-nvim", requires = { 'nvim-tree/nvim-web-devicons' } }
 
   -- Treesitter
-  use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
+  use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
   use "nvim-treesitter/nvim-treesitter-context"
-  use {"nvim-treesitter/playground", requires = { "nvim-treesitter/nvim-treesitter" }}
+  use { "nvim-treesitter/playground", requires = { "nvim-treesitter/nvim-treesitter" } }
 
   -- File Manager
-  use {"nvim-tree/nvim-tree.lua", wants = "nvim-web-devicons", tag = "nightly"}
+  use { "nvim-tree/nvim-tree.lua", wants = "nvim-web-devicons", tag = "nightly" }
   use "nvim-telescope/telescope-file-browser.nvim"
 
   -- FZF
@@ -37,14 +37,14 @@ return require('packer').startup(function(use)
   -- Telescope
   use {
     "nvim-telescope/telescope.nvim", branch = "0.1.x",
-    requires = { {"nvim-lua/plenary.nvim"} }
+    requires = { { "nvim-lua/plenary.nvim" } }
   }
 
   -- Terminal
   use "voldikss/vim-floaterm"
 
   -- Trouble
-  use {"folke/trouble.nvim", requires = "kyazdani42/nvim-web-devicons"}
+  use { "folke/trouble.nvim", requires = "kyazdani42/nvim-web-devicons" }
 
   -- Development
   use "editorconfig/editorconfig-vim"
@@ -55,7 +55,7 @@ return require('packer').startup(function(use)
 
   -- Debug
   use "mfussenegger/nvim-dap"
-  use {"rcarriga/nvim-dap-ui", requires = "mfussenegger/nvim-dap"}
+  use { "rcarriga/nvim-dap-ui", requires = "mfussenegger/nvim-dap" }
   use "leoluz/nvim-dap-go"
 
   -- LSP
@@ -65,19 +65,11 @@ return require('packer').startup(function(use)
   use "hrsh7th/cmp-path"
   use "hrsh7th/cmp-cmdline"
   use "hrsh7th/nvim-cmp"
-  use "hrsh7th/cmp-nvim-lua"
   use "hrsh7th/cmp-vsnip"
   use "hrsh7th/vim-vsnip"
   use "ray-x/lsp_signature.nvim"
   use "lukas-reineke/cmp-rg"
-  use {
-    "saecki/crates.nvim",
-    tag = "*",
-    requires = { "nvim-lua/plenary.nvim" },
-  }
-  use "fatih/vim-go"
   use "dense-analysis/ale"
-  use "hashivim/vim-terraform"
   use "folke/neodev.nvim"
   use "dnlhc/glance.nvim"
   use {
@@ -86,8 +78,23 @@ return require('packer').startup(function(use)
     requires = { "nvim-tree/nvim-web-devicons" }
   }
 
+  -- Lua
+  use "hrsh7th/cmp-nvim-lua"
+
   -- Rust
   use "simrat39/rust-tools.nvim"
+  use {
+    "saecki/crates.nvim",
+    tag = "*",
+    requires = { "nvim-lua/plenary.nvim" },
+  }
+
+  -- Go
+  use "ray-x/go.nvim"
+  use "ray-x/guihua.lua"
+
+  -- Terraform
+  use "hashivim/vim-terraform"
 
   -- YAML
   use {
