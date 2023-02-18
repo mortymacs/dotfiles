@@ -116,6 +116,7 @@ nlohmann-json
 nodejs
 npm
 ntfs-3g
+obs-studio
 openldap
 pacman
 pacman-contrib

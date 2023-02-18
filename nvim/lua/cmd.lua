@@ -19,6 +19,9 @@ require("noice").setup({
       lua = { icon = ">" },
     },
   },
+  smart_move = {
+    enabled = false,
+  },
   presets = {
     bottom_search = true,
     command_palette = true,
@@ -29,7 +32,7 @@ require("noice").setup({
   views = {
     cmdline_popup = {
       size = {
-        width = 400,
+        width = 100,
         height = "auto",
       },
       border = {
