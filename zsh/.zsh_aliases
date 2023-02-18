@@ -40,9 +40,8 @@ function u() {
   pacman -Qdt
 
   # NVim packages.
-  nvim -c :PackerSync +quitall
-  nvim -c :BlackUpgrade +quitall
-  nvim -c :TSUpdateSync +quitall
+  nvim --headless "+Lazy! sync" +qa
+  nvim --headless "+TSUpdateSync" +qa
 
   # Tmux packages.
   "$HOME"/.config/tmux/plugins/tpm/bin/update_plugins all

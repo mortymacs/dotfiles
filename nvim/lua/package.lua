@@ -1,146 +1,213 @@
-vim.cmd [[packadd packer.nvim]]
+-- Setup Lazy
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
 
-return require('packer').startup(function(use)
-  -- Packer can manage itself
-  use "wbthomason/packer.nvim"
-
+-- Packages
+require("lazy").setup({
   -- Theme
-  use { "pineapplegiant/spaceduck", branch = "main" }
-  use "projekt0n/github-nvim-theme"
-  use "norcalli/nvim-colorizer.lua"
+  {
+    "pineapplegiant/spaceduck",
+    branch = "main",
+  },
+  "projekt0n/github-nvim-theme",
+  "norcalli/nvim-colorizer.lua",
+
+  -- CMD
+  {
+    "folke/noice.nvim",
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
+    },
+  },
 
   -- Tabbar
-  use "nvim-tree/nvim-web-devicons"
-  use { "romgrk/barbar.nvim", wants = "nvim-web-devicons" }
+  {
+    "romgrk/barbar.nvim",
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+    },
+  },
 
   -- Statusbar
-  use { "nvim-lualine/lualine.nvim", wants = "nvim-web-devicons" }
+  {
+    "nvim-lualine/lualine.nvim",
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+    },
+  },
 
   -- Notification
-  use "rcarriga/nvim-notify"
+  "rcarriga/nvim-notify",
 
   -- Splash screen
-  use { "goolord/alpha-nvim", requires = { 'nvim-tree/nvim-web-devicons' } }
+  {
+    "goolord/alpha-nvim",
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+    },
+  },
 
   -- Treesitter
-  use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
-  use "nvim-treesitter/nvim-treesitter-context"
-  use { "nvim-treesitter/playground", requires = { "nvim-treesitter/nvim-treesitter" } }
+  {
+    "nvim-treesitter/nvim-treesitter",
+    config = function()
+      vim.cmd(":TSUpdate")
+    end,
+  },
+  "nvim-treesitter/nvim-treesitter-context",
 
   -- File Manager
-  use { "nvim-tree/nvim-tree.lua", wants = "nvim-web-devicons", tag = "nightly" }
-  use "nvim-telescope/telescope-file-browser.nvim"
+  {
+    "nvim-tree/nvim-tree.lua",
+    tag = "nightly",
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+    },
+  },
+  "nvim-telescope/telescope-file-browser.nvim",
 
   -- FZF
-  use "junegunn/fzf.vim"
+  "junegunn/fzf",
+  "junegunn/fzf.vim",
 
   -- Telescope
-  use {
-    "nvim-telescope/telescope.nvim", branch = "0.1.x",
-    requires = { { "nvim-lua/plenary.nvim" } }
-  }
+  {
+    "nvim-telescope/telescope.nvim",
+    branch = "0.1.x",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+  },
 
   -- Terminal
-  use "voldikss/vim-floaterm"
+  "voldikss/vim-floaterm",
 
   -- Trouble
-  use { "folke/trouble.nvim", requires = "kyazdani42/nvim-web-devicons" }
+  {
+    "folke/trouble.nvim",
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+    },
+  },
 
   -- Development
-  use "editorconfig/editorconfig-vim"
-  use "npxbr/glow.nvim"
-  use "RRethy/vim-illuminate"
-  use "j-hui/fidget.nvim"
-  use "ggandor/leap.nvim"
+  "editorconfig/editorconfig-vim",
+  {
+    "npxbr/glow.nvim",
+    ft = { "markdown" },
+  },
+  "RRethy/vim-illuminate",
+  "j-hui/fidget.nvim",
+  "ggandor/leap.nvim",
 
   -- Debug
-  use "mfussenegger/nvim-dap"
-  use { "rcarriga/nvim-dap-ui", requires = "mfussenegger/nvim-dap" }
-  use "leoluz/nvim-dap-go"
+  {
+    "rcarriga/nvim-dap-ui",
+    dependencies = {
+      "mfussenegger/nvim-dap",
+    },
+  },
 
   -- LSP
-  use "neovim/nvim-lspconfig"
-  use "hrsh7th/cmp-nvim-lsp"
-  use "hrsh7th/cmp-buffer"
-  use "hrsh7th/cmp-path"
-  use "hrsh7th/cmp-cmdline"
-  use "hrsh7th/nvim-cmp"
-  use "hrsh7th/cmp-vsnip"
-  use "hrsh7th/vim-vsnip"
-  use "ray-x/lsp_signature.nvim"
-  use "lukas-reineke/cmp-rg"
-  use "dense-analysis/ale"
-  use "folke/neodev.nvim"
-  use "dnlhc/glance.nvim"
-  use {
+  "neovim/nvim-lspconfig",
+  "hrsh7th/cmp-nvim-lsp",
+  "hrsh7th/cmp-buffer",
+  "hrsh7th/cmp-path",
+  "hrsh7th/cmp-cmdline",
+  "hrsh7th/nvim-cmp",
+  "hrsh7th/cmp-vsnip",
+  "hrsh7th/vim-vsnip",
+  "ray-x/lsp_signature.nvim",
+  "lukas-reineke/cmp-rg",
+  "dense-analysis/ale",
+  "folke/neodev.nvim",
+  "dnlhc/glance.nvim",
+  {
     "glepnir/lspsaga.nvim",
     branch = "main",
-    requires = { "nvim-tree/nvim-web-devicons" }
-  }
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+    },
+  },
 
   -- Lua
-  use "hrsh7th/cmp-nvim-lua"
+  "hrsh7th/cmp-nvim-lua",
 
   -- Rust
-  use "simrat39/rust-tools.nvim"
-  use {
+  "simrat39/rust-tools.nvim",
+  {
     "saecki/crates.nvim",
-    tag = "*",
-    requires = { "nvim-lua/plenary.nvim" },
-  }
+    event = "BufRead Cargo.toml",
+    requires = {
+      "nvim-lua/plenary.nvim",
+    },
+  },
 
   -- Go
-  use "ray-x/go.nvim"
-  use "ray-x/guihua.lua"
+  "ray-x/go.nvim",
+  "ray-x/guihua.lua",
 
   -- Terraform
-  use "hashivim/vim-terraform"
+  "hashivim/vim-terraform",
 
   -- YAML
-  use {
+  {
     "someone-stole-my-name/yaml-companion.nvim",
-    requires = {
-      { "neovim/nvim-lspconfig" },
-      { "nvim-lua/plenary.nvim" },
-      { "nvim-telescope/telescope.nvim" },
+    dependencies = {
+      "neovim/nvim-lspconfig",
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim",
     },
-  }
+  },
 
   -- Markdown
-  use({
+  {
     "iamcco/markdown-preview.nvim",
-    run = function() vim.fn["mkdp#util#install"]() end,
-  })
+    config = function()
+      vim.cmd(":call mkdp#util#install()")
+    end,
+  },
 
   -- Text
-  use "hrsh7th/nvim-insx"
-  use "echasnovski/mini.nvim"
+  "hrsh7th/nvim-insx",
+  "echasnovski/mini.nvim",
 
   -- Tag
-  use "preservim/tagbar"
+  "preservim/tagbar",
 
   -- Comment
-  use "terrortylor/nvim-comment"
+  "terrortylor/nvim-comment",
 
   -- Git
-  use "lewis6991/gitsigns.nvim"
-  use "ruanyl/vim-gh-line"
+  "lewis6991/gitsigns.nvim",
+  "ruanyl/vim-gh-line",
 
   -- Orgmode
-  use "nvim-orgmode/orgmode"
+  "nvim-orgmode/orgmode",
 
   -- History
-  use "mbbill/undotree"
+  "mbbill/undotree",
 
   -- Bookmark
-  use "MattesGroeger/vim-bookmarks"
-  use "tom-anders/telescope-vim-bookmarks.nvim"
+  "MattesGroeger/vim-bookmarks",
+  "tom-anders/telescope-vim-bookmarks.nvim",
 
   -- Keybinding
-  use "mrjones2014/legendary.nvim"
-  use "folke/which-key.nvim"
+  "mrjones2014/legendary.nvim",
+  "folke/which-key.nvim",
 
   -- Misc
-  use "cappyzawa/trim.nvim"
-  use "nacro90/numb.nvim"
-end)
+  "cappyzawa/trim.nvim",
+  "nacro90/numb.nvim",
+})

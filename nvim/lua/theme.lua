@@ -12,6 +12,11 @@ vim.api.nvim_set_hl(0, "SignColumn",  {bg = ""})
 vim.api.nvim_set_hl(0, "VertSplit",   {bg = "", fg = "#1b1c36"})
 vim.api.nvim_set_hl(0, "NonText",     {bg = "", fg = ""})
 
+-- Cmd
+vim.api.nvim_set_hl(0, "NoiceCmdlinePopupBorderCmdline", {fg = "#686f9a", bg = "#0f0f0f"})
+vim.api.nvim_set_hl(0, "NoiceCmdlinePopupBorderLua",     {fg = "#686f9a", bg = "#0f0f0f"})
+vim.api.nvim_set_hl(0, "NoiceCmdlinePopup",              {bg = "#0f0f0f"})
+
 -- Git
 vim.api.nvim_set_hl(0, "GitSignsAdd",    {bg = "", fg = "#5ccc96"})
 vim.api.nvim_set_hl(0, "GitSignsChange", {bg = "", fg = "#e39400"})
@@ -40,7 +45,7 @@ vim.api.nvim_set_hl(0, "FidgetTitle", {bg = "#0f0f0f"})
 vim.api.nvim_set_hl(0, "FidgetTask",  {bg = "#0f0f0f"})
 
 -- LSP
-vim.api.nvim_set_hl(0, "Pmenu",                    {fg = "#ecf0c1", bg = "#1b263b"})
+vim.api.nvim_set_hl(0, "Pmenu",                    {fg = "#ecf0c1", bg = "#22223b"})
 vim.api.nvim_set_hl(0, "PmenuSel",                 {fg = "#EED8DA", bg = "#B5585F"})
 vim.api.nvim_set_hl(0, "CmpItemAbbrDeprecated",    {fg = "#7E8294"})
 vim.api.nvim_set_hl(0, "CmpItemAbbrMatch",         {fg = "#82AAFF"})

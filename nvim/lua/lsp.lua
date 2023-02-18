@@ -1,17 +1,6 @@
 -- Rust
 require('crates').setup()
 
--- Fidget
-require("fidget").setup({
-  text = {
-    spinner = "dots_pulse",
-  },
-  window = {
-    blend = 0,
-    border = "single"
-  },
-})
-
 -- Lua
 require("neodev").setup({
   library = { plugins = { "nvim-dap-ui" }, types = true },
