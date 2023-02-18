@@ -1,7 +1,7 @@
 -- Lualine
 require("lualine").setup({
   options = {
-    theme = "ayu_mirage",
+    theme = "spaceduck",
     section_separators = { left = "", right = "" },
     component_separators = "",
     globalstatus = true,
