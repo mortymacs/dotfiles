@@ -19,9 +19,6 @@ require("noice").setup({
       lua = { icon = ">" },
     },
   },
-  smart_move = {
-    enabled = false,
-  },
   presets = {
     bottom_search = true,
     command_palette = true,
