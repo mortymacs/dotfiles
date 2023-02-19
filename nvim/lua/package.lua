@@ -22,15 +22,6 @@ require("lazy").setup({
   "projekt0n/github-nvim-theme",
   "norcalli/nvim-colorizer.lua",
 
-  -- CMD
-  {
-    "folke/noice.nvim",
-    dependencies = {
-      "MunifTanjim/nui.nvim",
-      "rcarriga/nvim-notify",
-    },
-  },
-
   -- Tabbar
   {
     "romgrk/barbar.nvim",
@@ -108,8 +99,7 @@ require("lazy").setup({
     ft = { "markdown" },
   },
   "RRethy/vim-illuminate",
-  "j-hui/fidget.nvim",
-  "ggandor/leap.nvim",
+  "arkav/lualine-lsp-progress",
 
   -- Debug
   {

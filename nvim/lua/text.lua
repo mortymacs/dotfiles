@@ -2,9 +2,6 @@
 require('insx.preset.standard').setup()
 require('trim').setup()
 
--- Search
-require('leap').add_default_mappings()
-
 -- Move lines
 require('mini.move').setup({
   mappings = {

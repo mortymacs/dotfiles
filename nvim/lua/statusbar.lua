@@ -1,31 +1,31 @@
 -- Lualine
 require("lualine").setup({
-  options = {
-    theme = "spaceduck",
-    section_separators = { left = "", right = "" },
-    component_separators = "",
-    globalstatus = true,
-  },
-  sections = {
-    lualine_a = {
-      {
-        "filename",
-        newfile_status = true,
-        path = 1,
-        symbols = {
-          modified = "[+]",
-          readonly = "[-]",
-          unnamed = "[No Name]",
-          newfile = "[New]",
-        },
-      }
+    options = {
+        theme = "github_dark_default",
+        section_separators = { left = "", right = "" },
+        component_separators = "",
+        globalstatus = true,
     },
-    lualine_b = { "branch", "diff", "diagnostics" },
-    lualine_c = {},
-    lualine_x = {},
-    lualine_y = { "filetype", "filesize" },
-    lualine_z = { "progress" },
-  },
+    sections = {
+        lualine_a = {
+            {
+                "filename",
+                newfile_status = true,
+                path = 1,
+                symbols = {
+                    modified = "[+]",
+                    readonly = "[-]",
+                    unnamed = "[No Name]",
+                    newfile = "[New]",
+                },
+            }
+        },
+        lualine_b = { "branch", "diff", "diagnostics" },
+        lualine_c = { "lsp_progress" },
+        lualine_x = {},
+        lualine_y = { "filetype", "filesize" },
+        lualine_z = { "progress" },
+    },
 })
 vim.cmd("set cmdheight=0")
 vim.cmd("set laststatus=3")
