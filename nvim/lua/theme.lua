@@ -12,11 +12,6 @@ vim.api.nvim_set_hl(0, "SignColumn",  {bg = ""})
 vim.api.nvim_set_hl(0, "VertSplit",   {bg = "", fg = "#1b1c36"})
 vim.api.nvim_set_hl(0, "NonText",     {bg = "", fg = ""})
 
--- Cmd
-vim.api.nvim_set_hl(0, "NoiceCmdlinePopupBorderCmdline", {fg = "#686f9a", bg = "#0f0f0f"})
-vim.api.nvim_set_hl(0, "NoiceCmdlinePopupBorderLua",     {fg = "#686f9a", bg = "#0f0f0f"})
-vim.api.nvim_set_hl(0, "NoiceCmdlinePopup",              {bg = "#0f0f0f"})
-
 -- Git
 vim.api.nvim_set_hl(0, "GitSignsAdd",    {bg = "", fg = "#5ccc96"})
 vim.api.nvim_set_hl(0, "GitSignsChange", {bg = "", fg = "#e39400"})

@@ -31,6 +31,9 @@ vim.opt.list = false
 -- Menu
 vim.opt.completeopt = "menu,menuone,noselect"
 
+-- Statusline
+vim.opt.statusline = ""
+
 -- Wrap
 vim.opt.wrap = false
 -- https://superuser.com/a/559436
