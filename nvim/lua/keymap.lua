@@ -74,6 +74,13 @@ SetKeyMap("<S-Tab>",   "<gv",   {"v"})
 -- Tagbar
 SetKeyMap("<c-c><c-a>", "<Cmd>Lspsaga outline<cr>")
 
+-- Terminal
+SetKeyMap("<c-x><Up>",    "<Cmd>FloatermToggle<cr>")
+SetKeyMap("<c-x><c-n>",   "<Cmd>FloatermNew<cr>")
+SetKeyMap("<c-x><Left>",  "<Cmd>FloatermNext<cr>")
+SetKeyMap("<c-x><Right>", "<Cmd>FloatermPrev<cr>")
+SetKeyMap("<c-x><c-k>",   "<Cmd>FloatermKill<cr>")
+
 -- LSP
 SetKeyMap("<c-c><c-d>",     vim.lsp.buf.definition)
 SetKeyMap("<c-c><c-t>",     "<Cmd>Glance type_definitions<cr>")

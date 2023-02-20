@@ -1,10 +1,11 @@
 -- Lualine
 require("lualine").setup({
     options = {
-        theme = "github_dark_default",
+        theme = "github_dark",
         section_separators = { left = "", right = "" },
         component_separators = "",
         globalstatus = true,
+        disabled_filetypes = { "fzf" },
     },
     sections = {
         lualine_a = {
