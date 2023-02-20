@@ -13,7 +13,8 @@ vim.api.nvim_set_hl(0, "VertSplit",   {bg = "", fg = "#1b1c36"})
 vim.api.nvim_set_hl(0, "NonText",     {bg = "", fg = ""})
 
 -- Statusline
-vim.api.nvim_set_hl(0, "StatusLine",  {bg = "", fg = ""})
+vim.api.nvim_set_hl(0, "StatusLine",     {bg = "", fg = ""})
+vim.api.nvim_set_hl(0, "StatusLineTerm", {bg = "", fg = ""})
 
 -- Git
 vim.api.nvim_set_hl(0, "GitSignsAdd",    {bg = "", fg = "#5ccc96"})
