@@ -159,6 +159,7 @@ sqlfluff
 starship
 staticcheck
 strace
+stylua
 sudo
 sxhkd
 tealdeer

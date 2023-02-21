@@ -8,6 +8,7 @@ ghq
 gofumpt
 golangci-lint
 golines
+gomodifytags
 gosec
 gotags
 insomnia-bin
