@@ -1,6 +1,7 @@
 # Window configuration (changes require restart).
 window:
   opacity: 1.0
+  decorations: full
   dynamic_padding: false
   padding:
     x: 0
@@ -36,7 +37,7 @@ font:
 colors:
   # Default colors
   primary:
-    background: '#0f0f0f'
+    background: '#060606'
     foreground: '#ecf0c1'
 
   cursor:
