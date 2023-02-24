@@ -29,6 +29,5 @@ terraform-docs-bin
 terraform-ls
 vazirmatn-fonts
 viddy
-wtfutil
 yay
 ydiff
