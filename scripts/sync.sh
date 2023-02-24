@@ -101,10 +101,6 @@ cat "$HOME"/.docker/config.json | jq 'del(.auths)' | tee docker/config.json
 rm -rf peco
 cp -R "$HOME/.config/peco" .
 
-# wtfutil
-rm -rf wtfutil/*
-cp "$HOME/.config/wtf/config.yml" wtfutil/
-
 # fonts
 rm -rf fonts/*
 cp "$HOME/.local/share/fonts/Lexend-VariableFont_wght.ttf" fonts/
