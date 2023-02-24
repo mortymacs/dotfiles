@@ -150,6 +150,7 @@ rust
 rust-analyzer
 rust-bindgen
 rustscan
+sad
 sed
 shellcheck
 silicon

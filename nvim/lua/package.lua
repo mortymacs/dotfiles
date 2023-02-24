@@ -1,203 +1,208 @@
 -- Setup Lazy
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
+    vim.fn.system({
+        "git",
+        "clone",
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable", -- latest stable release
+        lazypath,
+    })
 end
 vim.opt.rtp:prepend(lazypath)
 
 -- Packages
 require("lazy").setup({
-  -- Theme
-  {
-    "pineapplegiant/spaceduck",
-    branch = "main",
-  },
-  "projekt0n/github-nvim-theme",
-  "norcalli/nvim-colorizer.lua",
-
-  -- Tabbar
-  {
-    "romgrk/barbar.nvim",
-    dependencies = {
-      "nvim-tree/nvim-web-devicons",
+    -- Theme
+    {
+        "pineapplegiant/spaceduck",
+        branch = "main",
     },
-  },
+    "norcalli/nvim-colorizer.lua",
 
-  -- Statusbar
-  {
-    "nvim-lualine/lualine.nvim",
-    dependencies = {
-      "nvim-tree/nvim-web-devicons",
+    -- Tabbar
+    {
+        "romgrk/barbar.nvim",
+        dependencies = {
+            "nvim-tree/nvim-web-devicons",
+        },
     },
-  },
 
-  -- Notification
-  "rcarriga/nvim-notify",
-
-  -- Splash screen
-  {
-    "goolord/alpha-nvim",
-    dependencies = {
-      "nvim-tree/nvim-web-devicons",
+    -- Statusbar
+    {
+        "nvim-lualine/lualine.nvim",
+        dependencies = {
+            "nvim-tree/nvim-web-devicons",
+        },
     },
-  },
 
-  -- Treesitter
-  {
-    "nvim-treesitter/nvim-treesitter",
-    config = function()
-      vim.cmd(":TSUpdate")
-    end,
-  },
-  "nvim-treesitter/nvim-treesitter-context",
+    -- Notification
+    "rcarriga/nvim-notify",
 
-  -- File Manager
-  {
-    "nvim-tree/nvim-tree.lua",
-    tag = "nightly",
-    dependencies = {
-      "nvim-tree/nvim-web-devicons",
+    -- Splash screen
+    {
+        "goolord/alpha-nvim",
+        dependencies = {
+            "nvim-tree/nvim-web-devicons",
+        },
     },
-  },
-  "nvim-telescope/telescope-file-browser.nvim",
 
-  -- FZF
-  "junegunn/fzf",
-  "junegunn/fzf.vim",
-
-  -- Telescope
-  {
-    "nvim-telescope/telescope.nvim",
-    branch = "0.1.x",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
+    -- Treesitter
+    {
+        "nvim-treesitter/nvim-treesitter",
+        config = function()
+            vim.cmd(":TSUpdate")
+        end,
     },
-  },
+    "nvim-treesitter/nvim-treesitter-context",
 
-  -- Terminal
-  "voldikss/vim-floaterm",
-
-  -- Trouble
-  {
-    "folke/trouble.nvim",
-    dependencies = {
-      "nvim-tree/nvim-web-devicons",
+    -- File Manager
+    {
+        "nvim-tree/nvim-tree.lua",
+        tag = "nightly",
+        dependencies = {
+            "nvim-tree/nvim-web-devicons",
+        },
     },
-  },
+    "nvim-telescope/telescope-file-browser.nvim",
 
-  -- Development
-  "editorconfig/editorconfig-vim",
-  {
-    "npxbr/glow.nvim",
-    ft = { "markdown" },
-  },
-  "RRethy/vim-illuminate",
-  "arkav/lualine-lsp-progress",
+    -- FZF
+    "junegunn/fzf",
+    "junegunn/fzf.vim",
 
-  -- Debug
-  {
-    "rcarriga/nvim-dap-ui",
-    dependencies = {
-      "mfussenegger/nvim-dap",
+    -- Telescope
+    {
+        "nvim-telescope/telescope.nvim",
+        branch = "0.1.x",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+        },
     },
-  },
 
-  -- LSP
-  "neovim/nvim-lspconfig",
-  "hrsh7th/cmp-nvim-lsp",
-  "hrsh7th/cmp-buffer",
-  "hrsh7th/cmp-path",
-  "hrsh7th/cmp-cmdline",
-  "hrsh7th/nvim-cmp",
-  "hrsh7th/cmp-vsnip",
-  "hrsh7th/vim-vsnip",
-  "ray-x/lsp_signature.nvim",
-  "lukas-reineke/cmp-rg",
-  "dense-analysis/ale",
-  "folke/neodev.nvim",
-  "dnlhc/glance.nvim",
-  {
-    "glepnir/lspsaga.nvim",
-    branch = "main",
-    dependencies = {
-      "nvim-tree/nvim-web-devicons",
+    -- Terminal
+    "voldikss/vim-floaterm",
+
+    -- Trouble
+    {
+        "folke/trouble.nvim",
+        dependencies = {
+            "nvim-tree/nvim-web-devicons",
+        },
     },
-  },
 
-  -- Lua
-  "hrsh7th/cmp-nvim-lua",
-
-  -- Rust
-  "simrat39/rust-tools.nvim",
-  {
-    "saecki/crates.nvim",
-    event = "BufRead Cargo.toml",
-    requires = {
-      "nvim-lua/plenary.nvim",
+    -- Development
+    "editorconfig/editorconfig-vim",
+    {
+        "npxbr/glow.nvim",
+        ft = { "markdown" },
     },
-  },
-
-  -- Go
-  "ray-x/go.nvim",
-  "ray-x/guihua.lua",
-
-  -- Terraform
-  "hashivim/vim-terraform",
-
-  -- YAML
-  {
-    "someone-stole-my-name/yaml-companion.nvim",
-    dependencies = {
-      "neovim/nvim-lspconfig",
-      "nvim-lua/plenary.nvim",
-      "nvim-telescope/telescope.nvim",
+    "RRethy/vim-illuminate",
+    "arkav/lualine-lsp-progress",
+    {
+        "folke/todo-comments.nvim",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+        },
     },
-  },
 
-  -- Markdown
-  {
-    "iamcco/markdown-preview.nvim",
-    config = function()
-      vim.cmd(":call mkdp#util#install()")
-    end,
-  },
+    -- Debug
+    {
+        "rcarriga/nvim-dap-ui",
+        dependencies = {
+            "mfussenegger/nvim-dap",
+        },
+    },
 
-  -- Text
-  "hrsh7th/nvim-insx",
-  "echasnovski/mini.nvim",
+    -- LSP
+    "neovim/nvim-lspconfig",
+    "hrsh7th/cmp-nvim-lsp",
+    "hrsh7th/cmp-buffer",
+    "hrsh7th/cmp-path",
+    "hrsh7th/cmp-cmdline",
+    "hrsh7th/nvim-cmp",
+    "hrsh7th/cmp-vsnip",
+    "hrsh7th/vim-vsnip",
+    "ray-x/lsp_signature.nvim",
+    "lukas-reineke/cmp-rg",
+    "dense-analysis/ale",
+    "folke/neodev.nvim",
+    "dnlhc/glance.nvim",
+    {
+        "glepnir/lspsaga.nvim",
+        branch = "main",
+        dependencies = {
+            "nvim-tree/nvim-web-devicons",
+        },
+    },
 
-  -- Tag
-  "preservim/tagbar",
+    -- Lua
+    "hrsh7th/cmp-nvim-lua",
 
-  -- Comment
-  "terrortylor/nvim-comment",
+    -- Rust
+    "simrat39/rust-tools.nvim",
+    {
+        "saecki/crates.nvim",
+        event = "BufRead Cargo.toml",
+        requires = {
+            "nvim-lua/plenary.nvim",
+        },
+    },
 
-  -- Git
-  "lewis6991/gitsigns.nvim",
-  "ruanyl/vim-gh-line",
+    -- Go
+    "ray-x/go.nvim",
+    "ray-x/guihua.lua",
 
-  -- Orgmode
-  "nvim-orgmode/orgmode",
+    -- Terraform
+    "hashivim/vim-terraform",
 
-  -- History
-  "mbbill/undotree",
+    -- YAML
+    {
+        "someone-stole-my-name/yaml-companion.nvim",
+        dependencies = {
+            "neovim/nvim-lspconfig",
+            "nvim-lua/plenary.nvim",
+            "nvim-telescope/telescope.nvim",
+        },
+    },
 
-  -- Bookmark
-  "MattesGroeger/vim-bookmarks",
-  "tom-anders/telescope-vim-bookmarks.nvim",
+    -- Markdown
+    {
+        "iamcco/markdown-preview.nvim",
+        config = function()
+            vim.cmd(":call mkdp#util#install()")
+        end,
+    },
 
-  -- Keybinding
-  "mrjones2014/legendary.nvim",
-  "folke/which-key.nvim",
+    -- Text
+    "hrsh7th/nvim-insx",
+    "echasnovski/mini.nvim",
 
-  -- Misc
-  "cappyzawa/trim.nvim",
-  "nacro90/numb.nvim",
+    -- Tag
+    "preservim/tagbar",
+
+    -- Comment
+    "terrortylor/nvim-comment",
+
+    -- Git
+    "lewis6991/gitsigns.nvim",
+    "ruanyl/vim-gh-line",
+
+    -- Orgmode
+    "nvim-orgmode/orgmode",
+
+    -- History
+    "mbbill/undotree",
+
+    -- Bookmark
+    "MattesGroeger/vim-bookmarks",
+    "tom-anders/telescope-vim-bookmarks.nvim",
+
+    -- Keybinding
+    "mrjones2014/legendary.nvim",
+    "folke/which-key.nvim",
+
+    -- Misc
+    "cappyzawa/trim.nvim",
+    "nacro90/numb.nvim",
 })

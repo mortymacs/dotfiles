@@ -29,3 +29,8 @@ vim.api.nvim_create_autocmd("FileType", { pattern = {"alpha", "NvimTree", "float
 require('illuminate').configure({
   filetypes_denylist = {"alpha", "NvimTree"},
 })
+
+-- Todo
+require("todo-comments").setup({
+    signs = false,
+})
