@@ -182,6 +182,7 @@ unrar
 unzip
 uwufetch
 valgrind
+vhs
 viu
 vulkan-intel
 wget
