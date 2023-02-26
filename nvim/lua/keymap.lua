@@ -107,7 +107,7 @@ SetKeyMap("<c-x><c-l>",     "<Cmd>LspRestart<cr>")
 -- Debug
 SetKeyMap("<c-l><c-s>", function() require("dapui").toggle() end)
 SetKeyMap("<c-l><c-b>", "<Cmd>DapToggleBreakpoint<cr>")
-SetKeyMap("<c-l><c-d>", "<Cmd>Telescope diagnostics<cr>")
+SetKeyMap("<c-l><c-e>", "<Cmd>Telescope diagnostics<cr>")
 
 -- Bookmark
 SetKeyMap("<c-r><c-c>", "<Cmd>Telescope vim_bookmarks current_file<cr>")
