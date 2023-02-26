@@ -1,5 +1,4 @@
 -- General
-require('insx.preset.standard').setup()
 require('trim').setup()
 
 -- Move lines

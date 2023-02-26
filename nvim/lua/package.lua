@@ -144,12 +144,6 @@ require("lazy").setup({
             "nvim-tree/nvim-web-devicons",
         },
     },
-    {
-        "kosayoda/nvim-lightbulb",
-        dependencies = {
-            "antoinemadec/FixCursorHold.nvim",
-        },
-    },
 
     -- Lua
     "hrsh7th/cmp-nvim-lua",
@@ -190,7 +184,6 @@ require("lazy").setup({
     },
 
     -- Text
-    "hrsh7th/nvim-insx",
     "echasnovski/mini.nvim",
 
     -- Tag
