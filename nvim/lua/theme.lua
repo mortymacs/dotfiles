@@ -1,11 +1,11 @@
-vim.cmd.colorscheme("spaceduck")
+    vim.cmd.colorscheme("spaceduck")
 vim.g.lightline = {
     colorscheme = 'spaceduck',
 }
 
 -- Body
 vim.api.nvim_set_hl(0, "Normal",      {bg = ""})
-vim.api.nvim_set_hl(0, "EndOfBuffer", {bg = "", fg = "#0f0f0f"})
+vim.api.nvim_set_hl(0, "EndOfBuffer", {bg = "", fg = "#060606"})
 vim.api.nvim_set_hl(0, "LineNr",      {bg = "", fg = "#686f9a"})
 vim.api.nvim_set_hl(0, "SignColumn",  {bg = ""})
 vim.api.nvim_set_hl(0, "VertSplit",   {bg = "", fg = "#1b1c36"})
@@ -14,6 +14,9 @@ vim.api.nvim_set_hl(0, "NonText",     {bg = "", fg = ""})
 -- Statusline
 vim.api.nvim_set_hl(0, "StatusLine",     {bg = "", fg = ""})
 vim.api.nvim_set_hl(0, "StatusLineTerm", {bg = "", fg = ""})
+
+-- Cmd
+vim.api.nvim_set_hl(0, "NoiceCmdlinePopupBorderCmdline", {bg = "#060606", fg = ""})
 
 -- Git
 vim.api.nvim_set_hl(0, "GitSignsAdd",    {bg = "", fg = "#5ccc96"})
@@ -25,22 +28,22 @@ vim.api.nvim_set_hl(0, "FloatermBorder", {fg = "#1b1c36"})
 vim.api.nvim_set_hl(0, "Floaterm",       {fg = "#1b1c36"})
 
 -- Notification
-vim.api.nvim_set_hl(0, "NotifyDEBUGBody",  {bg = "#0f0f0f"})
-vim.api.nvim_set_hl(0, "NotifyINFOBody",   {bg = "#0f0f0f"})
-vim.api.nvim_set_hl(0, "NotifyWARNBody",   {bg = "#0f0f0f"})
-vim.api.nvim_set_hl(0, "NotifyERRORBody",  {bg = "#0f0f0f"})
-vim.api.nvim_set_hl(0, "NotifyTRACEBody",  {bg = "#0f0f0f"})
-vim.api.nvim_set_hl(0, "NotifyBackground", {bg = "#0f0f0f"})
+vim.api.nvim_set_hl(0, "NotifyDEBUGBody",  {bg = "#060606"})
+vim.api.nvim_set_hl(0, "NotifyINFOBody",   {bg = "#060606"})
+vim.api.nvim_set_hl(0, "NotifyWARNBody",   {bg = "#060606"})
+vim.api.nvim_set_hl(0, "NotifyERRORBody",  {bg = "#060606"})
+vim.api.nvim_set_hl(0, "NotifyTRACEBody",  {bg = "#060606"})
+vim.api.nvim_set_hl(0, "NotifyBackground", {bg = "#060606"})
 
 -- Telescope
-vim.api.nvim_set_hl(0, "TelescopeNormal",        {bg = "#0f0f0f"})
-vim.api.nvim_set_hl(0, "TelescopePreviewNormal", {bg = "#0f0f0f"})
-vim.api.nvim_set_hl(0, "TelescopePromptNormal",  {bg = "#0f0f0f"})
-vim.api.nvim_set_hl(0, "TelescopeResultNormal",  {bg = "#0f0f0f"})
+vim.api.nvim_set_hl(0, "TelescopeNormal",        {bg = "#060606"})
+vim.api.nvim_set_hl(0, "TelescopePreviewNormal", {bg = "#060606"})
+vim.api.nvim_set_hl(0, "TelescopePromptNormal",  {bg = "#060606"})
+vim.api.nvim_set_hl(0, "TelescopeResultNormal",  {bg = "#060606"})
 
 -- Development
-vim.api.nvim_set_hl(0, "FidgetTitle", {bg = "#0f0f0f"})
-vim.api.nvim_set_hl(0, "FidgetTask",  {bg = "#0f0f0f"})
+vim.api.nvim_set_hl(0, "FidgetTitle", {bg = "#060606"})
+vim.api.nvim_set_hl(0, "FidgetTask",  {bg = "#060606"})
 
 -- LSP
 vim.api.nvim_set_hl(0, "Pmenu",                    {fg = "#ecf0c1", bg = "#22223b"})
