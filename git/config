@@ -30,6 +30,7 @@
     show-files = diff-tree --no-commit-id --name-only -r
     status-lines = diff --stat
     conflicts = diff --name-only --diff-filter=U --relative
+    restore-from-history = "!f(){ git checkout \"$(git rev-list -n 1 HEAD -- $1)\"^ -- \"$1\"; }; f"
 
 [push]
     default = current

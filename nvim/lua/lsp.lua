@@ -19,6 +19,7 @@ for type, icon in pairs(signs) do
   local hl = "DiagnosticSign" .. type
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
+vim.cmd [[autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
 
 -- Tags
 vim.g.fzf_tags_command = "fd | ctags -R --links=no -L-"
@@ -205,15 +206,6 @@ require('nvim_comment').setup({
   comment_empty = false,
   create_mappings = false,
 })
-
--- ALE
-vim.g.ale_disable_lsp = 1
-vim.g.ale_set_loclist = 0
-vim.g.ale_set_quickfix = 1
-vim.g.ale_fixers = {
-  ["*"] = { "remove_trailing_lines", "trim_whitespace" },
-  python = { "black", "isort" },
-}
 
 -- Glance
 require('glance').setup({

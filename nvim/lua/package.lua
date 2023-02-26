@@ -38,6 +38,19 @@ require("lazy").setup({
         },
     },
 
+    -- Cmd
+    {
+        "folke/noice.nvim",
+        dependencies = {
+            -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+            "MunifTanjim/nui.nvim",
+            -- OPTIONAL:
+            --   `nvim-notify` is only needed, if you want to use the notification view.
+            --   If not available, we use `mini` as the fallback
+            "rcarriga/nvim-notify",
+        }
+    },
+
     -- Notification
     "rcarriga/nvim-notify",
 
@@ -126,7 +139,6 @@ require("lazy").setup({
     "hrsh7th/vim-vsnip",
     "ray-x/lsp_signature.nvim",
     "lukas-reineke/cmp-rg",
-    "dense-analysis/ale",
     "folke/neodev.nvim",
     "dnlhc/glance.nvim",
     {

@@ -7,6 +7,7 @@ vim.cmd [[ source ~/.config/nvim/lua/package.lua ]]
 -- Body
 require("tabbar")
 require("statusbar")
+require("cmd")
 require("notification")
 
 -- Splashscreen
