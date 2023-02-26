@@ -50,6 +50,7 @@ SetKeyMap("<c-x><c-u>", "<Cmd>UndotreeToggle<cr>")
 SetKeyMap("<c-space>", "<esc>v", {"n"})
 SetKeyMap("<c-@>",     "<esc>v")
 SetKeyMap("<c-d>",     "<esc>yyp")
+SetKeyMap("<c-z>",     "<esc>u")
 
 -- https://stackoverflow.com/a/63887462/2338672
 SetKeyMap("<s-m-down>", "<esc><Cmd>m .+1<cr>==gi", {"i"})

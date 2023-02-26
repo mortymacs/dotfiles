@@ -6,6 +6,9 @@ require("noice").setup({
         hover = {
             enabled = false,
         },
+        progress = {
+            enabled = false,
+        },
     },
     messages = {
         enabled = false,
@@ -17,11 +20,6 @@ require("noice").setup({
         format = {
             cmdline = { icon = ">" },
             lua = { icon = ">" },
-        },
-    },
-    lsp = {
-        progress = {
-            enabled = false,
         },
     },
     presets = {
