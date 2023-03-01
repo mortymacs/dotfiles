@@ -44,6 +44,9 @@ cmp.setup({
         fields = { "abbr", "kind", "menu" },
         format = lspkind.cmp_format({
             mode = "symbol_text",
+            symbol_map = {
+                Variable = "",
+            },
         })
     },
     mapping = cmp.mapping.preset.insert({

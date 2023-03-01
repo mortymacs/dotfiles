@@ -18,8 +18,21 @@ require("noice").setup({
     },
     cmdline = {
         format = {
-            cmdline = { icon = ">" },
-            lua = { icon = ">" },
+            cmdline = {
+                icon = ">",
+            },
+            lua = {
+                icon = ">",
+            },
+            help = {
+                icon = "?",
+            },
+            search_down = {
+                icon = " ",
+            },
+            search_up = {
+                icon = " ",
+            },
         },
     },
     presets = {
