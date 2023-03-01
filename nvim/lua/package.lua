@@ -133,6 +133,7 @@ require("lazy").setup({
     "hrsh7th/nvim-cmp",
     "hrsh7th/cmp-vsnip",
     "hrsh7th/vim-vsnip",
+    "onsails/lspkind.nvim",
     "ray-x/lsp_signature.nvim",
     "lukas-reineke/cmp-rg",
     "folke/neodev.nvim",

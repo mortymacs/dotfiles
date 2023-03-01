@@ -24,35 +24,8 @@ vim.cmd [[autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {
 -- Tags
 vim.g.fzf_tags_command = "fd | ctags -R --links=no -L-"
 
--- Icon
-local kind_icons = {
-    Text = '',
-    Method = '',
-    Function = '',
-    Constructor = '',
-    Field = '',
-    Variable = '',
-    Class = '',
-    Interface = '',
-    Module = '',
-    Property = '',
-    Unit = '',
-    Value = '',
-    Enum = '',
-    Keyword = '',
-    Snippet = '',
-    Color = '',
-    File = '',
-    Reference = '',
-    Folder = '',
-    EnumMember = '',
-    Constant = '',
-    Struct = '',
-    Event = '',
-    Operator = '',
-    TypeParameter = '',
-}
-
+-- CMP
+local lspkind = require('lspkind')
 local cmp = require('cmp')
 cmp.setup({
     snippet = {
@@ -69,10 +42,9 @@ cmp.setup({
     },
     formatting = {
         fields = { "abbr", "kind", "menu" },
-        format = function(entry, vim_item)
-            vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind)
-            return vim_item
-        end,
+        format = lspkind.cmp_format({
+            mode = "symbol_text",
+        })
     },
     mapping = cmp.mapping.preset.insert({
         ['<C-b>'] = cmp.mapping.scroll_docs( -4),
