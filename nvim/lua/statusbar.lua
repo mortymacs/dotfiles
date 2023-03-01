@@ -32,4 +32,6 @@ vim.cmd("set cmdheight=0")
 vim.cmd("set laststatus=3")
 
 -- Trouble
-require("trouble").setup()
+require("trouble").setup({
+    indent_lines = false,
+})

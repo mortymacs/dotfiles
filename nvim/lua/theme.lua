@@ -84,6 +84,9 @@ vim.api.nvim_set_hl(0, "GlancePreviewSignColumn",  {bg = "#181818"})
 vim.api.nvim_set_hl(0, "GlancePreviewLineNr",      {bg = "#181818"})
 vim.api.nvim_set_hl(0, "GlanceListNormal",         {bg = "#181818"})
 
+-- Trouble
+vim.api.nvim_set_hl(0, "TroubleFoldIcon", {bg = ""})
+
 -- FM
 vim.api.nvim_set_hl(0, "NvimTreeStatusLine", {bg = "", fg = ""})
 
