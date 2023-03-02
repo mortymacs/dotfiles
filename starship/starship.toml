@@ -5,15 +5,15 @@
 format = """
 $sudo\
 $username\
-[](bg:#30365F fg:#00a3cc)\
+[](bg:#212529 fg:#023e8a)\
 $directory\
-[](fg:#30365F bg:#686f9a)\
+[](fg:#212529 bg:#343a40)\
 $git_branch\
 $git_commit\
 $git_state\
 $git_metrics\
 $git_status\
-[](fg:#686f9a) """
+[](fg:#343a40) """
 
 right_format = """
 $status\
@@ -34,28 +34,28 @@ error_symbol = '[>](bold red)'
 
 [username]
 show_always = true
-style_user = 'bg:#00a3cc fg:#F8EEDF'
-style_root = 'bg:#00a3cc fg:#F8EEDF'
+style_user = 'bg:#023e8a fg:#F8EEDF'
+style_root = 'bg:#023e8a fg:#F8EEDF'
 format = '[ $user ]($style)'
 
 [directory]
-style = 'bg:#30365F fg:#F8EEDF'
+style = 'bg:#212529 fg:#F8EEDF'
 format = '[ $path ]($style)'
 truncation_length = 3
 truncation_symbol = '…/'
 
 [git_branch]
 symbol = ''
-style = 'bg:#686f9a fg:#F8EEDF'
+style = 'bg:#343a40 fg:#F8EEDF'
 format = '[ $symbol$branch]($style)'
 
 [git_commit]
 tag_disabled = false
-style = 'bg:#686f9a fg:#F8EEDF'
+style = 'bg:#343a40 fg:#F8EEDF'
 format = '[\($hash$tag\)]($style)'
 
 [git_state]
-style = 'bg:#686f9a fg:#F8EEDF'
+style = 'bg:#343a40 fg:#F8EEDF'
 format = '[\($state($progress_current/$progress_total)\)]($style)'
 
 [git_status]
@@ -63,11 +63,11 @@ ahead = '󰁝'
 behind = '󰁅'
 diverged = '󰹹'
 deleted = 'x'
-style = 'bg:#686f9a fg:#F8EEDF'
+style = 'bg:#343a40 fg:#F8EEDF'
 format = '[$all_status$ahead_behind ]($style)'
 
 [status]
-style = 'bold bg:#686f9a fg:#F8EEDF'
+style = 'bold bg:#343a40 fg:#F8EEDF'
 format = '[$status]($style)'
 disabled = false
 
