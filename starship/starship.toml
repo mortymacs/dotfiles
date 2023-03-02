@@ -67,8 +67,8 @@ style = 'bg:#343a40 fg:#F8EEDF'
 format = '[$all_status$ahead_behind ]($style)'
 
 [status]
-style = 'bold bg:#343a40 fg:#F8EEDF'
-format = '[$status]($style)'
+style = 'bold bg:#D12E4F fg:#F8EEDF'
+format = '[ $status ]($style)'
 disabled = false
 
 [aws]
