@@ -1,3 +1,4 @@
+abseil-cpp
 alacritty
 arc-gtk-theme
 arc-icon-theme
@@ -67,6 +68,7 @@ go
 gopls
 gping
 grep
+grpc
 gzip
 helm
 hexyl

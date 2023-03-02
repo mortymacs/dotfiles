@@ -9,6 +9,7 @@ gofumpt
 golangci-lint
 golines
 gomodifytags
+google-crc32c
 gosec
 gotags
 insomnia-bin
