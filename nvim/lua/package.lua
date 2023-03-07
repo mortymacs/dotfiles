@@ -160,6 +160,7 @@ require("lazy").setup({
     },
 
     -- Go
+    "fatih/vim-go",
     "ray-x/go.nvim",
     "ray-x/guihua.lua",
 
@@ -196,6 +197,7 @@ require("lazy").setup({
     -- Git
     "lewis6991/gitsigns.nvim",
     "ruanyl/vim-gh-line",
+    "f-person/git-blame.nvim",
 
     -- Orgmode
     "nvim-orgmode/orgmode",

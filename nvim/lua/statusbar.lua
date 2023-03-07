@@ -1,3 +1,6 @@
+-- Git Blame
+local git_blame = require('gitblame')
+
 -- Lualine
 require("lualine").setup({
     options = {
@@ -23,7 +26,12 @@ require("lualine").setup({
         },
         lualine_b = {},
         lualine_c = { "lsp_progress" },
-        lualine_x = { "branch", "diff", "diagnostics" },
+        lualine_x = {
+            { git_blame.get_current_blame_text, cond = git_blame.is_blame_text_available },
+            "branch",
+            "diff",
+            "diagnostics",
+        },
         lualine_y = { "filetype", "filesize" },
         lualine_z = { "progress" },
     },

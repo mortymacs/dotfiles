@@ -8,3 +8,6 @@ require('gitsigns').setup({
     untracked    = { hl = 'GitSignsAdd'   , text = '│', numhl='GitSignsAddNr'   , linehl='GitSignsAddLn'    },
   },
 })
+
+-- Blame
+vim.g.gitblame_display_virtual_text = 0
