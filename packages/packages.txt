@@ -65,6 +65,7 @@ git-delta
 github-cli
 glow
 go
+go-tools
 gopls
 gping
 grep
