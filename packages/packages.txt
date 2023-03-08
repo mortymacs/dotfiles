@@ -202,7 +202,6 @@ yaml-language-server
 youtube-dl
 yq
 zathura-pdf-mupdf
-zellij
 zenity
 zip
 zoxide
