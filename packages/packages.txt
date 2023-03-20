@@ -127,7 +127,6 @@ patch
 peco
 perf
 pgcli
-picom
 pkgconf
 polybar
 privoxy
