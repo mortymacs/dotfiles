@@ -187,6 +187,7 @@ valgrind
 vhs
 viu
 vulkan-intel
+wezterm
 wget
 which
 whois

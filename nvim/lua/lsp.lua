@@ -153,6 +153,14 @@ lspconfig.pyright.setup({
     end,
 })
 
+-- Nix
+lspconfig.rnix.setup({
+    capabilities = capabilities,
+    on_attach = function(client, bufnr)
+        require "lsp_signature".on_attach(lspSignatureConfig, bufnr)
+    end,
+})
+
 -- YAML
 local yamlCfg = require("yaml-companion").setup({
     builtin_matchers = {

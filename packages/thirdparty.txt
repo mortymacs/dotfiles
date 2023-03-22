@@ -20,6 +20,7 @@ lazydocker
 ly
 nodejs-dockerfile-language-server
 python3-yamale
+rnix-lsp
 rofi-greenclip
 src-cli-bin
 stern-bin
