@@ -5,7 +5,7 @@
 format = """
 $sudo\
 $username\
-[](bg:#212529 fg:#023e8a)\
+[](bg:#212529 fg:#119DA4)\
 $directory\
 [](fg:#212529 bg:#343a40)\
 $git_branch\
@@ -34,8 +34,8 @@ error_symbol = '[>](bold red)'
 
 [username]
 show_always = true
-style_user = 'bg:#023e8a fg:#F8EEDF'
-style_root = 'bg:#023e8a fg:#F8EEDF'
+style_user = 'bg:#119DA4 fg:#F8EEDF'
+style_root = 'bg:#119DA4 fg:#F8EEDF'
 format = '[ $user ]($style)'
 
 [directory]
@@ -72,11 +72,11 @@ format = '[ $status ]($style)'
 disabled = false
 
 [aws]
-style = 'fg:#F0CEA0'
+style = 'fg:#FFC857'
 format = '[$profile(\[$region\])(\[$duration\])]($style)'
 
 [terraform]
-style = 'fg:#5ccc96'
+style = 'fg:#4B3F72'
 format = '[\[$workspace\]]($style)'
 
 [cmd_duration]
