@@ -29,6 +29,7 @@ require("lazy").setup({
             "nvim-tree/nvim-web-devicons",
         },
     },
+    "tiagovla/scope.nvim",
 
     -- Statusbar
     {
@@ -160,7 +161,7 @@ require("lazy").setup({
     },
 
     -- Go
-    "fatih/vim-go",
+    -- "fatih/vim-go",
     "ray-x/go.nvim",
     "ray-x/guihua.lua",
 
@@ -187,6 +188,7 @@ require("lazy").setup({
 
     -- Text
     "echasnovski/mini.nvim",
+    "ggandor/leap.nvim",
 
     -- Tag
     "preservim/tagbar",

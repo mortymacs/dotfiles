@@ -20,10 +20,6 @@ cp "$HOME"/{.zshrc,.zsh_aliases,.zshenv} zsh/
 rm -rf alacritty/
 cp -R "$HOME"/.config/alacritty .
 
-# wezterm
-rm -rf wezterm/
-cp -R "$HOME"/.config/wezterm .
-
 # starship
 rm -rf starship/*
 cp "$HOME"/.config/starship.toml starship/

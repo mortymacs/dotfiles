@@ -52,6 +52,9 @@ SetKeyMap("<c-@>",     "<esc>v")
 SetKeyMap("<c-d>",     "<esc>yyp")
 SetKeyMap("<c-z>",     "<esc>u")
 
+-- search
+SetKeyMap("<c-l>", "<Plug>(leap-forward-till)")
+
 -- https://stackoverflow.com/a/63887462/2338672
 SetKeyMap("<s-m-down>", "<esc><Cmd>m .+1<cr>==gi", {"i"})
 SetKeyMap("<s-m-up>",   "<esc><Cmd>m .-2<cr>==gi", {"i"})

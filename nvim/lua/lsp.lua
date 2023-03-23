@@ -153,6 +153,17 @@ lspconfig.pyright.setup({
     end,
 })
 
+-- PHP
+lspconfig.phpactor.setup({
+    on_attach = function(client, bufnr)
+        require "lsp_signature".on_attach(lspSignatureConfig, bufnr)
+    end,
+    init_options = {
+        ["language_server_phpstan.enabled"] = false,
+        ["language_server_psalm.enabled"] = false,
+    }
+})
+
 -- Nix
 lspconfig.rnix.setup({
     capabilities = capabilities,
