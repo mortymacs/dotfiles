@@ -16,7 +16,7 @@ vim.api.nvim_set_hl(0, "StatusLine",     {bg = "", fg = ""})
 vim.api.nvim_set_hl(0, "StatusLineTerm", {bg = "", fg = ""})
 
 -- Cmd
-vim.api.nvim_set_hl(0, "NoiceCmdlinePopupBorderCmdline", {bg = "#060606", fg = ""})
+vim.api.nvim_set_hl(0, "NoiceCmdlinePopupBorderCmdline", {bg = "#060606", fg = "#686f9a"})
 vim.api.nvim_set_hl(0, "NoiceCmdlinePopup",              {bg = "#060606", fg = ""})
 
 -- Git

@@ -44,10 +44,6 @@ require("noice").setup({
     },
     views = {
         cmdline_popup = {
-            size = {
-                width = 100,
-                height = "auto",
-            },
             border = {
                 style = "single",
                 padding = { 0, 0, },
