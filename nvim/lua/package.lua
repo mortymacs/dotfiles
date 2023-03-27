@@ -21,6 +21,7 @@ require("lazy").setup({
     },
     "projekt0n/github-nvim-theme",
     "norcalli/nvim-colorizer.lua",
+    "mvllow/modes.nvim",
 
     -- Tabbar
     {
