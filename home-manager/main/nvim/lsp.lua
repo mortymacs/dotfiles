@@ -165,3 +165,6 @@ require('nvim_comment').setup({
 
 -- LSP Saga.
 require("lspsaga").setup()
+
+-- Lens.
+require('lsp-lens').setup()

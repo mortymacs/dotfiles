@@ -13,22 +13,13 @@
     };
 
   };
-  outputs = { self, nixpkgs, home-manager, ... }:
+  outputs = { self, nixpkgs, home-manager, ... }@inputs:
     let
+      inherit (self) outputs;
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
-      vimNixPackages = pkgs: inputs: {
-        lsp-lens-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
-          name = "lsp-lens-nvim";
-          src = inputs.lsp-lens-nvim;
-        };
-      };
     in
     {
-      overlay = _final: prev: {
-        vimPlugins = prev.vimPlugins // (vimNixPackages prev.pkgs);
-      };
-
       nixosConfigurations = {
         main = nixpkgs.lib.nixosSystem {
           modules = [ ./nixos/main/configuration.nix ];
@@ -38,6 +29,7 @@
       homeConfigurations = {
         main = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
+          extraSpecialArgs = { inherit inputs outputs; };
           modules = [ ./home-manager/main/home.nix ];
         };
       };

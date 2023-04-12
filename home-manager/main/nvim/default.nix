@@ -114,7 +114,7 @@
             config = "require('fzf_lsp').setup()";
         }
         lspsaga-nvim
-# lsp-lens-nvim
+        lsp-lens-nvim
         vim-vsnip
         go-nvim
         nvim-comment

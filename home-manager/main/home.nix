@@ -1,5 +1,5 @@
 # https://coolors.co/351431-eb5e55-e23e58-d81e5b-2f2f2f-151515-ececec-35c693-8136c7-8c48cc
-{ config, pkgs, ... }:
+{ config, pkgs, outputs, inputs, ... }:
 {
   imports = [
     ./bspwm
@@ -41,6 +41,16 @@
       allowUnfreePredicate = (pkgs: true);
       joypixels.acceptLicense = true;
     };
+    overlays = [
+      (final: super: {
+        vimPlugins = super.vimPlugins // {
+          lsp-lens-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
+            name = "lsp-lens-nvim";
+            src = inputs.lsp-lens-nvim;
+          };
+        };
+      })
+    ];
   };
 
   home.packages = with pkgs; [
