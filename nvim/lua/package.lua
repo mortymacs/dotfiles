@@ -20,6 +20,7 @@ require("lazy").setup({
         branch = "main",
     },
     "projekt0n/github-nvim-theme",
+    "vv9k/bogster",
     "norcalli/nvim-colorizer.lua",
     "mvllow/modes.nvim",
 
@@ -117,6 +118,7 @@ require("lazy").setup({
             "nvim-lua/plenary.nvim",
         },
     },
+    "cljoly/telescope-repo.nvim",
 
     -- Debug
     {
@@ -147,6 +149,8 @@ require("lazy").setup({
             "nvim-tree/nvim-web-devicons",
         },
     },
+    "VidocqH/lsp-lens.nvim",
+    "gfanto/fzf-lsp.nvim",
 
     -- Lua
     "hrsh7th/cmp-nvim-lua",
@@ -190,6 +194,7 @@ require("lazy").setup({
     -- Text
     "echasnovski/mini.nvim",
     "ggandor/leap.nvim",
+    "AckslD/nvim-neoclip.lua",
 
     -- Tag
     "preservim/tagbar",

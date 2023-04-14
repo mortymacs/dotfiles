@@ -4,8 +4,8 @@ local git_blame = require('gitblame')
 -- Lualine
 require("lualine").setup({
     options = {
-        theme = "github_dark",
-        section_separators = { left = "", right = "" },
+        theme = "auto",
+        section_separators = { left = "", right = "" },
         component_separators = "",
         globalstatus = true,
         disabled_filetypes = { "fzf" },

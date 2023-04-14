@@ -220,4 +220,15 @@ require("lspsaga").setup({
     lightbulb = {
         enable = false,
     },
+    finder = {
+    keys = {
+      expand_or_jump = '<enter>',
+    },
+},
 })
+
+-- Lens.
+require('lsp-lens').setup()
+
+-- FZF.
+require('fzf_lsp').setup()

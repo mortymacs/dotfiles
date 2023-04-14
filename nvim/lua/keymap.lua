@@ -21,6 +21,17 @@ SetKeyMap("<c-s-right>", "<Cmd>vertical resize -1<cr>")
 -- Buffer
 SetKeyMap("<c-x><c-e>", ":Bd!<cr>")
 SetKeyMap("<c-f>",      "<Cmd>Telescope current_buffer_fuzzy_find<cr>")
+SetKeyMap("<c-x><c-q>", "<Cmd>BufferClose<cr>")
+SetKeyMap("<c-x><c-p>", "<Cmd>BufferPin<cr>")
+
+-- Tab
+SetKeyMap("<s-left>",   "<Cmd>bprevious<cr>")
+SetKeyMap("<s-right>",  "<Cmd>bnext<cr>")
+SetKeyMap("<c-right>",  "<Cmd>tabnext<cr>")
+SetKeyMap("<c-left>",   "<Cmd>tabprevious<cr>")
+SetKeyMap("<c-t>",      "<Cmd>tabnew<cr>")
+SetKeyMap("<c-n>",      "<Cmd>new<cr>")
+SetKeyMap("<c-x><c-n>", "<Cmd>tabnew<cr>")
 
 -- File and directory
 SetKeyMap("<c-x><c-f>", "<Cmd>Files<cr>")
@@ -112,6 +123,9 @@ SetKeyMap("<c-l><c-s>", function() require("dapui").toggle() end)
 SetKeyMap("<c-l><c-b>", "<Cmd>DapToggleBreakpoint<cr>")
 SetKeyMap("<c-l><c-e>", "<Cmd>Telescope diagnostics<cr>")
 SetKeyMap("<c-l><Up>", "<Cmd>TroubleToggle workspace_diagnostics<cr>")
+
+-- Test
+SetKeyMap("<c-t><c-f>", "<Cmd>GoTestFunc<cr>")
 
 -- Bookmark
 SetKeyMap("<c-r><c-c>", "<Cmd>Telescope vim_bookmarks current_file<cr>")

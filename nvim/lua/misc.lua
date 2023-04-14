@@ -7,3 +7,6 @@ require("which-key").setup()
 
 -- Numb
 require('numb').setup()
+
+-- Clipboard
+require('neoclip').setup()
