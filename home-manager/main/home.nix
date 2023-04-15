@@ -42,6 +42,14 @@
       allowUnfreePredicate = (pkgs: true);
       joypixels.acceptLicense = true;
     };
+    overlays = [
+      (final: prev: {
+        unstable = import inputs.nixpkgs-unstable {
+          system = final.system;
+          config.allowUnfree = true;
+        };
+      })
+    ];
   };
 
   home.packages = with pkgs; [
