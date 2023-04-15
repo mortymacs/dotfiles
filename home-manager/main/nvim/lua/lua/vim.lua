@@ -30,7 +30,6 @@ vim.opt.completeopt = "menu,menuone,noselect"
 
 -- Statusline
 vim.opt.statusline = ""
-vim.cmd("set cmdheight=0")
 vim.cmd("set laststatus=3")
 
 -- Line number
