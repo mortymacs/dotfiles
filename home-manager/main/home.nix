@@ -5,6 +5,7 @@
     ./bspwm
     ./polybar
     ./sxhkd
+    ./picom
     ./zsh
     ./starship
     ./rofi
@@ -41,16 +42,6 @@
       allowUnfreePredicate = (pkgs: true);
       joypixels.acceptLicense = true;
     };
-    /* overlays = [ */
-    /*   (final: super: { */
-    /*     vimPlugins = super.vimPlugins // { */
-    /*       lsp-lens-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix { */
-    /*         name = "lsp-lens-nvim"; */
-    /*         src = inputs.lsp-lens-nvim; */
-    /*       }; */
-    /*     }; */
-    /*   }) */
-    /* ]; */
   };
 
   home.packages = with pkgs; [
