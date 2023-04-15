@@ -49,6 +49,29 @@ dap.configurations.go = {
   }
 }
 
+-- CPP
+dap.adapters.lldb = {
+  type = 'executable',
+  command = '/usr/bin/lldb-vscode',
+  name = 'lldb'
+}
+dap.configurations.cpp = {
+  {
+    name = 'Launch',
+    type = 'lldb',
+    request = 'launch',
+    program = function()
+      return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+    end,
+    cwd = '${workspaceFolder}',
+    stopOnEntry = false,
+    args = {},
+  },
+}
+
+-- C
+dap.configurations.c = dap.configurations.cpp
+
 -- Python
 dap.adapters.python = {
   type = "executable",
@@ -111,6 +134,3 @@ require("dapui").setup({
     },
   },
 })
-
--- DAP virtual text.
-require("nvim-dap-virtual-text").setup()

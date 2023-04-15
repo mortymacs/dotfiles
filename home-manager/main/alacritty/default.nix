@@ -34,7 +34,7 @@
 		};
 
 		font = {
-			size = 12;
+			size = 14;
             normal = {
                 family = "Ellograph CF Neovim Test 2";
             };

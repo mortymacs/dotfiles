@@ -8,7 +8,6 @@ vim.opt.syntax = "on"
 vim.opt.cursorline = true
 vim.opt.termguicolors = true
 vim.opt.background = "dark"
-vim.opt.termguicolors = true
 
 -- Backup
 vim.opt.backup = false
@@ -31,6 +30,8 @@ vim.opt.completeopt = "menu,menuone,noselect"
 
 -- Statusline
 vim.opt.statusline = ""
+vim.cmd("set cmdheight=0")
+vim.cmd("set laststatus=3")
 
 -- Line number
 vim.opt.numberwidth = 5

@@ -1,19 +1,10 @@
+require("util")
+
 require('nvim-tree').setup({
     sync_root_with_cwd = true,
     respect_buf_cwd = true,
     disable_netrw = true,
     hijack_cursor = true,
-    renderer = {
-        icons = {
-            show = {
-                file = true,
-                folder = true,
-                folder_arrow = true,
-                git = true,
-            },
-        },
-        special_files = { "Makefile", "CMakeLists.txt", "Cargo.toml", "Magefile", "go.mod", "go.sum", "pyproject.toml" },
-    },
     filters = {
         custom = { "^\\.git", "^\\.venv" },
     },
@@ -28,7 +19,6 @@ require('nvim-tree').setup({
         timeout = 400,
     },
     view = {
-        hide_root_folder = true,
         signcolumn = "no",
         mappings = {
             custom_only = true,
@@ -54,6 +44,7 @@ require('nvim-tree').setup({
         },
     },
     renderer = {
+        root_folder_label = false,
         icons = {
             padding = " ",
             show = {
@@ -92,6 +83,7 @@ require('nvim-tree').setup({
                 none = " ",
             },
         },
+        special_files = { "Makefile", "CMakeLists.txt", "Cargo.toml", "Magefile", "go.mod", "go.sum", "pyproject.toml" },
     },
     actions = {
         open_file = {

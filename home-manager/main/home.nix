@@ -41,16 +41,16 @@
       allowUnfreePredicate = (pkgs: true);
       joypixels.acceptLicense = true;
     };
-    overlays = [
-      (final: super: {
-        vimPlugins = super.vimPlugins // {
-          lsp-lens-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
-            name = "lsp-lens-nvim";
-            src = inputs.lsp-lens-nvim;
-          };
-        };
-      })
-    ];
+    /* overlays = [ */
+    /*   (final: super: { */
+    /*     vimPlugins = super.vimPlugins // { */
+    /*       lsp-lens-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix { */
+    /*         name = "lsp-lens-nvim"; */
+    /*         src = inputs.lsp-lens-nvim; */
+    /*       }; */
+    /*     }; */
+    /*   }) */
+    /* ]; */
   };
 
   home.packages = with pkgs; [
@@ -129,6 +129,7 @@
     tokei
 
     # Programming.
+    gcc
     go
     gopls
     sumneko-lua-language-server

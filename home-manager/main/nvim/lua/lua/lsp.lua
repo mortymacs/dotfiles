@@ -3,20 +3,6 @@ require("neodev").setup({
     library = { plugins = { "nvim-dap-ui" }, types = true },
 })
 
--- Diagnostic
-vim.diagnostic.config({
-    virtual_text = true,
-    signs = true,
-    underline = false,
-    update_in_insert = true,
-    severity_sort = false,
-})
-local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
-for type, icon in pairs(signs) do
-    local hl = "DiagnosticSign" .. type
-    vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
-end
-
 -- Tags
 vim.g.fzf_tags_command = "fd | ctags -R --links=no -L-"
 
@@ -107,7 +93,6 @@ local lspconfig = require('lspconfig')
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 -- Go
-require('go').setup()
 vim.g.go_auto_type_info = 0
 vim.g.go_gopls_gofumpt = 1
 vim.g.go_gopls_enabled = 1
@@ -121,7 +106,7 @@ lspconfig.gopls.setup({
 })
 
 -- Lua
-lspconfig.sumneko_lua.setup({
+lspconfig.lua_ls.setup({
     capabilities = capabilities,
 })
 
@@ -143,6 +128,14 @@ lspconfig.rnix.setup({
     capabilities = capabilities,
 })
 
+-- YAML
+local yamlCfg = require("yaml-companion").setup({
+    builtin_matchers = {
+        kubernetes = { enabled = true },
+    },
+})
+lspconfig.yamlls.setup(yamlCfg)
+
 -- XML
 -- https://gist.github.com/ptitfred/3402279
 vim.api.nvim_create_autocmd("BufWritePre",
@@ -163,8 +156,28 @@ require('nvim_comment').setup({
     create_mappings = false,
 })
 
--- LSP Saga.
-require("lspsaga").setup()
+-- Glance
+require('glance').setup({
+    preview_win_opts = {
+        cursorline = false,
+    },
+    folds = {
+        fold_closed = '>',
+        fold_open = 'v',
+        folded = true,
+    },
+})
+
+-- Saga
+require("lspsaga").setup({
+    symbol_in_winbar = {
+        separator = " ",
+    },
+    lightbulb = {
+        enable = false,
+    },
+})
 
 -- Lens.
 require('lsp-lens').setup()
+vim.api.nvim_create_autocmd("BufWritePost", { pattern = "*", command = ":LspLensOn"})

@@ -1,6 +1,5 @@
--- General
-vim.opt.background = "dark"
-vim.cmd.colorscheme("ayu-dark")
+vim.g.background = "dark"
+vim.cmd.colorscheme("spaceduck")
 
 -- Body
 vim.api.nvim_set_hl(0, "Normal",      {bg = ""})
@@ -98,3 +97,6 @@ vim.g.bookmark_highlight_lines = 1
 
 -- Cursor
 vim.opt.guicursor = { "a:ver1" }
+
+-- Mouse
+require('modes').setup()

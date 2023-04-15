@@ -1,3 +1,4 @@
+-- Setup.
 require("noice").setup({
     lsp = {
         signature = {
@@ -7,7 +8,7 @@ require("noice").setup({
             enabled = false,
         },
         progress = {
-            enabled = false,
+            enabled = true,
         },
     },
     messages = {

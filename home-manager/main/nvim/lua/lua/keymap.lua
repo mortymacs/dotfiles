@@ -1,26 +1,11 @@
--- Legendary.
-require('legendary').setup()
+require("util")
 
--- Whichkey.
-require("which-key").setup()
-
--- Util function.
-function SetKeyMap(shortcut, command, modes)
-	modes = modes or {"n", "i", "v", "x", "o", "c", "t", "l"}
-	for k, v in pairs(modes) do
-        pcall(vim.keymap.del, v, shortcut)
-        if v == "n" then
-            vim.keymap.set(v, shortcut, command, {silent = true, noremap = true})
-        else
-            vim.keymap.set(v, shortcut, command, {silent = true, noremap = false})
-        end
-	end
-end
+-- Command.
+SetKeyMap("<c-x><c-c>", "<Cmd>Telescope commands<cr>")
 
 -- Split and close panes
 SetKeyMap("<c-x><c-v>", "<Cmd>vsplit<cr>")
 SetKeyMap("<c-x><c-h>", "<Cmd>split<cr>")
-SetKeyMap("<c-x><c-c>", "<Cmd>close<cr>")
 
 -- Moving around panes
 SetKeyMap("<m-up>",    "<esc><c-w><c-k>")
@@ -38,23 +23,19 @@ SetKeyMap("<c-s-right>", "<Cmd>vertical resize -1<cr>")
 SetKeyMap("<c-x><c-e>", ":Bd!<cr>")
 SetKeyMap("<c-f>",      "<Cmd>Telescope current_buffer_fuzzy_find<cr>")
 
+-- Tabbar.
+SetKeyMap("<s-left>",   "<Cmd>BufferPrevious<cr>")
+SetKeyMap("<s-right>",  "<Cmd>BufferNext<cr>")
+SetKeyMap("<c-x><c-q>", "<Cmd>BufferClose<cr>")
+SetKeyMap("<c-x><c-p>", "<Cmd>BufferPin<cr>")
+SetKeyMap("<c-x><c-n>", "<Cmd>tabnew<cr>")
+
 -- File and directory
 SetKeyMap("<c-x><c-f>", "<Cmd>Files<cr>")
 SetKeyMap("<c-x><c-d>", "<Cmd>Telescope file_browser<cr>")
 SetKeyMap("<c-x><c-b>", "<Cmd>Buffers<cr>")
 SetKeyMap("<c-x><c-t>", "<Cmd>Telescope filetypes<cr>")
 SetKeyMap("<c-]>",      "<Cmd>NvimTreeToggle<cr>")
-
--- Tabbar
-SetKeyMap("<s-left>",   "<Cmd>bprevious<cr>")
-SetKeyMap("<s-right>",  "<Cmd>bnext<cr>")
-SetKeyMap("<c-right>",  "<Cmd>tabnext<cr>")
-SetKeyMap("<c-left>",   "<Cmd>tabprevious<cr>")
-SetKeyMap("<c-t>",      "<Cmd>tabnew<cr>")
-SetKeyMap("<c-n>",      "<Cmd>new<cr>")
-SetKeyMap("<c-x><c-q>", "<Cmd>BufferClose<cr>")
-SetKeyMap("<c-x><c-p>", "<Cmd>BufferPin<cr>")
-SetKeyMap("<c-x><c-n>", "<Cmd>tabnew<cr>")
 
 -- Search
 SetKeyMap("<c-x><c-g>", "<Cmd>Telescope live_grep<cr>")
