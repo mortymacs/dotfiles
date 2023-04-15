@@ -110,6 +110,10 @@
   services.greenclip.enable = true;
 
   # Security.
+  services.tor = {
+      enable = true;
+      client.enable = true;
+  };
   services.privoxy = {
     enable = true;
     enableTor = true;
@@ -135,6 +139,6 @@
   # Enable dconf.
   programs.dconf.enable = true;
 
-  # NixOS release. 
+  # NixOS release.
   system.stateVersion = "22.11";
 }
