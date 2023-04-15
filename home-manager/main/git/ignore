@@ -1,0 +1,58 @@
+# General
+init-doc
+log/
+tmp/
+
+# Build
+bin/
+dist/
+*.out
+target/
+
+# Python
+venv
+.venv
+*pyc
+*.egg-info/
+__pycached__/
+.mypy_cache
+
+# C/C++
+.tags
+tags
+*~
+*.o
+*.so
+*.cmake
+CMakeCache.txt
+CMakeFiles/
+cmake-build-debug/
+compile_commands.json
+.ccls
+
+# Go
+vendor/
+*.test
+
+# Editors/IDE
+.vim
+*.swp
+
+# Helm
+Chart.lock
+
+# Compressed
+*.zip
+*.tar.gz
+*.tgz
+*.rar
+*.7z
+
+# Misc
+.bundle
+Gemfile.lock
+*.plist
+.cache
+*.sqlite3
+*.spec
+*.lock

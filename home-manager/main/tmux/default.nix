@@ -14,6 +14,7 @@
 
         # Keybinding.
         bind -n M-S-Left   previous-window
+        bind -n M-S-Right  next-window
         bind -n C-\\       split-window  -h
         bind -n M-\\       split-window  -v
         bind -n M-C-Up     select-pane   -U
