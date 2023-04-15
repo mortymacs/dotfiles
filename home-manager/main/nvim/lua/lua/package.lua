@@ -95,7 +95,7 @@ require("lazy").setup({
     "norcalli/nvim-colorizer.lua",
     {
         "nvim-treesitter/nvim-treesitter",
-        config = function()
+        build = function()
             vim.cmd(":TSUpdate")
         end,
     },

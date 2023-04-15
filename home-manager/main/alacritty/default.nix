@@ -77,11 +77,11 @@
           blue = "#00a3cc";
           magenta = "#f2ce00";
           cyan = "#7a5ccc";
-          white = "#f0f1ce";
+          white = "#686f9a";
         };
         # Bright colors
         bright = {
-          black = "#000000";
+          black = "#686f9a";
           red = "#e33400";
           green = "#5ccc96";
           yellow = "#b3a1e6";
