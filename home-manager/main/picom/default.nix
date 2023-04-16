@@ -7,6 +7,7 @@
     inactiveOpacity = 0.9;
     shadowExclude = [
       "window_type *= 'menu'"
+      "class_g = 'firefox' && window_type = 'utility'"
       "focused = 1"
     ];
   };
