@@ -25,11 +25,11 @@
     "lsp-lens-nvim": {
       "flake": false,
       "locked": {
-        "lastModified": 1681267828,
-        "narHash": "sha256-UR8uxCriBRvo2kl8HKfDCCq+5HINc1Nei/sfWbpzeGs=",
+        "lastModified": 1681660408,
+        "narHash": "sha256-anS3Mfas3W/EjR1NXZT8tMAk1r/2dzeJ9LiQtPF1Nkg=",
         "owner": "VidocqH",
         "repo": "lsp-lens.nvim",
-        "rev": "b5e7440eac5559053f3694541ee4017242927a21",
+        "rev": "dab0f00922caa211a88d9fb30d25f11a64382e87",
         "type": "github"
       },
       "original": {
@@ -56,11 +56,11 @@
     },
     "nixpkgs-unstable": {
       "locked": {
-        "lastModified": 1681465517,
-        "narHash": "sha256-EasJh15/jcJNAHtq2SGbiADRXteURAnQbj1NqBoKkzU=",
+        "lastModified": 1681648924,
+        "narHash": "sha256-pzi3HISK8+7mpEtv08Yr80wswyHKsz+RP1CROG1Qf6s=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "abe7316dd51a313ce528972b104f4f04f56eefc4",
+        "rev": "f294325aed382b66c7a188482101b0f336d1d7db",
         "type": "github"
       },
       "original": {

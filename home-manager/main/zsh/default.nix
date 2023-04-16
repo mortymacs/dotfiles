@@ -43,7 +43,6 @@
       rm = "trash";
       z = ''(){
             if [ "$#" -eq 0 ]; then
-                # https://github.com/x-motemen/ghq/issues/294#issuecomment-662071100
                 cd "$(zoxide query -i)"
             else
                 cd "$(zoxide query $@)"
@@ -89,8 +88,9 @@
       # Git.
       p = ''(){
             if [ "$#" -eq 0 ]; then
-                # https://github.com/x-motemen/ghq/issues/294#issuecomment-662071100
-                cd "$(ghq list -p | fzf -1 -e)"
+                cd $(ghq list | fzf -e)
+            elif [ "$#" -eq 1 ]; then
+                cd $(ghq list | fzf -e -q "$1")
             else
                 ghq "$@"
             fi
@@ -117,7 +117,6 @@
 
             wait4x http http://127.0.0.1:4566
 
-            # Create default resources.
             for i in $(seq 1 $\{1:-3\}); do
                 aws --endpoint-url http://127.0.0.1:4566 --region us-east-1 sqs create-queue --queue-name "sqs$i"
                 aws --endpoint-url http://127.0.0.1:4566 --region us-east-1 sns create-topic --name "sns$i"
