@@ -9,7 +9,6 @@ in
     bspwm = {
       enable = true;
       settings = {
-        monitor = "0 1 2 3 4";
         window_gap = 3;
         border_width = 1;
         focused_border_color = "${focused_border_color}";
@@ -21,6 +20,9 @@ in
         gapless_monocle = true;
         focus_follows_pointer = false;
       };
+      extraConfig = ''
+        bspc monitor -d 0 1 2 3 4
+      '';
 
       startupPrograms = [
         # Network.
