@@ -87,14 +87,14 @@
 
       # Git.
       p = ''(){
-            if [ "$#" -eq 0 ]; then
-                cd $(ghq list | fzf -e)
-            elif [ "$#" -eq 1 ]; then
-                cd $(ghq list | fzf -e -q "$1")
-            else
-                ghq "$@"
-            fi
-        }'';
+        if [ "$#" -eq 0 ]; then
+          cd $GHQ_ROOT/$(ghq list | fzf -e)
+        elif [ "$#" -eq 1 ]; then
+          cd $GHQ_ROOT/$(ghq list | fzf -e -q "$1")
+        else
+          ghq "$@"
+        fi
+      }'';
       diff = "delta";
       blame = "git blame \`f\`";
 

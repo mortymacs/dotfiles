@@ -40,6 +40,9 @@
       gf = ''(){
             gg '$1' -g '$2'
         }'';
+      gfa = ''(){
+          gg \"$1\" -g \"*.$2\"
+      }'';
       rm = "trash";
       z = ''(){
             if [ "$#" -eq 0 ]; then
@@ -88,9 +91,9 @@
       # Git.
       p = ''(){
             if [ "$#" -eq 0 ]; then
-                cd $(ghq list | fzf -e)
+                cd $GHQ_ROOT/$(ghq list | fzf -e)
             elif [ "$#" -eq 1 ]; then
-                cd $(ghq list | fzf -e -q "$1")
+                cd $GHQ_ROOT/$(ghq list | fzf -e -q "$1")
             else
                 ghq "$@"
             fi
@@ -147,7 +150,7 @@
       dx = "export http_proxy=''";
       whereiam = "echo $(curl -s http://ip-api.com/json | jq -r '.country,.city')";
       dig = "dog";
-      vpn = "nix-shell \"$HOME/.local/bin/cato\" --command './cclient.sh start --append=tail --route=10.0.0.0/8'";
+      vpn = "cd \"$HOME/.local/bin/cato\" && nix-shell \"$HOME/.local/bin/cato\" --command './cclient.sh start --append=tail --route=10.0.0.0/8'";
 
       # LDAP.
       ldap-server = ''(){

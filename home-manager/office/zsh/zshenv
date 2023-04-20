@@ -62,5 +62,8 @@ export XSECURELOCK_SHOW_DATETIME=0
 # Man
 export MANPAGER=most
 
+# Go.
+GOPRIVATE="gitlab.ci.fdmg.org/*"
+
 # General.
 export PATH="$PATH:$HOME/.local/bin:$GOPATH/bin"
