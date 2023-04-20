@@ -35,18 +35,15 @@
 
       font = {
         size = 14;
-        normal = {
-          family = "Ellograph CF Neovim Test 2";
-        };
 
         offset = {
           x = 0;
-          y = 0;
+          y = 2;
         };
 
         glyph_offset = {
           x = 0;
-          y = 0;
+          y = -1;
         };
       };
 

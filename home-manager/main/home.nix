@@ -23,14 +23,7 @@
     homeDirectory = "/home/mort";
   };
 
-  # This value determines the Home Manager release that your
-  # configuration is compatible with. This helps avoid breakage
-  # when a new Home Manager release introduces backwards
-  # incompatible changes.
-  #
-  # You can update Home Manager without changing this value. See
-  # the Home Manager release notes for a list of state version
-  # changes in each release.
+  # Home manager version.
   home.stateVersion = "22.11";
 
   # Let Home Manager install and manage itself.
@@ -68,6 +61,7 @@
 
     # Meeting.
     zoom-us
+    teams
 
     # Music.
     spotify
@@ -91,10 +85,10 @@
     exa
     zoxide
     feh
+    file
 
     # Font.
     joypixels
-    vazir-fonts
 
     # Theme.
     yaru-theme
@@ -109,8 +103,11 @@
     awscli2
     ctop
 
+    # Database.
+    pgcli
+    mycli
+
     # Development.
-    jetbrains.goland
     delve
     go-tools
     revive
