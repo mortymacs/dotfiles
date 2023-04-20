@@ -6,7 +6,7 @@
     ../common/polybar
     ../common/sxhkd
     ../common/picom
-    ../common/zsh
+    ./zsh
     ../common/starship
     ../common/rofi
     ../common/alacritty
@@ -61,6 +61,7 @@
 
     # Meeting.
     zoom-us
+    teams
 
     # Music.
     spotify
@@ -130,6 +131,7 @@
     sumneko-lua-language-server
     terraform-ls
     rnix-lsp
+    jetbrains.phpstorm
   ];
 
   services = {
