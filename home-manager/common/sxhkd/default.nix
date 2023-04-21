@@ -5,7 +5,7 @@
 			# -- Applications.
 			# Terminal.
 			"super + Return" = "alacritty msg create-window 2>/dev/null || alacritty";
-			
+
 			# Launcher.
 			"super + d" = "rofi -show run";
 
@@ -82,6 +82,9 @@
 
 			# Move node.
 			"super + shift + ctrl + {Left,Right}" = "bspc node --to-desktop {prev,next}";
+
+            # Layout.
+            "super + ctrl + alt + {Left,Right}" = "bsp-layout {previous,next}";
 		};
 	};
 }

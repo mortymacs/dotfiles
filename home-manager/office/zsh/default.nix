@@ -274,7 +274,7 @@
       }'';
 
       # Monitor.
-      internal-monitor = ''(){
+      monitor-internal = ''(){
         INTERNAL_MONITOR=$(xrandr | \grep primary | cut -d' ' -f1)
         INTERNAL_MONITOR_RESOLUTION=$(xrandr | \grep -A15 primary | \grep '59.99    59.98' | cut -d' ' -f4)
         if [ -z "$INTERNAL_MONITOR_RESOLUTION"  ]; then
@@ -290,7 +290,7 @@
 
         feh --bg-fill ~/.config/bspwm/wallpaper.svg
       }'';
-      external-monitor = ''(){
+      monitor-external = ''(){
         INTERNAL_MONITOR=$(xrandr | \grep primary | cut -d' ' -f1)
         INTERNAL_MONITOR_RESOLUTION=$(xrandr | \grep -A15 primary | \grep '59.99    59.98' | cut -d' ' -f4)
         if [ -z "$INTERNAL_MONITOR_RESOLUTION"  ]; then

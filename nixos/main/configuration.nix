@@ -88,7 +88,10 @@
     extraGroups = [ "networkmanager" "wheel" "docker" ];
     initialPassword = "password";
     shell = pkgs.zsh;
-    packages = [ ];
+    packages = [
+        bsp-layout
+        bc
+    ];
   };
 
   # Package setting.
@@ -98,6 +101,7 @@
   environment.systemPackages = with pkgs; [
     nano
     wget
+    home-manager
   ];
 
   # Virtualization.
