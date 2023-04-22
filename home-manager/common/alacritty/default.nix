@@ -34,7 +34,7 @@
       };
 
       font = {
-        size = 14;
+        size = 12;
 
         offset = {
           x = 0;
