@@ -30,11 +30,7 @@
     "/crypto_keyfile.bin" = null;
   };
 
-  # Enable swap on luks
-  boot.initrd.luks.devices = {
-    "luks-dc6bb68a-06f0-4011-a2e9-b646b87c2251".device = "/dev/disk/by-uuid/dc6bb68a-06f0-4011-a2e9-b646b87c2251";
-    "luks-dc6bb68a-06f0-4011-a2e9-b646b87c2251".keyFile = "/crypto_keyfile.bin";
-  };
+  # Kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.kernelParams = [ "i915.force_probe=22e8" ];
 
@@ -143,7 +139,7 @@
       defaultFonts = {
         serif = [ "lexend" "Vazir" ];
         sansSerif = [ "lexend" "Vazir" ];
-        monospace = [ "Ellograph CF Neovim Test 2" "Code New Roman Nerd Font" ];
+        monospace = [ "Ellograph CF" "Code New Roman Nerd Font" ];
       };
     };
   };

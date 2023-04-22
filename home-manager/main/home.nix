@@ -9,7 +9,7 @@
     ../common/zsh
     ../common/starship
     ../common/rofi
-    ../common/alacritty
+    ../common/terminal
     ../common/tmux
     ../common/fzf
     ../common/nvim
