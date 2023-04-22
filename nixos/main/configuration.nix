@@ -3,6 +3,8 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ../common/ld.nix
+    ../common/fwupd.nix
   ];
 
   # Nix.
@@ -29,8 +31,11 @@
   };
 
   # Enable swap on luks
-  boot.initrd.luks.devices."luks-175a4d67-da09-48ae-ad74-70a2042273ab".device = "/dev/disk/by-uuid/luks-175a4d67-da09-48ae-ad74-70a2042273ab";
-  boot.initrd.luks.devices."luks-175a4d67-da09-48ae-ad74-70a2042273ab".keyFile = "/crypto_keyfile.bin";
+  boot.initrd.luks.devices = {
+    "luks-175a4d67-da09-48ae-ad74-70a2042273ab".device = "/dev/disk/by-uuid/luks-175a4d67-da09-48ae-ad74-70a2042273ab";
+    "luks-175a4d67-da09-48ae-ad74-70a2042273ab".keyFile = "/crypto_keyfile.bin";
+  };
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Networking.
   networking = {
@@ -57,6 +62,7 @@
     displayManager = {
       lightdm = {
         enable = true;
+        background = "#060606";
       };
       defaultSession = "none+bspwm";
     };
@@ -84,13 +90,13 @@
   # User.
   users.users.mort = {
     isNormalUser = true;
-    description = "mort";
+    description = "Mort";
     extraGroups = [ "networkmanager" "wheel" "docker" ];
     initialPassword = "password";
     shell = pkgs.zsh;
-    packages = [
-        bsp-layout
-        bc
+    packages = with pkgs; [
+      bsp-layout
+      bc
     ];
   };
 
@@ -102,6 +108,7 @@
     nano
     wget
     home-manager
+    ntfs3g
   ];
 
   # Virtualization.
@@ -115,8 +122,8 @@
 
   # Security.
   services.tor = {
-      enable = true;
-      client.enable = true;
+    enable = true;
+    client.enable = true;
   };
   services.privoxy = {
     enable = true;

@@ -111,6 +111,7 @@
     nano
     wget
     home-manager
+    ntfs3g
   ];
 
   # Package setting.

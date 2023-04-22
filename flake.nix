@@ -37,6 +37,7 @@
     {
       nixosConfigurations = {
         main = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs outputs; };
           modules = [ ./nixos/main/configuration.nix ];
         };
         office = nixpkgs.lib.nixosSystem {
