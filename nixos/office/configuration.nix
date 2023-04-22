@@ -9,7 +9,8 @@
     [
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./ld.nix
+      ../common/ld.nix
+      ../common/fwupd.nix
     ];
 
   # Nix.
@@ -36,8 +37,10 @@
   };
 
   # Enable swap on luks
-  boot.initrd.luks.devices."luks-dc6bb68a-06f0-4011-a2e9-b646b87c2251".device = "/dev/disk/by-uuid/dc6bb68a-06f0-4011-a2e9-b646b87c2251";
-  boot.initrd.luks.devices."luks-dc6bb68a-06f0-4011-a2e9-b646b87c2251".keyFile = "/crypto_keyfile.bin";
+  boot.initrd.luks.devices = {
+      "luks-dc6bb68a-06f0-4011-a2e9-b646b87c2251".device = "/dev/disk/by-uuid/dc6bb68a-06f0-4011-a2e9-b646b87c2251";
+      "luks-dc6bb68a-06f0-4011-a2e9-b646b87c2251".keyFile = "/crypto_keyfile.bin";
+  };
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.kernelParams = [ "i915.force_probe=22e8" ];
 
@@ -66,6 +69,7 @@
     displayManager = {
       lightdm = {
         enable = true;
+        background = "#060606";
       };
       defaultSession = "none+bspwm";
     };
@@ -101,9 +105,6 @@
       bc
     ];
   };
-
-  # Allow unfree packages
-  #nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile. To search, run:
   environment.systemPackages = with pkgs; [
@@ -154,6 +155,5 @@
   # Enable dconf.
   programs.dconf.enable = true;
 
-  system.stateVersion = "22.11"; # Did you read the comment?
-
+  system.stateVersion = "22.11";
 }

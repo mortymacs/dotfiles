@@ -73,8 +73,6 @@
     trash-cli
     gnome.zenity
     networkmanagerapplet
-    fwupd
-    fwupd-efi
     duf
     dog
 
