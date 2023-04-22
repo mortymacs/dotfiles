@@ -1,3 +1,4 @@
+{ pkgs }:
 {
   fonts = with pkgs; [
     (nerdfonts.override { fonts = [ "CodeNewRoman" ]; })
