@@ -15,7 +15,7 @@
     device = "/dev/disk/by-uuid/4cd964a4-37c6-4a1e-9d40-72595abc52c5";
     fsType = "ext4";
   };
-  boot.initrd.luks.devices."luks-657582f9-ca4a-4a68-b0e3-aaff6a05bac6".device = "/dev/disk/by-uuid/luks-657582f9-ca4a-4a68-b0e3-aaff6a05bac6";
+  boot.initrd.luks.devices."luks-657582f9-ca4a-4a68-b0e3-aaff6a05bac6".device = "/dev/disk/by-uuid/657582f9-ca4a-4a68-b0e3-aaff6a05bac6";
   fileSystems."/boot/efi" = {
     device = "/dev/disk/by-uuid/D318-2A11";
     fsType = "vfat";

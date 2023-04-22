@@ -17,7 +17,7 @@
   boot.loader = {
     systemd-boot = {
       enable = true;
-      configurationLimit = 5;
+      configurationLimit = 10;
     };
     efi = {
       canTouchEfiVariables = true;
@@ -32,7 +32,7 @@
 
   # Enable swap on luks
   boot.initrd.luks.devices = {
-    "luks-175a4d67-da09-48ae-ad74-70a2042273ab".device = "/dev/disk/by-uuid/luks-175a4d67-da09-48ae-ad74-70a2042273ab";
+    "luks-175a4d67-da09-48ae-ad74-70a2042273ab".device = "/dev/disk/by-uuid/175a4d67-da09-48ae-ad74-70a2042273ab";
     "luks-175a4d67-da09-48ae-ad74-70a2042273ab".keyFile = "/crypto_keyfile.bin";
   };
   boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -131,21 +131,7 @@
   };
 
   # Font.
-  fonts = {
-    fonts = with pkgs; [
-      (nerdfonts.override { fonts = [ "CodeNewRoman" ]; })
-      vazir-fonts
-      lexend
-    ];
-    fontconfig = {
-      enable = true;
-      defaultFonts = {
-        serif = [ "lexend" "Vazir" ];
-        sansSerif = [ "lexend" "Vazir" ];
-        monospace = [ "Ellograph CF Neovim Test 2" "Code New Roman Nerd Font" ];
-      };
-    };
-  };
+  fonts = import "../common/font.nix";
 
   # Enable dconf.
   programs.dconf.enable = true;
