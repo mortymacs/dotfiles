@@ -29,8 +29,8 @@
   };
 
   # Enable swap on luks
-  boot.initrd.luks.devices."luks-device".device = "/dev/disk/by-label/luks-device";
-  boot.initrd.luks.devices."luks-device".keyFile = "/crypto_keyfile.bin";
+  boot.initrd.luks.devices."luks-175a4d67-da09-48ae-ad74-70a2042273ab".device = "/dev/disk/by-uuid/luks-175a4d67-da09-48ae-ad74-70a2042273ab";
+  boot.initrd.luks.devices."luks-175a4d67-da09-48ae-ad74-70a2042273ab".keyFile = "/crypto_keyfile.bin";
 
   # Networking.
   networking = {

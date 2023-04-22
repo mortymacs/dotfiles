@@ -12,16 +12,16 @@
 
   # File systems.
   fileSystems."/" = {
-    device = "/dev/disk/by-label/nixos";
+    device = "/dev/disk/by-uuid/4cd964a4-37c6-4a1e-9d40-72595abc52c5";
     fsType = "ext4";
   };
-  boot.initrd.luks.devices."luks-nixos".device = "/dev/disk/by-label/luks-nixos";
+  boot.initrd.luks.devices."luks-657582f9-ca4a-4a68-b0e3-aaff6a05bac6".device = "/dev/disk/by-uuid/luks-657582f9-ca4a-4a68-b0e3-aaff6a05bac6";
   fileSystems."/boot/efi" = {
-    device = "/dev/disk/by-label/boot";
+    device = "/dev/disk/by-uuid/D318-2A11";
     fsType = "vfat";
   };
   swapDevices = [
-    { device = "/dev/disk/by-label/swap"; }
+    { device = "/dev/disk/by-uuid/2a91b83f-c47e-454f-ba2e-0b13b5e96964"; }
   ];
 
   # Network.
