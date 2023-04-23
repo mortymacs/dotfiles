@@ -8,6 +8,10 @@
 |____/ \___/ |_| |_|   |___|_____|_____|____/
 ```
 
+<img src="https://img.shields.io/badge/platform-NixOS-blue?style=flat-square" alt="platform">
+<img src="https://img.shields.io/github/last-commit/mortymacs/dotfiles?style=flat-square" alt="last-commit">
+<img src="https://img.shields.io/badge/license-Creative%20Commons%20Attribution--ShareAlike%204.0-green?style=flat-square" alt="license">
+
 My environment config. I tried to keep it minimal and simple as much as I could.
 
 ## General config
