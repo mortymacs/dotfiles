@@ -2,6 +2,7 @@
 {
   fonts = {
     fonts = with pkgs; [
+      (nerdfonts.override { fonts = [ "CodeNewRoman" ]; })
       vazir-fonts
       lexend
     ];
