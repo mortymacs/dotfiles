@@ -56,5 +56,5 @@ Some good resources that I used in my config:
 
 ## License
 
-Creative Commons Attribution-ShareAlike 4.0 International Public License
-Please read the [LICENSE](./LICENSE) file to know more.
+Creative Commons Attribution-ShareAlike 4.0 International Public License.
+Please read the [LICENSE](./LICENSE) file for more information.
