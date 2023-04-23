@@ -288,7 +288,7 @@
         bspc config bottom_padding 0
         bspc config right_padding 0
 
-        feh --bg-fill ~/.config/bspwm/wallpaper.svg
+        feh --bg-fill ~/.config/bspwm/wallpaper.jpg
       }'';
       monitor-external = ''(){
         INTERNAL_MONITOR=$(xrandr | \grep primary | cut -d' ' -f1)
