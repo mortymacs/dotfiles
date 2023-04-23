@@ -298,7 +298,7 @@
 
         bspc monitor "$EXTERNAL_MONITOR" --rectangle "$EXTERNAL_MONITOR_RESOLUTION"+0+0
 
-        feh --bg-fill ~/.config/bspwm/wallpaper.svg
+        feh --bg-fill ~/.config/bspwm/wallpaper.jpg
       }'';
       dual-monitor = ''(){
         INTERNAL_MONITOR=$(xrandr | \grep primary | cut -d' ' -f1)
@@ -312,7 +312,7 @@
 
         bspc monitor "$EXTERNAL_MONITOR" --rectangle "$EXTERNAL_MONITOR_RESOLUTION"+0+0
 
-        feh --bg-fill ~/.config/bspwm/wallpaper.svg
+        feh --bg-fill ~/.config/bspwm/wallpaper.jpg
     }'';
 
     };

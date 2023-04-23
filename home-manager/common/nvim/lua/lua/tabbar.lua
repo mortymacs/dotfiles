@@ -1,6 +1,8 @@
-require("bufferline").setup({
+require("barbar").setup({
     animation = false,
-    auto_hide = true,
-    closable = false,
-    clickable = false,
+    auto_hide = false,
+    tabpages = true,
+    icons = {
+        button = '',
+    },
 })
