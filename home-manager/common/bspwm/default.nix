@@ -35,10 +35,10 @@ in
         "pgrep -x sxhkd > /dev/null || sxhkd"
 
         # Background.
-        "feh --bg-fill ~/.config/bspwm/wallpaper.svg"
+        "feh --bg-fill ~/.config/bspwm/wallpaper.jpg"
 
         # Mouse.
-        "xsetroot -cursor_name dot"
+        "xsetroot -cursor_name arrow"
 
         # Lock screen.
         "xset s 180"
@@ -58,6 +58,6 @@ in
 
   xdg.configFile = {
     # Wallpaper.
-    "bspwm/wallpaper.svg".source = ./wallpaper.svg;
+    "bspwm/wallpaper.jpg".source = ./wallpaper.jpg;
   };
 }

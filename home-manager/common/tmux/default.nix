@@ -23,10 +23,31 @@
         bind -n M-C-Right  select-pane   -R
         bind -n C-PageUp   switch-client -p
         bind -n C-PageDown switch-client -n
+
+        # Colors (my colors + spaceduck colors).
+        # This tmux statusbar config was created by tmuxline.vim
+        # https://github.com/edkolev/tmuxline.vim
+        set -g status-justify "left"
+        set -g status "on"
+        set -g status-left-style "none"
+        set -g message-command-style "fg=#0d1321,bg=#3e5c76"
+        set -g status-right-style "none"
+        set -g status-style "none,bg=#0d1321"
+        set -g pane-active-border-style "fg=#5ccc96"
+        set -g message-style "fg=#0f111b,bg=#b3a1e6"
+        set -g pane-border-style "fg=#3e5c76"
+        set -g status-right-length "100"
+        set -g status-left-length "100"
+        setw -g window-status-activity-style "none"
+        setw -g window-status-separator ""
+        setw -g window-status-style "none,fg=#3e5c76,bg=#30365F"
+        set -g status-left "#[fg=#f0ebd8,bg=#1d2d44] #S #[fg=#1d2d44,bg=#0d1321,nobold,nounderscore,noitalics]"
+        set -g status-right "#[fg=#0d1321,bg=#0d1321,nobold,nounderscore,noitalics]#[fg=#3e5c76,bg=#0d1321] #h  #{tmux_mode_indicator} "
+        setw -g window-status-format "#[fg=#3e5c76,bg=#0d1321] #I #[fg=#3e5c76,bg=#0d1321] #W "
+        setw -g window-status-current-format "#[fg=#0d1321,bg=#3e5c76,nobold,nounderscore,noitalics]#[fg=#0d1321,bg=#3e5c76] #I #[fg=#0d1321,bg=#3e5c76] #W #[fg=#3e5c76,bg=#0d1321,nobold,nounderscore,noitalics]"
         '';
         plugins = with pkgs; [
             tmuxPlugins.fuzzback
-            tmuxPlugins.onedark-theme
             tmuxPlugins.tmux-fzf
         ];
 

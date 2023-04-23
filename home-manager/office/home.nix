@@ -20,6 +20,7 @@
     ../common/btop
     ../common/git
     ../common/docker
+    ../common/flameshot
     ../common/misc
   ];
 
@@ -79,6 +80,7 @@
     networkmanagerapplet
     duf
     dog
+    gping
 
     # File and directory.
     fzf
