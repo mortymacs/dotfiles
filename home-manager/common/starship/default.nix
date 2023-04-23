@@ -67,7 +67,11 @@ in
                 format = "[\($state($progress_current/$progress_total)\)]($style)";
             };
             git_status = {
+                ahead = "^";
+                behind = "v";
+                diverged = "//";
                 deleted = "x";
+                renamed = ">>";
                 style = "bg:${section_3_bg} fg:${section_3_fg}";
                 format = "[$all_status$ahead_behind ]($style)";
             };
