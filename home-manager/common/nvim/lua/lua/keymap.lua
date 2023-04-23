@@ -22,6 +22,7 @@ SetKeyMap("<c-s-right>", "<Cmd>vertical resize -1<cr>")
 -- Buffer
 SetKeyMap("<c-x><c-e>", ":Bd!<cr>")
 SetKeyMap("<c-f>",      "<Cmd>Telescope current_buffer_fuzzy_find<cr>")
+SetKeyMap("<c-r>",      "<Cmd>MurenToggle<cr>")
 
 -- Tabbar.
 SetKeyMap("<s-left>",   "<Cmd>BufferPrevious<cr>")

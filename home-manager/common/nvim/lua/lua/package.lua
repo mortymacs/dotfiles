@@ -50,6 +50,10 @@ require("lazy").setup({
             "rcarriga/nvim-notify",
         },
     },
+    {
+        "AckslD/muren.nvim",
+        config = true,
+    },
 
     -- Splash screen.
     {
