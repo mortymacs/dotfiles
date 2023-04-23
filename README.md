@@ -1,4 +1,4 @@
-# dotfiles
+# Dotfiles
 
 ```
  ____   ___ _____ _____ ___ _     _____ ____
@@ -49,3 +49,8 @@ Some good resources that I used in my config:
 * https://github.com/atkrad/dotfiles/
 * https://github.com/Misterio77/nix-config
 * https://github.com/alizdavoodi/nix-config/
+
+## License
+
+Creative Commons Attribution-ShareAlike 4.0 International Public License
+Please read the [LICENSE](./LICENSE) file to know more.
