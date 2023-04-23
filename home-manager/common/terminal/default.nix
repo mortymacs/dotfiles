@@ -1,75 +1,97 @@
 {
-  programs.wezterm = {
+  programs.alacritty = {
     enable = true;
-    extraConfig = ''
-      local wezterm = require 'wezterm'
-      return {
-        -- Wezterm
-        front_end = "OpenGL",
+    settings = {
+      env = {
+        WINIT_X11_SCALE_FACTOR = "1";
+        TERM = "xterm-256color";
+      };
+      window = {
+        opacity = 0.9;
+        decorations = "full";
+        dynamic_padding = false;
+        padding = {
+          x = 0;
+          y = 0;
+        };
+      };
 
-        -- Window
-        window_decorations = "NONE",
-        window_padding = {
-          left = 0,
-          right = 0,
-          top = 0,
-          bottom = 0,
-        },
+      cursor = {
+        style = {
+          shape = "Beam";
+          blinking = "Always";
+          blink_interval = 100;
+          vi_mode_style = "Beam";
+        };
+      };
 
-        -- Mouse
-        default_cursor_style = 'SteadyBar',
+      mouse = {
+        hide_when_typing = true;
+      };
 
-        -- Tab
-        use_fancy_tab_bar = false,
-        show_tabs_in_tab_bar = true,
-        show_new_tab_button_in_tab_bar = false,
-        tab_bar_at_bottom = true,
-        hide_tab_bar_if_only_one_tab = true,
+      selection = {
+        save_to_clipboard = true;
+      };
 
-        -- Font
-        font = wezterm.font 'monospace',
-        font_size = 12.5,
+      font = {
+        size = 14;
 
-        -- Colors
-        colors = {
-          -- Body
-          background = '#0f0f0f',
-          foreground = '#ecf0c1',
+        normal = {
+          family = "Code New Roman Nerd Font";
+        };
 
-          -- Cursor
-          cursor_bg = '#4B3F72',
-          cursor_fg = '#ecf0c1',
+        offset = {
+          x = 0;
+          y = 2;
+        };
 
-          -- Selection
-          selection_fg = '#ecf0c1',
-          selection_bg = '#1F2041',
+        glyph_offset = {
+          x = 0;
+          y = -1;
+        };
+      };
 
-          -- Split
-          split = '#1F2041',
+      # https://github.com/pineapplegiant/spaceduck-terminal
+      # Space Duck
+      colors = {
+        # Default colors
+        primary = {
+          background = "#060606";
+          foreground = "#ecf0c1";
+        };
 
-          -- Colors
-          ansi = {
-            '#000000',
-            '#e33400',
-            '#5ccc96',
-            '#b3a1e6',
-            '#00a3cc',
-            '#f2ce00',
-            '#7a5ccc',
-            '#686f9a',
-          },
-          brights = {
-            '#686f9a',
-            '#e33400',
-            '#5ccc96',
-            '#b3a1e6',
-            '#00a3cc',
-            '#f2ce00',
-            '#7a5ccc',
-            '#f0f1ce',
-          },
-        },
-      }
-    '';
+        cursor = {
+          cursor = "#4B3F72";
+        };
+
+        selection = {
+          text = "#ecf0c1";
+          background = "#1F2041";
+        };
+
+        # Normal colors
+        normal = {
+          black = "#000000";
+          red = "#e33400";
+          green = "#5ccc96";
+          yellow = "#b3a1e6";
+          blue = "#00a3cc";
+          magenta = "#f2ce00";
+          cyan = "#7a5ccc";
+          white = "#686f9a";
+        };
+        # Bright colors
+        bright = {
+          black = "#686f9a";
+          red = "#e33400";
+          green = "#5ccc96";
+          yellow = "#b3a1e6";
+          blue = "#00a3cc";
+          magenta = "#f2ce00";
+          cyan = "#7a5ccc";
+          white = "#f0f1ce";
+        };
+      };
+    };
   };
 }

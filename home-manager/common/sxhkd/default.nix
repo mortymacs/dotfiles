@@ -4,7 +4,7 @@
 		keybindings = {
 			# -- Applications.
 			# Terminal.
-			"super + Return" = "wezterm";
+			"super + Return" = "alacritty msg create-window 2>/dev/null || alacritty";
 
 			# Launcher.
 			"super + d" = "rofi -show run";

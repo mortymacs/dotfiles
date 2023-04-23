@@ -24,13 +24,13 @@ My environment config. I tried to keep it minimal and simple as much as I could.
 | Hotkey daemon | [Sxhkd](https://github.com/baskerville/sxhkd) |
 | Status Bar | [Polybar](https://github.com/polybar/polybar) |
 | Notification | [Dunst](https://github.com/dunst-project/dunst) |
-| Terminal | [Wezterm](https://github.com/wez/wezterm) |
+| Terminal | [Alacritty](https://github.com/alacritty/alacritty) |
 | Shell | [Zsh](https://www.zsh.org) |
 | Shell Prompt | [Starship](https://github.com/starship/starship) |
 | Terminal Multiplexer | [Tmux](https://github.com/tmux/tmux) |
 | Editor/IDE | [Neovim](https://github.com/neovim/neovim) |
 | DB | [dbcli tools](https://github.com/dbcli) |
-| Fonts | Display: [Lexend](https://github.com/googlefonts/lexend), [CodeNewRoman](https://www.nerdfonts.com), [VarizMatn](https://github.com/rastikerdar/vazirmatn), Monospace: [Ellograph](https://connary.com/ellograph.html) |
+| Fonts | Display: [Lexend](https://github.com/googlefonts/lexend), [VarizMatn](https://github.com/rastikerdar/vazirmatn), Monospace: [CodeNewRoman](https://www.nerdfonts.com) |
 | File Manager | [Broot](https://github.com/Canop/broot) |
 | Launcher | [Rofi](https://github.com/davatorium/rofi) |
 | Browser | [Firefox](https://www.mozilla.org) |
