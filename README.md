@@ -36,10 +36,6 @@ My environment config. I tried to keep it minimal and simple as much as I could.
 | Wallpaper | [Unsplash](https://unsplash.com/photos/f_nFeb9eWVA) |
 | Doc | [Zeal](https://github.com/zealdocs/zeal) |
 
-## Packages
-
-To see the list of packages, please check the [`packages`](./packages) directory.
-
 ## Screenshot
 
 <p align="center">
