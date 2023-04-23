@@ -71,6 +71,7 @@
     spotify
 
     # Security.
+    xss-lock
     xsecurelock
 
     # Misc.
