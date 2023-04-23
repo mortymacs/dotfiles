@@ -5,30 +5,34 @@
     ../common/bspwm
     ../common/polybar
     ../common/sxhkd
+    ../common/dunst
+    ../common/gtk
     ../common/picom
     ./zsh
     ../common/starship
     ../common/rofi
     ../common/terminal
     ../common/tmux
+    ../common/tmuxp
     ../common/fzf
+    ../common/peco
     ../common/nvim
     ../common/btop
     ../common/git
+    ../common/docker
+    ../common/misc
   ];
-  # Home Manager needs a bit of information about you and the
-  # paths it should manage.
+
+  # User home.
   home = {
     username = "mort";
     homeDirectory = "/home/mort";
   };
 
-  # Home manager version.
-  home.stateVersion = "22.11";
-
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
+  # Config packages.
   nixpkgs = {
     config = {
       allowUnfree = true;
@@ -60,7 +64,6 @@
     yq
 
     # Meeting.
-    zoom-us
     teams
 
     # Music.
@@ -90,6 +93,11 @@
 
     # Theme.
     yaru-theme
+
+    # Process.
+    procs
+    kmon
+    bmon
 
     # Cloud / virtualization.
     terraform
@@ -129,82 +137,13 @@
     sumneko-lua-language-server
     terraform-ls
     rnix-lsp
+    nodePackages.yaml-language-server
     jetbrains.phpstorm
   ];
 
-  services = {
-    flameshot = {
-      enable = true;
-      settings = {
-        General = {
-          disabledTrayIcon = true;
-          showStartupLaunchMessage = false;
-          checkForUpdates = false;
-        };
-      };
-    };
-    dunst = {
-      enable = true;
-      settings = {
-        global = {
-          font = "Lexend 10";
-          markup = "full";
-          frame_width = 1;
-          frame_color = "#7a5ccc";
-          corner_radius = 0;
-          gap_size = 1;
-          icon_theme = "Arc";
-        };
-        urgency_low = {
-          background = "#0f111b";
-          foreground = "#b3a1e6";
-          timeout = 10;
-        };
-        urgency_normal = {
-          background = "#0f111b";
-          foreground = "#ecf0c1";
-          timeout = 10;
-        };
-        urgency_critical = {
-          background = "#0f111b";
-          foreground = "#ce6f8f";
-          frame_color = "#B93C89";
-          timeout = 0;
-        };
-      };
-    };
-    udiskie = {
-      enable = true;
-    };
-  };
-
+  # Fontconfig.
   fonts.fontconfig.enable = true;
-  gtk = {
-    enable = true;
-    iconTheme = {
-      name = "Yaru-purple-dark";
-    };
-    theme = {
-      name = "Yaru-purple-dark";
-    };
-    gtk3 = {
-      extraConfig = {
-        gtk-theme-name = "Yaru-purple-dark";
-        gtk-icon-theme-name = "Yaru-purple-dark";
-        gtk-font-name = "Lexend 10";
-        gtk-cursor-theme-name = "Yaru";
-        gtk-cursor-theme-size = 0;
-        gtk-toolbar-style = "GTK_TOOLBAR_BOTH";
-        gtk-toolbar-icon-size = "GTK_ICON_SIZE_LARGE_TOOLBAR";
-        gtk-button-images = 1;
-        gtk-menu-images = 1;
-        gtk-enable-event-sounds = 0;
-        gtk-enable-input-feedback-sounds = 0;
-        gtk-xft-antialias = 1;
-        gtk-xft-hinting = 1;
-        gtk-xft-hintstyle = "hintfull";
-        gtk-error-bell = 0;
-      };
-    };
-  };
+
+  # Home manager version.
+  home.stateVersion = "22.11";
 }

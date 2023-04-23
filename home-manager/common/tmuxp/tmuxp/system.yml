@@ -1,0 +1,19 @@
+---
+session_name: system
+start_directory: ~/
+windows:
+  - window_name: plans
+    panes:
+      - gimpel
+  - window_name: process
+    panes:
+      - btop
+  - window_name: kernel
+    panes:
+      - sudo kmon
+  - window_name: docker
+    panes:
+      - ctop
+  - window_name: network
+    panes:
+      - sudo bmon

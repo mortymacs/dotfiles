@@ -59,6 +59,9 @@ export XSECURELOCK_SHOW_HOSTNAME=0
 export XSECURELOCK_SHOW_USERNAME=0
 export XSECURELOCK_SHOW_DATETIME=0
 
+# Most.
+export MOST_INITFILE="$HOME"/.config/most/mostrc
+
 # Man
 export MANPAGER=most
 
