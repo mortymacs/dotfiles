@@ -32,7 +32,7 @@ cmp.setup({
         })
     },
     mapping = cmp.mapping.preset.insert({
-        ['<C-b>'] = cmp.mapping.scroll_docs( -4),
+        ['<C-b>'] = cmp.mapping.scroll_docs(-4),
         ['<C-f>'] = cmp.mapping.scroll_docs(4),
         ['<C-Space>'] = cmp.mapping.complete(),
         ['<C-e>'] = cmp.mapping.abort(),
@@ -171,5 +171,12 @@ require("lspsaga").setup({
 })
 
 -- Lens.
-require('lsp-lens').setup()
-vim.api.nvim_create_autocmd("BufWritePost", { pattern = "*", command = ":LspLensOn"})
+require('lsp-lens').setup({
+    include_declaration = true, -- Reference include declaration
+    sections = { -- Enable / Disable specific request
+        definition = true,
+        references = true,
+        implementation = true,
+    },
+})
+vim.api.nvim_create_autocmd("BufWritePost", { pattern = "*", command = ":LspLensOn" })
