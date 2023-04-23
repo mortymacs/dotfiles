@@ -1,10 +1,10 @@
-# Edit this configuration file to define what should be installed on your system.
 { config, pkgs, inputs, ... }:
 {
   imports = [
     ./hardware-configuration.nix
     ../common/ld.nix
     ../common/fwupd.nix
+    ../common/font.nix
   ];
 
   # Nix.
@@ -125,23 +125,6 @@
   services.privoxy = {
     enable = true;
     enableTor = true;
-  };
-
-  # Font.
-  fonts = {
-    fonts = with pkgs; [
-      (nerdfonts.override { fonts = [ "CodeNewRoman" ]; })
-      vazir-fonts
-      lexend
-    ];
-    fontconfig = {
-      enable = true;
-      defaultFonts = {
-        serif = [ "lexend" "Vazir" ];
-        sansSerif = [ "lexend" "Vazir" ];
-        monospace = [ "Ellograph CF" "Code New Roman Nerd Font" ];
-      };
-    };
   };
 
   # Enable dconf.
