@@ -37,17 +37,17 @@
         size = 14;
 
         normal = {
-          family = "Code New Roman Nerd Font";
+          family = "Ellograph CF";
         };
 
         offset = {
           x = 0;
-          y = 2;
+          y = 0;
         };
 
         glyph_offset = {
           x = 0;
-          y = -1;
+          y = 0;
         };
       };
 

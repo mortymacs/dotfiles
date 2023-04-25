@@ -11,7 +11,7 @@
       defaultFonts = {
         serif = [ "Vazir" "Lexend" ];
         sansSerif = [ "Vazir" "Lexend" ];
-        monospace = [ "Code New Roman Nerd Font" ];
+        monospace = [ "Ellograph CF" ];
       };
     };
   };
