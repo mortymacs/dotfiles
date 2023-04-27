@@ -8,12 +8,13 @@
       };
       window = {
         opacity = 0.9;
-        decorations = "full";
+        decorations = "none";
         dynamic_padding = false;
         padding = {
           x = 0;
           y = 0;
         };
+        decorations_theme_variant = "Dark";
       };
 
       cursor = {
@@ -34,11 +35,7 @@
       };
 
       font = {
-        size = 14;
-
-        normal = {
-          family = "Ellograph CF";
-        };
+        size = 12;
 
         offset = {
           x = 0;
@@ -50,6 +47,7 @@
           y = 0;
         };
       };
+
 
       # https://github.com/pineapplegiant/spaceduck-terminal
       # Space Duck
