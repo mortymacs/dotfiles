@@ -42,7 +42,7 @@ in
 
         # Lock screen.
         "xset s 180"
-        "xss-lock --transfer-sleep-lock -- xsecurelock"
+        "xss-lock --transfer-sleep-lock -- 'XSECURELOCK_FONT=sans xsecurelock'"
       ];
       rules = {
         "firefox" = {

@@ -46,7 +46,7 @@
 			"super + w + g" = "bspc node -s biggest.window";
 
 			# Lock screen.
-			"super + l" = "xsecurelock";
+			"super + l" = "XSECURELOCK_FONT=sans xsecurelock";
 
 			# -- Focus/swap.
 			# Focus.
