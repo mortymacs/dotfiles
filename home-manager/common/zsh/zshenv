@@ -12,8 +12,8 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 # GUI
 # https://github.com/alacritty/alacritty/issues/3299#issuecomment-582789847
 export WINIT_UNIX_BACKEND=x11
-export XDG_SESSION_TYPE=x11
 export WINIT_X11_SCALE_FACTOR=1
+export XDG_SESSION_TYPE=x11
 
 # Python.
 # https://github.com/python-poetry/poetry/issues/5250#issuecomment-1067193647
@@ -33,7 +33,7 @@ export TERM="xterm-256color"
 # Editors.
 export VISUAL=nvim
 export EDITOR=nvim
-export TERMINAL=wezterm
+export TERMINAL=alacritty
 
 # Bat
 export BAT_THEME='ansi'
@@ -44,20 +44,6 @@ export FZF_DEFAULT_OPTS='--no-separator --inline-info --cycle --tabstop=4 --bind
 
 # Ghq.
 export GHQ_ROOT="$HOME/Workspaces"
-
-# Mcfly.
-export MCFLY_DISABLE_MENU=TRUE
-export MCFLY_RESULTS_SORT=RANK
-export MCFLY_RESULTS=50
-export MCFLY_FUZZY=2
-
-# Xsecurelock.
-export XSECURELOCK_FONT="Lexend"
-export XSECURELOCK_SHOW_KEYBOARD_LAYOUT=0
-export XSECURELOCK_DISCARD_FIRST_KEYPRESS=0
-export XSECURELOCK_SHOW_HOSTNAME=0
-export XSECURELOCK_SHOW_USERNAME=0
-export XSECURELOCK_SHOW_DATETIME=0
 
 # Most.
 export MOST_INITFILE="$HOME"/.config/most/mostrc
