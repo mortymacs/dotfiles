@@ -52,7 +52,7 @@ export MOST_INITFILE="$HOME"/.config/most/mostrc
 export MANPAGER=most
 
 # Go.
-GOPRIVATE="gitlab.ci.fdmg.org/*"
+export GOPRIVATE="gitlab.ci.fdmg.org/*"
 
 # General.
 export PATH="$PATH:$HOME/.local/bin:$GOPATH/bin"
