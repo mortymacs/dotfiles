@@ -132,6 +132,7 @@
     httpie
     hugo
     tokei
+    mage
 
     # Programming.
     gcc
