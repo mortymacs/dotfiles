@@ -1,6 +1,6 @@
 { lib, ... }:
 let
-    # Colors: https://coolors.co/351431-eb5e55-e23e58-d81e5b-2f2f2f-ececec
+    # Colors: https://coolors.co/351431-eb5e55-e23e58-d81e5b-2b2d42-ececec
     # username
     section_1_bg = "#351431";
     section_1_fg = "#ECECEC";
