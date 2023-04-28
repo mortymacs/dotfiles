@@ -14,8 +14,11 @@ let
     section_3_fg = "#ECECEC";
 
     # misc
-    section_4_bg = "#2F2F2F";
+    section_4_bg = "#2b2d42";
     section_4_fg = "#ECECEC";
+
+    # icon
+    icon = "";
 in
 {
     programs.starship = {
@@ -25,19 +28,19 @@ in
             format = lib.concatStrings [
                 "$sudo"
                 "$username"
-                "[](bg:${section_2_bg} fg:${section_1_bg})"
+                "[${icon}](bg:${section_2_bg} fg:${section_1_bg})"
                 "$directory"
-                "[](bg:${section_3_bg} fg:${section_2_bg})"
+                "[${icon}](bg:${section_3_bg} fg:${section_2_bg})"
                 "$git_branch"
                 "$git_commit"
                 "$git_state"
                 "$git_metrics"
                 "$git_status"
-                "[](bg:${section_4_bg} fg:${section_3_bg})"
+                "[${icon}](bg:${section_4_bg} fg:${section_3_bg})"
                 "$status"
                 "$cmd_duration"
                 "$jobs"
-                "[](fg:${section_4_bg}) "
+                "[${icon}](fg:${section_4_bg}) "
             ];
             add_newline = false;
             username = {
