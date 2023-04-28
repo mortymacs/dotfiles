@@ -133,6 +133,7 @@
     hugo
     tokei
     mage
+    air
 
     # Programming.
     gcc
