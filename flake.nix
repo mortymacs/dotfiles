@@ -9,11 +9,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    lsp-lens-nvim = {
-      url = "github:VidocqH/lsp-lens.nvim";
-      flake = false;
-    };
-
     # Nix-LD, Run unpatched dynamic binaries on NixOS.
     nix-ld = {
       url = "github:Mic92/nix-ld";

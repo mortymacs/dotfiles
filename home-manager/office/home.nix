@@ -140,6 +140,7 @@
     terraform-ls
     rnix-lsp
     nodePackages.yaml-language-server
+    nodePackages.dockerfile-language-server-nodejs
     jetbrains.phpstorm
   ];
 
