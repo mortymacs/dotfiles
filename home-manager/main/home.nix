@@ -82,6 +82,7 @@
     duf
     dog
     gping
+    zathura
 
     # File and directory.
     fzf
@@ -141,6 +142,7 @@
     rnix-lsp
     nodePackages.yaml-language-server
     nodePackages.dockerfile-language-server-nodejs
+    texlive.combined.scheme-small
   ];
 
   # Fontconfig.
