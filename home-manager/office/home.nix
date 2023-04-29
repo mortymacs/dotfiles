@@ -91,9 +91,6 @@
     feh
     file
 
-    # Font.
-    joypixels
-
     # Theme.
     yaru-theme
 
