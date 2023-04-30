@@ -1,5 +1,8 @@
 # https://coolors.co/351431-eb5e55-e23e58-d81e5b-2f2f2f-151515-ececec-35c693-8136c7-8c48cc
 { config, pkgs, outputs, inputs, ... }:
+let
+  defaultPackages = import ../common/packages.nix { inherit pkgs; };
+in
 {
   imports = [
     ../common/bspwm
@@ -50,99 +53,11 @@
     ];
   };
 
-  home.packages = with pkgs; [
-    # Application.
-    firefox
-
-    # Text.
-    bat
-    ripgrep-all
-    pwgen
-    peco
-    most
-    fd
-    jq
-    yq
-
+  home.packages = with pkgs; defaultPackages.list ++ [
     # Meeting.
     teams
 
-    # Music.
-    spotify
-
-    # Security.
-    xss-lock
-    xsecurelock
-
-    # Misc.
-    xclip
-    trash-cli
-    gnome.zenity
-    networkmanagerapplet
-    duf
-    dog
-    gping
-    zathura
-
-    # File and directory.
-    fzf
-    broot
-    exa
-    zoxide
-    feh
-    file
-
-    # Theme.
-    yaru-theme
-
-    # Process.
-    procs
-    kmon
-    bmon
-
-    # Cloud / virtualization.
-    terraform
-    kubecolor
-    kubectx
-    kind
-    stern
-    helm
-    awscli2
-    ctop
-
-    # Database.
-    pgcli
-    mycli
-
     # Development.
-    delve
-    go-tools
-    revive
-    gosec
-    gomodifytags
-    golangci-lint
-    gofumpt
-    terraform-docs
-    shellcheck
-    zeal
-    ghq
-    insomnia
-    httpie
-    hugo
-    tokei
-    mage
-    air
-
-    # Programming.
-    gcc
-    go
-    gopls
-    sumneko-lua-language-server
-    terraform-ls
-    rnix-lsp
-    nodePackages.yaml-language-server
-    nodePackages.dockerfile-language-server-nodejs
-    texlive.combined.scheme-small
     jetbrains.phpstorm
   ];
 
