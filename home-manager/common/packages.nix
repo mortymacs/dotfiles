@@ -31,6 +31,7 @@
     dog
     gping
     zathura
+    libqalculate
 
     # File and directory.
     fzf
