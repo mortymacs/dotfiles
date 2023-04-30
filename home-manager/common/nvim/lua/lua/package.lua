@@ -19,7 +19,6 @@ require("lazy").setup({
         "pineapplegiant/spaceduck",
         branch = "main",
     },
-    "projekt0n/github-nvim-theme",
     "mvllow/modes.nvim",
 
     -- Tabbar.
