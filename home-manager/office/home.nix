@@ -58,7 +58,7 @@ in
     teams
 
     # Development.
-    jetbrains.phpstorm
+    unstable.jetbrains.phpstorm
   ];
 
   # Fontconfig.
