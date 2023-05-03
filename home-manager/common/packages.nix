@@ -51,6 +51,7 @@
 
     # Cloud / virtualization.
     terraform
+    kubectl
     kubecolor
     kubectx
     kind
