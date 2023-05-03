@@ -1,20 +1,23 @@
 { lib, ... }:
 let
-    # Colors: https://coolors.co/351431-eb5e55-e23e58-d81e5b-2b2d42-ececec
+    # Colors:
+    ## https://coolors.co/351431-eb5e55-e23e58-d81e5b-2b2d42-ececec
+    ## https://coolors.co/2b2d42-005f73-0a9396-023047
+
     # username
-    section_1_bg = "#351431";
+    section_1_bg = "#2b2d42";
     section_1_fg = "#ECECEC";
 
     # directory
-    section_2_bg = "#E23E58";
+    section_2_bg = "#005f73";
     section_2_fg = "#ECECEC";
 
     # svc
-    section_3_bg = "#D81E5B";
+    section_3_bg = "#0a9396";
     section_3_fg = "#ECECEC";
 
     # misc
-    section_4_bg = "#2b2d42";
+    section_4_bg = "#023047";
     section_4_fg = "#ECECEC";
 
     # icon
