@@ -54,6 +54,7 @@
     kubecolor
     kubectx
     kind
+    kubespy
     stern
     helm
     awscli2
