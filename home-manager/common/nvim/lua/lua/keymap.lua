@@ -111,6 +111,7 @@ SetKeyMap("<c-c><c-f>",     "<Cmd>BTags<cr>")
 SetKeyMap("<c-c><c-w>",     "<Cmd>Telescope lsp_dynamic_workspace_symbols<cr>")
 SetKeyMap("<c-c><c-p>",     "<Cmd>Lspsaga peek_definition<cr>")
 SetKeyMap("<c-x><c-l>",     "<Cmd>LspRestart<cr>")
+SetKeyMap("<c-c><c-j>",     function() require('treesj').toggle() end)
 
 -- Debug
 SetKeyMap("<c-l><c-s>", function() require("dapui").toggle() end)
