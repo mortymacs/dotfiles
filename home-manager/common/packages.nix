@@ -81,6 +81,7 @@
     httpie
     hugo
     tokei
+    gnumake
     mage
     air
 
