@@ -157,6 +157,7 @@ require("lazy").setup({
             "nvim-tree/nvim-web-devicons",
         },
     },
+    "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
 
     -- Debug.
     {

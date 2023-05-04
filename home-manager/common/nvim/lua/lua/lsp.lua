@@ -180,3 +180,6 @@ require('lsp-lens').setup({
     },
 })
 vim.api.nvim_create_autocmd("BufWritePost", { pattern = "*", command = ":LspLensOn" })
+
+-- LSP Lines.
+require("lsp_lines").setup()
