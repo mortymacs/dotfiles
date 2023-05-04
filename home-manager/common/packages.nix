@@ -77,7 +77,7 @@
     shellcheck
     zeal
     ghq
-    insomnia
+    hurl
     httpie
     hugo
     tokei

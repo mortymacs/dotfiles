@@ -56,6 +56,7 @@ in
   home.packages = with pkgs; defaultPackages.list ++ [
     # Meeting.
     teams
+    postman
 
     # Development.
     unstable.jetbrains.phpstorm
