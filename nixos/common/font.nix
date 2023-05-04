@@ -13,7 +13,7 @@
       defaultFonts = {
         serif = [ "Vazirmatn" "Lexend" ];
         sansSerif = [ "Vazirmatn" "Lexend" ];
-        monospace = [ "Ellograph CF" "Code New Roman Nerd Font" ];
+        monospace = [ "Ellograph CF" "JoyPixels" "Code New Roman Nerd Font" ];
         emoji = [ "JoyPixels" ];
       };
     };
