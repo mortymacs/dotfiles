@@ -3,7 +3,7 @@
   fonts = {
     enableDefaultFonts = false;
     fonts = with pkgs; [
-      (nerdfonts.override { fonts = [ "CodeNewRoman" ]; })
+      (unstable.nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
       vazir-fonts
       lexend
       joypixels
@@ -13,7 +13,7 @@
       defaultFonts = {
         serif = [ "Vazirmatn" "Lexend" ];
         sansSerif = [ "Vazirmatn" "Lexend" ];
-        monospace = [ "Ellograph CF" "JoyPixels" "Code New Roman Nerd Font" ];
+        monospace = [ "Ellograph CF" "Symbols-2048-em Nerd Font" ];
         emoji = [ "JoyPixels" ];
       };
     };

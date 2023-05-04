@@ -98,8 +98,20 @@
     ];
   };
 
-  # Package setting.
-  nixpkgs.config.allowUnfree = true;
+  # Config packages.
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+    };
+    overlays = [
+      (final: prev: {
+        unstable = import inputs.nixpkgs-unstable {
+          system = final.system;
+          config.allowUnfree = true;
+        };
+      })
+    ];
+  };
 
   # List packages installed in system profile. To search, run:
   environment.systemPackages = with pkgs; [

@@ -97,8 +97,20 @@
     ];
   };
 
-  # Package setting.
-  nixpkgs.config.allowUnfree = true;
+  # Config packages.
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+    };
+    overlays = [
+      (final: prev: {
+        unstable = import inputs.nixpkgs-unstable {
+          system = final.system;
+          config.allowUnfree = true;
+        };
+      })
+    ];
+  };
 
   # Global packages.
   environment.systemPackages = with pkgs; [
