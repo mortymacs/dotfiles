@@ -97,15 +97,15 @@
                 --name localstack \
                 localstack/localstack
 
-            wait4x http http://127.0.0.1:4566
+            until curl -s http://127.0.0.1:4566; do echo "waiting..." && sleep 1; done
 
-            for i in $(seq 1 $\{1:-3\}); do
-                aws --endpoint-url http://127.0.0.1:4566 --region us-east-1 sqs create-queue --queue-name "sqs$i"
-                aws --endpoint-url http://127.0.0.1:4566 --region us-east-1 sns create-topic --name "sns$i"
-                aws --endpoint-url http://127.0.0.1:4566 --region us-east-1 s3api create-bucket --bucket "s3$i"
+            for i in $(seq 1 3); do
+                aws --endpoint-url http://127.0.0.1:4566 --region us-east-1 --profile localstack sqs create-queue --queue-name "sqs$i"
+                aws --endpoint-url http://127.0.0.1:4566 --region us-east-1 --profile localstack sns create-topic --name "sns$i"
+                aws --endpoint-url http://127.0.0.1:4566 --region us-east-1 --profile localstack s3api create-bucket --bucket "s3$i"
             done
         }'';
-  aws-local = "aws --endpoint-url http://127.0.0.1:4566 --region us-east";
+  aws-local = "aws --endpoint-url http://127.0.0.1:4566 --region us-east-1 --profile localstack";
 
   # Docker.
   ## http://www.bashoneliners.com/oneliners/252/
