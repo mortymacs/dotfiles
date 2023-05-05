@@ -183,8 +183,8 @@ require("lspsaga").setup({
 
 -- Lens.
 require('lsp-lens').setup({
-    include_declaration = true, -- Reference include declaration
-    sections = { -- Enable / Disable specific request
+    include_declaration = true,
+    sections = {
         definition = true,
         references = true,
         implementation = true,

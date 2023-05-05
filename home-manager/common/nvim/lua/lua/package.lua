@@ -116,7 +116,6 @@ require("lazy").setup({
     "echasnovski/mini.nvim",
     "kylechui/nvim-surround",
     "Wansmer/treesj",
-    "kevinhwang91/nvim-bqf",
 
     -- LSP.
     "neovim/nvim-lspconfig",
