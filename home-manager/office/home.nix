@@ -41,7 +41,6 @@ in
     config = {
       allowUnfree = true;
       allowUnfreePredicate = (pkgs: true);
-      joypixels.acceptLicense = true;
     };
     overlays = [
       (final: prev: {

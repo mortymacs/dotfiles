@@ -4,19 +4,18 @@
     enableDefaultFonts = false;
     fonts = with pkgs; [
       (unstable.nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
-      vazir-fonts
-      lexend
-      joypixels
+      unstable.vazir-fonts
+      unstable.lexend
+      unstable.noto-fonts-emoji
     ];
     fontconfig = {
       enable = true;
       defaultFonts = {
         serif = [ "Vazirmatn" "Lexend" ];
         sansSerif = [ "Vazirmatn" "Lexend" ];
-        monospace = [ "Ellograph CF" "Symbols-2048-em Nerd Font" ];
-        emoji = [ "JoyPixels" ];
+        monospace = [ "Ellograph CF" "Noto Color Emoji" "Symbols-2048-em Nerd Font" ];
+        emoji = [ "Noto Color Emoji" ];
       };
     };
   };
-  nixpkgs.config.joypixels.acceptLicense = true;
 }
