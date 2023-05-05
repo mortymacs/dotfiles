@@ -170,7 +170,7 @@
             docker run -d --rm \
                 -p 3306:3306 \
                 --hostname mysql --name mysql \
-                -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE="$\{1:-db\}" -e MYSQL_USER=user -e MYSQL_PASSWORD=secret \
+                -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE="db" -e MYSQL_USER=user -e MYSQL_PASSWORD=secret \
                 mysql
         }'';
   mysql = ''(){
@@ -192,7 +192,7 @@
             docker run -d --rm \
                 -p 5432:5432 \
                 --hostname postgresql --name postgresql \
-                -e POSTGRES_DB="$\{1:-db\}" -e POSTGRES_USER=user -e POSTGRES_PASSWORD=secret \
+                -e POSTGRES_DB="db" -e POSTGRES_USER=user -e POSTGRES_PASSWORD=secret \
                 postgres
         }'';
   postgresql = ''(){

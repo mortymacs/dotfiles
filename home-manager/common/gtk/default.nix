@@ -17,6 +17,7 @@
         gtk-cursor-theme-size = 0;
         gtk-toolbar-style = "GTK_TOOLBAR_BOTH";
         gtk-toolbar-icon-size = "GTK_ICON_SIZE_LARGE_TOOLBAR";
+        gtk-decoration-layout = appmenu:none;
         gtk-button-images = 1;
         gtk-menu-images = 1;
         gtk-enable-event-sounds = 0;
