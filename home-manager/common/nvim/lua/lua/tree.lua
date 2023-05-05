@@ -1,7 +1,6 @@
 require("util")
 
 view = {
-    signcolumn = "no",
     mappings = {
         list = {},
     },
@@ -33,7 +32,6 @@ local function on_attach(bufnr)
     vim.keymap.set('n', '/', api.live_filter.start, opts('Filter'))
     vim.keymap.set('n', '<c-f>', api.tree.search_node, opts('Search'))
     vim.keymap.set('n', '<c-]>', api.tree.close, opts('Close'))
-
 end
 
 require('nvim-tree').setup({
@@ -54,6 +52,9 @@ require('nvim-tree').setup({
         ignore = false,
         show_on_dirs = true,
         timeout = 400,
+    },
+    view = {
+        signcolumn = "no",
     },
     renderer = {
         root_folder_label = false,
