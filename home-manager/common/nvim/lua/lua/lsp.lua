@@ -168,6 +168,17 @@ require("lspsaga").setup({
     lightbulb = {
         enable = false,
     },
+    finder = {
+        keys = {
+            expand_or_jump = '<enter>',
+        },
+    },
+    outline = {
+        keys = {
+            expand_or_jump = '<enter>',
+        },
+    },
+
 })
 
 -- Lens.
