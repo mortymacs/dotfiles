@@ -193,4 +193,16 @@ require('lsp-lens').setup({
 vim.api.nvim_create_autocmd("BufWritePost", { pattern = "*", command = ":LspLensOn" })
 
 -- LSP Lines.
-require("lsp_lines").setup()
+require("lsp_lines").setup({
+    virtual_text = false,
+    virtual_line = true,
+})
+
+-- Diagnostic.
+-- https://github.com/neovim/nvim-lspconfig/issues/662#issuecomment-759442828
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+    vim.lsp.diagnostic.on_publish_diagnostics,
+    {
+        virtual_text = false
+    }
+)
