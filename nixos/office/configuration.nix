@@ -71,7 +71,7 @@
     };
   };
 
-  # Enable CUPS to print documents.
+  # Printer.
   services.printing.enable = true;
 
   # Sound.
@@ -113,7 +113,7 @@
     ];
   };
 
-  # List packages installed in system profile. To search, run:
+  # Global packages.
   environment.systemPackages = with pkgs; [
     nano
     wget

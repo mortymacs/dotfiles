@@ -1,7 +1,7 @@
 # https://coolors.co/351431-eb5e55-e23e58-d81e5b-2f2f2f-151515-ececec-35c693-8136c7-8c48cc
 { config, pkgs, outputs, inputs, ... }:
 let
-    defaultPackages = import ../common/packages.nix { inherit pkgs; };
+  defaultPackages = import ../common/packages.nix { inherit pkgs; };
 in
 {
   imports = [

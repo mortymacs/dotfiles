@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 {
   imports = [
     ./hardware-configuration.nix
@@ -31,7 +31,7 @@
     "/crypto_keyfile.bin" = null;
   };
 
-  # Kernel version.
+  # Kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Networking.
