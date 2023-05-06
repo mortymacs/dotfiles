@@ -114,7 +114,6 @@ require("lazy").setup({
     "RRethy/vim-illuminate",
     "kevinhwang91/nvim-hlslens",
     "echasnovski/mini.nvim",
-    "kylechui/nvim-surround",
     "Wansmer/treesj",
 
     -- LSP.

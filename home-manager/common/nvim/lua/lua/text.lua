@@ -46,8 +46,5 @@ require("todo-comments").setup({
     signs = false,
 })
 
--- Surround.
-require("nvim-surround").setup()
-
 -- TreeSJ.
 require("treesj").setup()
