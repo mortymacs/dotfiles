@@ -66,15 +66,6 @@
     mycli
 
     # Development.
-    delve
-    go-tools
-    revive
-    gosec
-    gomodifytags
-    golangci-lint
-    gofumpt
-    terraform-docs
-    shellcheck
     zeal
     ghq
     hurl
@@ -82,18 +73,39 @@
     hugo
     tokei
     gnumake
-    mage
-    air
 
     # Programming.
     gcc
+    ## Go.
     go
     gopls
+    delve
+    go-tools
+    revive
+    gosec
+    golangci-lint
+    gofumpt
+    gomodifytags
+    mage
+    air
+    ## Python.
+    python311
+    nodePackages.pyright
+    ## Lua.
+    lua
     sumneko-lua-language-server
+    ## Terraform.
     terraform-ls
+    terraform-docs
+    ## Nix.
     rnix-lsp
+    ## Shell.
+    shellcheck
+    ## YAML.
     nodePackages.yaml-language-server
+    ## Dockerfile.
     nodePackages.dockerfile-language-server-nodejs
+    ## Latex.
     texlive.combined.scheme-small
   ];
 }
