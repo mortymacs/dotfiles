@@ -1,6 +1,3 @@
--- DAP highlights.
-require("nvim-dap-repl-highlights").setup()
-
 -- Treesitter setup.
 require('nvim-treesitter.configs').setup({
     ensure_installed = {
@@ -23,7 +20,6 @@ require('nvim-treesitter.configs').setup({
         "css",
         "regex",
         "http",
-        "dap_repl",
     },
     sync_install = true,
     auto_install = true,

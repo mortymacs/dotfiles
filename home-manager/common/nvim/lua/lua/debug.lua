@@ -122,12 +122,8 @@ require("dapui").setup({
       elements = {
         {
           id = "repl",
-          size = 0.5
+          size = 1.0
         },
-        {
-          id = "watches",
-          size = 0.5
-        }
       },
       position = "bottom",
       size = 8
