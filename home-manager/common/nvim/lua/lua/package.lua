@@ -164,6 +164,7 @@ require("lazy").setup({
             "mfussenegger/nvim-dap",
         },
     },
+    "LiadOz/nvim-dap-repl-highlights",
 
     -- Keybinding.
     "folke/which-key.nvim",
