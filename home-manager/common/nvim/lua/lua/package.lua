@@ -140,6 +140,7 @@ require("lazy").setup({
     "fatih/vim-go",
     -- -- Lua.
     "hrsh7th/cmp-nvim-lua",
+    "rafcamlet/nvim-luapad",
     -- -- Terraform
     "hashivim/vim-terraform",
     -- -- YAML.
