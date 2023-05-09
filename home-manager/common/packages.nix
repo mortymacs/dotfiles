@@ -57,7 +57,7 @@
     kind
     kubespy
     stern
-    helm
+    kubernetes-helm
     awscli2
     ctop
 
