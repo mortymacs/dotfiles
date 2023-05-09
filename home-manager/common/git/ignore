@@ -38,9 +38,6 @@ vendor/
 .vim
 *.swp
 
-# Helm
-Chart.lock
-
 # Compressed
 *.zip
 *.tar.gz
