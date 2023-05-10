@@ -124,10 +124,10 @@ lspconfig.rnix.setup({
 lspconfig.terraformls.setup({
     capabilities = capabilities,
 })
-vim.api.nvim_create_autocmd({"BufWritePre"}, {
-  pattern = {"*.tf", "*.tfvars"},
-  callback = vim.lsp.buf.format,
-})
+-- vim.api.nvim_create_autocmd({"BufWritePre"}, {
+  -- pattern = {"*.tf", "*.tfvars"},
+  -- callback = vim.lsp.buf.format,
+-- })
 
 -- YAML
 local yamlCfg = require("yaml-companion").setup({
