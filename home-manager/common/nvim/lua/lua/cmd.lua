@@ -52,3 +52,6 @@ require("noice").setup({
         },
     },
 })
+
+-- Command palette.
+require('telescope').setup()

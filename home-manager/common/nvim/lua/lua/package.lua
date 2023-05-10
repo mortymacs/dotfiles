@@ -53,6 +53,7 @@ require("lazy").setup({
         "AckslD/muren.nvim",
         config = true,
     },
+    "LinArcX/telescope-command-palette.nvim",
 
     -- Splash screen.
     {
@@ -93,6 +94,7 @@ require("lazy").setup({
     -- Git
     "ruanyl/vim-gh-line",
     "f-person/git-blame.nvim",
+    "aaronhallaert/advanced-git-search.nvim",
 
     -- Development.
     "norcalli/nvim-colorizer.lua",
