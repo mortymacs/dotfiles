@@ -1,7 +1,7 @@
 require("util")
 
 -- Command.
-SetKeyMap("<c-x><c-c>", "<Cmd>Telescope commands<cr>")
+SetKeyMap("<c-x><c-c>", "<Cmd>Telescope command_palette<cr>")
 
 -- Split and close panes
 SetKeyMap("<c-x><c-v>", "<Cmd>vsplit<cr>")
