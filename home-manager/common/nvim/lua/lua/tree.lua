@@ -41,7 +41,12 @@ require('nvim-tree').setup({
     disable_netrw = true,
     hijack_cursor = true,
     filters = {
-        custom = { "^\\.git", "^\\.venv", "^\\.terraform" },
+        dotfiles = true,
+        exclude = {
+            ".gitlab-ci.yml",
+            ".gitlab-ci.yaml",
+            ".gitignore",
+        },
     },
     live_filter = {
         prefix = "[FILTER]: ",
@@ -49,7 +54,7 @@ require('nvim-tree').setup({
     },
     git = {
         enable = true,
-        ignore = false,
+        ignore = true,
         show_on_dirs = true,
         timeout = 400,
     },
