@@ -38,6 +38,9 @@ vendor/
 .vim
 *.swp
 
+# Cloud.
+.terraform
+
 # Compressed
 *.zip
 *.tar.gz

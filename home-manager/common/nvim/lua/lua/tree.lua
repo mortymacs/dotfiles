@@ -41,7 +41,7 @@ require('nvim-tree').setup({
     disable_netrw = true,
     hijack_cursor = true,
     filters = {
-        custom = { "^\\.git", "^\\.venv" },
+        custom = { "^\\.git", "^\\.venv", "^\\.terraform" },
     },
     live_filter = {
         prefix = "[FILTER]: ",
