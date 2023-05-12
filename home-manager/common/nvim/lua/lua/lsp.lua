@@ -125,8 +125,8 @@ lspconfig.terraformls.setup({
     capabilities = capabilities,
 })
 -- vim.api.nvim_create_autocmd({"BufWritePre"}, {
-  -- pattern = {"*.tf", "*.tfvars"},
-  -- callback = vim.lsp.buf.format,
+-- pattern = {"*.tf", "*.tfvars"},
+-- callback = vim.lsp.buf.format,
 -- })
 
 -- YAML
@@ -202,12 +202,16 @@ require('lsp-lens').setup({
 vim.api.nvim_create_autocmd("BufWritePost", { pattern = "*", command = ":LspLensOn" })
 
 -- LSP Lines.
-require("lsp_lines").setup({
-    virtual_text = false,
-    virtual_line = true,
-})
+require("lsp_lines").setup()
 
 -- Diagnostic.
+vim.diagnostic.config({
+    virtual_text = false,
+    virtual_lines = {
+        only_current_line = true,
+        highighlight_whole_line = false,
+    },
+})
 -- https://github.com/neovim/nvim-lspconfig/issues/662#issuecomment-759442828
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     vim.lsp.diagnostic.on_publish_diagnostics,
