@@ -39,6 +39,15 @@
     ignores = map (v: "${toString v}") (builtins.split "\n" (builtins.readFile ./ignore));
     includes = [
       { path = "./theme.gitconfig"; }
+      {
+        condition = "gitdir:~/Workspaces/gitlab.ci.fdmg.org/";
+        contents = {
+          user = {
+            name = "Morteza NourelahiAlamdari";
+            email = "mort.nourelahialamdari@company.info";
+          };
+        };
+      }
     ];
   };
 }
