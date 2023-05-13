@@ -3,6 +3,7 @@
   services = {
     udiskie = {
       enable = true;
+      tray = "auto";
       settings = {
         program_options = {
           udisks_version = 2;

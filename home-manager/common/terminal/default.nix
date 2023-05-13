@@ -39,15 +39,14 @@
 
         offset = {
           x = 0;
-          y = 0;
+          y = 4;
         };
 
         glyph_offset = {
           x = 0;
-          y = 0;
+          y = 2;
         };
       };
-
 
       # https://github.com/pineapplegiant/spaceduck-terminal
       # Space Duck

@@ -118,6 +118,7 @@
     wget
     home-manager
     ntfs3g
+    pamixer
   ];
 
   # Virtualization.
