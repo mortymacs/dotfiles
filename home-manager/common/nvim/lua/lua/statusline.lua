@@ -5,8 +5,7 @@ local git_blame = require('gitblame')
 require("lualine").setup({
     options = {
         theme = "auto",
-        section_separators = { left = "", right = "" },
-        component_separators = "",
+        section_separators = { left = "", right = "" },
         globalstatus = true,
         disabled_filetypes = { "fzf" },
     },
@@ -25,9 +24,7 @@ require("lualine").setup({
             },
         },
         lualine_b = {},
-        lualine_c = {
-            -- "lsp_progress"
-        },
+        lualine_c = {},
         lualine_x = {
             { git_blame.get_current_blame_text, cond = git_blame.is_blame_text_available },
             "branch",

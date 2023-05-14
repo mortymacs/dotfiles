@@ -1,4 +1,8 @@
 { pkgs, ... }:
+let
+    left_icon = "";
+    right_icon = "";
+in
 {
     programs.tmux = {
         enable = true;
@@ -41,10 +45,10 @@
         setw -g window-status-activity-style "none"
         setw -g window-status-separator ""
         setw -g window-status-style "none,fg=#3e5c76,bg=#30365F"
-        set -g status-left "#[fg=#f0ebd8,bg=#1d2d44] #S #[fg=#1d2d44,bg=#0d1321,nobold,nounderscore,noitalics]"
-        set -g status-right "#[fg=#0d1321,bg=#0d1321,nobold,nounderscore,noitalics]#[fg=#3e5c76,bg=#0d1321] #h  #{tmux_mode_indicator} "
-        setw -g window-status-format "#[fg=#3e5c76,bg=#0d1321] #I #[fg=#3e5c76,bg=#0d1321] #W "
-        setw -g window-status-current-format "#[fg=#0d1321,bg=#3e5c76,nobold,nounderscore,noitalics]#[fg=#0d1321,bg=#3e5c76] #I #[fg=#0d1321,bg=#3e5c76] #W #[fg=#3e5c76,bg=#0d1321,nobold,nounderscore,noitalics]"
+        set -g status-left "#[fg=#f0ebd8,bg=#1d2d44] #S #[fg=#1d2d44,bg=#0d1321,nobold,nounderscore,noitalics]${left_icon}"
+        set -g status-right "#[fg=#0d1321,bg=#0d1321,nobold,nounderscore,noitalics]${right_icon}#[fg=#3e5c76,bg=#0d1321] #h #{tmux_mode_indicator} "
+        setw -g window-status-format "#[fg=#3e5c76,bg=#0d1321] #I #[fg=#3e5c76,bg=#0d1321] #W "
+        setw -g window-status-current-format "#[fg=#0d1321,bg=#3e5c76,nobold,nounderscore,noitalics]${left_icon}#[fg=#0d1321,bg=#3e5c76] #I #[fg=#0d1321,bg=#3e5c76] #W #[fg=#3e5c76,bg=#0d1321,nobold,nounderscore,noitalics]${left_icon}"
         '';
         plugins = with pkgs; [
             tmuxPlugins.fuzzback

@@ -1,27 +1,26 @@
 { lib, ... }:
 let
     # Colors:
-    ## https://coolors.co/351431-eb5e55-e23e58-d81e5b-2b2d42-ececec
-    ## https://coolors.co/2b2d42-005f73-0a9396-023047
+    ## https://coolors.co/351431-eb5e55-e23e58-d81e5b-82264f-2b2d42-e26d5a-e7ada3-ececec
 
     # username
-    section_1_bg = "#2b2d42";
+    section_1_bg = "#2B2D42";
     section_1_fg = "#ECECEC";
 
     # directory
-    section_2_bg = "#005f73";
+    section_2_bg = "#E26D5A";
     section_2_fg = "#ECECEC";
 
     # svc
-    section_3_bg = "#0a9396";
+    section_3_bg = "#82264F";
     section_3_fg = "#ECECEC";
 
     # misc
-    section_4_bg = "#023047";
+    section_4_bg = "#2B2D42";
     section_4_fg = "#ECECEC";
 
     # icon
-    icon = "";
+    icon = "";
 in
 {
     programs.starship = {
