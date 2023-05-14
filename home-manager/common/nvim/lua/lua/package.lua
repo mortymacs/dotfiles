@@ -38,6 +38,9 @@ require("lazy").setup({
         },
     },
 
+    -- Sidebar.
+    "luukvbaal/statuscol.nvim",
+
     -- Notification.
     "rcarriga/nvim-notify",
 
@@ -95,6 +98,7 @@ require("lazy").setup({
     "ruanyl/vim-gh-line",
     "f-person/git-blame.nvim",
     "aaronhallaert/advanced-git-search.nvim",
+    "lewis6991/gitsigns.nvim",
 
     -- Development.
     "norcalli/nvim-colorizer.lua",

@@ -10,6 +10,7 @@ require("theme")
 -- Body.
 require("tabbar")
 require("statusline")
+require("sidebar")
 require("notification")
 require("cmd")
 

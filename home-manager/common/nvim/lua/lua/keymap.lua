@@ -42,9 +42,10 @@ SetKeyMap("<c-]>",      "<Cmd>NvimTreeToggle<cr>")
 SetKeyMap("<c-x><c-g>", "<Cmd>Telescope live_grep<cr>")
 
 -- Git
-SetKeyMap("<c-g><c-h>", "<Cmd>Gitsigns preview_hunk_inline<cr>")
-SetKeyMap("<c-g><c-u>", "<Cmd>Gitsigns undo_stage_hunk<cr>")
+SetKeyMap("<c-g><c-h>", "<Cmd>Gitsigns preview_hunk<cr>")
+SetKeyMap("<c-g><c-u>", "<Cmd>Gitsigns reset_hunk<cr>")
 SetKeyMap("<c-g><c-l>", "<Cmd>Gitsigns stage_hunk<cr>")
+SetKeyMap("<c-g><c-d>", "<Cmd>Gitsigns undo_stage_hunk<cr>")
 SetKeyMap("<c-g><c-s>", "<Cmd>Telescope git_status<cr>")
 SetKeyMap("<c-g><c-b>", "<Cmd>Telescope git_branches<cr>")
 SetKeyMap("<c-g><c-c>", "<Cmd>Telescope git_commits<cr>")
