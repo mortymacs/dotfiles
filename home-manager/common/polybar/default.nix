@@ -148,7 +148,7 @@ in
           menu-0-0 = "Shutdown |";
           menu-0-0-exec = "zenity --question --title 'shutdown' --text 'shutdown now?' && shutdown now";
           menu-0-1 = " Restart";
-          menu-0-1-exec = "zenity --question --title 'restart' --text 'restart now?' && restart";
+          menu-0-1-exec = "zenity --question --title 'restart' --text 'restart now?' && reboot";
         };
 
       };
