@@ -45,7 +45,7 @@ in
           font-0 = "Lexend:size=10;2";
           font-1 = "Noto Color Emoji:scale=11;2";
           modules-left = "xworkspaces";
-          modules-right = "backlight pipewire tor_location system_location ir_date date ipc-dunst battery menu-apps";
+          modules-right = "backlight speaker tor_location system_location ir_date date ipc-dunst battery menu-apps";
           cursor-click = "pointer";
           cursor-scroll = "ns-resize";
           enable-ipc = true;
@@ -58,7 +58,6 @@ in
 
         "module/xworkspaces" = {
           type = "internal/xworkspaces";
-          pin-workspaces = false;
           label-active = "%name%";
           label-active-background = "${active-workspace-background}";
           label-active-padding = 2;
@@ -81,7 +80,7 @@ in
           label = "%percentage%%";
         };
 
-        "module/pipewire" = {
+        "module/speaker" = {
           type = "custom/script";
           label = "📢 %output%";
           interval = 1;
