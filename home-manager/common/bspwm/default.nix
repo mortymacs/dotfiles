@@ -43,6 +43,9 @@ in
         # Lock screen.
         "xset s 180"
         "xss-lock --transfer-sleep-lock -- 'XSECURELOCK_FONT=sans xsecurelock'"
+
+        # Document.
+        "zeal"
       ];
       rules = {
         "firefox" = {
