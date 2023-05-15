@@ -3,7 +3,7 @@ let
   # Body.
   background = "#0f111b";
   foreground = "#ECECEC";
-  border-bottom = "#8136C7";
+  border-bottom = "#6d597a";
   disabled = "#413c58";
 
   # Workspace.
