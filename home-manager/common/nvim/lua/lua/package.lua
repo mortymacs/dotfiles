@@ -140,6 +140,7 @@ require("lazy").setup({
     },
     "VidocqH/lsp-lens.nvim",
     "hrsh7th/vim-vsnip",
+    "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
     "preservim/tagbar",
     "terrortylor/nvim-comment",
     -- -- Go.
@@ -155,14 +156,14 @@ require("lazy").setup({
     "lukas-reineke/cmp-rg",
     -- -- Path.
     "hrsh7th/cmp-path",
-    -- -- Trouble
+
+    -- Trouble.
     {
         "folke/trouble.nvim",
         dependencies = {
             "nvim-tree/nvim-web-devicons",
         },
     },
-    "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
 
     -- Debug.
     {

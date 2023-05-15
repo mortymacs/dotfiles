@@ -1,5 +1,6 @@
 -- Body
 vim.opt.nu = true
+vim.opt.fillchars = "eob: "
 
 -- File, syntax and theme
 vim.opt.filetype = "on"

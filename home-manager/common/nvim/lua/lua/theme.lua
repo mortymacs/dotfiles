@@ -92,7 +92,7 @@ vim.api.nvim_set_hl(0, "NvimTreeStatusLine", {bg = "", fg = ""})
 vim.api.nvim_set_hl(0, "MiniIndentscopeSymbol", {fg = "#686f9a"})
 
 -- Bookmark
-vim.g.bookmark_sign = ''
+vim.g.bookmark_sign = ''
 vim.g.bookmark_highlight_lines = 1
 
 -- Cursor
