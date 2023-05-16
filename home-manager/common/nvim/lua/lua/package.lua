@@ -143,6 +143,15 @@ require("lazy").setup({
     "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
     "preservim/tagbar",
     "terrortylor/nvim-comment",
+    -- -- Rust.
+    "simrat39/rust-tools.nvim",
+    {
+        "saecki/crates.nvim",
+        event = "BufRead Cargo.toml",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+        },
+    },
     -- -- Go.
     "fatih/vim-go",
     -- -- Lua.

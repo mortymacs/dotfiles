@@ -92,6 +92,15 @@ local lspSignatureConfig = {
 local lspconfig = require('lspconfig')
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
+-- Rust
+lspconfig.rust_analyzer.setup({
+    capabilities = capabilities,
+})
+local rt = require("rust-tools")
+rt.setup()
+rt.inlay_hints.enable()
+require('crates').setup()
+
 -- Go
 vim.g.go_auto_type_info = 0
 vim.g.go_gopls_gofumpt = 1

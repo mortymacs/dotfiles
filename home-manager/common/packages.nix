@@ -76,6 +76,11 @@
 
     # Programming.
     gcc
+    ## Rust.
+    rustc
+    rustfmt
+    rust-analyzer
+    cargo
     ## Go.
     go
     gopls
