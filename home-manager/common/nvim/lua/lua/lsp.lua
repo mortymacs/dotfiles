@@ -5,6 +5,9 @@ require("neodev").setup({
 
 -- Tags
 vim.g.fzf_tags_command = "fd | ctags -R --links=no -L-"
+vim.g.fzf_lsp_layout = { down = '30%' }
+vim.g.fzf_lsp_pretty = true
+require("fzf_lsp").setup()
 
 -- CMP
 local lspkind = require('lspkind')

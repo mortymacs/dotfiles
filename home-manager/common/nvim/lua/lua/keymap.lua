@@ -93,9 +93,9 @@ SetKeyMap("<c-x><Up>",    "<Cmd>ToggleTerm<cr>")
 
 -- LSP
 SetKeyMap("<c-c><c-d>",     vim.lsp.buf.definition)
-SetKeyMap("<c-c><c-t>",     "<Cmd>Glance type_definitions<cr>")
-SetKeyMap("<c-c><c-i>",     "<Cmd>Glance implementations<cr>")
-SetKeyMap("<c-c><c-r>",     "<Cmd>Glance references<cr>")
+SetKeyMap("<c-c><c-t>",     "<Cmd>TypeDefinitions<cr>")
+SetKeyMap("<c-c><c-i>",     "<Cmd>Implementations<cr>")
+SetKeyMap("<c-c><c-r>",     "<Cmd>References<cr>")
 SetKeyMap("<c-c><c-e>",     vim.lsp.buf.rename)
 SetKeyMap("<c-c><c-x>",     "<Cmd>Lspsaga code_action<cr>")
 SetKeyMap("<c-c><c-v>",     "<Cmd>Lspsaga lsp_finder<cr>")

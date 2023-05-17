@@ -138,6 +138,12 @@ require("lazy").setup({
             "nvim-tree/nvim-web-devicons",
         },
     },
+    {
+        "gfanto/fzf-lsp.nvim",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+        },
+    },
     "VidocqH/lsp-lens.nvim",
     "hrsh7th/vim-vsnip",
     "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
