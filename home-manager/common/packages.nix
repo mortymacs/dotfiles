@@ -32,6 +32,7 @@
     gping
     zathura
     libqalculate
+    cava
 
     # File and directory.
     fzf
@@ -99,6 +100,7 @@
     ## Lua.
     lua
     sumneko-lua-language-server
+    stylua
     ## Terraform.
     terraform-ls
     terraform-docs
