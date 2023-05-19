@@ -8,7 +8,7 @@ let
     section_1_fg = "#ECECEC";
 
     # directory
-    section_2_bg = "#E26D5A";
+    section_2_bg = "#ce4257";
     section_2_fg = "#ECECEC";
 
     # svc
