@@ -52,8 +52,6 @@ cmp.setup({
         { name = "crates" },
     }, {
         { name = 'nvim_lua' },
-    }, {
-        { name = 'nvim_lsp_signature_help' },
     }),
 })
 
@@ -84,20 +82,24 @@ cmp.setup.cmdline(':', {
     })
 })
 
-local lspSignatureConfig = {
-    hint_prefix = "🚥 ",
-    handler_opts = {
-        border = "single"
-    },
-}
-
 -- Set up lspconfig.
 local lspconfig = require('lspconfig')
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
+local lsp_signature = require("lsp_signature")
+local lsp_signature_setup = {
+    hint_enable = false,
+    handler_opts = {
+        border = "none"
+    },
+    padding = ' ',
+}
 
 -- Rust
 lspconfig.rust_analyzer.setup({
     capabilities = capabilities,
+    on_attach = function(client, bufnr)
+        lsp_signature.on_attach(lsp_signature_setup, bufnr)
+    end,
 })
 local rt = require("rust-tools")
 rt.setup()
@@ -115,26 +117,41 @@ vim.g.go_fmt_options = {
 vim.g.go_def_mapping_enabled = 0
 lspconfig.gopls.setup({
     capabilities = capabilities,
+    on_attach = function(client, bufnr)
+        lsp_signature.on_attach(lsp_signature_setup, bufnr)
+    end,
 })
 
 -- Lua
 lspconfig.lua_ls.setup({
     capabilities = capabilities,
+    on_attach = function(client, bufnr)
+        lsp_signature.on_attach(lsp_signature_setup, bufnr)
+    end,
 })
 
 -- Python
 lspconfig.pyright.setup({
     capabilities = capabilities,
+    on_attach = function(client, bufnr)
+        lsp_signature.on_attach(lsp_signature_setup, bufnr)
+    end,
 })
 
 -- Nix
 lspconfig.rnix.setup({
     capabilities = capabilities,
+    on_attach = function(client, bufnr)
+        lsp_signature.on_attach(lsp_signature_setup, bufnr)
+    end,
 })
 
 -- Terraform
 lspconfig.terraformls.setup({
     capabilities = capabilities,
+    on_attach = function(client, bufnr)
+        lsp_signature.on_attach(lsp_signature_setup, bufnr)
+    end,
 })
 -- vim.api.nvim_create_autocmd({"BufWritePre"}, {
 -- pattern = {"*.tf", "*.tfvars"},

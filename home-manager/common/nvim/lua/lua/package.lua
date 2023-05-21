@@ -129,7 +129,7 @@ require("lazy").setup({
     "hrsh7th/nvim-cmp",
     "hrsh7th/cmp-cmdline",
     "hrsh7th/cmp-nvim-lsp",
-    "hrsh7th/cmp-nvim-lsp-signature-help",
+    "ray-x/lsp_signature.nvim",
     "dnlhc/glance.nvim",
     {
         "glepnir/lspsaga.nvim",
