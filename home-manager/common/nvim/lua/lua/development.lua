@@ -26,6 +26,48 @@ require('nvim-treesitter.configs').setup({
     highlight = {
         enable = true,
     },
+    textobjects = {
+        select = {
+            enable = true,
+            lookahead = true,
+
+            keymaps = {
+                ["af"] = "@function.outer",
+                ["if"] = "@function.inner",
+                ["ac"] = "@class.outer",
+                ["ic"] = "@class.inner",
+                ["ip"] = "@parameter.inner",
+                ["ap"] = "@parameter.outer",
+            },
+            selection_modes = {
+                ['@parameter.outer'] = 'v', -- charwise
+                ['@function.outer'] = 'V', -- linewise
+                ['@class.outer'] = '<c-v>', -- blockwise
+            },
+            include_surrounding_whitespace = true,
+        },
+        swap = {
+            enable = true,
+            swap_next = {
+                ["<c-c>n"] = "@parameter.inner",
+            },
+            swap_previous = {
+                ["<c-c>p"] = "@parameter.inner",
+            },
+        },
+        move = {
+            enable = true,
+            set_jumps = true,
+            goto_next = {
+                ["<c-c><down>"] = "@function.inner",
+                ["<c-c><right>"] = "@parameter.inner",
+            },
+            goto_previous = {
+                ["<c-c><up>"] = "@function.inner",
+                ["<c-c><left>"] = "@parameter.inner",
+            }
+        },
+    },
 })
 
 -- Treesitter plugins.

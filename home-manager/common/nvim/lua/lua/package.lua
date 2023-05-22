@@ -108,7 +108,12 @@ require("lazy").setup({
             vim.cmd(":TSUpdate")
         end,
     },
-    "nvim-treesitter/nvim-treesitter-context",
+    {
+        "nvim-treesitter/nvim-treesitter-context",
+        dependencies = {
+            "nvim-treesitter/nvim-treesitter",
+        },
+    },
     {
         "folke/todo-comments.nvim",
         dependencies = {
@@ -121,6 +126,12 @@ require("lazy").setup({
     "kevinhwang91/nvim-hlslens",
     "echasnovski/mini.nvim",
     "Wansmer/treesj",
+    {
+        "nvim-treesitter/nvim-treesitter-textobjects",
+        dependencies = {
+            "nvim-treesitter/nvim-treesitter",
+        },
+    },
 
     -- LSP.
     "neovim/nvim-lspconfig",
