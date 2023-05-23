@@ -85,6 +85,8 @@ cmp.setup.cmdline(':', {
 -- Set up lspconfig.
 local lspconfig = require('lspconfig')
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
+require("lsp-inlayhints").setup()
+local lsp_inlayhints = require("lsp-inlayhints")
 local lsp_signature = require("lsp_signature")
 local lsp_signature_setup = {
     hint_enable = false,
@@ -92,6 +94,18 @@ local lsp_signature_setup = {
         border = "none"
     },
     padding = ' ',
+}
+local lsp_inlayhints_setup = {
+    gopls = {
+        hints = {
+            assignVariableTypes = true,
+            compositeLiteralFields = true,
+            constantValues = true,
+            functionTypeParameters = true,
+            parameterNames = true,
+            rangeVariableTypes = true,
+        },
+    },
 }
 
 -- Rust
@@ -117,7 +131,9 @@ vim.g.go_fmt_options = {
 vim.g.go_def_mapping_enabled = 0
 lspconfig.gopls.setup({
     capabilities = capabilities,
+    settings = lsp_inlayhints_setup,
     on_attach = function(client, bufnr)
+        lsp_inlayhints.on_attach(client, bufnr)
         lsp_signature.on_attach(lsp_signature_setup, bufnr)
     end,
 })
@@ -153,10 +169,6 @@ lspconfig.terraformls.setup({
         lsp_signature.on_attach(lsp_signature_setup, bufnr)
     end,
 })
--- vim.api.nvim_create_autocmd({"BufWritePre"}, {
--- pattern = {"*.tf", "*.tfvars"},
--- callback = vim.lsp.buf.format,
--- })
 
 -- YAML
 local yamlCfg = require("yaml-companion").setup({

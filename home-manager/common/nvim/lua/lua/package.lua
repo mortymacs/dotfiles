@@ -156,6 +156,7 @@ require("lazy").setup({
         },
     },
     "VidocqH/lsp-lens.nvim",
+    "lvimuser/lsp-inlayhints.nvim",
     "hrsh7th/vim-vsnip",
     "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
     "preservim/tagbar",
@@ -197,6 +198,14 @@ require("lazy").setup({
         dependencies = {
             "mfussenegger/nvim-dap",
         },
+    },
+    {
+        "theHamsta/nvim-dap-virtual-text",
+        dependencies = {
+            "mfussenegger/nvim-dap",
+            "nvim-treesitter/nvim-treesitter",
+        },
+
     },
 
     -- Keybinding.

@@ -1,6 +1,9 @@
 -- DAP
 local dap = require("dap")
 
+-- DAP virtual text
+require("nvim-dap-virtual-text").setup()
+
 -- Go
 dap.adapters.delve = {
   type = "server",
