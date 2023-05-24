@@ -3,14 +3,23 @@ require("neodev").setup({
     library = { plugins = { "nvim-dap-ui" }, types = true },
 })
 
--- Tags
+-- Tags.
 vim.g.fzf_tags_command = "fd | ctags -R --links=no -L-"
 vim.g.fzf_lsp_layout = { down = '30%' }
 vim.g.fzf_lsp_pretty = true
 require("fzf_lsp").setup()
 
--- CMP
+-- Kind.
+require('lspkind').init({
+    symbol_map = {
+        Constructor = "󰩀",
+        Module = "",
+        EnumMember = "",
+    },
+})
 local lspkind = require('lspkind')
+
+-- CMP.
 local cmp = require('cmp')
 cmp.setup({
     snippet = {

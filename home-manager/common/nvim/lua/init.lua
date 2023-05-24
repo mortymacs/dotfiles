@@ -27,8 +27,9 @@ require("terminal")
 -- Git.
 require("git")
 
--- Development.
+-- Development / Quickfix.
 require("development")
+require("quickfix")
 
 -- LSP / Debug
 require("lsp")

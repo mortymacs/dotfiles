@@ -68,9 +68,11 @@ require("lazy").setup({
 
     -- Finder.
     {
-        "nvim-tree/nvim-tree.lua",
+        "nvim-neo-tree/neo-tree.nvim",
         dependencies = {
+            "nvim-lua/plenary.nvim",
             "nvim-tree/nvim-web-devicons",
+            "MunifTanjim/nui.nvim",
         },
     },
     "junegunn/fzf",
@@ -184,7 +186,8 @@ require("lazy").setup({
     -- -- Path.
     "hrsh7th/cmp-path",
 
-    -- Trouble.
+    -- Quickfix.
+    "kevinhwang91/nvim-bqf",
     {
         "folke/trouble.nvim",
         dependencies = {

@@ -36,7 +36,7 @@ SetKeyMap("<c-x><c-f>", "<Cmd>Files<cr>")
 SetKeyMap("<c-x><c-d>", "<Cmd>Telescope file_browser<cr>")
 SetKeyMap("<c-x><c-b>", "<Cmd>Buffers<cr>")
 SetKeyMap("<c-x><c-t>", "<Cmd>Telescope filetypes<cr>")
-SetKeyMap("<c-]>",      "<Cmd>NvimTreeToggle<cr>")
+SetKeyMap("<c-]>",      "<Cmd>NeoTreeShowToggle<cr>")
 
 -- Search
 SetKeyMap("<c-x><c-g>", "<Cmd>Telescope live_grep<cr>")

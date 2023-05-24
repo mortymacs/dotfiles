@@ -1,0 +1,2 @@
+-- BQF.
+require('bqf').setup()
