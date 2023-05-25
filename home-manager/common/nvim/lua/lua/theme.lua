@@ -85,8 +85,13 @@ vim.api.nvim_set_hl(0, "GlanceListNormal",         {bg = "#181818"})
 -- Trouble
 vim.api.nvim_set_hl(0, "TroubleFoldIcon", {bg = ""})
 
--- FM
-vim.api.nvim_set_hl(0, "NvimTreeStatusLine", {bg = "", fg = ""})
+-- Tree
+vim.api.nvim_set_hl(0, "NeoTreeGitAdded",     {bg = "", fg = "#00B9AE"})
+vim.api.nvim_set_hl(0, "NeoTreeGitConflict",  {bg = "", fg = "#ff0054"})
+vim.api.nvim_set_hl(0, "NeoTreeGitDeleted",   {bg = "", fg = "#E23E58"})
+vim.api.nvim_set_hl(0, "NeoTreeGitIgnored",   {bg = "", fg = "#686f9a"})
+vim.api.nvim_set_hl(0, "NeoTreeGitModified",  {bg = "", fg = "#F3A712"})
+vim.api.nvim_set_hl(0, "NeoTreeGitUntracked", {bg = "", fg = "#babd8d"})
 
 -- Mini
 vim.api.nvim_set_hl(0, "MiniIndentscopeSymbol", {fg = "#686f9a"})

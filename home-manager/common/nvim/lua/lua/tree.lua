@@ -279,6 +279,7 @@ require("neo-tree").setup({
             hide_hidden = true,
             hide_by_name = {
                 ".venv",
+                ".git",
                 "vendor",
             },
             always_show = {
