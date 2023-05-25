@@ -2,9 +2,11 @@
     <img src="./doc/logo.png" alt="Logo">
 </p>
 
-![platform](https://img.shields.io/badge/platform-NixOS-blue?style=flat-square)
-![last-commit](https://img.shields.io/github/last-commit/mortymacs/dotfiles?style=flat-square)
-![license](https://img.shields.io/badge/license-Creative%20Commons%20Attribution--ShareAlike%204.0-green?style=flat-square)
+<p align="center">
+    <img src="https://img.shields.io/badge/platform-NixOS-blue?style=flat-square" alt="platform">
+    <img src="https://img.shields.io/github/last-commit/mortymacs/dotfiles?style=flat-square" alt="last-commit">
+    <img src="https://img.shields.io/badge/license-Creative%20Commons%20Attribution--ShareAlike%204.0-green?style=flat-square" alt="license">
+</p>
 
 My environment config. I tried to keep it minimal and simple as much as I could.
 
