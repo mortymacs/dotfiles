@@ -1,5 +1,3 @@
-# Dotfiles
-
 <p align="center">
     <img src="./doc/logo.png" alt="Logo">
 </p>
