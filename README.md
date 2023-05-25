@@ -1,12 +1,8 @@
 # Dotfiles
 
-```
- ____   ___ _____ _____ ___ _     _____ ____
-|  _ \ / _ \_   _|  ___|_ _| |   | ____/ ___|
-| | | | | | || | | |_   | || |   |  _| \___ \
-| |_| | |_| || | |  _|  | || |___| |___ ___) |
-|____/ \___/ |_| |_|   |___|_____|_____|____/
-```
+<p align="center">
+    <img src="./doc/logo.png" alt="Logo">
+</p>
 
 ![platform](https://img.shields.io/badge/platform-NixOS-blue?style=flat-square)
 ![last-commit](https://img.shields.io/github/last-commit/mortymacs/dotfiles?style=flat-square)
