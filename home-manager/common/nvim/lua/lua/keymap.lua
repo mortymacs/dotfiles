@@ -114,10 +114,12 @@ SetKeyMap("<c-x><c-l>",     "<Cmd>LspRestart<cr>")
 SetKeyMap("<c-c><c-j>",     function() require('treesj').toggle() end)
 
 -- Debug
-SetKeyMap("<c-l><c-s>", function() require("dapui").toggle() end)
-SetKeyMap("<c-l><c-b>", "<Cmd>DapToggleBreakpoint<cr>")
+SetKeyMap("<c-j><c-s>", function() require("dapui").toggle() end)
+SetKeyMap("<c-j><c-t>", "<Cmd>DapToggleBreakpoint<cr>")
+
+-- Trouble / Quickfix.
 SetKeyMap("<c-l><c-e>", "<Cmd>Telescope diagnostics<cr>")
-SetKeyMap("<c-l><Up>", "<Cmd>TroubleToggle workspace_diagnostics<cr>")
+SetKeyMap("<c-l><Up>",  "<Cmd>TroubleToggle workspace_diagnostics<cr>")
 
 -- Bookmark
 SetKeyMap("<c-r><c-c>", "<Cmd>Telescope vim_bookmarks current_file<cr>")
