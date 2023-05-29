@@ -53,6 +53,6 @@ vim.opt.timeoutlen = 300
 
 -- Misc
 vim.opt.hidden = true
-vim.opt.signcolumn = "yes"
+vim.opt.signcolumn = "auto:2"
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
