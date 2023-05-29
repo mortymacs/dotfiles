@@ -64,6 +64,6 @@ in
   # Fontconfig.
   fonts.fontconfig.enable = true;
 
-  # Home manager version.
+  # Home manager installed version.
   home.stateVersion = "22.11";
 }

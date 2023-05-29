@@ -55,7 +55,6 @@
     enable = true;
     layout = "us";
     xkbVariant = "";
-    synaptics.enable = true;
     displayManager = {
       lightdm = {
         enable = true;
@@ -140,9 +139,12 @@
     enableTor = true;
   };
 
+  # Enable ZSH.
+  programs.zsh.enable = true;
+
   # Enable dconf.
   programs.dconf.enable = true;
 
-  # NixOS release.
+  # NixOS installed version.
   system.stateVersion = "22.11";
 }
