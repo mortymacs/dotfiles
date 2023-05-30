@@ -15,13 +15,12 @@ in
         normal_border_color = "${normal_border_color}";
         active_border_color = "${active_border_color}";
         presel_feedback_color = "${presel_feedback_color}";
-        split_ratio = 0.52;
         borderless_monocle = true;
         gapless_monocle = true;
         focus_follows_pointer = false;
       };
       extraConfig = ''
-        bspc monitor -d 0 1 2 3 4
+        bspc monitor -d 0 1 2 3 4 5
       '';
 
       startupPrograms = [
