@@ -15,9 +15,6 @@
     jq
     yq
 
-    # Desktop.
-    eww
-
     # Security.
     xss-lock
     xsecurelock
