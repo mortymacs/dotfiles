@@ -35,7 +35,6 @@
     cava
 
     # File and directory.
-    fzf
     broot
     exa
     zoxide
