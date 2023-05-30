@@ -15,8 +15,8 @@
     jq
     yq
 
-    # Music.
-    spotify
+    # Desktop.
+    eww
 
     # Security.
     xss-lock
@@ -33,6 +33,7 @@
     zathura
     libqalculate
     cava
+    unzip
 
     # File and directory.
     broot
@@ -85,6 +86,7 @@
     go
     gopls
     delve
+    pprof
     go-tools
     revive
     gosec
