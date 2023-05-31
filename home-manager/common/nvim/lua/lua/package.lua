@@ -139,6 +139,7 @@ require("lazy").setup({
     "neovim/nvim-lspconfig",
     "folke/neodev.nvim",
     "onsails/lspkind.nvim",
+    "simrat39/symbols-outline.nvim",
     "hrsh7th/nvim-cmp",
     "hrsh7th/cmp-cmdline",
     "hrsh7th/cmp-nvim-lsp",
@@ -163,6 +164,7 @@ require("lazy").setup({
     "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
     "preservim/tagbar",
     "terrortylor/nvim-comment",
+    "smjonas/inc-rename.nvim",
     -- -- Rust.
     "simrat39/rust-tools.nvim",
     {
