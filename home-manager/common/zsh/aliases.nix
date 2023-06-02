@@ -129,7 +129,7 @@
   dx = "export http_proxy=''";
   whereiam = "echo $(curl -s http://ip-api.com/json | jq -r '.country,.city')";
   dig = "dog";
-  vpn = "cd \"$HOME/.local/bin/cato\" && nix-shell \"$HOME/.local/bin/cato\" --command './cclient.sh start --append=tail --route=10.0.0.0/8'";
+  vpn = "cd $HOME/.local/bin/cato && ./cclient.sh start --append=tail --route=10.0.0.0/8";
 
   # LDAP.
   ldap-server = ''(){

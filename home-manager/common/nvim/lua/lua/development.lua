@@ -104,7 +104,8 @@ require('mini.indentscope').setup({
     symbol = "│",
 })
 vim.api.nvim_create_autocmd("FileType",
-    { pattern = { "alpha", "NvimTree", "floaterm" }, command = ":lua vim.b.miniindentscope_disable=true" })
+    { pattern = { "alpha", "NvimTree", "floaterm" }, command = ":lua vim.b.miniindentscope_disable=true" }
+)
 
 -- Todo.
 require('todo-comments').setup({ signs = false })
