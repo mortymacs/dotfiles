@@ -59,7 +59,6 @@ in
 
     # Development.
     unstable.jetbrains.phpstorm
-    unstable.jetbrains.clion
   ];
 
   # Fontconfig.

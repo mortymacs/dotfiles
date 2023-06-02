@@ -50,7 +50,6 @@ vendor/
 
 # Misc
 .bundle
-Gemfile.lock
 *.plist
 .cache
 *.sqlite3
