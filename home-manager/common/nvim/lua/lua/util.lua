@@ -1,11 +1,12 @@
-function SetKeyMap(shortcut, command, modes)
+function SetKeyMap(shortcut, command, modes, is_expr)
 	modes = modes or {"n", "i", "v", "x", "o", "c", "t", "l"}
 	for k, v in pairs(modes) do
         pcall(vim.keymap.del, v, shortcut)
+        local opts = {silent = true, noremap = v == "n", expr = is_expr or false}
         if v == "n" then
-            vim.keymap.set(v, shortcut, command, {silent = true, noremap = true})
+            vim.keymap.set(v, shortcut, command, opts)
         else
-            vim.keymap.set(v, shortcut, command, {silent = true, noremap = false})
+            vim.keymap.set(v, shortcut, command, opts)
         end
 	end
 end
