@@ -3,6 +3,7 @@
   list = with pkgs; [
     # Application.
     firefox
+    circumflex
 
     # Text.
     bat
@@ -23,10 +24,6 @@
     xclip
     trash-cli
     gnome.zenity
-    networkmanagerapplet
-    duf
-    dog
-    gping
     zathura
     libqalculate
     cava
@@ -46,6 +43,12 @@
     procs
     kmon
     bmon
+
+    # Network
+    duf
+    dog
+    gping
+    networkmanagerapplet
 
     # Cloud / virtualization.
     terraform
