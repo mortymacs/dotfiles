@@ -15,6 +15,7 @@
     fd
     jq
     yq
+    glow
 
     # Security.
     xss-lock
