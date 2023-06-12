@@ -3,7 +3,6 @@
   list = with pkgs; [
     # Application.
     firefox
-    unstable.circumflex
 
     # Text.
     bat
