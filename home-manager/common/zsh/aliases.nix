@@ -62,6 +62,7 @@
   http-server = ''(){
             python -m http.server "$1" & firefox http://localhost:"$1"
         }'';
+  http-test-server = "docker run --rm -d -p 9090:80 kennethreitz/httpbin";
   code-capture = ''(){
             silicon "$1" -o $(basename "$\{1%%.*\}.png") --no-window-controls --font "CodeNewRoman Nerd Font Mono" --background '#fff0' --theme Coldark-Dark
         }'';
