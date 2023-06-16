@@ -48,45 +48,45 @@
         };
       };
 
-      # https://github.com/pineapplegiant/spaceduck-terminal
-      # Space Duck
+      # https://github.com/alacritty/alacritty-theme/
+      # Ayu + my customization.
       colors = {
         # Default colors
         primary = {
-          background = "#060606";
-          foreground = "#ecf0c1";
+          background = "#0A0E14";
+          foreground = "#FEFADC";
         };
 
         cursor = {
-          cursor = "#4B3F72";
+          cursor = "#344866";
         };
 
         selection = {
-          text = "#ecf0c1";
-          background = "#1F2041";
+          text = "#FEFADC";
+          background = "#202C3E";
         };
 
         # Normal colors
         normal = {
-          black = "#000000";
-          red = "#e33400";
-          green = "#5ccc96";
-          yellow = "#b3a1e6";
-          blue = "#00a3cc";
-          magenta = "#f2ce00";
-          cyan = "#7a5ccc";
-          white = "#686f9a";
+          black = "#01060E";
+          red = "#EA6C73";
+          green = "#91B362";
+          yellow = "#F9AF4F";
+          blue = "#53BDFA";
+          magenta = "#FAE994";
+          cyan = "#90E1C6";
+          white = "#C7C7C7";
         };
         # Bright colors
         bright = {
-          black = "#686f9a";
-          red = "#e33400";
-          green = "#5ccc96";
-          yellow = "#b3a1e6";
-          blue = "#00a3cc";
-          magenta = "#f2ce00";
-          cyan = "#7a5ccc";
-          white = "#f0f1ce";
+          black = "#686868";
+          red = "#F07178";
+          green = "#C2D94C";
+          yellow = "#FFB454";
+          blue = "#59C2FF";
+          magenta = "#FFEE99";
+          cyan = "#95E6CB";
+          white = "#FFFFFF";
         };
       };
     };

@@ -198,7 +198,7 @@
         }'';
   postgresql = ''(){
             if [ "$#" -eq "0" ]; then
-                conn_str=$(pgcli --list-dsn | fzf | awk '{print $1}')
+                conn_str=$(pgcli --list-dsn | awk '{print $1}' | fzf)
                 [ ! -z "$conn_str" ] && pgcli -D "$conn_str"
             else
                 pgcli "$@"
