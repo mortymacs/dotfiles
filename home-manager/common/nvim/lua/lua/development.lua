@@ -41,7 +41,7 @@ require('nvim-treesitter.configs').setup({
             },
             selection_modes = {
                 ['@parameter.outer'] = 'v', -- charwise
-                ['@function.outer'] = 'V', -- linewise
+                ['@function.outer'] = 'V',  -- linewise
                 ['@class.outer'] = '<c-v>', -- blockwise
             },
             include_surrounding_whitespace = true,
@@ -72,6 +72,7 @@ require('nvim-treesitter.configs').setup({
 
 -- Treesitter plugins.
 require("treesitter-context").setup()
+require("nvim_context_vt").setup()
 
 -- Colorizer.
 require('colorizer').setup()
@@ -119,3 +120,15 @@ require('trim').setup()
 
 -- Hlslens.
 require('hlslens').setup()
+
+-- Lint.
+require('lint').linters_by_ft = {
+    go = { "golangcilint", "revive", },
+    lua = { "luacheck", },
+    sh = {"shellcheck",},
+}
+vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost" }, {
+    callback = function()
+        require("lint").try_lint()
+    end,
+})

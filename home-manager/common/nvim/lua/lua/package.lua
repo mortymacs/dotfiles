@@ -118,6 +118,18 @@ require("lazy").setup({
         },
     },
     {
+        "haringsrob/nvim_context_vt",
+        dependencies = {
+            "nvim-treesitter/nvim-treesitter",
+        },
+    },
+    {
+        "ray-x/cmp-treesitter",
+        dependencies = {
+            "nvim-treesitter/nvim-treesitter",
+        },
+    },
+    {
         "folke/todo-comments.nvim",
         dependencies = {
             "nvim-lua/plenary.nvim",
@@ -135,6 +147,7 @@ require("lazy").setup({
             "nvim-treesitter/nvim-treesitter",
         },
     },
+    "mfussenegger/nvim-lint",
 
     -- LSP.
     "neovim/nvim-lspconfig",

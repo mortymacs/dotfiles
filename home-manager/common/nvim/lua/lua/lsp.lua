@@ -90,6 +90,8 @@ cmp.setup({
         { name = 'nvim_lsp' },
         { name = 'vsnip' },
     }, {
+        { name = 'treesitter' },
+    }, {
         { name = 'buffer' },
     }, {
         { name = 'path' },

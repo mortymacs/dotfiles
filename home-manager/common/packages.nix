@@ -102,6 +102,7 @@
     lua
     sumneko-lua-language-server
     stylua
+    lua52Packages.luacheck
     ## Terraform.
     terraform-ls
     terraform-docs
