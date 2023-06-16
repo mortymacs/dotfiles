@@ -68,7 +68,7 @@
 
         # Normal colors
         normal = {
-          black = "#01060E";
+          black = "#686868";
           red = "#EA6C73";
           green = "#91B362";
           yellow = "#F9AF4F";

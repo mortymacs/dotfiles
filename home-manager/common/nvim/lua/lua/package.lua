@@ -101,6 +101,7 @@ require("lazy").setup({
     "f-person/git-blame.nvim",
     "aaronhallaert/advanced-git-search.nvim",
     "lewis6991/gitsigns.nvim",
+    "sindrets/diffview.nvim",
 
     -- Development.
     "norcalli/nvim-colorizer.lua",
