@@ -110,6 +110,8 @@
     rnix-lsp
     ## Shell.
     shellcheck
+    ## SQL.
+    sqlfluff
     ## YAML.
     nodePackages.yaml-language-server
     ## Dockerfile.

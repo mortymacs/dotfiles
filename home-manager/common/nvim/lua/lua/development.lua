@@ -105,7 +105,7 @@ require('mini.indentscope').setup({
     symbol = "│",
 })
 vim.api.nvim_create_autocmd("FileType",
-    { pattern = { "alpha", "NvimTree", "floaterm" }, command = ":lua vim.b.miniindentscope_disable=true" }
+    { pattern = { "alpha", "NvimTree", "floaterm", "Trouble" }, command = ":lua vim.b.miniindentscope_disable=true" }
 )
 
 -- Todo.
@@ -126,6 +126,7 @@ require('lint').linters_by_ft = {
     go = { "golangcilint", "revive", },
     lua = { "luacheck", },
     sh = {"shellcheck",},
+    sql = {"sqlfluff",},
 }
 vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost" }, {
     callback = function()
