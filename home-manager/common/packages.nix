@@ -82,6 +82,7 @@
     rustfmt
     rust-analyzer
     cargo
+    bacon
     ## Go.
     go
     gopls
