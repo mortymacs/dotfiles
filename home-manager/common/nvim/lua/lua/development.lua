@@ -125,11 +125,34 @@ require('hlslens').setup()
 require('lint').linters_by_ft = {
     go = { "golangcilint", "revive", },
     lua = { "luacheck", },
-    sh = {"shellcheck",},
-    sql = {"sqlfluff",},
+    sh = { "shellcheck", },
+    sql = { "sqlfluff", },
 }
 vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost" }, {
     callback = function()
         require("lint").try_lint()
     end,
+})
+
+-- Surround.
+require("nvim-surround").setup({
+    keymaps = {
+        insert = nil,
+        insert_line = nil,
+        normal = nil,
+        normal_cur = nil,
+        normal_line = nil,
+        normal_cur_line = nil,
+        visual = "va",
+        visual_line = nil,
+        delete = "da",
+        change = "ca",
+    },
+})
+
+-- Deadcolumn.
+require('deadcolumn').setup({
+    warning = {
+        colorcode = "#f94144",
+    },
 })

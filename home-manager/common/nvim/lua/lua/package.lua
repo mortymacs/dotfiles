@@ -148,6 +148,12 @@ require("lazy").setup({
         },
     },
     "mfussenegger/nvim-lint",
+    {
+        "kylechui/nvim-surround",
+        version = "*",
+        event = "VeryLazy",
+    },
+    "Bekaboo/deadcolumn.nvim",
 
     -- LSP.
     "neovim/nvim-lspconfig",
