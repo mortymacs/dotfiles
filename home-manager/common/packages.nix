@@ -93,6 +93,7 @@
     gosec
     golangci-lint
     gofumpt
+    golines
     gomodifytags
     mage
     air
