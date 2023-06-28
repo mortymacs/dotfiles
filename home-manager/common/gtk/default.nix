@@ -11,6 +11,7 @@ let
     gtk-xft-hinting = 1;
     gtk-xft-hintstyle = "hintfull";
     gtk-error-bell = 0;
+    gtk-application-prefer-dark-theme = true;
   };
 in
 {
