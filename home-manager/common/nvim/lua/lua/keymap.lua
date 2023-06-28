@@ -104,6 +104,7 @@ SetKeyMap("<c-_>",          ":'<,'>CommentToggle<cr>",                          
 SetKeyMap("<c-_>",          "<Cmd>CommentToggle<cr>:+1<cr>",                                 {"n"})
 SetKeyMap("<c-_>",          "<esc><Cmd>CommentToggle<cr>:+1<cr>",                            {"i"})
 SetKeyMap("<c-c><c-q>",     vim.lsp.buf.signature_help)
+SetKeyMap("<c-c><c-n>",     vim.diagnostic.open_float)
 SetKeyMap("<c-c><c-Right>", vim.diagnostic.goto_next)
 SetKeyMap("<c-c><c-Left>",  vim.diagnostic.goto_prev)
 SetKeyMap("<c-c><c-s>",     "<Cmd>DocumentSymbols<cr>")
