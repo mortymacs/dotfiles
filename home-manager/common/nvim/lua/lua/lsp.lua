@@ -208,7 +208,7 @@ lspconfig.rnix.setup({
         lsp_signature.on_attach(lsp_signature_setup, bufnr)
     end,
 })
-vim.api.nvim_create_autocmd({"BufWritePre"}, {pattern = "*.nix", command = ":%!nixfmt"})
+vim.api.nvim_create_autocmd({ "BufWritePre" }, { pattern = "*.nix", command = ":%!nixfmt" })
 
 -- Terraform
 lspconfig.terraformls.setup({
@@ -225,6 +225,7 @@ local yamlCfg = require("yaml-companion").setup({
     },
 })
 lspconfig.yamlls.setup(yamlCfg)
+-- vim.api.nvim_create_autocmd("BufWritePre", { pattern = { "*.yaml", "*.yml" }, command = ":%!yamlfmt /dev/stdin" })
 
 -- XML
 -- https://gist.github.com/ptitfred/3402279
