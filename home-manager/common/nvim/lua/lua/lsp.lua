@@ -208,6 +208,7 @@ lspconfig.rnix.setup({
         lsp_signature.on_attach(lsp_signature_setup, bufnr)
     end,
 })
+vim.api.nvim_create_autocmd({"BufWritePre"}, {pattern = "*.nix", command = ":%!nixfmt"})
 
 -- Terraform
 lspconfig.terraformls.setup({

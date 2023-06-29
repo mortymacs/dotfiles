@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
   list = with pkgs; [
     # Application.
     firefox
@@ -100,6 +99,8 @@
     ## Python.
     python311
     nodePackages.pyright
+    ruff
+    python311Packages.ipython
     ## Lua.
     lua
     sumneko-lua-language-server
@@ -110,12 +111,18 @@
     terraform-docs
     ## Nix.
     rnix-lsp
+    nixfmt
     ## Shell.
+    nodePackages.bash-language-server
     shellcheck
     ## SQL.
     sqlfluff
     ## YAML.
     nodePackages.yaml-language-server
+    yamllint
+    yamlfmt
+    ## JSON.
+    nodePackages.jsonlint
     ## Dockerfile.
     nodePackages.dockerfile-language-server-nodejs
     ## Latex.

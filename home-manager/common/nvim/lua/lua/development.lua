@@ -72,7 +72,9 @@ require('nvim-treesitter.configs').setup({
 
 -- Treesitter plugins.
 require("treesitter-context").setup()
-require("nvim_context_vt").setup()
+require("nvim_context_vt").setup({
+    disable_ft = { "markdown", "yaml" },
+})
 
 -- Colorizer.
 require('colorizer').setup()
@@ -122,11 +124,16 @@ require('trim').setup()
 require('hlslens').setup()
 
 -- Lint.
-require('lint').linters_by_ft = {
+local lint = require("lint")
+lint.linters_by_ft = {
     go = { "golangcilint", "revive", },
+    python = { "ruff", },
     lua = { "luacheck", },
     sh = { "shellcheck", },
     sql = { "sqlfluff", },
+    nix = { "nix", },
+    yaml = { "yamllint", },
+    json = { "jsonlint", },
 }
 vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost" }, {
     callback = function()
