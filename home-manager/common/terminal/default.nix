@@ -11,8 +11,8 @@
         decorations = "none";
         dynamic_padding = false;
         padding = {
-          x = 0;
-          y = 0;
+          x = 5;
+          y = 5;
         };
         decorations_theme_variant = "Dark";
       };
@@ -26,13 +26,9 @@
         };
       };
 
-      mouse = {
-        hide_when_typing = true;
-      };
+      mouse = { hide_when_typing = true; };
 
-      selection = {
-        save_to_clipboard = true;
-      };
+      selection = { save_to_clipboard = true; };
 
       font = {
         size = 12;
@@ -57,9 +53,7 @@
           foreground = "#FEFADC";
         };
 
-        cursor = {
-          cursor = "#344866";
-        };
+        cursor = { cursor = "#344866"; };
 
         selection = {
           text = "#FEFADC";

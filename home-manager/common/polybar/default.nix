@@ -151,9 +151,12 @@ in {
         menu-0-0 = "Shutdown |";
         menu-0-0-exec =
           "zenity --question --title 'shutdown' --text 'shutdown now?' && shutdown now";
-        menu-0-1 = " Restart";
+        menu-0-1 = " Restart |";
         menu-0-1-exec =
           "zenity --question --title 'restart' --text 'restart now?' && reboot";
+        menu-0-2 = " Exit";
+        menu-0-2-exec =
+          "zenity --question --title 'exit' --text 'exit now?' && bspc {quit,wm -r}";
       };
 
     };
