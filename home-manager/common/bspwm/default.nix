@@ -3,8 +3,7 @@ let
   normal_border_color = "#2F2F2F";
   active_border_color = "#2F2F2F";
   presel_feedback_color = "#2F2F2F";
-in
-{
+in {
   xsession.windowManager = {
     bspwm = {
       enable = true;
@@ -47,10 +46,8 @@ in
         "zeal"
       ];
       rules = {
-        "firefox" = {
-          desktop = "0";
-        };
-        "Microsoft\ Teams\ -\ Preview:\*" = {
+        "firefox" = { desktop = "0"; };
+        "Microsoft Teams - Preview:*" = {
           desktop = "0";
           split_ratio = "0.61";
         };

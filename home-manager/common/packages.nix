@@ -1,5 +1,11 @@
 { pkgs, ... }: {
   list = with pkgs; [
+    # Desktop
+    bsp-layout
+    # tabbed
+    xdotool
+    xorg.xwininfo
+
     # Application.
     firefox
 

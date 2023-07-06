@@ -1,5 +1,4 @@
-{ config, pkgs, inputs, ... }:
-{
+{ config, pkgs, inputs, ... }: {
   imports = [
     ./hardware-configuration.nix
     ../common/ld.nix
@@ -9,10 +8,7 @@
   ];
 
   # Nix.
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Bootloader.
   boot.loader = {
@@ -27,9 +23,7 @@
   };
 
   # Setup keyfile
-  boot.initrd.secrets = {
-    "/crypto_keyfile.bin" = null;
-  };
+  boot.initrd.secrets = { "/crypto_keyfile.bin" = null; };
 
   # Kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -38,18 +32,14 @@
   # Networking.
   networking = {
     hostName = "fx";
-    networkmanager = {
-      enable = true;
-    };
+    networkmanager = { enable = true; };
   };
 
   # Time zone.
   time.timeZone = "Europe/Amsterdam";
 
   # Internationalisation.
-  i18n = {
-    defaultLocale = "en_US.UTF-8";
-  };
+  i18n = { defaultLocale = "en_US.UTF-8"; };
 
   # Xserver.
   services.xserver = {
@@ -63,11 +53,7 @@
       };
       defaultSession = "none+bspwm";
     };
-    windowManager = {
-      bspwm = {
-        enable = true;
-      };
-    };
+    windowManager = { bspwm = { enable = true; }; };
   };
 
   # Printer.
@@ -91,17 +77,12 @@
     extraGroups = [ "networkmanager" "wheel" "docker" ];
     initialPassword = "password";
     shell = pkgs.zsh;
-    packages = with pkgs; [
-      bsp-layout
-      bc
-    ];
+    packages = with pkgs; [ bc ];
   };
 
   # Config packages.
   nixpkgs = {
-    config = {
-      allowUnfree = true;
-    };
+    config = { allowUnfree = true; };
     overlays = [
       (final: prev: {
         unstable = import inputs.nixpkgs-unstable {
