@@ -1,26 +1,35 @@
 { lib, ... }:
 let
   # Colors:
-  ## https://coolors.co/351431-eb5e55-e23e58-d81e5b-82264f-2b2d42-e26d5a-e7ada3-ececec
+  ## https://coolors.co/351431-2b2d42-eb5e55-e23e58-d81e5b-82264f-e26d5a-e7ada3-ececec
+  ## https://coolors.co/351431-2c1129-1d0b1b-160915-0f060e
 
   # username
-  section_1_bg = "#2B2D42";
+  section_1_bg = "#EB5E55";
   section_1_fg = "#ECECEC";
 
   # directory
-  section_2_bg = "#ce4257";
+  section_2_bg = "#E23E58";
   section_2_fg = "#ECECEC";
 
   # svc
-  section_3_bg = "#82264F";
+  section_3_bg = "#D81E5B";
   section_3_fg = "#ECECEC";
 
   # misc
-  section_4_bg = "#2B2D42";
-  section_4_fg = "#ECECEC";
+  section_4_bg = "#351431";
+  section_4_fg = "#8E3E84";
+
+  # prompt
+  section_5_bg = "#2C1129";
+  section_6_bg = "#1D0B1B";
+  section_7_bg = "#160915";
+  section_8_bg = "#0F060E";
 
   # icon
-  icon = "";
+  #icon = "";
+  icon = "";
+
 in {
   programs.starship = {
     enable = true;
@@ -41,7 +50,8 @@ in {
         "$status"
         "$cmd_duration"
         "$jobs"
-        "[${icon}](fg:${section_4_bg}) "
+        # "[${icon}](fg:${section_4_bg}) "
+        "[ ](bg:${section_5_bg})[ ](bg:${section_6_bg})[ ](bg:${section_7_bg})[ ](bg:${section_8_bg}) "
       ];
       add_newline = false;
       username = {
