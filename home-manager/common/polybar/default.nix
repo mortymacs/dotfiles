@@ -8,7 +8,7 @@ let
 
   # Workspace.
   active-workspace-background = "#161927";
-  urgent-workspace-background = "#9d4edd";
+  urgent-workspace-background = "#0f111b";
   empty-workspace-foreground = "#707880";
 
   # Datetime.
