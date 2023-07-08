@@ -102,6 +102,12 @@ require("lazy").setup({
     "aaronhallaert/advanced-git-search.nvim",
     "lewis6991/gitsigns.nvim",
     "sindrets/diffview.nvim",
+    {
+        "wintermute-cell/gitignore.nvim",
+        dependencies = {
+            "nvim-telescope/telescope.nvim",
+        },
+    },
 
     -- Development.
     "norcalli/nvim-colorizer.lua",
