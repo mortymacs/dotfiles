@@ -2,7 +2,7 @@
 let
   # Colors:
   ## https://coolors.co/351431-2b2d42-eb5e55-e23e58-d81e5b-82264f-e26d5a-e7ada3-ececec
-  ## https://coolors.co/351431-2c1129-1d0b1b-160915-0f060e
+  ## https://coolors.co/82264f-6f2043-4f1730-2f0e1d-200a14-10050a
 
   # username
   section_1_bg = "#EB5E55";
@@ -17,14 +17,14 @@ let
   section_3_fg = "#ECECEC";
 
   # misc
-  section_4_bg = "#351431";
-  section_4_fg = "#8E3E84";
+  section_4_bg = "#82264F";
+  section_4_fg = "#ECECEC";
 
   # prompt
-  section_5_bg = "#2C1129";
-  section_6_bg = "#1D0B1B";
-  section_7_bg = "#160915";
-  section_8_bg = "#0F060E";
+  section_5_bg = "#6F2043";
+  section_6_bg = "#4F1730";
+  section_7_bg = "#2F0E1D";
+  section_8_bg = "#200A14";
 
   # icon
   #icon = "";
