@@ -2,7 +2,6 @@
   list = with pkgs; [
     # Desktop
     bsp-layout
-    # tabbed
     xdotool
     xorg.xwininfo
 
@@ -19,6 +18,7 @@
     fd
     jq
     yq
+    jless
     glow
 
     # Security.

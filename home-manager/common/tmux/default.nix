@@ -53,8 +53,8 @@ in {
       setw -g window-status-style "none,fg=${active_pane_background},bg=${background}"
       set -g status-left "#[fg=${left_foreground},bg=${left_background}] #S #[fg=${left_background},bg=${background},nobold,nounderscore,noitalics]${left_icon}"
       set -g status-right "#[fg=${background},bg=${background},nobold,nounderscore,noitalics]${right_icon}#[fg=${active_pane_background},bg=${background}] #h #{tmux_mode_indicator} "
-      setw -g window-status-format "#[fg=${active_pane_background},bg=${background}] #I #[fg=${active_pane_background},bg=${background}] #W "
-      setw -g window-status-current-format "#[fg=${background},bg=${active_pane_background},nobold,nounderscore,noitalics]${left_icon}#[fg=${background},bg=${active_pane_background}] #I #[fg=${background},bg=${active_pane_background}] #W #[fg=${active_pane_background},bg=${background},nobold,nounderscore,noitalics]${left_icon}"
+      setw -g window-status-format "#[fg=${active_pane_background},bg=${background}] #W "
+      setw -g window-status-current-format "#[fg=${background},bg=${active_pane_background},nobold,nounderscore,noitalics]${left_icon}#[fg=${background},bg=${active_pane_background}] #W #[fg=${active_pane_background},bg=${background},nobold,nounderscore,noitalics]${left_icon}"
     '';
     plugins = with pkgs; [ tmuxPlugins.fuzzback tmuxPlugins.tmux-fzf ];
 
