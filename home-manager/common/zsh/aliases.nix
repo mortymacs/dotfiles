@@ -71,9 +71,11 @@
   # Git.
   p = ''(){
             if [ "$#" -eq 0 ]; then
-                cd $GHQ_ROOT/$(ghq list | fzf -e)
+                project=$(ghq list | fzf -e)
+                [ -n "$project" ] && cd "$GHQ_ROOT/$project"
             elif [ "$#" -eq 1 ]; then
-                cd $GHQ_ROOT/$(ghq list | fzf -e -q "$1")
+                project=$(ghq list | fzf -e -q "$1")
+                [ -n "$project" ] && cd "$GHQ_ROOT/$project"
             else
                 ghq "$@"
             fi
