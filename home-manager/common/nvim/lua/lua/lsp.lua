@@ -1,3 +1,5 @@
+require("util")
+
 -- Lua
 require("neodev").setup({
     library = { plugins = { "nvim-dap-ui" }, types = true },
@@ -208,7 +210,12 @@ lspconfig.rnix.setup({
         lsp_signature.on_attach(lsp_signature_setup, bufnr)
     end,
 })
-vim.api.nvim_create_autocmd({ "BufWritePre" }, { pattern = "*.nix", command = ":%!nixfmt" })
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+    pattern = "*.nix",
+    callback = function()
+        RunAndRevertCursor(":%!nixfmt")
+    end
+})
 
 -- Terraform
 lspconfig.terraformls.setup({
@@ -225,15 +232,29 @@ local yamlCfg = require("yaml-companion").setup({
     },
 })
 lspconfig.yamlls.setup(yamlCfg)
--- vim.api.nvim_create_autocmd("BufWritePre", { pattern = { "*.yaml", "*.yml" }, command = ":%!yamlfmt /dev/stdin" })
+vim.api.nvim_create_autocmd("BufWritePre", {
+    pattern = { "*.yaml", "*.yml" },
+    callback = function()
+        RunAndRevertCursor(":%!yamlfmt /dev/stdin")
+    end
+})
 
 -- XML
 -- https://gist.github.com/ptitfred/3402279
-vim.api.nvim_create_autocmd("BufWritePre",
-    { pattern = "*.xml", command = ":silent %!xmllint --format --encode UTF-8 --recover - 2>/dev/null" })
+vim.api.nvim_create_autocmd("BufWritePre", {
+    pattern = "*.xml",
+    callback = function()
+        RunAndRevertCursor(":silent %!xmllint --format --encode UTF-8 --recover - 2>/dev/null")
+    end
+})
 
 -- JSON
-vim.api.nvim_create_autocmd("BufWritePre", { pattern = "*.json", command = ":%!jq" })
+vim.api.nvim_create_autocmd("BufWritePre", {
+    pattern = "*.json",
+    callback = function()
+        RunAndRevertCursor(":%!jq")
+    end
+})
 
 -- RG
 cmp.setup.cmdline({ '"', "'" }, {

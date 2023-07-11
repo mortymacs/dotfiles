@@ -10,3 +10,9 @@ function SetKeyMap(shortcut, command, modes, is_expr)
         end
 	end
 end
+
+function RunAndRevertCursor(command)
+    local old_location = vim.api.nvim_win_get_cursor(0)
+    vim.cmd(command)
+    vim.api.nvim_win_set_cursor(0, old_location)
+end
