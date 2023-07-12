@@ -19,6 +19,7 @@
     jq
     yq
     jless
+    fq
     glow
 
     # Security.
@@ -55,7 +56,7 @@
     gping
     networkmanagerapplet
 
-    # Cloud / virtualization.
+    # Cloud / virtualization / CICD.
     terraform
     kubectl
     kubecolor
@@ -66,6 +67,7 @@
     kubernetes-helm
     awscli2
     ctop
+    act
 
     # Database.
     pgcli

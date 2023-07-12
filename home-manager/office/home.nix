@@ -54,6 +54,7 @@ in {
     defaultPackages.list ++ [
       # Meeting.
       teams
+      zoom-us
       postman
 
       # Development.
