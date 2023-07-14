@@ -299,7 +299,11 @@ require("lspsaga").setup({
             expand_or_jump = '<enter>',
         },
     },
-
+    implement = {
+        enable = true,
+        sign = true,
+        virtual_text = false,
+    },
 })
 
 -- Lens.
