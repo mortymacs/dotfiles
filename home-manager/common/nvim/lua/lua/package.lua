@@ -241,4 +241,9 @@ require("lazy").setup({
 
     -- Keybinding.
     "folke/which-key.nvim",
+    {
+        "folke/flash.nvim",
+        event = "VeryLazy",
+        opts = {},
+    },
 })
