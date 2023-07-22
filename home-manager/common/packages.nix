@@ -99,6 +99,7 @@
     revive
     gosec
     golangci-lint
+    govulncheck
     gofumpt
     golines
     gomodifytags
