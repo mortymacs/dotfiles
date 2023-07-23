@@ -96,7 +96,7 @@ require("lazy").setup({
         version = "*",
     },
 
-    -- Git
+    -- Git.
     "ruanyl/vim-gh-line",
     "f-person/git-blame.nvim",
     "aaronhallaert/advanced-git-search.nvim",

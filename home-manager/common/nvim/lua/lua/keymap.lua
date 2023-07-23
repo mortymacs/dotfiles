@@ -55,6 +55,8 @@ SetKeyMap("<c-g><c-i>", "<esc><Cmd>Gitignore<cr>")
 
 -- History
 SetKeyMap("<c-x><c-u>", "<Cmd>Telescope undo<cr>")
+SetKeyMap("<c-z>",       "undo")
+--SetKeyMap("<c-r>",       "redo")
 
 -- Text
 -- other options: v$ v0o$

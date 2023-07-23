@@ -9,6 +9,7 @@
         frame_color = "#7a5ccc";
         corner_radius = 0;
         gap_size = 1;
+        offset = "2x30";
         icon_theme = "Arc";
       };
       urgency_low = {
