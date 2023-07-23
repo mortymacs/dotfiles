@@ -108,6 +108,11 @@ require("lazy").setup({
             "nvim-telescope/telescope.nvim",
         },
     },
+    {
+        "NeogitOrg/neogit",
+        dependencies = "nvim-lua/plenary.nvim",
+        config = true,
+    },
 
     -- Development.
     "norcalli/nvim-colorizer.lua",
