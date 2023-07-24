@@ -22,7 +22,7 @@ SetKeyMap("<c-s-right>", "<Cmd>vertical resize -1<cr>")
 -- Buffer
 SetKeyMap("<c-x><c-e>", ":Bd!<cr>")
 SetKeyMap("<c-f>",      "<Cmd>Telescope current_buffer_fuzzy_find<cr>")
-SetKeyMap("<c-r>",      "<Cmd>MurenToggle<cr>")
+SetKeyMap("<c-x><c-r>", "<Cmd>MurenToggle<cr>")
 
 -- Tabbar.
 SetKeyMap("<s-left>",   "<Cmd>BufferPrevious<cr>")
@@ -55,8 +55,6 @@ SetKeyMap("<c-g><c-i>", "<esc><Cmd>Gitignore<cr>")
 
 -- History
 SetKeyMap("<c-x><c-u>", "<Cmd>Telescope undo<cr>")
-SetKeyMap("<c-z>",       "undo")
---SetKeyMap("<c-r>",       "redo")
 
 -- Text
 -- other options: v$ v0o$
