@@ -83,7 +83,11 @@
     gnumake
 
     # Programming.
+    ## C/C++.
     gcc
+    ccls
+    gdb
+    cmake
     ## Rust.
     rustc
     rustfmt

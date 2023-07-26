@@ -157,6 +157,23 @@ local lsp_inlayhints_setup = {
     },
 }
 
+-- C/C++.
+lspconfig.ccls.setup({
+    init_options = {
+        compilationDatabaseDirectory = "build",
+        index = {
+            threads = 0,
+        },
+        clang = {
+            excludeArgs = { "-frounding-math" },
+        },
+    },
+    capabilities = capabilities,
+    on_attach = function(client, bufnr)
+        lsp_signature.on_attach(lsp_signature_setup, bufnr)
+    end,
+})
+
 -- Rust
 lspconfig.rust_analyzer.setup({
     capabilities = capabilities,
