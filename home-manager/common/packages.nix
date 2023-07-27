@@ -85,9 +85,6 @@
     # Programming.
     ## C/C++.
     gcc
-    ccls
-    gdb
-    cmake
     ## Rust.
     rustc
     rustfmt
@@ -130,15 +127,17 @@
     shellcheck
     ## SQL.
     sqlfluff
+    ## Dockerfile.
+    nodePackages.dockerfile-language-server-nodejs
+    ## Latex.
+    texlive.combined.scheme-small
     ## YAML.
     nodePackages.yaml-language-server
     yamllint
     yamlfmt
     ## JSON.
     nodePackages.jsonlint
-    ## Dockerfile.
-    nodePackages.dockerfile-language-server-nodejs
-    ## Latex.
-    texlive.combined.scheme-small
+    ## XML.
+    xmlformat
   ];
 }
