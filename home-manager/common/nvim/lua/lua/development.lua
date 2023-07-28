@@ -1,3 +1,11 @@
+-- Neotest.
+--require("neotest").setup({
+--    adapters = {
+--        require("neotest-python")({
+--            
+--        }),
+--})
+
 -- Treesitter setup.
 require('nvim-treesitter.configs').setup({
     ensure_installed = {

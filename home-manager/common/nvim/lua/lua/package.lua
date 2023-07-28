@@ -115,6 +115,14 @@ require("lazy").setup({
     },
 
     -- Development.
+    {
+        "nvim-neotest/neotest",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "nvim-treesitter/nvim-treesitter",
+            "antoinemadec/FixCursorHold.nvim",
+        },
+    },
     "norcalli/nvim-colorizer.lua",
     {
         "nvim-treesitter/nvim-treesitter",

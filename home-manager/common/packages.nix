@@ -108,6 +108,8 @@
     air
     ## Python.
     python311
+    poetry
+    python311Packages.ipdb
     nodePackages.pyright
     ruff
     python311Packages.ipython
