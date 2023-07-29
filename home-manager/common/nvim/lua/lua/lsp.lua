@@ -160,7 +160,7 @@ local lsp_inlayhints_setup = {
 -- Rust
 lspconfig.rust_analyzer.setup({
     capabilities = capabilities,
-    on_attach = function(client, bufnr)
+    on_attach = function(_, bufnr)
         lsp_signature.on_attach(lsp_signature_setup, bufnr)
     end,
 })
@@ -190,15 +190,22 @@ lspconfig.gopls.setup({
 -- Lua
 lspconfig.lua_ls.setup({
     capabilities = capabilities,
-    on_attach = function(client, bufnr)
+    on_attach = function(_, bufnr)
         lsp_signature.on_attach(lsp_signature_setup, bufnr)
     end,
+    settings = {
+        Lua = {
+            diagnostics = {
+                globals = { 'vim' },
+            },
+        },
+    },
 })
 
 -- Python
 lspconfig.pyright.setup({
     capabilities = capabilities,
-    on_attach = function(client, bufnr)
+    on_attach = function(_, bufnr)
         lsp_signature.on_attach(lsp_signature_setup, bufnr)
     end,
 })
@@ -206,7 +213,7 @@ lspconfig.pyright.setup({
 -- Nix
 lspconfig.rnix.setup({
     capabilities = capabilities,
-    on_attach = function(client, bufnr)
+    on_attach = function(_, bufnr)
         lsp_signature.on_attach(lsp_signature_setup, bufnr)
     end,
 })
@@ -220,7 +227,7 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 -- Terraform
 lspconfig.terraformls.setup({
     capabilities = capabilities,
-    on_attach = function(client, bufnr)
+    on_attach = function(_, bufnr)
         lsp_signature.on_attach(lsp_signature_setup, bufnr)
     end,
 })
@@ -316,25 +323,6 @@ require('lsp-lens').setup({
     },
 })
 vim.api.nvim_create_autocmd("BufWritePost", { pattern = "*", command = ":LspLensOn" })
-
--- LSP Lines.
-require("lsp_lines").setup()
-
--- Diagnostic.
-vim.diagnostic.config({
-    virtual_text = false,
-    virtual_lines = {
-        only_current_line = true,
-        highighlight_whole_line = false,
-    },
-})
--- https://github.com/neovim/nvim-lspconfig/issues/662#issuecomment-759442828
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-    vim.lsp.diagnostic.on_publish_diagnostics,
-    {
-        virtual_text = false
-    }
-)
 
 -- Rename.
 require("inc_rename").setup()

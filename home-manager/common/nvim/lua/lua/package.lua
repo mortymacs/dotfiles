@@ -200,7 +200,6 @@ require("lazy").setup({
     "VidocqH/lsp-lens.nvim",
     "lvimuser/lsp-inlayhints.nvim",
     "hrsh7th/vim-vsnip",
-    "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
     "preservim/tagbar",
     "terrortylor/nvim-comment",
     "smjonas/inc-rename.nvim",
