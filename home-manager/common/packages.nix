@@ -112,6 +112,8 @@
     python311Packages.ipdb
     nodePackages.pyright
     ruff
+    isort
+    black
     python311Packages.ipython
     ## Lua.
     lua

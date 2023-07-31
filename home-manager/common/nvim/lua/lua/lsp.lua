@@ -209,6 +209,13 @@ lspconfig.pyright.setup({
         lsp_signature.on_attach(lsp_signature_setup, bufnr)
     end,
 })
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+    pattern = "*.py",
+    callback = function()
+        RunAndRevertCursor(":%!isort - --profile black")
+        RunAndRevertCursor(":%!black - -q")
+    end
+})
 
 -- Nix
 lspconfig.rnix.setup({

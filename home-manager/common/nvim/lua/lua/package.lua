@@ -19,6 +19,7 @@ require("lazy").setup({
         "pineapplegiant/spaceduck",
         branch = "main",
     },
+    "ayu-theme/ayu-vim",
     "mvllow/modes.nvim",
 
     -- Tabbar.

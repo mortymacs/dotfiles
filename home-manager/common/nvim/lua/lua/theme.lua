@@ -1,5 +1,6 @@
 vim.g.background = "dark"
-vim.cmd.colorscheme("spaceduck")
+vim.g.ayucolor = "dark"
+vim.cmd.colorscheme("ayu")
 
 -- Body
 vim.api.nvim_set_hl(0, "Normal",      {bg = ""})

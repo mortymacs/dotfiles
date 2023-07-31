@@ -2,7 +2,7 @@
 --require("neotest").setup({
 --    adapters = {
 --        require("neotest-python")({
---            
+--
 --        }),
 --})
 
@@ -81,6 +81,7 @@ require('nvim-treesitter.configs').setup({
 -- Treesitter plugins.
 require("treesitter-context").setup()
 require("nvim_context_vt").setup({
+    disable_virtual_lines = true,
     disable_ft = { "markdown", "yaml" },
 })
 

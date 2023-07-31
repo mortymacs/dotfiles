@@ -64,6 +64,8 @@ SetKeyMap("<c-space>", "<esc>v", { "n" })
 SetKeyMap("<c-@>",     "<esc>v")
 SetKeyMap("<c-d>",     "<esc>yyp")
 SetKeyMap("<c-z>",     "<esc>u")
+-- Stop copying text on delete.
+SetKeyMap("<Del>",     '"_d',    { "v" })
 
 -- search
 SetKeyMap("<c-x><c-s>", function()
