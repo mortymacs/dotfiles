@@ -6,7 +6,7 @@ let
   ## https://coolors.co/82264f-6f2043-4f1730-2f0e1d-200a14-10050a
 
   # username
-  section_1_bg = "#EB5E55";
+  section_1_bg = "#82264F";
   section_1_fg = "#ECECEC";
 
   # directory
