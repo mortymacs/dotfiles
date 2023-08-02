@@ -11,6 +11,7 @@
     # Text.
     bat
     bat-extras.batgrep
+    unstable.ast-grep
     ripgrep
     pwgen
     peco

@@ -88,6 +88,7 @@ require("lazy").setup({
             "MattesGroeger/vim-bookmarks",
             "debugloop/telescope-undo.nvim",
             "FeiyouG/command_center.nvim",
+            "Marskey/telescope-sg",
         },
     },
 
