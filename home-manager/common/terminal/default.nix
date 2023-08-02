@@ -7,12 +7,12 @@
         TERM = "xterm-256color";
       };
       window = {
-        opacity = 0.9;
+        opacity = 0.95;
         decorations = "none";
         dynamic_padding = false;
         padding = {
-          x = 5;
-          y = 5;
+          x = 0;
+          y = 0;
         };
         decorations_theme_variant = "Dark";
       };

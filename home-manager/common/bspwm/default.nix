@@ -1,5 +1,5 @@
 let
-  focused_border_color = "#2F2F2F";
+  focused_border_color = "#7F2CCB";
   normal_border_color = "#2F2F2F";
   active_border_color = "#2F2F2F";
   presel_feedback_color = "#2F2F2F";
