@@ -6,7 +6,7 @@ let
   left_foreground = "#faf3dd";
   active_pane_background = "#f9564f";
   #left_icon = "";
-  #right_icon = "";
+  # right_icon = "";
   left_icon = "";
   right_icon = "";
 in {

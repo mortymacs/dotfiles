@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
   fonts = {
     enableDefaultFonts = false;
     fonts = with pkgs; [
@@ -13,7 +12,8 @@
       defaultFonts = {
         serif = [ "Vazirmatn" "Lexend" ];
         sansSerif = [ "Vazirmatn" "Lexend" ];
-        monospace = [ "Ellograph CF" "Noto Color Emoji" "Symbols-2048-em Nerd Font" ];
+        monospace =
+          [ "Ellograph CF" "Noto Color Emoji" "Symbols-2048-em Nerd Font" ];
         emoji = [ "Noto Color Emoji" ];
       };
     };

@@ -1,6 +1,7 @@
 { lib, ... }:
 let
   # Colors:
+  ## https://coolors.co/351431-2b2d42-eb5e55-e23e58-d81e5b-82264f-e26d5a-e7ada3-ececec-0a9396
   ## https://coolors.co/351431-2b2d42-eb5e55-e23e58-d81e5b-82264f-e26d5a-e7ada3-ececec
   ## https://coolors.co/82264f-6f2043-4f1730-2f0e1d-200a14-10050a
 
@@ -12,24 +13,29 @@ let
   section_2_bg = "#E23E58";
   section_2_fg = "#ECECEC";
 
+  # fill
+  fill_fg = "#3d405b";
+
   # svc
   section_3_bg = "#D81E5B";
   section_3_fg = "#ECECEC";
 
-  # misc
-  section_4_bg = "#82264F";
+  # status
+  section_4_bg = "#227c9d";
   section_4_fg = "#ECECEC";
 
-  # prompt
-  section_5_bg = "#6F2043";
-  section_6_bg = "#4F1730";
-  section_7_bg = "#2F0E1D";
-  section_8_bg = "#200A14";
+  # cmd_duration
+  section_5_bg = "#ffcb77";
+  section_5_fg = "#231942";
 
-  # icon
-  #icon = "";
+  # job
+  section_6_bg = "#17c3b2";
+  section_6_fg = "#ECECEC";
+
+  # icons
   icon = "";
-
+  fill_icon = "-";
+  prompt_icon = "";
 in {
   programs.starship = {
     enable = true;
@@ -46,14 +52,24 @@ in {
         "$git_state"
         "$git_metrics"
         "$git_status"
-        "[${icon}](bg:${section_4_bg} fg:${section_3_bg})"
+        "$fill"
         "$status"
         "$cmd_duration"
         "$jobs"
-        # "[${icon}](fg:${section_4_bg}) "
-        "[ ](bg:${section_5_bg})[ ](bg:${section_6_bg})[ ](bg:${section_7_bg})[ ](bg:${section_8_bg}) "
+        "$line_break"
+        "$character"
       ];
       add_newline = false;
+      character = {
+        format = "$symbol";
+        success_symbol = "[${prompt_icon}](purple)";
+        error_symbol = "[${prompt_icon}](red)";
+        vimcmd_symbol = "[${prompt_icon}](green)";
+      };
+      fill = {
+        symbol = "${fill_icon}";
+        style = "bold ${fill_fg}";
+      };
       username = {
         show_always = true;
         style_user = "bg:${section_1_bg} fg:${section_1_fg}";
@@ -95,14 +111,14 @@ in {
         disabled = false;
       };
       cmd_duration = {
-        style = "bold bg:${section_4_bg} fg:${section_4_fg}";
+        style = "bold bg:${section_5_bg} fg:${section_5_fg}";
         format = "[ $duration ]($style)";
       };
       jobs = {
         symbol = "+";
-        style = "bold bg:${section_4_bg} fg:${section_4_fg}";
+        style = "bold bg:${section_6_bg} fg:${section_6_fg}";
         number_threshold = 1;
-        format = "[ [$symbol$number] ]($style)";
+        format = "[ $symbol$number ]($style)";
       };
     };
   };
