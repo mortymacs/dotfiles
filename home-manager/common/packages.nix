@@ -66,6 +66,7 @@
     kubespy
     stern
     kubernetes-helm
+    helm-docs
     awscli2
     ctop
     act
@@ -121,9 +122,6 @@
     sumneko-lua-language-server
     stylua
     lua54Packages.luacheck
-    ## Terraform.
-    terraform-ls
-    terraform-docs
     ## Nix.
     rnix-lsp
     nixfmt
@@ -132,6 +130,9 @@
     shellcheck
     ## SQL.
     sqlfluff
+    ## Terraform.
+    terraform-ls
+    terraform-docs
     ## Dockerfile.
     nodePackages.dockerfile-language-server-nodejs
     ## Latex.
