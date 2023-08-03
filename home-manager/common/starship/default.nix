@@ -26,7 +26,7 @@ let
 
   # cmd_duration
   section_5_bg = "#ffcb77";
-  section_5_fg = "#231942";
+  section_5_fg = "#0d1b2a";
 
   # job
   section_6_bg = "#17c3b2";

@@ -13,7 +13,6 @@
 
   # File and directory.
   l = "exa --git -lh --octal-permissions --color-scale";
-  f = "fzf --preview 'bat {} --style=numbers --color=always'";
   o = "v \`f || echo '-c :quitall'\`";
   gg = "batgrep -i";
   gf = ''(){
@@ -22,6 +21,7 @@
   gfa = ''(){
     gg "$1" -g "*.$2"
   }'';
+  gfi = "sk -i -c 'rg {}'";
   rm = "trash";
   z = ''(){
             if [ "$#" -eq 0 ]; then

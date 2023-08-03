@@ -1,9 +1,10 @@
 {
-    programs.fzf = {
-        enable = true;
-        enableZshIntegration = true;
-        tmux = {
-            enableShellIntegration = true;
-        };
+  programs = {
+    fzf = {
+      enable = true;
+      enableZshIntegration = true;
+      tmux = { enableShellIntegration = true; };
     };
+    skim = { enable = true; };
+  };
 }
