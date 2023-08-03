@@ -13,6 +13,7 @@
 
   # File and directory.
   l = "exa --git -lh --octal-permissions --color-scale";
+  f = "fzf --preview 'bat {} --style=numbers --color=always'";
   o = "v \`f || echo '-c :quitall'\`";
   gg = "batgrep -i";
   gf = ''(){

@@ -14,7 +14,7 @@ let
   section_2_fg = "#ECECEC";
 
   # fill
-  fill_fg = "#3d405b";
+  fill_bg = "#0d1b2a";
 
   # svc
   section_3_bg = "#D81E5B";
@@ -34,7 +34,7 @@ let
 
   # icons
   icon = "";
-  fill_icon = "-";
+  fill_icon = " ";
   prompt_icon = "";
 in {
   programs.starship = {
@@ -68,7 +68,7 @@ in {
       };
       fill = {
         symbol = "${fill_icon}";
-        style = "bold ${fill_fg}";
+        style = "bold bg:${fill_bg}";
       };
       username = {
         show_always = true;
