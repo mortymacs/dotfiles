@@ -67,6 +67,7 @@
     stern
     kubernetes-helm
     helm-docs
+    chart-testing
     awscli2
     ctop
     act
@@ -127,6 +128,7 @@
     nixfmt
     ## Shell.
     nodePackages.bash-language-server
+    shfmt
     shellcheck
     ## SQL.
     sqlfluff

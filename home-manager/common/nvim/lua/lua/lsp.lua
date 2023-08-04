@@ -231,6 +231,20 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
     end
 })
 
+-- Shell
+lspconfig.bashls.setup({
+    capabilities = capabilities,
+    on_attach = function(_, bufnr)
+        lsp_signature.on_attach(lsp_signature_setup, bufnr)
+    end,
+})
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+    pattern = "*.sh",
+    callback = function()
+        RunAndRevertCursor(":%!shfmt")
+    end
+})
+
 -- Terraform
 lspconfig.terraformls.setup({
     capabilities = capabilities,
