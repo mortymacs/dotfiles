@@ -14,7 +14,7 @@ let
   section_2_fg = "#ECECEC";
 
   # fill
-  fill_bg = "#0d1b2a";
+  fill_bg = "#0E131F";
 
   # svc
   section_3_bg = "#D81E5B";

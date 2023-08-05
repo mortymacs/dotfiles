@@ -1,10 +1,12 @@
 { pkgs, ... }:
 let
+  # https://coolors.co/0e131f-faa275-ff8c61-ce6a85-985277-5c374c
   background = "#0d1b2a";
-  foreground = "#faf3dd";
-  left_background = "#b33f62";
-  left_foreground = "#faf3dd";
-  active_pane_background = "#f9564f";
+  foreground = "#ECECEC";
+  left_background = "#474973";
+  left_foreground = "#ECECEC";
+  active_pane_background = "#25CED1";
+  active_pane_foreground = "#0d1b2a";
   #left_icon = "";
   # right_icon = "";
   left_icon = "";
@@ -13,7 +15,7 @@ in {
   programs.tmux = {
     enable = true;
     terminal = "screen-256color";
-    historyLimit = 20000;
+    historyLimit = 30000;
     extraConfig = ''
       # General.
       set -g focus-events     on
@@ -54,7 +56,7 @@ in {
       set -g status-left "#[fg=${left_foreground},bg=${left_background}] #S #[fg=${left_background},bg=${background},nobold,nounderscore,noitalics]${left_icon}"
       set -g status-right "#[fg=${background},bg=${background},nobold,nounderscore,noitalics]${right_icon}#[fg=${active_pane_background},bg=${background}] #h #{tmux_mode_indicator} "
       setw -g window-status-format "#[fg=${active_pane_background},bg=${background}] #W "
-      setw -g window-status-current-format "#[fg=${background},bg=${active_pane_background},nobold,nounderscore,noitalics]${left_icon}#[fg=${background},bg=${active_pane_background}] #W #[fg=${active_pane_background},bg=${background},nobold,nounderscore,noitalics]${left_icon}"
+      setw -g window-status-current-format "#[fg=${background},bg=${active_pane_background},nobold,nounderscore,noitalics]${left_icon}#[fg=${active_pane_foreground},bg=${active_pane_background}] #W #[fg=${active_pane_background},bg=${background},nobold,nounderscore,noitalics]${left_icon}"
     '';
     plugins = with pkgs; [ tmuxPlugins.fuzzback ];
 
