@@ -24,7 +24,6 @@ local lspkind = require('lspkind')
 
 -- Symbols.
 require("symbols-outline").setup({
-    auto_preview = true,
     symbols = {
         File = { icon = "󰈙", hl = "@text.uri" },
         Module = { icon = "", hl = "@namespace" },
