@@ -208,13 +208,6 @@ lspconfig.pyright.setup({
         lsp_signature.on_attach(lsp_signature_setup, bufnr)
     end,
 })
-vim.api.nvim_create_autocmd({ "BufWritePre" }, {
-    pattern = "*.py",
-    callback = function()
-        RunAndRevertCursor(":%!isort - --profile black")
-        RunAndRevertCursor(":%!black - -q")
-    end
-})
 
 -- Nix
 lspconfig.rnix.setup({
@@ -223,12 +216,6 @@ lspconfig.rnix.setup({
         lsp_signature.on_attach(lsp_signature_setup, bufnr)
     end,
 })
-vim.api.nvim_create_autocmd({ "BufWritePre" }, {
-    pattern = "*.nix",
-    callback = function()
-        RunAndRevertCursor(":%!nixfmt")
-    end
-})
 
 -- Shell
 lspconfig.bashls.setup({
@@ -236,12 +223,6 @@ lspconfig.bashls.setup({
     on_attach = function(_, bufnr)
         lsp_signature.on_attach(lsp_signature_setup, bufnr)
     end,
-})
-vim.api.nvim_create_autocmd({ "BufWritePre" }, {
-    pattern = "*.sh",
-    callback = function()
-        RunAndRevertCursor(":%!shfmt")
-    end
 })
 
 -- Terraform
@@ -259,29 +240,6 @@ local yamlCfg = require("yaml-companion").setup({
     },
 })
 lspconfig.yamlls.setup(yamlCfg)
-vim.api.nvim_create_autocmd("BufWritePre", {
-    pattern = { "*.yaml", "*.yml" },
-    callback = function()
-        RunAndRevertCursor(":%!yamlfmt /dev/stdin")
-    end
-})
-
--- XML
--- https://gist.github.com/ptitfred/3402279
-vim.api.nvim_create_autocmd("BufWritePre", {
-    pattern = "*.xml",
-    callback = function()
-        RunAndRevertCursor(":silent %!xmllint --format --encode UTF-8 --recover - 2>/dev/null")
-    end
-})
-
--- JSON
-vim.api.nvim_create_autocmd("BufWritePre", {
-    pattern = "*.json",
-    callback = function()
-        RunAndRevertCursor(":%!jq")
-    end
-})
 
 -- RG
 cmp.setup.cmdline({ '"', "'" }, {

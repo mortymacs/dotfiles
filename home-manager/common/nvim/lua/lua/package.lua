@@ -125,7 +125,6 @@ require("lazy").setup({
             "antoinemadec/FixCursorHold.nvim",
         },
     },
-    "norcalli/nvim-colorizer.lua",
     {
         "nvim-treesitter/nvim-treesitter",
         build = function()
@@ -151,23 +150,25 @@ require("lazy").setup({
         },
     },
     {
-        "folke/todo-comments.nvim",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-        },
-    },
-    "cappyzawa/trim.nvim",
-    "nacro90/numb.nvim",
-    "RRethy/vim-illuminate",
-    "kevinhwang91/nvim-hlslens",
-    "echasnovski/mini.nvim",
-    "Wansmer/treesj",
-    {
         "nvim-treesitter/nvim-treesitter-textobjects",
         dependencies = {
             "nvim-treesitter/nvim-treesitter",
         },
     },
+    {
+        "folke/todo-comments.nvim",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+        },
+    },
+    "mhartington/formatter.nvim",
+    "cappyzawa/trim.nvim",
+    "norcalli/nvim-colorizer.lua",
+    "RRethy/vim-illuminate",
+    "kevinhwang91/nvim-hlslens",
+    "echasnovski/mini.nvim",
+    "nacro90/numb.nvim",
+    "Wansmer/treesj",
     "mfussenegger/nvim-lint",
     {
         "kylechui/nvim-surround",

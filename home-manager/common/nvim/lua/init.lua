@@ -40,3 +40,6 @@ vim.cmd [[ source ~/.config/nvim/lua/debug.lua ]]
 
 -- Keybinding.
 require("keymap")
+
+-- Event.
+require("event")

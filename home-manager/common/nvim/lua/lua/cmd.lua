@@ -1,57 +1,57 @@
 -- Setup.
 require("noice").setup({
-    lsp = {
-        signature = {
-            enabled = false,
-        },
-        hover = {
-            enabled = false,
-        },
-        progress = {
-            enabled = true,
-        },
+  lsp = {
+    signature = {
+      enabled = false,
     },
-    messages = {
-        enabled = false,
+    hover = {
+      enabled = false,
     },
-    popupmenu = {
-        enabled = false,
+    progress = {
+      enabled = true,
     },
-    cmdline = {
-        format = {
-            cmdline = {
-                icon = ">",
-            },
-            lua = {
-                icon = ">",
-            },
-            help = {
-                icon = "?",
-            },
-            search_down = {
-                icon = " ",
-            },
-            search_up = {
-                icon = " ",
-            },
-        },
+  },
+  messages = {
+    enabled = false,
+  },
+  popupmenu = {
+    enabled = false,
+  },
+  cmdline = {
+    format = {
+      cmdline = {
+        icon = ">",
+      },
+      lua = {
+        icon = ">",
+      },
+      help = {
+        icon = "?",
+      },
+      search_down = {
+        icon = " ",
+      },
+      search_up = {
+        icon = " ",
+      },
     },
-    presets = {
-        bottom_search = true,
-        command_palette = true,
-        long_message_to_split = true,
-        inc_rename = true,
-        lsp_doc_border = false,
+  },
+  presets = {
+    bottom_search = true,
+    command_palette = true,
+    long_message_to_split = true,
+    inc_rename = true,
+    lsp_doc_border = false,
+  },
+  views = {
+    cmdline_popup = {
+      border = {
+        style = "single",
+        padding = { 0, 0 },
+      },
     },
-    views = {
-        cmdline_popup = {
-            border = {
-                style = "single",
-                padding = { 0, 0, },
-            },
-        },
-    },
+  },
 })
 
 -- Command palette.
-require('telescope').setup()
+require("telescope").setup()
