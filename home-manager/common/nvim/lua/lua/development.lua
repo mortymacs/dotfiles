@@ -243,10 +243,8 @@ require("formatter").setup({
       function()
         -- Ignore already configured types.
         local defined_types = require("formatter.config").values.filetype
-        for k, v in pairs(defined_types) do
-          if vim.bo.filetype == k then
-            return nil
-          end
+        if defined_types[vim.bo.filetype] ~= nil then
+          return nil
         end
         vim.lsp.buf.format({ async = true })
       end,
