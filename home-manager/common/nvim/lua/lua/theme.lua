@@ -14,6 +14,9 @@ vim.api.nvim_set_hl(0, "NonText",     {bg = "", fg = ""})
 vim.api.nvim_set_hl(0, "StatusLine",     {bg = "", fg = ""})
 vim.api.nvim_set_hl(0, "StatusLineTerm", {bg = "", fg = ""})
 
+-- Splashscreen
+vim.api.nvim_set_hl(0, "AlphaHeader", {bg = "", fg = "#17c3b2"})
+
 -- Cmd
 vim.api.nvim_set_hl(0, "NoiceCmdlinePopupBorderCmdline", {bg = "#090d12", fg = "#686f9a"})
 vim.api.nvim_set_hl(0, "NoiceCmdlinePopup",              {bg = "#090d12", fg = ""})

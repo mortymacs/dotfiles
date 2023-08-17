@@ -101,17 +101,17 @@ in {
         format = "[ $state($progress_current/$progress_total)]($style)";
       };
       git_status = {
-        ahead = " ";
-        behind = " ";
-        diverged = " 󱡷";
-        deleted = " 󰆳";
-        renamed = " ";
-        conflicted = " ";
-        modified = " 󱀱";
-        stashed = " 󱀲";
-        untracked = " 󱪝";
+        ahead = "  ";
+        behind = "  ";
+        diverged = " 󱡷 ";
+        deleted = " 󰆳 ";
+        renamed = "  ";
+        conflicted = "  ";
+        modified = " 󱀱 ";
+        stashed = " 󱀲 ";
+        untracked = " 󱪝 ";
         style = "bg:${section_3_1_bg} fg:${section_3_1_fg}";
-        format = "[$all_status$ahead_behind ]($style)";
+        format = "[$all_status$ahead_behind]($style)";
       };
       status = {
         style = "bold bg:${section_4_bg} fg:${section_4_fg}";
