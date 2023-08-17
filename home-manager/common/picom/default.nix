@@ -1,11 +1,11 @@
 {
   services.picom = {
-    enable = false;
+    enable = true;
     backend = "glx";
     shadow = true;
     fade = false;
-    activeOpacity = 0.999;
-    inactiveOpacity = 0.999;
+    activeOpacity = 0.9;
+    inactiveOpacity = 0.9;
     shadowExclude = [ "window_type *= 'menu'" ];
     settings = {
       corner-radius = 0;

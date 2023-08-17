@@ -4,6 +4,7 @@ let
   ## https://coolors.co/351431-2b2d42-eb5e55-e23e58-d81e5b-82264f-e26d5a-e7ada3-ececec-0a9396
   ## https://coolors.co/351431-2b2d42-eb5e55-e23e58-d81e5b-82264f-e26d5a-e7ada3-ececec
   ## https://coolors.co/82264f-6f2043-4f1730-2f0e1d-200a14-10050a
+  ## https://coolors.co/361134-ea526f-ffe5d4-03b5aa
 
   # username
   section_1_bg = "#82264F";
@@ -19,6 +20,8 @@ let
   # svc
   section_3_bg = "#D81E5B";
   section_3_fg = "#ECECEC";
+  section_3_1_bg = "#EA526F";
+  section_3_1_fg = "#FFE5D4";
 
   # status
   section_4_bg = "#227c9d";
@@ -51,8 +54,8 @@ in {
         "$git_commit"
         "$git_state"
         "$git_metrics"
-        "$git_status"
         "$fill"
+        "$git_status"
         "$status"
         "$cmd_duration"
         "$jobs"
@@ -85,24 +88,29 @@ in {
       git_branch = {
         symbol = "";
         style = "bg:${section_3_bg} fg:${section_3_fg}";
-        format = "[ $symbol$branch]($style)";
+        format = "[ $symbol$branch ]($style)";
       };
       git_commit = {
+        tag_symbol = " 󰓼 ";
         tag_disabled = false;
         style = "bg:${section_3_bg} fg:${section_3_fg}";
-        format = "[($hash$tag)]($style)";
+        format = "[ $hash$tag ]($style)";
       };
       git_state = {
         style = "bg:${section_3_bg} fg:${section_3_fg}";
-        format = "[($state($progress_current/$progress_total))]($style)";
+        format = "[ $state($progress_current/$progress_total)]($style)";
       };
       git_status = {
-        ahead = "^";
-        behind = "v";
-        diverged = "//";
-        deleted = "x";
-        renamed = ">>";
-        style = "bg:${section_3_bg} fg:${section_3_fg}";
+        ahead = " ";
+        behind = " ";
+        diverged = " 󱡷";
+        deleted = " 󰆳";
+        renamed = " ";
+        conflicted = " ";
+        modified = " 󱀱";
+        stashed = " 󱀲";
+        untracked = " 󱪝";
+        style = "bg:${section_3_1_bg} fg:${section_3_1_fg}";
         format = "[$all_status$ahead_behind ]($style)";
       };
       status = {

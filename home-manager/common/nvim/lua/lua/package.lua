@@ -261,4 +261,7 @@ require("lazy").setup({
         event = "VeryLazy",
         opts = {},
     },
+
+    -- Auto save.
+    "Pocco81/auto-save.nvim",
 })
