@@ -1,9 +1,11 @@
--- print(vim.inspect(require("alpha.themes.dashboard").opts))
+require("util")
+
+-- Default config: print(vim.inspect(require("alpha.themes.dashboard").opts))
 local config = {
   layout = {
     {
       type = "padding",
-      val = 10,
+      val = CalcTopPadding(),
     },
     {
       opts = {
