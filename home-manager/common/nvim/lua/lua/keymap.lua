@@ -69,7 +69,7 @@ SetKeyMap("<c-z>",     "<esc>u")
 -- Stop copying text on delete.
 SetKeyMap("<Del>",     '"_d',    { "v" })
 
--- search
+-- Search
 SetKeyMap("<c-x><c-s>", function()
     require("flash").jump({
         continue = false,
@@ -140,6 +140,7 @@ SetKeyMap("<c-j><c-t>", "<Cmd>DapToggleBreakpoint<cr>")
 -- Trouble / Quickfix.
 SetKeyMap("<c-l><c-e>", "<Cmd>Telescope diagnostics<cr>")
 SetKeyMap("<c-l><Up>",  "<Cmd>TroubleToggle workspace_diagnostics<cr>")
+SetKeyMap("<c-l><c-q>",  "<Cmd>TroubleToggle quickfix<cr>")
 
 -- Bookmark
 SetKeyMap("<c-r><c-c>", "<Cmd>Telescope vim_bookmarks current_file<cr>")
