@@ -1,3 +1,6 @@
+-- Performance
+vim.loader.enable()
+
 -- Body
 vim.opt.nu = true
 vim.opt.fillchars = "eob: "
