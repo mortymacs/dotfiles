@@ -19,6 +19,7 @@ require("nvim-treesitter.configs").setup({
     "sql",
     "latex",
     "markdown",
+    "markdown_inline",
     "dockerfile",
     "hcl",
     "json",
