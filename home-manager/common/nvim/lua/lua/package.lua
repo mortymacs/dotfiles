@@ -15,10 +15,6 @@ vim.opt.rtp:prepend(lazypath)
 -- Packages.
 require("lazy").setup({
     -- Theme.
-    {
-        "pineapplegiant/spaceduck",
-        branch = "main",
-    },
     "ayu-theme/ayu-vim",
     "mvllow/modes.nvim",
 
