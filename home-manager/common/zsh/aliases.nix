@@ -3,6 +3,12 @@
   u = ''(){
           sudo nixos-rebuild switch --flake ".#$1";
           home-manager switch --flake ".#$1";
+
+          for img in bitnami/openldap redis:alpine mysql postgres
+          do
+            docker pull $img;
+          done
+
           fwupdmgr get-updates
       }'';
 
