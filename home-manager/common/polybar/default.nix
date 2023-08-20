@@ -150,10 +150,10 @@ in {
         label-close = "➖ ";
         menu-0-0 = "Shutdown |";
         menu-0-0-exec =
-          "zenity --question --title 'shutdown' --text 'shutdown now?' && shutdown now";
+          "GTK_THEME=Yaru-purple-dark zenity --question --title 'shutdown' --text 'shutdown now?' && shutdown now";
         menu-0-1 = " Restart";
         menu-0-1-exec =
-          "zenity --question --title 'restart' --text 'restart now?' && reboot";
+          "GTK_THEME=Yaru-purple-dark zenity --question --title 'restart' --text 'restart now?' && reboot";
       };
 
     };

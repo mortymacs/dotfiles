@@ -5,6 +5,9 @@ export ZLE_RPROMPT_INDENT=0
 # Tmux.
 export TMUX_PLUGIN_MANAGER_PATH="$HOME"/.config/tmux/plugins/
 
+# GTK.
+export GTK_THEME=Yaru-purple-dark
+
 # Qt.
 export QT_QPA_PLATFORM=xcb
 export QT_QPA_PLATFORMTHEME=qt5ct
