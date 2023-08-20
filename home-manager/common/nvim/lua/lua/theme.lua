@@ -4,6 +4,7 @@ vim.cmd.colorscheme("ayu")
 
 -- Body
 vim.api.nvim_set_hl(0, "Normal",      {bg = ""})
+vim.api.nvim_set_hl(0, "NormalFloat", {bg = ""})
 vim.api.nvim_set_hl(0, "EndOfBuffer", {bg = "", fg = "#090d12"})
 vim.api.nvim_set_hl(0, "LineNr",      {bg = "", fg = "#292948"})
 vim.api.nvim_set_hl(0, "SignColumn",  {bg = ""})
@@ -85,7 +86,7 @@ vim.api.nvim_set_hl(0, "GlancePreviewMatch",       {bg = "#000000"})
 vim.api.nvim_set_hl(0, "GlancePreviewSignColumn",  {bg = "#000000"})
 vim.api.nvim_set_hl(0, "GlancePreviewLineNr",      {bg = "#000000"})
 vim.api.nvim_set_hl(0, "GlanceListNormal",         {bg = "#000000"})
-vim.api.nvim_set_hl(0, "SagaNormal",               {bg = "#090d12"})
+vim.api.nvim_set_hl(0, "SagaNormal",               {bg = ""})
 vim.api.nvim_set_hl(0, "SagaBorder",               {bg = ""})
 
 -- Trouble
@@ -110,6 +111,7 @@ vim.g.bookmark_sign = ''
 vim.g.bookmark_highlight_lines = 1
 
 -- Cursor
+vim.api.nvim_set_hl(0, "CursorLineNr", {bg = "", fg="#F3A712"})
 vim.opt.guicursor = { "a:ver1" }
 
 -- Mouse
