@@ -146,6 +146,9 @@ SetKeyMap("<c-l><c-q>",  "<Cmd>TroubleToggle quickfix<cr>")
 SetKeyMap("<c-r><c-c>", "<Cmd>Telescope vim_bookmarks current_file<cr>")
 SetKeyMap("<c-r><c-a>", "<Cmd>Telescope vim_bookmarks all<cr>")
 
+-- Package.
+SetKeyMap("<c-x><c-y>", "<Cmd>Lazy! sync<cr>")
+
 -- Misc
 SetKeyMap("<c-s>", "<esc>:wa<cr>")
 -- https://stackoverflow.com/a/19877212/2338672
