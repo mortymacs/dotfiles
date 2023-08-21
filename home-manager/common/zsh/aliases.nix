@@ -1,18 +1,23 @@
 {
   # System.
   u = ''(){
-          nix flake update
-          sudo nixos-rebuild switch --flake ".#$1";
-          home-manager switch --flake ".#$1";
+          if [ -n "$1" ]
+          then
+            nix flake update
+            sudo nixos-rebuild switch --flake ".#$1";
+            home-manager switch --flake ".#$1";
 
-          nvim --headless "+Lazy! sync" +qa
+             nvim --headless "+Lazy! sync" +qa
 
-          for img in bitnami/openldap redis:alpine mysql postgres elasticsearch:8.8.1
-          do
-            docker pull $img;
-          done
+              for img in bitnami/openldap redis:alpine mysql postgres elasticsearch:8.8.1
+              do
+                docker pull $img;
+            done
 
-          fwupdmgr get-updates
+              fwupdmgr get-updates
+          else
+              echo "need profile"
+          fi
       }'';
 
   # Read.
