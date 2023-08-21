@@ -262,7 +262,7 @@
   cb = "xclip -selection clipboard";
   calc = "qalc";
   cleanup = ''(){
-        sudo trash-empty
+        trash-empty
         docker system prune
       }'';
   # https://www.howtogeek.com/414574/how-to-burn-an-iso-file-to-a-usb-drive-in-linux/
