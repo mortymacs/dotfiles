@@ -117,3 +117,6 @@ vim.opt.guicursor = { "a:ver1" }
 
 -- Mouse
 require('modes').setup()
+
+-- Lazy
+vim.api.nvim_set_hl(0, "LazyNormal",  {bg = "#090d12"})

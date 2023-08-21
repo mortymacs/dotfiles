@@ -1,8 +1,11 @@
 {
   # System.
   u = ''(){
+          nix flake update
           sudo nixos-rebuild switch --flake ".#$1";
           home-manager switch --flake ".#$1";
+
+          nvim --headless "+Lazy! sync" +qa
 
           for img in bitnami/openldap redis:alpine mysql postgres
           do
