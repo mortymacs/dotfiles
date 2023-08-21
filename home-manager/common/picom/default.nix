@@ -6,6 +6,7 @@
     fade = false;
     activeOpacity = 0.9;
     inactiveOpacity = 0.9;
+    opacityRules = [ "100:class_g *= 'firefox'" ];
     shadowExclude = [ "window_type *= 'menu'" "window_type *= 'utility'" ];
     settings = {
       corner-radius = 0;
