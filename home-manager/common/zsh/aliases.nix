@@ -7,7 +7,7 @@
 
           nvim --headless "+Lazy! sync" +qa
 
-          for img in bitnami/openldap redis:alpine mysql postgres
+          for img in bitnami/openldap redis:alpine mysql postgres elasticsearch:8.8.1
           do
             docker pull $img;
           done
