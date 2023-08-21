@@ -1,5 +1,8 @@
 require("util")
 
+-- Mouse.
+SetKeyMap("<c-x><c-m>", function() ToggleCommand("set mouse=a", "set mouse=", "mouse_status") end)
+
 -- Command.
 SetKeyMap("<c-x><c-c>", "<Cmd>Telescope command_palette<cr>")
 
