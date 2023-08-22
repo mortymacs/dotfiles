@@ -79,6 +79,7 @@ require("lazy").setup({
         branch = "0.1.x",
         dependencies = {
             "nvim-lua/plenary.nvim",
+            "nvim-telescope/telescope-ghq.nvim",
             "nvim-telescope/telescope-file-browser.nvim",
             "tom-anders/telescope-vim-bookmarks.nvim",
             "MattesGroeger/vim-bookmarks",

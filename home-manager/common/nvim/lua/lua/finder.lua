@@ -75,6 +75,7 @@ require("telescope").setup({
 
 -- Plugins.
 require("telescope").load_extension("vim_bookmarks")
+require("telescope").load_extension("ghq")
 require("telescope").load_extension("file_browser")
 require("telescope").load_extension("yaml_schema")
 require("telescope").load_extension("undo")

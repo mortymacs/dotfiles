@@ -31,11 +31,11 @@ SetKeyMap("<c-x><c-r>", "<Cmd>MurenToggle<cr>")
 SetKeyMap("<s-left>",   "<Cmd>BufferPrevious<cr>")
 SetKeyMap("<s-right>",  "<Cmd>BufferNext<cr>")
 SetKeyMap("<c-x><c-q>", ":qa<cr>")
-SetKeyMap("<c-x><c-p>", "<Cmd>BufferPin<cr>")
 SetKeyMap("<c-x><c-n>", "<Cmd>tabnew<cr>")
 
 -- File and directory
 SetKeyMap("<c-x><c-f>", "<Cmd>Files<cr>")
+SetKeyMap("<c-x><c-p>", "<Cmd>Telescope ghq<cr>")
 SetKeyMap("<c-x><c-d>", "<Cmd>Telescope file_browser<cr>")
 SetKeyMap("<c-x><c-b>", "<Cmd>Buffers<cr>")
 SetKeyMap("<c-x><c-t>", "<Cmd>Telescope filetypes<cr>")
