@@ -1,11 +1,11 @@
 {
   services.picom = {
-    enable = false;
+    enable = true;
     backend = "glx";
     shadow = true;
     fade = false;
-    activeOpacity = 0.9;
-    inactiveOpacity = 0.9;
+    activeOpacity = 0.99;
+    inactiveOpacity = 0.99;
     opacityRules = [ "100:class_g *= 'firefox'" "100:class_g *= 'Microsoft Teams'" ];
     shadowExclude = [ "window_type *= 'menu'" "window_type *= 'utility'" ];
     settings = {
