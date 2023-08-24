@@ -84,6 +84,7 @@
     hugo
     tokei
     gnumake
+    commitlint
 
     # Programming.
     ## C/C++.
