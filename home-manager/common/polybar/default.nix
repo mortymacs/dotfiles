@@ -3,12 +3,12 @@ let
   # Body.
   background = "#0f111b";
   foreground = "#ECECEC";
-  border-bottom = "#2F2F2F";
+  border-bottom = "#27213C";
   disabled = "#413c58";
 
   # Workspace.
   active-workspace-background = "#161927";
-  urgent-workspace-background = "#0f111b";
+  urgent-workspace-background = "#82264F";
   empty-workspace-foreground = "#707880";
 
   # Datetime.
@@ -17,7 +17,7 @@ let
 
   # Location.
   main-location-foreground = "#f1c0e8";
-  second-location-foreground = "#f77f00";
+  second-location-foreground = "#EE6352";
 in {
   services.polybar = {
     enable = true;

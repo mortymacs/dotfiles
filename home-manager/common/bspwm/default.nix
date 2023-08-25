@@ -1,8 +1,9 @@
+# Colors: https://coolors.co/82264f-ee6352-27213c-554884
 let
-  focused_border_color = "#82264F";
-  normal_border_color = "#2F2F2F";
-  active_border_color = "#2F2F2F";
-  presel_feedback_color = "#2F2F2F";
+  focused_border_color = "#554884";
+  normal_border_color = "#27213C";
+  active_border_color = "#27213C";
+  presel_feedback_color = "#27213C";
 in {
   xsession.windowManager = {
     bspwm = {
