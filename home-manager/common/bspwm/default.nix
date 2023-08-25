@@ -1,5 +1,5 @@
 let
-  focused_border_color = "#7F2CCB";
+  focused_border_color = "#82264F";
   normal_border_color = "#2F2F2F";
   active_border_color = "#2F2F2F";
   presel_feedback_color = "#2F2F2F";
@@ -8,8 +8,8 @@ in {
     bspwm = {
       enable = true;
       settings = {
-        window_gap = 3;
-        border_width = 1;
+        window_gap = 5;
+        border_width = 2;
         focused_border_color = "${focused_border_color}";
         normal_border_color = "${normal_border_color}";
         active_border_color = "${active_border_color}";
