@@ -8,19 +8,19 @@ let
 
   # username
   section_1_bg = "#82264F";
-  section_1_fg = "#ECECEC";
+  section_1_fg = "#FFE5D4";
 
   # directory
   section_2_bg = "#E23E58";
-  section_2_fg = "#ECECEC";
+  section_2_fg = "#FFE5D4";
 
   # fill
   fill_bg = "#0E131F";
 
   # svc
   section_3_bg = "#D81E5B";
-  section_3_fg = "#ECECEC";
-  section_3_1_bg = "#EA526F";
+  section_3_fg = "#FFE5D4";
+  section_3_1_bg = "#D81E5B";
   section_3_1_fg = "#FFE5D4";
 
   # status
