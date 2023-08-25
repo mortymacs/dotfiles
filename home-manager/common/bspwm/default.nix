@@ -8,8 +8,8 @@ in {
     bspwm = {
       enable = true;
       settings = {
-        window_gap = 5;
-        border_width = 2;
+        window_gap = 7;
+        border_width = 1;
         focused_border_color = "${focused_border_color}";
         normal_border_color = "${normal_border_color}";
         active_border_color = "${active_border_color}";
