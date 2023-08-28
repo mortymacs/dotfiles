@@ -56,6 +56,7 @@ in {
       teams
       zoom-us
       postman
+      insomnia
 
       # Development.
       unstable.jetbrains.phpstorm
