@@ -261,5 +261,5 @@ require("lazy").setup({
     },
 
     -- Auto save.
-    "Pocco81/auto-save.nvim",
+    -- "Pocco81/auto-save.nvim",
 })

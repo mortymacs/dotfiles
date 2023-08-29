@@ -85,8 +85,6 @@
     tokei
     gnumake
     commitlint
-    ## Temporal.
-    temporal-cli
 
     # Programming.
     ## C/C++.
@@ -110,6 +108,7 @@
     gofumpt
     golines
     gomodifytags
+    reftools
     mage
     air
     ## Python.
