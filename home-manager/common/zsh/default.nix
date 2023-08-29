@@ -1,14 +1,32 @@
-let
-    defaultAliases = import ./aliases.nix;
-in
-{
+let defaultAliases = import ./aliases.nix;
+in {
   programs.zsh = {
     enable = true;
+    autocd = true;
+
+    # Auto suggestion.
     enableAutosuggestions = true;
-    enableCompletion = true;
+
+    # Syntax highlighting.
     enableSyntaxHighlighting = true;
-    history.ignoreSpace = true;
+
+    # Auto completion.
+    enableCompletion = true;
+
+    # History.
+    history = {
+      extended = true;
+      share = true;
+      ignoreSpace = true;
+      ignorePatterns =
+        [ "rm *" "shutdown *" "reboot *" "sudo shutdown *" "sudo reboot *" ];
+    };
+    historySubstringSearch = { enable = true; };
+
+    # Env variables.
     envExtra = builtins.readFile ./zshenv;
+
+    # Initialize.
     initExtra = ''
       # Text.
       # https://unix.stackexchange.com/a/258661/204066
@@ -22,18 +40,11 @@ in
       bindkey ';3C' forward-word
       bindkey '^[[P' delete-char
     '';
+
+    # Aliases.
     shellAliases = defaultAliases;
-    history = {
-      extended = true;
-      ignorePatterns = [
-        "rm *"
-        "shutdown *"
-        "reboot *"
-        "sudo shutdown *"
-        "sudo reboot *"
-      ];
-    };
   };
+
   programs.zoxide = {
     enable = true;
     enableZshIntegration = true;
