@@ -174,6 +174,7 @@ require("lazy").setup({
         event = "VeryLazy",
     },
     "Bekaboo/deadcolumn.nvim",
+    "johmsalas/text-case.nvim",
 
     -- LSP.
     "neovim/nvim-lspconfig",
