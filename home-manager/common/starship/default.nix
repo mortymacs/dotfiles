@@ -28,8 +28,8 @@ let
   section_4_fg = "#ECECEC";
 
   # cmd_duration
-  section_5_bg = "#ffcb77";
-  section_5_fg = "#0d1b2a";
+  section_5_bg = "#320D6D";
+  section_5_fg = "#FFE5D4";
 
   # job
   section_6_bg = "#17c3b2";
