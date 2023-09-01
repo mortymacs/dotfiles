@@ -4,7 +4,7 @@ vim.cmd.colorscheme("ayu")
 
 -- Body
 vim.api.nvim_set_hl(0, "Normal",      {bg = ""})
-vim.api.nvim_set_hl(0, "NormalFloat", {bg = "#030301"})
+vim.api.nvim_set_hl(0, "NormalFloat", {bg = ""})
 vim.api.nvim_set_hl(0, "EndOfBuffer", {bg = "", fg = "#090d12"})
 vim.api.nvim_set_hl(0, "LineNr",      {bg = "", fg = "#292948"})
 vim.api.nvim_set_hl(0, "SignColumn",  {bg = ""})
