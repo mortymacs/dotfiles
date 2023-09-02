@@ -256,3 +256,10 @@ require("formatter").setup({
 
 -- TextCase.
 require("textcase").setup()
+
+-- Peepsight.
+require("peepsight").setup()
+require("peepsight").enable()
+
+-- Range highlight.
+require("range-highlight").setup()

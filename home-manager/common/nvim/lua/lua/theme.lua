@@ -4,7 +4,7 @@ vim.cmd.colorscheme("ayu")
 
 -- Body
 vim.api.nvim_set_hl(0, "Normal",      {bg = ""})
-vim.api.nvim_set_hl(0, "NormalFloat", {bg = ""})
+vim.api.nvim_set_hl(0, "NormalFloat", {bg = "#1A1B24"})
 vim.api.nvim_set_hl(0, "EndOfBuffer", {bg = "", fg = "#090d12"})
 vim.api.nvim_set_hl(0, "LineNr",      {bg = "", fg = "#292948"})
 vim.api.nvim_set_hl(0, "SignColumn",  {bg = ""})
@@ -48,8 +48,9 @@ vim.api.nvim_set_hl(0, "FidgetTask",  {bg = "#090d12"})
 
 -- LSP
 -- -- General.
-vim.api.nvim_set_hl(0, "Pmenu",                    {fg = "#ecf0c1", bg = "#030301"})
+vim.api.nvim_set_hl(0, "Pmenu",                    {fg = "#ecf0c1", bg = "#1A1B24"})
 vim.api.nvim_set_hl(0, "PmenuSel",                 {fg = "#EED8DA", bg = "#B5585F"})
+vim.api.nvim_set_hl(0, "PmenuSbar",                {bg = "#272831"})
 -- -- CMP.
 vim.api.nvim_set_hl(0, "CmpItemAbbrDeprecated",    {fg = "#7E8294"})
 vim.api.nvim_set_hl(0, "CmpItemAbbrMatch",         {fg = "#82AAFF"})
@@ -94,12 +95,12 @@ vim.api.nvim_set_hl(0, "SagaBorder",               {bg = ""})
 vim.api.nvim_set_hl(0, "TroubleFoldIcon", {bg = ""})
 
 -- Tree
-vim.api.nvim_set_hl(0, "NeoTreeGitAdded",     {bg = "", fg = "#00B9AE"})
-vim.api.nvim_set_hl(0, "NeoTreeGitConflict",  {bg = "", fg = "#ff0054"})
-vim.api.nvim_set_hl(0, "NeoTreeGitDeleted",   {bg = "", fg = "#E23E58"})
-vim.api.nvim_set_hl(0, "NeoTreeGitIgnored",   {bg = "", fg = "#686f9a"})
-vim.api.nvim_set_hl(0, "NeoTreeGitModified",  {bg = "", fg = "#F3A712"})
-vim.api.nvim_set_hl(0, "NeoTreeGitUntracked", {bg = "", fg = "#babd8d"})
+vim.api.nvim_set_hl(0, "NeoTreeGitAdded",     {bg = "",        fg = "#00B9AE"})
+vim.api.nvim_set_hl(0, "NeoTreeGitConflict",  {bg = "",        fg = "#ff0054"})
+vim.api.nvim_set_hl(0, "NeoTreeGitDeleted",   {bg = "",        fg = "#E23E58"})
+vim.api.nvim_set_hl(0, "NeoTreeGitIgnored",   {bg = "",        fg = "#686f9a"})
+vim.api.nvim_set_hl(0, "NeoTreeGitModified",  {bg = "",        fg = "#F3A712"})
+vim.api.nvim_set_hl(0, "NeoTreeGitUntracked", {bg = "",        fg = "#babd8d"})
 vim.api.nvim_set_hl(0, "NeoTreeFloatTitle",   {bg = "#090d12", fg = "#ecf0c1"})
 vim.api.nvim_set_hl(0, "NeoTreeFloatNormal",  {bg = "#090d12", fg = ""})
 vim.api.nvim_set_hl(0, "NeoTreeFloatBorder",  {bg = "#090d12", fg = "#686f9a"})
