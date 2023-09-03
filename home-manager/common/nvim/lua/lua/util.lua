@@ -39,9 +39,9 @@ function ToggleCommand(open_command, close_command, flag)
 end
 
 -- Return top padding based on the current window height.
-function CalcTopPadding()
+function CalcTopPadding(maxPadding)
   if vim.api.nvim_win_get_height(0) < 20 then
     return 1
   end
-  return 10
+  return maxPadding or 10
 end

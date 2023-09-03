@@ -5,7 +5,7 @@ local config = {
   layout = {
     {
       type = "padding",
-      val = CalcTopPadding(),
+      val = CalcTopPadding(8),
     },
     {
       opts = {
@@ -65,6 +65,23 @@ local config = {
           },
           type = "button",
           val = "󰈞 Find file",
+        },
+        {
+          on_press = function()
+            vim.cmd([[Telescope ghq]])
+          end,
+          opts = {
+            hl = "AlphaButton",
+            align_shortcut = "right",
+            cursor = 3,
+            hl_shortcut = "Keyword",
+            position = "center",
+            shortcut = "p",
+            keymap = { "n", "p", "<Cmd>Telescope ghq<cr>", { noremap = true, nowait = true, silent = true } },
+            width = 50,
+          },
+          type = "button",
+          val = " Find projects",
         },
         {
           on_press = function()
