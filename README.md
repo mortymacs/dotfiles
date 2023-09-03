@@ -31,9 +31,8 @@ My environment config. I tried to keep it minimal and simple as much as I could.
 | Launcher | [Rofi](https://github.com/davatorium/rofi) |
 | Browser | [Firefox](https://www.mozilla.org) |
 | GTK Theme | [Yaru](https://github.com/ubuntu/yaru) |
-| Color Schema | [Ayu](https://github.com/ayu-theme/ayu-vim) + [Spaceduck](https://github.com/pineapplegiant/spaceduck) + my customizations |
 | Icon | [Yaru](https://github.com/ubuntu/yaru) |
-| Wallpaper | [Unsplash](https://unsplash.com/photos/f_nFeb9eWVA) |
+| Wallpaper | [Unsplash](https://unsplash.com) |
 | Doc | [Zeal](https://github.com/zealdocs/zeal) |
 
 ## Screenshot

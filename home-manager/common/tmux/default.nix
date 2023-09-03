@@ -36,8 +36,7 @@ in {
       bind -n C-PageUp   switch-client -p
       bind -n C-PageDown switch-client -n
 
-      # Colors (my colors + spaceduck colors).
-      # This tmux statusbar config was created by tmuxline.vim
+      # This tmux statusbar config is for spaceduck and was created by tmuxline.vim.
       # https://github.com/edkolev/tmuxline.vim
       set -g status-justify "left"
       set -g status "on"

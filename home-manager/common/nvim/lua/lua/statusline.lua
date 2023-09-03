@@ -4,7 +4,7 @@ local git_blame = require("gitblame")
 -- Setup.
 require("lualine").setup({
   options = {
-    theme = "spaceduck",
+    theme = "auto",
     component_separators = { left = "", right = "" },
     section_separators = { left = "", right = "" },
     globalstatus = true,

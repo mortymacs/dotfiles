@@ -16,7 +16,6 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   -- Theme.
   "ayu-theme/ayu-vim",
-  "pineapplegiant/spaceduck",
   "mvllow/modes.nvim",
 
   -- Tabbar.
