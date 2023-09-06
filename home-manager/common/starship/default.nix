@@ -98,7 +98,7 @@ in {
       };
       git_state = {
         style = "bg:${section_3_bg} fg:${section_3_fg}";
-        format = "[ $state($progress_current/$progress_total)]($style)";
+        format = "[ $state($progress_current/$progress_total) ]($style)";
       };
       git_status = {
         ahead = "  ";
@@ -110,6 +110,7 @@ in {
         modified = " 󱀱 ";
         stashed = " 󱀲 ";
         untracked = " 󱪝 ";
+        staged = " 󰐕 ";
         style = "bg:${section_3_1_bg} fg:${section_3_1_fg}";
         format = "[$all_status$ahead_behind]($style)";
       };
