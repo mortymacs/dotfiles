@@ -9,7 +9,7 @@ in {
     bspwm = {
       enable = true;
       settings = {
-        window_gap = 7;
+        window_gap = 3;
         border_width = 1;
         focused_border_color = "${focused_border_color}";
         normal_border_color = "${normal_border_color}";
