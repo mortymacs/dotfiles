@@ -85,6 +85,8 @@
     tokei
     gnumake
     commitlint
+    ## Temporal.
+    temporal-cli
 
     # Programming.
     ## C/C++.
