@@ -22,9 +22,11 @@ export XDG_SESSION_TYPE=x11
 # https://github.com/python-poetry/poetry/issues/5250#issuecomment-1067193647
 export PYTHON_KEYRING_BACKEND=keyring.backends.fail.Keyring
 
-# Golang.
+# Go.
 export GOPATH="$HOME/.local/share/go"
 export GOMODCACHE="$HOME/.local/share/go/pkg/mod"
+export GOPRIVATE="gitlab.ci.fdmg.org/*"
+export GOCOVSH_THEME=mocha
 
 # Python.
 # https://www.andreagrandi.it/2018/10/16/using-ipdb-with-python-37-breakpoint/
@@ -53,9 +55,6 @@ export MOST_INITFILE="$HOME"/.config/most/mostrc
 
 # Man
 export MANPAGER=most
-
-# Go.
-export GOPRIVATE="gitlab.ci.fdmg.org/*"
 
 # General.
 export PATH="$PATH:$HOME/.local/bin:$GOPATH/bin"

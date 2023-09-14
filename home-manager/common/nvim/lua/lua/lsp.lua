@@ -8,7 +8,7 @@ require("neodev").setup({
 -- Tags.
 vim.g.fzf_tags_command = "fd | ctags -R --links=no -L-"
 vim.g.fzf_lsp_layout = { down = "30%" }
-vim.g.fzf_lsp_pretty = true
+vim.g.fzf_lsp_pretty = false
 require("fzf_lsp").setup()
 
 -- Kind.
