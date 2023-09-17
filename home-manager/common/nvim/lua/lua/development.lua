@@ -266,5 +266,5 @@ require("range-highlight").setup()
 -- Decorated yank.
 require("decorated_yank").setup()
 
--- Satellite.
--- require("satellite").setup()
+-- Scrollbar.
+require("scrollbar").setup()

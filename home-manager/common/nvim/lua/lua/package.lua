@@ -187,7 +187,7 @@ require("lazy").setup({
       "nvim-lua/plenary.nvim",
     },
   },
-  "lewis6991/satellite.nvim",
+  "petertriho/nvim-scrollbar",
 
   -- LSP.
   "neovim/nvim-lspconfig",
