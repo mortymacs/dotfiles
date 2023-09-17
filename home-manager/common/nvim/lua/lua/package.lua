@@ -181,6 +181,13 @@ require("lazy").setup({
       "winston0410/cmd-parser.nvim",
     },
   },
+  {
+    "simondrake/decorated_yank",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+  },
+  "lewis6991/satellite.nvim",
 
   -- LSP.
   "neovim/nvim-lspconfig",

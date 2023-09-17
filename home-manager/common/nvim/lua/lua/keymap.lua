@@ -71,6 +71,8 @@ SetKeyMap("<c-d>",     "<esc>yyp")
 SetKeyMap("<c-z>",     "<esc>u")
 -- Stop copying text on delete.
 SetKeyMap("<Del>",     '"_d',    { "v" })
+-- Decorated yank.
+SetKeyMap("<c-y>", function() require('decorated_yank').decorated_yank_with_link() end,  { "v" })
 -- Transformation.
 SetKeyMap("<c-t>0", function() require("textcase").operator("to_lower_case") end,        { "v" })
 SetKeyMap("<c-t>0", function() require("textcase").current_word("to_lower_case") end,    { "n", "i" })

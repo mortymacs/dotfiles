@@ -262,3 +262,9 @@ require("peepsight").setup()
 
 -- Range highlight.
 require("range-highlight").setup()
+
+-- Decorated yank.
+require("decorated_yank").setup()
+
+-- Satellite.
+-- require("satellite").setup()
