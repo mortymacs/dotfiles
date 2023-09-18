@@ -130,6 +130,7 @@
     ## Nix.
     rnix-lsp
     nixfmt
+    nurl
     ## Shell.
     nodePackages.bash-language-server
     shfmt
