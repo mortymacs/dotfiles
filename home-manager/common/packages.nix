@@ -91,12 +91,6 @@
     # Programming.
     ## C/C++.
     gcc
-    ## Rust.
-    rustc
-    rustfmt
-    rust-analyzer
-    cargo
-    bacon
     ## Go.
     go
     gopls
@@ -144,6 +138,8 @@
     nodePackages.dockerfile-language-server-nodejs
     ## Latex.
     texlive.combined.scheme-small
+    ## Cue.
+    cue
     ## YAML.
     nodePackages.yaml-language-server
     yamllint

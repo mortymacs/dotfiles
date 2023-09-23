@@ -218,15 +218,6 @@ require("lazy").setup({
   "preservim/tagbar",
   "terrortylor/nvim-comment",
   "smjonas/inc-rename.nvim",
-  -- -- Rust.
-  "simrat39/rust-tools.nvim",
-  {
-    "saecki/crates.nvim",
-    event = "BufRead Cargo.toml",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-    },
-  },
   -- -- Go.
   "fatih/vim-go",
   -- -- Lua.
