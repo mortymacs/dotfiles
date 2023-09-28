@@ -293,15 +293,7 @@ require("lspsaga").setup({
 })
 
 -- Lens.
-require("lsp-lens").setup({
-  include_declaration = true,
-  sections = {
-    definition = true,
-    references = true,
-    implementation = true,
-  },
-})
-vim.api.nvim_create_autocmd("BufWritePost", { pattern = "*", command = ":LspLensOn" })
+require("lsp-lens").setup()
 
 -- Rename.
 require("inc_rename").setup()
