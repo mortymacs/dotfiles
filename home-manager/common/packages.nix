@@ -91,6 +91,12 @@
     # Programming.
     ## C/C++.
     gcc
+    ## Rust.
+    rustc
+    rustfmt
+    rust-analyzer
+    cargo
+    bacon
     ## Go.
     go
     gopls

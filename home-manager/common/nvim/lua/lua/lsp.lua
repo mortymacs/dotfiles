@@ -157,6 +157,18 @@ local lsp_inlayhints_setup = {
   },
 }
 
+-- Rust
+lspconfig.rust_analyzer.setup({
+  capabilities = capabilities,
+  on_attach = function(_, bufnr)
+    lsp_signature.on_attach(lsp_signature_setup, bufnr)
+  end,
+})
+local rt = require("rust-tools")
+rt.setup()
+rt.inlay_hints.enable()
+require("crates").setup()
+
 -- Go
 vim.g.go_auto_type_info = 0
 vim.g.go_gopls_gofumpt = 1
