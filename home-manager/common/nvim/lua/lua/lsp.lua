@@ -145,16 +145,12 @@ local lsp_signature_setup = {
   padding = " ",
 }
 local lsp_inlayhints_setup = {
-  gopls = {
-    hints = {
-      assignVariableTypes = true,
-      compositeLiteralFields = true,
-      constantValues = true,
-      functionTypeParameters = true,
-      parameterNames = true,
-      rangeVariableTypes = true,
-    },
-  },
+  assignVariableTypes = true,
+  compositeLiteralFields = true,
+  constantValues = true,
+  functionTypeParameters = true,
+  parameterNames = true,
+  rangeVariableTypes = true,
 }
 
 -- Rust
@@ -180,7 +176,12 @@ vim.g.go_fmt_options = {
 vim.g.go_def_mapping_enabled = 0
 lspconfig.gopls.setup({
   capabilities = capabilities,
-  settings = lsp_inlayhints_setup,
+  settings = {
+    gopls = {
+      hints = lsp_inlayhints_setup,
+      gofumpt = true,
+    },
+  },
   on_attach = function(client, bufnr)
     lsp_inlayhints.on_attach(client, bufnr)
     lsp_signature.on_attach(lsp_signature_setup, bufnr)
