@@ -22,6 +22,7 @@
     jless
     fq
     glow
+    hexyl
 
     # Security.
     xss-lock
@@ -35,6 +36,7 @@
     libqalculate
     cava
     unzip
+    ascii-image-converter
 
     # File and directory.
     broot
@@ -85,12 +87,14 @@
     tokei
     gnumake
     commitlint
+    silicon
     ## Temporal.
     temporal-cli
 
     # Programming.
     ## C/C++.
     gcc
+    gdb
     ## Rust.
     rustc
     rustfmt

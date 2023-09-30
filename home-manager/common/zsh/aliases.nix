@@ -166,6 +166,13 @@
             gdb -ex "b $target_file:$target_line" "$1"
         }'';
 
+  # Rust.
+  rs-debug = ''() {
+    target_file=$(fzf)
+    target_line=$(\cat -n "$target_file" | fzf | awk '{print $1}')
+    rust-gdb -ex "b $target_file:$target_line" "$1"
+  }'';
+
   # Python.
   py = "ipython --no-term-title --no-confirm-exit --no-banner --no-simple-prompt --PlainTextFormatter.pprint=True --TerminalInteractiveShell.highlighting_style=material";
   rpy = "fd -I \"(build|dist|__pycache__|egg-info)\" | xargs rm -rf --";
