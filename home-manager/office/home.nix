@@ -53,8 +53,7 @@ in {
   home.packages = with pkgs;
     defaultPackages.list ++ [
       # Meeting.
-      teams
-      zoom-us
+      unstable.teams-for-linux
       postman
       insomnia
 
