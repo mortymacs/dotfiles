@@ -48,7 +48,7 @@ in {
       ];
       rules = {
         "firefox" = { desktop = "0"; };
-        "Microsoft Teams - Preview:*" = {
+        "teams-for-linux" = {
           desktop = "0";
           split_ratio = "0.61";
         };
