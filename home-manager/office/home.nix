@@ -55,7 +55,6 @@ in {
       # Meeting.
       unstable.teams-for-linux
       postman
-      insomnia
 
       # Development.
       unstable.jetbrains.phpstorm
