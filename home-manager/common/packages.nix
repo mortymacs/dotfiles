@@ -95,6 +95,11 @@
     ## C/C++.
     gcc
     gdb
+    cmake
+    cmake-language-server
+    valgrind-light
+    ccls
+    bear
     ## Rust.
     rustc
     rustfmt

@@ -7,7 +7,7 @@
         TERM = "xterm-256color";
       };
       window = {
-        opacity = 1.0;
+        opacity = 0.98;
         decorations = "none";
         dynamic_padding = false;
         padding = {

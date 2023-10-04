@@ -153,6 +153,16 @@ local lsp_inlayhints_setup = {
   rangeVariableTypes = true,
 }
 
+-- C/C++
+lspconfig.ccls.setup({
+  init_options = {
+    compilationDatabaseDirectory = "build";
+    index = {
+      threads = 0;
+    };
+  }
+})
+
 -- Rust
 lspconfig.rust_analyzer.setup({
   capabilities = capabilities,
@@ -221,6 +231,14 @@ lspconfig.rnix.setup({
 
 -- Shell
 lspconfig.bashls.setup({
+  capabilities = capabilities,
+  on_attach = function(_, bufnr)
+    lsp_signature.on_attach(lsp_signature_setup, bufnr)
+  end,
+})
+
+-- Cmake
+lspconfig.cmake.setup({
   capabilities = capabilities,
   on_attach = function(_, bufnr)
     lsp_signature.on_attach(lsp_signature_setup, bufnr)
