@@ -59,7 +59,20 @@
   hex = "hexyl";
 
   # Tmux.
-  t = "basename $(pwd) | xargs tmux new-session -d -s || echo $(basename $(dirname $(pwd)))/$(basename $(pwd)) | xargs tmux new-session -d -s ; tmux attach";
+  t = ''(){
+      if [ "$#" -eq 0 ]; then
+          session_name=$(basename $(pwd))
+          [ $(tmux list-sessions | awk '{print $1}' | grep $session_name) ] && session_name=$(basename $(dirname $(pwd)))/$(basename $(pwd))
+      else
+          session_name="$1"
+      fi
+
+      if [ $(tmux list-sessions | awk '{print $1}' | grep $session_name) ]; then
+          echo "Session already exists!"
+      else
+          echo $session_name | xargs tmux new-session -d -s ; tmux attach
+      fi
+  }'';
   tl = "tmux ls -F \#S";
   ta = ''(){
             if [ "$#" -eq "0" ]; then
