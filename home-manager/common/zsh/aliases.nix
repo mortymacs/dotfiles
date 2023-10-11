@@ -9,7 +9,7 @@
 
              nvim --headless "+Lazy! sync" +qa
 
-              for img in bitnami/openldap redis:alpine mysql postgres elasticsearch:8.8.1 kennethreitz/httpbin
+              for img in localstack/localstack bitnami/openldap redis:alpine mysql postgres elasticsearch:8.8.1 kennethreitz/httpbin
               do
                 docker pull $img;
             done

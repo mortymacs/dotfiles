@@ -36,9 +36,12 @@ let
   section_6_fg = "#ECECEC";
 
   # icons
-  icon = "";
+  #left_icon = "";
+  #right_icon = "";
+  left_icon = "";
+  right_icon = "";
   fill_icon = " ";
-  prompt_icon = "";
+  prompt_icon = "󰘍 ";
 in {
   programs.starship = {
     enable = true;
@@ -47,13 +50,14 @@ in {
       format = lib.concatStrings [
         "$sudo"
         "$username"
-        "[${icon}](bg:${section_2_bg} fg:${section_1_bg})"
+        "[${left_icon}](bg:${section_2_bg} fg:${section_1_bg})"
         "$directory"
-        "[${icon}](bg:${section_3_bg} fg:${section_2_bg})"
+        "[${left_icon}](bg:${section_3_bg} fg:${section_2_bg})"
         "$git_branch"
         "$git_commit"
         "$git_state"
         "$git_metrics"
+        "[${left_icon}](fg:${section_3_1_bg})"
         "$fill"
         "$git_status"
         "$status"
