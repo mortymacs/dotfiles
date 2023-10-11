@@ -62,12 +62,12 @@
   t = ''(){
       if [ "$#" -eq 0 ]; then
           session_name=$(basename $(pwd))
-          [ $(tmux list-sessions | awk '{print $1}' | grep $session_name) ] && session_name=$(basename $(dirname $(pwd)))/$(basename $(pwd))
+          [ $(tmux list-sessions 2>/dev/null | awk '{print $1}' | grep $session_name) ] && session_name=$(basename $(dirname $(pwd)))/$(basename $(pwd))
       else
           session_name="$1"
       fi
 
-      if [ $(tmux list-sessions | awk '{print $1}' | grep $session_name) ]; then
+      if [ $(tmux list-sessions 2>/dev/null | awk '{print $1}' | grep $session_name) ]; then
           echo "Session already exists!"
       else
           echo $session_name | xargs tmux new-session -d -s ; tmux attach
