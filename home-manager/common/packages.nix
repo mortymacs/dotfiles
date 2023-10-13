@@ -83,7 +83,7 @@
     ghq
     hurl
     httpie
-    hugo
+    zola
     tokei
     gnumake
     commitlint
