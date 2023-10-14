@@ -49,14 +49,14 @@
       colors = {
         # Default colors
         primary = {
-          background = "#0A0E14";
-          foreground = "#FEFADC";
+          background = "#0B1015";
+          foreground = "#FCFCFC";
         };
 
         cursor = { cursor = "#344866"; };
 
         selection = {
-          text = "#FEFADC";
+          text = "#FCFCFC";
           background = "#202C3E";
         };
 
