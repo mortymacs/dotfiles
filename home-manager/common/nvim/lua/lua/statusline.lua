@@ -1,6 +1,3 @@
--- Dependencies.
-local git_blame = require("gitblame")
-
 -- Setup.
 require("lualine").setup({
   options = {
@@ -27,7 +24,6 @@ require("lualine").setup({
     lualine_b = {},
     lualine_c = {},
     lualine_x = {
-      { git_blame.get_current_blame_text, cond = git_blame.is_blame_text_available },
       "branch",
       "diff",
       "diagnostics",

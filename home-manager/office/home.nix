@@ -55,9 +55,6 @@ in {
       # Meeting.
       unstable.teams-for-linux
       postman
-
-      # Development.
-      unstable.jetbrains.phpstorm
     ];
 
   # Fontconfig.

@@ -116,8 +116,8 @@ vim.g.bookmark_highlight_lines = 1
 vim.api.nvim_set_hl(0, "CursorLineNr", {bg = "", fg="#F3A712"})
 vim.opt.guicursor = { "a:ver1" }
 
--- Mouse
-require('modes').setup()
+-- Modes
+-- require('modes').setup()
 
 -- Lazy
 vim.api.nvim_set_hl(0, "LazyNormal",  {bg = "#090d12"})
