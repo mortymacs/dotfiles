@@ -117,7 +117,7 @@ vim.api.nvim_set_hl(0, "CursorLineNr", {bg = "", fg="#F3A712"})
 vim.opt.guicursor = { "a:ver1" }
 
 -- Modes
--- require('modes').setup()
+require('modes').setup()
 
 -- Lazy
 vim.api.nvim_set_hl(0, "LazyNormal",  {bg = "#090d12"})
