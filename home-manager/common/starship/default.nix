@@ -28,7 +28,7 @@ let
   section_4_fg = "#ECECEC";
 
   # cmd_duration
-  section_5_bg = "#320D6D";
+  section_5_bg = "#E7ADA3";
   section_5_fg = "#FFE5D4";
 
   # job
@@ -115,21 +115,21 @@ in {
         stashed = " 󱀲 ";
         untracked = " 󱪝 ";
         staged = " 󰐕 ";
-        style = "bg:${section_3_1_bg} fg:${section_3_1_fg}";
+        style = "fg:${section_3_1_bg}"; # fg:${section_3_1_fg}";
         format = "[$all_status$ahead_behind]($style)";
       };
       status = {
-        style = "bold bg:${section_4_bg} fg:${section_4_fg}";
+        style = "bold fg:${section_4_bg}"; # fg:${section_4_fg}";
         format = "[ $status ]($style)";
         disabled = false;
       };
       cmd_duration = {
-        style = "bold bg:${section_5_bg} fg:${section_5_fg}";
+        style = "bold fg:${section_5_bg}"; # fg:${section_5_fg}";
         format = "[ $duration ]($style)";
       };
       jobs = {
         symbol = "+";
-        style = "bold bg:${section_6_bg} fg:${section_6_fg}";
+        style = "bold fg:${section_6_bg}"; # fg:${section_6_fg}";
         number_threshold = 1;
         format = "[ $symbol$number ]($style)";
       };
