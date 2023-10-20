@@ -2,7 +2,7 @@
   fonts = {
     enableDefaultFonts = false;
     fonts = with pkgs; [
-      (unstable.nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
+      (unstable.nerdfonts.override { fonts = [ "CodeNewRoman" ]; })
       unstable.vazir-fonts
       unstable.lexend
       unstable.noto-fonts-emoji
@@ -13,7 +13,7 @@
         serif = [ "Vazirmatn" "Lexend" ];
         sansSerif = [ "Vazirmatn" "Lexend" ];
         monospace =
-          [ "Ellograph CF" "Noto Color Emoji" "Symbols-2048-em Nerd Font" ];
+          [ "CodeNewRoman Nerd Font" "Noto Color Emoji" ];
         emoji = [ "Noto Color Emoji" ];
       };
     };

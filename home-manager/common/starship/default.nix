@@ -36,10 +36,10 @@ let
   section_6_fg = "#ECECEC";
 
   # icons
-  #left_icon = "";
-  #right_icon = "";
-  left_icon = "";
-  right_icon = "";
+  left_icon = "";
+  right_icon = "";
+  # left_icon = "";
+  # right_icon = "";
   fill_icon = " ";
   prompt_icon = "󰘍 ";
 in {
