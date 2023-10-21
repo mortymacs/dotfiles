@@ -287,8 +287,9 @@
       }'';
   # https://www.howtogeek.com/414574/how-to-burn-an-iso-file-to-a-usb-drive-in-linux/
   iso-to-usb = ''(){
-          sudo dd bs=4M if="$\{1\}" of="$\{2\}" conv=fdatasync status=progress
-      }'';
+    sudo dd bs=4M if="$\{1\}" of="$\{2\}" conv=fdatasync status=progress
+  }'';
+  hq = "htmlq";
 
   # Monitor.
   monitor-internal = ''(){

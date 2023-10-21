@@ -19,6 +19,7 @@
     fd
     jq
     yq
+    htmlq
     jless
     fq
     glow
