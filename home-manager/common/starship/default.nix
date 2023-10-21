@@ -115,21 +115,21 @@ in {
         stashed = " 󱀲 ";
         untracked = " 󱪝 ";
         staged = " 󰐕 ";
-        style = "fg:${section_3_1_bg}"; # fg:${section_3_1_fg}";
+        style = "fg:${section_3_1_bg} bg:${fill_bg}";
         format = "[$all_status$ahead_behind]($style)";
       };
       status = {
-        style = "bold fg:${section_4_bg}"; # fg:${section_4_fg}";
+        style = "bold fg:${section_4_bg} bg:${fill_bg}";
         format = "[ $status ]($style)";
         disabled = false;
       };
       cmd_duration = {
-        style = "bold fg:${section_5_bg}"; # fg:${section_5_fg}";
+        style = "bold fg:${section_5_bg} bg:${fill_bg}";
         format = "[ $duration ]($style)";
       };
       jobs = {
         symbol = "+";
-        style = "bold fg:${section_6_bg}"; # fg:${section_6_fg}";
+        style = "bold fg:${section_6_bg} bg:${fill_bg}";
         number_threshold = 1;
         format = "[ $symbol$number ]($style)";
       };
