@@ -74,6 +74,7 @@
     awscli2
     ctop
     act
+    unstable.wait4x
 
     # Database.
     pgcli

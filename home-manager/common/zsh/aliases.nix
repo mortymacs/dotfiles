@@ -128,7 +128,7 @@
                 --name localstack \
                 localstack/localstack
 
-            until curl -s http://127.0.0.1:4566; do echo "waiting..." && sleep 1; done
+            wait4x http http://127.0.0.1:4566
 
             for i in $(seq 1 3); do
                 aws --endpoint-url http://127.0.0.1:4566 --region us-east-1 --profile localstack sqs create-queue --queue-name "sqs$i"
