@@ -54,7 +54,6 @@ in {
     defaultPackages.list ++ [
       # Meeting.
       unstable.teams-for-linux
-      postman
     ];
 
   # Fontconfig.
