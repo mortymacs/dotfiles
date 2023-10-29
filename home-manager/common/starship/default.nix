@@ -29,17 +29,15 @@ let
 
   # cmd_duration
   section_5_bg = "#E7ADA3";
-  section_5_fg = "#FFE5D4";
+  section_5_fg = "#320D6D";
 
   # job
   section_6_bg = "#17c3b2";
   section_6_fg = "#ECECEC";
 
   # icons
-  left_icon = "";
-  right_icon = "";
-  # left_icon = "";
-  # right_icon = "";
+  left_icon = "";
+  right_icon = "";
   fill_icon = " ";
   prompt_icon = "󰘍 ";
 in {
@@ -115,21 +113,22 @@ in {
         stashed = " 󱀲 ";
         untracked = " 󱪝 ";
         staged = " 󰐕 ";
-        style = "fg:${section_3_1_bg} bg:${fill_bg}";
+        style = "bg:${section_3_1_bg} fg:${section_3_1_fg}";
         format = "[$all_status$ahead_behind]($style)";
       };
+
       status = {
-        style = "bold fg:${section_4_bg} bg:${fill_bg}";
+        style = "bold bg:${section_4_bg} fg:${section_4_fg}";
         format = "[ $status ]($style)";
         disabled = false;
       };
       cmd_duration = {
-        style = "bold fg:${section_5_bg} bg:${fill_bg}";
+        style = "bold bg:${section_5_bg} fg:${section_5_fg}";
         format = "[ $duration ]($style)";
       };
       jobs = {
         symbol = "+";
-        style = "bold fg:${section_6_bg} bg:${fill_bg}";
+        style = "bold bg:${section_6_bg} fg:${section_6_fg}";
         number_threshold = 1;
         format = "[ $symbol$number ]($style)";
       };
