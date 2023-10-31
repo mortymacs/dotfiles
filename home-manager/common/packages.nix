@@ -109,7 +109,7 @@
     cargo
     bacon
     ## Go.
-    unstable.go_1_21
+    unstable.go
     gopls
     delve
     pprof
