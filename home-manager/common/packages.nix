@@ -45,6 +45,7 @@
     zoxide
     feh
     file
+    unstable.walk
 
     # Theme.
     yaru-theme

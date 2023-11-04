@@ -29,6 +29,7 @@
   l = "exa --git -lh --octal-permissions --color-scale";
   f = "fzf --preview 'bat {} --style=numbers --color=always'";
   o = "v \`f || echo '-c :quitall'\`";
+  li = "walk --icons";
   gg = "batgrep -i";
   gf = ''(){
     gg "$1" -g "$2"
