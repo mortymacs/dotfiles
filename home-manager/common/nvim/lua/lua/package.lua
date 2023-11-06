@@ -219,6 +219,12 @@ require("lazy").setup({
   "preservim/tagbar",
   "terrortylor/nvim-comment",
   "smjonas/inc-rename.nvim",
+  {
+    "hinell/lsp-timeout.nvim",
+    dependencies = {
+      "neovim/nvim-lspconfig",
+    },
+  },
   -- -- Rust.
   "simrat39/rust-tools.nvim",
   {
