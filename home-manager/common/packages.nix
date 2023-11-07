@@ -111,7 +111,7 @@
     bacon
     ## Go.
     unstable.go
-    gopls
+    unstable.gopls
     delve
     pprof
     go-tools
