@@ -40,7 +40,7 @@ in {
         module-margin = 0;
         separator = " | ";
         separator-foreground = "${disabled}";
-        font-0 = "Tilt Neon:size=10;2";
+        font-0 = "Lexend:size=10;2";
         font-1 = "Noto Color Emoji:scale=10;2";
         modules-left = "xworkspaces";
         modules-right =

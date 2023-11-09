@@ -11,7 +11,7 @@ in
 	programs.rofi = {
 		enable = true;
         plugins = [ pkgs.rofi-emoji ];
-        font = "Tilt Neon 10";
+        font = "Lexend 10";
 		theme =
             let
                 inherit (config.lib.formats.rasi) mkLiteral;
