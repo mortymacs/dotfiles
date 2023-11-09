@@ -1,18 +1,18 @@
 {config, pkgs, ...}:
 let
-    bg = "#151515";
+    bg = "#0f111b";
     fg = "#ECECEC";
-    border = "#8136C7";
-    selected = "#2F2F2F";
-    entry-bg = "#2F2F2F";
+    border = "#27213C";
+    selected = "#161927";
+    entry-bg = "#161927";
     textbox-fg = "#ECECEC";
 in
 {
 	programs.rofi = {
 		enable = true;
         plugins = [ pkgs.rofi-emoji ];
-        font = "Lexend 10";
-		theme = 
+        font = "Tilt Neon 10";
+		theme =
             let
                 inherit (config.lib.formats.rasi) mkLiteral;
             in {

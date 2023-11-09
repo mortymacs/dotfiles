@@ -2,18 +2,18 @@
   fonts = {
     enableDefaultFonts = false;
     fonts = with pkgs; [
-      (unstable.nerdfonts.override { fonts = [ "CodeNewRoman" ]; })
+      (unstable.nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
       unstable.vazir-fonts
-      unstable.lexend
       unstable.noto-fonts-emoji
+      unstable.jetbrains-mono
     ];
     fontconfig = {
       enable = true;
       defaultFonts = {
-        serif = [ "Vazirmatn" "Lexend" ];
-        sansSerif = [ "Vazirmatn" "Lexend" ];
+        serif = [ "Vazirmatn" "Tilt Neon" ];
+        sansSerif = [ "Vazirmatn" "Tilt Neon" ];
         monospace =
-          [ "CodeNewRoman Nerd Font" "Noto Color Emoji" ];
+          [ "JetBrains Mono" "Noto Color Emoji" "Symbols-2048-em Nerd Font" ];
         emoji = [ "Noto Color Emoji" ];
       };
     };

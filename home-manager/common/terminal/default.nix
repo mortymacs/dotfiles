@@ -31,7 +31,11 @@
       selection = { save_to_clipboard = true; };
 
       font = {
-        size = 14;
+        size = 12;
+
+        normal = {
+            style = "medium";
+        };
 
         offset = {
           x = 0;
