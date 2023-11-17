@@ -31,20 +31,16 @@
       selection = { save_to_clipboard = true; };
 
       font = {
-        size = 12;
-
-        normal = {
-            style = "medium";
-        };
+        size = 14;
 
         offset = {
           x = 0;
-          y = 2;
+          y = 6;
         };
 
         glyph_offset = {
           x = 0;
-          y = 1;
+          y = 3;
         };
       };
 
