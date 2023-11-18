@@ -31,11 +31,11 @@
       selection = { save_to_clipboard = true; };
 
       font = {
-        size = 14;
+        size = 12.5;
 
         offset = {
           x = 0;
-          y = 6;
+          y = 5;
         };
 
         glyph_offset = {
