@@ -31,16 +31,16 @@
       selection = { save_to_clipboard = true; };
 
       font = {
-        size = 12.5;
+        size = 11.5;
 
         offset = {
           x = 0;
-          y = 5;
+          y = 7;
         };
 
         glyph_offset = {
           x = 0;
-          y = 3;
+          y = 5;
         };
       };
 
