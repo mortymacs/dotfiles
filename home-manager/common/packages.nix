@@ -14,7 +14,6 @@
     unstable.ast-grep
     ripgrep
     pwgen
-    peco
     most
     fd
     jq

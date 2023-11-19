@@ -16,7 +16,6 @@ in {
     ../common/tmux
     ../common/tmuxp
     ../common/fzf
-    ../common/peco
     ../common/nvim
     ../common/btop
     ../common/git

@@ -26,8 +26,8 @@
   pdf = "zathura";
 
   # File and directory.
-  l = "exa --git -lh --octal-permissions --color-scale";
-  f = "fzf --preview 'bat {} --style=numbers --color=always'";
+  l = "exa --git -lh --octal-permissions --color-scale --icons";
+  f = "fzf --no-mouse --preview 'bat {} --style=numbers --color=always'";
   o = "v \`f || echo '-c :quitall'\`";
   li = "walk --icons";
   gg = "batgrep -i";
@@ -77,7 +77,7 @@
   tl = "tmux ls -F \#S";
   ta = ''(){
             if [ "$#" -eq "0" ]; then
-                session=$(tl | fzf)
+                session=$(tl | fzf --no-mouse)
                 [ ! -z "$session" ] && tmux attach -t "$session"
             else
                 tmux attach -t "$@"
@@ -100,10 +100,10 @@
   # Git.
   p = ''(){
             if [ "$#" -eq 0 ]; then
-                project=$(ghq list | fzf -e)
+                project=$(ghq list | fzf --no-mouse -e)
                 [ -n "$project" ] && cd "$GHQ_ROOT/$project"
             elif [ "$#" -eq 1 ]; then
-                project=$(ghq list | fzf -e -q "$1")
+                project=$(ghq list | fzf --no-mouse -e -q "$1")
                 [ -n "$project" ] && cd "$GHQ_ROOT/$project"
             else
                 ghq "$@"
@@ -115,7 +115,7 @@
   # Project / stack.
   s = ''() {
             if [ "$#" -eq "0" ]; then
-                stack=$(tmuxp ls | fzf)
+                stack=$(tmuxp ls | fzf --no-mouse)
                 [ ! -z "$stack" ] && tmuxp load "$stack"
             else
                 tmuxp load "$@"
@@ -175,15 +175,15 @@
   # C/C++.
   rcpp = "rm -rf CMakeFiles/ Testing/ CMakeCache.txt *.cmake Makefile compile_commands.json *.cbp";
   c-debug = ''(){
-            target_file=$(fzf)
-            target_line=$(\cat -n "$target_file" | fzf | awk '{print $1}')
+            target_file=$(fzf --no-mouse)
+            target_line=$(\cat -n "$target_file" | fzf --no-mouse | awk '{print $1}')
             gdb -ex "b $target_file:$target_line" "$1"
         }'';
 
   # Rust.
   rs-debug = ''() {
-    target_file=$(fzf)
-    target_line=$(\cat -n "$target_file" | fzf | awk '{print $1}')
+    target_file=$(fzf --no-mouse)
+    target_line=$(\cat -n "$target_file" | fzf --no-mouse | awk '{print $1}')
     rust-gdb -ex "b $target_file:$target_line" "$1"
   }'';
 
@@ -193,8 +193,8 @@
 
   # Go.
   go-debug = ''(){
-            target_file=./$(fzf)
-            target_line=$(\cat -n "$target_file" | fzf | awk '{print $1}')
+            target_file=./$(fzf --no-mouse)
+            target_line=$(\cat -n "$target_file" | fzf --no-mouse | awk '{print $1}')
             dlv debug "$1" --init <(echo "break $target_file:$target_line")
         }'';
 
@@ -273,10 +273,10 @@
   # Process.
   ps = "procs";
   kp = ''() {
-          ps | \grep -v peco | peco --query "$1" | cut -d' ' -f2 | xargs -r kill -9
+          ps | \grep -v fzf | fzf -m --no-mouse -q "$1" | cut -d' ' -f2 | xargs -r kill -9
       }'';
   ap = ''(){
-          ps -t --thread | \grep -v peco | peco --query "$1"
+          ps -t --thread | \grep -v fzf | fzf -m --no-mouse -q "$1"
       }'';
 
   # Utility.
