@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 let defaultAliases = import ../../common/zsh/aliases.nix;
 in {
   programs.zsh = {
@@ -39,6 +40,8 @@ in {
       bindkey ';5C' forward-word
       bindkey ';3C' forward-word
       bindkey '^[[P' delete-char
+
+      . ${pkgs.zsh-fzf-tab}/share/fzf-tab/fzf-tab.plugin.zsh
     '';
 
     # Aliases.

@@ -1,4 +1,6 @@
-{ config, pkgs, inputs, ... }: {
+{ config, pkgs, inputs, ... }:
+let defaultPackages = import ../common/packages.nix { inherit pkgs; };
+in {
   imports = [
     ./hardware-configuration.nix
     ../common/ld.nix
@@ -93,13 +95,7 @@
   };
 
   # Global packages.
-  environment.systemPackages = with pkgs; [
-    nano
-    wget
-    home-manager
-    ntfs3g
-    pamixer
-  ];
+  environment.systemPackages = with pkgs; defaultPackages.list ++ [ ];
 
   # Virtualization.
   virtualisation.docker = {
