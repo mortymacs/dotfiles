@@ -136,6 +136,8 @@ require("hlslens").setup()
 
 -- Lint.
 local lint = require("lint")
+local golangcilint = require("lint.linters.golangcilint")
+table.insert(golangcilint.args, "--enable-all")
 lint.linters_by_ft = {
   go = { "golangcilint", "revive" },
   python = { "ruff" },
