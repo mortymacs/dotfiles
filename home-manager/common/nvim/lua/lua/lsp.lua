@@ -156,11 +156,11 @@ local lsp_inlayhints_setup = {
 -- C/C++
 lspconfig.ccls.setup({
   init_options = {
-    compilationDatabaseDirectory = "build";
+    compilationDatabaseDirectory = "build",
     index = {
-      threads = 0;
-    };
-  }
+      threads = 0,
+    },
+  },
 })
 
 -- Rust
