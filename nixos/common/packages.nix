@@ -12,8 +12,5 @@
 
     # Audio.
     pamixer
-
-    # Zsh.
-    zsh-fzf-tab
   ];
 }
