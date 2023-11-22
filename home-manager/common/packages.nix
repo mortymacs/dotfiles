@@ -118,6 +118,7 @@
     gosec
     golangci-lint
     govulncheck
+    goconst
     gofumpt
     golines
     gomodifytags
