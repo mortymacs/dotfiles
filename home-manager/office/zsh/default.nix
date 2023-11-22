@@ -29,6 +29,10 @@ in {
         name = "fzf-tab";
         src = zsh-fzf-tab.src;
       }
+      {
+        name = "nix-shell";
+        src = zsh-nix-shell.src;
+      }
     ];
 
     # Env variables.

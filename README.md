@@ -32,7 +32,7 @@ My environment config. I tried to keep it minimal and simple as much as I could.
 | Browser | [Firefox](https://www.mozilla.org) |
 | GTK Theme | [Yaru](https://github.com/ubuntu/yaru) |
 | Icon | [Yaru](https://github.com/ubuntu/yaru) |
-| Wallpaper | [Unsplash](https://unsplash.com/photos/blue-and-black-abstract-painting-LlXzILHulTM) |
+| Wallpaper | [Unsplash](https://unsplash.com/photos/green-yellow-and-red-abstract-painting-5Oe8KFH5998) |
 | Doc | [Zeal](https://github.com/zealdocs/zeal) |
 
 ## Screenshot
