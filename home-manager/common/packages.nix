@@ -4,6 +4,15 @@
     bsp-layout
     xdotool
     xorg.xwininfo
+    (tabbed.overrideAttrs (oldAttrs: rec {
+        configFile = writeText "config.def.h" (builtins.readFile ./tabbed/config.def.h);
+        postPatch = "${oldAttrs.postPatch}\n cp ${configFile} config.def.h";
+    }))
+    (writeShellScriptBin "tabc" (builtins.readFile ./tabbed/tabc.sh))
+
+    # Monitor
+    (writeShellScriptBin "monitor-internal" (builtins.readFile ./monitor/monitor-internal.sh))
+    (writeShellScriptBin "monitor-external" (builtins.readFile ./monitor/monitor-external.sh))
 
     # Application.
     firefox

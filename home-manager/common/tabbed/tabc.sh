@@ -1,4 +1,5 @@
 #!/bin/sh
+# https://github.com/Bachhofer/tabc
 
 function print_help {
     echo "Usage:"
@@ -38,7 +39,7 @@ function is_tabbed {
 }
 
 function create_tabbed {
-    tabbedid=$(~/.local/bin/tabbed -d -c -k)
+    tabbedid=$(tabbed -d -c -k)
     xdotool windowreparent $1 $tabbedid
 }
 

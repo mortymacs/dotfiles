@@ -93,7 +93,7 @@
       # Tab layout.
       # Add focused window to a tabbed instance in given direction
       "super + t; {Left,Down,Up,Right}" =
-        "~/.local/bin/tabc add $(bspc query -N -n focused) $(bspc query -N -n {west,south,north,east})";
+        "tabc add $(bspc query -N -n focused) $(bspc query -N -n {west,south,north,east})";
 
       # Remove one tab from tabbed
       "super + t; r" = "tabc remove-child $(bspc query -N -n focused)";
