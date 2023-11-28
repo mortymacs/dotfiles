@@ -3,7 +3,9 @@
 let defaultPackages = import ../common/packages.nix { inherit pkgs; };
 in {
   imports = [
+    ../common/monitor
     ../common/bspwm
+    ../common/tabbed
     ../common/polybar
     ../common/sxhkd
     ../common/dunst
