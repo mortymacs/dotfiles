@@ -223,7 +223,7 @@ lspconfig.pyright.setup({
 })
 
 -- Nix
-lspconfig.rnix.setup({
+lspconfig.nil_ls.setup({
   capabilities = capabilities,
   on_attach = function(_, bufnr)
     lsp_signature.on_attach(lsp_signature_setup, bufnr)

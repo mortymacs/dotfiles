@@ -33,6 +33,8 @@ in {
       bind -n M-C-Right  select-pane   -R
       bind -n C-PageUp   switch-client -p
       bind -n C-PageDown switch-client -n
+      bind -n M-C-n      display-popup -w 90% -E "tmux-ghq"
+      bind -n M-C-s      display-popup -w 90% -E "tmux-switch"
 
       # This tmux statusbar config is for spaceduck and was created by tmuxline.vim.
       # https://github.com/edkolev/tmuxline.vim
@@ -59,4 +61,9 @@ in {
 
     tmuxp = { enable = true; };
   };
+
+  home.packages = with pkgs; [
+    (writeShellScriptBin "tmux-ghq" (builtins.readFile ./tmux-ghq.sh))
+    (writeShellScriptBin "tmux-switch" (builtins.readFile ./tmux-switch.sh))
+  ];
 }

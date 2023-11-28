@@ -5,8 +5,6 @@
     xdotool
     xorg.xwininfo
 
-    # Monitor
-
     # Application.
     firefox
 
@@ -142,7 +140,7 @@
     stylua
     lua54Packages.luacheck
     ## Nix.
-    rnix-lsp
+    nil
     nixfmt
     nurl
     ## Shell.
