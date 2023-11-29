@@ -22,8 +22,8 @@
       "super + Tab" = "rofi -show window";
 
       # Switch monitors.
-      "super + shift + i" = "monitor-internal";
-      "super + shift + c" = "monitor-external";
+      "super + shift + 0" = "monitor-internal";
+      "super + shift + 1" = "monitor-external";
 
       # Screenshot.
       "super + shift + s" = "flameshot gui";
