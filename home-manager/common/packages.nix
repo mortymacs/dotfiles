@@ -5,9 +5,6 @@
     xdotool
     xorg.xwininfo
 
-    # Application.
-    firefox
-
     # Text.
     bat
     bat-extras.batgrep

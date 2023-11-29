@@ -1,0 +1,42 @@
+{
+  "placements": {
+    "widget-overflow-fixed-list": [],
+    "unified-extensions-area": [],
+    "nav-bar": [
+      "back-button",
+      "forward-button",
+      "stop-reload-button",
+      "urlbar-container",
+      "save-to-pocket-button",
+      "downloads-button",
+      "fxa-toolbar-menu-button",
+      "unified-extensions-button"
+    ],
+    "toolbar-menubar": [
+      "menubar-items"
+    ],
+    "TabsToolbar": [
+      "firefox-view-button",
+      "tabbrowser-tabs",
+      "new-tab-button",
+      "alltabs-button"
+    ],
+    "PersonalToolbar": [
+      "import-button",
+      "personal-bookmarks"
+    ]
+  },
+  "seen": [
+    "save-to-pocket-button",
+    "developer-button"
+  ],
+  "dirtyAreaCache": [
+    "nav-bar",
+    "PersonalToolbar",
+    "unified-extensions-area",
+    "toolbar-menubar",
+    "TabsToolbar"
+  ],
+  "currentVersion": 20,
+  "newElementCount": 6
+}

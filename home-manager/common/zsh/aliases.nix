@@ -5,6 +5,8 @@
           then
             nix flake update
             sudo nixos-rebuild switch --flake ".#$1";
+
+            rm ~/.mozilla/firefox/main/search.json.*
             home-manager switch --flake ".#$1";
 
              nvim --headless "+Lazy! sync" +qa

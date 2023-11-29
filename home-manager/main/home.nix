@@ -23,6 +23,7 @@ in {
     ../common/git
     ../common/docker
     ../common/flameshot
+    ../common/firefox
     ../common/misc
   ];
 
