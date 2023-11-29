@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   fonts = {
-    enableDefaultFonts = false;
-    fonts = with pkgs; [
+    enableDefaultPackages = false;
+    packages = with pkgs; [
       (unstable.nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
       unstable.vazir-fonts
       unstable.lexend

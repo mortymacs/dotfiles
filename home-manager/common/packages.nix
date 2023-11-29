@@ -40,7 +40,7 @@
 
     # File and directory.
     broot
-    exa
+    eza
     zoxide
     feh
     file

@@ -26,7 +26,7 @@
   pdf = "zathura";
 
   # File and directory.
-  l = "exa --git -lh --octal-permissions --color-scale --icons";
+  l = "eza --git -lh --octal-permissions --color-scale --icons";
   f = "fzf --no-mouse --preview 'bat {} --style=numbers --color=always'";
   o = "v \`f || echo '-c :quitall'\`";
   li = "walk --icons";

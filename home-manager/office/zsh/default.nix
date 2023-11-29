@@ -9,7 +9,7 @@ in {
     enableAutosuggestions = true;
 
     # Syntax highlighting.
-    enableSyntaxHighlighting = true;
+    syntaxHighlighting.enable = true;
 
     # Auto completion.
     enableCompletion = true;
