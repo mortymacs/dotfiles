@@ -1,4 +1,7 @@
 let
+  gtkTheme = "Yaru-purple";
+  iconTheme = "Yaru-purple";
+  cursorTheme = "Yaru";
   extraConfig = {
     gtk-toolbar-style = "GTK_TOOLBAR_BOTH";
     gtk-toolbar-icon-size = "GTK_ICON_SIZE_LARGE_TOOLBAR";
@@ -27,9 +30,9 @@ in {
   # GTK.
   gtk = {
     enable = true;
-    theme.name = "Yaru-purple-dark";
-    iconTheme.name = "Yaru-purple-dark";
-    cursorTheme.name = "Yaru";
+    theme.name = gtkTheme;
+    iconTheme.name = iconTheme;
+    cursorTheme.name = cursorTheme;
     font = {
       name = "Lexend";
       size = 10;
@@ -42,7 +45,7 @@ in {
   home.file = {
     ".icons/default/index.theme".text = ''
       [Icon Theme]
-      Inherits=Yaru
+      Inherits=${cursorTheme}
     '';
   };
 }
