@@ -49,7 +49,6 @@ vim.api.nvim_set_hl(0, "FidgetTask",  {bg = "#090d12"})
 -- LSP
 -- -- General.
 vim.api.nvim_set_hl(0, "Pmenu",                    {fg = "#ecf0c1", bg = "#1A1B24"})
-vim.api.nvim_set_hl(0, "PmenuSel",                 {fg = "#EED8DA", bg = "#B5585F"})
 vim.api.nvim_set_hl(0, "PmenuSbar",                {bg = "#272831"})
 -- -- CMP.
 vim.api.nvim_set_hl(0, "CmpItemAbbrDeprecated",    {fg = "#7E8294"})
@@ -113,7 +112,8 @@ vim.g.bookmark_sign = ''
 vim.g.bookmark_highlight_lines = 1
 
 -- Cursor
-vim.api.nvim_set_hl(0, "CursorLineNr", {bg = "", fg="#F3A712"})
+vim.api.nvim_set_hl(0, "CursorLine",   {bg = "#001f3f", fg=""})
+vim.api.nvim_set_hl(0, "CursorLineNr", {bg = "",        fg="#F3A712"})
 vim.opt.guicursor = { "a:ver1" }
 
 -- Modes
