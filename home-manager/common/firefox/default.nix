@@ -24,6 +24,7 @@
         };
         search = {
           default = "Google";
+          force = true;
           engines = {
             "Bookmarks".metaData.alias = "*";
             "Google".metaData.alias = "@g";
