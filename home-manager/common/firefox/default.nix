@@ -1,27 +1,11 @@
 { pkgs, ... }: {
+  home.packages = with pkgs; [ mozillavpn ];
   programs.firefox = {
     enable = true;
     profiles = {
       main = {
         name = "main";
         isDefault = true;
-        containers = {
-          Personal = {
-            id = 1;
-            color = "purple";
-            icon = "fingerprint";
-          };
-          Work = {
-            id = 2;
-            color = "blue";
-            icon = "briefcase";
-          };
-          Quick = {
-            id = 3;
-            color = "yellow";
-            icon = "chill";
-          };
-        };
         search = {
           default = "Google";
           force = true;
@@ -43,7 +27,8 @@
                 ];
               }];
               definedAliases = [ "@np" ];
-              icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+              icon =
+                "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
             };
             "NixOS Wiki" = {
               urls = [{
@@ -62,7 +47,8 @@
                 }];
               }];
               definedAliases = [ "@nh" ];
-              icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+              icon =
+                "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
             };
 
             # Disable the rest.
