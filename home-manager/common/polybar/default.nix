@@ -16,8 +16,8 @@ let
   second-timezone-foreground = "#ECECEC";
 
   # Location.
-  main-location-foreground = "#f1c0e8";
-  second-location-foreground = "#EE6352";
+  main-location-foreground = "#ffbe0b";
+  second-location-foreground = "#fb5607";
 in {
   services.polybar = {
     enable = true;
@@ -100,7 +100,7 @@ in {
       "module/tor_location" = {
         type = "custom/script";
         exec =
-          "echo $(curl -s -x http://127.0.0.1:8118 http://ip-api.com/json --connect-timeout 5 | jq -r '.countryCode')";
+          "echo $(curl -s -x http://127.0.0.1:8118 http://ip-api.com/json --connect-timeout 5 | jq -r '.countryCode' 2>/dev/null)";
         interval = 30;
         format-foreground = "${second-location-foreground}";
       };
