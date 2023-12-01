@@ -26,6 +26,8 @@
   cat = "bat";
   less = "less -N";
   pdf = "zathura";
+  jless = "jless -N";
+  yless = "jless -N --yaml";
 
   # File and directory.
   l = "eza --git -lh --octal-permissions --color-scale --icons";
