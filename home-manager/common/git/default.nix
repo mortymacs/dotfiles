@@ -34,9 +34,7 @@
         show = "delta";
         blame = "delta";
       };
-      help = {
-        autocorrect = 1;
-      };
+      help = { autocorrect = 1; };
     };
 
     ignores = map (v: "${toString v}")
