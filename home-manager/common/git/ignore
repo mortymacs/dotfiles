@@ -54,3 +54,4 @@ vendor/
 .cache
 *.sqlite3
 *.spec
+*.log

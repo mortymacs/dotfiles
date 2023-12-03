@@ -94,11 +94,15 @@
     ## C/C++.
     gcc
     gdb
+    ccache
     cmake
     cmake-language-server
     valgrind-light
+    complexity
+    cflow
     ccls
     bear
+    doxygen
     ## Rust.
     rustc
     rustfmt
