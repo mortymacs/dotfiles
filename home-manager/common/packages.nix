@@ -111,8 +111,8 @@
     cargo
     bacon
     ## Go.
-    unstable.go
-    unstable.gopls
+    go
+    gopls
     delve
     pprof
     go-tools
@@ -120,6 +120,7 @@
     gosec
     golangci-lint
     govulncheck
+    unstable.nilaway
     goconst
     gofumpt
     golines
