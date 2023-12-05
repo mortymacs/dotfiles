@@ -30,7 +30,7 @@
   yless = "jless -N --yaml";
 
   # File and directory.
-  l = "eza --git -lh --octal-permissions --color-scale --icons";
+  l = "eza --git -lh --octal-permissions --color-scale all --icons always";
   f = "fzf --no-mouse --preview 'bat {} --style=numbers --color=always'";
   o = "v \`f || echo '-c :quitall'\`";
   li = "walk --icons";
