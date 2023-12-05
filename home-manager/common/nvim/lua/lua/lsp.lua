@@ -154,7 +154,11 @@ local lsp_inlayhints_setup = {
 }
 
 -- C/C++
-lspconfig.ccls.setup({
+lspconfig.clangd.setup({
+  capabilities = capabilities,
+  on_attach = function(_, bufnr)
+    lsp_signature.on_attach(lsp_signature_setup, bufnr)
+  end,
   init_options = {
     compilationDatabaseDirectory = "build",
     index = {

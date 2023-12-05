@@ -92,7 +92,9 @@
 
     # Programming.
     ## C/C++.
-    gcc
+    (hiPrio gcc)
+    clang
+    clang-tools
     gdb
     ccache
     cmake
@@ -100,7 +102,6 @@
     valgrind-light
     complexity
     cflow
-    ccls
     bear
     doxygen
     ## Rust.
