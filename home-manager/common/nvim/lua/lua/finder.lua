@@ -3,17 +3,6 @@ require("telescope").setup({
     defaults = {
         layout_strategy = 'vertical',
         borderchars = { '─', '│', '─', '│', '┌', '┐', '┘', '└' },
-        vimgrep_arguments = {
-            "rg",
-            "-L",
-            "--color=never",
-            "--no-heading",
-            "--with-filename",
-            "--line-number",
-            "--column",
-            "--smart-case",
-        },
-        generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
     },
     pickers = {
         find_files = {

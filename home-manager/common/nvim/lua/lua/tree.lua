@@ -3,6 +3,7 @@ require("neo-tree").setup({
         "filesystem",
         "buffers",
         "git_status",
+        "document_symbols",
     },
     add_blank_line_at_top = false,
     auto_clean_after_session_restore = false,
@@ -48,6 +49,10 @@ require("neo-tree").setup({
             {
                 source = "git_status",
                 display_name = "  Git "
+            },
+            {
+                source = "document_symbols",
+                display_name = "  Symbols "
             },
         },
         content_layout = "start",
