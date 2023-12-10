@@ -129,14 +129,10 @@
     mage
     air
     ## Python.
-    python311
+    (python311.withPackages(ps: with ps; [ ipdb ipython isort black requests lxml ]))
     poetry
-    python311Packages.ipdb
     nodePackages.pyright
     ruff
-    isort
-    black
-    python311Packages.ipython
     ## Lua.
     lua
     sumneko-lua-language-server
