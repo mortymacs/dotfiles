@@ -129,7 +129,8 @@
     mage
     air
     ## Python.
-    (python311.withPackages(ps: with ps; [ ipdb ipython isort black pylint requests lxml ]))
+    (hiPrio python312)
+    (python311.withPackages(ps: with ps; [ ipdb ipython isort black pylint requests ]))
     poetry
     nodePackages.pyright
     ruff
