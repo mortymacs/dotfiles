@@ -35,6 +35,9 @@ require("quickfix")
 require("lsp")
 require("diagnostic")
 
+-- Test
+require("test")
+
 -- Debug
 vim.cmd [[ source ~/.config/nvim/lua/debug.lua ]]
 

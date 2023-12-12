@@ -130,7 +130,7 @@
     air
     ## Python.
     (hiPrio python312)
-    (python311.withPackages(ps: with ps; [ ipdb ipython isort black pylint requests ]))
+    (python311.withPackages(ps: with ps; [ ipdb ipython isort black pylint pytest requests ]))
     poetry
     nodePackages.pyright
     ruff

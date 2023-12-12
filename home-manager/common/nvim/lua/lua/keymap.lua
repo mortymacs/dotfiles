@@ -164,10 +164,18 @@ SetKeyMap("<c-c><c-j>",     function() require('treesj').toggle() end)
 SetKeyMap("<c-j><c-s>", function() require("dapui").toggle() end)
 SetKeyMap("<c-j><c-t>", "<Cmd>DapToggleBreakpoint<cr>")
 
+-- Test
+SetKeyMap("<c-t><c-x>",     "<esc><Cmd>Neotest run<cr>")
+SetKeyMap("<c-t><c-r>",     "<esc><Cmd>Neotest output<cr>")
+SetKeyMap("<c-t><Up>",      "<esc><Cmd>Neotest output-panel<cr>")
+SetKeyMap("<c-t><c-s>",     "<esc><Cmd>Neotest summary<cr>")
+SetKeyMap("<c-t><c-Right>", "<esc><Cmd>Neotest jump next<cr>")
+SetKeyMap("<c-t><c-Left>",  "<esc><Cmd>Neotest jump prev<cr>")
+
 -- Trouble / Quickfix.
 SetKeyMap("<c-l><c-e>", "<Cmd>Telescope diagnostics<cr>")
 SetKeyMap("<c-l><Up>",  "<Cmd>TroubleToggle workspace_diagnostics<cr>")
-SetKeyMap("<c-l><c-q>",  "<Cmd>TroubleToggle quickfix<cr>")
+SetKeyMap("<c-l><c-q>", "<Cmd>TroubleToggle quickfix<cr>")
 
 -- Bookmark
 SetKeyMap("<c-r><c-c>", "<Cmd>Telescope vim_bookmarks current_file<cr>")
