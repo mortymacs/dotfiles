@@ -87,8 +87,8 @@ vim.api.nvim_set_hl(0, "GlancePreviewSignColumn",  {bg = "#000000"})
 vim.api.nvim_set_hl(0, "GlancePreviewLineNr",      {bg = "#000000"})
 vim.api.nvim_set_hl(0, "GlanceListNormal",         {bg = "#000000"})
 -- -- Saga.
-vim.api.nvim_set_hl(0, "SagaNormal",               {bg = ""})
-vim.api.nvim_set_hl(0, "SagaBorder",               {bg = ""})
+vim.api.nvim_set_hl(0, "SagaNormal",               {bg = "", link = "SagaNormal"})
+vim.api.nvim_set_hl(0, "SagaBorder",               {bg = "", link = "SagaBorder"})
 
 -- Trouble
 vim.api.nvim_set_hl(0, "TroubleFoldIcon", {bg = ""})
