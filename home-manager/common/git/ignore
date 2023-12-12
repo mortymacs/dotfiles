@@ -2,6 +2,7 @@
 init-doc
 log/
 tmp/
+*.tmp
 
 # Build
 bin/

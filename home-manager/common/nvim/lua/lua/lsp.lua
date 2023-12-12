@@ -293,6 +293,9 @@ require("glance").setup({
 
 -- Saga
 require("lspsaga").setup({
+  ui = {
+    border = "single",
+  },
   symbol_in_winbar = {
     separator = " ",
   },
