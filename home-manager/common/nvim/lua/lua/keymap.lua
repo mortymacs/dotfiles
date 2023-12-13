@@ -166,6 +166,7 @@ SetKeyMap("<c-j><c-t>", "<Cmd>DapToggleBreakpoint<cr>")
 
 -- Test
 SetKeyMap("<c-t><c-x>",     "<esc><Cmd>Neotest run<cr>")
+SetKeyMap("<c-t><c-f>",     "<esc><Cmd>Neotest run file<cr>")
 SetKeyMap("<c-t><c-r>",     "<esc><Cmd>Neotest output<cr>")
 SetKeyMap("<c-t><Up>",      "<esc><Cmd>Neotest output-panel<cr>")
 SetKeyMap("<c-t><c-s>",     "<esc><Cmd>Neotest summary<cr>")

@@ -28,12 +28,12 @@ vim.api.nvim_set_hl(0, "GitSignsChange", {bg = "", fg = "#e39400"})
 vim.api.nvim_set_hl(0, "GitSignsDelete", {bg = "", fg = "#ce6f8f"})
 
 -- Notification
-vim.api.nvim_set_hl(0, "NotifyDEBUGBody",  {bg = "#090d12"})
-vim.api.nvim_set_hl(0, "NotifyINFOBody",   {bg = "#090d12"})
-vim.api.nvim_set_hl(0, "NotifyWARNBody",   {bg = "#090d12"})
-vim.api.nvim_set_hl(0, "NotifyERRORBody",  {bg = "#090d12"})
-vim.api.nvim_set_hl(0, "NotifyTRACEBody",  {bg = "#090d12"})
-vim.api.nvim_set_hl(0, "NotifyBackground", {bg = "#090d12"})
+vim.api.nvim_set_hl(0, "NotifyDEBUGBody",  {bg = ""})
+vim.api.nvim_set_hl(0, "NotifyINFOBody",   {bg = ""})
+vim.api.nvim_set_hl(0, "NotifyWARNBody",   {bg = ""})
+vim.api.nvim_set_hl(0, "NotifyERRORBody",  {bg = ""})
+vim.api.nvim_set_hl(0, "NotifyTRACEBody",  {bg = ""})
+vim.api.nvim_set_hl(0, "NotifyBackground", {bg = ""})
 
 -- Telescope
 vim.api.nvim_set_hl(0, "TelescopeNormal",        {bg = "#090d12"})
