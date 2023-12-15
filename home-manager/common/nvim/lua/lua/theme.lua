@@ -36,11 +36,11 @@ vim.api.nvim_set_hl(0, "NotifyTRACEBody",  {bg = ""})
 vim.api.nvim_set_hl(0, "NotifyBackground", {bg = ""})
 
 -- Telescope
-vim.api.nvim_set_hl(0, "TelescopeNormal",        {bg = "#090d12"})
-vim.api.nvim_set_hl(0, "TelescopePreviewNormal", {bg = "#090d12"})
-vim.api.nvim_set_hl(0, "TelescopePromptNormal",  {bg = "#090d12"})
-vim.api.nvim_set_hl(0, "TelescopeResultNormal",  {bg = "#090d12"})
-vim.api.nvim_set_hl(0, "TelescopeBorder",        {bg = "#090d12", fg = "#686f9a"})
+vim.api.nvim_set_hl(0, "TelescopeNormal",        {bg = "",                 link = "TelescopeNormal"})
+vim.api.nvim_set_hl(0, "TelescopePreviewNormal", {bg = "",                 link = "TelescopePreviewNormal"})
+vim.api.nvim_set_hl(0, "TelescopePromptNormal",  {bg = "",                 link = "TelescopePromptNormal"})
+vim.api.nvim_set_hl(0, "TelescopeResultNormal",  {bg = "",                 link = "TelescopeResultNormal"})
+vim.api.nvim_set_hl(0, "TelescopeBorder",        {bg = "", fg = "#686f9a", link = "TelescopeBorder"})
 
 -- Development
 vim.api.nvim_set_hl(0, "FidgetTitle", {bg = "#090d12"})
