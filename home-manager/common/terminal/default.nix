@@ -50,14 +50,18 @@
       font = {
         size = 11.5;
 
+        normal = {
+            style = "medium";
+        };
+
         offset = {
           x = 0;
-          y = 7;
+          y = 4;
         };
 
         glyph_offset = {
           x = 0;
-          y = 5;
+          y = 2;
         };
       };
 
