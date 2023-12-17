@@ -237,6 +237,8 @@ require("lazy").setup({
   "rafcamlet/nvim-luapad",
   -- -- Terraform
   "hashivim/vim-terraform",
+  -- -- Typst.
+  "kaarmu/typst.vim",
   -- -- YAML.
   "someone-stole-my-name/yaml-companion.nvim",
   -- -- RG.

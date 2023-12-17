@@ -1,11 +1,3 @@
--- Neotest.
---require("neotest").setup({
---    adapters = {
---        require("neotest-python")({
---
---        }),
---})
-
 -- Treesitter setup.
 require("nvim-treesitter.configs").setup({
   ensure_installed = {
@@ -217,6 +209,15 @@ require("formatter").setup({
 
     nix = {
       require("formatter.filetypes.nix").nixfmt,
+    },
+
+    typst = {
+      function()
+        return {
+          exe = "typstfmt",
+          stdin = true,
+        }
+      end,
     },
 
     json = {

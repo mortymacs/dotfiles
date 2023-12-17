@@ -154,8 +154,10 @@
     terraform-docs
     ## Dockerfile.
     nodePackages.dockerfile-language-server-nodejs
-    ## Latex.
-    texlive.combined.scheme-small
+    ## Typst.
+    typst
+    typstfmt
+    typst-lsp
     ## YAML.
     nodePackages.yaml-language-server
     yamllint
