@@ -11,7 +11,7 @@
 
              nvim --headless "+Lazy! sync" +qa
 
-              for img in localstack/localstack bitnami/openldap redis:alpine mysql postgres elasticsearch:8.8.1 kennethreitz/httpbin
+              for img in localstack/localstack redis:alpine mysql postgres kennethreitz/httpbin
               do
                 docker pull $img;
             done
@@ -167,15 +167,6 @@
   dig = "dog";
   vpn = "cd $HOME/.local/bin/cato && ./cclient.sh start --append=tail --route=10.0.0.0/8";
 
-  # LDAP.
-  ldap-server = ''(){
-            docker run -d --rm \
-                -p 1389:1389 -p 1636:1636 \
-                --name openldap \
-                -e LDAP_ADMIN_USERNAME=admin -e LDAP_ADMIN_PASSWORD=secret -e LDAP_USERS=user -e LDAP_PASSWORDS=secret \
-                bitnami/openldap
-        }'';
-
   # C/C++.
   rcpp = "rm -rf CMakeFiles/ Testing/ CMakeCache.txt *.cmake Makefile compile_commands.json *.cbp";
   c-debug = ''(){
@@ -223,13 +214,6 @@
             else
                 mycli "$@"
             fi
-        }'';
-  elasticsearch-server = ''(){
-            docker run -d --rm \
-                -p 9200:9200 -p 9300:9300 \
-                --hostname elasticsearch --name elasticsearch \
-                -e 'discovery.type=single-node' -e 'xpack.security.enabled=false' \
-                elasticsearch:8.5.3
         }'';
   postgresql-server = ''(){
             docker run -d --rm \
