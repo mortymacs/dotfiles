@@ -85,7 +85,7 @@ in {
         style = "bg:${section_2_bg}";
         format = "[ $path ]($style)";
         truncation_length = 3;
-        truncation_symbol = "…/";
+        truncation_symbol = ".../";
       };
       git_branch = {
         symbol = "";
