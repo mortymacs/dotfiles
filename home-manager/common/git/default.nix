@@ -18,7 +18,7 @@
     delta = {
       enable = true;
       options = {
-        features = "decorations woolly-mammoth";
+        features = "decorations mort";
         line-numbers = true;
         side-by-side = true;
         dark = true;
@@ -40,7 +40,7 @@
     ignores = map (v: "${toString v}")
       (builtins.split "\n" (builtins.readFile ./ignore));
     includes = [
-      { path = "./theme.gitconfig"; }
+      { path = "./themes.gitconfig"; }
       {
         condition = "gitdir:~/Workspaces/gitlab.ci.fdmg.org/";
         contents = {
@@ -51,5 +51,9 @@
         };
       }
     ];
+  };
+  xdg.configFile = {
+    # Wallpaper.
+    "git/themes.gitconfig".source = ./themes.gitconfig;
   };
 }
