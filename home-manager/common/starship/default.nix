@@ -20,20 +20,20 @@ let
   # svc
   section_3_bg = "#D81E5B";
   section_3_fg = "#FFE5D4";
-  section_3_1_bg = "#D81E5B";
+  section_3_1_bg = "#FF4F79";
   section_3_1_fg = "#FFE5D4";
 
   # status
-  section_4_bg = "#227c9d";
-  section_4_fg = "#ECECEC";
+  section_4_bg = "#2E294E";
+  section_4_fg = "#FFE5D4";
 
   # cmd_duration
-  section_5_bg = "#E7ADA3";
-  section_5_fg = "#320D6D";
+  section_5_bg = "#973C64";
+  section_5_fg = "#FFE5D4";
 
   # job
-  section_6_bg = "#17c3b2";
-  section_6_fg = "#ECECEC";
+  section_6_bg = "#633359";
+  section_6_fg = "#FFE5D4";
 
   # icons
   left_icon = "";
@@ -57,10 +57,10 @@ in {
         "$git_metrics"
         "[${left_icon}](fg:${section_3_1_bg})"
         "$fill"
-        "$git_status"
         "$status"
         "$cmd_duration"
         "$jobs"
+        "$git_status"
         "$line_break"
         "$character"
       ];
