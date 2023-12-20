@@ -3,6 +3,7 @@ let
   # Colors:
   ## https://coolors.co/351431-2b2d42-eb5e55-e23e58-d81e5b-82264f-e26d5a-e7ada3-ececec-0a9396
   ## https://coolors.co/351431-2b2d42-eb5e55-e23e58-d81e5b-82264f-e26d5a-e7ada3-ececec
+  ## https://coolors.co/ff4f79-973c64-633359-2e294e
   ## https://coolors.co/82264f-6f2043-4f1730-2f0e1d-200a14-10050a
   ## https://coolors.co/361134-ea526f-ffe5d4-03b5aa
 
