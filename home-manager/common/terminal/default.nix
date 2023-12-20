@@ -48,20 +48,16 @@
       selection = { save_to_clipboard = true; };
 
       font = {
-        size = 11.5;
-
-        normal = {
-            style = "medium";
-        };
+        size = 12.5;
 
         offset = {
           x = 0;
-          y = 4;
+          y = 5;
         };
 
         glyph_offset = {
           x = 0;
-          y = 2;
+          y = 3;
         };
       };
 

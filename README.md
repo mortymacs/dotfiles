@@ -26,7 +26,7 @@ My environment config. I tried to keep it minimal and simple as much as I could.
 | Terminal Multiplexer | [Tmux](https://github.com/tmux/tmux) |
 | Editor/IDE | [Neovim](https://github.com/neovim/neovim) |
 | DB | [dbcli tools](https://github.com/dbcli) |
-| Fonts | Display: [Lexend](https://github.com/googlefonts/lexend), [VarizMatn](https://github.com/rastikerdar/vazirmatn), Monospace: [JetbrainsMono](https://www.jetbrains.com/lp/mono/) |
+| Fonts | Display: [Lexend](https://github.com/googlefonts/lexend), [VarizMatn](https://github.com/rastikerdar/vazirmatn), Monospace: [Ellograph CF](https://connary.com/ellograph.html) |
 | File Manager | [Broot](https://github.com/Canop/broot) |
 | Launcher | [Rofi](https://github.com/davatorium/rofi) |
 | Browser | [Firefox](https://www.mozilla.org) |
@@ -37,12 +37,6 @@ My environment config. I tried to keep it minimal and simple as much as I could.
 
 ## Screenshot
 
-With JetbrainsMono font
-<p align="center">
-    <img src="./doc/screenshot-2.png" alt="Screenshot">
-</p>
-
-With Ellograph font
 <p align="center">
     <img src="./doc/screenshot-1.png" alt="Screenshot">
 </p>
