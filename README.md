@@ -38,6 +38,10 @@ My environment config. I tried to keep it minimal and simple as much as I could.
 ## Screenshot
 
 <p align="center">
+    <img src="./doc/screenshot-2.png" alt="Screenshot">
+</p>
+
+<p align="center">
     <img src="./doc/screenshot-1.png" alt="Screenshot">
 </p>
 
