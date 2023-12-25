@@ -3,6 +3,7 @@ vim.loader.enable()
 
 -- Body
 vim.opt.nu = true
+vim.opt.relativenumber = true
 vim.opt.fillchars = "eob: "
 
 -- File, syntax and theme

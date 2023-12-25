@@ -77,7 +77,15 @@ require("nvim_context_vt").setup({
   disable_virtual_lines = true,
   disable_ft = { "markdown", "yaml" },
 })
-require("rainbow-delimiters.setup").setup()
+require("rainbow-delimiters.setup").setup({
+    highlight = {
+        'RainbowDelimiterYellow',
+        'RainbowDelimiterOrange',
+        'RainbowDelimiterBlue',
+        'RainbowDelimiterGreen',
+        'RainbowDelimiterViolet',
+    },
+})
 
 -- Colorizer.
 require("colorizer").setup()
