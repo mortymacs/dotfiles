@@ -1,2 +1,6 @@
--- Auto save.
--- require("auto-save").setup()
+-- Restore cursor to the default one.
+vim.api.nvim_create_autocmd({ "VimLeave" }, {
+  callback = function()
+    vim.opt.guicursor = { "a:ver1" }
+  end,
+})

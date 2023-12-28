@@ -38,8 +38,10 @@
         style = {
           shape = "Beam";
           blinking = "Always";
-          blink_interval = 100;
-          vi_mode_style = "Beam";
+        };
+        vi_mode_style = {
+          shape = "Beam";
+          blinking = "Always";
         };
       };
 
