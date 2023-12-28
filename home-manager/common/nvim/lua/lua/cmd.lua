@@ -8,7 +8,7 @@ require("noice").setup({
       enabled = false,
     },
     progress = {
-      enabled = true,
+      enabled = false,
     },
   },
   messages = {
@@ -52,6 +52,3 @@ require("noice").setup({
     },
   },
 })
-
--- Command palette.
-require("telescope").setup()

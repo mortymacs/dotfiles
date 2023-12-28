@@ -82,10 +82,11 @@ cmp.setup({
     }),
   },
   mapping = cmp.mapping.preset.insert({
-    ["<C-b>"] = cmp.mapping.scroll_docs(-4),
-    ["<C-f>"] = cmp.mapping.scroll_docs(4),
+    ["<C-Up>"] = cmp.mapping.scroll_docs(-4),
+    ["<C-Down>"] = cmp.mapping.scroll_docs(4),
     ["<C-Space>"] = cmp.mapping.complete(),
-    ["<C-e>"] = cmp.mapping.abort(),
+    ["<Right>"] = cmp.mapping.abort(),
+    ["<Left>"] = cmp.mapping.abort(),
     ["<cr>"] = cmp.mapping.confirm({ select = true }),
   }),
   sources = cmp.config.sources({
@@ -332,3 +333,6 @@ require("lsp-lens").setup()
 
 -- Rename.
 require("inc_rename").setup()
+
+-- Status.
+require("lsp-progress").setup()

@@ -227,6 +227,12 @@ require("lazy").setup({
   "preservim/tagbar",
   "terrortylor/nvim-comment",
   "smjonas/inc-rename.nvim",
+  {
+    "linrongbin16/lsp-progress.nvim",
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+    },
+  },
   -- -- Rust.
   "simrat39/rust-tools.nvim",
   {

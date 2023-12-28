@@ -14,7 +14,10 @@ require("trouble").setup({
 })
 
 -- BQF.
-require("bqf").setup()
+require("bqf").setup({
+  auto_enable = true,
+  auto_resize_height = true,
+})
 
 -- QFView.
 require("qfview").setup()

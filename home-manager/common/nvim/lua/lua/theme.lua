@@ -18,9 +18,10 @@ vim.api.nvim_set_hl(0, "StatusLineTerm", {bg = "", fg = ""})
 -- Splashscreen
 vim.api.nvim_set_hl(0, "AlphaHeader", {bg = "", fg = "#17c3b2"})
 
--- Cmd
+-- Noice
 vim.api.nvim_set_hl(0, "NoiceCmdlinePopupBorderCmdline", {bg = "", fg = "#686f9a"})
 vim.api.nvim_set_hl(0, "NoiceCmdlinePopup",              {bg = "", fg = ""})
+vim.api.nvim_set_hl(0, "NoiceCmdlinePopupBorder",        {bg = "", fg = ""})
 
 -- Git
 vim.api.nvim_set_hl(0, "GitSignsAdd",    {bg = "", fg = "#5ccc96"})
@@ -43,8 +44,8 @@ vim.api.nvim_set_hl(0, "TelescopeResultNormal",  {bg = "",                 link 
 vim.api.nvim_set_hl(0, "TelescopeBorder",        {bg = "", fg = "#686f9a", link = "TelescopeBorder"})
 
 -- Development
-vim.api.nvim_set_hl(0, "FidgetTitle", {bg = "#090d12"})
-vim.api.nvim_set_hl(0, "FidgetTask",  {bg = "#090d12"})
+vim.api.nvim_set_hl(0, "FidgetTitle", {bg = ""})
+vim.api.nvim_set_hl(0, "FidgetTask",  {bg = ""})
 
 -- LSP
 -- -- General.
