@@ -111,6 +111,8 @@ vim.api.nvim_set_hl(0, "MiniIndentscopeSymbol", {fg = "#686f9a"})
 -- Bookmark
 vim.g.bookmark_sign = ''
 vim.g.bookmark_highlight_lines = 1
+vim.g.bookmark_show_warning = 0
+vim.g.bookmark_show_toggle_warning = 0
 
 -- Cursor
 vim.api.nvim_set_hl(0, "CursorLine",   {bg = "#001f3f", fg=""})

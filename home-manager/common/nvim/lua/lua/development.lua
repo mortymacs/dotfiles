@@ -78,13 +78,13 @@ require("nvim_context_vt").setup({
   disable_ft = { "markdown", "yaml" },
 })
 require("rainbow-delimiters.setup").setup({
-    highlight = {
-        'RainbowDelimiterYellow',
-        'RainbowDelimiterOrange',
-        'RainbowDelimiterBlue',
-        'RainbowDelimiterGreen',
-        'RainbowDelimiterViolet',
-    },
+  highlight = {
+    "RainbowDelimiterYellow",
+    "RainbowDelimiterOrange",
+    "RainbowDelimiterBlue",
+    "RainbowDelimiterGreen",
+    "RainbowDelimiterViolet",
+  },
 })
 
 -- Colorizer.
@@ -279,4 +279,14 @@ require("range-highlight").setup()
 require("decorated_yank").setup()
 
 -- Scrollbar.
-require("scrollbar").setup()
+require("scrollbar").setup({
+  excluded_filetypes = {
+    "terminal",
+    "toggleterm",
+  },
+  excluded_buftypes = {
+    "Outline",
+    "prompt",
+    "noice",
+  },
+})
