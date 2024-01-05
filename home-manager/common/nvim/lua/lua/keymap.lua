@@ -186,6 +186,6 @@ SetKeyMap("<c-r><c-a>", "<Cmd>Telescope vim_bookmarks all<cr>")
 SetKeyMap("<c-x><c-y>", "<Cmd>Lazy! sync<cr>")
 
 -- Misc
-SetKeyMap("<c-s>", "<esc>:wa<cr>")
+SetKeyMap("<c-s>", "<esc>:silent wa<cr>")
 -- https://stackoverflow.com/a/19877212/2338672
 SetKeyMap("<Esc><Esc>", "<Esc><Cmd>nohlsearch<cr><Esc>", { "n" })
