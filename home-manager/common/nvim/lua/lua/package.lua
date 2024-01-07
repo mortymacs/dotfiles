@@ -234,7 +234,11 @@ require("lazy").setup({
     },
   },
   -- -- Rust.
-  "simrat39/rust-tools.nvim",
+  {
+    "mrcjkb/rustaceanvim",
+    version = "^3",
+    ft = { "rust" },
+  },
   {
     "saecki/crates.nvim",
     event = "BufRead Cargo.toml",
@@ -290,6 +294,9 @@ require("lazy").setup({
     event = "VeryLazy",
     opts = {},
   },
+
+  -- Large files.
+  "LunarVim/bigfile.nvim",
 
   -- Auto save.
   -- "Pocco81/auto-save.nvim",

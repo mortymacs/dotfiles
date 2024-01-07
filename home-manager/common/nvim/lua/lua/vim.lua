@@ -65,17 +65,13 @@ vim.g.loaded_netrwPlugin = 1
 
 -- Convert all messages into notifications.
 -- https://github.com/rcarriga/nvim-notify/issues/5#issuecomment-1237838880
-vim.ui_attach(
-  vim.api.nvim_create_namespace("redirect messages"),
-  { ext_messages = true },
-  function(event, ...)
-    if event == "msg_show" then
-      local level = vim.log.levels.INFO
-      local kind, content = ...
-      if string.find(kind, "err") then
-        level = vim.log.levels.ERROR
-      end
-      vim.notify(content, level, { title = "Message" })
+vim.ui_attach(vim.api.nvim_create_namespace("redirect messages"), { ext_messages = true }, function(event, ...)
+  if event == "msg_show" then
+    local level = vim.log.levels.INFO
+    local kind, content = ...
+    if string.find(kind, "err") then
+      level = vim.log.levels.ERROR
     end
+    vim.notify(content, level, { title = "Message" })
   end
-)
+end)

@@ -283,6 +283,8 @@ require("scrollbar").setup({
   excluded_filetypes = {
     "terminal",
     "toggleterm",
+    "lazy",
+    "alpha",
   },
   excluded_buftypes = {
     "Outline",

@@ -175,9 +175,6 @@ lspconfig.rust_analyzer.setup({
     lsp_signature.on_attach(lsp_signature_setup, bufnr)
   end,
 })
-local rt = require("rust-tools")
-rt.setup()
-rt.inlay_hints.enable()
 require("crates").setup()
 
 -- Go
