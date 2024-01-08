@@ -224,6 +224,18 @@ lspconfig.pyright.setup({
   end,
 })
 
+-- Javascript/Typescript.
+vim.g.markdown_fenced_languages = {
+  "js=javascript",
+  "ts=typescript",
+}
+lspconfig.denols.setup({
+  capabilities = capabilities,
+  on_attach = function(_, bufnr)
+    lsp_signature.on_attach(lsp_signature_setup, bufnr)
+  end,
+})
+
 -- Nix
 lspconfig.nil_ls.setup({
   capabilities = capabilities,

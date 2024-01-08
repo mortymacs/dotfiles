@@ -285,6 +285,7 @@ require("scrollbar").setup({
     "toggleterm",
     "lazy",
     "alpha",
+    "neo-tree",
   },
   excluded_buftypes = {
     "Outline",

@@ -139,6 +139,8 @@
     sumneko-lua-language-server
     stylua
     lua54Packages.luacheck
+    ## Javascript/Typescript.
+    deno
     ## Nix.
     nil
     nixfmt
