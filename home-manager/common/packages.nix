@@ -18,8 +18,14 @@
     htmlq
     jless
     fq
-    glow
     hexyl
+
+    ## Presentation / reading.
+    glow
+    slides
+    graphviz-nox
+    graph-easy
+    viu
 
     # Security.
     xss-lock
@@ -80,13 +86,15 @@
     # Development.
     zeal
     ghq
-    hurl
     httpie
     zola
     tokei
     gnumake
     commitlint
     silicon
+    ## Test.
+    hurl
+    k6
     ## Temporal.
     temporal-cli
 
@@ -130,7 +138,8 @@
     air
     ## Python.
     (hiPrio python312)
-    (python311.withPackages(ps: with ps; [ ipdb ipython isort black pylint pytest requests ]))
+    (python311.withPackages
+      (ps: with ps; [ ipdb ipython isort black pylint pytest requests ]))
     poetry
     nodePackages.pyright
     ruff
