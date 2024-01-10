@@ -25,7 +25,6 @@
     slides
     graphviz-nox
     graph-easy
-    viu
 
     # Security.
     xss-lock
