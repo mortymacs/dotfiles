@@ -88,12 +88,14 @@ require("lazy").setup({
       "Marskey/telescope-sg",
       "nvim-telescope/telescope-live-grep-args.nvim",
     },
+    event = "VeryLazy",
   },
 
   -- Terminal.
   {
     "akinsho/toggleterm.nvim",
     version = "*",
+    event = "VeryLazy",
   },
 
   -- Git.
@@ -124,6 +126,7 @@ require("lazy").setup({
       "nvim-neotest/neotest-python",
       "nvim-neotest/neotest-go",
     },
+    event = "VeryLazy",
   },
   {
     "nvim-treesitter/nvim-treesitter",
@@ -132,33 +135,13 @@ require("lazy").setup({
     end,
   },
   {
-    "nvim-treesitter/nvim-treesitter-context",
+    "nvim-treesitter/nvim-treesitter",
     dependencies = {
-      "nvim-treesitter/nvim-treesitter",
-    },
-  },
-  {
-    "haringsrob/nvim_context_vt",
-    dependencies = {
-      "nvim-treesitter/nvim-treesitter",
-    },
-  },
-  {
-    "ray-x/cmp-treesitter",
-    dependencies = {
-      "nvim-treesitter/nvim-treesitter",
-    },
-  },
-  {
-    "nvim-treesitter/nvim-treesitter-textobjects",
-    dependencies = {
-      "nvim-treesitter/nvim-treesitter",
-    },
-  },
-  {
-    "HiPhish/rainbow-delimiters.nvim",
-    dependencies = {
-      "nvim-treesitter/nvim-treesitter",
+        "nvim-treesitter/nvim-treesitter-context",
+        "haringsrob/nvim_context_vt",
+        "ray-x/cmp-treesitter",
+        "nvim-treesitter/nvim-treesitter-textobjects",
+        "HiPhish/rainbow-delimiters.nvim",
     },
   },
   {
@@ -247,16 +230,28 @@ require("lazy").setup({
     },
   },
   -- -- Go.
-  "fatih/vim-go",
+  {
+    "fatih/vim-go",
+    ft = { "go" },
+  },
   -- -- Lua.
-  "hrsh7th/cmp-nvim-lua",
-  "rafcamlet/nvim-luapad",
+  {
+    "hrsh7th/cmp-nvim-lua",
+    ft = { "lua" },
+  },
+  {
+    "rafcamlet/nvim-luapad",
+    ft = { "lua" },
+  },
   -- -- Terraform
   "hashivim/vim-terraform",
   -- -- Typst.
   "kaarmu/typst.vim",
   -- -- YAML.
-  "someone-stole-my-name/yaml-companion.nvim",
+  {
+    "someone-stole-my-name/yaml-companion.nvim",
+    ft = { "yaml" },
+  },
   -- -- RG.
   "lukas-reineke/cmp-rg",
   -- -- Path.

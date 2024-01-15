@@ -35,7 +35,7 @@ vim.opt.completeopt = "menu,menuone,noselect"
 
 -- Statusline
 vim.opt.statusline = ""
-vim.opt.cmdheight = 0
+vim.opt.cmdheight = 1
 vim.opt.laststatus = 2
 
 -- Line number
@@ -62,16 +62,3 @@ vim.opt.signcolumn = "auto:2"
 vim.opt.colorcolumn = "120"
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
-
--- Convert all messages into notifications.
--- https://github.com/rcarriga/nvim-notify/issues/5#issuecomment-1237838880
-vim.ui_attach(vim.api.nvim_create_namespace("redirect messages"), { ext_messages = true }, function(event, ...)
-  if event == "msg_show" then
-    local level = vim.log.levels.INFO
-    local kind, content = ...
-    if string.find(kind, "err") then
-      level = vim.log.levels.ERROR
-    end
-    vim.notify(content, level, { title = "Message" })
-  end
-end)
