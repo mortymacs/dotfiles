@@ -2,7 +2,7 @@ local builtin = require("statuscol.builtin")
 require("statuscol").setup({
   relculright = true,
   bt_ignore = { "nofile" },
-  ft_ignore = { "terminal", "Outline", "toggleterm" },
+  ft_ignore = { "terminal", "Outline", "toggleterm", "fzf" },
   segments = {
     {
       sign = { name = { ".*" }, namespace = { "gitsigns", "qf" }, maxwidth = 1, colwidth = 1, auto = false },

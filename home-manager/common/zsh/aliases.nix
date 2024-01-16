@@ -113,7 +113,7 @@
                 ghq "$@"
             fi
         }'';
-  diff = "delta";
+  diff = "v -d";
   blame = "git blame \`f\`";
 
   # Project / stack.
