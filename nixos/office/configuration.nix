@@ -7,6 +7,7 @@ in {
     ../common/fwupd.nix
     ../common/font.nix
     ../common/misc.nix
+    ../common/excludes.nix
   ];
 
   # Nix.
