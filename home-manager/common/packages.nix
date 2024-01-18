@@ -97,6 +97,12 @@
     ## Temporal.
     temporal-cli
 
+    ## Library.
+    glib
+    glibc
+    gobject-introspection
+    gtk4
+
     # Programming.
     ## C/C++.
     (hiPrio gcc)
@@ -135,6 +141,10 @@
     reftools
     mage
     air
+    ## Vala.
+    vala
+    vala-language-server
+    vala-lint
     ## Python.
     (hiPrio python312)
     (python311.withPackages

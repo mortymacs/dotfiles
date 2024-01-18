@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   list = with pkgs; [
     # Basic.
+    pkg-config
     nano
     wget
 
