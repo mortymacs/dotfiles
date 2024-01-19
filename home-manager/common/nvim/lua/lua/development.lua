@@ -137,6 +137,16 @@ require("hlslens").setup()
 
 -- Lint.
 local lint = require("lint")
+lint.vala = {
+  cmd = 'io.elementary.vala-lint',
+  stdin = true,
+  append_fname = true,
+  args = {"--json-output"},
+  ignore_exitcode = false,
+  parser = function (output, bufnr)
+      return
+  end
+}
 local golangcilint = require("lint.linters.golangcilint")
 table.insert(golangcilint.args, "--enable-all")
 lint.linters_by_ft = {

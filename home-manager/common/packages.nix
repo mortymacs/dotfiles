@@ -83,6 +83,7 @@
     mycli
 
     # Development.
+    pkg-config
     zeal
     ghq
     httpie
@@ -97,11 +98,6 @@
     ## Temporal.
     temporal-cli
 
-    ## Library.
-    glib
-    glibc
-    gobject-introspection
-    gtk4
 
     # Programming.
     ## C/C++.
