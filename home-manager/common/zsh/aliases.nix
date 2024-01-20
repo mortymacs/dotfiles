@@ -30,6 +30,19 @@
   yless = "jless -N --yaml";
 
   # File and directory.
+  touch = ''(){
+    if [ -e "$1" ]; then
+        echo "path exists"
+        return
+    fi
+
+    dir_path=$(dirname "$1")
+    if [ ! -d "$dir_path" ]; then
+        mkdir -p "$dir_path"
+    fi
+
+    echo > "$1"
+  }'';
   l = "eza --git -lh --octal-permissions --color-scale all --icons always --color-scale-mode fixed";
   f = "fzf --no-mouse --preview 'bat {} --style=numbers --color=always'";
   o = "v \`f || echo '-c :quitall'\`";
@@ -61,6 +74,7 @@
 
   # Editor.
   v = "nvim";
+  e = "emacs";
   hex = "hexyl";
 
   # Tmux.

@@ -60,8 +60,8 @@ SetKeyMap("<c-g><c-i>", "<esc><Cmd>Gitignore<cr>")
 
 -- History
 SetKeyMap("<c-x><c-u>", "<Cmd>Telescope undo<cr>")
-SetKeyMap("u", "<esc><Cmd>silent undo<cr>", {"n"})
-SetKeyMap("U", "<esc><Cmd>silent redo<cr>", {"n"})
+SetKeyMap("u",          "<esc><Cmd>silent undo<cr>", {"n"})
+SetKeyMap("U",          "<esc><Cmd>silent redo<cr>", {"n"})
 
 -- Text
 -- other options: v$ v0o$
