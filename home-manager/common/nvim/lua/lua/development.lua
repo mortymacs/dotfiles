@@ -137,27 +137,19 @@ require("hlslens").setup()
 
 -- Lint.
 local lint = require("lint")
-lint.vala = {
-  cmd = 'io.elementary.vala-lint',
-  stdin = true,
-  append_fname = true,
-  args = {"--json-output"},
-  ignore_exitcode = false,
-  parser = function (output, bufnr)
-      return
-  end
-}
 local golangcilint = require("lint.linters.golangcilint")
 table.insert(golangcilint.args, "--enable-all")
 lint.linters_by_ft = {
   go = { "golangcilint", "revive" },
   python = { "ruff" },
   lua = { "luacheck" },
+  vala = { "vala_lint" },
   sh = { "shellcheck" },
   sql = { "sqlfluff" },
   nix = { "nix" },
   yaml = { "yamllint" },
   json = { "jsonlint" },
+  terraform = { "tfsec" },
 }
 vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost" }, {
   callback = function()
@@ -194,6 +186,19 @@ require("formatter").setup({
   logging = true,
   log_level = vim.log.levels.ERROR,
   filetype = {
+    vala = {
+      function()
+        return {
+          exe = "io.elementary.vala-lint",
+          args = {
+            "--fix",
+            util.escape_path(util.get_current_buffer_file_path()),
+          },
+          stdin = false,
+        }
+      end,
+    },
+
     lua = {
       function()
         -- Ignore files.

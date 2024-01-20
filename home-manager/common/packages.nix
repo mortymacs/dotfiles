@@ -95,9 +95,6 @@
     ## Test.
     hurl
     k6
-    ## Temporal.
-    temporal-cli
-
 
     # Programming.
     ## C/C++.
@@ -167,6 +164,7 @@
     sqlfluff
     ## Terraform.
     terraform-ls
+    tfsec
     terraform-docs
     ## Dockerfile.
     nodePackages.dockerfile-language-server-nodejs

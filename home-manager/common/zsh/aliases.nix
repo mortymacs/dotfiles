@@ -193,6 +193,9 @@
             dlv debug "$1" --init <(echo "break $target_file:$target_line")
         }'';
 
+  # Vala.
+  vala-lint = "io.elementary.vala-lint";
+
   # DB.
   redis-server = ''(){
             docker run -d --rm \
