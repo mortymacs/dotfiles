@@ -1,20 +1,24 @@
-; General.
+;; General.
 (menu-bar-mode -1)
 (setq inhibit-startup-message nil)
 (setq inhibit-splash-screen nil)
 (setq confirm-kill-emacs nil)
 
-; Status.
+;; Backup.
+(setq make-backup-files nil)
+(setq create-lockfiles nil)
+
+;; Status.
 (use-package mood-line
   :config
   (mood-line-mode)
   :custom
   (mood-line-glyph-alist mood-line-glyphs-fira-code))
 
-; Tabs.
+;; Tabs.
 (require 'centaur-tabs)
 (centaur-tabs-mode t)
 
-; Treesitter.
+;; Treesitter.
 (require 'tree-sitter)
 (require 'tree-sitter-langs)

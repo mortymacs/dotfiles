@@ -1,19 +1,25 @@
 ; List of packages.
 (setq packages '(
-		 ; Theme.
-         kanagawa-theme
+		 ;; Theme.
+		 kanagawa-theme
+		 
+		 ;; Status.
+		 mood-line
+		 
+		 ;; Tabs.
+		 centaur-tabs
 
-         ; Status.
-         mood-line
-
-         ; Tabs.
-         centaur-tabs
-
- 		 ; Development.
+		 ;; General.
+		 fzf
+		 
+		 ;; Development.
 		 tree-sitter
 		 tree-sitter-langs
-
-		 ; Languages.
+		 rainbow-delimiters
+		 rainbow-blocks
+		 rainbow-mode
+	 
+		 ;; Languages.
 		 nix-mode
 		 lua-mode
 		 go-mode
@@ -21,23 +27,23 @@
 		 dockerfile-mode
 		 rust-mode
 		 terraform-mode
-
-		 ; LSP.
+	 
+		 ;; LSP.
 		 lsp-mode
 		 lsp-ui
 		 company-box
-
-		 ; Linters.
+		 
+		 ;; Linters.
 		 elisp-format
 		 elisp-lint
 		 golint
 		 flymake
-
-		 ; Misc.
+		 
+		 ;; Misc.
 		 which-key
 		 ))
 
-; Package manager.
+;; Package manager.
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
