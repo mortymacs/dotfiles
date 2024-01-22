@@ -1,3 +1,6 @@
+;; Plugins.
+(which-key-mode)
+
 ;; Window/Pane.
 (global-set-key (kbd "C-x C-h")   'split-window-vertically)
 (global-set-key (kbd "C-x C-v")   'split-window-horizontally)
