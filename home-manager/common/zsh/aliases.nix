@@ -73,7 +73,7 @@
 
   # Editor.
   v = "nvim";
-  e = "emacs";
+  e = "emacsclient -c";
   hex = "hexyl";
 
   # Tmux.
