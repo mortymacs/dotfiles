@@ -2,23 +2,28 @@
 (setq packages '(
 		 ;; Theme.
 		 kanagawa-theme
-		 
+
 		 ;; Status.
 		 mood-line
-		 
+
 		 ;; Tabs.
 		 centaur-tabs
 
 		 ;; General.
 		 fzf
-		 
+         neotree
+
 		 ;; Development.
 		 tree-sitter
 		 tree-sitter-langs
 		 rainbow-delimiters
 		 rainbow-blocks
 		 rainbow-mode
-	 
+		 json-mode
+		 json-reformat
+		 yaml-mode
+		 swagg
+
 		 ;; Languages.
 		 nix-mode
 		 lua-mode
@@ -27,18 +32,23 @@
 		 dockerfile-mode
 		 rust-mode
 		 terraform-mode
-	 
+
 		 ;; LSP.
 		 lsp-mode
 		 lsp-ui
 		 company-box
-		 
+
 		 ;; Linters.
 		 elisp-format
 		 elisp-lint
 		 golint
 		 flymake
-		 
+
+		 ;; Git.
+		 magit
+		 magit-delta
+		 git-gutter
+
 		 ;; Misc.
 		 which-key
 		 ))

@@ -1,7 +1,8 @@
 ;; General.
 (menu-bar-mode -1)
-(setq inhibit-startup-message nil)
-(setq inhibit-splash-screen nil)
+(setq inhibit-startup-screen t)
+(setq initial-scratch-message nil)
+(setq message-log-max nil)
 (setq confirm-kill-emacs nil)
 
 ;; Backup.
@@ -22,3 +23,6 @@
 ;; Treesitter.
 (require 'tree-sitter)
 (require 'tree-sitter-langs)
+
+;; File manager.
+(setq neo-theme (if (display-graphic-p) 'icons 'arrow))
