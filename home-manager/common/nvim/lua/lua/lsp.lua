@@ -284,6 +284,14 @@ lspconfig.typst_lsp.setup({
   end,
 })
 
+-- Dot.
+lspconfig.dotls.setup({
+  capabilities = capabilities,
+  on_attach = function(_, bufnr)
+    lsp_signature.on_attach(lsp_signature_setup, bufnr)
+  end,
+})
+
 -- YAML
 local yamlCfg = require("yaml-companion").setup({
   builtin_matchers = {

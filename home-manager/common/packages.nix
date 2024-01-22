@@ -23,8 +23,6 @@
     ## Presentation / reading.
     glow
     slides
-    graphviz-nox
-    graph-easy
 
     # Security.
     xss-lock
@@ -175,6 +173,10 @@
     typst
     typstfmt
     typst-lsp
+    ## Dot.
+    graphviz-nox
+    dot-language-server
+    graph-easy
     ## YAML.
     nodePackages.yaml-language-server
     yamllint
