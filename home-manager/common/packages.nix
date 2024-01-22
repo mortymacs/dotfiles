@@ -152,6 +152,9 @@
     lua54Packages.luacheck
     ## Javascript/Typescript.
     deno
+    ## Lisp.
+    clisp
+    guile
     ## Nix.
     nil
     nixfmt
