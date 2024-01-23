@@ -289,6 +289,8 @@
   cleanup = ''(){
         trash-empty
         docker system prune
+        home-manager expire-generations "-30 days"
+        nix-collect-garbage --delete-older-than 30d
       }'';
   # https://www.howtogeek.com/414574/how-to-burn-an-iso-file-to-a-usb-drive-in-linux/
   iso-to-usb = ''(){
