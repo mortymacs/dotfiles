@@ -129,6 +129,7 @@
     gofumpt
     golines
     gomodifytags
+    gotags
     reftools
     mage
     air

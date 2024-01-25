@@ -44,6 +44,9 @@
 		 golint
 		 flymake
 
+         ;; Tests.
+         cov
+
 		 ;; Git.
 		 magit
 		 magit-delta

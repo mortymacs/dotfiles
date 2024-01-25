@@ -6,13 +6,14 @@
       unstable.vazir-fonts
       unstable.lexend
       unstable.noto-fonts-emoji
+      unstable.jetbrains-mono
     ];
     fontconfig = {
       enable = true;
       defaultFonts = {
         serif = [ "Lexend" "Vazirmatn" ];
         sansSerif = [ "Lexend" "Vazirmatn" ];
-        monospace = [ "Ellograph CF" "Noto Color Emoji" "Symbols-2049-em Nerd Font" ];
+        monospace = [ "JetBrains Mono" "Noto Color Emoji" "Symbols-2049-em Nerd Font" ];
         emoji = [ "Noto Color Emoji" ];
       };
     };

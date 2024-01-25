@@ -50,7 +50,9 @@
       selection = { save_to_clipboard = true; };
 
       font = {
-        size = 12.5;
+        size = 13;
+
+        normal = { style = "Medium"; };
 
         offset = {
           x = 0;
