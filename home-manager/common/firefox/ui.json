@@ -8,7 +8,8 @@
       "_036a55b4-5e72-4d05-a06c-cba2dfcc134a_-browser-action",
       "_testpilot-containers-browser-action",
       "_d7742d87-e61d-4b78-b8a1-b469842139fa_-browser-action",
-      "ublock0_raymondhill_net-browser-action"
+      "ublock0_raymondhill_net-browser-action",
+      "jid1-zadieub7xozojw_jetpack-browser-action"
     ],
     "nav-bar": [
       "back-button",
@@ -43,7 +44,8 @@
     "ublock0_raymondhill_net-browser-action",
     "_036a55b4-5e72-4d05-a06c-cba2dfcc134a_-browser-action",
     "_d7742d87-e61d-4b78-b8a1-b469842139fa_-browser-action",
-    "_d634138d-c276-4fc8-924b-40a0ea21d284_-browser-action"
+    "_d634138d-c276-4fc8-924b-40a0ea21d284_-browser-action",
+    "jid1-zadieub7xozojw_jetpack-browser-action"
   ],
   "dirtyAreaCache": [
     "nav-bar",

@@ -6,11 +6,11 @@
         name = "main";
         isDefault = true;
         search = {
-          default = "Google";
+          default = "DuckDuckGo";
           force = true;
           engines = {
             "Bookmarks".metaData.alias = "*";
-            "Google".metaData.alias = "@g";
+            "DuckDuckGo".metaData.alias = "@s";
             "Nix Packages" = {
               urls = [{
                 template = "https://search.nixos.org/packages";
@@ -53,11 +53,11 @@
             # Disable the rest.
             "Bing".metaData.hidden = true;
             "eBay".metaData.hidden = true;
-            "DuckDuckGo".metaData.hidden = true;
+            "Google".metaData.hidden = true;
             "Amazon.nl".metaData.hidden = true;
             "Wikipedia (en)".metaData.hidden = true;
           };
-          order = [ "Google" ];
+          order = [ "DuckDuckGo" ];
         };
         settings = {
           "browser.bookmarks.restore_default_bookmarks" = false;
