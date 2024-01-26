@@ -277,10 +277,10 @@
   # Process.
   ps = "procs";
   kp = ''() {
-          ps | \grep -v fzf | fzf -m --no-mouse -q "$1" | cut -d' ' -f2 | xargs -r kill -9
+          ps | \grep -v fzf | fzf --header-lines=2 -m --no-mouse -q "$1" | cut -d' ' -f2 | xargs -r kill -9
       }'';
   ap = ''(){
-          ps -t --thread | \grep -v fzf | fzf -m --no-mouse -q "$1"
+          ps -t --thread | \grep -v fzf | fzf --header-lines=2 -m --no-mouse -q "$1"
       }'';
 
   # Utility.
