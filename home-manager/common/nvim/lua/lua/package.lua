@@ -137,11 +137,11 @@ require("lazy").setup({
   {
     "nvim-treesitter/nvim-treesitter",
     dependencies = {
-        "nvim-treesitter/nvim-treesitter-context",
-        "haringsrob/nvim_context_vt",
-        "ray-x/cmp-treesitter",
-        "nvim-treesitter/nvim-treesitter-textobjects",
-        "HiPhish/rainbow-delimiters.nvim",
+      "nvim-treesitter/nvim-treesitter-context",
+      "haringsrob/nvim_context_vt",
+      "ray-x/cmp-treesitter",
+      "nvim-treesitter/nvim-treesitter-textobjects",
+      "HiPhish/rainbow-delimiters.nvim",
     },
   },
   {

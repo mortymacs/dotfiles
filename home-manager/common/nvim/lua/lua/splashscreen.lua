@@ -5,7 +5,7 @@ local config = {
   layout = {
     {
       type = "padding",
-      val = CalcTopPadding(8),
+      val = CalcTopPadding(3),
     },
     {
       opts = {

@@ -101,7 +101,7 @@ in {
       git_branch = {
         symbol = "";
         style = "bg:${section_3_bg} fg:${section_3_fg}";
-        format = "[ $symbol$branch ]($style)";
+        format = "[ $symbol $branch ]($style)";
       };
       git_commit = {
         tag_symbol = " 󰓼 ";
@@ -127,7 +127,6 @@ in {
         style = "bg:${section_3_1_bg} fg:${section_3_1_fg}";
         format = "[$all_status$ahead_behind]($style)";
       };
-
       status = {
         style = "bold bg:${section_4_bg} fg:${section_4_fg}";
         format = "[ $status ]($style)";
