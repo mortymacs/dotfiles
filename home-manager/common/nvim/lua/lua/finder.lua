@@ -1,5 +1,5 @@
 -- FZF.
-vim.g.fzf_layout = { up = "~40%" }
+vim.g.fzf_layout = { down = "~40%" }
 
 -- Telescope.
 require("telescope").setup({

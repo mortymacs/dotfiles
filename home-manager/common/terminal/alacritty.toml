@@ -1,0 +1,72 @@
+[colors.bright]
+black = "#686868"
+blue = "#59C2FF"
+cyan = "#95E6CB"
+green = "#C2D94C"
+magenta = "#FFEE99"
+red = "#F07178"
+white = "#FFFFFF"
+yellow = "#FFB454"
+
+[colors.cursor]
+cursor = "#344866"
+
+[colors.normal]
+black = "#686868"
+blue = "#53BDFA"
+cyan = "#90E1C6"
+green = "#91B362"
+magenta = "#FAE994"
+red = "#EA6C73"
+white = "#C7C7C7"
+yellow = "#F9AF4F"
+
+[colors.primary]
+background = "#0B1015"
+foreground = "#FCFCFC"
+
+[colors.selection]
+background = "#202C3E"
+text = "#FCFCFC"
+
+[cursor.style]
+blinking = "Always"
+shape = "Beam"
+
+[cursor.vi_mode_style]
+blinking = "Always"
+shape = "Beam"
+
+[env]
+TERM = "xterm-256color"
+WINIT_X11_SCALE_FACTOR = "1"
+
+[font]
+size = 13
+
+[font.glyph_offset]
+x = 0
+y = 3
+
+[font.normal]
+style = "Medium"
+
+[font.offset]
+x = 0
+y = 5
+
+[mouse]
+hide_when_typing = true
+
+[selection]
+save_to_clipboard = true
+
+[window]
+decorations = "none"
+decorations_theme_variant = "Dark"
+dynamic_padding = false
+opacity = 0.99
+
+[window.padding]
+x = 5
+y = 5

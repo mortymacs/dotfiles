@@ -28,16 +28,6 @@
     xss-lock
     xsecurelock
 
-    # Misc.
-    xclip
-    trash-cli
-    gnome.zenity
-    zathura
-    libqalculate
-    cava
-    unzip
-    ascii-image-converter
-
     # File and directory.
     broot
     eza
@@ -94,6 +84,9 @@
     hurl
     k6
 
+    # Security.
+    radare2
+
     # Programming.
     ## C/C++.
     (hiPrio gcc)
@@ -133,10 +126,6 @@
     reftools
     mage
     air
-    ## Vala.
-    vala
-    vala-language-server
-    vala-lint
     ## Python.
     (hiPrio python312)
     (python311.withPackages
@@ -151,9 +140,6 @@
     lua54Packages.luacheck
     ## Javascript/Typescript.
     deno
-    ## Lisp.
-    clisp
-    guile
     ## Nix.
     nil
     nixfmt
@@ -186,5 +172,14 @@
     nodePackages.jsonlint
     ## XML.
     xmlformat
+
+    # Misc.
+    xclip
+    trash-cli
+    gnome.zenity
+    zathura
+    libqalculate
+    unzip
+    ascii-image-converter
   ];
 }
