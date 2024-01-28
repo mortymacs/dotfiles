@@ -101,7 +101,7 @@ in {
       git_branch = {
         symbol = "";
         style = "bg:${section_3_bg} fg:${section_3_fg}";
-        format = "[ $symbol $branch ]($style)";
+        format = "[ $symbol$branch ]($style)";
       };
       git_commit = {
         tag_symbol = " 󰓼 ";
