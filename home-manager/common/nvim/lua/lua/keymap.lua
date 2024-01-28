@@ -135,6 +135,7 @@ SetKeyMap("<c-c><c-a>", "<Cmd>SymbolsOutline<cr>")
 
 -- Terminal
 SetKeyMap("<c-x><Up>", "<Cmd>ToggleTerm<cr>")
+SetKeyMap("<c-up>",    "<c-\\><c-n>", {"t"})
 
 -- LSP
 SetKeyMap("<c-c><c-d>",     vim.lsp.buf.definition)
