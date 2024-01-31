@@ -164,6 +164,8 @@
     graphviz-nox
     dot-language-server
     graph-easy
+    ## HTML & CSS.
+    vscode-langservers-extracted
     ## YAML.
     nodePackages.yaml-language-server
     yamllint
