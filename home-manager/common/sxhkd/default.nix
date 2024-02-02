@@ -12,8 +12,8 @@
       # Clipboard.
       "super + c" = "rofi -modi 'clipboard:greenclip print' -show clipboard";
 
-      # File manager.
-      "super + f" = "rofi -show filebrowser";
+      # Help / Zeal.
+      "super + h" = "zeal \"$(rofi -dmenu -no-fixed-num-lines)\"";
 
       # Emoji.
       "super + e" = "rofi -modi emoji -show emoji";
@@ -27,9 +27,6 @@
 
       # Screenshot.
       "super + shift + s" = "flameshot gui";
-
-      # Zeal.
-      "super + shift + z" = "zeal";
 
       # -- Sxhkd.
       # Reload.
