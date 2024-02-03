@@ -23,6 +23,7 @@
     ## Presentation / reading.
     glow
     slides
+    vhs
 
     # Security.
     xss-lock
