@@ -131,7 +131,7 @@
     (hiPrio python312)
     (python311.withPackages
       (ps: with ps; [ ipdb ipython isort black pylint pytest requests ]))
-    poetry
+    rye
     nodePackages.pyright
     ruff
     ## Lua.
