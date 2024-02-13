@@ -45,3 +45,10 @@ function CalcTopPadding(maxPadding)
   end
   return maxPadding or 10
 end
+
+-- Restart LSP and all related plugins.
+function RestartLsp()
+  vim.cmd([[ LspLensOff ]])
+  vim.cmd([[ LspRestart ]])
+  vim.cmd([[ LspLensOn ]])
+end

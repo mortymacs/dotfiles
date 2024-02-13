@@ -159,11 +159,7 @@ SetKeyMap("<c-c><c-g>",     "<Cmd>Telescope ast_grep<cr>")
 SetKeyMap("<c-c><c-w>",     "<Cmd>Telescope lsp_dynamic_workspace_symbols<cr>")
 SetKeyMap("<c-c><c-p>",     "<Cmd>Lspsaga peek_definition<cr>")
 SetKeyMap("<c-c><c-j>",     function() require('treesj').toggle() end)
-SetKeyMap("<c-x><c-l>",     function()
-    vim.cmd[[ LspLensOff ]];
-    vim.cmd[[ LspRestart ]];
-    vim.cmd[[ LspLensOn ]];
-end)
+SetKeyMap("<c-x><c-l>",     RestartLsp)
 
 -- Debug
 SetKeyMap("<c-j><c-s>", function() require("dapui").toggle() end)

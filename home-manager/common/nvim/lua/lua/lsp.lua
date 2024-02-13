@@ -178,15 +178,18 @@ lspconfig.rust_analyzer.setup({
 require("crates").setup()
 
 -- Go
-vim.g.go_auto_type_info = 0
-vim.g.go_gopls_gofumpt = 1
-vim.g.go_gopls_enabled = 1
-vim.g.go_echo_command_info = 0
-vim.g.go_fmt_command = "golines"
-vim.g.go_fmt_options = {
-  golines = "-m 120 --base-formatter gofumpt",
-}
-vim.g.go_def_mapping_enabled = 0
+require("go").setup({
+    goimport = "goimports-reviser",
+})
+-- vim.g.go_auto_type_info = 0
+-- vim.g.go_gopls_gofumpt = 1
+-- vim.g.go_gopls_enabled = 1
+-- vim.g.go_echo_command_info = 0
+-- vim.g.go_fmt_command = "golines"
+-- vim.g.go_fmt_options = {
+--   golines = "-m 120 --base-formatter gofumpt",
+-- }
+-- vim.g.go_def_mapping_enabled = 0
 lspconfig.gopls.setup({
   capabilities = capabilities,
   settings = {
@@ -196,7 +199,6 @@ lspconfig.gopls.setup({
     },
   },
   on_attach = function(client, bufnr)
-    lsp_inlayhints.on_attach(client, bufnr)
     lsp_signature.on_attach(lsp_signature_setup, bufnr)
   end,
 })

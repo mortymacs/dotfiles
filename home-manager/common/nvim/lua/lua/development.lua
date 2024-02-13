@@ -186,17 +186,21 @@ require("formatter").setup({
   logging = true,
   log_level = vim.log.levels.ERROR,
   filetype = {
-    vala = {
+    go = {
       function()
         return {
-          exe = "io.elementary.vala-lint",
+          exe = "goimports-reviser",
           args = {
-            "--fix",
+            "-output",
+            "stdout",
+            "-rm-unused",
             util.escape_path(util.get_current_buffer_file_path()),
           },
-          stdin = false,
+          stdin = true,
         }
       end,
+      require("formatter.filetypes.go").gofumpt,
+      require("formatter.filetypes.go").golines,
     },
 
     lua = {

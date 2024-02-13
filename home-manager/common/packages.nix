@@ -119,6 +119,7 @@
     golangci-lint
     govulncheck
     unstable.nilaway
+    goimports-reviser
     goconst
     gofumpt
     golines
@@ -130,7 +131,7 @@
     ## Python.
     (hiPrio python312)
     (python311.withPackages
-      (ps: with ps; [ ipdb ipython isort black pylint pytest requests ]))
+      (ps: with ps; [ ipdb ipython isort black pylint pytest requests lxml ]))
     rye
     nodePackages.pyright
     ruff

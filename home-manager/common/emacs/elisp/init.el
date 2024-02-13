@@ -1,7 +1,0 @@
-(load (expand-file-name "package.el" user-emacs-directory))
-(load (expand-file-name "util.el" user-emacs-directory))
-(load (expand-file-name "emacs.el" user-emacs-directory))
-(load (expand-file-name "theme.el" user-emacs-directory))
-(load (expand-file-name "lsp.el" user-emacs-directory))
-(load (expand-file-name "development.el" user-emacs-directory))
-(load (expand-file-name "keymap.el" user-emacs-directory))

@@ -60,7 +60,7 @@ in {
         "$git_commit"
         "$git_state"
         "$git_metrics"
-        "[${left_icon}](fg:${section_3_1_bg})"
+        "[${left_icon}](fg:${section_3_bg})"
         "$fill"
         "$nix_shell"
         "$status"
@@ -114,18 +114,18 @@ in {
         format = "[ $state($progress_current/$progress_total) ]($style)";
       };
       git_status = {
-        ahead = "  ";
-        behind = "  ";
-        diverged = " 󱡷 ";
-        deleted = " 󰆳 ";
-        renamed = "  ";
-        conflicted = "  ";
-        modified = " 󱀱 ";
-        stashed = " 󱀲 ";
-        untracked = " 󱪝 ";
-        staged = " 󰐕 ";
+        ahead = " ";
+        behind = " ";
+        diverged = "󱡷 ";
+        deleted = "󰆳 ";
+        renamed = " ";
+        conflicted = " ";
+        modified = "󱀱 ";
+        stashed = "󱀲 ";
+        untracked = "󱪝 ";
+        staged = "󰐕 ";
         style = "bg:${section_3_1_bg} fg:${section_3_1_fg}";
-        format = "[$all_status$ahead_behind]($style)";
+        format = "[ $all_status$ahead_behind]($style)";
       };
       status = {
         style = "bold bg:${section_4_bg} fg:${section_4_fg}";
