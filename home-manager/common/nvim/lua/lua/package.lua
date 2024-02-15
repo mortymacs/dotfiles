@@ -231,14 +231,8 @@ require("lazy").setup({
   },
   -- -- Go.
   {
-    "ray-x/go.nvim",
-    dependencies = {
-      "ray-x/guihua.lua",
-      "neovim/nvim-lspconfig",
-      "nvim-treesitter/nvim-treesitter",
-    },
-    event = { "CmdlineEnter" },
-    ft = { "go", "gomod" },
+    "fatih/vim-go",
+    ft = { "go" },
   },
   -- -- Lua.
   {
