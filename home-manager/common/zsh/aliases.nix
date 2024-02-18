@@ -110,8 +110,13 @@
         }'';
   http-test-server = "docker run --rm -d -p 9090:80 --name http-test-server kennethreitz/httpbin";
   code-capture = ''(){
-            silicon "$1" -o $(basename "$\{1%%.*\}.png") --no-window-controls --font "CodeNewRoman Nerd Font Mono" --background '#fff0' --theme Coldark-Dark
-        }'';
+    silicon "$1" -o "$2" \
+        --font "monospace" \
+        --line-pad 10 \
+        --background '#fff0' \
+        --theme "DarkNeon" \
+        --no-window-controls
+  }'';
   code-info = "tokei";
 
   # Git.
