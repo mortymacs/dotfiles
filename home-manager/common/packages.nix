@@ -23,7 +23,6 @@
     ## Presentation / reading.
     glow
     slides
-    vhs
 
     # Security.
     xss-lock
@@ -129,7 +128,6 @@
     mage
     air
     ## Python.
-    (hiPrio python312)
     (python311.withPackages
       (ps: with ps; [ ipdb ipython isort black pylint pytest requests lxml ]))
     rye
