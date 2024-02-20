@@ -34,7 +34,8 @@
         show = "delta";
         blame = "delta";
       };
-      help = { autocorrect = 1; };
+      help = { autocorrect = 10; };
+      diff.algorithm = "histogram";
     };
 
     ignores = map (v: "${toString v}")
