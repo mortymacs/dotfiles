@@ -90,6 +90,8 @@ vim.api.nvim_set_hl(0, "GlanceListNormal",         {bg = "#000000"})
 -- -- Saga.
 vim.api.nvim_set_hl(0, "SagaNormal",               {bg = "", link = "SagaNormal"})
 vim.api.nvim_set_hl(0, "SagaBorder",               {bg = "", link = "SagaBorder"})
+-- -- Inlayhint
+vim.api.nvim_set_hl(0, "LspInlayHint",             {bg = "", fg = "#735d78"})
 
 -- Trouble
 vim.api.nvim_set_hl(0, "TroubleFoldIcon", {bg = ""})

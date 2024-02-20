@@ -131,7 +131,7 @@ SetKeyMap("<Tab>",     ">gv",   { "v" })
 SetKeyMap("<S-Tab>",   "<gv",   { "v" })
 
 -- Tagbar
-SetKeyMap("<c-c><c-a>", "<Cmd>SymbolsOutline<cr>")
+SetKeyMap("<c-c><c-a>", "<Cmd>Lspsaga outline<cr>")
 
 -- Terminal
 SetKeyMap("<c-x><Up>", "<Cmd>ToggleTerm<cr>")
