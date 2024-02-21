@@ -44,9 +44,6 @@ WINIT_X11_SCALE_FACTOR = "1"
 [font]
 size = 13
 
-[font.normal]
-style = "medium"
-
 [font.glyph_offset]
 x = 0
 y = 2

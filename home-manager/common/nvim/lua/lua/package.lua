@@ -180,6 +180,12 @@ require("lazy").setup({
     },
   },
   "petertriho/nvim-scrollbar",
+  {
+    "folke/zen-mode.nvim",
+    dependencies = {
+      "folke/twilight.nvim",
+    },
+  },
 
   -- LSP.
   "neovim/nvim-lspconfig",

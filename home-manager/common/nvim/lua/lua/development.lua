@@ -313,3 +313,24 @@ require("scrollbar").setup({
     "noice",
   },
 })
+
+-- Zen mode.
+require("twilight").setup()
+require("zen-mode").setup({
+  window = {
+    width = 1,
+    options = {
+      signcolumn = "no",
+      number = false,
+      foldcolumn = "0",
+      cursorline = false,
+      cursorcolumn = false,
+    },
+  },
+  plugins = {
+    alacritty = {
+      enabled = true,
+      font = "25",
+    },
+  },
+})
