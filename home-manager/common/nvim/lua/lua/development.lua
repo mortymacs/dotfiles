@@ -311,6 +311,7 @@ require("scrollbar").setup({
     "Outline",
     "prompt",
     "noice",
+    "sagaoutline",
   },
 })
 
