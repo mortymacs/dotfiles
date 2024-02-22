@@ -33,7 +33,6 @@ My environment config. I tried to keep it minimal and simple as much as I could.
 | GTK Theme | [Yaru](https://github.com/ubuntu/yaru) |
 | Icon | [Yaru](https://github.com/ubuntu/yaru) |
 | Wallpaper | [Unsplash](https://unsplash.com/photos/a-blurry-shot-of-a-city-street-lit-up-by-buildings-and-cars-at-night-BYu8ITUWMfc) |
-| Doc | [Zeal](https://github.com/zealdocs/zeal) |
 
 ## Screenshot
 

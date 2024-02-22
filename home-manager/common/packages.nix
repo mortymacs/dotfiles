@@ -72,7 +72,6 @@
 
     # Development.
     pkg-config
-    zeal
     ghq
     httpie
     zola

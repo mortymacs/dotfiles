@@ -12,9 +12,6 @@
       # Clipboard.
       "super + c" = "rofi -modi 'clipboard:greenclip print' -show clipboard";
 
-      # Help / Zeal.
-      "super + h" = "zeal \"$(rofi -dmenu -no-fixed-num-lines)\"";
-
       # Emoji.
       "super + e" = "rofi -modi emoji -show emoji";
 
