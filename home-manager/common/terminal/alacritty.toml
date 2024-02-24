@@ -61,9 +61,9 @@ save_to_clipboard = true
 [window]
 decorations = "none"
 decorations_theme_variant = "Dark"
-dynamic_padding = false
+dynamic_padding = true
 opacity = 0.99
 
 [window.padding]
 x = 4
-y = 4
+y = 2

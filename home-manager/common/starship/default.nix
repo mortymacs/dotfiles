@@ -21,11 +21,12 @@ let
 
   # fill
   fill_bg = "#0E131F";
+  fill_fg = "#212529";
 
   # svc
   section_3_bg = "#D81E5B";
   section_3_fg = "#FFE5D4";
-  section_3_1_bg = "#FF4F79";
+  section_3_1_bg = "#D81E5B";
   section_3_1_fg = "#FFE5D4";
 
   # status
@@ -43,7 +44,7 @@ let
   # icons
   left_icon = "";
   right_icon = "";
-  fill_icon = " ";
+  fill_icon = "-";
   prompt_icon = "󰘍 ";
 in {
   programs.starship = {
@@ -79,7 +80,7 @@ in {
       };
       fill = {
         symbol = "${fill_icon}";
-        style = "bold bg:${fill_bg}";
+        style = "bold bg:${fill_bg} fg:${fill_fg}";
       };
       nix_shell = {
         style = "bg:${nix_shell_bg} fg:${nix_shell_fg}";
