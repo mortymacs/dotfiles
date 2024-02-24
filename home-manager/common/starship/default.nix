@@ -21,7 +21,7 @@ let
 
   # fill
   fill_bg = "#0E131F";
-  fill_fg = "#212529";
+  fill_fg = "#151F28";
 
   # svc
   section_3_bg = "#D81E5B";
@@ -80,7 +80,7 @@ in {
       };
       fill = {
         symbol = "${fill_icon}";
-        style = "bold bg:${fill_bg} fg:${fill_fg}";
+        style = "bg:${fill_bg} fg:${fill_fg}";
       };
       nix_shell = {
         style = "bg:${nix_shell_bg} fg:${nix_shell_fg}";
