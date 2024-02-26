@@ -12,9 +12,6 @@ require('gitsigns').setup({
     },
 })
 
--- Blame
-vim.g.gitblame_display_virtual_text = 0
-
 -- Diffview
 require("diffview").setup()
 

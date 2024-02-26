@@ -44,7 +44,7 @@ let
   # icons
   left_icon = "";
   right_icon = "";
-  fill_icon = "-";
+  fill_icon = " ";
   prompt_icon = "󰘍 ";
 in {
   programs.starship = {

@@ -189,14 +189,7 @@ vim.g.go_fmt_options = {
 vim.g.go_def_mapping_enabled = 0
 lspconfig.gopls.setup({
   capabilities = capabilities,
-  settings = {
-    gopls = {
-      hints = lsp_inlayhints_setup,
-      gofumpt = true,
-    },
-  },
-  on_attach = function(client, bufnr)
-    lsp_inlayhints.on_attach(client, bufnr)
+  on_attach = function(_, bufnr)
     lsp_signature.on_attach(lsp_signature_setup, bufnr)
   end,
 })

@@ -100,7 +100,6 @@ require("lazy").setup({
 
   -- Git.
   "ruanyl/vim-gh-line",
-  "f-person/git-blame.nvim",
   "aaronhallaert/advanced-git-search.nvim",
   "lewis6991/gitsigns.nvim",
   "sindrets/diffview.nvim",

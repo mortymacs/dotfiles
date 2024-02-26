@@ -44,7 +44,14 @@
   }'';
   l = "eza --git -lh --octal-permissions --color-scale all --icons always --color-scale-mode fixed";
   f = "fzf --no-mouse --preview 'bat {} --style=numbers --color=always'";
-  o = "v \`f || echo '-c :quitall'\`";
+  o = ''(){
+    if [[ "$1" == "g" ]]; then
+        fpath=`git status -s | fzf | awk '{ print $2 }'`
+    else
+        fpath=`f`
+    fi
+    [[ "$fpath" != "" ]] && v "$fpath"
+  }'';
   li = "walk --icons";
   gg = "batgrep -i";
   gf = ''(){
@@ -210,9 +217,6 @@
             target_line=$(\cat -n "$target_file" | fzf --no-mouse | awk '{print $1}')
             dlv debug "$1" --init <(echo "break $target_file:$target_line")
         }'';
-
-  # Vala.
-  vala-lint = "io.elementary.vala-lint";
 
   # DB.
   redis-server = ''(){
