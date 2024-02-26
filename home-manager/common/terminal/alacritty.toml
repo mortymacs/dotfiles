@@ -42,11 +42,11 @@ TERM = "xterm-256color"
 WINIT_X11_SCALE_FACTOR = "1"
 
 [font]
-size = 13
+size = 14
 
 [font.glyph_offset]
 x = 0
-y = 2
+y = 3
 
 [font.offset]
 x = 0
