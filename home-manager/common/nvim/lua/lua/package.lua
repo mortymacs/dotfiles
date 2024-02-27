@@ -53,7 +53,6 @@ require("lazy").setup({
     "AckslD/muren.nvim",
     config = true,
   },
-  "LinArcX/telescope-command-palette.nvim",
 
   -- Splash screen.
   {
@@ -72,19 +71,20 @@ require("lazy").setup({
       "MunifTanjim/nui.nvim",
     },
   },
-  "junegunn/fzf",
-  "junegunn/fzf.vim",
+  {
+    "junegunn/fzf",
+    "junegunn/fzf.vim",
+    event = "VeryLazy",
+  },
   {
     "nvim-telescope/telescope.nvim",
     branch = "0.1.x",
     dependencies = {
       "nvim-lua/plenary.nvim",
-      "nvim-telescope/telescope-ghq.nvim",
       "nvim-telescope/telescope-file-browser.nvim",
       "tom-anders/telescope-vim-bookmarks.nvim",
       "MattesGroeger/vim-bookmarks",
       "debugloop/telescope-undo.nvim",
-      "FeiyouG/command_center.nvim",
       "Marskey/telescope-sg",
       "nvim-telescope/telescope-live-grep-args.nvim",
     },
@@ -108,11 +108,7 @@ require("lazy").setup({
     dependencies = {
       "nvim-telescope/telescope.nvim",
     },
-  },
-  {
-    "NeogitOrg/neogit",
-    dependencies = "nvim-lua/plenary.nvim",
-    config = true,
+    event = "VeryLazy",
   },
 
   -- Development.
@@ -129,25 +125,28 @@ require("lazy").setup({
   },
   {
     "nvim-treesitter/nvim-treesitter",
-    build = function()
-      vim.cmd(":TSUpdate")
-    end,
-  },
-  {
-    "nvim-treesitter/nvim-treesitter",
     dependencies = {
       "nvim-treesitter/nvim-treesitter-context",
       "haringsrob/nvim_context_vt",
       "ray-x/cmp-treesitter",
       "nvim-treesitter/nvim-treesitter-textobjects",
       "HiPhish/rainbow-delimiters.nvim",
+      "JoosepAlviste/nvim-ts-context-commentstring",
     },
+    build = function()
+      vim.cmd(":TSUpdate")
+    end,
+  },
+  {
+    "numToStr/Comment.nvim",
+    event = "VeryLazy",
   },
   {
     "folke/todo-comments.nvim",
     dependencies = {
       "nvim-lua/plenary.nvim",
     },
+    event = "VeryLazy",
   },
   "mhartington/formatter.nvim",
   "cappyzawa/trim.nvim",
@@ -184,25 +183,18 @@ require("lazy").setup({
     dependencies = {
       "folke/twilight.nvim",
     },
+    event = "VeryLazy",
   },
 
   -- LSP.
   "neovim/nvim-lspconfig",
   "folke/neodev.nvim",
   "onsails/lspkind.nvim",
-  "simrat39/symbols-outline.nvim",
   "hrsh7th/nvim-cmp",
   "hrsh7th/cmp-cmdline",
   "hrsh7th/cmp-nvim-lsp",
   "ray-x/lsp_signature.nvim",
   "dnlhc/glance.nvim",
-  {
-    "glepnir/lspsaga.nvim",
-    branch = "main",
-    dependencies = {
-      "nvim-tree/nvim-web-devicons",
-    },
-  },
   {
     "gfanto/fzf-lsp.nvim",
     dependencies = {
@@ -210,10 +202,7 @@ require("lazy").setup({
     },
   },
   "VidocqH/lsp-lens.nvim",
-  "lvimuser/lsp-inlayhints.nvim",
   "hrsh7th/vim-vsnip",
-  "preservim/tagbar",
-  "terrortylor/nvim-comment",
   "smjonas/inc-rename.nvim",
   {
     "linrongbin16/lsp-progress.nvim",
@@ -249,7 +238,10 @@ require("lazy").setup({
     ft = { "lua" },
   },
   -- -- Terraform
-  "hashivim/vim-terraform",
+  {
+    "hashivim/vim-terraform",
+    ft = { "terraform" },
+  },
   -- -- Typst.
   "kaarmu/typst.vim",
   -- -- YAML.
@@ -257,8 +249,6 @@ require("lazy").setup({
     "someone-stole-my-name/yaml-companion.nvim",
     ft = { "yaml" },
   },
-  -- -- RG.
-  "lukas-reineke/cmp-rg",
   -- -- Path.
   "hrsh7th/cmp-path",
 
@@ -278,6 +268,7 @@ require("lazy").setup({
     dependencies = {
       "mfussenegger/nvim-dap",
     },
+    event = "VeryLazy",
   },
   {
     "theHamsta/nvim-dap-virtual-text",
@@ -285,6 +276,7 @@ require("lazy").setup({
       "mfussenegger/nvim-dap",
       "nvim-treesitter/nvim-treesitter",
     },
+    event = "VeryLazy",
   },
 
   -- Keybinding.
@@ -297,7 +289,4 @@ require("lazy").setup({
 
   -- Large files.
   "LunarVim/bigfile.nvim",
-
-  -- Auto save.
-  -- "Pocco81/auto-save.nvim",
 })

@@ -14,6 +14,3 @@ require('gitsigns').setup({
 
 -- Diffview
 require("diffview").setup()
-
--- Neogit
-require("neogit").setup()

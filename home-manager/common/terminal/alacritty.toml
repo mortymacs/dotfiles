@@ -62,7 +62,7 @@ save_to_clipboard = true
 decorations = "none"
 decorations_theme_variant = "Dark"
 dynamic_padding = true
-opacity = 0.99
+opacity = 1.0
 
 [window.padding]
 x = 4

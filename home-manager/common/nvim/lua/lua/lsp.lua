@@ -7,8 +7,7 @@ require("neodev").setup({
 
 -- Tags.
 vim.g.fzf_tags_command = "fd | ctags -R --links=no -L-"
-vim.g.fzf_lsp_layout = { down = "30%" }
-vim.g.fzf_lsp_pretty = false
+vim.g.fzf_lsp_pretty = true
 require("fzf_lsp").setup()
 
 -- Kind.
@@ -21,40 +20,6 @@ require("lspkind").init({
   },
 })
 local lspkind = require("lspkind")
-
--- Symbols.
-require("symbols-outline").setup({
-  symbols = {
-    File = { icon = "󰈙", hl = "@text.uri" },
-    Module = { icon = "", hl = "@namespace" },
-    Namespace = { icon = "", hl = "@namespace" },
-    Package = { icon = "󰏗", hl = "@namespace" },
-    Class = { icon = "󰠱", hl = "@type" },
-    Method = { icon = "ƒ", hl = "@method" },
-    Property = { icon = "󱈤", hl = "@method" },
-    Field = { icon = "󰜢", hl = "@field" },
-    Constructor = { icon = "󰩀", hl = "@constructor" },
-    Enum = { icon = "", hl = "@type" },
-    Interface = { icon = "", hl = "@type" },
-    Function = { icon = "󰊕", hl = "@function" },
-    Variable = { icon = "󰀫", hl = "@constant" },
-    Constant = { icon = "󰏿", hl = "@constant" },
-    String = { icon = "󰅳", hl = "@string" },
-    Number = { icon = "󰎠", hl = "@number" },
-    Boolean = { icon = "", hl = "@boolean" },
-    Array = { icon = "󰅨", hl = "@constant" },
-    Object = { icon = "", hl = "@type" },
-    Key = { icon = "", hl = "@type" },
-    Null = { icon = "󰟢", hl = "@type" },
-    EnumMember = { icon = "", hl = "@field" },
-    Struct = { icon = "󰙅", hl = "@type" },
-    Event = { icon = "", hl = "@type" },
-    Operator = { icon = "", hl = "@operator" },
-    TypeParameter = { icon = "", hl = "@parameter" },
-    Component = { icon = "󰡀", hl = "@function" },
-    Fragment = { icon = "󰊕", hl = "@constant" },
-  },
-})
 
 -- CMP.
 local cmp = require("cmp")
@@ -114,14 +79,6 @@ cmp.setup.filetype("gitcommit", {
   }),
 })
 
--- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
-cmp.setup.cmdline({ "/", "?" }, {
-  mapping = cmp.mapping.preset.cmdline(),
-  sources = {
-    { name = "buffer" },
-  },
-})
-
 -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline(":", {
   mapping = cmp.mapping.preset.cmdline(),
@@ -135,38 +92,16 @@ cmp.setup.cmdline(":", {
 -- Set up lspconfig.
 local lspconfig = require("lspconfig")
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
-require("lsp-inlayhints").setup()
-local lsp_inlayhints = require("lsp-inlayhints")
 local lsp_signature = require("lsp_signature")
 local lsp_signature_setup = {
   hint_enable = false,
   handler_opts = {
-    border = "none",
+    border = "single",
   },
   padding = " ",
+  transparency = 1,
+  close_timeout = 100,
 }
-local lsp_inlayhints_setup = {
-  assignVariableTypes = true,
-  compositeLiteralFields = true,
-  constantValues = true,
-  functionTypeParameters = true,
-  parameterNames = true,
-  rangeVariableTypes = true,
-}
-
--- C/C++
-lspconfig.clangd.setup({
-  capabilities = capabilities,
-  on_attach = function(_, bufnr)
-    lsp_signature.on_attach(lsp_signature_setup, bufnr)
-  end,
-  init_options = {
-    compilationDatabaseDirectory = "build",
-    index = {
-      threads = 0,
-    },
-  },
-})
 
 -- Rust
 lspconfig.rust_analyzer.setup({
@@ -188,14 +123,6 @@ vim.g.go_fmt_options = {
 }
 vim.g.go_def_mapping_enabled = 0
 lspconfig.gopls.setup({
-  capabilities = capabilities,
-  on_attach = function(_, bufnr)
-    lsp_signature.on_attach(lsp_signature_setup, bufnr)
-  end,
-})
-
--- Vala.
-lspconfig.vala_ls.setup({
   capabilities = capabilities,
   on_attach = function(_, bufnr)
     lsp_signature.on_attach(lsp_signature_setup, bufnr)
@@ -247,14 +174,6 @@ lspconfig.nil_ls.setup({
 
 -- Shell
 lspconfig.bashls.setup({
-  capabilities = capabilities,
-  on_attach = function(_, bufnr)
-    lsp_signature.on_attach(lsp_signature_setup, bufnr)
-  end,
-})
-
--- Cmake
-lspconfig.cmake.setup({
   capabilities = capabilities,
   on_attach = function(_, bufnr)
     lsp_signature.on_attach(lsp_signature_setup, bufnr)
@@ -315,19 +234,6 @@ local yamlCfg = require("yaml-companion").setup({
 })
 lspconfig.yamlls.setup(yamlCfg)
 
--- RG
-cmp.setup.cmdline({ '"', "'" }, {
-  sources = {
-    { name = "rg", keyword_length = 2 },
-  },
-})
-
--- Comment
-require("nvim_comment").setup({
-  comment_empty = false,
-  create_mappings = false,
-})
-
 -- Glance
 require("glance").setup({
   preview_win_opts = {
@@ -337,34 +243,6 @@ require("glance").setup({
     fold_closed = ">",
     fold_open = "v",
     folded = true,
-  },
-})
-
--- Saga
-require("lspsaga").setup({
-  ui = {
-    border = "single",
-  },
-  symbol_in_winbar = {
-    separator = " ",
-  },
-  lightbulb = {
-    enable = false,
-  },
-  finder = {
-    keys = {
-      expand_or_jump = "<enter>",
-    },
-  },
-  outline = {
-    keys = {
-      expand_or_jump = "<enter>",
-    },
-  },
-  implement = {
-    enable = true,
-    sign = true,
-    virtual_text = false,
   },
 })
 

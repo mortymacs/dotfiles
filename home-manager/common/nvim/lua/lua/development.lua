@@ -3,13 +3,13 @@ require("nvim-treesitter.configs").setup({
   ensure_installed = {
     "c",
     "cpp",
+    "rust",
     "go",
     "python",
     "lua",
     "bash",
     "make",
     "sql",
-    "latex",
     "markdown",
     "markdown_inline",
     "dockerfile",
@@ -31,7 +31,6 @@ require("nvim-treesitter.configs").setup({
     select = {
       enable = true,
       lookahead = true,
-
       keymaps = {
         ["af"] = "@function.outer",
         ["if"] = "@function.inner",
@@ -84,6 +83,18 @@ require("rainbow-delimiters.setup").setup({
     "RainbowDelimiterBlue",
     "RainbowDelimiterGreen",
     "RainbowDelimiterViolet",
+  },
+})
+vim.g.skip_ts_context_commentstring_module = true
+
+-- Comment.
+require("Comment").setup({
+  pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
+  toggler = {
+    line = "<c-_>",
+  },
+  opleader = {
+    line = "<c-_>",
   },
 })
 
@@ -306,12 +317,11 @@ require("scrollbar").setup({
     "alpha",
     "neo-tree",
     "fzf",
+    "TelescopePrompt",
   },
   excluded_buftypes = {
-    "Outline",
     "prompt",
     "noice",
-    "sagaoutline",
   },
 })
 
