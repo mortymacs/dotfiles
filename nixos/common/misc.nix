@@ -14,13 +14,13 @@
       domain = "*";
       type = "soft";
       item = "nofile";
-      value = "4000";
+      value = "10000";
     }
     {
       domain = "*";
       type = "hard";
       item = "nofile";
-      value = "4000";
+      value = "10000";
     }
   ];
 }
