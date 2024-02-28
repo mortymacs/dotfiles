@@ -142,7 +142,7 @@ SetKeyMap("<c-c><c-e>",     function() return ":IncRename " .. vim.fn.expand("<c
 SetKeyMap("<c-c><c-x>",     vim.lsp.buf.code_action)
 SetKeyMap("<c-c><c-l>",     "<esc><Cmd>Format<cr>")
 SetKeyMap("<c-c><c-q>",     vim.lsp.buf.hover)
-SetKeyMap("<c-c><c-n>",     "<Cmd>Diagnostics<cr>")
+SetKeyMap("<c-c><c-n>",     vim.diagnostic.open_float)
 SetKeyMap("<c-c><c-m>",     "<Cmd>DiagnosticsAll<cr>")
 SetKeyMap("<c-c><c-s>",     "<Cmd>DocumentSymbols<cr>")
 SetKeyMap("<c-c><c-f>",     "<Cmd>WorkspaceSymbols .<cr>")
