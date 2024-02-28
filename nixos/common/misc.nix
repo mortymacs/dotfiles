@@ -8,9 +8,19 @@
     ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="intel_backlight", MODE="0666", RUN+="${pkgs.coreutils}/bin/chmod a+w /sys/class/backlight/%k/brightness"
   '';
 
-  # Emacs server.
-  services.emacs = {
-    enable = true;
-    package = pkgs.unstable.emacs-nox;
-  };
+  # Pam.
+  security.pam.loginLimits = [
+    {
+      domain = "*";
+      type = "soft";
+      item = "nofile";
+      value = "4000";
+    }
+    {
+      domain = "*";
+      type = "hard";
+      item = "nofile";
+      value = "4000";
+    }
+  ];
 }

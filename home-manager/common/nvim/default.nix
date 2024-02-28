@@ -4,6 +4,7 @@
   	enable = true;
     vimAlias = true;
     viAlias = true;
+    defaultEditor = true;
     package = pkgs.unstable.neovim-unwrapped;
   };
 
