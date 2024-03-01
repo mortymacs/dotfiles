@@ -1,10 +1,5 @@
 require("util")
 
--- Lua
-require("neodev").setup({
-  library = { plugins = { "nvim-dap-ui" }, types = true },
-})
-
 -- Tags.
 vim.g.fzf_tags_command = "fd | ctags -R --links=no -L-"
 vim.g.fzf_lsp_pretty = true
@@ -95,6 +90,7 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities()
 local lsp_signature = require("lsp_signature")
 local lsp_signature_setup = {
   hint_enable = false,
+  floating_window = false,
   handler_opts = {
     border = "single",
   },
@@ -130,6 +126,9 @@ lspconfig.gopls.setup({
 })
 
 -- Lua
+require("neodev").setup({
+  library = { plugins = { "nvim-dap-ui" }, types = true },
+})
 lspconfig.lua_ls.setup({
   capabilities = capabilities,
   on_attach = function(_, bufnr)

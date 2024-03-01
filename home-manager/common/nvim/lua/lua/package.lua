@@ -188,12 +188,15 @@ require("lazy").setup({
 
   -- LSP.
   "neovim/nvim-lspconfig",
-  "folke/neodev.nvim",
   "onsails/lspkind.nvim",
   "hrsh7th/nvim-cmp",
   "hrsh7th/cmp-cmdline",
   "hrsh7th/cmp-nvim-lsp",
-  "ray-x/lsp_signature.nvim",
+  {
+    "ray-x/lsp_signature.nvim",
+    opts = {},
+    event = "VeryLazy",
+  },
   "dnlhc/glance.nvim",
   {
     "gfanto/fzf-lsp.nvim",
@@ -229,6 +232,10 @@ require("lazy").setup({
     ft = { "go" },
   },
   -- -- Lua.
+  {
+    "folke/neodev.nvim",
+    ft = { "lua " },
+  },
   {
     "hrsh7th/cmp-nvim-lua",
     ft = { "lua" },
