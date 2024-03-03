@@ -137,7 +137,11 @@ vim.api.nvim_create_autocmd(
 require("todo-comments").setup({ signs = false })
 
 -- Whichkey.
-require("which-key").setup()
+require("which-key").setup({
+  window = {
+    border = "single",
+  },
+})
 
 -- Spaces.
 require("numb").setup()

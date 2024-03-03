@@ -246,7 +246,12 @@ require("glance").setup({
 })
 
 -- Lens.
-require("lsp-lens").setup()
+require("lsp-lens").setup({
+  sections = {
+    definition = true,
+  },
+  indent_by_lsp = false,
+})
 
 -- Rename.
 require("inc_rename").setup()

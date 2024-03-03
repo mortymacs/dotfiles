@@ -42,7 +42,7 @@ in {
         separator-foreground = "${disabled}";
         font-0 = "Lexend:size=10;2";
         font-1 = "Noto Color Emoji:scale=10;2";
-        modules-left = "xworkspaces";
+        modules-left = "bspwm";
         modules-right =
           "backlight speaker tor_location system_location ir_date date ipc-dunst battery menu-apps";
         cursor-click = "pointer";
@@ -55,8 +55,11 @@ in {
         border-bottom-color = "${border-bottom}";
       };
 
-      "module/xworkspaces" = {
-        type = "internal/xworkspaces";
+      "module/bspwm" = {
+        type = "internal/bspwm";
+        pin-workspaces = true;
+        enable-scroll = false;
+        reverse-scroll = false;
         label-active = "%name%";
         label-active-background = "${active-workspace-background}";
         label-active-padding = 2;

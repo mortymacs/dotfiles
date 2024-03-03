@@ -17,10 +17,12 @@ in {
         presel_feedback_color = "${presel_feedback_color}";
         borderless_monocle = true;
         gapless_monocle = true;
-        focus_follows_pointer = false;
+        focus_follows_pointer = true;
       };
       extraConfig = ''
         bspc monitor -d 0 1 2 3 4 5
+        bspc monitor DP-1 -d 0 1 2 3 4 5
+        bspc monitor HDMI-1 -d 0 1 2 3 4 5
       '';
 
       startupPrograms = [
