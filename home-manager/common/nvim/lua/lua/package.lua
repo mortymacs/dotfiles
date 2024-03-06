@@ -262,12 +262,6 @@ require("lazy").setup({
   -- Quickfix.
   "kevinhwang91/nvim-bqf",
   "ashfinal/qfview.nvim",
-  {
-    "folke/trouble.nvim",
-    dependencies = {
-      "nvim-tree/nvim-web-devicons",
-    },
-  },
 
   -- Debug.
   {

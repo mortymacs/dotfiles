@@ -5,7 +5,7 @@
 -- @param is_expr bool: is it expression or not. Defaults to false.
 function SetKeyMap(shortcut, command, modes, is_expr)
   modes = modes or { "n", "i", "v", "x", "o", "c", "t", "l" }
-  for k, v in pairs(modes) do
+  for _, v in pairs(modes) do
     pcall(vim.keymap.del, v, shortcut)
     local opts = { silent = true, noremap = v == "n", expr = is_expr or false }
     if v == "n" then
@@ -51,4 +51,82 @@ function RestartLsp()
   vim.cmd([[ LspLensOff ]])
   vim.cmd([[ LspRestart ]])
   vim.cmd([[ LspLensOn ]])
+end
+
+-- AddToQuickFix add item to the quickfix.
+-- @param bufnr int: buffer number.
+-- @param lnum int: line number.
+-- @param end_lnum: end line number.
+-- @param col int: start column number.
+-- @param end_col: end column number.
+-- @param message string: message body.
+-- @param message_type string: message type ('E' or 'W')
+-- @param user_data table: user data (e.g. LSP, and etc)
+function AddToQuickFix(bufnr, lnum, end_lnum, col, end_col, message, message_type, user_data)
+  local current_quickfix_list = vim.api.nvim_call_function("getqflist", {})
+
+  -- Make the new quickfix item.
+  local new_item = {
+    bufnr = bufnr,
+    lnum = lnum,
+    end_lnum = end_lnum,
+    col = col,
+    end_col = end_col,
+    text = message,
+    type = message_type,
+    user_data = user_data,
+  }
+  table.insert(current_quickfix_list, new_item)
+
+  -- Set the quickfix list.
+  vim.api.nvim_call_function("setqflist", { current_quickfix_list })
+end
+
+-- CleanupQuickFix cleans current buffer items from the quickfix.
+-- @param bufnr int: buffer number.
+function CleanupQuickFix(bufnr)
+  local current_quickfix_list = vim.fn.getqflist()
+
+  -- Remove current buffer items to avoid duplications.
+  for i = #current_quickfix_list, 1, -1 do
+    local item = current_quickfix_list[i]
+    if item.bufnr == bufnr then
+      table.remove(current_quickfix_list, i)
+    end
+  end
+
+  -- Set the quickfix list.
+  vim.api.nvim_call_function("setqflist", { current_quickfix_list })
+end
+
+-- SeverityToMessageType converts diagnostics severity number to message type.
+function SeverityToMessageType(severity)
+  local errors = {
+    vim.diagnostic.severity.ERROR,
+    vim.diagnostic.severity.WARN,
+    vim.diagnostic.severity.INFO,
+    vim.diagnostic.severity.HINT,
+  }
+  return errors[severity]
+end
+
+-- DiagnosticsToQuickFix inserts all diagnostics records into quickfix.
+-- @param bufnr int: buffer number.
+function DiagnosticsToQuickFix(bufnr)
+  CleanupQuickFix(bufnr)
+
+  -- Find diagnostics and insert them.
+  local diagnostics = vim.diagnostic.get(bufnr)
+  for _, diagnostic in pairs(diagnostics) do
+    AddToQuickFix(
+      diagnostic.bufnr,
+      diagnostic.lnum + 1,
+      diagnostic.end_lnum + 1,
+      diagnostic.col,
+      diagnostic.end_col,
+      diagnostic.message,
+      SeverityToMessageType(diagnostic.severity),
+      diagnostic.user_data
+    )
+  end
 end

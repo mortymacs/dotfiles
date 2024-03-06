@@ -167,8 +167,7 @@ SetKeyMap("<c-t><c-Left>",  "<esc><Cmd>Neotest jump prev<cr>")
 
 -- Trouble / Quickfix.
 SetKeyMap("<c-l><c-e>", "<Cmd>Telescope diagnostics<cr>")
-SetKeyMap("<c-l><Up>",  "<Cmd>TroubleToggle workspace_diagnostics<cr>")
-SetKeyMap("<c-l><c-q>", "<Cmd>TroubleToggle quickfix<cr>")
+SetKeyMap("<c-l><Up>",  function () ToggleCommand("copen", "cclose", "quickfix") end)
 
 -- Bookmark
 SetKeyMap("<c-r><c-c>", "<Cmd>Telescope vim_bookmarks current_file<cr>")

@@ -89,8 +89,11 @@ vim.api.nvim_set_hl(0, "LspLens",                     {bg = "", fg = "#495057"})
 -- --
 vim.api.nvim_set_hl(0, "LspSignatureActiveParameter", {bg = "#0e6ba8", fg = "#ffffff"})
 
--- Trouble
-vim.api.nvim_set_hl(0, "TroubleFoldIcon", {bg = ""})
+-- Quickfix
+vim.api.nvim_set_hl(0, "BqfPreviewFloat",  {bg = "#090d12",                 link = "BqfPreviewFloat"})
+vim.api.nvim_set_hl(0, "BqfPreviewBorder", {bg = "#090d12", fg = "#686f9a", link = "BqfPreviewBorder"})
+vim.api.nvim_set_hl(0, "BqfPreviewTitle",  {bg = "#090d12",                 link = "BqfPreviewTitle"})
+vim.api.nvim_set_hl(0, "BqfPreviewThumb",  {bg = "#090d12",                 link = "BqfPreviewThumb"})
 
 -- Tree
 vim.api.nvim_set_hl(0, "NeoTreeGitAdded",     {bg = "",        fg = "#00B9AE"})
@@ -109,7 +112,7 @@ vim.api.nvim_set_hl(0, "MiniIndentscopeSymbol", {fg = "#686f9a"})
 -- Bookmark
 vim.g.bookmark_sign = ''
 vim.g.bookmark_highlight_lines = 1
-vim.g.bookmark_show_warning = 0
+vim.g.bookmark_sho_warning = 0
 vim.g.bookmark_show_toggle_warning = 0
 
 -- Cursor
