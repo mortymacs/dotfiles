@@ -86,7 +86,7 @@ end
 
 -- CleanupQuickFix cleans current buffer items from the quickfix.
 -- @param bufnr int: buffer number.
-function CleanupQuickFix(bufnr, ns)
+function CleanupQuickFix(bufnr)
   local current_quickfix_list = vim.fn.getqflist()
 
   -- Remove current buffer items to avoid duplications.
@@ -121,7 +121,7 @@ function DiagnosticsToQuickFix(bufnr, ns)
     vim.api.nvim_create_namespace(ns)
   end
 
-  CleanupQuickFix(bufnr, ns)
+  CleanupQuickFix(bufnr)
 
   -- Find diagnostics and insert them.
   local diagnostics = vim.diagnostic.get(bufnr)
