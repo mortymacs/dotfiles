@@ -55,6 +55,7 @@ end
 
 -- AddToQuickFix add item to the quickfix.
 -- @param bufnr int: buffer number.
+-- @param ns int: namespace.
 -- @param lnum int: line number.
 -- @param end_lnum: end line number.
 -- @param col int: start column number.
@@ -62,12 +63,13 @@ end
 -- @param message string: message body.
 -- @param message_type string: message type ('E' or 'W')
 -- @param user_data table: user data (e.g. LSP, and etc)
-function AddToQuickFix(bufnr, lnum, end_lnum, col, end_col, message, message_type, user_data)
+function AddToQuickFix(bufnr, ns, lnum, end_lnum, col, end_col, message, message_type, user_data)
   local current_quickfix_list = vim.api.nvim_call_function("getqflist", {})
 
   -- Make the new quickfix item.
   local new_item = {
     bufnr = bufnr,
+    id = ns,
     lnum = lnum,
     end_lnum = end_lnum,
     col = col,
@@ -84,7 +86,7 @@ end
 
 -- CleanupQuickFix cleans current buffer items from the quickfix.
 -- @param bufnr int: buffer number.
-function CleanupQuickFix(bufnr)
+function CleanupQuickFix(bufnr, ns)
   local current_quickfix_list = vim.fn.getqflist()
 
   -- Remove current buffer items to avoid duplications.
@@ -102,30 +104,37 @@ end
 -- SeverityToMessageType converts diagnostics severity number to message type.
 function SeverityToMessageType(severity)
   local errors = {
-    vim.diagnostic.severity.ERROR,
-    vim.diagnostic.severity.WARN,
-    vim.diagnostic.severity.INFO,
-    vim.diagnostic.severity.HINT,
+    "E",
+    "W",
+    "I",
+    "H",
   }
   return errors[severity]
 end
 
 -- DiagnosticsToQuickFix inserts all diagnostics records into quickfix.
 -- @param bufnr int: buffer number.
-function DiagnosticsToQuickFix(bufnr)
-  CleanupQuickFix(bufnr)
+function DiagnosticsToQuickFix(bufnr, ns)
+  -- Create namespace.
+  local namespaces = vim.api.nvim_get_namespaces()
+  if namespaces and namespaces[ns] == nil then
+    vim.api.nvim_create_namespace(ns)
+  end
+
+  CleanupQuickFix(bufnr, ns)
 
   -- Find diagnostics and insert them.
   local diagnostics = vim.diagnostic.get(bufnr)
   for _, diagnostic in pairs(diagnostics) do
     AddToQuickFix(
       diagnostic.bufnr,
+      ns,
       diagnostic.lnum + 1,
       diagnostic.end_lnum + 1,
       diagnostic.col,
       diagnostic.end_col,
       diagnostic.message,
-      SeverityToMessageType(diagnostic.severity),
+      diagnostic.severity,
       diagnostic.user_data
     )
   end
