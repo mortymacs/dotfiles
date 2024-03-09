@@ -49,7 +49,7 @@ let
 in {
   programs.starship = {
     enable = true;
-    enableZshIntegration = true;
+    enableFishIntegration = true;
     settings = {
       format = lib.concatStrings [
         "$sudo"

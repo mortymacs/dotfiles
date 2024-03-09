@@ -45,13 +45,6 @@ in {
         "xset s 180"
         "xss-lock --transfer-sleep-lock -- 'XSECURELOCK_FONT=sans xsecurelock'"
       ];
-      rules = {
-        "firefox" = { desktop = "0"; };
-        "teams-for-linux" = {
-          desktop = "0";
-          split_ratio = "0.61";
-        };
-      };
     };
   };
 

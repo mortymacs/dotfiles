@@ -79,7 +79,7 @@ in {
     description = "Mort";
     extraGroups = [ "networkmanager" "wheel" "docker" ];
     initialPassword = "password";
-    shell = pkgs.zsh;
+    shell = pkgs.fish;
     packages = with pkgs; [ bc ];
   };
 
@@ -118,8 +118,8 @@ in {
     enableTor = true;
   };
 
-  # Enable ZSH.
-  programs.zsh.enable = true;
+  # Enable Fish.
+  programs.fish.enable = true;
 
   # Enable dconf.
   programs.dconf.enable = true;

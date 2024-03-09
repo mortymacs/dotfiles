@@ -11,7 +11,7 @@ in {
     ../common/dunst
     ../common/gtk
     ../common/picom
-    ./zsh
+    ../common/fish
     ../common/starship
     ../common/rofi
     ../common/terminal
