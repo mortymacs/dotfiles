@@ -34,8 +34,6 @@ require("lazy").setup({
       "lewis6991/gitsigns.nvim",
     },
   },
-
-  -- Sidebar.
   "luukvbaal/statuscol.nvim",
 
   -- Notification.
@@ -290,4 +288,15 @@ require("lazy").setup({
 
   -- Large files.
   "LunarVim/bigfile.nvim",
+
+  -- Nerd Icon.
+  {
+    "2kabhishek/nerdy.nvim",
+    dependencies = {
+      "stevearc/dressing.nvim",
+      "nvim-telescope/telescope.nvim",
+    },
+    event = "VeryLazy",
+    cmd = "Nerdy",
+  },
 })
