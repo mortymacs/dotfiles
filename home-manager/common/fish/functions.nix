@@ -213,9 +213,7 @@
         return
     end
     set dir_path (dirname "$argv[1]")
-    if test ! -d "$dir_path"
-        mkdir -p "$dir_path"
-    end
+    mkdir -p "$dir_path"
     echo > "$argv[1]"
   '';
   mkcd = ''
