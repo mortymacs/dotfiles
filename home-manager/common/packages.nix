@@ -128,12 +128,12 @@
     air
     ## Python.
     (python311.withPackages
-      (ps: with ps; [ ipdb ipython isort black pylint pytest requests lxml ]))
+      (ps: with ps; [ ipdb ipython isort black ]))
     rye
     nodePackages.pyright
     ruff
     ## Lua.
-    lua
+    luajit
     sumneko-lua-language-server
     stylua
     lua54Packages.luacheck

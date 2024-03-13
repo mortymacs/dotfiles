@@ -203,6 +203,7 @@ require("lazy").setup({
     },
   },
   "VidocqH/lsp-lens.nvim",
+  "mortymacs/lsp-meta.nvim",
   "hrsh7th/vim-vsnip",
   "smjonas/inc-rename.nvim",
   {
