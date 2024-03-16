@@ -53,7 +53,7 @@ in {
       setw -g window-status-separator ""
       setw -g window-status-style "none,fg=${active_pane_background},bg=${background}"
       set -g status-left "#[fg=${left_foreground},bg=${left_background}] #S #[fg=${left_background},bg=${background},nobold,nounderscore,noitalics]${left_icon}"
-      set -g status-right "#[fg=${background},bg=${background},nobold,nounderscore,noitalics]${right_icon}#[fg=${active_pane_background},bg=${background}] #h #{tmux_mode_indicator} "
+      set -g status-right "#(gitmux #{pane_current_path}) #[fg=${background},bg=${background},nobold,nounderscore,noitalics]${right_icon}#[fg=${active_pane_background},bg=${background}] #h #{tmux_mode_indicator} "
       setw -g window-status-format "#[fg=${active_pane_background},bg=${background}] #W "
       setw -g window-status-current-format "#[fg=${background},bg=${active_pane_background},nobold,nounderscore,noitalics]${left_icon}#[fg=${active_pane_foreground},bg=${active_pane_background}] #W #[fg=${active_pane_background},bg=${background},nobold,nounderscore,noitalics]${left_icon}"
     '';
@@ -63,6 +63,7 @@ in {
   };
 
   home.packages = with pkgs; [
+    gitmux
     (writeShellScriptBin "tmux-ghq" (builtins.readFile ./tmux-ghq.sh))
     (writeShellScriptBin "tmux-switch" (builtins.readFile ./tmux-switch.sh))
   ];
