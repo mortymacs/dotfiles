@@ -87,6 +87,12 @@ in {
         symbol = " ";
         format = "[ $symbol ]($style)";
       };
+      sudo = {
+        disabled = false;
+        format = "[$symbol]($style)";
+        style = "bg:${section_1_bg} fg:${section_1_fg}";
+        symbol = " 󰯄";
+      };
       username = {
         show_always = true;
         style_user = "bg:${section_1_bg} fg:${section_1_fg}";
@@ -100,7 +106,7 @@ in {
         truncation_symbol = ".../";
       };
       git_branch = {
-        symbol = "";
+        symbol = "⎇ ";
         style = "bg:${section_3_bg} fg:${section_3_fg}";
         format = "[ $symbol$branch ]($style)";
       };
@@ -124,7 +130,7 @@ in {
         modified = " 󱀱 ";
         stashed = " 󱀲 ";
         untracked = " 󱪝 ";
-        staged = " 󰐕 ";
+        staged = " ● ";
         style = "bg:${section_3_1_bg} fg:${section_3_1_fg}";
         format = "[$all_status$ahead_behind]($style)";
       };
