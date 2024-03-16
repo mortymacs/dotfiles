@@ -10,7 +10,10 @@
       "_d7742d87-e61d-4b78-b8a1-b469842139fa_-browser-action",
       "ublock0_raymondhill_net-browser-action",
       "jid1-zadieub7xozojw_jetpack-browser-action",
-      "canvasblocker_kkapsner_de-browser-action"
+      "canvasblocker_kkapsner_de-browser-action",
+      "jid1-bofifl9vbdl2zq_jetpack-browser-action",
+      "_74145f27-f039-47ce-a470-a662b129930a_-browser-action",
+      "_154cddeb-4c8b-4627-a478-c7e5b427ffdf_-browser-action"
     ],
     "nav-bar": [
       "back-button",
@@ -46,7 +49,10 @@
     "_d7742d87-e61d-4b78-b8a1-b469842139fa_-browser-action",
     "_d634138d-c276-4fc8-924b-40a0ea21d284_-browser-action",
     "jid1-zadieub7xozojw_jetpack-browser-action",
-    "canvasblocker_kkapsner_de-browser-action"
+    "canvasblocker_kkapsner_de-browser-action",
+    "jid1-bofifl9vbdl2zq_jetpack-browser-action",
+    "_74145f27-f039-47ce-a470-a662b129930a_-browser-action",
+    "_154cddeb-4c8b-4627-a478-c7e5b427ffdf_-browser-action"
   ],
   "dirtyAreaCache": [
     "nav-bar",
