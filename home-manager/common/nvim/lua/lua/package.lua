@@ -18,6 +18,13 @@ require("lazy").setup({
   "ayu-theme/ayu-vim",
   "mvllow/modes.nvim",
 
+  -- Body.
+  {
+    "folke/edgy.nvim",
+    opts = {},
+    event = "VeryLazy",
+  },
+
   -- Tabbar.
   {
     "romgrk/barbar.nvim",
@@ -189,11 +196,14 @@ require("lazy").setup({
   "onsails/lspkind.nvim",
   "hrsh7th/nvim-cmp",
   "hrsh7th/cmp-cmdline",
-  "hrsh7th/cmp-nvim-lsp",
+  {
+    "hrsh7th/cmp-nvim-lsp",
+    event = "LspAttach",
+  },
   {
     "ray-x/lsp_signature.nvim",
     opts = {},
-    event = "VeryLazy",
+    event = "LspAttach",
   },
   "dnlhc/glance.nvim",
   {
@@ -201,6 +211,7 @@ require("lazy").setup({
     dependencies = {
       "nvim-lua/plenary.nvim",
     },
+    event = "LspAttach",
   },
   "VidocqH/lsp-lens.nvim",
   "mortymacs/lsp-meta.nvim",
@@ -211,6 +222,7 @@ require("lazy").setup({
     dependencies = {
       "nvim-tree/nvim-web-devicons",
     },
+    event = "LspAttach",
   },
   -- -- Rust.
   {

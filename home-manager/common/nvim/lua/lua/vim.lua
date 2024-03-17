@@ -5,6 +5,7 @@ vim.loader.enable()
 vim.opt.nu = true
 vim.opt.relativenumber = true
 vim.opt.fillchars = "eob: "
+vim.opt.splitkeep = "screen"
 
 -- File, syntax and theme
 vim.opt.filetype = "on"
@@ -36,7 +37,7 @@ vim.opt.completeopt = "menu,menuone,noselect"
 -- Statusline
 vim.opt.statusline = ""
 vim.opt.cmdheight = 0
-vim.opt.laststatus = 2
+vim.opt.laststatus = 3
 
 -- Line number
 vim.opt.numberwidth = 5

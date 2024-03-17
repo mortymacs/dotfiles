@@ -23,10 +23,10 @@ require("neo-tree").setup({
     },
     hide_root_node = true,
     retain_hidden_root_indent = false,
-    log_level = "info",
+    log_level = "error",
     log_to_file = false,
     open_files_in_last_window = true,
-    open_files_do_not_replace_types = { "terminal", "trouble", "qf" },
+    open_files_do_not_replace_types = { "terminal", "qf" },
     popup_border_style = "single",
     resize_timer_interval = 500,
     sort_case_insensitive = false,
@@ -34,7 +34,7 @@ require("neo-tree").setup({
     use_popups_for_input = true,
     use_default_mappings = true,
     source_selector = {
-        winbar = true,
+        winbar = false,
         statusline = false,
         show_scrolled_off_parent_node = false,
         sources = {
