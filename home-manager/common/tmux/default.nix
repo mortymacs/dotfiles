@@ -23,12 +23,10 @@ in {
       set -ga terminal-overrides ",*256col*:Tc"
 
       # Keybinding.
+      bind -n M-S-Left   previous-window
+      bind -n M-S-Right  next-window
       bind -n C-\\       split-window  -h
       bind -n M-\\       split-window  -v
-      bind -n M-C-Up     select-pane   -U
-      bind -n M-C-Down   select-pane   -D
-      bind -n M-C-Left   select-pane   -L
-      bind -n M-C-Right  select-pane   -R
       bind -n C-PageUp   switch-client -p
       bind -n C-PageDown switch-client -n
       bind -n M-C-n      display-popup -w 90% -E "tmux-ghq"
