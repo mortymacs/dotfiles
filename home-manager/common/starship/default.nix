@@ -26,7 +26,7 @@ let
   # svc
   section_3_bg = "#D81E5B";
   section_3_fg = "#FFE5D4";
-  section_3_1_bg = "#D81E5B";
+  section_3_1_bg = "#ED4A4A";
   section_3_1_fg = "#FFE5D4";
 
   # status
