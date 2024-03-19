@@ -183,7 +183,6 @@ require("lazy").setup({
       "nvim-lua/plenary.nvim",
     },
   },
-  "petertriho/nvim-scrollbar",
   {
     "folke/zen-mode.nvim",
     dependencies = {

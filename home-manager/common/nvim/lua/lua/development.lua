@@ -312,23 +312,6 @@ require("range-highlight").setup()
 -- Decorated yank.
 require("decorated_yank").setup()
 
--- Scrollbar.
-require("scrollbar").setup({
-  excluded_filetypes = {
-    "terminal",
-    "toggleterm",
-    "lazy",
-    "alpha",
-    "neo-tree",
-    "fzf",
-    "TelescopePrompt",
-  },
-  excluded_buftypes = {
-    "prompt",
-    "noice",
-  },
-})
-
 -- Zen mode.
 require("twilight").setup()
 require("zen-mode").setup({
