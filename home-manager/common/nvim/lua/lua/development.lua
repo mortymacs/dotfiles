@@ -71,7 +71,10 @@ require("nvim-treesitter.configs").setup({
 })
 
 -- Treesitter plugins.
-require("treesitter-context").setup()
+require("treesitter-context").setup({
+    max_lines = 10,
+    separator = "─",
+})
 require("nvim_context_vt").setup({
   disable_virtual_lines = true,
   disable_ft = { "markdown", "yaml" },
