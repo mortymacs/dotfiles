@@ -18,13 +18,6 @@ require("lazy").setup({
   "ayu-theme/ayu-vim",
   "mvllow/modes.nvim",
 
-  -- Body.
-  {
-    "folke/edgy.nvim",
-    opts = {},
-    event = "VeryLazy",
-  },
-
   -- Tabbar.
   {
     "romgrk/barbar.nvim",
