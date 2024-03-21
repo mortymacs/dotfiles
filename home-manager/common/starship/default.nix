@@ -43,7 +43,7 @@ let
 
   # icons
   left_icon = "";
-  right_icon = "";
+  right_icon = "";
   fill_icon = " ";
   prompt_icon = "  ";
 in {
@@ -53,6 +53,7 @@ in {
     settings = {
       format = lib.concatStrings [
         "$sudo"
+        #"[${left_icon}](bg:${section_1_bg} fg:${fill_bg})"
         "$username"
         "[${left_icon}](bg:${section_2_bg} fg:${section_1_bg})"
         "$directory"
@@ -63,11 +64,17 @@ in {
         "$git_metrics"
         "[${left_icon}](fg:${section_3_bg})"
         "$fill"
+        "[${right_icon}](bg:${fill_bg} fg:${nix_shell_bg})"
         "$nix_shell"
+        "[${right_icon}](bg:${nix_shell_bg} fg:${section_4_bg})"
         "$status"
+        "[${right_icon}](bg:${section_4_bg} fg:${section_5_bg})"
         "$cmd_duration"
+        "[${right_icon}](bg:${section_5_bg} fg:${section_6_bg})"
         "$jobs"
+        "[${right_icon}](bg:${section_6_bg} fg:${section_3_1_bg})"
         "$git_status"
+        #"[${left_icon}](bg:${fill_bg} fg:${section_3_1_bg})"
         "$line_break"
         "$character"
       ];

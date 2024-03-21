@@ -1,19 +1,20 @@
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
-local padding = 12
+local padding = 10
 
 -- Define configuration.
 -- Body and display.
 config.enable_tab_bar = false
-config.line_height = 1.0
+config.line_height = 1.2
 config.window_padding = {
   top = padding,
   left = padding,
   right = padding,
   bottom = padding,
 }
+config.use_resize_increments = true
 config.audible_bell = "Disabled"
-default_cursor_style = "SteadyBar"
+config.default_cursor_style = "SteadyBar"
 -- Font.
 config.font = wezterm.font("monospace")
 config.font_size = 12.5
