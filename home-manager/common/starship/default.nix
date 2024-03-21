@@ -42,7 +42,7 @@ let
   section_6_fg = "#FFE5D4";
 
   # icons
-  left_icon = "";
+  left_icon = "";
   right_icon = "";
   fill_icon = " ";
   prompt_icon = "  ";
@@ -106,7 +106,7 @@ in {
         truncation_symbol = ".../";
       };
       git_branch = {
-        symbol = "⎇ ";
+        symbol = "";
         style = "bg:${section_3_bg} fg:${section_3_fg}";
         format = "[ $symbol$branch ]($style)";
       };
