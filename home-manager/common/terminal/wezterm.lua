@@ -5,7 +5,7 @@ local padding = 10
 -- Define configuration.
 -- Body and display.
 config.enable_tab_bar = false
-config.line_height = 1.2
+config.line_height = 1.3
 config.window_padding = {
   top = padding,
   left = padding,

@@ -1,6 +1,6 @@
 { pkgs, ...}:
 {
-   services.xserver.excludePackages = with pkgs; [
-       xterm
-   ];
+#services.xserver.excludePackages = with pkgs; [
+#       xterm
+#   ];
 }

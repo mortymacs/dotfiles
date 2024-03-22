@@ -8,6 +8,7 @@ in {
     ../common/font.nix
     ../common/misc.nix
     ../common/excludes.nix
+    ../common/wm.nix
   ];
 
   # Nix.
@@ -44,21 +45,6 @@ in {
   # Internationalisation.
   i18n = { defaultLocale = "en_US.UTF-8"; };
 
-  # Xserver.
-  services.xserver = {
-    enable = true;
-    layout = "us";
-    xkbVariant = "";
-    displayManager = {
-      lightdm = {
-        enable = true;
-        background = "#060606";
-      };
-      defaultSession = "none+bspwm";
-    };
-    windowManager = { bspwm = { enable = true; }; };
-  };
-
   # Printer.
   services.printing.enable = true;
 
@@ -69,7 +55,6 @@ in {
   services.pipewire = {
     enable = true;
     alsa.enable = true;
-    alsa.support32Bit = true;
     pulse.enable = true;
   };
 
@@ -77,7 +62,7 @@ in {
   users.users.mort = {
     isNormalUser = true;
     description = "Mort";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "video" ];
     initialPassword = "password";
     shell = pkgs.fish;
     packages = with pkgs; [ bc ];

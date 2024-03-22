@@ -12,5 +12,13 @@
 
     # Audio.
     pamixer
+
+    # WM.
+    swaylock
+    swayidle
+    swaybg
+    mako
+    wdisplays
+    wayland
   ];
 }

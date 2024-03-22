@@ -3,17 +3,11 @@
 let defaultPackages = import ../common/packages.nix { inherit pkgs; };
 in {
   imports = [
-    ../common/monitor
-    ../common/bspwm
-    ../common/tabbed
-    ../common/polybar
-    ../common/sxhkd
-    ../common/dunst
+    ../common/wm
+    ../common/notification
     ../common/gtk
-    ../common/picom
     ../common/fish
     ../common/starship
-    ../common/rofi
     ../common/terminal
     ../common/tmux
     ../common/tmuxp
@@ -24,6 +18,7 @@ in {
     ../common/docker
     ../common/flameshot
     ../common/firefox
+    ../common/launcher
     ../common/misc
   ];
 

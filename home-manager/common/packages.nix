@@ -4,6 +4,7 @@
     bsp-layout
     xdotool
     xorg.xwininfo
+    tofi
 
     # Text.
     bat
