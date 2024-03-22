@@ -1,4 +1,15 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+let
+  swayConfig = pkgs.writeText "greetd-sway-config" ''
+    # `-l` activates layer-shell mode. Notice that `swaymsg exit` will run after gtkgreet.
+    exec "${pkgs.greetd.gtkgreet}/bin/gtkgreet -l; swaymsg exit"
+    bindsym Mod4+shift+e exec swaynag \
+      -t warning \
+      -m 'What do you want to do?' \
+      -b 'Poweroff' 'systemctl poweroff' \
+      -b 'Reboot' 'systemctl reboot'
+  '';
+in {
   security.polkit.enable = true;
   programs.light.enable = true;
   services.dbus.enable = true;
@@ -13,21 +24,14 @@
   };
   services.greetd = {
     enable = true;
-    settings = rec {
-      initial_session = {
-        command = "${pkgs.sway}/bin/sway";
-        user = "mort";
+    settings = {
+      default_session = {
+        command = "${pkgs.sway}/bin/sway --config ${swayConfig}";
       };
-      default_session = initial_session;
     };
   };
 
-  systemd.user.services.kanshi = {
-    description = "kanshi daemon";
-    serviceConfig = {
-      Type = "simple";
-      ExecStart = ''${pkgs.kanshi}/bin/kanshi -c /etc/kanshi'';
-    };
-  };
-
+  environment.etc."greetd/environments".text = ''
+    sway
+  '';
 }

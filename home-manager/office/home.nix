@@ -8,6 +8,7 @@ in {
     ../common/gtk
     ../common/fish
     ../common/starship
+    ../common/monitor
     ../common/terminal
     ../common/tmux
     ../common/tmuxp

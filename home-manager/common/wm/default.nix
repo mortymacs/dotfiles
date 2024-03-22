@@ -9,6 +9,16 @@ in {
     config = {
       startup = [
         { command = "swaybg -c '#0a0908'"; }
+        {
+          command = ''
+            swayidle -w \
+            timeout 300 'swaylock -f -c #0f111b' \
+            timeout 600 'swaymsg "output * dpms off"' \
+            resume 'swaymsg "output * dpms on"' \
+            before-sleep 'swaylock -f -c #0f111b'
+          '';
+        }
+        { command = "mako"; }
         { command = "nm-applet"; }
       ];
       modifier = "Mod4";
@@ -60,10 +70,11 @@ in {
         "${modifier}+t" = "layout tabbed";
 
         # Action.
-        "${modifier}+l" = "exec swaylock -c '#0f111b' -e -F";
+        "${modifier}+l" = "exec swaylock -c '0f111b' -e -F";
         "${modifier}+Shift+r" = "reload";
         "${modifier}+Shift+q" = "kill";
-        "${modifier}+Shift+e" = "exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'";
+        "${modifier}+Shift+e" =
+          "exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'";
 
         # Launcher.
         "${modifier}+d" = "exec tofi-run | xargs swaymsg exec --";
