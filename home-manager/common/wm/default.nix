@@ -100,6 +100,7 @@ in {
         workspaceButtons = true;
         workspaceNumbers = false;
         trayOutput = "*";
+        statusCommand = "i3status-rs ~/.config/i3status-rust/config-default.toml";
         colors = {
           background = "#0f111b";
           statusline = "#ECECEC";

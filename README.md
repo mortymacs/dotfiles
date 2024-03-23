@@ -16,6 +16,7 @@ My environment config. I tried to keep it minimal and simple as much as I could.
 |----------|------|
 | Distro | [NixOS](https://nixos.org/) |
 | Window Manager | [Sway](https://github.com/swaywm/sway) |
+| Status Bar | [i3status-rust](https://github.com/greshake/i3status-rust) |
 | Mako | [Mako](https://github.com/emersion/mako) |
 | Terminal | [Wezterm](https://wezfurlong.org/wezterm/index.html) |
 | Shell | [Fish](https://fishshell.com) |

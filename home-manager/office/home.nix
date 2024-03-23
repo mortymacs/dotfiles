@@ -4,6 +4,7 @@ let defaultPackages = import ../common/packages.nix { inherit pkgs; };
 in {
   imports = [
     ../common/wm
+    ../common/statusbar
     ../common/notification
     ../common/gtk
     ../common/fish
