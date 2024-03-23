@@ -17,10 +17,11 @@
         ];
         settings = {
           theme = {
-            theme = "modern";
+            theme = "plain";
             overrides = {
               idle_bg = "#0f111b";
               idle_fg = "#ECECEC";
+              separator = "";
             };
           };
         };
