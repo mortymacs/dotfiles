@@ -1,6 +1,11 @@
 {
   # Services.
   services = {
+    cliphist = {
+      enable = true;
+      systemdTarget = "sway-session.target";
+    };
+
     udiskie = {
       enable = true;
       tray = "auto";

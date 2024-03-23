@@ -1,14 +1,10 @@
 { pkgs, ... }: {
   list = with pkgs; [
     # Desktop
-    bsp-layout
-    xdotool
-    xorg.xwininfo
-    tofi
+    rofi-wayland
 
     # Text.
     bat
-    bat-extras.batgrep
     unstable.ast-grep
     ripgrep
     pwgen
@@ -24,10 +20,6 @@
     ## Presentation / reading.
     glow
     slides
-
-    # Security.
-    xss-lock
-    xsecurelock
 
     # File and directory.
     broot
@@ -75,14 +67,12 @@
     pkg-config
     ghq
     httpie
-    zola
     tokei
     gnumake
     commitlint
     silicon
     ## Test.
     hurl
-    k6
 
     # Security.
     radare2
@@ -117,7 +107,7 @@
     gosec
     golangci-lint
     govulncheck
-    unstable.nilaway
+    #unstable.nilaway
     goimports-reviser
     goconst
     gofumpt
@@ -176,9 +166,7 @@
     xmlformat
 
     # Misc.
-    xclip
     trash-cli
-    gnome.zenity
     zathura
     libqalculate
     unzip

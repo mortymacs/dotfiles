@@ -20,6 +20,7 @@ in {
       k = "kubectl";
       rm = "trash";
       ":q" = "exit";
+      cb = "wl-copy";
     };
     functions = defaultFunctions;
     shellAliases = defaultAliases;

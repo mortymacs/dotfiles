@@ -65,7 +65,7 @@ in {
     extraGroups = [ "networkmanager" "wheel" "docker" "video" ];
     initialPassword = "password";
     shell = pkgs.fish;
-    packages = with pkgs; [ bc ];
+    packages = with pkgs; [ ];
   };
 
   # Config packages.
@@ -89,9 +89,6 @@ in {
     enable = true;
     autoPrune.enable = true;
   };
-
-  # Misc.
-  services.greenclip.enable = true;
 
   # Security.
   services.tor = {

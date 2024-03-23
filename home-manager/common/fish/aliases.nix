@@ -65,6 +65,5 @@
     && tar --exclude='.git' --exclude='.gitignore' --exclude-vcs-ignores -zcvf (basename $PWD).tar.gz ./*'';
 
   # Utility.
-  cb = "xclip -selection clipboard";
   calc = "qalc";
 }

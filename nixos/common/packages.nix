@@ -20,5 +20,6 @@
     mako
     wdisplays
     wayland
+    wl-clipboard
   ];
 }

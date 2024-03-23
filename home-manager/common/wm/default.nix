@@ -73,11 +73,13 @@ in {
         "${modifier}+l" = "exec swaylock -c '0f111b' -e -F";
         "${modifier}+Shift+r" = "reload";
         "${modifier}+Shift+q" = "kill";
-        "${modifier}+Shift+e" =
-          "exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'";
+        "${modifier}+Shift+e" = "exec exit-action | xargs swaymsg exec --";
 
         # Launcher.
-        "${modifier}+d" = "exec tofi-run | xargs swaymsg exec --";
+        "${modifier}+d" = "exec rofi -show run | xargs swaymsg exec --";
+        "${modifier}+c" =
+          "exec cliphist list | rofi -dmenu | cliphist decode | wl-copy | xargs swaymsg exec --";
+        "${modifier}+Tab" = "exec rofi -show window | xargs swaymsg exec --";
 
         # Application.
         "${modifier}+w" = "exec firefox";
@@ -130,4 +132,9 @@ in {
     # Wallpaper.
     "sway/wallpaper.jpg".source = ./wallpaper.jpg;
   };
+
+  home.packages = with pkgs;
+    [
+      (writeShellScriptBin "exit-action" (builtins.readFile ./exit-action.sh))
+    ];
 }
