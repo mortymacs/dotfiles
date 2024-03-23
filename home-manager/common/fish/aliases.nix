@@ -9,8 +9,8 @@
   cat = "bat";
   less = "less -N";
   pdf = "zathura";
-  jless = "jless -N";
-  yless = "jless -N --yaml";
+  json = "jnv";
+  yaml = "jless -N --yaml";
   hq = "htmlq";
 
   # File and directory.

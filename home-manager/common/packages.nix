@@ -16,6 +16,7 @@
     jless
     fq
     hexyl
+    (callPackage ./custom/default.nix {})
 
     ## Presentation / reading.
     glow
