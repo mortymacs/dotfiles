@@ -15,12 +15,9 @@ My environment config. I tried to keep it minimal and simple as much as I could.
 | Category | Tool |
 |----------|------|
 | Distro | [NixOS](https://nixos.org/) |
-| Display Manager | [LightDM](https://github.com/canonical/lightdm) |
-| Window Manager | [Bspwm](https://github.com/baskerville/bspwm) |
-| Hotkey daemon | [Sxhkd](https://github.com/baskerville/sxhkd) |
-| Status Bar | [Polybar](https://github.com/polybar/polybar) |
-| Notification | [Dunst](https://github.com/dunst-project/dunst) |
-| Terminal | [Alacritty](https://github.com/alacritty/alacritty) |
+| Window Manager | [Sway](https://github.com/swaywm/sway) |
+| Mako | [Mako](https://github.com/emersion/mako) |
+| Terminal | [Wezterm](https://wezfurlong.org/wezterm/index.html) |
 | Shell | [Fish](https://fishshell.com) |
 | Shell Prompt | [Starship](https://github.com/starship/starship) |
 | Terminal Multiplexer | [Tmux](https://github.com/tmux/tmux) |
@@ -28,7 +25,7 @@ My environment config. I tried to keep it minimal and simple as much as I could.
 | DB | [dbcli tools](https://github.com/dbcli) |
 | Fonts | Display: [Lexend](https://github.com/googlefonts/lexend), [VarizMatn](https://github.com/rastikerdar/vazirmatn), Monospace: [JetbrainsMono Nerd Font](https://www.nerdfonts.com) |
 | File Manager | [Broot](https://github.com/Canop/broot) |
-| Launcher | [Rofi](https://github.com/davatorium/rofi) |
+| Launcher | [Rofi-Wayland](https://github.com/lbonn/rofi) |
 | Browser | [Firefox](https://www.mozilla.org) |
 | GTK Theme | [Yaru](https://github.com/ubuntu/yaru) |
 | Icon | [Yaru](https://github.com/ubuntu/yaru) |
