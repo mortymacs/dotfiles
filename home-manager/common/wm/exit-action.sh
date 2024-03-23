@@ -6,7 +6,7 @@ case $action in
         swaymsg exit
         ;;
     Restart)
-        restart
+        reboot
         ;;
     Shutdown)
         shutdown now
