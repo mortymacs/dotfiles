@@ -2,10 +2,10 @@
 
 stdenv.mkDerivation rec {
     pname = "jnv";
-    version = "v0.1.2";
+    version = "v0.1.3";
 
     src = fetchurl {
-        sha256 = "1mj3fzqim9lzq53mfqpfmql08wgc2fan2mqdnwwb8pylif6a30fj";
+        sha256 = "1b4h2nmqaa8i64h15in074kivp2bvyrlz03zw1dsl7lbc649f87a";
         url = "https://github.com/ynqa/jnv/releases/download/${version}/jnv-x86_64-unknown-linux-gnu.tar.xz";
     };
 

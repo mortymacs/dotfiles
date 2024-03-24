@@ -17,6 +17,9 @@
     sudo nixos-rebuild switch --flake ".#$argv[1]";
     home-manager switch --flake ".#$argv[1]";
 
+    # Restart monitor manager.
+    systemctl --user restart kanshi.service
+
     # Nvim packages.
     nvim --headless "+Lazy! sync" +qa
 

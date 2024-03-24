@@ -68,6 +68,12 @@ in {
         "${modifier}+n" = "layout toggle split";
         "${modifier}+s" = "layout stacking";
         "${modifier}+t" = "layout tabbed";
+        "${modifier}+Ctrl+v" = "splith";
+        "${modifier}+Ctrl+h" = "splitv";
+
+        # Move.
+        "${modifier}+Shift+Ctrl+Right" = "move to workspace next";
+        "${modifier}+Shift+Ctrl+Left" = "move to workspace prev";
 
         # Action.
         "${modifier}+l" = "exec swaylock -c '0f111b' -e -F";
