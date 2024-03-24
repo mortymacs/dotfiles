@@ -20,11 +20,15 @@ in {
         }
         { command = "mako"; }
         { command = "nm-applet"; }
+        {
+          command = "systemctl --user restart kanshi.service";
+          always = true;
+        }
       ];
       modifier = "Mod4";
 
       fonts = {
-        names = [ fontName ];
+        names = [ fontName "monospace" ];
         size = fontSize;
       };
 
@@ -44,6 +48,14 @@ in {
           indicator = "#292d2e";
           text = "#888888";
         };
+        focusedInactive = {
+          background = "#222222";
+          border = "#333333";
+          childBorder = "#222222";
+          indicator = "#292d2e";
+          text = "#888888";
+        };
+
       };
 
       terminal = "wezterm";
@@ -97,7 +109,7 @@ in {
 
       bars = [{
         fonts = {
-          names = [ fontName ];
+          names = [ fontName "monospace" ];
           size = fontSize;
         };
         mode = "dock";
@@ -106,7 +118,8 @@ in {
         workspaceButtons = true;
         workspaceNumbers = false;
         trayOutput = "*";
-        statusCommand = "i3status-rs ~/.config/i3status-rust/config-default.toml";
+        statusCommand =
+          "i3status-rs ~/.config/i3status-rust/config-default.toml";
         colors = {
           background = "#0f111b";
           statusline = "#ECECEC";

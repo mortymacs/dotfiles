@@ -4,11 +4,23 @@
     bars = {
       default = {
         blocks = [
+          { block = "tea_timer"; }
           {
             block = "cpu";
             interval = 1;
           }
           { block = "sound"; }
+          { block = "battery"; }
+          {
+            block = "toggle";
+            command_state = "makoctl mode | grep do-not";
+            command_on = "makoctl mode -s do-not-disturb";
+            command_off = "makoctl mode -r do-not-disturb";
+            icon_on = "toggle_on";
+            icon_off = "toggle_off";
+            format = "$icon";
+            interval = 1;
+          }
           {
             block = "time";
             format = " $timestamp.datetime(f:'%a %d/%m %R') ";
@@ -17,11 +29,11 @@
         ];
         settings = {
           theme = {
-            theme = "plain";
+            theme = "native";
             overrides = {
-              idle_bg = "#0f111b";
               idle_fg = "#ECECEC";
-              separator = "";
+              separator = " ";
+              separator_fg = "#292948";
             };
           };
         };
