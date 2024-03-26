@@ -149,6 +149,13 @@
   '';
 
   # Programing.
+  rcpp =
+    "rm -rf CMakeFiles/ Testing/ CMakeCache.txt *.cmake Makefile compile_commands.json *.cbp";
+  c-debug = ''
+    set target_file (fzf --no-mouse)
+    set target_line (\cat -n "$target_file" | fzf --no-mouse | awk '{print $1}')
+    gdb -ex "b $target_file:$target_line" "$argv[1]"
+  '';
   rs-debug = ''
     set target_file (fzf --no-mouse)
     set target_line (\cat -n "$target_file" | fzf --no-mouse | awk '{print $1}')

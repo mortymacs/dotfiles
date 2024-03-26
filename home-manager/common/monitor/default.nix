@@ -25,7 +25,7 @@
       office = {
         outputs = [
           {
-            criteria = "HDMI-1";
+            criteria = "HDMI-A-1";
             status = "enable";
           }
           {

@@ -55,10 +55,16 @@ in {
           indicator = "#292d2e";
           text = "#888888";
         };
-
+        urgent = {
+          background = "#973c64";
+          border = "#e23e58";
+          childBorder = "#e23e58";
+          indicator = "#e23e58";
+          text = "#FFE5D4";
+        };
       };
 
-      terminal = "wezterm";
+      terminal = "alacritty";
       keybindings = {
         # Focus.
         "${modifier}+Down" = "focus down";
@@ -101,7 +107,8 @@ in {
 
         # Application.
         "${modifier}+w" = "exec firefox";
-        "${modifier}+Return" = "exec wezterm";
+        "${modifier}+Return" =
+          "exec alacritty msg create-window 2>/dev/null || alacritty";
         "${modifier}+Shift+s" = "exec flameshot gui";
       };
 
@@ -122,26 +129,26 @@ in {
           "i3status-rs ~/.config/i3status-rust/config-default.toml";
         colors = {
           background = "#0f111b";
-          statusline = "#ECECEC";
+          statusline = "#FFE5D4";
           focusedWorkspace = {
             background = "#1d4e89";
             border = "#1d4e89";
-            text = "#ECECEC";
+            text = "#FFE5D4";
           };
           activeWorkspace = {
             background = "#161927";
             border = "#161927";
-            text = "#ECECEC";
+            text = "#FFE5D4";
           };
           inactiveWorkspace = {
             background = "#161927";
             border = "#161927";
-            text = "#ECECEC";
+            text = "#FFE5D4";
           };
           urgentWorkspace = {
-            background = "#82264F";
-            border = "#82264F";
-            text = "#ECECEC";
+            background = "#973c64";
+            border = "#e23e58";
+            text = "#FFE5D4";
           };
         };
       }];

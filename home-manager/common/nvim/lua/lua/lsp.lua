@@ -99,6 +99,20 @@ local lsp_signature_setup = {
   close_timeout = 100,
 }
 
+-- C/C++.
+lspconfig.clangd.setup({
+  capabilities = capabilities,
+  on_attach = function(_, bufnr)
+    lsp_signature.on_attach(lsp_signature_setup, bufnr)
+  end,
+  init_options = {
+    compilationDatabaseDirectory = "build",
+    index = {
+      threads = 0,
+    },
+  },
+})
+
 -- Rust
 lspconfig.rust_analyzer.setup({
   capabilities = capabilities,
@@ -173,6 +187,14 @@ lspconfig.nil_ls.setup({
 
 -- Shell
 lspconfig.bashls.setup({
+  capabilities = capabilities,
+  on_attach = function(_, bufnr)
+    lsp_signature.on_attach(lsp_signature_setup, bufnr)
+  end,
+})
+
+-- Cmake
+lspconfig.cmake.setup({
   capabilities = capabilities,
   on_attach = function(_, bufnr)
     lsp_signature.on_attach(lsp_signature_setup, bufnr)
