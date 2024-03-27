@@ -99,16 +99,16 @@
     cargo
     bacon
     ## Go.
-    go
-    gopls
-    delve
-    pprof
-    go-tools
-    revive
-    gosec
-    golangci-lint
-    govulncheck
-    #unstable.nilaway
+    unstable.go
+    unstable.gopls
+    unstable.delve
+    unstable.pprof
+    unstable.go-tools
+    unstable.revive
+    unstable.gosec
+    unstable.golangci-lint
+    unstable.govulncheck
+    # unstable.nilaway
     goimports-reviser
     goconst
     gofumpt

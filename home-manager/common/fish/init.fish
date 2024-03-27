@@ -8,14 +8,7 @@ set -x TMUX_PLUGIN_MANAGER_PATH "$HOME"/.config/tmux/plugins/
 set -x GTK_THEME Yaru-purple-dark
 
 # Qt.
-set -x QT_QPA_PLATFORM xcb
 set -x QT_QPA_PLATFORMTHEME qt5ct
-
-# GUI
-# https://github.com/alacritty/alacritty/issues/3299#issuecomment-582789847
-set -x WINIT_UNIX_BACKEND x11
-set -x WINIT_X11_SCALE_FACTOR 1
-set -x XDG_SESSION_TYPE x11
 
 # Python.
 # https://github.com/python-poetry/poetry/issues/5250#issuecomment-1067193647

@@ -14,10 +14,6 @@ in {
         name = "forgit";
         src = fishPlugins.forgit.src;
       }
-      {
-        name = "done";
-        src = fishPlugins.done.src;
-      }
     ];
     shellInit = builtins.readFile ./init.fish;
     shellAbbrs = {
