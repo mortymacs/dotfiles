@@ -88,6 +88,7 @@ in {
         "${modifier}+t" = "layout tabbed";
         "${modifier}+Ctrl+v" = "splith";
         "${modifier}+Ctrl+h" = "splitv";
+        "${modifier}+Shift+Up" = "fullscreen toggle global";
 
         # Move.
         "${modifier}+Shift+Ctrl+Right" = "move to workspace next";
