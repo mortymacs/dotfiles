@@ -42,15 +42,15 @@ TERM = "xterm-256color"
 WINIT_X11_SCALE_FACTOR = "1"
 
 [font]
-size = 14
+size = 17
 
 [font.glyph_offset]
 x = 0
-y = 0
+y = 3
 
 [font.offset]
 x = 0
-y = -1
+y = 6
 
 [mouse]
 hide_when_typing = true
@@ -65,5 +65,5 @@ dynamic_padding = true
 opacity = 1.0
 
 [window.padding]
-x = 6
-y = 0
+x = 10
+y = 4
