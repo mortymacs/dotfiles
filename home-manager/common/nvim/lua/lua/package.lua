@@ -234,6 +234,9 @@ require("lazy").setup({
   {
     "fatih/vim-go",
     ft = { "go" },
+    init = function()
+      vim.g.go_echo_command_info = 0
+    end,
   },
   -- -- Lua.
   {
