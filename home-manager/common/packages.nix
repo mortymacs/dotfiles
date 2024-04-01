@@ -84,6 +84,7 @@
     clang
     clang-tools
     gdb
+    cgdb
     ccache
     cmake
     cmake-language-server

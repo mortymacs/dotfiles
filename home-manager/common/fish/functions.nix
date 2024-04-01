@@ -152,19 +152,21 @@
   rcpp =
     "rm -rf CMakeFiles/ Testing/ CMakeCache.txt *.cmake Makefile compile_commands.json *.cbp";
   c-debug = ''
+    # g++ -g3 file.cpp -o file.out && c-debug file.out
     set target_file (fzf --no-mouse)
-    set target_line (\cat -n "$target_file" | fzf --no-mouse | awk '{print $1}')
-    gdb -ex "b $target_file:$target_line" "$argv[1]"
+    set target_line (command cat -n "$target_file" | fzf --no-mouse | awk '{print $1}')
+    cgdb -ex "b $target_file:$target_line" "$argv[1]"
   '';
   rs-debug = ''
     set target_file (fzf --no-mouse)
-    set target_line (\cat -n "$target_file" | fzf --no-mouse | awk '{print $1}')
+    set target_line (command cat -n "$target_file" | fzf --no-mouse | awk '{print $1}')
     rust-gdb -ex "b $target_file:$target_line" "$argv[1]"
   '';
   go-debug = ''
+    # go-debug path
     set target_file ./(fzf --no-mouse)
-    set target_line (\cat -n "$target_file" | fzf --no-mouse | awk '{print $1}')
-    dlv debug "$argv[1]" --init <(echo "break $target_file:$target_line")
+    set target_line (command cat -n "$target_file" | fzf --no-mouse | awk '{print $1}')
+    dlv debug "$argv[1]" --init (echo "break $target_file:$target_line" | psub)
   '';
 
   # Database.
@@ -222,7 +224,7 @@
         echo "path exists"
         return
     end
-    set dir_path (dirname "$argv[1]")
+    set dir_path (command dirname "$argv[1]")
     mkdir -p "$dir_path"
     echo > "$argv[1]"
   '';
