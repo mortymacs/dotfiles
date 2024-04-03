@@ -29,6 +29,7 @@
     feh
     file
     unstable.walk
+    tree
 
     # Theme.
     yaru-theme
@@ -85,6 +86,7 @@
     clang-tools
     gdb
     cgdb
+    rr
     ccache
     cmake
     cmake-language-server
