@@ -20,7 +20,7 @@
 
     ## Presentation / reading.
     glow
-    presenterm
+    unstable.presenterm
 
     # File and directory.
     broot
