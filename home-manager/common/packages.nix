@@ -20,7 +20,7 @@
 
     ## Presentation / reading.
     glow
-    slides
+    presenterm
 
     # File and directory.
     broot
