@@ -123,7 +123,7 @@
     air
     ## Python.
     (python311.withPackages
-      (ps: with ps; [ ipdb ipython isort black ]))
+      (ps: with ps; [ cython ipdb ipython isort black ]))
     rye
     nodePackages.pyright
     ruff
