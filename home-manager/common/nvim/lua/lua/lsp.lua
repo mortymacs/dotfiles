@@ -242,18 +242,23 @@ lspconfig.cssls.setup({
 -- JSON
 lspconfig.jsonls.setup({
   capabilities = capabilities,
-  on_attach = function(_, bufnr)
-    lsp_signature.on_attach(lsp_signature_setup, bufnr)
-  end,
+  settings = {
+    json = {
+      schemas = require("schemastore").json.schemas(),
+      validate = { enable = true },
+    },
+  },
 })
 
 -- YAML
-local yamlCfg = require("yaml-companion").setup({
-  builtin_matchers = {
-    kubernetes = { enabled = true },
+lspconfig.yamlls.setup({
+  capabilities = capabilities,
+  settings = {
+    yaml = {
+      schemas = require("schemastore").yaml.schemas(),
+    },
   },
 })
-lspconfig.yamlls.setup(yamlCfg)
 
 -- Glance
 require("glance").setup({

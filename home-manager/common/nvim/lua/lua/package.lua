@@ -35,6 +35,10 @@ require("lazy").setup({
     },
   },
   "luukvbaal/statuscol.nvim",
+  {
+    "b0o/incline.nvim",
+    event = "VeryLazy",
+  },
 
   -- Notification.
   "rcarriga/nvim-notify",
@@ -198,7 +202,10 @@ require("lazy").setup({
     opts = {},
     event = "LspAttach",
   },
-  "dnlhc/glance.nvim",
+  {
+    "dnlhc/glance.nvim",
+    event = "LspAttach",
+  },
   {
     "gfanto/fzf-lsp.nvim",
     dependencies = {
@@ -206,7 +213,10 @@ require("lazy").setup({
     },
     event = "LspAttach",
   },
-  "VidocqH/lsp-lens.nvim",
+  {
+    "VidocqH/lsp-lens.nvim",
+    event = "LspAttach",
+  },
   "mortymacs/lsp-meta.nvim",
   "hrsh7th/vim-vsnip",
   "smjonas/inc-rename.nvim",
@@ -258,10 +268,10 @@ require("lazy").setup({
   },
   -- -- Typst.
   "kaarmu/typst.vim",
-  -- -- YAML.
+  -- -- JSON/YAML.
   {
-    "someone-stole-my-name/yaml-companion.nvim",
-    ft = { "yaml" },
+    "b0o/schemastore.nvim",
+    ft = { "yaml", "json" },
   },
   -- -- Path.
   "hrsh7th/cmp-path",
