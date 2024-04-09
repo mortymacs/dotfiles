@@ -19,11 +19,6 @@ local lspkind = require("lspkind")
 -- CMP.
 local cmp = require("cmp")
 cmp.setup({
-  snippet = {
-    expand = function(args)
-      vim.fn["vsnip#anonymous"](args.body)
-    end,
-  },
   window = {
     completion = {
       winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
@@ -51,30 +46,13 @@ cmp.setup({
   }),
   sources = cmp.config.sources({
     { name = "nvim_lsp" },
-    { name = "vsnip" },
-  }, {
     { name = "treesitter" },
-  }, {
-    { name = "buffer" },
-  }, {
     { name = "path" },
-  }, {
-    { name = "crates" },
-  }, {
-    { name = "nvim_lua" },
-  }),
-})
-
--- Set configuration for specific filetype.
-cmp.setup.filetype("gitcommit", {
-  sources = cmp.config.sources({
-    { name = "cmp_git" }, -- You can specify the `cmp_git` source if you were installed it.
-  }, {
     { name = "buffer" },
   }),
 })
 
--- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+-- Use cmdline & path source for ':'.
 cmp.setup.cmdline(":", {
   mapping = cmp.mapping.preset.cmdline(),
   sources = cmp.config.sources({
@@ -290,6 +268,7 @@ require("lsp-lens").setup({
 
 -- Rename.
 require("inc_rename").setup()
+require("lsp-file-operations").setup()
 
 -- Status.
 require("lsp-progress").setup()

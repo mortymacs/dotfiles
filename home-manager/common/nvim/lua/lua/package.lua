@@ -191,10 +191,13 @@ require("lazy").setup({
   -- LSP.
   "neovim/nvim-lspconfig",
   "onsails/lspkind.nvim",
-  "hrsh7th/nvim-cmp",
-  "hrsh7th/cmp-cmdline",
   {
     "hrsh7th/cmp-nvim-lsp",
+    dependencies = {
+      "hrsh7th/nvim-cmp",
+      "hrsh7th/cmp-cmdline",
+      "hrsh7th/cmp-path",
+    },
     event = "LspAttach",
   },
   {
@@ -218,8 +221,14 @@ require("lazy").setup({
     event = "LspAttach",
   },
   "mortymacs/lsp-meta.nvim",
-  "hrsh7th/vim-vsnip",
   "smjonas/inc-rename.nvim",
+  {
+    "antosha417/nvim-lsp-file-operations",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-neo-tree/neo-tree.nvim",
+    },
+  },
   {
     "linrongbin16/lsp-progress.nvim",
     dependencies = {
@@ -256,6 +265,7 @@ require("lazy").setup({
   {
     "hrsh7th/cmp-nvim-lua",
     ft = { "lua" },
+    event = "LspAttach",
   },
   {
     "rafcamlet/nvim-luapad",
@@ -273,8 +283,6 @@ require("lazy").setup({
     "b0o/schemastore.nvim",
     ft = { "yaml", "json" },
   },
-  -- -- Path.
-  "hrsh7th/cmp-path",
 
   -- Quickfix.
   "kevinhwang91/nvim-bqf",
