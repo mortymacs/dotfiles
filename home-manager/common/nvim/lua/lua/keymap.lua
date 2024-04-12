@@ -67,7 +67,6 @@ SetKeyMap("U",          "<esc><Cmd>silent redo<cr>", {"n"})
 -- other options: v$ v0o$
 SetKeyMap("<c-space>", "<esc>v", { "n" })
 SetKeyMap("<c-@>",     "<esc>v")
-SetKeyMap("<c-d>",     "<esc>yyp")
 SetKeyMap("<c-z>",     "<esc>u")
 -- Stop copying text on delete.
 SetKeyMap("<Del>",     '"_d',    { "v" })
@@ -134,6 +133,13 @@ SetKeyMap("<S-Tab>",   "<gv",   { "v" })
 SetKeyMap("<c-x><Up>", "<Cmd>ToggleTerm<cr>")
 SetKeyMap("<c-up>",    "<c-\\><c-n>", {"t"})
 
+-- Org mode.
+SetKeyMap("<c-j><c-t>", "<Cmd>Neorg workspace todo<cr>")
+SetKeyMap("<c-j><c-n>", "<Cmd>Neorg workspace notes<cr>")
+SetKeyMap("<c-j><c-o>", "<Cmd>Neorg workspace oss<cr>")
+SetKeyMap("<c-j><c-i>", "<Cmd>Neorg workspace ideas<cr>")
+SetKeyMap("<c-j><c-r>", "<Cmd>Neorg return<cr>")
+
 -- LSP
 SetKeyMap("<c-c><c-d>",     vim.lsp.buf.definition)
 SetKeyMap("<c-c><c-i>",     vim.lsp.buf.implementation)
@@ -153,8 +159,8 @@ SetKeyMap("<c-c><c-j>",     function() require('treesj').toggle() end)
 SetKeyMap("<c-x><c-l>",     RestartLsp)
 
 -- Debug
-SetKeyMap("<c-j><c-s>", function() require("dapui").toggle() end)
-SetKeyMap("<c-j><c-t>", "<Cmd>DapToggleBreakpoint<cr>")
+SetKeyMap("<c-d><c-s>", function() require("dapui").toggle() end)
+SetKeyMap("<c-d><c-t>", "<Cmd>DapToggleBreakpoint<cr>")
 
 -- Test
 SetKeyMap("<c-t><c-x>",     "<esc><Cmd>Neotest run<cr>")

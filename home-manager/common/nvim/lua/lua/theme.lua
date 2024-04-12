@@ -1,16 +1,35 @@
 vim.g.background = "dark"
 vim.g.ayucolor = "dark"
 vim.cmd.colorscheme("ayu")
+require('ayu').setup({
+  mirage = false,
+  terminal = false,
+  overrides = {
+    Normal        = { bg = "None" },
+    ColorColumn   = { bg = "None" },
+    SignColumn    = { bg = "None" },
+    Folded        = { bg = "None" },
+    FoldColumn    = { bg = "None" },
+    CursorLine    = { bg = "#001f3f", fg = "None" },
+    CursorColumn  = { bg = "None" },
+    WhichKeyFloat = { bg = "None" },
+    VertSplit     = { bg = "None",    fg = "#1b1c36" },
+    Comment       = { bg = "None" },
+    Line          = { bg = "None" },
+  },
+})
 
 -- Body
-vim.api.nvim_set_hl(0, "Normal",      {bg = ""})
 vim.api.nvim_set_hl(0, "NormalFloat", {bg = ""})
+vim.api.nvim_set_hl(0, "FloatBorder", {bg = "",        fg = "#686f9a"})
 vim.api.nvim_set_hl(0, "Search",      {bg = "#087e8b", fg = "#ffffff"})
-vim.api.nvim_set_hl(0, "EndOfBuffer", {bg = "", fg = "#090d12"})
-vim.api.nvim_set_hl(0, "LineNr",      {bg = "", fg = "#292948"})
-vim.api.nvim_set_hl(0, "SignColumn",  {bg = ""})
-vim.api.nvim_set_hl(0, "VertSplit",   {bg = "", fg = "#1b1c36"})
-vim.api.nvim_set_hl(0, "NonText",     {bg = "", fg = ""})
+vim.api.nvim_set_hl(0, "EndOfBuffer", {bg = "",        fg = "#090d12"})
+vim.api.nvim_set_hl(0, "LineNr",      {bg = "",        fg = "#292948"})
+vim.api.nvim_set_hl(0, "NonText",     {bg = "",        fg = ""})
+
+-- Comment / Label
+vim.api.nvim_set_hl(0, "@comment",    {bg = ""})
+vim.api.nvim_set_hl(0, "ContextVt",   {bg = ""})
 
 -- Statusline
 vim.api.nvim_set_hl(0, "StatusLine",     {bg = "", fg = ""})
@@ -46,9 +65,9 @@ vim.api.nvim_set_hl(0, "TelescopeBorder",        {bg = "", fg = "#686f9a", link 
 
 -- LSP
 -- -- General.
-vim.api.nvim_set_hl(0, "Pmenu",                       {fg = "#ecf0c1", bg = "#1A1B24"})
+vim.api.nvim_set_hl(0, "Pmenu",                       {fg = "#ecf0c1", bg = ""})
 vim.api.nvim_set_hl(0, "PmenuSbar",                   {bg = "#272831"})
-vim.api.nvim_set_hl(0, "PmenuDoc",                    {fg = "#ecf0c1", bg = "#1A1B24"})
+vim.api.nvim_set_hl(0, "PmenuDoc",                    {fg = "#ecf0c1", bg = ""})
 -- -- CMP.
 vim.api.nvim_set_hl(0, "CmpItemAbbrDeprecated",       {fg = "#7E8294"})
 vim.api.nvim_set_hl(0, "CmpItemAbbrMatch",            {fg = "#82AAFF"})
@@ -117,8 +136,7 @@ vim.g.bookmark_sho_warning = 0
 vim.g.bookmark_show_toggle_warning = 0
 
 -- Cursor
-vim.api.nvim_set_hl(0, "CursorLine",   {bg = "#001f3f", fg=""})
-vim.api.nvim_set_hl(0, "CursorLineNr", {bg = "",        fg="#F3A712"})
+vim.api.nvim_set_hl(0, "CursorLineNr", {bg = "", fg="#F3A712"})
 vim.opt.guicursor = { "a:ver1" }
 
 -- Modes

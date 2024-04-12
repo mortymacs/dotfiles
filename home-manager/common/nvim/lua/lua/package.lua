@@ -15,7 +15,7 @@ vim.opt.rtp:prepend(lazypath)
 -- Packages.
 require("lazy").setup({
   -- Theme.
-  "ayu-theme/ayu-vim",
+  "Shatur/neovim-ayu",
   "mvllow/modes.nvim",
 
   -- Tabbar.
@@ -109,6 +109,25 @@ require("lazy").setup({
     event = "VeryLazy",
   },
 
+  -- Org mode.
+  {
+    "vhyrro/luarocks.nvim",
+    priority = 1000,
+    config = true,
+  },
+  {
+    "nvim-neorg/neorg",
+    version = "*",
+    dependencies = {
+      "luarocks.nvim",
+    },
+    build = function()
+      vim.cmd(":Neorg sync-parsers")
+    end,
+    lazy = false,
+    ft = { "norg" },
+  },
+
   -- Development.
   {
     "nvim-neotest/neotest",
@@ -192,6 +211,8 @@ require("lazy").setup({
       "hrsh7th/nvim-cmp",
       "hrsh7th/cmp-cmdline",
       "hrsh7th/cmp-path",
+      "hrsh7th/cmp-vsnip",
+      "hrsh7th/vim-vsnip",
     },
     event = "LspAttach",
   },

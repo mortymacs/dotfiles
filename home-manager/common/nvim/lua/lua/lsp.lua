@@ -19,16 +19,21 @@ local lspkind = require("lspkind")
 -- CMP.
 local cmp = require("cmp")
 cmp.setup({
+  snippet = {
+    expand = function(args)
+      vim.fn["vsnip#anonymous"](args.body)
+    end,
+  },
   window = {
     completion = {
-      winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
+      winhighlight = "Normal:Pmenu",
       col_offset = -3,
-      side_padding = 0,
-      border = "none",
+      side_padding = 1,
+      border = "single",
     },
     documentation = {
       winhighlight = "Normal:PmenuDoc",
-      border = "none",
+      border = "single",
     },
   },
   formatting = {

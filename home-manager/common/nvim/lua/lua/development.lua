@@ -14,13 +14,18 @@ require("nvim-treesitter.configs").setup({
     "markdown_inline",
     "dockerfile",
     "hcl",
+    "vim",
     "json",
     "yaml",
     "toml",
     "html",
     "css",
+    "query",
     "regex",
     "http",
+    "vimdoc",
+    "norg",
+    "norg_meta",
   },
   sync_install = true,
   auto_install = true,
@@ -72,8 +77,8 @@ require("nvim-treesitter.configs").setup({
 
 -- Treesitter plugins.
 require("treesitter-context").setup({
-    max_lines = 10,
-    separator = "─",
+  max_lines = 10,
+  separator = "─",
 })
 require("nvim_context_vt").setup({
   disable_virtual_lines = true,
@@ -332,6 +337,25 @@ require("zen-mode").setup({
     alacritty = {
       enabled = true,
       font = "25",
+    },
+  },
+})
+
+-- Org mode.
+require("neorg").setup({
+  load = {
+    ["core.defaults"] = {},
+    ["core.concealer"] = {},
+    ["core.dirman"] = {
+      config = {
+        workspaces = {
+          todo = "~/Documents/org/todo",
+          notes = "~/Documents/org/notes",
+          oss = "~/Documents/org/oss",
+          ideas = "~/Documents/org/ideas",
+        },
+        default_workspace = "todo",
+      },
     },
   },
 })

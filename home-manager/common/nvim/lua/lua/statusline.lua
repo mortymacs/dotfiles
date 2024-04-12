@@ -5,7 +5,7 @@ local left_left_icon = "" -- right_icon
 local right_right_icon = "" -- left_icon
 require("lualine").setup({
   options = {
-    theme = "auto",
+    theme = "ayu",
     component_separators = { left = "", right = "" },
     section_separators = { left = left_icon, right = right_icon },
     globalstatus = true,

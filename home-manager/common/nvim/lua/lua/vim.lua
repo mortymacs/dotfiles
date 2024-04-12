@@ -31,6 +31,10 @@ vim.opt.shiftwidth = 4
 vim.opt.backspace = "2"
 vim.opt.list = false
 
+-- Fold.
+vim.opt.foldlevel = 99
+vim.opt.conceallevel = 2
+
 -- Menu
 vim.opt.completeopt = "menu,menuone,noselect"
 
