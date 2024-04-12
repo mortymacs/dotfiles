@@ -23,7 +23,11 @@ cmp.setup({
     completion = {
       winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
       col_offset = -3,
-      side_padding = 1,
+      side_padding = 0,
+      border = "none",
+    },
+    documentation = {
+      winhighlight = "Normal:PmenuDoc",
       border = "none",
     },
   },

@@ -11,6 +11,3 @@ require("bigfile").setup({
     "vimopts",
   },
 })
-
--- Incline.
-require('incline').setup()

@@ -35,10 +35,6 @@ require("lazy").setup({
     },
   },
   "luukvbaal/statuscol.nvim",
-  {
-    "b0o/incline.nvim",
-    event = "VeryLazy",
-  },
 
   -- Notification.
   "rcarriga/nvim-notify",

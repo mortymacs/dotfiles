@@ -48,6 +48,7 @@ vim.api.nvim_set_hl(0, "TelescopeBorder",        {bg = "", fg = "#686f9a", link 
 -- -- General.
 vim.api.nvim_set_hl(0, "Pmenu",                       {fg = "#ecf0c1", bg = "#1A1B24"})
 vim.api.nvim_set_hl(0, "PmenuSbar",                   {bg = "#272831"})
+vim.api.nvim_set_hl(0, "PmenuDoc",                    {fg = "#ecf0c1", bg = "#1A1B24"})
 -- -- CMP.
 vim.api.nvim_set_hl(0, "CmpItemAbbrDeprecated",       {fg = "#7E8294"})
 vim.api.nvim_set_hl(0, "CmpItemAbbrMatch",            {fg = "#82AAFF"})
