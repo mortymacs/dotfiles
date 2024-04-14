@@ -18,13 +18,13 @@ My environment config. I tried to keep it minimal and simple as much as I could.
 | Window Manager | [Sway](https://github.com/swaywm/sway) |
 | Status Bar | [i3status-rust](https://github.com/greshake/i3status-rust) |
 | Mako | [Mako](https://github.com/emersion/mako) |
-| Terminal | [Kitty](https://sw.kovidgoyal.net/kitty) |
+| Terminal | [Alacritty](https://alacritty.org) |
 | Shell | [Fish](https://fishshell.com) |
 | Shell Prompt | [Starship](https://github.com/starship/starship) |
 | Terminal Multiplexer | [Tmux](https://github.com/tmux/tmux) |
 | Editor/IDE | [Neovim](https://github.com/neovim/neovim) |
 | DB | [dbcli tools](https://github.com/dbcli) |
-| Fonts | Display: [Lexend](https://github.com/googlefonts/lexend), [VarizMatn](https://github.com/rastikerdar/vazirmatn), Monospace: [JetbrainsMono Nerd Font](https://www.nerdfonts.com) |
+| Fonts | Display: [Lexend](https://github.com/googlefonts/lexend), [VarizMatn](https://github.com/rastikerdar/vazirmatn), Monospace: [CodeNewRoman Nerd Font](https://www.nerdfonts.com) |
 | File Manager | [Broot](https://github.com/Canop/broot) |
 | Launcher | [Rofi-Wayland](https://github.com/lbonn/rofi) |
 | Browser | [Firefox](https://www.mozilla.org) |

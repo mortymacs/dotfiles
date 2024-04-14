@@ -64,7 +64,7 @@ in {
         };
       };
 
-      terminal = "kitty";
+      terminal = "alacritty";
       keybindings = {
         # Focus.
         "${modifier}+Down" = "focus down";
@@ -108,7 +108,7 @@ in {
 
         # Application.
         "${modifier}+w" = "exec firefox";
-        "${modifier}+Return" = "exec kitty";
+        "${modifier}+Return" = "exec alacritty msg create-window 2>/dev/null || alacritty";
         "${modifier}+Shift+s" = "exec flameshot gui";
       };
 

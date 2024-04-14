@@ -1,7 +1,8 @@
 { pkgs, ... }: {
-  programs.kitty = {
+  programs.alacritty = {
     enable = true;
-    package = pkgs.unstable.kitty;
-    extraConfig = builtins.readFile ./kitty.conf;
+    package = pkgs.unstable.alacritty;
   };
+
+  xdg.configFile = { "alacritty/alacritty.toml".source = ./alacritty.toml; };
 }
