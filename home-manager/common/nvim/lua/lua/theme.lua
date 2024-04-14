@@ -28,7 +28,8 @@ vim.api.nvim_set_hl(0, "NonText",     {bg = "",        fg = ""})
 
 -- Comment / Label
 vim.api.nvim_set_hl(0, "@comment",    {bg = ""})
-vim.api.nvim_set_hl(0, "ContextVt",   {bg = ""})
+vim.api.nvim_set_hl(0, "@variable",   {fg = "#ecf0c1"})
+vim.api.nvim_set_hl(0, "ContextVt",   {bg = "", fg = "#0e6ba8"})
 
 -- Statusline
 vim.api.nvim_set_hl(0, "StatusLine",     {bg = "", fg = ""})
@@ -67,7 +68,7 @@ vim.api.nvim_set_hl(0, "TelescopeBorder",        {bg = "", fg = "#686f9a", link 
 vim.api.nvim_set_hl(0, "Pmenu",                       {fg = "#ecf0c1", bg = ""})
 vim.api.nvim_set_hl(0, "PmenuSbar",                   {bg = "#272831"})
 vim.api.nvim_set_hl(0, "PmenuDoc",                    {fg = "#ecf0c1", bg = ""})
----- -- Glance.
+-- -- Glance.
 vim.api.nvim_set_hl(0, "GlancePreviewNormal",         {bg = "#000000"})
 vim.api.nvim_set_hl(0, "GlancePreviewMatch",          {bg = "#000000"})
 vim.api.nvim_set_hl(0, "GlancePreviewSignColumn",     {bg = "#000000"})

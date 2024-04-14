@@ -108,7 +108,8 @@ require("Comment").setup({
 
 -- Colorizer.
 require("colorizer").setup()
-vim.api.nvim_create_autocmd("BufWritePost", { pattern = "*", command = ":ColorizerReloadAllBuffers" })
+vim.api.nvim_create_autocmd({ "BufWritePost" }, { pattern = "*", command = ":ColorizerReloadAllBuffers" })
+vim.api.nvim_create_autocmd({ "BufReadPost" }, { pattern = "*", command = ":ColorizerAttachToBuffer" })
 
 -- Highlight.
 require("illuminate").configure({
