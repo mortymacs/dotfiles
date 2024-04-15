@@ -219,12 +219,12 @@
   '';
 
   # Utility.
-  touch = ''
+  mkfile = ''
     if test -e "$argv[1]"
         echo "path exists"
         return
     end
-    set dir_path (command dirname "$argv[1]")
+    set dir_path (dirname "$argv[1]")
     mkdir -p "$dir_path"
     echo > "$argv[1]"
   '';
