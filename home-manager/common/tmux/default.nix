@@ -7,8 +7,8 @@ let
   left_foreground = "#fdfcdc";
   active_pane_background = "#0081a7";
   active_pane_foreground = "#ffffff";
-  left_icon = "";
-  right_icon = "";
+  left_icon = "";
+  right_icon = "";
 in {
   programs.tmux = {
     enable = true;

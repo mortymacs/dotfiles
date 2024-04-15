@@ -12,7 +12,7 @@ require("neo-tree").setup({
     default_source = "filesystem",
     enable_diagnostics = true,
     enable_git_status = true,
-    enable_modified_markers = true,
+    enable_modified_markers = false,
     enable_opened_markers = true,
     enable_refresh_on_write = true,
     git_status_async = true,
