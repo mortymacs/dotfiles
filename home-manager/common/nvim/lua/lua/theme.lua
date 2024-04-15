@@ -9,7 +9,6 @@ require('ayu').setup({
     SignColumn    = { bg = "None" },
     Folded        = { bg = "None" },
     FoldColumn    = { bg = "None" },
-    CursorLine    = { bg = "#001f3f", fg = "None" },
     CursorColumn  = { bg = "None" },
     WhichKeyFloat = { bg = "None" },
     VertSplit     = { bg = "None",    fg = "#1b1c36" },
@@ -27,9 +26,12 @@ vim.api.nvim_set_hl(0, "LineNr",      {bg = "",        fg = "#292948"})
 vim.api.nvim_set_hl(0, "NonText",     {bg = "",        fg = ""})
 
 -- Comment / Label
-vim.api.nvim_set_hl(0, "@comment",    {bg = ""})
-vim.api.nvim_set_hl(0, "@variable",   {fg = "#ecf0c1"})
-vim.api.nvim_set_hl(0, "ContextVt",   {bg = "", fg = "#0e6ba8"})
+vim.api.nvim_set_hl(0, "@comment",  {bg = ""})
+vim.api.nvim_set_hl(0, "@variable", {fg = "#ecf0c1"})
+
+-- Treesitter
+vim.api.nvim_set_hl(0, "ContextVt",         {bg = "", fg = "#0e6ba8"})
+vim.api.nvim_set_hl(0, "TreesitterContext", {bg = ""})
 
 -- Statusline
 vim.api.nvim_set_hl(0, "StatusLine",     {bg = "", fg = ""})
@@ -63,6 +65,14 @@ vim.api.nvim_set_hl(0, "TelescopePromptNormal",  {bg = "",                 link 
 vim.api.nvim_set_hl(0, "TelescopeResultNormal",  {bg = "",                 link = "TelescopeResultNormal"})
 vim.api.nvim_set_hl(0, "TelescopeBorder",        {bg = "", fg = "#686f9a", link = "TelescopeBorder"})
 
+-- Tree
+vim.api.nvim_set_hl(0, "NeoTreeGitAdded",     {bg = "", fg = "#00B9AE"})
+vim.api.nvim_set_hl(0, "NeoTreeGitConflict",  {bg = "", fg = "#ff0054"})
+vim.api.nvim_set_hl(0, "NeoTreeGitDeleted",   {bg = "", fg = "#E23E58"})
+vim.api.nvim_set_hl(0, "NeoTreeGitIgnored",   {bg = "", fg = "#686f9a"})
+vim.api.nvim_set_hl(0, "NeoTreeGitModified",  {bg = "", fg = "#F3A712"})
+vim.api.nvim_set_hl(0, "NeoTreeGitUntracked", {bg = "", fg = "#babd8d"})
+
 -- LSP
 -- -- General.
 vim.api.nvim_set_hl(0, "Pmenu",                       {fg = "#ecf0c1", bg = ""})
@@ -92,6 +102,8 @@ vim.g.bookmark_sho_warning = 0
 vim.g.bookmark_show_toggle_warning = 0
 
 -- Cursor
+vim.api.nvim_set_hl(0, "CursorLine",   {bg = "#05264a", fg=""})
+vim.api.nvim_set_hl(0, "CursorLineNr", {bg = "",        fg="#F3A712"})
 vim.opt.guicursor = { "a:ver1" }
 
 -- Modes
