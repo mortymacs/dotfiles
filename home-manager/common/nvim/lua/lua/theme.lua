@@ -104,7 +104,7 @@ vim.g.bookmark_show_toggle_warning = 0
 -- Cursor
 vim.api.nvim_set_hl(0, "CursorLine",   {bg = "#05264a", fg=""})
 vim.api.nvim_set_hl(0, "CursorLineNr", {bg = "",        fg="#F3A712"})
-vim.opt.guicursor = { "a:ver1" }
+--vim.opt.guicursor = { "a:ver1" }
 
 -- Modes
 require('modes').setup({

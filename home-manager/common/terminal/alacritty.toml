@@ -31,7 +31,7 @@ text = "#FCFCFC"
 
 [cursor.style]
 blinking = "Always"
-shape = "Beam"
+#shape = "Beam"
 
 [cursor.vi_mode_style]
 blinking = "Always"

@@ -163,7 +163,7 @@ lspconfig.denols.setup({
   end,
 })
 
--- Nix
+-- Nix.
 lspconfig.nil_ls.setup({
   capabilities = capabilities,
   on_attach = function(_, bufnr)
@@ -171,7 +171,7 @@ lspconfig.nil_ls.setup({
   end,
 })
 
--- Shell
+-- Shell.
 lspconfig.bashls.setup({
   capabilities = capabilities,
   on_attach = function(_, bufnr)
@@ -179,7 +179,7 @@ lspconfig.bashls.setup({
   end,
 })
 
--- Cmake
+-- CMake.
 lspconfig.cmake.setup({
   capabilities = capabilities,
   on_attach = function(_, bufnr)
@@ -187,7 +187,7 @@ lspconfig.cmake.setup({
   end,
 })
 
--- Terraform
+-- Terraform.
 lspconfig.terraformls.setup({
   capabilities = capabilities,
   on_attach = function(_, bufnr)
@@ -195,7 +195,7 @@ lspconfig.terraformls.setup({
   end,
 })
 
--- Typst
+-- Typst.
 lspconfig.typst_lsp.setup({
   capabilities = capabilities,
   on_attach = function(_, bufnr)
@@ -225,7 +225,7 @@ lspconfig.cssls.setup({
   end,
 })
 
--- JSON
+-- JSON.
 lspconfig.jsonls.setup({
   capabilities = capabilities,
   settings = {
@@ -236,7 +236,7 @@ lspconfig.jsonls.setup({
   },
 })
 
--- YAML
+-- YAML.
 lspconfig.yamlls.setup({
   capabilities = capabilities,
   settings = {
@@ -246,7 +246,7 @@ lspconfig.yamlls.setup({
   },
 })
 
--- Glance
+-- Glance.
 require("glance").setup({
   preview_win_opts = {
     cursorline = false,
