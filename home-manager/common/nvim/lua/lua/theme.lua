@@ -106,6 +106,9 @@ vim.api.nvim_set_hl(0, "CursorLine",   {bg = "#05264a", fg=""})
 vim.api.nvim_set_hl(0, "CursorLineNr", {bg = "",        fg="#F3A712"})
 --vim.opt.guicursor = { "a:ver1" }
 
+-- Whichkey
+vim.api.nvim_set_hl(0, "WhichKeySeparator", {bg = "#090d12"})
+
 -- Modes
 require('modes').setup({
   colors = {
