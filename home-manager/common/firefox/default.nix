@@ -70,6 +70,7 @@
           "datareporting.policy.firstRunURL" = "";
           "browser.aboutwelcome.enabled" = false;
           "accessibility.typeaheadfind.enablesound" = false;
+          "network.protocol-handler.external.mailto" = false;
           "browser.uiCustomization.state" = builtins.readFile ./ui.json;
           "browser.newtabpage.pinned" = [{
             title = "Mort";
