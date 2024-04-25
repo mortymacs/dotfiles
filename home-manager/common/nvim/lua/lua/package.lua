@@ -108,6 +108,7 @@ require("lazy").setup({
     },
     event = "VeryLazy",
   },
+  "f-person/git-blame.nvim",
 
   -- Org mode.
   {
