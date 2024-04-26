@@ -1,7 +1,4 @@
 -- Setup.
-vim.g.gitblame_display_virtual_text = 0
-local git_blame = require("gitblame")
-
 local left_icon = ""
 local right_icon = ""
 local left_left_icon = "" -- right_icon
@@ -32,9 +29,7 @@ require("lualine").setup({
         },
       },
     },
-    lualine_b = {
-      { git_blame.get_current_blame_text, cond = git_blame.is_blame_text_available },
-    },
+    lualine_b = {},
     lualine_c = {},
     lualine_x = {
       require("lsp-progress").progress,

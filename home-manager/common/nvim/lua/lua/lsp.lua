@@ -258,22 +258,6 @@ require("glance").setup({
   },
 })
 
--- Lens.
-local SymbolKind = vim.lsp.protocol.SymbolKind
-require("lsp-lens").setup({
-  sections = {
-    definition = true,
-  },
-  indent_by_lsp = false,
-  target_symbol_kinds = {
-    SymbolKind.Function,
-    SymbolKind.Method,
-    SymbolKind.Interface,
-    SymbolKind.Class,
-    SymbolKind.Struct,
-  },
-})
-
 -- Rename.
 require("inc_rename").setup()
 require("lsp-file-operations").setup()

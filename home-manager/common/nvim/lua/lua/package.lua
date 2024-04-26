@@ -108,7 +108,6 @@ require("lazy").setup({
     },
     event = "VeryLazy",
   },
-  "f-person/git-blame.nvim",
 
   -- Org mode.
   {
@@ -231,10 +230,6 @@ require("lazy").setup({
     dependencies = {
       "nvim-lua/plenary.nvim",
     },
-    event = "LspAttach",
-  },
-  {
-    "VidocqH/lsp-lens.nvim",
     event = "LspAttach",
   },
   "mortymacs/lsp-meta.nvim",
