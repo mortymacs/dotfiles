@@ -86,6 +86,7 @@
     clang-tools
     gdb
     cgdb
+    cppcheck
     rr
     ccache
     cmake
