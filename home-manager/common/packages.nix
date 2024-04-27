@@ -89,6 +89,7 @@
     cppcheck
     rr
     ccache
+    unstable.include-what-you-use
     cmake
     cmake-language-server
     valgrind-light
