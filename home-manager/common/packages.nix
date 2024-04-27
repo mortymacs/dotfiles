@@ -97,6 +97,7 @@
     cflow
     bear
     doxygen
+    emscripten
     ## Rust.
     rustc
     rustfmt
@@ -113,7 +114,7 @@
     unstable.gosec
     unstable.golangci-lint
     unstable.govulncheck
-    # unstable.nilaway
+    unstable.nilaway
     goimports-reviser
     goconst
     gofumpt
