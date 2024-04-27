@@ -81,7 +81,7 @@
 
     # Programming.
     ## C/C++.
-    (hiPrio gcc)
+    (hiPrio unstable.gcc)
     clang
     clang-tools
     gdb
