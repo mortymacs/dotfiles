@@ -10,22 +10,9 @@ SetKeyMap("<c-x><c-c>", "<Cmd>Telescope command_palette<cr>")
 SetKeyMap("<c-x><c-v>", "<Cmd>vsplit<cr>")
 SetKeyMap("<c-x><c-h>", "<Cmd>split<cr>")
 
--- Moving around panes
-SetKeyMap("<m-up>",    "<esc><c-w><c-k>")
-SetKeyMap("<m-down>",  "<esc><c-w><c-j>")
-SetKeyMap("<m-left>",  "<esc><c-w><c-h>")
-SetKeyMap("<m-right>", "<esc><c-w><c-l>")
-
--- Resize panes
-SetKeyMap("<c-s-up>",    "<Cmd>resize -1<cr>")
-SetKeyMap("<c-s-down>",  "<Cmd>resize +1<cr>")
-SetKeyMap("<c-s-left>",  "<Cmd>vertical resize +1<cr>")
-SetKeyMap("<c-s-right>", "<Cmd>vertical resize -1<cr>")
-
 -- Buffer
 SetKeyMap("<c-x><c-e>", "<Cmd>BufferClose<cr>")
 SetKeyMap("<c-f>",      "<Cmd>Telescope current_buffer_fuzzy_find<cr>")
-SetKeyMap("<c-x><c-r>", "<Cmd>MurenToggle<cr>")
 
 -- Tabbar.
 SetKeyMap("<s-left>",   "<Cmd>BufferPrevious<cr>")
@@ -60,14 +47,8 @@ SetKeyMap("<c-g><c-i>", "<esc><Cmd>Gitignore<cr>")
 
 -- History
 SetKeyMap("<c-x><c-u>", "<Cmd>Telescope undo<cr>")
-SetKeyMap("u",          "<esc><Cmd>silent undo<cr>", {"n"})
-SetKeyMap("U",          "<esc><Cmd>silent redo<cr>", {"n"})
 
 -- Text
--- other options: v$ v0o$
-SetKeyMap("<c-space>", "<esc>v", { "n" })
-SetKeyMap("<c-@>",     "<esc>v")
-SetKeyMap("<c-z>",     "<esc>u")
 -- Stop copying text on delete.
 SetKeyMap("<Del>",     '"_d',    { "v" })
 -- Decorated yank.
@@ -112,22 +93,6 @@ end)
 -- https://stackoverflow.com/a/63887462/2338672
 SetKeyMap("<s-m-down>", "<esc><Cmd>m .+1<cr>==gi", { "i" })
 SetKeyMap("<s-m-up>",   "<esc><Cmd>m .-2<cr>==gi", { "i" })
-
--- https://vim.fandom.com/wiki/Map_Ctrl-Backspace_to_delete_previous_word
-SetKeyMap("<c-bs>", "<c-w>", { "n" })
-SetKeyMap("<c-h>",  "<c-w>", { "n" })
-
--- Goto the beginning and end of a line.
-SetKeyMap("<c-e>",  "<s-$>")
-SetKeyMap("<c-a>",  "<s-^>")
-SetKeyMap("<m-bs>", "<c-w>", { "i" })
-
--- https://vim.fandom.com/wiki/Shifting_blocks_visually
-SetKeyMap("<Tab>",     ">>_",   { "n" })
-SetKeyMap("<S-Tab>",   "<<_",   { "n" })
-SetKeyMap("<S-Tab>",   "<C-D>", { "i" })
-SetKeyMap("<Tab>",     ">gv",   { "v" })
-SetKeyMap("<S-Tab>",   "<gv",   { "v" })
 
 -- Terminal
 SetKeyMap("<c-x><Up>", "<Cmd>ToggleTerm<cr>")

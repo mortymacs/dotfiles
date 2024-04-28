@@ -48,9 +48,7 @@ end
 
 -- Restart LSP and all related plugins.
 function RestartLsp()
-  vim.cmd([[ LspLensOff ]])
   vim.cmd([[ LspRestart ]])
-  vim.cmd([[ LspLensOn ]])
 end
 
 -- AddToQuickFix add item to the quickfix.
