@@ -4,7 +4,6 @@
     bars = {
       default = {
         blocks = [
-          { block = "tea_timer"; }
           {
             block = "cpu";
             interval = 1;
