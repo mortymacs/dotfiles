@@ -27,9 +27,9 @@ vim.api.nvim_set_hl(0, "VertSplit",   { bg = "",        fg = "#1b1c36" })
 
 -- Tabs.
 vim.api.nvim_set_hl(0, "BufferTabpageFill",  { bg = "#090d12" })
-vim.api.nvim_set_hl(0, "BufferCurrentSign",  { bg = "", fg = "#087e8b" })
+vim.api.nvim_set_hl(0, "BufferCurrentSign",  { bg = "",           fg = "#087e8b" })
 vim.api.nvim_set_hl(0, "BufferInactive",     { bg = "" })
-vim.api.nvim_set_hl(0, "BufferInactiveSign", { bg = "", fg = "#090d12" })
+vim.api.nvim_set_hl(0, "BufferInactiveSign", { bg = "",           fg = "#090d12" })
 
 -- Comment / Label.
 vim.api.nvim_set_hl(0, "@comment",  { bg = "" })
@@ -90,10 +90,11 @@ vim.api.nvim_set_hl(0, "GlancePreviewMatch",          { bg = "#000000" })
 vim.api.nvim_set_hl(0, "GlancePreviewSignColumn",     { bg = "#000000" })
 vim.api.nvim_set_hl(0, "GlancePreviewLineNr",         { bg = "#000000" })
 vim.api.nvim_set_hl(0, "GlanceListNormal",            { bg = "#000000" })
--- -- LspLens.
-vim.api.nvim_set_hl(0, "LspLens",                     { bg = "", fg = "#495057" })
 -- -- Lsp Signature.
 vim.api.nvim_set_hl(0, "LspSignatureActiveParameter", { bg = "#0e6ba8", fg = "#ffffff" })
+
+-- Treesitter.
+vim.api.nvim_set_hl(0, "TreesitterContextSeparator", { bg = "", fg = "#1b1c36" })
 
 -- Quickfix.
 vim.api.nvim_set_hl(0, "BqfPreviewFloat",  { bg = "#090d12",                 link = "BqfPreviewFloat" })
