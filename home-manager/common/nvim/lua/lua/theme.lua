@@ -11,105 +11,111 @@ require('ayu').setup({
     FoldColumn    = { bg = "None" },
     CursorColumn  = { bg = "None" },
     WhichKeyFloat = { bg = "None" },
-    VertSplit     = { bg = "None",    fg = "#1b1c36" },
     Comment       = { bg = "None" },
     Line          = { bg = "None" },
   },
 })
 
--- Body
-vim.api.nvim_set_hl(0, "NormalFloat", {bg = ""})
-vim.api.nvim_set_hl(0, "FloatBorder", {bg = "",        fg = "#686f9a"})
-vim.api.nvim_set_hl(0, "Search",      {bg = "#087e8b", fg = "#ffffff"})
-vim.api.nvim_set_hl(0, "EndOfBuffer", {bg = "",        fg = "#090d12"})
-vim.api.nvim_set_hl(0, "LineNr",      {bg = "",        fg = "#292948"})
-vim.api.nvim_set_hl(0, "NonText",     {bg = "",        fg = ""})
+-- Body.
+vim.api.nvim_set_hl(0, "NormalFloat", { bg = "" })
+vim.api.nvim_set_hl(0, "FloatBorder", { bg = "",        fg = "#686f9a" })
+vim.api.nvim_set_hl(0, "Search",      { bg = "#087e8b", fg = "#ffffff" })
+vim.api.nvim_set_hl(0, "EndOfBuffer", { bg = "",        fg = "#090d12" })
+vim.api.nvim_set_hl(0, "LineNr",      { bg = "",        fg = "#292948" })
+vim.api.nvim_set_hl(0, "NonText",     { bg = "",        fg = "" })
+vim.api.nvim_set_hl(0, "VertSplit",   { bg = "",        fg = "#1b1c36" })
 
--- Comment / Label
-vim.api.nvim_set_hl(0, "@comment",  {bg = ""})
-vim.api.nvim_set_hl(0, "@variable", {fg = "#ecf0c1"})
+-- Tabs.
+vim.api.nvim_set_hl(0, "BufferTabpageFill",  { bg = "#090d12" })
+vim.api.nvim_set_hl(0, "BufferCurrentSign",  { bg = "", fg = "#087e8b" })
+vim.api.nvim_set_hl(0, "BufferInactive",     { bg = "" })
+vim.api.nvim_set_hl(0, "BufferInactiveSign", { bg = "", fg = "#090d12" })
 
--- Treesitter
-vim.api.nvim_set_hl(0, "ContextVt",         {bg = "", fg = "#0e6ba8"})
-vim.api.nvim_set_hl(0, "TreesitterContext", {bg = ""})
+-- Comment / Label.
+vim.api.nvim_set_hl(0, "@comment",  { bg = "" })
+vim.api.nvim_set_hl(0, "@variable", { fg = "#ecf0c1" })
 
--- Statusline
-vim.api.nvim_set_hl(0, "StatusLine",     {bg = "", fg = ""})
-vim.api.nvim_set_hl(0, "StatusLineTerm", {bg = "", fg = ""})
+-- Treesitter.
+vim.api.nvim_set_hl(0, "ContextVt",         { bg = "", fg = "#0e6ba8" })
+vim.api.nvim_set_hl(0, "TreesitterContext", { bg = "" })
 
--- Splashscreen
-vim.api.nvim_set_hl(0, "AlphaHeader", {bg = "", fg = "#17c3b2"})
+-- Statusline.
+vim.api.nvim_set_hl(0, "StatusLine",     { bg = "", fg = "" })
+vim.api.nvim_set_hl(0, "StatusLineTerm", { bg = "", fg = "" })
 
--- Noice
-vim.api.nvim_set_hl(0, "NoiceCmdlinePopupBorderCmdline", {bg = "", fg = "#686f9a"})
-vim.api.nvim_set_hl(0, "NoiceCmdlinePopup",              {bg = "", fg = ""})
-vim.api.nvim_set_hl(0, "NoiceCmdlinePopupBorder",        {bg = "", fg = ""})
+-- Splashscreen.
+vim.api.nvim_set_hl(0, "AlphaHeader", { bg = "", fg = "#17c3b2" })
 
--- Git
-vim.api.nvim_set_hl(0, "GitSignsAdd",    {bg = "", fg = "#5ccc96"})
-vim.api.nvim_set_hl(0, "GitSignsChange", {bg = "", fg = "#e39400"})
-vim.api.nvim_set_hl(0, "GitSignsDelete", {bg = "", fg = "#ce6f8f"})
+-- Noice.
+vim.api.nvim_set_hl(0, "NoiceCmdlinePopupBorderCmdline", { bg = "", fg = "#686f9a" })
+vim.api.nvim_set_hl(0, "NoiceCmdlinePopup",              { bg = "", fg = "" })
+vim.api.nvim_set_hl(0, "NoiceCmdlinePopupBorder",        { bg = "", fg = "" })
 
--- Notification
-vim.api.nvim_set_hl(0, "NotifyDEBUGBody",  {bg = ""})
-vim.api.nvim_set_hl(0, "NotifyINFOBody",   {bg = ""})
-vim.api.nvim_set_hl(0, "NotifyWARNBody",   {bg = ""})
-vim.api.nvim_set_hl(0, "NotifyERRORBody",  {bg = ""})
-vim.api.nvim_set_hl(0, "NotifyTRACEBody",  {bg = ""})
-vim.api.nvim_set_hl(0, "NotifyBackground", {bg = ""})
+-- Git.
+vim.api.nvim_set_hl(0, "GitSignsAdd",    { bg = "", fg = "#5ccc96" })
+vim.api.nvim_set_hl(0, "GitSignsChange", { bg = "", fg = "#e39400" })
+vim.api.nvim_set_hl(0, "GitSignsDelete", { bg = "", fg = "#ce6f8f" })
 
--- Telescope
-vim.api.nvim_set_hl(0, "TelescopeNormal",        {bg = "",                 link = "TelescopeNormal"})
-vim.api.nvim_set_hl(0, "TelescopePreviewNormal", {bg = "",                 link = "TelescopePreviewNormal"})
-vim.api.nvim_set_hl(0, "TelescopePromptNormal",  {bg = "",                 link = "TelescopePromptNormal"})
-vim.api.nvim_set_hl(0, "TelescopeResultNormal",  {bg = "",                 link = "TelescopeResultNormal"})
-vim.api.nvim_set_hl(0, "TelescopeBorder",        {bg = "", fg = "#686f9a", link = "TelescopeBorder"})
+-- Notification.
+vim.api.nvim_set_hl(0, "NotifyDEBUGBody",  { bg = "" })
+vim.api.nvim_set_hl(0, "NotifyINFOBody",   { bg = "" })
+vim.api.nvim_set_hl(0, "NotifyWARNBody",   { bg = "" })
+vim.api.nvim_set_hl(0, "NotifyERRORBody",  { bg = "" })
+vim.api.nvim_set_hl(0, "NotifyTRACEBody",  { bg = "" })
+vim.api.nvim_set_hl(0, "NotifyBackground", { bg = "" })
 
--- Tree
-vim.api.nvim_set_hl(0, "NeoTreeGitAdded",     {bg = "", fg = "#00B9AE"})
-vim.api.nvim_set_hl(0, "NeoTreeGitConflict",  {bg = "", fg = "#ff0054"})
-vim.api.nvim_set_hl(0, "NeoTreeGitDeleted",   {bg = "", fg = "#E23E58"})
-vim.api.nvim_set_hl(0, "NeoTreeGitIgnored",   {bg = "", fg = "#686f9a"})
-vim.api.nvim_set_hl(0, "NeoTreeGitModified",  {bg = "", fg = "#F3A712"})
-vim.api.nvim_set_hl(0, "NeoTreeGitUntracked", {bg = "", fg = "#babd8d"})
+-- Telescope.
+vim.api.nvim_set_hl(0, "TelescopeNormal",        { bg = "",                 link = "TelescopeNormal" })
+vim.api.nvim_set_hl(0, "TelescopePreviewNormal", { bg = "",                 link = "TelescopePreviewNormal" })
+vim.api.nvim_set_hl(0, "TelescopePromptNormal",  { bg = "",                 link = "TelescopePromptNormal" })
+vim.api.nvim_set_hl(0, "TelescopeResultNormal",  { bg = "",                 link = "TelescopeResultNormal" })
+vim.api.nvim_set_hl(0, "TelescopeBorder",        { bg = "", fg = "#686f9a", link = "TelescopeBorder" })
 
--- LSP
+-- Tree.
+vim.api.nvim_set_hl(0, "NeoTreeGitAdded",     { bg = "", fg = "#00B9AE" })
+vim.api.nvim_set_hl(0, "NeoTreeGitConflict",  { bg = "", fg = "#ff0054" })
+vim.api.nvim_set_hl(0, "NeoTreeGitDeleted",   { bg = "", fg = "#E23E58" })
+vim.api.nvim_set_hl(0, "NeoTreeGitIgnored",   { bg = "", fg = "#686f9a" })
+vim.api.nvim_set_hl(0, "NeoTreeGitModified",  { bg = "", fg = "#F3A712" })
+vim.api.nvim_set_hl(0, "NeoTreeGitUntracked", { bg = "", fg = "#babd8d" })
+
+-- LSP.
 -- -- General.
-vim.api.nvim_set_hl(0, "Pmenu",                       {fg = "#ecf0c1", bg = ""})
-vim.api.nvim_set_hl(0, "PmenuSbar",                   {bg = "#272831"})
-vim.api.nvim_set_hl(0, "PmenuDoc",                    {fg = "#ecf0c1", bg = ""})
+vim.api.nvim_set_hl(0, "Pmenu",                       { fg = "#ecf0c1", bg = "" })
+vim.api.nvim_set_hl(0, "PmenuSbar",                   { bg = "#272831" })
+vim.api.nvim_set_hl(0, "PmenuDoc",                    { fg = "#ecf0c1", bg = "" })
 -- -- Glance.
-vim.api.nvim_set_hl(0, "GlancePreviewNormal",         {bg = "#000000"})
-vim.api.nvim_set_hl(0, "GlancePreviewMatch",          {bg = "#000000"})
-vim.api.nvim_set_hl(0, "GlancePreviewSignColumn",     {bg = "#000000"})
-vim.api.nvim_set_hl(0, "GlancePreviewLineNr",         {bg = "#000000"})
-vim.api.nvim_set_hl(0, "GlanceListNormal",            {bg = "#000000"})
+vim.api.nvim_set_hl(0, "GlancePreviewNormal",         { bg = "#000000" })
+vim.api.nvim_set_hl(0, "GlancePreviewMatch",          { bg = "#000000" })
+vim.api.nvim_set_hl(0, "GlancePreviewSignColumn",     { bg = "#000000" })
+vim.api.nvim_set_hl(0, "GlancePreviewLineNr",         { bg = "#000000" })
+vim.api.nvim_set_hl(0, "GlanceListNormal",            { bg = "#000000" })
 -- -- LspLens.
-vim.api.nvim_set_hl(0, "LspLens",                     {bg = "", fg = "#495057"})
+vim.api.nvim_set_hl(0, "LspLens",                     { bg = "", fg = "#495057" })
 -- -- Lsp Signature.
-vim.api.nvim_set_hl(0, "LspSignatureActiveParameter", {bg = "#0e6ba8", fg = "#ffffff"})
+vim.api.nvim_set_hl(0, "LspSignatureActiveParameter", { bg = "#0e6ba8", fg = "#ffffff" })
 
--- Quickfix
-vim.api.nvim_set_hl(0, "BqfPreviewFloat",  {bg = "#090d12",                 link = "BqfPreviewFloat"})
-vim.api.nvim_set_hl(0, "BqfPreviewBorder", {bg = "#090d12", fg = "#686f9a", link = "BqfPreviewBorder"})
-vim.api.nvim_set_hl(0, "BqfPreviewTitle",  {bg = "#090d12",                 link = "BqfPreviewTitle"})
-vim.api.nvim_set_hl(0, "BqfPreviewThumb",  {bg = "#090d12",                 link = "BqfPreviewThumb"})
+-- Quickfix.
+vim.api.nvim_set_hl(0, "BqfPreviewFloat",  { bg = "#090d12",                 link = "BqfPreviewFloat" })
+vim.api.nvim_set_hl(0, "BqfPreviewBorder", { bg = "#090d12", fg = "#686f9a", link = "BqfPreviewBorder" })
+vim.api.nvim_set_hl(0, "BqfPreviewTitle",  { bg = "#090d12",                 link = "BqfPreviewTitle" })
+vim.api.nvim_set_hl(0, "BqfPreviewThumb",  { bg = "#090d12",                 link = "BqfPreviewThumb" })
 
--- Bookmark
+-- Bookmark.
 vim.g.bookmark_sign = ''
 vim.g.bookmark_highlight_lines = 1
 vim.g.bookmark_sho_warning = 0
 vim.g.bookmark_show_toggle_warning = 0
 
--- Cursor
-vim.api.nvim_set_hl(0, "CursorLine",   {bg = "#05264a", fg=""})
-vim.api.nvim_set_hl(0, "CursorLineNr", {bg = "",        fg="#F3A712"})
---vim.opt.guicursor = { "a:ver1" }
+-- Cursor.
+vim.api.nvim_set_hl(0, "CursorLine",   { bg = "#05264a", fg="" })
+vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "",        fg="#F3A712" })
+vim.opt.guicursor = { "a:ver1" }
 
--- Whichkey
-vim.api.nvim_set_hl(0, "WhichKeySeparator", {bg = "#090d12"})
+-- Whichkey.
+vim.api.nvim_set_hl(0, "WhichKeySeparator", { bg = "#090d12" })
 
--- Modes
+-- Modes.
 require('modes').setup({
   colors = {
     insert = "#00f5d4",
@@ -117,5 +123,5 @@ require('modes').setup({
   },
 })
 
--- Lazy
-vim.api.nvim_set_hl(0, "LazyNormal",  {bg = "#090d12"})
+-- Lazy.
+vim.api.nvim_set_hl(0, "LazyNormal",  { bg = "#090d12" })

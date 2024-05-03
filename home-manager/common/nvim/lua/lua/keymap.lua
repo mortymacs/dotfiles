@@ -6,10 +6,6 @@ SetKeyMap("<c-x><c-m>", function() ToggleCommand("set mouse=a", "set mouse=", "m
 -- Command.
 SetKeyMap("<c-x><c-c>", "<Cmd>Telescope command_palette<cr>")
 
--- Split and close panes
-SetKeyMap("<c-x><c-v>", "<Cmd>vsplit<cr>")
-SetKeyMap("<c-x><c-h>", "<Cmd>split<cr>")
-
 -- Buffer
 SetKeyMap("<c-x><c-e>", "<Cmd>BufferClose<cr>")
 SetKeyMap("<c-f>",      "<Cmd>Telescope current_buffer_fuzzy_find<cr>")
@@ -97,13 +93,6 @@ SetKeyMap("<s-m-up>",   "<esc><Cmd>m .-2<cr>==gi", { "i" })
 -- Terminal
 SetKeyMap("<c-x><Up>", "<Cmd>ToggleTerm<cr>")
 SetKeyMap("<c-up>",    "<c-\\><c-n>", {"t"})
-
--- Org mode.
-SetKeyMap("<c-j><c-t>", "<Cmd>Neorg workspace todo<cr>")
-SetKeyMap("<c-j><c-n>", "<Cmd>Neorg workspace notes<cr>")
-SetKeyMap("<c-j><c-o>", "<Cmd>Neorg workspace oss<cr>")
-SetKeyMap("<c-j><c-i>", "<Cmd>Neorg workspace ideas<cr>")
-SetKeyMap("<c-j><c-r>", "<Cmd>Neorg return<cr>")
 
 -- LSP
 SetKeyMap("<c-c><c-d>",     vim.lsp.buf.definition)

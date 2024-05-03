@@ -24,8 +24,6 @@ require("nvim-treesitter.configs").setup({
     "regex",
     "http",
     "vimdoc",
-    "norg",
-    "norg_meta",
   },
   sync_install = true,
   auto_install = true,
@@ -338,25 +336,6 @@ require("zen-mode").setup({
     alacritty = {
       enabled = true,
       font = "25",
-    },
-  },
-})
-
--- Org mode.
-require("neorg").setup({
-  load = {
-    ["core.defaults"] = {},
-    ["core.concealer"] = {},
-    ["core.dirman"] = {
-      config = {
-        workspaces = {
-          todo = "~/Documents/org/todo",
-          notes = "~/Documents/org/notes",
-          oss = "~/Documents/org/oss",
-          ideas = "~/Documents/org/ideas",
-        },
-        default_workspace = "todo",
-      },
     },
   },
 })

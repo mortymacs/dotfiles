@@ -31,7 +31,7 @@ text = "#FCFCFC"
 
 [cursor.style]
 blinking = "Always"
-#shape = "Beam"
+shape = "Beam"
 
 [cursor.vi_mode_style]
 blinking = "Always"
@@ -42,15 +42,10 @@ TERM = "xterm-256color"
 WINIT_X11_SCALE_FACTOR = "1"
 
 [font]
-size = 15
+size = 14
 
-[font.glyph_offset]
-x = 0
-y = 3
-
-[font.offset]
-x = 0
-y = 6
+[font.bold]
+style = "SemiBold"
 
 [mouse]
 hide_when_typing = true
@@ -63,7 +58,3 @@ decorations = "none"
 decorations_theme_variant = "Dark"
 dynamic_padding = true
 opacity = 1.0
-
-[window.padding]
-x = 5
-y = 4

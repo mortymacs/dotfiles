@@ -105,25 +105,6 @@ require("lazy").setup({
     event = "VeryLazy",
   },
 
-  -- Org mode.
-  {
-    "vhyrro/luarocks.nvim",
-    priority = 1000,
-    config = true,
-  },
-  {
-    "nvim-neorg/neorg",
-    version = "*",
-    dependencies = {
-      "luarocks.nvim",
-    },
-    build = function()
-      vim.cmd(":Neorg sync-parsers")
-    end,
-    lazy = false,
-    ft = { "norg" },
-  },
-
   -- Development.
   {
     "nvim-neotest/neotest",

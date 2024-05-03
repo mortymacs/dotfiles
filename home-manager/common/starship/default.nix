@@ -12,7 +12,7 @@ let
   nix_shell_fg = "#FFE5D4";
 
   # username
-  section_1_bg = "#82264F";
+  section_1_bg = "#832161";
   section_1_fg = "#FFE5D4";
 
   # directory
@@ -107,7 +107,7 @@ in {
         format = "[ $user ]($style)";
       };
       directory = {
-        style = "bg:${section_2_bg}";
+        style = "bg:${section_2_bg} fg:${section_2_fg}";
         format = "[ $path ]($style)";
         truncation_length = 3;
         truncation_symbol = ".../";

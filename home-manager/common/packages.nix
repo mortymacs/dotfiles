@@ -178,5 +178,6 @@
     libqalculate
     unzip
     ascii-image-converter
+    circumflex
   ];
 }

@@ -1,7 +1,6 @@
 { pkgs, ... }:
-let mono = "CodeNewRoman";
-in
-{
+let mono = "JetBrainsMono";
+in {
   fonts = {
     enableDefaultPackages = false;
     packages = with pkgs; [
