@@ -16,7 +16,7 @@
     jless
     fq
     hexyl
-    (callPackage ./custom/default.nix {})
+    (callPackage ./custom/default.nix { })
 
     ## Presentation / reading.
     glow
@@ -87,6 +87,7 @@
     gdb
     cgdb
     cppcheck
+    cpplint
     rr
     ccache
     unstable.include-what-you-use
@@ -125,8 +126,7 @@
     mage
     air
     ## Python.
-    (python311.withPackages
-      (ps: with ps; [ cython ipdb ipython isort black ]))
+    (python311.withPackages (ps: with ps; [ cython ipdb ipython isort black ]))
     rye
     nodePackages.pyright
     ruff
