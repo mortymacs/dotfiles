@@ -7,9 +7,20 @@
           {
             block = "cpu";
             interval = 1;
+            format = "   $utilization ";
           }
-          { block = "sound"; }
-          { block = "battery"; }
+          {
+            block = "backlight";
+            format = " 󰤔  $brightness ";
+          }
+          {
+            block = "sound";
+            format = " 󰓃 {$volume.eng(w:2) |}";
+          }
+          {
+            block = "battery";
+            format = " 󰄌  $percentage ";
+          }
           {
             block = "toggle";
             command_state = "makoctl mode | grep do-not";
@@ -23,7 +34,7 @@
           {
             block = "time";
             format = " $timestamp.datetime(f:'%a %d/%m %R') ";
-            interval = 60;
+            interval = 10;
           }
         ];
         settings = {
@@ -31,7 +42,7 @@
             theme = "native";
             overrides = {
               idle_fg = "#ECECEC";
-              separator = " ";
+              separator = "│";
               separator_fg = "#292948";
             };
           };
