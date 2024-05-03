@@ -4,7 +4,7 @@ require("barbar").setup({
   tabpages = true,
   icons = {
     button = "",
-    separator = { left = "│ ", right = "" },
+    separator = { left = "󰇝", right = "" },
   },
   sidebar_filetypes = {
     ["neo-tree"] = {
