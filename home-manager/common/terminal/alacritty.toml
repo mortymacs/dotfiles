@@ -44,8 +44,14 @@ WINIT_X11_SCALE_FACTOR = "1"
 [font]
 size = 14
 
-[font.bold]
-style = "SemiBold"
+[font.normal]
+style = "Medium"
+
+[font.offset]
+y = 4
+
+[font.glyph_offset]
+y = 2
 
 [mouse]
 hide_when_typing = true
@@ -56,5 +62,5 @@ save_to_clipboard = true
 [window]
 decorations = "none"
 decorations_theme_variant = "Dark"
-dynamic_padding = true
+dynamic_padding = false
 opacity = 1.0
