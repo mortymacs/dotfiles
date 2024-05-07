@@ -5,14 +5,15 @@ local left_left_icon = "" -- right_icon
 local right_right_icon = "" -- left_icon
 require("lualine").setup({
   options = {
-    theme = "ayu",
+    theme = "ayu_mirage",
     component_separators = { left = "", right = "" },
     section_separators = { left = left_icon, right = right_icon },
     globalstatus = true,
     disabled_filetypes = { "fzf", "toggleterm" },
   },
   sections = {
-    lualine_a = {
+    lualine_a = {},
+    lualine_b = {
       {
         "filename",
         newfile_status = true,
@@ -29,7 +30,6 @@ require("lualine").setup({
         },
       },
     },
-    lualine_b = {},
     lualine_c = {},
     lualine_x = {
       require("lsp-progress").progress,
@@ -37,8 +37,9 @@ require("lualine").setup({
       "diff",
       "diagnostics",
     },
-    lualine_y = { "filetype", "filesize" },
-    lualine_z = {
+    lualine_y = {
+      "filetype",
+      "filesize",
       {
         "progress",
         separator = {
@@ -47,6 +48,7 @@ require("lualine").setup({
         },
       },
     },
+    lualine_z = {},
   },
 })
 

@@ -1,12 +1,12 @@
 { pkgs, ... }:
 let
   # https://coolors.co/0e131f-faa275-ff8c61-ce6a85-985277-5c374c
-  background = "#0b090a";
-  foreground = "#fdfcdc";
+  background = "#0E131F";
+  foreground = "#fefcfb";
   left_background = "#00afb9";
-  left_foreground = "#fdfcdc";
+  left_foreground = "#fefcfb";
   active_pane_background = "#0081a7";
-  active_pane_foreground = "#ffffff";
+  active_pane_foreground = "#fefcfb";
   left_icon = "";
   right_icon = "";
 in {

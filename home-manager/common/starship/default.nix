@@ -9,37 +9,37 @@ let
 
   # Nix shell
   nix_shell_bg = "#492E54";
-  nix_shell_fg = "#FFE5D4";
+  nix_shell_fg = "#fefcfb";
 
   # username
-  section_1_bg = "#832161";
-  section_1_fg = "#FFE5D4";
+  section_1_bg = "#1b263b";
+  section_1_fg = "#fefcfb";
 
   # directory
-  section_2_bg = "#E23E58";
-  section_2_fg = "#FFE5D4";
+  section_2_bg = "#005f73";
+  section_2_fg = "#fefcfb";
 
   # fill
   fill_bg = "#0E131F";
   fill_fg = "#151F28";
 
   # svc
-  section_3_bg = "#D81E5B";
-  section_3_fg = "#FFE5D4";
-  section_3_1_bg = "#ED4A4A";
-  section_3_1_fg = "#FFE5D4";
+  section_3_bg = "#0a9396";
+  section_3_fg = "#fefcfb";
+  section_3_1_bg = "#415a77";
+  section_3_1_fg = "#fefcfb";
 
   # status
   section_4_bg = "#2E294E";
-  section_4_fg = "#FFE5D4";
+  section_4_fg = "#fefcfb";
 
   # cmd_duration
-  section_5_bg = "#973C64";
-  section_5_fg = "#FFE5D4";
+  section_5_bg = "#33415c";
+  section_5_fg = "#fefcfb";
 
   # job
   section_6_bg = "#633359";
-  section_6_fg = "#FFE5D4";
+  section_6_fg = "#fefcfb";
 
   # icons
   left_icon = "";

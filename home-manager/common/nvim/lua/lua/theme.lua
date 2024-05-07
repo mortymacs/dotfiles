@@ -30,6 +30,7 @@ vim.api.nvim_set_hl(0, "BufferTabpageFill",  { bg = "#090d12" })
 vim.api.nvim_set_hl(0, "BufferCurrentSign",  { bg = "",           fg = "#087e8b" })
 vim.api.nvim_set_hl(0, "BufferInactive",     { bg = "" })
 vim.api.nvim_set_hl(0, "BufferInactiveSign", { bg = "",           fg = "#090d12" })
+vim.api.nvim_set_hl(0, "BufferVisible",      { bg = "" })
 
 -- Comment / Label.
 vim.api.nvim_set_hl(0, "@comment",  { bg = "" })
@@ -109,8 +110,8 @@ vim.g.bookmark_sho_warning = 0
 vim.g.bookmark_show_toggle_warning = 0
 
 -- Cursor.
-vim.api.nvim_set_hl(0, "CursorLine",   { bg = "#05264a", fg="" })
-vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "",        fg="#F3A712" })
+vim.api.nvim_set_hl(0, "CursorLine",   { bg = "#161925", fg = "" })
+vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "",        fg = "#F3A712" })
 vim.opt.guicursor = { "a:ver1" }
 
 -- Whichkey.
