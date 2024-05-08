@@ -105,9 +105,10 @@ require("Comment").setup({
 })
 
 -- Colorizer.
-require("colorizer").setup()
-vim.api.nvim_create_autocmd({ "BufWritePost" }, { pattern = "*", command = ":ColorizerReloadAllBuffers" })
-vim.api.nvim_create_autocmd({ "BufReadPost" }, { pattern = "*", command = ":ColorizerAttachToBuffer" })
+require("nvim-highlight-colors").setup({
+  render = "virtual",
+  virtual_symbol = " ";
+})
 
 -- Highlight.
 require("illuminate").configure({

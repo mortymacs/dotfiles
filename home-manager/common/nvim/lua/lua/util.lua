@@ -49,6 +49,7 @@ end
 -- Restart LSP and all related plugins.
 function RestartLsp()
   vim.cmd([[ LspRestart ]])
+  require("symbol-usage").refresh()
 end
 
 -- AddToQuickFix add item to the quickfix.

@@ -144,7 +144,7 @@ require("lazy").setup({
   },
   "mhartington/formatter.nvim",
   "cappyzawa/trim.nvim",
-  "norcalli/nvim-colorizer.lua",
+  "brenoprata10/nvim-highlight-colors",
   "RRethy/vim-illuminate",
   "kevinhwang91/nvim-hlslens",
   "echasnovski/mini.nvim",
@@ -209,7 +209,10 @@ require("lazy").setup({
     },
     event = "LspAttach",
   },
-  "mortymacs/lsp-meta.nvim",
+  {
+    "Wansmer/symbol-usage.nvim",
+    event = "LspAttach",
+  },
   "smjonas/inc-rename.nvim",
   {
     "antosha417/nvim-lsp-file-operations",

@@ -93,6 +93,9 @@ vim.api.nvim_set_hl(0, "GlancePreviewLineNr",         { bg = "#000000" })
 vim.api.nvim_set_hl(0, "GlanceListNormal",            { bg = "#000000" })
 -- -- Lsp Signature.
 vim.api.nvim_set_hl(0, "LspSignatureActiveParameter", { bg = "#0e6ba8", fg = "#ffffff" })
+-- -- Symbol usages.
+vim.api.nvim_set_hl(0, "SymbolUsageText",             { bg = "",        fg = "#b8b8ff" })
+vim.api.nvim_set_hl(0, "SymbolUsageContent",          { bg = "",        fg = "#b8b8ff" })
 
 -- Treesitter.
 vim.api.nvim_set_hl(0, "TreesitterContextSeparator", { bg = "", fg = "#1b1c36" })

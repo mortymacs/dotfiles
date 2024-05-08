@@ -33,7 +33,14 @@
           }
           {
             block = "time";
-            format = " $timestamp.datetime(f:'%a %d/%m %R') ";
+            format = "IR $timestamp.datetime(f:'%a %d/%m %R')";
+            timezone = "Asia/Tehran";
+            interval = 10;
+          }
+          {
+            block = "time";
+            format = "NL $timestamp.datetime(f:'%a %d/%m %R') ";
+            timezone = "Europe/Amsterdam";
             interval = 10;
           }
         ];
