@@ -10,8 +10,6 @@ require('ayu').setup({
     Folded        = { bg = "None" },
     FoldColumn    = { bg = "None" },
     CursorColumn  = { bg = "None" },
-    WhichKeyFloat = { bg = "None" },
-    Comment       = { bg = "None" },
     Line          = { bg = "None" },
   },
 })
@@ -32,20 +30,15 @@ vim.api.nvim_set_hl(0, "BufferInactive",     { bg = "" })
 vim.api.nvim_set_hl(0, "BufferInactiveSign", { bg = "",           fg = "#090d12" })
 vim.api.nvim_set_hl(0, "BufferVisible",      { bg = "" })
 
--- Comment / Label.
-vim.api.nvim_set_hl(0, "@comment",  { bg = "" })
-vim.api.nvim_set_hl(0, "@variable", { fg = "#ecf0c1" })
-
 -- Treesitter.
-vim.api.nvim_set_hl(0, "ContextVt",         { bg = "", fg = "#686f9a" })
-vim.api.nvim_set_hl(0, "TreesitterContext", { bg = "" })
+vim.api.nvim_set_hl(0, "ContextVt", { bg = "", fg = "#686f9a" })
 
 -- Statusline.
 vim.api.nvim_set_hl(0, "StatusLine",     { bg = "", fg = "" })
 vim.api.nvim_set_hl(0, "StatusLineTerm", { bg = "", fg = "" })
 
 -- Splashscreen.
-vim.api.nvim_set_hl(0, "AlphaHeader", { bg = "", fg = "#d9ed92" })
+vim.api.nvim_set_hl(0, "AlphaHeader", { bg = "", fg = "#ffb703" })
 
 -- Noice.
 vim.api.nvim_set_hl(0, "NoiceCmdlinePopupBorderCmdline", { bg = "", fg = "#686f9a" })
@@ -94,8 +87,8 @@ vim.api.nvim_set_hl(0, "GlanceListNormal",            { bg = "#000000" })
 -- -- Lsp Signature.
 vim.api.nvim_set_hl(0, "LspSignatureActiveParameter", { bg = "#0e6ba8", fg = "#ffffff" })
 -- -- Symbol usages.
-vim.api.nvim_set_hl(0, "SymbolUsageText",             { bg = "",        fg = "#a5668b" })
-vim.api.nvim_set_hl(0, "SymbolUsageContent",          { bg = "",        fg = "#a5668b" })
+vim.api.nvim_set_hl(0, "SymbolUsageText",             { fg = "#a5668b", italic = true, })
+vim.api.nvim_set_hl(0, "SymbolUsageContent",          { fg = "#a5668b", italic = true, })
 
 -- Treesitter.
 vim.api.nvim_set_hl(0, "TreesitterContextSeparator", { bg = "", fg = "#1b1c36" })
@@ -117,9 +110,6 @@ vim.api.nvim_set_hl(0, "CursorLine",   { bg = "#161925", fg = "" })
 vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "",        fg = "#F3A712" })
 vim.opt.guicursor = { "a:ver1" }
 
--- Whichkey.
-vim.api.nvim_set_hl(0, "WhichKeySeparator", { bg = "#090d12" })
-
 -- Modes.
 require('modes').setup({
   colors = {
@@ -127,6 +117,3 @@ require('modes').setup({
     visual = "#e0aaff",
   },
 })
-
--- Lazy.
-vim.api.nvim_set_hl(0, "LazyNormal",  { bg = "#090d12" })

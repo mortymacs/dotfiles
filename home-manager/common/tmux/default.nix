@@ -21,6 +21,7 @@ in {
       set-option -g status-interval 60
       # https://dandavison.github.io/delta/tips-and-tricks/using-delta-with-tmux.html
       set -ga terminal-overrides ",*-256color:Tc"
+      set -s default-terminal "tmux-256color"
 
       # Keybinding.
       bind -n M-S-Left   previous-window
