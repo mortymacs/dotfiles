@@ -23,6 +23,9 @@
     # Nvim packages.
     nvim --headless "+Lazy! sync" +qa
 
+    # Bat
+    bat cache --build
+
     # Containers.
     for img in localstack/localstack redis:alpine mysql postgres kennethreitz/httpbin
         docker pull $img;
