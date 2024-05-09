@@ -145,7 +145,6 @@ require("lazy").setup({
   "mhartington/formatter.nvim",
   "cappyzawa/trim.nvim",
   "brenoprata10/nvim-highlight-colors",
-  "RRethy/vim-illuminate",
   "kevinhwang91/nvim-hlslens",
   "echasnovski/mini.nvim",
   "nacro90/numb.nvim",

@@ -30,6 +30,7 @@ require("git")
 -- Development / Quickfix.
 require("development")
 require("quickfix")
+require("text")
 
 -- LSP / Debug
 require("lsp")
