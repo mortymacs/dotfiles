@@ -6,17 +6,18 @@ let
   ## https://coolors.co/ff4f79-973c64-633359-492e54-2e294e
   ## https://coolors.co/82264f-6f2043-4f1730-2f0e1d-200a14-10050a
   ## https://coolors.co/361134-ea526f-ffe5d4-03b5aa
+  ## https://github.com/Shatur/neovim-ayu/blob/master/lua/ayu/colors.lua
 
   # Nix shell
-  nix_shell_bg = "#492E54";
+  nix_shell_bg = "#3E373A";
   nix_shell_fg = "#fefcfb";
 
   # username
-  section_1_bg = "#1b263b";
-  section_1_fg = "#fefcfb";
+  section_1_bg = "#273747";
+  section_1_fg = "#FF9940";
 
   # directory
-  section_2_bg = "#005f73";
+  section_2_bg = "#464D5E";
   section_2_fg = "#fefcfb";
 
   # fill
@@ -24,7 +25,7 @@ let
   fill_fg = "#151F28";
 
   # svc
-  section_3_bg = "#0a9396";
+  section_3_bg = "#415a77";
   section_3_fg = "#fefcfb";
   section_3_1_bg = "#415a77";
   section_3_1_fg = "#fefcfb";
@@ -38,7 +39,7 @@ let
   section_5_fg = "#fefcfb";
 
   # job
-  section_6_bg = "#633359";
+  section_6_bg = "#3E373A";
   section_6_fg = "#fefcfb";
 
   # icons
