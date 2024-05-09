@@ -31,7 +31,8 @@ vim.api.nvim_set_hl(0, "BufferInactiveSign", { bg = "",           fg = "#090d12"
 vim.api.nvim_set_hl(0, "BufferVisible",      { bg = "" })
 
 -- Treesitter.
-vim.api.nvim_set_hl(0, "ContextVt", { bg = "", fg = "#686f9a" })
+vim.api.nvim_set_hl(0, "ContextVt",         { bg = "", fg = "#686f9a" })
+vim.api.nvim_set_hl(0, "TreesitterContext", { bg = "" })
 
 -- Statusline.
 vim.api.nvim_set_hl(0, "StatusLine",     { bg = "", fg = "" })
