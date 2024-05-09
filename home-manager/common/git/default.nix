@@ -20,7 +20,7 @@
       options = {
         features = "decorations mort";
         line-numbers = true;
-        side-by-side = true;
+        side-by-side = false;
         dark = true;
       };
     };

@@ -19,8 +19,8 @@ in {
       set -g focus-events     on
       set -g renumber-windows on
       set-option -g status-interval 60
-      # https://unix.stackexchange.com/a/552736/204066
-      set -ga terminal-overrides ",*256col*:Tc"
+      # https://dandavison.github.io/delta/tips-and-tricks/using-delta-with-tmux.html
+      set -ga terminal-overrides ",*-256color:Tc"
 
       # Keybinding.
       bind -n M-S-Left   previous-window

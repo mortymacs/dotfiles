@@ -90,6 +90,7 @@ in {
         style = "bg:${fill_bg} fg:${fill_fg}";
       };
       nix_shell = {
+        disabled = false;
         style = "bg:${nix_shell_bg} fg:${nix_shell_fg}";
         symbol = " ";
         format = "[ $symbol ]($style)";

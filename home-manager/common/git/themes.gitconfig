@@ -1,5 +1,15 @@
 [delta "mort"]
-    plus-style =       syntax "#006d77";
-    plus-emph-style =  syntax "#0f4c5c";
-    minus-style =      syntax "#7b152e";
-    minus-emph-style = syntax "#82264F";
+    file-decoration-style    = none;
+    file-style               = "#dad2bc" bold;
+    hunk-header-style        = omit;
+    hunk-header-file-style   = omit;
+    plus-style               = syntax "#1b4332";
+    plus-emph-style          = syntax "#2d6a4f";
+    minus-style              = syntax "#4f000b";
+    minus-emph-style         = syntax "#720026";
+    line-numbers-left-style  = "#474973";
+    line-numbers-right-style = "#474973";
+    line-numbers-zero-style  = "#474973";
+    line-numbers-plus-style  = "#52b788";
+    line-numbers-minus-style = "#e84855";
+    syntax-theme             = ayu-dark
