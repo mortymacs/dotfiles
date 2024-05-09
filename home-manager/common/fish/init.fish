@@ -33,7 +33,7 @@ set -x EDITOR nvim
 set -x TERMINAL alacritty
 
 # Bat
-set -x BAT_THEME 'Coldark-Dark'
+set -x BAT_THEME 'ayu-dark'
 
 # Fzf.
 set -x FZF_DEFAULT_COMMAND 'fd --type f'
