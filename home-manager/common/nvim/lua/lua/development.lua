@@ -107,7 +107,7 @@ require("Comment").setup({
 -- Colorizer.
 require("nvim-highlight-colors").setup({
   render = "virtual",
-  virtual_symbol = " ";
+  virtual_symbol = " ",
 })
 
 -- Todo.
@@ -128,26 +128,26 @@ require("trim").setup()
 require("hlslens").setup()
 
 -- Lint.
---local lint = require("lint")
---local golangcilint = require("lint.linters.golangcilint")
---table.insert(golangcilint.args, "--enable-all")
---lint.linters_by_ft = {
---  go = { "golangcilint", "revive" },
---  python = { "ruff" },
---  lua = { "luacheck" },
---  vala = { "vala_lint" },
---  sh = { "shellcheck" },
---  sql = { "sqlfluff" },
---  nix = { "nix" },
---  yaml = { "yamllint" },
---  json = { "jsonlint" },
---  terraform = { "tfsec" },
---}
---vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost" }, {
---  callback = function()
---    require("lint").try_lint()
---  end,
---})
+local lint = require("lint")
+local golangcilint = require("lint.linters.golangcilint")
+table.insert(golangcilint.args, "--enable-all")
+lint.linters_by_ft = {
+  go = { "golangcilint", "revive" },
+  python = { "ruff" },
+  lua = { "luacheck" },
+  vala = { "vala_lint" },
+  sh = { "shellcheck" },
+  sql = { "sqlfluff" },
+  nix = { "nix" },
+  yaml = { "yamllint" },
+  json = { "jsonlint" },
+  terraform = { "tfsec" },
+}
+vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost" }, {
+  callback = function()
+    require("lint").try_lint()
+  end,
+})
 
 -- Surround.
 require("nvim-surround").setup({
