@@ -5,8 +5,8 @@
     hunk-header-file-style   = omit;
     plus-style               = syntax "#1b4332";
     plus-emph-style          = syntax "#2d6a4f";
-    minus-style              = syntax "#4f000b";
-    minus-emph-style         = syntax "#720026";
+    minus-style              = syntax "#421B2E";
+    minus-emph-style         = syntax "#6B2D49";
     line-numbers-left-style  = "#474973";
     line-numbers-right-style = "#474973";
     line-numbers-zero-style  = "#474973";
