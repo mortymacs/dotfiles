@@ -105,10 +105,7 @@ require("Comment").setup({
 })
 
 -- Colorizer.
-require("nvim-highlight-colors").setup({
-  render = "virtual",
-  virtual_symbol = " ",
-})
+require("nvim-highlight-colors").setup()
 
 -- Todo.
 require("todo-comments").setup({ signs = false })

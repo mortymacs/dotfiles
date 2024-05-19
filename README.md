@@ -24,12 +24,13 @@ My environment config. I tried to keep it minimal and simple as much as I could.
 | Terminal Multiplexer | [Tmux](https://github.com/tmux/tmux) |
 | Editor/IDE | [Neovim](https://github.com/neovim/neovim) |
 | DB | [dbcli tools](https://github.com/dbcli) |
-| Fonts | Display: [Lexend](https://github.com/googlefonts/lexend), [VarizMatn](https://github.com/rastikerdar/vazirmatn), Monospace: [JetBrainsMono Nerd Font](https://www.nerdfonts.com) |
+| Fonts | Display: [Lexend](https://github.com/googlefonts/lexend), [VarizMatn](https://github.com/rastikerdar/vazirmatn), Monospace: [CodeNewRoman Nerd Font](https://www.nerdfonts.com) |
 | File Manager | [Broot](https://github.com/Canop/broot) |
 | Launcher | [Rofi-Wayland](https://github.com/lbonn/rofi) |
 | Browser | [Firefox](https://www.mozilla.org) |
 | GTK Theme | [Yaru](https://github.com/ubuntu/yaru) |
 | Icon | [Yaru](https://github.com/ubuntu/yaru) |
+| Wallpaper | [Unsplash](https://unsplash.com/photos/a-blurry-shot-of-a-city-street-lit-up-by-buildings-and-cars-at-night-BYu8ITUWMfc) |
 
 ## Screenshot
 

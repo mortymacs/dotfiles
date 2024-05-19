@@ -15,13 +15,14 @@ require('ayu').setup({
 })
 
 -- Body.
-vim.api.nvim_set_hl(0, "NormalFloat", { bg = "" })
-vim.api.nvim_set_hl(0, "FloatBorder", { bg = "",        fg = "#686f9a" })
-vim.api.nvim_set_hl(0, "Search",      { bg = "#087e8b", fg = "#ffffff" })
-vim.api.nvim_set_hl(0, "EndOfBuffer", { bg = "",        fg = "#090d12" })
-vim.api.nvim_set_hl(0, "LineNr",      { bg = "",        fg = "#292948" })
-vim.api.nvim_set_hl(0, "NonText",     { bg = "",        fg = "" })
-vim.api.nvim_set_hl(0, "VertSplit",   { bg = "",        fg = "#1b1c36" })
+vim.api.nvim_set_hl(0, "NormalFloat",  { bg = "" })
+vim.api.nvim_set_hl(0, "FloatBorder",  { bg = "",        fg = "#686f9a" })
+vim.api.nvim_set_hl(0, "Search",       { bg = "#087e8b", fg = "#ffffff" })
+vim.api.nvim_set_hl(0, "EndOfBuffer",  { bg = "",        fg = "#090d12" })
+vim.api.nvim_set_hl(0, "LineNr",       { bg = "",        fg = "#292948" })
+vim.api.nvim_set_hl(0, "NonText",      { bg = "",        fg = "" })
+vim.api.nvim_set_hl(0, "VertSplit",    { bg = "",        fg = "#1b1c36" })
+vim.api.nvim_set_hl(0, "WinSeparator", { bg = "",        fg = "#1b1c36" })
 
 -- Tabs.
 vim.api.nvim_set_hl(0, "BufferTabpageFill",  { bg = "#090d12" })
