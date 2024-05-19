@@ -1,7 +1,4 @@
 { pkgs, ... }: {
-  # Mount storages.
-  services = { udisks2 = { enable = true; }; };
-
   # Backlight.
   programs = { light = { enable = true; }; };
   services.udev.extraRules = ''
