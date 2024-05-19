@@ -12,7 +12,6 @@ require("tabbar")
 require("statusline")
 require("sidebar")
 require("notification")
-require("cmd")
 
 -- Splash screen.
 require("splashscreen")

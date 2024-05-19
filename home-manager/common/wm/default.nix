@@ -8,7 +8,7 @@ in {
     enable = true;
     config = {
       startup = [
-        { command = "swaybg -c '#0a0908'"; }
+        { command = "swaybg -i '/home/mort/.config/sway/wallpaper.jpg' -m fill"; }
         {
           command = ''
             swayidle -w \
@@ -31,6 +31,8 @@ in {
         names = [ fontName "monospace" ];
         size = fontSize;
       };
+
+      gaps = { inner = 10; };
 
       colors = {
         background = "#242423";
@@ -108,7 +110,8 @@ in {
 
         # Application.
         "${modifier}+w" = "exec firefox";
-        "${modifier}+Return" = "exec alacritty msg create-window 2>/dev/null || alacritty";
+        "${modifier}+Return" =
+          "exec alacritty msg create-window 2>/dev/null || alacritty";
         "${modifier}+Shift+s" = "exec flameshot gui";
       };
 

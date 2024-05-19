@@ -13,11 +13,11 @@ let
   nix_shell_fg = "#fefcfb";
 
   # username
-  section_1_bg = "#273747";
-  section_1_fg = "#FF9940";
+  section_1_bg = "#052f5f";
+  section_1_fg = "#fefcfb";
 
   # directory
-  section_2_bg = "#464D5E";
+  section_2_bg = "#005377";
   section_2_fg = "#fefcfb";
 
   # fill
@@ -25,9 +25,9 @@ let
   fill_fg = "#151F28";
 
   # svc
-  section_3_bg = "#415a77";
+  section_3_bg = "#06a77d";
   section_3_fg = "#fefcfb";
-  section_3_1_bg = "#415a77";
+  section_3_1_bg = "#06a77d";
   section_3_1_fg = "#fefcfb";
 
   # status

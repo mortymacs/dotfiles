@@ -39,15 +39,6 @@ require("lazy").setup({
   -- Notification.
   "rcarriga/nvim-notify",
 
-  -- Cmd.
-  {
-    "folke/noice.nvim",
-    dependencies = {
-      "MunifTanjim/nui.nvim",
-      "rcarriga/nvim-notify",
-    },
-  },
-
   -- Splash screen.
   {
     "goolord/alpha-nvim",
