@@ -9,7 +9,7 @@ pane_count=$(echo "$pane_status" | wc -l)
 
 # If there's only one pane, create a new bottom pane
 if [ "$pane_count" -eq 1 ]; then
-    tmux split-window -v -p 20
+    tmux split-window -v -p 30
 fi
 
 # Update pane status after possibly creating a new pane
