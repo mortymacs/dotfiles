@@ -35,6 +35,7 @@ require("lazy").setup({
     },
   },
   "luukvbaal/statuscol.nvim",
+  "vimpostor/vim-tpipeline",
 
   -- Notification.
   "rcarriga/nvim-notify",
