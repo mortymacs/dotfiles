@@ -119,3 +119,6 @@ require('modes').setup({
     visual = "#e0aaff",
   },
 })
+
+-- FZF.
+vim.g.fzf_colors = { border = { "fg" , "FloatBorder" }}
