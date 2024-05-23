@@ -40,6 +40,11 @@ require("lazy").setup({
   -- Notification.
   "rcarriga/nvim-notify",
 
+  -- UI.
+  {
+    "stevearc/dressing.nvim",
+  },
+
   -- Splash screen.
   {
     "goolord/alpha-nvim",
@@ -204,7 +209,12 @@ require("lazy").setup({
     "Wansmer/symbol-usage.nvim",
     event = "LspAttach",
   },
-  "smjonas/inc-rename.nvim",
+  {
+    "smjonas/inc-rename.nvim",
+    dependencies = {
+      "stevearc/dressing.nvim",
+    },
+  },
   {
     "antosha417/nvim-lsp-file-operations",
     dependencies = {

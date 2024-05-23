@@ -11,3 +11,13 @@ require("bigfile").setup({
     "vimopts",
   },
 })
+
+-- Dressing.
+require("dressing").setup({
+  input = {
+    enabled = true,
+    border = "single",
+    prefer_width = 10,
+    min_width = { 10, 0.1 },
+  },
+})

@@ -4,11 +4,11 @@ require("util")
 SetKeyMap("<c-x><c-m>", function() ToggleCommand("set mouse=a", "set mouse=", "mouse_status") end)
 
 -- Command.
-SetKeyMap("<c-x><c-c>", "<Cmd>Telescope command_palette<cr>")
+SetKeyMap("<c-x><c-c>", "<Cmd>Commands<cr>")
 
 -- Buffer
 SetKeyMap("<c-x><c-e>", "<Cmd>BufferClose<cr>")
-SetKeyMap("<c-f>",      "<Cmd>Telescope current_buffer_fuzzy_find<cr>")
+SetKeyMap("<c-f>",      "<Cmd>BLines<cr>")
 
 -- Tabbar.
 SetKeyMap("<s-left>",   "<Cmd>BufferPrevious<cr>")
@@ -36,7 +36,8 @@ SetKeyMap("<c-g><c-s>", "<Cmd>Telescope git_status<cr>")
 SetKeyMap("<c-g><c-d>", function() ToggleCommand("DiffviewOpen", "DiffviewClose", "diff_view_status") end)
 SetKeyMap("<c-g><c-b>", "<Cmd>Telescope git_branches<cr>")
 SetKeyMap("<c-g><c-h>", function() ToggleCommand("DiffviewFileHistory", "DiffviewClose", "diff_view_status") end)
-SetKeyMap("<c-g><c-c>", "<Cmd>Telescope git_commits<cr>")
+SetKeyMap("<c-g><c-c>", "<Cmd>Commits<cr>")
+SetKeyMap("<c-g><c-b>", "<Cmd>BCommits<cr>")
 SetKeyMap("<c-g><c-t>", "<Cmd>Telescope git_stash<cr>")
 SetKeyMap("<c-g><c-e>", "<esc><Cmd>GHInteractive<cr>")
 SetKeyMap("<c-g><c-i>", "<esc><Cmd>Gitignore<cr>")
@@ -92,7 +93,6 @@ SetKeyMap("<s-m-up>",   "<esc><Cmd>m .-2<cr>==gi", { "i" })
 
 -- Terminal
 SetKeyMap("<c-x><Up>", "<Cmd>ToggleTerm<cr>")
-SetKeyMap("<c-up>",    "<c-\\><c-n>", {"t"})
 
 -- LSP
 SetKeyMap("<c-c><c-d>",     vim.lsp.buf.definition)

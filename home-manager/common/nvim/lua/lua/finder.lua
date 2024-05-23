@@ -1,5 +1,14 @@
 -- FZF.
-vim.g.fzf_layout = { down = "~40%" }
+vim.g.fzf_layout = {
+  window = {
+    width = 0.9,
+    height = 0.7,
+    border = "sharp",
+  },
+}
+vim.g.fzf_preview_window = {
+  "up,65%",
+}
 
 -- Telescope.
 require("telescope").setup({
