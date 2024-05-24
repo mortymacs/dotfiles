@@ -210,12 +210,6 @@ require("lazy").setup({
     event = "LspAttach",
   },
   {
-    "smjonas/inc-rename.nvim",
-    dependencies = {
-      "stevearc/dressing.nvim",
-    },
-  },
-  {
     "antosha417/nvim-lsp-file-operations",
     dependencies = {
       "nvim-lua/plenary.nvim",

@@ -258,10 +258,7 @@ require("glance").setup({
   },
 })
 
--- Rename.
-require("inc_rename").setup({
-  input_buffer_type = "dressing",
-})
+-- File operations.
 require("lsp-file-operations").setup()
 
 -- Status.

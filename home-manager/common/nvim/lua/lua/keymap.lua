@@ -7,7 +7,7 @@ SetKeyMap("<c-x><c-m>", function() ToggleCommand("set mouse=a", "set mouse=", "m
 SetKeyMap("<c-x><c-c>", "<Cmd>Commands<cr>")
 
 -- Buffer
-SetKeyMap("<c-x><c-e>", "<Cmd>BufferClose<cr>")
+SetKeyMap("<c-x><c-e>", "<Cmd>BufferDelete<cr>")
 SetKeyMap("<c-f>",      "<Cmd>BLines<cr>")
 
 -- Tabbar.
@@ -23,6 +23,7 @@ SetKeyMap("<c-x><c-d>", "<Cmd>Telescope file_browser<cr>")
 SetKeyMap("<c-x><c-b>", "<esc><Cmd>Buffers<cr>")
 SetKeyMap("<c-x><c-t>", "<Cmd>Telescope filetypes<cr>")
 SetKeyMap("<c-]>",      "<Cmd>NeoTreeShowToggle<cr>")
+SetKeyMap("<c-x><c-r>", "<Cmd>NeoTreeReveal<cr>")
 
 -- Search
 SetKeyMap("<c-x><c-g>", "<Cmd>Telescope live_grep<cr>")
@@ -98,7 +99,7 @@ SetKeyMap("<c-x><Up>", "<Cmd>ToggleTerm<cr>")
 SetKeyMap("<c-c><c-d>",     vim.lsp.buf.definition)
 SetKeyMap("<c-c><c-i>",     vim.lsp.buf.implementation)
 SetKeyMap("<c-c><c-r>",     "<Cmd>References<cr>")
-SetKeyMap("<c-c><c-e>",     function() return ":IncRename " .. vim.fn.expand("<cword>") end, { "n", "i" }, true)
+SetKeyMap("<c-c><c-e>",     vim.lsp.buf.rename)
 SetKeyMap("<c-c><c-x>",     vim.lsp.buf.code_action)
 SetKeyMap("<c-c><c-l>",     "<esc><Cmd>Format<cr>")
 SetKeyMap("<c-c><c-h>",     vim.lsp.buf.hover)
