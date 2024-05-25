@@ -95,7 +95,8 @@ vim.api.nvim_set_hl(0, "SymbolUsageText",             { fg = "#a5668b", italic =
 vim.api.nvim_set_hl(0, "SymbolUsageContent",          { fg = "#a5668b", italic = true, })
 
 -- Todo.
-vim.api.nvim_set_hl(0, "TodoBgFIX", { fg = "#fefae0" })
+vim.api.nvim_set_hl(0, "TodoBgFIX", { bg = "#ef233c", fg = "#fefae0", bold = true })
+vim.api.nvim_set_hl(0, "TodoFgFIX", {                 fg = "#ef233c"})
 
 -- Quickfix.
 vim.api.nvim_set_hl(0, "BqfPreviewFloat",  { bg = "#090d12",                 link = "BqfPreviewFloat" })
