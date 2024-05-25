@@ -108,7 +108,18 @@ require("Comment").setup({
 require("nvim-highlight-colors").setup()
 
 -- Todo.
-require("todo-comments").setup({ signs = false })
+require("todo-comments").setup({
+  signs = true,
+  keywords = {
+    FIX = { icon = " ", color = "error", alt = { "FIXME", "BUG", "FIXIT", "ISSUE" } },
+    TODO = { icon = " ", color = "info", alt = { "TASK" } },
+    HACK = { icon = " ", color = "warning" },
+    WARN = { icon = " ", color = "warning", alt = { "WARNING", "XXX" } },
+    PERF = { icon = " ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
+    NOTE = { icon = " ", color = "hint", alt = { "INFO" } },
+    TEST = { icon = "󱤤 ", color = "test", alt = { "TESTING", "PASSED", "FAILED" } },
+  },
+})
 
 -- Whichkey.
 require("which-key").setup({
