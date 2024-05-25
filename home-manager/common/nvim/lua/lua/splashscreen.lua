@@ -1,6 +1,7 @@
 require("util")
 
 -- Default config: print(vim.inspect(require("alpha.themes.dashboard").opts))
+local button_width = 66;
 local config = {
   layout = {
     {
@@ -14,12 +15,13 @@ local config = {
       },
       type = "text",
       val = {
-        " _______  _______________________   ____.___   _____   ",
-        " \\      \\ \\_   _____/\\_____  \\   \\ /   /|   | /     \\  ",
-        " /   |   \\ |    __)_  /   |   \\   Y   / |   |/  \\ /  \\ ",
-        "/    |    \\|        \\/    |    \\     /  |   /    Y    \\",
-        "\\____|__  /_______  /\\_______  /\\___/   |___\\____|__  /",
-        "        \\/        \\/         \\/                     \\/ ",
+        " _____  ___    _______    ______  ___      ___  __     ___      ___ ",
+        "(\\\"   \\|\"  \\  /\"     \"|  /    \" \\|\"  \\    /\"  ||\" \\   |\"  \\    /\"  )",
+        "|.\\\\   \\    |(: ______) // ____  \\\\   \\  //  / ||  |   \\   \\  //   |",
+        "|: \\.   \\\\  | \\/    |  /  /    ) :)\\\\  \\/. ./  |:  |   /\\\\  \\/.    |",
+        "|.  \\    \\. | // ___)_(: (____/ //  \\.    //   |.  |  |: \\.        |",
+        "|    \\    \\ |(:      \"|\\        /    \\\\   /    |\\  |\\ |.  \\    /:  |",
+        " \\___|\\____\\) \\_______) \\\"_____/      \\__/     |_\\_|_|(___|\\__/|___|",
       },
     },
     {
@@ -44,7 +46,7 @@ local config = {
             position = "center",
             shortcut = "n",
             keymap = { "n", "n", "<Cmd>ene<cr>", { noremap = true, nowait = true, silent = true } },
-            width = 50,
+            width = button_width,
           },
           type = "button",
           val = " New file",
@@ -61,7 +63,7 @@ local config = {
             position = "center",
             shortcut = "f",
             keymap = { "n", "f", "<Cmd>Files<cr>", { noremap = true, nowait = true, silent = true } },
-            width = 50,
+            width = button_width,
           },
           type = "button",
           val = "󰈞 Find file",
@@ -78,7 +80,7 @@ local config = {
             position = "center",
             shortcut = "p",
             keymap = { "n", "p", "<Cmd>Telescope ghq<cr>", { noremap = true, nowait = true, silent = true } },
-            width = 50,
+            width = button_width,
           },
           type = "button",
           val = " Find projects",
@@ -95,7 +97,7 @@ local config = {
             position = "center",
             shortcut = "t",
             keymap = { "n", "t", "<Cmd>Telescope ast_grep<cr>", { noremap = true, nowait = true, silent = true } },
-            width = 50,
+            width = button_width,
           },
           type = "button",
           val = " Find tags",
@@ -112,7 +114,7 @@ local config = {
             position = "center",
             shortcut = "g",
             keymap = { "n", "g", "<Cmd>Telescope live_grep<cr>", { noremap = true, nowait = true, silent = true } },
-            width = 50,
+            width = button_width,
           },
           type = "button",
           val = "󰈬 Find word",
@@ -134,7 +136,7 @@ local config = {
               "<Cmd>Telescope vim_bookmarks all<cr>",
               { noremap = true, nowait = true, silent = true },
             },
-            width = 50,
+            width = button_width,
           },
           type = "button",
           val = " Bookmarks",
@@ -151,7 +153,7 @@ local config = {
             position = "center",
             shortcut = "q",
             keymap = { "n", "q", ":q<cr>", { noremap = true, nowait = true, silent = true } },
-            width = 50,
+            width = button_width,
           },
           type = "button",
           val = " Exit",
