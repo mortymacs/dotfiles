@@ -32,7 +32,7 @@ in {
       bind -n C-PageDown switch-client -n
       bind -n M-C-n      display-popup -w 90% -E "tmux-ghq"
       bind -n M-C-s      display-popup -w 90% -E "tmux-switch"
-      bind -n C-Up       run-shell "toggle-terminal"
+      bind    t          run-shell "toggle-terminal"
 
       # This tmux statusbar config is for spaceduck and was created by tmuxline.vim.
       # https://github.com/edkolev/tmuxline.vim

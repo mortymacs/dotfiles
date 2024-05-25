@@ -32,8 +32,9 @@ vim.api.nvim_set_hl(0, "BufferInactiveSign", { bg = "",           fg = "#090d12"
 vim.api.nvim_set_hl(0, "BufferVisible",      { bg = "" })
 
 -- Treesitter.
-vim.api.nvim_set_hl(0, "ContextVt",         { bg = "", fg = "#686f9a" })
-vim.api.nvim_set_hl(0, "TreesitterContext", { bg = "" })
+vim.api.nvim_set_hl(0, "ContextVt",                  { bg = "", fg = "#686f9a" })
+vim.api.nvim_set_hl(0, "TreesitterContext",          { bg = "" })
+vim.api.nvim_set_hl(0, "TreesitterContextSeparator", { bg = "", fg = "#1b1c36" })
 
 -- Statusline.
 vim.api.nvim_set_hl(0, "StatusLine",     { bg = "", fg = "" })
@@ -93,8 +94,8 @@ vim.api.nvim_set_hl(0, "LspSignatureActiveParameter", { bg = "#0e6ba8", fg = "#f
 vim.api.nvim_set_hl(0, "SymbolUsageText",             { fg = "#a5668b", italic = true, })
 vim.api.nvim_set_hl(0, "SymbolUsageContent",          { fg = "#a5668b", italic = true, })
 
--- Treesitter.
-vim.api.nvim_set_hl(0, "TreesitterContextSeparator", { bg = "", fg = "#1b1c36" })
+-- Todo.
+vim.api.nvim_set_hl(0, "TodoBgFIX", { fg = "#fefae0" })
 
 -- Quickfix.
 vim.api.nvim_set_hl(0, "BqfPreviewFloat",  { bg = "#090d12",                 link = "BqfPreviewFloat" })
