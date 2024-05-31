@@ -25,11 +25,15 @@ vim.api.nvim_set_hl(0, "VertSplit",    { bg = "",        fg = "#1b1c36" })
 vim.api.nvim_set_hl(0, "WinSeparator", { bg = "",        fg = "#1b1c36" })
 
 -- Tabs.
-vim.api.nvim_set_hl(0, "BufferTabpageFill",  { bg = "#090d12" })
-vim.api.nvim_set_hl(0, "BufferCurrentSign",  { bg = "",           fg = "#087e8b" })
-vim.api.nvim_set_hl(0, "BufferInactive",     { bg = "" })
-vim.api.nvim_set_hl(0, "BufferInactiveSign", { bg = "",           fg = "#090d12" })
-vim.api.nvim_set_hl(0, "BufferVisible",      { bg = "" })
+vim.api.nvim_set_hl(0, "BufferDefaultVisible",     { bg = "" })
+vim.api.nvim_set_hl(0, "BufferDefaultInactive",    { bg = "" })
+vim.api.nvim_set_hl(0, "BufferDefaultCurrent",     { bg = "" })
+vim.api.nvim_set_hl(0, "BufferDefaultTabpageFill", { bg = "" })
+vim.api.nvim_set_hl(0, "BufferTabpageFill",        { bg = "" })
+vim.api.nvim_set_hl(0, "BufferCurrentSign",        { bg = "",   fg = "#087e8b" })
+vim.api.nvim_set_hl(0, "BufferInactive",           { bg = "" })
+vim.api.nvim_set_hl(0, "BufferInactiveSign",       { bg = "",   fg = "#090d12" })
+vim.api.nvim_set_hl(0, "BufferVisible",            { bg = "" })
 
 -- Treesitter.
 vim.api.nvim_set_hl(0, "ContextVt",                  { bg = "", fg = "#686f9a" })

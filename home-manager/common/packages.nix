@@ -126,7 +126,7 @@
     mage
     air
     ## Python.
-    (python311.withPackages (ps: with ps; [ cython ipdb ipython isort black ]))
+    (python312.withPackages (ps: with ps; [ cython ipdb ipython isort black ]))
     rye
     nodePackages.pyright
     ruff
@@ -139,7 +139,7 @@
     deno
     ## Nix.
     nil
-    nixfmt
+    nixfmt-rfc-style
     nurl
     ## Shell.
     nodePackages.bash-language-server
@@ -178,6 +178,5 @@
     libqalculate
     unzip
     ascii-image-converter
-    circumflex
   ];
 }

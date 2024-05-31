@@ -30,7 +30,7 @@
 
   # Tmux.
   tq = "tl | xargs -n 1 tmux kill-session -t ; tl";
-  tl = "tmux ls -F #S";
+  tl = "tmux ls -F '#S'";
 
   # DevOps.
   kubectl = "kubecolor";
