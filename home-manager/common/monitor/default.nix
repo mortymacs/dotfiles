@@ -30,10 +30,10 @@
       }
       {
         profile = {
-          name = "home-dock";
+          name = "home-power";
           outputs = [
             {
-              criteria = "DP-7";
+              criteria = "DP-3";
               status = "enable";
             }
             {
