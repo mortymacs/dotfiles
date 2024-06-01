@@ -30,6 +30,21 @@
       }
       {
         profile = {
+          name = "home-dock";
+          outputs = [
+            {
+              criteria = "DP-7";
+              status = "enable";
+            }
+            {
+              criteria = "eDP-1";
+              status = "disable";
+            }
+          ];
+        };
+      }
+      {
+        profile = {
           name = "office";
           outputs = [
             {
