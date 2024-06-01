@@ -30,7 +30,7 @@ My environment config. I tried to keep it minimal and simple as much as I could.
 | Browser | [Firefox](https://www.mozilla.org) |
 | GTK Theme | [Yaru](https://github.com/ubuntu/yaru) |
 | Icon | [Yaru](https://github.com/ubuntu/yaru) |
-| Wallpaper | [Unsplash](https://unsplash.com/photos/a-blurry-shot-of-a-city-street-lit-up-by-buildings-and-cars-at-night-BYu8ITUWMfc) |
+| Wallpaper | [Unsplash](https://unsplash.com/photos/the-sun-is-shining-through-the-trees-in-the-park-aHmuj58Lqu4) |
 
 ## Screenshot
 
