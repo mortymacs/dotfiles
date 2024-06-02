@@ -18,6 +18,9 @@
     fq
     hexyl
 
+    # Image.
+    gimp
+
     ## Presentation / reading.
     glow
     unstable.presenterm
