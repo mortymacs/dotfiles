@@ -14,9 +14,9 @@
     yq
     htmlq
     jless
+    unstable.jnv
     fq
     hexyl
-    (callPackage ./custom/default.nix { })
 
     ## Presentation / reading.
     glow
