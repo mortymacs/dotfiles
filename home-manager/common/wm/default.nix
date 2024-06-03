@@ -93,8 +93,10 @@ in {
         "${modifier}+Shift+Up" = "fullscreen toggle global";
 
         # Move.
-        "${modifier}+Shift+Ctrl+Right" = "move to workspace next";
+        "${modifier}+Shift+Ctrl+Right" = "exec move-to-next-workspace";
         "${modifier}+Shift+Ctrl+Left" = "move to workspace prev";
+        "${modifier}+Shift+Alt+Left" = "move left";
+        "${modifier}+Shift+Alt+Right" = "move right";
 
         # Action.
         "${modifier}+l" = "exec swaylock -c '0f111b' -e -F";
@@ -166,5 +168,6 @@ in {
   home.packages = with pkgs;
     [
       (writeShellScriptBin "exit-action" (builtins.readFile ./exit-action.sh))
+      (writeShellScriptBin "move-to-next-workspace" (builtins.readFile ./move-to-next-workspace.sh))
     ];
 }
