@@ -152,19 +152,6 @@
   '';
 
   # Programing.
-  rcpp =
-    "rm -rf CMakeFiles/ Testing/ CMakeCache.txt *.cmake Makefile compile_commands.json *.cbp";
-  c-debug = ''
-    # g++ -g3 file.cpp -o file.out && c-debug file.out
-    set target_file (fzf --no-mouse)
-    set target_line (command cat -n "$target_file" | fzf --no-mouse | awk '{print $1}')
-    cgdb -ex "b $target_file:$target_line" "$argv[1]"
-  '';
-  rs-debug = ''
-    set target_file (fzf --no-mouse)
-    set target_line (command cat -n "$target_file" | fzf --no-mouse | awk '{print $1}')
-    rust-gdb -ex "b $target_file:$target_line" "$argv[1]"
-  '';
   go-debug = ''
     # go-debug path
     set target_file ./(fzf --no-mouse)

@@ -1,14 +1,10 @@
 -- Treesitter setup.
 require("nvim-treesitter.configs").setup({
   ensure_installed = {
-    "c",
-    "cpp",
-    "rust",
     "go",
     "python",
     "lua",
     "bash",
-    "make",
     "sql",
     "markdown",
     "markdown_inline",

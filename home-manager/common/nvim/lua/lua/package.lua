@@ -222,19 +222,6 @@ require("lazy").setup({
     },
     event = "LspAttach",
   },
-  -- -- Rust.
-  {
-    "mrcjkb/rustaceanvim",
-    version = "^3",
-    ft = { "rust" },
-  },
-  {
-    "saecki/crates.nvim",
-    event = "BufRead Cargo.toml",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-    },
-  },
   -- -- Go.
   {
     "fatih/vim-go",

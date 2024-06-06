@@ -79,35 +79,9 @@
     ## Test.
     hurl
 
-    # Security.
-    radare2
-
     # Programming.
     ## C/C++.
-    (hiPrio unstable.gcc)
-    clang
-    clang-tools
-    gdb
-    cgdb
-    cppcheck
-    cpplint
-    rr
-    ccache
-    unstable.include-what-you-use
-    cmake
-    cmake-language-server
-    valgrind-light
-    complexity
-    cflow
-    bear
-    doxygen
-    emscripten
-    ## Rust.
-    rustc
-    rustfmt
-    rust-analyzer
-    cargo
-    bacon
+    gcc
     ## Go.
     unstable.go
     unstable.gopls
