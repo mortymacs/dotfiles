@@ -13,7 +13,7 @@ let
   nix_shell_fg = "#fefcfb";
 
   # username
-  section_1_bg = "#82264F";
+  section_1_bg = "#82264f";
   section_1_fg = "#fefcfb";
 
   # directory

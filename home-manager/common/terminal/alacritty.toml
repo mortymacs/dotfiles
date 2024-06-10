@@ -47,7 +47,7 @@ size = 14
 y = 4
 
 [font.glyph_offset]
-y = 2
+y = 3
 
 [mouse]
 hide_when_typing = true
@@ -60,5 +60,5 @@ dynamic_padding = true
 opacity = 1.0
 
 [window.padding]
-x = 8
-y = 5
+x = 0
+y = 0

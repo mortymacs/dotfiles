@@ -1,10 +1,9 @@
 { pkgs, ... }:
-let mono = "JetBrainsMono";
-in {
+{
   fonts = {
     enableDefaultPackages = false;
     packages = with pkgs; [
-      (unstable.nerdfonts.override { fonts = [ mono ]; })
+      (unstable.nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
       unstable.vazir-fonts
       unstable.lexend
       unstable.noto-fonts-emoji
@@ -12,9 +11,19 @@ in {
     fontconfig = {
       enable = true;
       defaultFonts = {
-        serif = [ "Lexend" "Vazirmatn" ];
-        sansSerif = [ "Lexend" "Vazirmatn" ];
-        monospace = [ "${mono} Nerd Font" "Noto Color Emoji" ];
+        serif = [
+          "Lexend"
+          "Vazirmatn"
+        ];
+        sansSerif = [
+          "Lexend"
+          "Vazirmatn"
+        ];
+        monospace = [
+          "Ellograph CF"
+          "Symbols Nerd Font"
+          "Noto Color Emoji"
+        ];
         emoji = [ "Noto Color Emoji" ];
       };
     };
