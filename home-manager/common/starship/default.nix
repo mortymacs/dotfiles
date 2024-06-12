@@ -9,7 +9,7 @@ let
   ## https://github.com/Shatur/neovim-ayu/blob/master/lua/ayu/colors.lua
 
   # Nix shell
-  nix_shell_bg = "#3E373A";
+  nix_shell_bg = "#18212b";
   nix_shell_fg = "#fefcfb";
 
   # username
@@ -31,15 +31,15 @@ let
   section_3_1_fg = "#fefcfb";
 
   # status
-  section_4_bg = "#2E294E";
+  section_4_bg = "#2e294e";
   section_4_fg = "#fefcfb";
 
   # cmd_duration
-  section_5_bg = "#33415c";
+  section_5_bg = "#633359";
   section_5_fg = "#fefcfb";
 
   # job
-  section_6_bg = "#3E373A";
+  section_6_bg = "#973c64";
   section_6_fg = "#fefcfb";
 
   # icons
@@ -63,7 +63,7 @@ in {
         "$git_commit"
         "$git_state"
         "$git_metrics"
-        "[${left_icon}](fg:${section_3_bg})"
+        "[${left_icon}](fg:${section_3_bg} bg:${fill_bg})"
         "$fill"
         "[${right_icon}](bg:${fill_bg} fg:${nix_shell_bg})"
         "$nix_shell"
