@@ -30,6 +30,7 @@ My environment config. I tried to keep it minimal and simple as much as I could.
 | Browser | [Firefox](https://www.mozilla.org) |
 | GTK Theme | [Yaru](https://github.com/ubuntu/yaru) |
 | Icon | [Yaru](https://github.com/ubuntu/yaru) |
+| Wallpaper | Created by me, under the same license as this repository. |
 
 ## Screenshot
 
