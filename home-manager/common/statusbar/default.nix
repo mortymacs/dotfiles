@@ -5,6 +5,11 @@
       default = {
         blocks = [
           {
+            block = "music";
+            format = " 󰓇 {$title $prev $play $next |}";
+            player = "spotify";
+          }
+          {
             block = "cpu";
             interval = 1;
             format = "   $utilization ";
@@ -45,6 +50,9 @@
           }
         ];
         settings = {
+          icons = {
+              icons = "material-nf";
+          };
           theme = {
             theme = "native";
             overrides = {

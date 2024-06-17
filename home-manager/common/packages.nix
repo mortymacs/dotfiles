@@ -2,6 +2,7 @@
   list = with pkgs; [
     # Desktop
     rofi-wayland
+    spotify
 
     # Text.
     bat
