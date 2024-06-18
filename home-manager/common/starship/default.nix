@@ -123,7 +123,7 @@ in {
         tag_symbol = " 󰓼 ";
         tag_disabled = false;
         style = "bg:${section_3_bg} fg:${section_3_fg}";
-        format = "[ $hash$tag ]($style)";
+        format = "[$hash$tag ]($style)";
       };
       git_state = {
         style = "bg:${section_3_bg} fg:${section_3_fg}";
