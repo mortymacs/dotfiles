@@ -72,6 +72,7 @@
     # Development.
     pkg-config
     ghq
+    nap
     httpie
     tokei
     gnumake
