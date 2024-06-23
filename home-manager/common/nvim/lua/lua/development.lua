@@ -135,6 +135,8 @@ require("hlslens").setup()
 local lint = require("lint")
 local golangcilint = require("lint.linters.golangcilint")
 table.insert(golangcilint.args, "--enable-all")
+table.insert(golangcilint.args, "--disable=depguard")
+table.insert(golangcilint.args, "--gci.custom-order=standard,blank,custom,blank,default,blank,localmodule")
 lint.linters_by_ft = {
   go = { "golangcilint", "revive" },
   python = { "ruff" },
