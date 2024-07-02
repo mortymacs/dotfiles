@@ -8,8 +8,8 @@ require("bqf").setup({
     border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" },
   },
   func_map = {
-    pscrolldown = "<C-Down>",
-    pscrollup = "<C-Up>",
+    pscrolldown = "<c-j>",
+    pscrollup = "<c-k>",
   },
 })
 

@@ -46,11 +46,12 @@ cmp.setup({
     }),
   },
   mapping = cmp.mapping.preset.insert({
-    ["<C-Up>"] = cmp.mapping.scroll_docs(-4),
-    ["<C-Down>"] = cmp.mapping.scroll_docs(4),
-    ["<C-Space>"] = cmp.mapping.complete(),
-    ["<Right>"] = cmp.mapping.abort(),
-    ["<Left>"] = cmp.mapping.abort(),
+    ["<c-j>"] = cmp.mapping(cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select })),
+    ["<c-k>"] = cmp.mapping(cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select })),
+    ["<m-j>"] = cmp.mapping.scroll_docs(4),
+    ["<m-k>"] = cmp.mapping.scroll_docs(-4),
+    ["<c-Space>"] = cmp.mapping.complete(),
+    ["<esc>"] = cmp.mapping.abort(),
     ["<cr>"] = cmp.mapping.confirm({ select = true }),
   }),
   sources = cmp.config.sources({

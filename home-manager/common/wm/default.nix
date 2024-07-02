@@ -69,14 +69,14 @@ in {
       terminal = "alacritty";
       keybindings = {
         # Focus.
-        "${modifier}+Down" = "focus down";
-        "${modifier}+Left" = "focus left";
-        "${modifier}+Right" = "focus right";
-        "${modifier}+Up" = "focus up";
+        "${modifier}+j" = "focus down";
+        "${modifier}+h" = "focus left";
+        "${modifier}+l" = "focus right";
+        "${modifier}+k" = "focus up";
 
         # Workspace.
-        "${modifier}+Shift+Left" = "workspace prev";
-        "${modifier}+Shift+Right" = "workspace next";
+        "${modifier}+Shift+h" = "workspace prev";
+        "${modifier}+Shift+l" = "workspace next";
         "${modifier}+Shift+0" = "workspace number 0";
         "${modifier}+Shift+1" = "workspace number 1";
         "${modifier}+Shift+2" = "workspace number 2";
@@ -90,16 +90,16 @@ in {
         "${modifier}+t" = "layout tabbed";
         "${modifier}+Ctrl+v" = "splith";
         "${modifier}+Ctrl+h" = "splitv";
-        "${modifier}+Shift+Up" = "fullscreen toggle global";
+        "${modifier}+Shift+f" = "fullscreen toggle global";
 
         # Move.
-        "${modifier}+Shift+Ctrl+Right" = "exec move-to-next-workspace";
-        "${modifier}+Shift+Ctrl+Left" = "move to workspace prev";
-        "${modifier}+Shift+Alt+Left" = "move left";
-        "${modifier}+Shift+Alt+Right" = "move right";
+        "${modifier}+Shift+Ctrl+l" = "exec move-to-next-workspace";
+        "${modifier}+Shift+Ctrl+h" = "move to workspace prev";
+        "${modifier}+Shift+Alt+h" = "move left";
+        "${modifier}+Shift+Alt+l" = "move right";
 
         # Action.
-        "${modifier}+l" = "exec swaylock -c '0f111b' -e -F";
+#"${modifier}+Shift+l" = "exec swaylock -c '0f111b' -e -F";
         "${modifier}+Shift+r" = "reload";
         "${modifier}+Shift+q" = "kill";
         "${modifier}+Shift+e" = "exec exit-action | xargs swaymsg exec --";

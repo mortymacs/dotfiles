@@ -1,6 +1,13 @@
-{ config, pkgs, inputs, ... }:
-let defaultPackages = import ../common/packages.nix { inherit pkgs; };
-in {
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
+let
+  defaultPackages = import ../common/packages.nix { inherit pkgs; };
+in
+{
   imports = [
     ./hardware-configuration.nix
     ../common/ld.nix
@@ -12,7 +19,10 @@ in {
   ];
 
   # Nix.
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   # Bootloader.
   boot.loader = {
@@ -27,7 +37,9 @@ in {
   };
 
   # Setup keyfile
-  boot.initrd.secrets = { "/crypto_keyfile.bin" = null; };
+  boot.initrd.secrets = {
+    "/crypto_keyfile.bin" = null;
+  };
 
   # Kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -36,14 +48,18 @@ in {
   # Networking.
   networking = {
     hostName = "fx";
-    networkmanager = { enable = true; };
+    networkmanager = {
+      enable = true;
+    };
   };
 
   # Time zone.
   time.timeZone = "Europe/Amsterdam";
 
   # Internationalisation.
-  i18n = { defaultLocale = "en_US.UTF-8"; };
+  i18n = {
+    defaultLocale = "en_US.UTF-8";
+  };
 
   # Printer.
   services.printing.enable = true;
@@ -58,11 +74,21 @@ in {
     pulse.enable = true;
   };
 
+  # Bluetooth.
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
+  services.blueman.enable = true;
+
   # User.
   users.users.mort = {
     isNormalUser = true;
     description = "Mort";
-    extraGroups = [ "networkmanager" "wheel" "docker" "video" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "docker"
+      "video"
+    ];
     initialPassword = "password";
     shell = pkgs.fish;
     packages = with pkgs; [ ];
@@ -70,7 +96,9 @@ in {
 
   # Config packages.
   nixpkgs = {
-    config = { allowUnfree = true; };
+    config = {
+      allowUnfree = true;
+    };
     overlays = [
       (final: prev: {
         unstable = import inputs.nixpkgs-unstable {

@@ -11,8 +11,8 @@ SetKeyMap("<c-x><c-e>", "<Cmd>BufferDelete<cr>")
 SetKeyMap("<c-f>",      "<Cmd>BLines<cr>")
 
 -- Tabbar.
-SetKeyMap("<s-left>",   "<Cmd>BufferPrevious<cr>")
-SetKeyMap("<s-right>",  "<Cmd>BufferNext<cr>")
+SetKeyMap("<s-h>",      "<Cmd>BufferPrevious<cr>", { "n" })
+SetKeyMap("<s-l>",      "<Cmd>BufferNext<cr>",     { "n" })
 SetKeyMap("<c-x><c-q>", ":qa<cr>")
 SetKeyMap("<c-x><c-n>", "<Cmd>tabnew<cr>")
 
@@ -88,11 +88,11 @@ SetKeyMap("<c-x><c-s>", function()
 end)
 
 -- https://stackoverflow.com/a/63887462/2338672
-SetKeyMap("<s-m-down>", "<esc><Cmd>m .+1<cr>==gi", { "i" })
-SetKeyMap("<s-m-up>",   "<esc><Cmd>m .-2<cr>==gi", { "i" })
+SetKeyMap("<s-m-j>", "<esc><Cmd>m .+1<cr>==gi", { "i" })
+SetKeyMap("<s-m-k>", "<esc><Cmd>m .-2<cr>==gi", { "i" })
 
 -- Terminal
-SetKeyMap("<c-x><Up>", "<Cmd>ToggleTerm<cr>")
+SetKeyMap("<c-x>k", "<Cmd>ToggleTerm<cr>")
 
 -- LSP
 SetKeyMap("<c-c><c-d>",     vim.lsp.buf.definition)
@@ -117,13 +117,13 @@ SetKeyMap("<c-d><c-s>", function() require("dapui").toggle() end)
 SetKeyMap("<c-d><c-t>", "<Cmd>DapToggleBreakpoint<cr>")
 
 -- Test
-SetKeyMap("<c-t><c-x>",     "<esc><Cmd>Neotest run<cr>")
-SetKeyMap("<c-t><c-f>",     "<esc><Cmd>Neotest run file<cr>")
-SetKeyMap("<c-t><c-r>",     "<esc><Cmd>Neotest output<cr>")
-SetKeyMap("<c-t><Up>",      "<esc><Cmd>Neotest output-panel<cr>")
-SetKeyMap("<c-t><c-s>",     "<esc><Cmd>Neotest summary<cr>")
-SetKeyMap("<c-t><c-Right>", "<esc><Cmd>Neotest jump next<cr>")
-SetKeyMap("<c-t><c-Left>",  "<esc><Cmd>Neotest jump prev<cr>")
+SetKeyMap("<c-t><c-x>", "<esc><Cmd>Neotest run<cr>")
+SetKeyMap("<c-t><c-f>", "<esc><Cmd>Neotest run file<cr>")
+SetKeyMap("<c-t><c-r>", "<esc><Cmd>Neotest output<cr>")
+SetKeyMap("<c-t>k",     "<esc><Cmd>Neotest output-panel<cr>")
+SetKeyMap("<c-t><c-s>", "<esc><Cmd>Neotest summary<cr>")
+SetKeyMap("<c-t><c-l>", "<esc><Cmd>Neotest jump next<cr>")
+SetKeyMap("<c-t><c-h>", "<esc><Cmd>Neotest jump prev<cr>")
 
 -- Trouble / Quickfix.
 SetKeyMap("<c-l><c-e>", "<Cmd>DiagnosticsAll<cr>")
