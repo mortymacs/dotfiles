@@ -24,15 +24,24 @@ in {
       set -s default-terminal "tmux-256color"
 
       # Keybinding.
-      bind -n M-S-Left   previous-window
-      bind -n M-S-Right  next-window
-      bind -n C-\\       split-window  -h
-      bind -n M-\\       split-window  -v
-      bind -n C-PageUp   switch-client -p
-      bind -n C-PageDown switch-client -n
-      bind -n M-C-n      display-popup -w 90% -E "tmux-ghq"
-      bind -n M-C-s      display-popup -w 90% -E "tmux-switch"
-      bind    t          run-shell "toggle-terminal"
+      ## Window.
+      bind-key -T prefix H previous-window
+      bind-key -T prefix L next-window
+
+      ## Pane.
+      bind-key -T prefix l select-pane -L
+      bind-key -T prefix j select-pane -D
+      bind-key -T prefix k select-pane -U
+      bind-key -T prefix l select-pane -R
+
+      ## Session.
+      bind-key -T prefix J switch-client -p
+      bind-key -T prefix K switch-client -n
+
+      ## Misc.
+      bind -n M-C-n display-popup -w 90% -E "tmux-ghq"
+      bind -n M-C-s display-popup -w 90% -E "tmux-switch"
+      bind    t     run-shell "toggle-terminal"
 
       # This tmux statusbar config is for spaceduck and was created by tmuxline.vim.
       # https://github.com/edkolev/tmuxline.vim
