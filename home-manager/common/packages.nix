@@ -14,8 +14,7 @@
     jq
     yq
     htmlq
-    jless
-    unstable.jnv
+    fx
     fq
     hexyl
 
