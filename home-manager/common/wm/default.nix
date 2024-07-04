@@ -99,7 +99,7 @@ in {
         "${modifier}+Shift+Alt+l" = "move right";
 
         # Action.
-#"${modifier}+Shift+l" = "exec swaylock -c '0f111b' -e -F";
+        "${modifier}+Shift+a" = "exec swaylock -c '0f111b' -e -F";
         "${modifier}+Shift+r" = "reload";
         "${modifier}+Shift+q" = "kill";
         "${modifier}+Shift+e" = "exec exit-action | xargs swaymsg exec --";
