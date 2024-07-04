@@ -1,5 +1,11 @@
 require("util")
 
+-- Direction.
+SetKeyMap("<c-h>", "<Left>")
+SetKeyMap("<c-j>", "<Down>")
+SetKeyMap("<c-k>", "<Up>")
+SetKeyMap("<c-l>", "<Right>")
+
 -- Mouse.
 SetKeyMap("<c-x><c-m>", function() ToggleCommand("set mouse=a", "set mouse=", "mouse_status") end)
 
