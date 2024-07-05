@@ -128,9 +128,6 @@ require("which-key").setup({
 require("numb").setup()
 require("trim").setup()
 
--- Hlslens.
-require("hlslens").setup()
-
 -- Lint.
 local lint = require("lint")
 local golangcilint = require("lint.linters.golangcilint")

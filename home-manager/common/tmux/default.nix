@@ -18,6 +18,7 @@ in {
       # General.
       set -g focus-events     on
       set -g renumber-windows on
+      set -g escape-time 1
       set-option -g status-interval 60
       # https://dandavison.github.io/delta/tips-and-tricks/using-delta-with-tmux.html
       set -ga terminal-overrides ",*-256color:Tc"
