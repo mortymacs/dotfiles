@@ -1,3 +1,6 @@
+-- Leap.
+require("leap").create_default_mappings()
+
 -- Large files.
 require("bigfile").setup({
   filesize = 2,

@@ -288,6 +288,10 @@ require("lazy").setup({
     event = "VeryLazy",
     opts = {},
   },
+  {
+    "ggandor/leap.nvim",
+    event = "VeryLazy",
+  },
 
   -- Large files.
   "LunarVim/bigfile.nvim",
