@@ -101,6 +101,7 @@
     gomodifytags
     gotags
     reftools
+    unstable.go-motion
     mage
     air
     ## Python.
