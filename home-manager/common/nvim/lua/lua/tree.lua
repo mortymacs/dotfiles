@@ -262,9 +262,9 @@ require("neo-tree").setup({
                 ["]g"] = "next_git_modified",
             },
             fuzzy_finder_mappings = { -- define keymaps for filter popup window in fuzzy_finder_mode
-                ["j"] = "move_cursor_down",
+                ["<down>"] = "move_cursor_down",
                 ["<C-n>"] = "move_cursor_down",
-                ["k"] = "move_cursor_up",
+                ["<up>"] = "move_cursor_up",
                 ["<C-p>"] = "move_cursor_up",
             },
         },

@@ -6,12 +6,12 @@ require("mini.move").setup({
   mappings = {
     left = "",
     right = "",
-    down = "<s-m-j>",
-    up = "<s-m-k>",
+    down = "<s-m-down>",
+    up = "<s-m-up>",
     line_left = "",
     line_right = "",
-    line_down = "<s-m-j>",
-    line_up = "<s-m-k>",
+    line_down = "<s-m-down>",
+    line_up = "<s-m-up>",
   },
 })
 
