@@ -80,6 +80,10 @@ require("lazy").setup({
     },
     event = "VeryLazy",
   },
+  {
+    "folke/flash.nvim",
+    event = "VeryLazy",
+  },
 
   -- Terminal.
   {
@@ -287,10 +291,6 @@ require("lazy").setup({
     "folke/flash.nvim",
     event = "VeryLazy",
     opts = {},
-  },
-  {
-    "ggandor/leap.nvim",
-    event = "VeryLazy",
   },
 
   -- Large files.

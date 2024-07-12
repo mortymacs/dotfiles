@@ -27,6 +27,12 @@ SetKeyMap("<c-x><c-r>", "<Cmd>NeoTreeReveal<cr>")
 -- Search
 SetKeyMap("<c-x><c-g>", "<Cmd>Telescope live_grep<cr>")
 
+-- Finder.
+SetKeyMap("sf", function() require("flash").jump() end,                                                    { "n", "x", "o" })
+SetKeyMap("ss", function() require("flash").jump({ pattern = vim.fn.expand("<cword>") }) end,              { "n", "x", "o" })
+SetKeyMap("sv", function() require("flash").treesitter({ pattern = vim.fn.expand("<cword>") }) end,        { "n", "x", "o" })
+SetKeyMap("sc", function() require("flash").treesitter_search({ pattern = vim.fn.expand("<cword>") }) end, { "n", "x", "o" })
+
 -- Git
 SetKeyMap("<c-g><c-p>", "<Cmd>Gitsigns preview_hunk<cr>")
 SetKeyMap("<c-g><c-r>", "<Cmd>Gitsigns reset_hunk<cr>")
@@ -95,22 +101,22 @@ SetKeyMap("<s-m-up>", "<esc><Cmd>m .-2<cr>==gi", { "i" })
 SetKeyMap("<c-x><up>", "<Cmd>ToggleTerm<cr>")
 
 -- LSP
-SetKeyMap("<c-c><c-d>",     vim.lsp.buf.definition)
-SetKeyMap("<c-c><c-i>",     vim.lsp.buf.implementation)
-SetKeyMap("<c-c><c-r>",     "<Cmd>References<cr>")
-SetKeyMap("<c-c><c-e>",     vim.lsp.buf.rename)
-SetKeyMap("<c-c><c-x>",     vim.lsp.buf.code_action)
-SetKeyMap("<c-c><c-l>",     "<esc><Cmd>Format<cr>")
-SetKeyMap("<c-c><c-h>",     vim.lsp.buf.hover)
-SetKeyMap("<c-c><c-q>",     vim.lsp.buf.signature_help)
-SetKeyMap("<c-c><c-n>",     vim.diagnostic.open_float)
-SetKeyMap("<c-c><c-m>",     "<Cmd>DiagnosticsAll<cr>")
-SetKeyMap("<c-c><c-s>",     "<Cmd>DocumentSymbols<cr>")
-SetKeyMap("<c-c><c-f>",     "<Cmd>WorkspaceSymbols .<cr>")
-SetKeyMap("<c-c><c-g>",     "<Cmd>Telescope ast_grep<cr>")
-SetKeyMap("<c-c><c-w>",     "<Cmd>Telescope lsp_dynamic_workspace_symbols<cr>")
-SetKeyMap("<c-c><c-j>",     function() require('treesj').toggle() end)
-SetKeyMap("<c-x><c-l>",     RestartLsp)
+SetKeyMap("<c-c><c-d>", vim.lsp.buf.definition)
+SetKeyMap("<c-c><c-i>", vim.lsp.buf.implementation)
+SetKeyMap("<c-c><c-r>", "<Cmd>References<cr>")
+SetKeyMap("<c-c><c-e>", vim.lsp.buf.rename)
+SetKeyMap("<c-c><c-x>", vim.lsp.buf.code_action)
+SetKeyMap("<c-c><c-l>", "<esc><Cmd>Format<cr>")
+SetKeyMap("<c-c><c-h>", vim.lsp.buf.hover)
+SetKeyMap("<c-c><c-q>", vim.lsp.buf.signature_help)
+SetKeyMap("<c-c><c-n>", vim.diagnostic.open_float)
+SetKeyMap("<c-c><c-m>", "<Cmd>DiagnosticsAll<cr>")
+SetKeyMap("<c-c><c-s>", "<Cmd>DocumentSymbols<cr>")
+SetKeyMap("<c-c><c-f>", "<Cmd>WorkspaceSymbols .<cr>")
+SetKeyMap("<c-c><c-g>", "<Cmd>Telescope ast_grep<cr>")
+SetKeyMap("<c-c><c-w>", "<Cmd>Telescope lsp_dynamic_workspace_symbols<cr>")
+SetKeyMap("<c-c><c-j>", function() require('treesj').toggle() end)
+SetKeyMap("<c-x><c-l>", RestartLsp)
 
 -- Debug
 SetKeyMap("<c-d><c-s>", function() require("dapui").toggle() end)
@@ -135,6 +141,3 @@ SetKeyMap("<c-r><c-a>", "<Cmd>Telescope vim_bookmarks all<cr>")
 
 -- Package.
 SetKeyMap("<c-x><c-y>", "<Cmd>Lazy! sync<cr>")
-
--- Misc
-SetKeyMap("<c-s>", "<esc>:silent wa<cr>")
