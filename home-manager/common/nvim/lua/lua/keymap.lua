@@ -141,3 +141,6 @@ SetKeyMap("<c-r><c-a>", "<Cmd>Telescope vim_bookmarks all<cr>")
 
 -- Package.
 SetKeyMap("<c-x><c-y>", "<Cmd>Lazy! sync<cr>")
+
+-- Misc.
+SetKeyMap("<c-s>", "<esc>:silent wa<cr>")
