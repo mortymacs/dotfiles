@@ -10,7 +10,7 @@ in
 {
   imports = [
     ./hardware-configuration.nix
-    ../common/ld.nix
+    # ../common/ld.nix
     ../common/fwupd.nix
     ../common/font.nix
     ../common/misc.nix
