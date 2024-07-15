@@ -8,20 +8,6 @@
       url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    # Nix-LD, Run unpatched dynamic binaries on NixOS.
-    nix-ld = {
-      url = "github:Mic92/nix-ld";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-      };
-    };
-    nix-alien = {
-      url = "github:thiagokokada/nix-alien";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-      };
-    };
   };
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
     let
