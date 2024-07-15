@@ -119,7 +119,7 @@ require("todo-comments").setup({
 
 -- Whichkey.
 require("which-key").setup({
-  window = {
+  win = {
     border = "single",
   },
 })
