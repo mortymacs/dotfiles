@@ -96,7 +96,6 @@
     unstable.nilaway
     goimports-reviser
     goconst
-    gofumpt
     golines
     gomodifytags
     gotags

@@ -88,12 +88,11 @@ local lsp_signature_setup = {
 
 -- Go
 vim.g.go_auto_type_info = 0
-vim.g.go_gopls_gofumpt = 1
 vim.g.go_gopls_enabled = 1
 vim.g.go_echo_command_info = 0
 vim.g.go_fmt_command = "golines"
 vim.g.go_fmt_options = {
-  golines = "-m 120 --base-formatter gofumpt",
+  golines = "-m 120",
 }
 vim.g.go_def_mapping_enabled = 0
 lspconfig.gopls.setup({
