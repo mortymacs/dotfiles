@@ -4,6 +4,7 @@
 
   # Editor.
   v = "$EDITOR";
+  e = "emacsclient --reuse-frame";
 
   # Read.
   cat = "bat";
