@@ -194,7 +194,6 @@ require("formatter").setup({
           stdin = true,
         }
       end,
-      require("formatter.filetypes.go").gofumpt,
       require("formatter.filetypes.go").golines,
     },
 

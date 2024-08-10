@@ -1,3 +1,5 @@
+# https://github.com/alacritty/alacritty-theme/blob/master/themes/ayu_dark.toml
+# https://gitlab.gnome.org/chergert/ptyxis/-/blob/main/src/palettes/Ayu%20Dark.palette?ref_type=heads
 [colors.bright]
 black = "#686868"
 blue = "#59C2FF"
@@ -9,7 +11,7 @@ white = "#FFFFFF"
 yellow = "#FFB454"
 
 [colors.cursor]
-cursor = "#344866"
+cursor = "#E6B450"
 
 [colors.normal]
 black = "#686868"
@@ -22,7 +24,7 @@ white = "#C7C7C7"
 yellow = "#F9AF4F"
 
 [colors.primary]
-background = "#0B1015"
+background = "#0A0E14"
 foreground = "#FCFCFC"
 
 [colors.selection]
@@ -39,13 +41,13 @@ blinking = "Always"
 TERM = "xterm-256color"
 
 [font]
-size = 14
+size = 13
 
 [font.offset]
-y = 6
+y = 1
 
 [font.glyph_offset]
-y = 5
+y = 1
 
 [mouse]
 hide_when_typing = true
@@ -58,5 +60,5 @@ dynamic_padding = true
 opacity = 1.0
 
 [window.padding]
-x = 0
-y = 0
+x = 10
+y = 2

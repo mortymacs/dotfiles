@@ -7,6 +7,7 @@
       unstable.vazir-fonts
       unstable.lexend
       unstable.noto-fonts-emoji
+      unstable.jetbrains-mono
     ];
     fontconfig = {
       enable = true;
@@ -20,7 +21,7 @@
           "Vazirmatn"
         ];
         monospace = [
-          "Ellograph CF"
+          "JetBrains Mono"
           "Symbols Nerd Font"
           "Noto Color Emoji"
         ];
