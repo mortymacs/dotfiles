@@ -24,7 +24,7 @@ My environment config. I tried to keep it minimal and simple as much as I could.
 | Terminal Multiplexer | [Tmux](https://github.com/tmux/tmux) |
 | Editor/IDE | [Neovim](https://github.com/neovim/neovim) |
 | DB | [dbcli tools](https://github.com/dbcli) |
-| Fonts | Display: [Lexend](https://github.com/googlefonts/lexend), [VarizMatn](https://github.com/rastikerdar/vazirmatn), Monospace: [Ellograph CF](https://connary.com/ellograph.html), [Symbols Nerd Font](https://www.nerdfonts.com), [Noto Color Emoji](https://github.com/C1710/blobmoji) |
+| Fonts | Display: [Lexend](https://github.com/googlefonts/lexend), [VarizMatn](https://github.com/rastikerdar/vazirmatn), Monospace: [JetBrainsMono](https://www.jetbrains.com/lp/mono), [Symbols Nerd Font](https://www.nerdfonts.com), [Noto Color Emoji](https://github.com/C1710/blobmoji) |
 | File Manager | [Broot](https://github.com/Canop/broot) |
 | Launcher | [Rofi-Wayland](https://github.com/lbonn/rofi) |
 | Browser | [Firefox](https://www.mozilla.org) |
