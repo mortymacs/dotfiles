@@ -152,6 +152,12 @@
   '';
 
   # Programing.
+  c-debug = ''
+    # gcc -g3 file.c -o file.out && c-debug file.out
+    set target_file (fzf --no-mouse)
+    set target_line (command cat -n "$target_file" | fzf --no-mouse | awk '{print $1}')
+    cgdb -ex "b $target_file:$target_line" "$argv[1]"
+  '';
   go-debug = ''
     # go-debug path
     set target_file ./(fzf --no-mouse)

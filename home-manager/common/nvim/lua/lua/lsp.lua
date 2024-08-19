@@ -86,6 +86,20 @@ local lsp_signature_setup = {
   close_timeout = 100,
 }
 
+-- C
+lspconfig.clangd.setup({
+  capabilities = capabilities,
+  on_attach = function(_, bufnr)
+    lsp_signature.on_attach(lsp_signature_setup, bufnr)
+  end,
+  init_options = {
+    compilationDatabaseDirectory = "build",
+    index = {
+      threads = 0,
+    },
+  },
+})
+
 -- Go
 vim.g.go_auto_type_info = 0
 vim.g.go_gopls_enabled = 1

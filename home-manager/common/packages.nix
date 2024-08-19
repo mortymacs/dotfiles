@@ -81,8 +81,21 @@
     hurl
 
     # Programming.
-    ## C/C++.
-    gcc
+    ## C.
+    (hiPrio unstable.gcc)
+    clang
+    clang-tools
+    gdb
+    cgdb
+    cppcheck
+    rr
+    unstable.include-what-you-use
+    ccache
+    valgrind-light
+    complexity
+    cflow
+    bear
+    doxygen
     ## Go.
     unstable.go
     unstable.gopls
