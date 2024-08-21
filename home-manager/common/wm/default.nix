@@ -3,7 +3,8 @@ let
   modifier = config.wayland.windowManager.sway.config.modifier;
   fontSize = 11.0;
   fontName = "sans";
-in {
+in
+{
   wayland.windowManager.sway = {
     enable = true;
     config = {
@@ -28,11 +29,16 @@ in {
       modifier = "Mod4";
 
       fonts = {
-        names = [ fontName "monospace" ];
+        names = [
+          fontName
+          "monospace"
+        ];
         size = fontSize;
       };
 
-      gaps = { inner = 10; };
+      gaps = {
+        inner = 0;
+      };
 
       colors = {
         background = "#242423";
@@ -106,57 +112,59 @@ in {
 
         # Launcher.
         "${modifier}+d" = "exec rofi -show run | xargs swaymsg exec --";
-        "${modifier}+c" =
-          "exec cliphist list | rofi -dmenu | cliphist decode | wl-copy | xargs swaymsg exec --";
+        "${modifier}+c" = "exec cliphist list | rofi -dmenu | cliphist decode | wl-copy | xargs swaymsg exec --";
         "${modifier}+Tab" = "exec rofi -show window | xargs swaymsg exec --";
 
         # Application.
         "${modifier}+w" = "exec firefox";
-        "${modifier}+Return" =
-          "exec alacritty msg create-window 2>/dev/null || alacritty";
+        "${modifier}+Return" = "exec alacritty msg create-window 2>/dev/null || alacritty";
         "${modifier}+Shift+s" = "exec flameshot gui";
       };
 
       window.border = 1;
 
-      bars = [{
-        fonts = {
-          names = [ fontName "monospace" ];
-          size = fontSize;
-        };
-        mode = "dock";
-        hiddenState = "hide";
-        position = "top";
-        workspaceButtons = true;
-        workspaceNumbers = false;
-        trayOutput = "*";
-        statusCommand =
-          "i3status-rs ~/.config/i3status-rust/config-default.toml";
-        colors = {
-          background = "#0f111b";
-          statusline = "#FFE5D4";
-          focusedWorkspace = {
-            background = "#1d4e89";
-            border = "#1d4e89";
-            text = "#FFE5D4";
+      bars = [
+        {
+          fonts = {
+            names = [
+              fontName
+              "monospace"
+            ];
+            size = fontSize;
           };
-          activeWorkspace = {
-            background = "#161927";
-            border = "#161927";
-            text = "#FFE5D4";
+          mode = "dock";
+          hiddenState = "hide";
+          position = "top";
+          workspaceButtons = true;
+          workspaceNumbers = false;
+          trayOutput = "*";
+          statusCommand = "i3status-rs ~/.config/i3status-rust/config-default.toml";
+          colors = {
+            background = "#0f111b";
+            statusline = "#FFE5D4";
+            focusedWorkspace = {
+              background = "#1d4e89";
+              border = "#1d4e89";
+              text = "#FFE5D4";
+            };
+            activeWorkspace = {
+              background = "#161927";
+              border = "#161927";
+              text = "#FFE5D4";
+            };
+            inactiveWorkspace = {
+              background = "#161927";
+              border = "#161927";
+              text = "#FFE5D4";
+            };
+            urgentWorkspace = {
+              background = "#973c64";
+              border = "#e23e58";
+              text = "#FFE5D4";
+            };
           };
-          inactiveWorkspace = {
-            background = "#161927";
-            border = "#161927";
-            text = "#FFE5D4";
-          };
-          urgentWorkspace = {
-            background = "#973c64";
-            border = "#e23e58";
-            text = "#FFE5D4";
-          };
-        };
-      }];
+        }
+      ];
     };
   };
 
@@ -165,9 +173,8 @@ in {
     "sway/wallpaper.jpg".source = ./wallpaper.jpg;
   };
 
-  home.packages = with pkgs;
-    [
-      (writeShellScriptBin "exit-action" (builtins.readFile ./exit-action.sh))
-      (writeShellScriptBin "move-to-next-workspace" (builtins.readFile ./move-to-next-workspace.sh))
-    ];
+  home.packages = with pkgs; [
+    (writeShellScriptBin "exit-action" (builtins.readFile ./exit-action.sh))
+    (writeShellScriptBin "move-to-next-workspace" (builtins.readFile ./move-to-next-workspace.sh))
+  ];
 }

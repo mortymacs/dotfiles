@@ -56,9 +56,9 @@ hide_when_typing = true
 save_to_clipboard = true
 
 [window]
-dynamic_padding = true
+dynamic_padding = false
 opacity = 1.0
 
 [window.padding]
-x = 10
-y = 2
+x = 0
+y = 0
