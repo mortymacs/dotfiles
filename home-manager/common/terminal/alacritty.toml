@@ -41,7 +41,7 @@ blinking = "Always"
 TERM = "xterm-256color"
 
 [font]
-size = 13
+size = 14
 
 [font.offset]
 y = 1
