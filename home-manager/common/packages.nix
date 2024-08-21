@@ -95,6 +95,8 @@
     valgrind-light
     complexity
     cflow
+    hotspot
+    massif-visualizer
     bear
     doxygen
     ## Go.
