@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   list = with pkgs; [
     # Desktop
     rofi-wayland
@@ -117,7 +118,15 @@
     mage
     air
     ## Python.
-    (python312.withPackages (ps: with ps; [ cython ipdb ipython isort black ]))
+    (python312.withPackages (
+      ps: with ps; [
+        cython
+        ipdb
+        ipython
+        isort
+        black
+      ]
+    ))
     rye
     nodePackages.pyright
     ruff
