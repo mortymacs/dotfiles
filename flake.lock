@@ -10,11 +10,11 @@
         "nixpkgs-unstable": "nixpkgs-unstable"
       },
       "locked": {
-        "lastModified": 1724317586,
-        "narHash": "sha256-ZQBsJasqQyCgeZIJw9kdnQFCdREmY3cElSixbylXLAg=",
+        "lastModified": 1724318832,
+        "narHash": "sha256-PR6pTQmrSLFqHwi7iEkWCGHAKBXyJm2G+phBRZJAzI4=",
         "owner": "atkrad",
         "repo": "dotfiles",
-        "rev": "a84b3c33c0a0a729be80571a58dafacba916d968",
+        "rev": "5846700deef7214b88262133d4c20a68a589e782",
         "type": "github"
       },
       "original": {
