@@ -16,6 +16,7 @@ in
     ../common/misc.nix
     ../common/excludes.nix
     ../common/wm.nix
+    inputs.atkrad.nixosModules.cato-client
   ];
 
   # Nix.
@@ -126,6 +127,10 @@ in
   services.privoxy = {
     enable = true;
     enableTor = true;
+  };
+  services.cato-client = {
+    enable = true;
+    package = inputs.atkrad.packages.x86_64-linux.cato-client;
   };
 
   # Enable Fish.
