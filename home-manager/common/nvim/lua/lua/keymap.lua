@@ -115,6 +115,7 @@ SetKeyMap("<c-c><c-s>", "<Cmd>DocumentSymbols<cr>")
 SetKeyMap("<c-c><c-f>", "<Cmd>WorkspaceSymbols .<cr>")
 SetKeyMap("<c-c><c-g>", "<Cmd>Telescope ast_grep<cr>")
 SetKeyMap("<c-c><c-w>", "<Cmd>Telescope lsp_dynamic_workspace_symbols<cr>")
+SetKeyMap("<c-c><c-a>", "<Cmd>Outline<cr>")
 SetKeyMap("<c-c><c-j>", function() require('treesj').toggle() end)
 SetKeyMap("<c-x><c-l>", RestartLsp)
 

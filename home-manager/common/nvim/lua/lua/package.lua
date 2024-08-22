@@ -142,6 +142,10 @@ require("lazy").setup({
     },
     event = "VeryLazy",
   },
+  {
+    "hedyhli/outline.nvim",
+    event = "VeryLazy",
+  },
   "mhartington/formatter.nvim",
   "cappyzawa/trim.nvim",
   "brenoprata10/nvim-highlight-colors",
