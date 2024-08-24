@@ -97,6 +97,7 @@
     cflow
     hotspot
     massif-visualizer
+    heaptrack
     bear
     doxygen
     ## Go.
