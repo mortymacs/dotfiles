@@ -7,6 +7,7 @@ let
   ## https://coolors.co/82264f-6f2043-4f1730-2f0e1d-200a14-10050a
   ## https://coolors.co/361134-ea526f-ffe5d4-03b5aa
   ## https://github.com/Shatur/neovim-ayu/blob/master/lua/ayu/colors.lua
+  ## https://coolors.co/1f2041-4b3f72-a58465-ffc857-88b37e-119da4-0e7c7b
 
   # Nix shell
   nix_shell_bg = "#18212b";
@@ -35,11 +36,11 @@ let
   section_4_fg = "#fefcfb";
 
   # cmd_duration
-  section_5_bg = "#633359";
+  section_5_bg = "#264653";
   section_5_fg = "#fefcfb";
 
   # job
-  section_6_bg = "#973c64";
+  section_6_bg = "#A58465";
   section_6_fg = "#fefcfb";
 
   # icons

@@ -37,7 +37,7 @@ in
       };
 
       gaps = {
-        inner = 0;
+        inner = 10;
       };
 
       colors = {
