@@ -86,7 +86,7 @@ local lsp_signature_setup = {
   close_timeout = 100,
 }
 
--- C
+-- C/C++.
 lspconfig.clangd.setup({
   capabilities = capabilities,
   on_attach = function(_, bufnr)

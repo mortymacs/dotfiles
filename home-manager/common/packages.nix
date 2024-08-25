@@ -82,12 +82,13 @@
     hurl
 
     # Programming.
-    ## C.
+    ## C/C++.
     (hiPrio unstable.gcc)
     clang
     clang-tools
     gdb
     cgdb
+    lldb
     cppcheck
     rr
     unstable.include-what-you-use
@@ -100,6 +101,8 @@
     heaptrack
     bear
     doxygen
+    cmake
+    cmake-language-server
     ## Go.
     unstable.go
     unstable.gopls
