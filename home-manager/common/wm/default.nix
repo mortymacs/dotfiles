@@ -25,6 +25,7 @@ in
           command = "systemctl --user restart kanshi.service";
           always = true;
         }
+        { command = "zeal"; }
       ];
       modifier = "Mod4";
 

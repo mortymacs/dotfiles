@@ -70,6 +70,7 @@
     mycli
 
     # Development.
+    zeal
     pkg-config
     ghq
     nap
