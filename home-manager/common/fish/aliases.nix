@@ -44,9 +44,7 @@
   dx = "export http_proxy=''";
   whereiam = "echo (curl -s http://ip-api.com/json | jq -r '.country,.city')";
   dig = "dog";
-  vpn = ''
-      cd $HOME/.local/bin/cato \
-      && ./cclient.sh start --append=tail --route=10.0.0.0/8'';
+  vpn = "sudo cato-sdp start --route 10.0.0.0/8 --append tail";
 
   # Programming.
   code-info = "tokei";
