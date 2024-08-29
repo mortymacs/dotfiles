@@ -164,6 +164,16 @@
     set target_line (command cat -n "$target_file" | fzf --no-mouse | awk '{print $1}')
     dlv debug "$argv[1]" --init (echo "break $target_file:$target_line" | psub)
   '';
+  cc-signature = ''
+    set color_yellow (set_color yellow)
+    set color_red (set_color red)
+    set color_green (set_color green)
+    set color_reset (set_color normal)
+    nm --defined-only --no-demangle "$argv[1]" | awk 'NR>1 {print $1, $2, $3}' | while read -l ID CODE SIGNATURE
+      set HUMAN_READABLE (c++filt $SIGNATURE)
+      echo -e "$color_yellow$ID $color_red$CODE $color_green$HUMAN_READABLE$color_reset"
+    end
+  '';
 
   # Database.
   mysql = ''
