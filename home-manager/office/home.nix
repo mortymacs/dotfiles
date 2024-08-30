@@ -53,7 +53,7 @@ in {
   home.packages = with pkgs;
     defaultPackages.list ++ [
       # Meeting.
-      unstable.teams-for-linux
+      teams-for-linux
     ];
 
   # Fontconfig.
