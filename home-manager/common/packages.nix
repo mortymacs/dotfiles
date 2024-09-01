@@ -3,7 +3,6 @@
   list = with pkgs; [
     # Desktop
     rofi-wayland
-    spotify
 
     # Text.
     bat
@@ -43,9 +42,8 @@
     kmon
     bmon
 
-    # Network
+    # System / network.
     duf
-    dog
     gping
     networkmanagerapplet
 
@@ -71,6 +69,7 @@
 
     # Development.
     pkg-config
+    lsof
     ghq
     nap
     httpie
@@ -103,6 +102,7 @@
     doxygen
     cmake
     cmake-language-server
+    emscripten
     ## Go.
     unstable.go
     unstable.gopls
