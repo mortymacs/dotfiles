@@ -1,15 +1,11 @@
-{
-  config,
-  pkgs,
-  inputs,
-  ...
-}:
+{ pkgs, inputs, ... }:
 let
   defaultPackages = import ../common/packages.nix { inherit pkgs; };
 in
 {
   imports = [
     ./hardware-configuration.nix
+    ../common/network.nix
     ../common/ld.nix
     ../common/fwupd.nix
     ../common/font.nix
@@ -46,14 +42,6 @@ in
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.kernelParams = [ "i915.force_probe=22e8" ];
 
-  # Networking.
-  networking = {
-    hostName = "fx";
-    networkmanager = {
-      enable = true;
-    };
-  };
-
   # Time zone.
   time.timeZone = "Europe/Amsterdam";
 
@@ -76,9 +64,9 @@ in
   };
 
   # Bluetooth.
-  hardware.bluetooth.enable = true;
-  hardware.bluetooth.powerOnBoot = true;
-  services.blueman.enable = true;
+  hardware.bluetooth.enable = false;
+  hardware.bluetooth.powerOnBoot = false;
+  services.blueman.enable = false;
 
   # User.
   users.users.mort = {
@@ -97,16 +85,8 @@ in
 
   # Config packages.
   nixpkgs = {
-    config = {
-      allowUnfree = true;
-    };
     overlays = [
-      (final: prev: {
-        unstable = import inputs.nixpkgs-unstable {
-          system = final.system;
-          config.allowUnfree = true;
-        };
-      })
+      (final: prev: { unstable = import inputs.nixpkgs-unstable { system = final.system; }; })
     ];
   };
 

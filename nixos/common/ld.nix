@@ -1,4 +1,3 @@
-# Source: https://github.com/atkrad/dotfiles/
 { pkgs, ... }:
 {
   programs.nix-ld.enable = true;
