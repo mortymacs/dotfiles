@@ -184,6 +184,18 @@ require("formatter").setup({
   logging = true,
   log_level = vim.log.levels.ERROR,
   filetype = {
+    c = {
+      function()
+        return {
+          exe = "indent",
+          args = {
+            "-st",
+          },
+          stdin = true,
+        }
+      end,
+    },
+
     go = {
       function()
         return {

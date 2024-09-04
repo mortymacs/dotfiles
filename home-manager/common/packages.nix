@@ -103,6 +103,7 @@
     cmake
     cmake-language-server
     emscripten
+    indent
     ## Go.
     unstable.go
     unstable.gopls
