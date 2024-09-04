@@ -43,7 +43,7 @@
   x = "export http_proxy='http://127.0.0.1:8118'";
   dx = "export http_proxy=''";
   whereiam = "echo (curl -s http://ip-api.com/json | jq -r '.country,.city')";
-  vpn = "sudo cato-sdp start --route 10.0.0.0/8 --reconn 5 --append tail";
+  vpn = "sudo cato-sdp start --use-systemd-resolv --route 10.0.0.0/8 --reconn 5";
 
   # Programming.
   code-info = "tokei";
