@@ -190,6 +190,9 @@ require("formatter").setup({
           exe = "indent",
           args = {
             "-st",
+            "-br",
+            "-brf",
+            "-brs",
           },
           stdin = true,
         }
