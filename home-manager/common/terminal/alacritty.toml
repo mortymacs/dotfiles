@@ -46,12 +46,6 @@ size = 13
 [font.normal]
 style = "medium"
 
-[font.offset]
-y = 2
-
-[font.glyph_offset]
-y = 1
-
 [mouse]
 hide_when_typing = true
 
