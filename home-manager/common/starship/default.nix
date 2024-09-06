@@ -1,86 +1,62 @@
 { lib, ... }:
 let
-  # Colors:
-  ## https://coolors.co/351431-2b2d42-eb5e55-e23e58-d81e5b-82264f-e26d5a-e7ada3-ececec-0a9396
-  ## https://coolors.co/351431-2b2d42-eb5e55-e23e58-d81e5b-82264f-e26d5a-e7ada3-ececec
-  ## https://coolors.co/ff4f79-973c64-633359-492e54-2e294e
-  ## https://coolors.co/82264f-6f2043-4f1730-2f0e1d-200a14-10050a
-  ## https://coolors.co/361134-ea526f-ffe5d4-03b5aa
-  ## https://github.com/Shatur/neovim-ayu/blob/master/lua/ayu/colors.lua
-  ## https://coolors.co/1f2041-4b3f72-a58465-ffc857-88b37e-119da4-0e7c7b
-
   # Nix shell
-  nix_shell_bg = "#18212b";
-  nix_shell_fg = "#fefcfb";
+  nix_shell_fg = "#03b5aa";
 
   # username
-  section_1_bg = "#1f2041";
-  section_1_fg = "#fefcfb";
+  section_1_fg = "#C2BBF0";
 
   # directory
-  section_2_bg = "#4b3f72";
-  section_2_fg = "#fefcfb";
+  section_2_fg = "#f48c06";
 
   # fill
-  fill_bg = "#0E131F";
-  fill_fg = "#151F28";
+  fill_fg = "#30323d";
 
   # svc
-  section_3_bg = "#177E89";
-  section_3_fg = "#fefcfb";
-  section_3_1_bg = "#177E89";
-  section_3_1_fg = "#fefcfb";
+  section_3_fg = "#ffba08";
 
   # status
-  section_4_bg = "#2e294e";
-  section_4_fg = "#fefcfb";
+  section_4_fg = "#f5e2c8";
 
   # cmd_duration
-  section_5_bg = "#264653";
-  section_5_fg = "#fefcfb";
+  section_5_fg = "#90e0ef";
 
   # job
-  section_6_bg = "#A58465";
-  section_6_fg = "#fefcfb";
+  section_6_fg = "#ff4d80";
 
   # icons
-  left_icon = "";
-  right_icon = "";
-  fill_icon = " ";
+  fill_icon = "─";
   prompt_icon = "  ";
-in {
+in
+{
   programs.starship = {
     enable = true;
     enableFishIntegration = true;
     settings = {
       format = lib.concatStrings [
         "$sudo"
-        #"[${left_icon}](bg:${section_1_bg} fg:${fill_bg})"
         "$username"
-        "[${left_icon}](bg:${section_2_bg} fg:${section_1_bg})"
         "$directory"
-        "[${left_icon}](bg:${section_3_bg} fg:${section_2_bg})"
         "$git_branch"
         "$git_commit"
         "$git_state"
         "$git_metrics"
-        "[${left_icon}](fg:${section_3_bg} bg:${fill_bg})"
-        "$fill"
-        "[${right_icon}](bg:${fill_bg} fg:${nix_shell_bg})"
+        " $fill"
         "$nix_shell"
-        "[${right_icon}](bg:${nix_shell_bg} fg:${section_4_bg})"
         "$status"
-        "[${right_icon}](bg:${section_4_bg} fg:${section_5_bg})"
         "$cmd_duration"
-        "[${right_icon}](bg:${section_5_bg} fg:${section_6_bg})"
         "$jobs"
-        "[${right_icon}](bg:${section_6_bg} fg:${section_3_1_bg})"
         "$git_status"
-        #"[${left_icon}](bg:${fill_bg} fg:${section_3_1_bg})"
         "$line_break"
         "$character"
       ];
       add_newline = false;
+      username = {
+        show_always = true;
+        style_user = "fg:${section_1_fg}";
+        style_root = "fg:${section_1_fg}";
+        format = "[$user]($style)";
+      };
       character = {
         format = "$symbol";
         success_symbol = "[${prompt_icon}](purple)";
@@ -89,46 +65,39 @@ in {
       };
       fill = {
         symbol = "${fill_icon}";
-        style = "bg:${fill_bg} fg:${fill_fg}";
+        style = "fg:${fill_fg}";
       };
       nix_shell = {
         disabled = false;
-        style = "bg:${nix_shell_bg} fg:${nix_shell_fg}";
+        style = "fg:${nix_shell_fg}";
         symbol = " ";
-        format = "[ $symbol ]($style)";
+        format = "[ $symbol]($style)";
       };
       sudo = {
         disabled = false;
-        format = "[$symbol]($style)";
-        style = "bg:${section_1_bg} fg:${section_1_fg}";
-        symbol = " 󰯄";
-      };
-      username = {
-        show_always = true;
-        style_user = "bg:${section_1_bg} fg:${section_1_fg}";
-        style_root = "bg:${section_1_bg} fg:${section_1_fg}";
-        format = "[ $user ]($style)";
+        format = "[ $symbol ]($style)";
+        style = "fg:${section_1_fg}";
+        symbol = "󰯄";
       };
       directory = {
-        style = "bg:${section_2_bg} fg:${section_2_fg}";
-        format = "[ $path ]($style)";
+        style = "fg:${section_2_fg}";
+        format = "[ $path]($style)";
         truncation_length = 3;
         truncation_symbol = ".../";
       };
       git_branch = {
-        symbol = "";
-        style = "bg:${section_3_bg} fg:${section_3_fg}";
-        format = "[ $symbol$branch ]($style)";
+        style = "fg:${section_3_fg}";
+        format = "[ \\[$branch\\]]($style)";
       };
       git_commit = {
         tag_symbol = " 󰓼 ";
         tag_disabled = false;
-        style = "bg:${section_3_bg} fg:${section_3_fg}";
-        format = "[$hash$tag ]($style)";
+        style = "fg:${section_3_fg}";
+        format = "[ $hash$tag]($style)";
       };
       git_state = {
-        style = "bg:${section_3_bg} fg:${section_3_fg}";
-        format = "[ $state($progress_current/$progress_total) ]($style)";
+        style = "fg:${section_3_fg}";
+        format = "[ $state($progress_current/$progress_total)]($style)";
       };
       git_status = {
         ahead = "  ";
@@ -141,23 +110,23 @@ in {
         stashed = " 󱀲 ";
         untracked = " 󱪝 ";
         staged = " ● ";
-        style = "bg:${section_3_1_bg} fg:${section_3_1_fg}";
+        style = "fg:${section_3_fg}";
         format = "[$all_status$ahead_behind]($style)";
       };
       status = {
-        style = "bold bg:${section_4_bg} fg:${section_4_fg}";
-        format = "[ $status ]($style)";
+        style = "bold fg:${section_4_fg}";
+        format = "[ $status]($style)";
         disabled = false;
       };
       cmd_duration = {
-        style = "bold bg:${section_5_bg} fg:${section_5_fg}";
-        format = "[ $duration ]($style)";
+        style = "bold fg:${section_5_fg}";
+        format = "[ $duration]($style)";
       };
       jobs = {
         symbol = "+";
-        style = "bold bg:${section_6_bg} fg:${section_6_fg}";
+        style = "bold fg:${section_6_fg}";
         number_threshold = 1;
-        format = "[ $symbol$number ]($style)";
+        format = "[ $symbol$number]($style)";
       };
     };
   };

@@ -28,7 +28,9 @@ vim.api.nvim_set_hl(0, "WinSeparator", { bg = "",        fg = "#1b1c36" })
 vim.api.nvim_set_hl(0, "BufferDefaultVisible",     { bg = "" })
 vim.api.nvim_set_hl(0, "BufferDefaultInactive",    { bg = "" })
 vim.api.nvim_set_hl(0, "BufferDefaultCurrent",     { bg = "" })
+vim.api.nvim_set_hl(0, "BufferInactiveMod",        { bg = "" })
 vim.api.nvim_set_hl(0, "BufferDefaultInactiveMod", { bg = "" })
+vim.api.nvim_set_hl(0, "BufferDefaultVisibleMod",  { bg = "" })
 vim.api.nvim_set_hl(0, "BufferDefaultTabpageFill", { bg = "" })
 vim.api.nvim_set_hl(0, "BufferTabpageFill",        { bg = "" })
 vim.api.nvim_set_hl(0, "BufferCurrentSign",        { bg = "",   fg = "#087e8b" })
@@ -119,6 +121,9 @@ vim.g.bookmark_show_toggle_warning = 0
 vim.api.nvim_set_hl(0, "CursorLine",   { bg = "#161925", fg = "" })
 vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "",        fg = "#F3A712" })
 vim.opt.guicursor = { "a:ver1" }
+
+-- Markdown.
+vim.api.nvim_set_hl(0, "RenderMarkdown_Inverse_RenderMarkdownCode", { fg = "#444140" })
 
 -- Modes.
 require('modes').setup({

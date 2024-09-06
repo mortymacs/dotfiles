@@ -93,6 +93,7 @@
     unstable.include-what-you-use
     ccache
     valgrind-light
+    aflplusplus
     complexity
     cflow
     hotspot

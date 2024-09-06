@@ -329,3 +329,12 @@ require("zen-mode").setup({
     },
   },
 })
+
+-- Markdown
+require("render-markdown").setup({
+  code = {
+    style = "normal",
+    above = "─",
+    below = "─",
+  },
+})
