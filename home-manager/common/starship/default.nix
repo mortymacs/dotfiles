@@ -75,7 +75,7 @@ in
       };
       sudo = {
         disabled = false;
-        format = "[ $symbol ]($style)";
+        format = "[$symbol ]($style)";
         style = "fg:${section_1_fg}";
         symbol = "󰯄";
       };
