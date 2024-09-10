@@ -3,6 +3,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     atkrad.url = "github:atkrad/dotfiles";
 
     home-manager = {
@@ -10,7 +11,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      ...
+    }@inputs:
     let
       inherit (self) outputs;
       system = "x86_64-linux";
@@ -19,24 +26,35 @@
     {
       nixosConfigurations = {
         main = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs outputs; };
+          specialArgs = {
+            inherit inputs outputs;
+          };
           modules = [ ./nixos/main/configuration.nix ];
         };
         office = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs outputs; };
-          modules = [ ./nixos/office/configuration.nix ];
+          specialArgs = {
+            inherit inputs outputs;
+          };
+          modules = [
+            ./nixos/office/configuration.nix
+            inputs.nixos-hardware.nixosModules.lenovo-thinkpad-t14
+          ];
         };
       };
 
       homeConfigurations = {
         main = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
-          extraSpecialArgs = { inherit inputs outputs; };
+          extraSpecialArgs = {
+            inherit inputs outputs;
+          };
           modules = [ ./home-manager/main/home.nix ];
         };
         office = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
-          extraSpecialArgs = { inherit inputs outputs; };
+          extraSpecialArgs = {
+            inherit inputs outputs;
+          };
           modules = [ ./home-manager/office/home.nix ];
         };
       };
