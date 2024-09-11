@@ -1,22 +1,33 @@
 # https://coolors.co/351431-eb5e55-e23e58-d81e5b-2f2f2f-151515-ececec-35c693-8136c7-8c48cc
-{ config, pkgs, outputs, inputs, ... }:
-let defaultPackages = import ../common/packages.nix { inherit pkgs; };
-in {
+{
+  pkgs,
+  inputs,
+  ...
+}:
+let
+  defaultPackages = import ../common/packages.nix { inherit pkgs; };
+in
+{
   imports = [
     ../common/wm
+    ../common/statusbar
+    ../common/notification
     ../common/gtk
     ../common/fish
     ../common/starship
+    ../common/monitor
     ../common/terminal
     ../common/tmux
     ../common/tmuxp
     ../common/fzf
     ../common/nvim
+    ../common/emacs
     ../common/btop
     ../common/git
     ../common/docker
     ../common/flameshot
     ../common/firefox
+    ../common/launcher
     ../common/misc
   ];
 
@@ -31,17 +42,9 @@ in {
 
   # Config packages.
   nixpkgs = {
-    config = {
-      allowUnfree = true;
-      allowUnfreePredicate = (pkgs: true);
-    };
+    config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [ "terraform" ];
     overlays = [
-      (final: prev: {
-        unstable = import inputs.nixpkgs-unstable {
-          system = final.system;
-          config.allowUnfree = true;
-        };
-      })
+      (final: prev: { unstable = import inputs.nixpkgs-unstable { system = final.system; }; })
     ];
   };
 

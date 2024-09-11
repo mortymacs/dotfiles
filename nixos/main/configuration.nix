@@ -51,7 +51,7 @@ in
   # Printer.
   services.printing.enable = true;
 
-    # Sound.
+  # Sound.
   sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -74,10 +74,11 @@ in
       "networkmanager"
       "wheel"
       "docker"
+      "video"
     ];
     initialPassword = "password";
     shell = pkgs.fish;
-    packages = with pkgs; [ bc ];
+    packages = with pkgs; [ ];
   };
 
   # Config packages.
@@ -95,9 +96,6 @@ in
     enable = true;
     autoPrune.enable = true;
   };
-
-  # Misc.
-  services.greenclip.enable = true;
 
   # Security.
   services.tor = {

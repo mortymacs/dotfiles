@@ -29,7 +29,10 @@
           specialArgs = {
             inherit inputs outputs;
           };
-          modules = [ ./nixos/main/configuration.nix ];
+          modules = [
+            ./nixos/main/configuration.nix
+            inputs.nixos-hardware.nixosModules.dell-xps-13-9370
+          ];
         };
         office = nixpkgs.lib.nixosSystem {
           specialArgs = {

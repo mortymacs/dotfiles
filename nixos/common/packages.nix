@@ -3,6 +3,7 @@
     # Basic.
     nano
     wget
+    bc
 
     # Home manager.
     home-manager
