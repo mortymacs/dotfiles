@@ -45,6 +45,21 @@
       }
       {
         profile = {
+          name = "home-2";
+          outputs = [
+            {
+              criteria = "DP-3";
+              status = "enable";
+            }
+            {
+              criteria = "eDP-1";
+              status = "disable";
+            }
+          ];
+        };
+      }
+      {
+        profile = {
           name = "office";
           outputs = [
             {
