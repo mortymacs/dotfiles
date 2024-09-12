@@ -28,13 +28,7 @@ in
     };
     efi = {
       canTouchEfiVariables = true;
-      efiSysMountPoint = "/boot/efi";
     };
-  };
-
-  # Setup keyfile
-  boot.initrd.secrets = {
-    "/crypto_keyfile.bin" = null;
   };
 
   # Kernel.
@@ -114,5 +108,5 @@ in
   programs.dconf.enable = true;
 
   # NixOS installed version.
-  system.stateVersion = "22.11";
+  system.stateVersion = "24.05";
 }

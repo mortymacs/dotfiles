@@ -12,8 +12,6 @@
   boot.initrd.availableKernelModules = [
     "xhci_pci"
     "nvme"
-    "usb_storage"
-    "sd_mod"
     "rtsx_pci_sdmmc"
   ];
   boot.initrd.kernelModules = [ ];
@@ -22,30 +20,30 @@
 
   # File systems.
   fileSystems."/" = {
+    # command: sudo e2label /dev/mapper/luks-20ff081f-165d-4dff-8b2a-b9b1a1d0a1b0 nixos
     device = "/dev/disk/by-label/nixos";
     fsType = "ext4";
   };
-  boot.initrd.luks.devices = {
-    luksroot = {
-      device = "/dev/disk/by-partlabel/root";
-    };
-    # Enable swap on luks
-    "luks-175a4d67-da09-48ae-ad74-70a2042273ab" = {
-      device = "/dev/disk/by-uuid/175a4d67-da09-48ae-ad74-70a2042273ab";
-      keyFile = "/crypto_keyfile.bin";
-    };
-  };
-  fileSystems."/boot/efi" = {
-    device = "/dev/disk/by-uuid/D318-2A11";
+
+  boot.initrd.luks.devices."luks-20ff081f-165d-4dff-8b2a-b9b1a1d0a1b0".device = "/dev/disk/by-uuid/20ff081f-165d-4dff-8b2a-b9b1a1d0a1b0";
+
+  fileSystems."/boot" = {
+    # command: sudo fatlabel /dev/disk/by-uuid/5411-F9C6 BOOT
+    device = "/dev/disk/by-label/BOOT";
     fsType = "vfat";
+    options = [
+      "fmask=0077"
+      "dmask=0077"
+    ];
   };
-  swapDevices = [ { device = "/dev/disk/by-label/swap"; } ];
+
+  # Swap.
+  swapDevices = [ ];
 
   # Network.
   networking.useDHCP = lib.mkDefault true;
+  # networking.interfaces.wlp2s0.useDHCP = lib.mkDefault true;
 
-  # Platform.
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }

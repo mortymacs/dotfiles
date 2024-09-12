@@ -33,7 +33,7 @@
             command_off = "makoctl mode -r do-not-disturb";
             icon_on = "toggle_on";
             icon_off = "toggle_off";
-            format = "$icon";
+            format = " $icon ";
             interval = 1;
           }
           {
