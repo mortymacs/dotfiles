@@ -43,9 +43,6 @@ TERM = "xterm-256color"
 [font]
 size = 13
 
-[font.normal]
-style = "medium"
-
 [mouse]
 hide_when_typing = true
 
