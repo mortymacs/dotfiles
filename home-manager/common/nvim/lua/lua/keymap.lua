@@ -21,8 +21,8 @@ SetKeyMap("<c-x><c-f>", "<esc><Cmd>Files<cr>")
 SetKeyMap("<c-x><c-p>", "<Cmd>Telescope ghq<cr>")
 SetKeyMap("<c-x><c-d>", "<Cmd>BufferCloseAllButCurrent<cr>")
 SetKeyMap("<c-x><c-t>", "<Cmd>Telescope filetypes<cr>")
-SetKeyMap("<c-]>",      "<Cmd>NeoTreeShowToggle<cr>")
-SetKeyMap("<c-x><c-r>", "<Cmd>NeoTreeReveal<cr>")
+SetKeyMap("<c-]>",      "<Cmd>Neotree toggle<cr>")
+SetKeyMap("<c-x><c-r>", "<Cmd>Neotree reveal<cr>")
 
 -- Search
 SetKeyMap("<c-x><c-g>", "<Cmd>Telescope live_grep<cr>")
