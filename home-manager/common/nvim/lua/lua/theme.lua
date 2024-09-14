@@ -123,7 +123,7 @@ vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "",        fg = "#F3A712" })
 vim.opt.guicursor = { "a:ver1" }
 
 -- Markdown.
-vim.api.nvim_set_hl(0, "RenderMarkdown_Inverse_RenderMarkdownCode", { fg = "#444140" })
+vim.api.nvim_set_hl(0, "RenderMarkdown_Inverse_RenderMarkdownCode", { fg = "#6d597a" })
 
 -- Modes.
 require('modes').setup({
