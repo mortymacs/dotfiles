@@ -53,6 +53,7 @@
     kubecolor
     kubectx
     kind
+    k9s
     kubespy
     stern
     kubernetes-helm
