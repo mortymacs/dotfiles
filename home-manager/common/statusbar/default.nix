@@ -50,7 +50,7 @@
           }
           {
             block = "net";
-            format = " $icon {$signal_strength $ssid}";
+            format = " {$signal_strength $ssid} $icon ";
           }
         ];
         settings = {
