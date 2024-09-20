@@ -48,10 +48,14 @@
             timezone = "Europe/Amsterdam";
             interval = 10;
           }
+          {
+            block = "net";
+            format = " $icon {$signal_strength $ssid}";
+          }
         ];
         settings = {
           icons = {
-              icons = "material-nf";
+            icons = "material-nf";
           };
           theme = {
             theme = "native";

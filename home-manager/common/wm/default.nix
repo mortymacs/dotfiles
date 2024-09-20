@@ -20,7 +20,6 @@ in
           '';
         }
         { command = "mako"; }
-        { command = "nm-applet"; }
         {
           command = "systemctl --user restart kanshi.service";
           always = true;
