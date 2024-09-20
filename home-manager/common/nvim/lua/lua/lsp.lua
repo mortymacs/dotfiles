@@ -114,6 +114,11 @@ lspconfig.gopls.setup({
   on_attach = function(_, bufnr)
     lsp_signature.on_attach(lsp_signature_setup, bufnr)
   end,
+  settings = {
+    gopls = {
+      vulncheck = "Imports",
+    },
+  },
 })
 
 -- Lua
