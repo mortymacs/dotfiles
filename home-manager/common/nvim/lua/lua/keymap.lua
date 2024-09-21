@@ -92,6 +92,7 @@ SetKeyMap("<c-x><c-s>", function()
         },
     })
 end)
+SetKeyMap("<esc>", "<Cmd>noh<cr>", { "n" })
 
 -- https://stackoverflow.com/a/63887462/2338672
 SetKeyMap("<s-m-down>", "<esc><Cmd>m .+1<cr>==gi", { "i" })

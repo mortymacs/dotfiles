@@ -84,6 +84,9 @@ vim.api.nvim_set_hl(0, "NeoTreeGitIgnored",   { bg = "", fg = "#686f9a" })
 vim.api.nvim_set_hl(0, "NeoTreeGitModified",  { bg = "", fg = "#F3A712" })
 vim.api.nvim_set_hl(0, "NeoTreeGitUntracked", { bg = "", fg = "#babd8d" })
 
+-- Hlslens.
+vim.api.nvim_set_hl(0, "HlSearchLens", { bg = "#ffb703", fg = "#000000" })
+
 -- LSP.
 -- -- General.
 vim.api.nvim_set_hl(0, "Pmenu",                       { fg = "#ecf0c1", bg = "" })

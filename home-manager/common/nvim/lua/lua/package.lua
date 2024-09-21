@@ -84,6 +84,10 @@ require("lazy").setup({
     "folke/flash.nvim",
     event = "VeryLazy",
   },
+  {
+    "kevinhwang91/nvim-hlslens",
+    event = "VeryLazy",
+  },
 
   -- Terminal.
   {

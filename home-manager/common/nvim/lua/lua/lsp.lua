@@ -98,6 +98,7 @@ lspconfig.clangd.setup({
       threads = 0,
     },
   },
+  cmd = { "clangd", "--clang-tidy", "--compile-commands-dir=build" },
 })
 
 -- Go

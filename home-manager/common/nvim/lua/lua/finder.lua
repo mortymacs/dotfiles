@@ -42,3 +42,6 @@ require("telescope").load_extension("advanced_git_search")
 require("telescope").load_extension("ast_grep")
 require("telescope").load_extension("live_grep_args")
 require("telescope").load_extension("nerdy")
+
+-- Hlslens.
+require("hlslens").setup()
