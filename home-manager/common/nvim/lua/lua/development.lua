@@ -228,6 +228,11 @@ require("formatter").setup({
       require("formatter.filetypes.go").golines,
     },
 
+    python = {
+      require("formatter.filetypes.python").isort,
+      require("formatter.filetypes.python").black,
+    },
+
     lua = {
       function()
         -- Ignore files.
