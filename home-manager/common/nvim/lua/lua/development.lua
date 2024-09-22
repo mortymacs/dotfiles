@@ -187,12 +187,25 @@ require("formatter").setup({
     c = {
       function()
         return {
-          exe = "indent",
+          exe = "clang-format",
           args = {
-            "-st",
-            "-br",
-            "-brf",
-            "-brs",
+            "--style=Google",
+            "--assume-filename",
+            util.escape_path(util.get_current_buffer_file_name()),
+          },
+          stdin = true,
+        }
+      end,
+    },
+
+    cpp = {
+      function()
+        return {
+          exe = "clang-format",
+          args = {
+            "--style=Google",
+            "--assume-filename",
+            util.escape_path(util.get_current_buffer_file_name()),
           },
           stdin = true,
         }
