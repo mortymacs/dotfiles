@@ -50,6 +50,8 @@
   ## C/C++.
   gcc = "gcc -Wall -Werror -Wfatal-errors -Wextra";
   "g++" = "g++ -Wall -Werror -Wfatal-errors -Wextra";
+  clang = "clang -Weffc++ -Wall -Werror  -Wfatal-errors -Wextra";
+  "clang++" = "clang++ -Weffc++ -Wall -Werror  -Wfatal-errors -Wextra";
   ## Python.
   py = ''
     ipython --no-term-title --no-confirm-exit --no-banner --no-simple-prompt \
