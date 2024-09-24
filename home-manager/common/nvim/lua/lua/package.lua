@@ -240,6 +240,16 @@ require("lazy").setup({
     },
     event = "LspAttach",
   },
+  -- -- Rust.
+  {
+    "mrcjkb/rustaceanvim",
+    version = "^5",
+    lazy = false,
+  },
+  {
+    "saecki/crates.nvim",
+    tag = "stable",
+  },
   -- -- Go.
   {
     "fatih/vim-go",

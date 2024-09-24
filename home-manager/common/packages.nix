@@ -105,6 +105,12 @@
     cmake
     cmake-language-server
     emscripten
+    ## Rust.
+    unstable.rustc
+    unstable.cargo
+    unstable.rust-analyzer
+    unstable.rustfmt
+    unstable.rust-bindgen
     ## Go.
     unstable.go
     unstable.gopls

@@ -86,6 +86,9 @@ local lsp_signature_setup = {
   close_timeout = 100,
 }
 
+-- Rust.
+require("crates").setup()
+
 -- C/C++.
 lspconfig.clangd.setup({
   capabilities = capabilities,
