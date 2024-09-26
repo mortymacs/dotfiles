@@ -77,6 +77,9 @@ SetKeyMap("<c-t>8", function() require("textcase").operator("to_pascal_case") en
 SetKeyMap("<c-t>8", function() require("textcase").current_word("to_pascal_case") end,   { "n", "i" })
 SetKeyMap("<c-t>9", function() require("textcase").operator("to_title_case") end,        { "v" })
 SetKeyMap("<c-t>9", function() require("textcase").current_word("to_title_case") end,    { "n", "i" })
+-- Delete word.
+SetKeyMap("<c-s-w>", "<C-o>dw",  { "i" })
+SetKeyMap("<c-b>",   "<C-o>ciw", { "i" })
 
 -- Search
 SetKeyMap("<c-x><c-s>", function()
