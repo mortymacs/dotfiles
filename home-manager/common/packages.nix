@@ -16,6 +16,7 @@
     htmlq
     fx
     fq
+    jless
     hexyl
 
     # Image.
