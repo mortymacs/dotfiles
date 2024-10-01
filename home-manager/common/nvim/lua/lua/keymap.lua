@@ -80,6 +80,10 @@ SetKeyMap("<c-t>9", function() require("textcase").current_word("to_title_case")
 -- Delete word.
 SetKeyMap("<c-s-w>", "<C-o>dw",  { "i" })
 SetKeyMap("<c-b>",   "<C-o>ciw", { "i" })
+-- Fold.
+SetKeyMap("<c-x><Left>",  require('ufo').closeAllFolds,              { "n" })
+SetKeyMap("<c-x><Right>", require('ufo').openAllFolds,               { "n" })
+SetKeyMap("<c-x><Down>",  require('ufo').peekFoldedLinesUnderCursor, { "n" })
 
 -- Search
 SetKeyMap("<c-x><c-s>", function()
@@ -102,7 +106,7 @@ SetKeyMap("<s-m-down>", "<esc><Cmd>m .+1<cr>==gi", { "i" })
 SetKeyMap("<s-m-up>", "<esc><Cmd>m .-2<cr>==gi", { "i" })
 
 -- Terminal
-SetKeyMap("<c-x><up>", "<Cmd>ToggleTerm<cr>")
+SetKeyMap("<c-a>t", "<Cmd>ToggleTerm<cr>")
 
 -- LSP
 SetKeyMap("<c-c><c-d>", vim.lsp.buf.definition)

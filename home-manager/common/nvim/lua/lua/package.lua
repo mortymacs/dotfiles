@@ -331,4 +331,13 @@ require("lazy").setup({
     event = "VeryLazy",
     cmd = "Nerdy",
   },
+
+  -- Fold.
+  {
+    "kevinhwang91/nvim-ufo",
+    dependencies = {
+      "kevinhwang91/promise-async",
+    },
+    event = "VeryLazy",
+  },
 })

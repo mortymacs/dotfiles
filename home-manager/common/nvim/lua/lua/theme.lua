@@ -1,14 +1,13 @@
+-- Colorscheme.
 vim.g.background = "dark"
 vim.cmd.colorscheme("ayu")
 require('ayu').setup({
   mirage = false,
   terminal = false,
   overrides = {
-    Normal        = { bg = "None",    fg = "#FCFCFC" },
+    Normal        = { bg = "None",   fg = "#FCFCFC" },
     ColorColumn   = { bg = "None" },
     SignColumn    = { bg = "None" },
-    Folded        = { bg = "None" },
-    FoldColumn    = { bg = "None" },
     CursorColumn  = { bg = "None" },
     Line          = { bg = "None" },
   },
@@ -20,7 +19,7 @@ vim.api.nvim_set_hl(0, "FloatBorder",  { bg = "",        fg = "#686f9a" })
 vim.api.nvim_set_hl(0, "Search",       { bg = "#087e8b", fg = "#ffffff" })
 vim.api.nvim_set_hl(0, "EndOfBuffer",  { bg = "",        fg = "#090d12" })
 vim.api.nvim_set_hl(0, "LineNr",       { bg = "",        fg = "#292948" })
-vim.api.nvim_set_hl(0, "NonText",      { bg = "",        fg = "" })
+vim.api.nvim_set_hl(0, "NonText",      { bg = "",        fg = ""        })
 vim.api.nvim_set_hl(0, "VertSplit",    { bg = "",        fg = "#1b1c36" })
 vim.api.nvim_set_hl(0, "WinSeparator", { bg = "",        fg = "#1b1c36" })
 
@@ -86,6 +85,10 @@ vim.api.nvim_set_hl(0, "NeoTreeGitUntracked", { bg = "", fg = "#babd8d" })
 
 -- Hlslens.
 vim.api.nvim_set_hl(0, "HlSearchLens", { bg = "#ffb703", fg = "#000000" })
+
+-- Folded.
+vim.api.nvim_set_hl(0, "Folded",      { bg = "#1a1423", fg = "" })
+vim.api.nvim_set_hl(0, "UfoFoldedBg", { bg = "",        fg = "" })
 
 -- LSP.
 -- -- General.

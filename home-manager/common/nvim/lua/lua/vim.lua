@@ -34,6 +34,9 @@ vim.opt.list = false
 -- Fold.
 vim.opt.foldlevel = 99
 vim.opt.conceallevel = 2
+vim.o.foldcolumn = '1'
+vim.o.foldlevelstart = 99
+vim.o.foldenable = true
 
 -- Menu
 vim.opt.completeopt = "menu,menuone,noselect"
