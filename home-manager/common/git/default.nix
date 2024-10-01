@@ -61,6 +61,7 @@
   };
 
   home.packages = with pkgs; [
+    git-town
     (writeShellScriptBin "git-user-stats" (builtins.readFile ./git-user-stats.sh))
   ];
 
