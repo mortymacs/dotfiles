@@ -144,6 +144,9 @@ SetKeyMap("<c-t><c-left>", "<esc><Cmd>Neotest jump prev<cr>")
 SetKeyMap("<c-l><c-e>", "<Cmd>DiagnosticsAll<cr>")
 SetKeyMap("<c-x><c-i>", "<Cmd>TroubleToggle todo<cr>")
 
+-- AI.
+SetKeyMap("<c-a>a", "<Cmd>CodyTask<cr>")
+
 -- Bookmark
 SetKeyMap("<c-r><c-c>", "<Cmd>Telescope vim_bookmarks current_file<cr>")
 SetKeyMap("<c-r><c-a>", "<Cmd>Telescope vim_bookmarks all<cr>")

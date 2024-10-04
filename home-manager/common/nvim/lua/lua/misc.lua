@@ -21,3 +21,8 @@ require("dressing").setup({
     min_width = { 10, 0.1 },
   },
 })
+
+-- AI.
+require("sg").setup({
+  enable_cody = vim.fn.getenv("SRC_CODY_STATUS") == "1" and true or false,
+})

@@ -152,6 +152,7 @@
     lua54Packages.luacheck
     ## Javascript/Typescript.
     deno
+    nodejs
     ## Nix.
     nil
     nixfmt-rfc-style
