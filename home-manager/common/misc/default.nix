@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   # Services.
   services = {
@@ -17,5 +18,11 @@
     "bat/themes/ayu-dark.tmTheme".source = ./ayu-dark.tmTheme;
     # Clangd.
     "clangd/config.yaml".source = ./clangd.yaml;
+  };
+
+  # VSCode.
+  programs.vscode = {
+    enable = true;
+    package = pkgs.unstable.vscode;
   };
 }
