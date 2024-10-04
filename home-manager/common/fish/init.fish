@@ -46,8 +46,8 @@ set -x GHQ_ROOT "$HOME/Workspaces"
 set -x MOST_INITFILE "$HOME"/.config/most/mostrc
 
 # Cody.
-set -x SRC_ACCESS_TOKEN (cat ~/.config/cody/secret)
-set -x SRC_CODY_STATUS (cat ~/.config/cody/status)
+set -x SRC_ACCESS_TOKEN (cat ~/.config/cody-ai/secret)
+set -x SRC_CODY_STATUS (cat ~/.config/cody-ai/status)
 
 # Man
 set -x MANPAGER most
