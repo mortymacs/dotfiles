@@ -81,6 +81,8 @@
     silicon
     ## Test.
     hurl
+    ## Editor
+    unstable.code-cursor
 
     # Programming.
     ## C/C++.
