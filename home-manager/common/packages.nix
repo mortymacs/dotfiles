@@ -189,6 +189,8 @@
     nodePackages.jsonlint
     ## XML.
     xmlformat
+    ## Protobuf
+    protobuf
 
     # Misc.
     trash-cli
