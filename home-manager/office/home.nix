@@ -45,12 +45,7 @@ in
   nixpkgs = {
     config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [ "terraform" ];
     overlays = [
-      (final: prev: {
-        unstable = import inputs.nixpkgs-unstable {
-          system = final.system;
-          config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [ "vscode" "cursor" ];
-        };
-      })
+      (final: prev: { unstable = import inputs.nixpkgs-unstable { system = final.system; }; })
     ];
   };
 

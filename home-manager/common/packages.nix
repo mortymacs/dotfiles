@@ -81,8 +81,6 @@
     silicon
     ## Test.
     hurl
-    ## Editor
-    unstable.code-cursor
 
     # Programming.
     ## C/C++.
@@ -180,7 +178,7 @@
     dot-language-server
     graph-easy
     ## HTML & CSS.
-    vscode-langservers-extracted
+    # vscode-langservers-extracted
     ## YAML.
     nodePackages.yaml-language-server
     yamllint

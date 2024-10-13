@@ -190,6 +190,7 @@ require("lazy").setup({
       "nvim-treesitter/nvim-treesitter",
       "echasnovski/mini.nvim",
     },
+    file_types = { "markdown", "Avante" },
   },
 
   -- LSP.
@@ -343,10 +344,34 @@ require("lazy").setup({
 
   -- AI.
   {
+    "jackMort/ChatGPT.nvim",
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "nvim-lua/plenary.nvim",
+      "folke/trouble.nvim",
+      "nvim-telescope/telescope.nvim",
+    },
+    event = "VeryLazy",
+  },
+  {
     "sourcegraph/sg.nvim",
     dependencies = {
       "nvim-lua/plenary.nvim",
       "nvim-telescope/telescope.nvim",
     },
+  },
+  {
+    "yetone/avante.nvim",
+    lazy = false,
+    version = false,
+    build = "make",
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+      "stevearc/dressing.nvim",
+      "nvim-lua/plenary.nvim",
+      "MunifTanjim/nui.nvim",
+      "nvim-tree/nvim-web-devicons",
+    },
+    event = "VeryLazy",
   },
 })

@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, config, ... }:
 {
   # Services.
   services = {
@@ -20,9 +20,18 @@
     "clangd/config.yaml".source = ./clangd.yaml;
   };
 
-  # VSCode.
-  programs.vscode = {
-    enable = true;
-    package = pkgs.unstable.vscode;
-  };
+  # Check if AWS config file exists and conditionally add it.
+  home.file =
+    lib.optionalAttrs (!builtins.pathExists "${toString (config.home.homeDirectory)}/.aws/config")
+      {
+        ".aws/config".text = ''
+          [profile localhost]
+          region = us-east-1
+        '';
+        ".aws/credentials".text = ''
+          [localstack]
+          aws_access_key_id = foo
+          aws_secret_access_key = bar
+        '';
+      };
 }
