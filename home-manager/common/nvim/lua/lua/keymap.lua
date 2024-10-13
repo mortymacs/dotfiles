@@ -146,9 +146,9 @@ SetKeyMap("<c-x><c-i>", "<Cmd>TroubleToggle todo<cr>")
 
 -- AI.
 SetKeyMap("<c-a>c", "<Cmd>ChatGPTRun complete_code<cr>",      { "n", "v" })
-SetKeyMap("<c-a>d", "<Cmd>ChatGPTRun fix_bugs<cr>",           { "n" })
+SetKeyMap("<c-a>f", "<Cmd>ChatGPTRun fix_bugs<cr>",           { "n", "v" })
 SetKeyMap("<c-a>g", "<Cmd>ChatGPTRun grammar_correction<cr>", { "n", "v" })
-SetKeyMap("<c-a>d", "<Cmd>ChatGPTRun docstring<cr>",          { "n" })
+SetKeyMap("<c-a>d", "<Cmd>ChatGPTRun docstring<cr>",          { "n", "v" })
 SetKeyMap("<c-a>a", "<Cmd>AvanteAsk<cr>",                     { "n" })
 
 -- Bookmark
