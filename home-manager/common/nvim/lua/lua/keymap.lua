@@ -150,6 +150,7 @@ SetKeyMap("<c-a>f", "<Cmd>ChatGPTRun fix_bugs<cr>",           { "n", "v" })
 SetKeyMap("<c-a>g", "<Cmd>ChatGPTRun grammar_correction<cr>", { "n", "v" })
 SetKeyMap("<c-a>d", "<Cmd>ChatGPTRun docstring<cr>",          { "n", "v" })
 SetKeyMap("<c-a>a", "<Cmd>AvanteAsk<cr>",                     { "n" })
+SetKeyMap("<c-a>t", ":CodyTask ",                             { "n", "v" })
 
 -- Bookmark
 SetKeyMap("<c-r><c-c>", "<Cmd>Telescope vim_bookmarks current_file<cr>")
