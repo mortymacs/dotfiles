@@ -106,7 +106,7 @@ SetKeyMap("<s-m-down>", "<esc><Cmd>m .+1<cr>==gi", { "i" })
 SetKeyMap("<s-m-up>", "<esc><Cmd>m .-2<cr>==gi", { "i" })
 
 -- Terminal
-SetKeyMap("<c-a>t", "<Cmd>ToggleTerm<cr>")
+SetKeyMap("<c-x>t", "<Cmd>ToggleTerm<cr>")
 
 -- LSP
 SetKeyMap("<c-c><c-d>", vim.lsp.buf.definition)
