@@ -58,6 +58,7 @@
         --PlainTextFormatter.pprint=True \
         --TerminalInteractiveShell.highlighting_style=material'';
   rpy = ''fd -I "(build|dist|__pycache__|egg-info)" | xargs rm -rf --'';
+  apy = "source ./.venv/bin/activate.fish";
 
   # Compression.
   tgz = ''
