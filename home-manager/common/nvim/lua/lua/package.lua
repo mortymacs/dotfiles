@@ -192,6 +192,10 @@ require("lazy").setup({
     },
     file_types = { "markdown", "Avante" },
   },
+  {
+    "rachartier/tiny-inline-diagnostic.nvim",
+    event = "LspAttach",
+  },
 
   -- LSP.
   "neovim/nvim-lspconfig",

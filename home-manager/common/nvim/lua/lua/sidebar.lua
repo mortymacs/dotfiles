@@ -5,11 +5,15 @@ require("statuscol").setup({
   ft_ignore = { "terminal", "Outline", "toggleterm", "fzf" },
   segments = {
     {
-      sign = { name = { ".*" }, namespace = { "gitsigns", "qf" }, maxwidth = 1, colwidth = 1, auto = false },
+      sign = { namespace = { "diagnostic/signs" }, maxwidth = 1, colwidth = 1, auto = true },
       click = "v:lua.ScSa",
     },
     {
-      sign = { name = { "DapBreakpoint" }, maxwidth = 1, colwidth = 1, auto = false },
+      sign = { name = { ".*" }, namespace = { "gitsigns", "qf" }, maxwidth = 1, colwidth = 1, auto = true },
+      click = "v:lua.ScSa",
+    },
+    {
+      sign = { name = { "DapBreakpoint" }, maxwidth = 1, colwidth = 1, auto = true },
       click = "v:lua.ScSa",
     },
     {
