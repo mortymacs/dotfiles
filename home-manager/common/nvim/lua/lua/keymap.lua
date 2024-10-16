@@ -11,8 +11,8 @@ SetKeyMap("<c-x><c-e>", "<Cmd>BufferDelete<cr>")
 SetKeyMap("<c-f>",      "<Cmd>BLines<cr>")
 
 -- Tabbar.
-SetKeyMap("<s-left>",   "<Cmd>BufferPrevious<cr>", { "n" })
-SetKeyMap("<s-right>",  "<Cmd>BufferNext<cr>",     { "n" })
+SetKeyMap("<s-l>",   "<Cmd>BufferPrevious<cr>", { "n" })
+SetKeyMap("<s-h>",  "<Cmd>BufferNext<cr>",      { "n" })
 SetKeyMap("<c-x><c-q>", ":qa<cr>")
 SetKeyMap("<c-x><c-n>", "<Cmd>tabnew<cr>")
 

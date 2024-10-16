@@ -25,10 +25,14 @@ in {
       set -s default-terminal "tmux-256color"
 
       # Keybinding.
-      bind -n M-S-Left   previous-window
-      bind -n M-S-Right  next-window
-      bind -n C-PageUp   switch-client -p
-      bind -n C-PageDown switch-client -n
+      bind -n M-H previous-window
+      bind -n M-L next-window
+      bind -n M-K switch-client -p
+      bind -n M-j switch-client -n
+      bind h select-pane -L
+      bind j select-pane -D
+      bind k select-pane -U
+      bind l select-pane -R
 
       ## Misc.
       bind -n M-C-n display-popup -w 90% -E "tmux-ghq"

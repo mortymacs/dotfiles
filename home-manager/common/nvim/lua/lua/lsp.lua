@@ -46,11 +46,11 @@ cmp.setup({
     }),
   },
   mapping = cmp.mapping.preset.insert({
+    ["<a-j>"] = cmp.mapping.select_next_item(),
+    ["<a-k>"] = cmp.mapping.select_prev_item(),
     ["<c-up>"] = cmp.mapping.scroll_docs(-4),
     ["<c-down>"] = cmp.mapping.scroll_docs(4),
     ["<c-space>"] = cmp.mapping.complete(),
-    ["<right>"] = cmp.mapping.abort(),
-    ["<left>"] = cmp.mapping.abort(),
     ["<esc>"] = cmp.mapping.abort(),
     ["<cr>"] = cmp.mapping.confirm({ select = true }),
   }),
