@@ -122,7 +122,7 @@
     unstable.gosec
     unstable.golangci-lint
     unstable.govulncheck
-    unstable.nilaway
+    # unstable.nilaway
     goimports-reviser
     goconst
     golines
@@ -178,7 +178,7 @@
     dot-language-server
     graph-easy
     ## HTML & CSS.
-    # vscode-langservers-extracted
+    vscode-langservers-extracted
     ## YAML.
     nodePackages.yaml-language-server
     yamllint
