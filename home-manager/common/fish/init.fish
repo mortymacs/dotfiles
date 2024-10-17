@@ -1,5 +1,6 @@
 # Fish.
 set -U fish_greeting
+fish_vi_key_bindings
 
 # Tmux.
 set -x TMUX_PLUGIN_MANAGER_PATH "$HOME"/.config/tmux/plugins/

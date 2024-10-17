@@ -142,7 +142,7 @@
         black
       ]
     ))
-    rye
+    unstable.uv
     nodePackages.pyright
     ruff
     ## Lua.
