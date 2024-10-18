@@ -28,7 +28,7 @@ in {
       bind -n M-H previous-window
       bind -n M-L next-window
       bind -n M-K switch-client -p
-      bind -n M-j switch-client -n
+      bind -n M-J switch-client -n
       bind h select-pane -L
       bind j select-pane -D
       bind k select-pane -U
