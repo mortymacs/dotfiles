@@ -41,7 +41,7 @@ set -x BAT_THEME 'ayu-dark'
 
 # Fzf.
 set -x FZF_DEFAULT_COMMAND 'fd --type f'
-set -x FZF_DEFAULT_OPTS '--no-separator --inline-info --cycle --no-scrollbar --tabstop=4 --bind alt-up:preview-half-page-up,alt-down:preview-half-page-down,alt-k:up,alt-j:down,ctrl-k:preview-up,ctrl-j:preview-down,j:down,k:up --layout=reverse --preview-window=noborder --color "hl+:#EB5E55,gutter:#0f0f0f,pointer:#D81E5B"'
+set -x FZF_DEFAULT_OPTS '--no-separator --inline-info --cycle --no-scrollbar --tabstop=4 --bind alt-k:up,alt-j:down,ctrl-k:preview-up,ctrl-j:preview-down --layout=reverse --preview-window=noborder --color "hl+:#EB5E55,gutter:#0f0f0f,pointer:#D81E5B"'
 
 # Ghq.
 set -x GHQ_ROOT "$HOME/Workspaces"
