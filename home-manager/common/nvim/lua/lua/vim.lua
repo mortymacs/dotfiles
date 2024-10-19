@@ -51,8 +51,6 @@ vim.opt.numberwidth = 5
 
 -- Wrap
 vim.opt.wrap = false
--- https://superuser.com/a/559436
-vim.opt.whichwrap:append("<,>,h,l,[,]")
 
 -- Mouse
 vim.opt.mouse = ""

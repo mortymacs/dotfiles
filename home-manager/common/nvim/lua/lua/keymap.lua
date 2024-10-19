@@ -30,8 +30,8 @@ SetKeyMap("<c-x><c-g>", "<Cmd>Telescope live_grep<cr>")
 -- Finder.
 SetKeyMap("sf", function() require("flash").jump() end,                                                    { "n", "x", "o" })
 SetKeyMap("ss", function() require("flash").jump({ pattern = vim.fn.expand("<cword>") }) end,              { "n", "x", "o" })
-SetKeyMap("sv", function() require("flash").treesitter({ pattern = vim.fn.expand("<cword>") }) end,        { "n", "x", "o" })
-SetKeyMap("sc", function() require("flash").treesitter_search({ pattern = vim.fn.expand("<cword>") }) end, { "n", "x", "o" })
+SetKeyMap("sv", function() require("flash").treesitter_search({ pattern = vim.fn.expand("<cword>") }) end, { "n", "x", "o" })
+SetKeyMap("sc", function() require("flash").treesitter_search() end,                                       { "n", "x", "o" })
 
 -- Git
 SetKeyMap("<c-g><c-p>", "<Cmd>Gitsigns preview_hunk<cr>")
