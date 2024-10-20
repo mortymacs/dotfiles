@@ -15,6 +15,20 @@ require("telescope").setup({
   defaults = {
     layout_strategy = "vertical",
     borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
+    mappings = {
+      i = {
+        ["<A-j>"] = require("telescope.actions").move_selection_next,
+        ["<A-k>"] = require("telescope.actions").move_selection_previous,
+        ["<C-j>"] = require("telescope.actions").preview_scrolling_down,
+        ["<C-k>"] = require("telescope.actions").preview_scrolling_up,
+      },
+      n = {
+        ["<A-j>"] = require("telescope.actions").move_selection_next,
+        ["<A-k>"] = require("telescope.actions").move_selection_previous,
+        ["<C-j>"] = require("telescope.actions").preview_scrolling_down,
+        ["<C-k>"] = require("telescope.actions").preview_scrolling_up,
+      },
+    },
   },
   pickers = {
     find_files = {
