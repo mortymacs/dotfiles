@@ -56,9 +56,9 @@ in
   };
 
   # Bluetooth.
-  hardware.bluetooth.enable = false;
-  hardware.bluetooth.powerOnBoot = false;
-  services.blueman.enable = false;
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
+  services.blueman.enable = true;
 
   # User.
   users.users.mort = {
