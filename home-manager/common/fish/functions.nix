@@ -27,7 +27,7 @@
     bat cache --build
 
     # Containers.
-    for img in localstack/localstack redis:alpine mysql postgres kennethreitz/httpbin
+    for img in localstack/localstack valkey/valkey:alpine mysql postgres kennethreitz/httpbin
         docker pull $img;
     end
 
@@ -59,12 +59,12 @@
         --name http-test-server \
         kennethreitz/httpbin
   '';
-  redis-server = ''
+  valkey-server = ''
     docker run -d --rm \
         -p 6379:6379 \
-        --hostname redis \
-        --name redis \
-        redis:alpine redis-server
+        --hostname valkey \
+        --name valkey \
+        valkey/valkey:alpine valkey-server
   '';
   mysql-server = ''
     docker run -d --rm \
