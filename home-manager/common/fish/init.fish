@@ -2,6 +2,11 @@
 set -U fish_greeting
 fish_vi_key_bindings
 
+# Shell wrapper.
+if command -q nix-your-shell
+  nix-your-shell fish | source
+end
+
 # Tmux.
 set -x TMUX_PLUGIN_MANAGER_PATH "$HOME"/.config/tmux/plugins/
 

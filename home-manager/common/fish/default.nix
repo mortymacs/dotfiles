@@ -2,7 +2,8 @@
 let
   defaultAliases = import ../../common/fish/aliases.nix;
   defaultFunctions = import ../../common/fish/functions.nix;
-in {
+in
+{
   programs.fish = {
     enable = true;
     plugins = with pkgs; [
@@ -30,4 +31,6 @@ in {
     enable = true;
     enableFishIntegration = true;
   };
+
+  home.packages = with pkgs; [ nix-your-shell ];
 }
