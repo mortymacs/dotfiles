@@ -16,6 +16,7 @@ in {
     historyLimit = 30000;
     extraConfig = ''
       # General.
+      setw -g mode-keys vi
       set -g focus-events     on
       set -g renumber-windows on
       set -g escape-time 1
