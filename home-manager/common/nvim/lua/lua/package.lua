@@ -232,6 +232,11 @@ require("lazy").setup({
     event = "LspAttach",
   },
   {
+    "chrisgrieser/nvim-lsp-endhints",
+    event = "LspAttach",
+    opts = {},
+  },
+  {
     "antosha417/nvim-lsp-file-operations",
     dependencies = {
       "nvim-lua/plenary.nvim",

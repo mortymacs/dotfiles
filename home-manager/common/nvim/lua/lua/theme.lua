@@ -5,18 +5,18 @@ require('ayu').setup({
   mirage = false,
   terminal = false,
   overrides = {
-    Normal        = { bg = "None",   fg = "#FCFCFC" },
-    ColorColumn   = { bg = "None" },
-    SignColumn    = { bg = "None" },
-    CursorColumn  = { bg = "None" },
-    Line          = { bg = "None" },
+    Normal        = { bg = "",   fg = "#FCFCFC" },
+    ColorColumn   = { bg = "" },
+    SignColumn    = { bg = "" },
+    CursorColumn  = { bg = "" },
+    Line          = { bg = "" },
   },
 })
 
 -- Body.
 vim.api.nvim_set_hl(0, "Normal",       { bg = "" })
 vim.api.nvim_set_hl(0, "NormalFloat",  { bg = "" })
-vim.api.nvim_set_hl(0, "SignColumn",  { bg = "" })
+vim.api.nvim_set_hl(0, "SignColumn",   { bg = "" })
 vim.api.nvim_set_hl(0, "FloatBorder",  { bg = "",        fg = "#686f9a" })
 vim.api.nvim_set_hl(0, "Search",       { bg = "#087e8b", fg = "#ffffff" })
 vim.api.nvim_set_hl(0, "EndOfBuffer",  { bg = "",        fg = "#090d12" })
@@ -107,6 +107,8 @@ vim.api.nvim_set_hl(0, "GlancePreviewLineNr",         { bg = "#000000" })
 vim.api.nvim_set_hl(0, "GlanceListNormal",            { bg = "#000000" })
 -- -- Lsp Signature.
 vim.api.nvim_set_hl(0, "LspSignatureActiveParameter", { bg = "#0e6ba8", fg = "#ffffff" })
+-- -- InlayHint.
+vim.api.nvim_set_hl(0, "LspInlayHint",                { fg = "#9a8c98", italic = true, })
 -- -- Symbol usages.
 vim.api.nvim_set_hl(0, "SymbolUsageText",             { fg = "#a5668b", italic = true, })
 vim.api.nvim_set_hl(0, "SymbolUsageContent",          { fg = "#a5668b", italic = true, })
