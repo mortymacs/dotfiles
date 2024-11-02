@@ -104,7 +104,7 @@
     bear
     doxygen
     cmake
-    cmake-language-server
+    neocmakelsp
     emscripten
     ## Rust.
     unstable.rustc

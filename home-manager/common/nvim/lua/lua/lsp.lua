@@ -181,7 +181,7 @@ lspconfig.bashls.setup({
 })
 
 -- CMake.
-lspconfig.cmake.setup({
+lspconfig.neocmake.setup({
   capabilities = capabilities,
   on_attach = function(_, bufnr)
     lsp_signature.on_attach(lsp_signature_setup, bufnr)
