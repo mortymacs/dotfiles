@@ -49,13 +49,7 @@ in
     ];
   };
 
-  home.packages =
-    with pkgs;
-    defaultPackages.list
-    ++ [
-      # Meeting.
-      teams-for-linux
-    ];
+  home.packages = with pkgs; defaultPackages.list ++ [ ];
 
   # Fontconfig.
   fonts.fontconfig.enable = true;

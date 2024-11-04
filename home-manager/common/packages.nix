@@ -144,7 +144,7 @@
     ))
     unstable.uv
     nodePackages.pyright
-    ruff
+    unstable.ruff
     ## Lua.
     luajit
     sumneko-lua-language-server
