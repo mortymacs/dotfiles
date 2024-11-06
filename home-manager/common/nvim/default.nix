@@ -12,4 +12,6 @@
       source = ./lua;
       recursive = true;
   };
+
+  home.packages = with pkgs; [ unstable.neovide ];
 }

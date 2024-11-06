@@ -72,7 +72,7 @@ in
         };
       };
 
-      terminal = "alacritty";
+      terminal = "wezterm";
       keybindings = {
         # Focus.
         "${modifier}+j" = "focus down";
@@ -117,7 +117,7 @@ in
 
         # Application.
         "${modifier}+w" = "exec firefox";
-        "${modifier}+Return" = "exec alacritty msg create-window 2>/dev/null || alacritty";
+        "${modifier}+Return" = "exec wezterm";
         "${modifier}+Shift+s" = "exec flameshot gui";
       };
 

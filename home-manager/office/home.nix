@@ -49,7 +49,7 @@ in
     ];
   };
 
-  home.packages = with pkgs; defaultPackages.list ++ [ ];
+  home.packages = with pkgs; defaultPackages.list ++ [ teams-for-linux ];
 
   # Fontconfig.
   fonts.fontconfig.enable = true;

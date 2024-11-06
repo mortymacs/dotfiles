@@ -132,7 +132,7 @@ vim.g.bookmark_show_toggle_warning = 0
 -- Cursor.
 vim.api.nvim_set_hl(0, "CursorLine",   { bg = "#161925", fg = "" })
 vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "",        fg = "#F3A712" })
-vim.opt.guicursor = { "a:ver1" }
+vim.opt.guicursor = { "a:block" }
 
 -- Markdown.
 vim.api.nvim_set_hl(0, "RenderMarkdown_Inverse_RenderMarkdownCode", { fg = "#6d597a" })

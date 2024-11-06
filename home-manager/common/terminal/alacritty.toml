@@ -32,9 +32,11 @@ background = "#202C3E"
 text = "#FCFCFC"
 
 [cursor.style]
+shape = "Block"
 blinking = "Always"
 
 [cursor.vi_mode_style]
+shape = "Block"
 blinking = "Always"
 
 [env]

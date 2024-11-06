@@ -77,6 +77,7 @@ require("lazy").setup({
       "debugloop/telescope-undo.nvim",
       "Marskey/telescope-sg",
       "nvim-telescope/telescope-live-grep-args.nvim",
+      "nvim-telescope/telescope-ghq.nvim",
     },
     event = "VeryLazy",
   },

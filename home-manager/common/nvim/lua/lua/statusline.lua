@@ -1,6 +1,6 @@
 -- Setup.
-local left_icon = ""
-local right_icon = ""
+local left_icon = ""
+local right_icon = ""
 local left_left_icon = "" -- right_icon
 local right_right_icon = "" -- left_icon
 require("lualine").setup({
@@ -12,8 +12,7 @@ require("lualine").setup({
     disabled_filetypes = { "fzf", "toggleterm" },
   },
   sections = {
-    lualine_a = {},
-    lualine_b = {
+    lualine_a = {
       {
         "filename",
         newfile_status = true,
@@ -30,14 +29,16 @@ require("lualine").setup({
         },
       },
     },
+    lualine_b = {},
     lualine_c = {},
-    lualine_x = {
+    lualine_x = {},
+    lualine_y = {
       require("lsp-progress").progress,
       "branch",
       "diff",
       "diagnostics",
     },
-    lualine_y = {
+    lualine_z = {
       "filetype",
       "filesize",
       {
@@ -48,7 +49,6 @@ require("lualine").setup({
         },
       },
     },
-    lualine_z = {},
   },
 })
 

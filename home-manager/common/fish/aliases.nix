@@ -5,6 +5,7 @@
   # Editor.
   v = "$EDITOR";
   e = "emacsclient --reuse-frame";
+  vg = "neovide";
 
   # Read.
   cat = "bat";

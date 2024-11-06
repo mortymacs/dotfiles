@@ -36,9 +36,4 @@ function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
 end
 
 -- Tiny Inline.
-require("tiny-inline-diagnostic").setup({
-  signs = {
-    left = "",
-    right = "",
-  },
-})
+require("tiny-inline-diagnostic").setup()
