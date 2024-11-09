@@ -1,14 +1,14 @@
 { pkgs, ... }:
 let
-  # https://coolors.co/0e131f-faa275-ff8c61-ce6a85-985277-5c374c
+  # https://coolors.co/0e131f-faa275-ff8c61-ce6a85-985277-edd2e0
   background = "#0E131F";
-  foreground = "#fefcfb";
-  left_background = "#2a9d8f";
-  left_foreground = "#fefcfb";
-  active_pane_background = "#264653";
-  active_pane_foreground = "#fefcfb";
-  left_icon = "";
-  right_icon = "";
+  foreground = "#EDD2E0";
+  left_background = "#985277";
+  left_foreground = "#EDD2E0";
+  active_pane_background = "#FF8C61";
+  active_pane_foreground = "#0E131F";
+  left_icon = "";
+  right_icon = "";
 in {
   programs.tmux = {
     enable = true;

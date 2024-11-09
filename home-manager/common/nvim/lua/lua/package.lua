@@ -16,6 +16,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   -- Theme.
   "Shatur/neovim-ayu",
+  "projekt0n/github-nvim-theme",
   "mvllow/modes.nvim",
 
   -- Tabbar.
