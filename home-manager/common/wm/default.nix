@@ -95,7 +95,7 @@ in
         "${modifier}+s" = "layout stacking";
         "${modifier}+t" = "layout tabbed";
         "${modifier}+Ctrl+v" = "splith";
-        "${modifier}+Ctrl+h" = "splitv";
+        "${modifier}+Ctrl+s" = "splitv";
         "${modifier}+Shift+Up" = "fullscreen toggle global";
 
         # Move.
