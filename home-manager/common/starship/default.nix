@@ -1,13 +1,13 @@
 { lib, ... }:
 let
-  # https://coolors.co/420039-db2b39-e76926-f3a712-83955a-1282a2-edd2e0
+  # https://coolors.co/420039-8f1639-db2b39-e76926-f3a712-83955a-1282a2-edd2e0
 
   # Nix shell
   nix_shell_bg = "#E76926";
   nix_shell_fg = "#151F28";
 
   # username
-  section_1_bg = "#420039";
+  section_1_bg = "#8F1639";
   section_1_fg = "#EDD2E0";
 
   # directory
