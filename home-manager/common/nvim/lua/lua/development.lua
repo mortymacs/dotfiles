@@ -342,9 +342,13 @@ require("zen-mode").setup({
     },
   },
   plugins = {
-    alacritty = {
+    wezterm = {
       enabled = true,
-      font = "25",
+      font = "+5",
+    },
+    neovide = {
+      enabled = true,
+      scale = 1.5,
     },
   },
 })
