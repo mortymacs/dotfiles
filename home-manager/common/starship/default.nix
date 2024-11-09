@@ -4,7 +4,7 @@ let
 
   # Nix shell
   nix_shell_bg = "#E76926";
-  nix_shell_fg = "#EDD2E0";
+  nix_shell_fg = "#151F28";
 
   # username
   section_1_bg = "#420039";
