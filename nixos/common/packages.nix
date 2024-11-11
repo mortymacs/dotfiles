@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   list = with pkgs; [
     # Basic.
     nano
@@ -22,5 +23,8 @@
     wdisplays
     wayland
     wl-clipboard
+
+    # Doc.
+    man-pages
   ];
 }

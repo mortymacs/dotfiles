@@ -4,6 +4,9 @@
     # Desktop
     rofi-wayland
 
+    # Doc.
+    groff
+
     # Text.
     bat
     unstable.ast-grep
