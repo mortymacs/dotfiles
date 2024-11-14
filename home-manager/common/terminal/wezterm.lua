@@ -1,4 +1,5 @@
 local wezterm = require("wezterm")
+local action = wezterm.action
 local config = wezterm.config_builder()
 local padding = 10
 
@@ -26,6 +27,14 @@ config.colors = {
   selection_fg = "#fcfcfc",
   cursor_bg = "#344866",
   cursor_fg = "#fcfcfc",
+}
+-- Mouse.
+config.mouse_bindings = {
+  {
+    event = { Up = { streak = 1, button = "Left" } },
+    mods = "NONE",
+    action = action.CompleteSelection("ClipboardAndPrimarySelection"),
+  },
 }
 
 return config
