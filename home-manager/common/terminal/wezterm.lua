@@ -13,7 +13,8 @@ config.window_padding = {
 }
 config.use_resize_increments = true
 config.default_cursor_style = "BlinkingBlock"
-config.cursor_blink_rate = 500
+config.cursor_blink_ease_in = 'Constant'
+config.cursor_blink_ease_out = 'Constant'
 -- Font.
 config.font = wezterm.font("monospace")
 config.font_size = 12.5
