@@ -19,9 +19,9 @@ let
   fill_fg = "#151F28";
 
   # svc
-  section_3_bg = "#F3A712";
+  section_3_bg = "#F29E18";
   section_3_fg = "#151F28";
-  section_3_1_bg = "#F3A712";
+  section_3_1_bg = "#F29E18";
   section_3_1_fg = "#151F28";
 
   # status
