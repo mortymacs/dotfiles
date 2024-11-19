@@ -310,6 +310,7 @@ require("lazy").setup({
     "rcarriga/nvim-dap-ui",
     dependencies = {
       "mfussenegger/nvim-dap",
+      "jonboh/nvim-dap-rr",
     },
     event = "VeryLazy",
   },
