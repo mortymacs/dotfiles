@@ -1,6 +1,7 @@
 { lib, ... }:
 let
   # https://coolors.co/420039-8f1639-db2b39-e76926-e7940d-83955a-1282a2-edd2e0
+  # https://coolors.co/db2b39-bd2d3b-9e2e3d-603140-2e2e2e-db5c2b
 
   # Nix shell
   nix_shell_bg = "#E76926";
