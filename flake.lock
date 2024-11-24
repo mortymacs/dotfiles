@@ -12,11 +12,11 @@
         "nixpkgs-unstable": "nixpkgs-unstable"
       },
       "locked": {
-        "lastModified": 1732096090,
-        "narHash": "sha256-6ReVxYp2EnQysw5mGS3B9h7Zdx/UyHOd0iHdJCwRZ08=",
+        "lastModified": 1732178130,
+        "narHash": "sha256-5UjH23qkhhgCkX1BtgDPsJMGFXbYxJflZJd7OS4e+8Y=",
         "owner": "atkrad",
         "repo": "dotfiles",
-        "rev": "e3b16129527e0e26d4aac9a58f1c6f3259fa1201",
+        "rev": "713a3eebea20ed45c3d77aaad3c3caadc6f6e546",
         "type": "github"
       },
       "original": {
@@ -28,11 +28,11 @@
     "delta": {
       "flake": false,
       "locked": {
-        "lastModified": 1731772288,
-        "narHash": "sha256-tckwBaD4z6Md5kErhWgL1l3QDSestAdkbkFWTzIBbiA=",
+        "lastModified": 1732142755,
+        "narHash": "sha256-GDuzW+vo14etY4mk3gVYFWYulKPjOGrbRhSS28clA4Y=",
         "owner": "dandavison",
         "repo": "delta",
-        "rev": "1dd28e7b51a913fc28eefc59d01f3b78f1146850",
+        "rev": "959471392d5aa0289f979c8898260e0f133d9ae7",
         "type": "github"
       },
       "original": {
