@@ -1,7 +1,7 @@
 local wezterm = require("wezterm")
 local action = wezterm.action
 local config = wezterm.config_builder()
-local padding = 10
+local padding = 9
 
 -- Body and display.
 config.enable_tab_bar = false
@@ -17,7 +17,7 @@ config.cursor_blink_ease_in = 'Constant'
 config.cursor_blink_ease_out = 'Constant'
 -- Font.
 config.font = wezterm.font("monospace")
-config.font_size = 12.5
+config.font_size = 14
 config.freetype_load_target = "Normal"
 -- Theme.
 config.color_scheme = "ayu"
