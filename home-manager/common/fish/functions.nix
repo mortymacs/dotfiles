@@ -36,7 +36,9 @@
   '';
   cleanup = ''
     trash-empty
-    docker system prune -a
+    # http://www.bashoneliners.com/oneliners/252/
+    docker images -q -f dangling=true | xargs --no-run-if-empty --delim='\n' docker rmi -f
+    docker system prune
     home-manager expire-generations "-10 days"
     nix-collect-garbage --delete-older-than 10d
   '';
