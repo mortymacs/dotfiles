@@ -17,7 +17,14 @@
   l = ''
     eza --git -lh \
         --octal-permissions \
-        --color-scale all --icons always --color-scale-mode fixed'';
+        --git-repos \
+        --group-directories-first \
+        -t changed \
+        -snew \
+        --color auto \
+        --color-scale all \
+        --color-scale-mode fixed \
+        --icons always'';
   li = "walk --icons";
 
   # Search.
