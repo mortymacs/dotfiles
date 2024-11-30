@@ -44,6 +44,9 @@ require("lazy").setup({
   {
     "stevearc/dressing.nvim",
   },
+  {
+    "dstein64/nvim-scrollview",
+  },
 
   -- Splash screen.
   {

@@ -21,3 +21,8 @@ require("dressing").setup({
     min_width = { 10, 0.1 },
   },
 })
+
+-- Scrollview.
+require("scrollview").setup({
+  excluded_filetypes = { "nerdtree", "terminal", "Outline", "toggleterm", "fzf" },
+})
