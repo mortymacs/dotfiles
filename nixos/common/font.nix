@@ -3,7 +3,7 @@
   fonts = {
     enableDefaultPackages = false;
     packages = with pkgs; [
-      (unstable.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+      unstable.nerd-fonts.jetbrains-mono
       unstable.vazir-fonts
       unstable.lexend
       unstable.noto-fonts-emoji
