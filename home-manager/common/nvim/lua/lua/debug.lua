@@ -1,26 +1,26 @@
 -- DAP
 local dap = require("dap")
 
-vim.fn.sign_define('DapBreakpoint', {text='󰯯 ', texthl='', linehl='', numhl=''})
+vim.fn.sign_define("DapBreakpoint", { text = "󰯯 ", texthl = "", linehl = "", numhl = "" })
 
 -- DAP virtual text
 require("nvim-dap-virtual-text").setup()
 
 -- CPP
 dap.adapters.lldb = {
-  type = 'executable',
-  command = 'lldb-vscode',
-  name = 'lldb'
+  type = "executable",
+  command = "lldb-vscode",
+  name = "lldb",
 }
 dap.configurations.cpp = {
   {
-    name = 'Launch',
-    type = 'lldb',
-    request = 'launch',
+    name = "Launch",
+    type = "lldb",
+    request = "launch",
     program = function()
-      return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+      return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
     end,
-    cwd = '${workspaceFolder}',
+    cwd = "${workspaceFolder}",
     stopOnEntry = false,
     args = {},
   },
@@ -36,23 +36,23 @@ dap.adapters.delve = {
   executable = {
     command = "dlv",
     args = { "dap", "-l", "127.0.0.1:${port}" },
-  }
+  },
 }
 dap.configurations.go = {
   {
     type = "delve",
     name = "Debug",
     request = "launch",
-    program = "${file}"
+    program = "${file}",
   },
   {
     type = "delve",
     name = "Debug - custom path and args",
     request = "launch",
     program = function()
-      return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+      return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
     end,
-    cwd = '${workspaceFolder}',
+    cwd = "${workspaceFolder}",
     args = function()
       local args = {}
       for arg in string.gmatch(vim.fn.input("Args: "), "%S+") do
@@ -66,15 +66,15 @@ dap.configurations.go = {
     name = "Debug test",
     request = "launch",
     mode = "test",
-    program = "${file}"
+    program = "${file}",
   },
   {
     type = "delve",
     name = "Debug test (go.mod)",
     request = "launch",
     mode = "test",
-    program = "./${relativeFileDirname}"
-  }
+    program = "./${relativeFileDirname}",
+  },
 }
 
 -- Python
@@ -109,29 +109,29 @@ require("dapui").setup({
       elements = {
         {
           id = "breakpoints",
-          size = 0.10
+          size = 0.10,
         },
         {
           id = "scopes",
-          size = 0.40
+          size = 0.40,
         },
         {
           id = "stacks",
-          size = 0.40
+          size = 0.40,
         },
       },
       position = "left",
-      size = 40
+      size = 40,
     },
     {
       elements = {
         {
           id = "repl",
-          size = 1.0
+          size = 1.0,
         },
       },
       position = "bottom",
-      size = 8
+      size = 8,
     },
   },
 })
