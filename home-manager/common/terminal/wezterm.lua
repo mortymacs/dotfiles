@@ -4,6 +4,7 @@ local config = wezterm.config_builder()
 local padding = 9
 
 -- Body and display.
+config.front_end = "WebGpu"
 config.enable_tab_bar = false
 config.window_padding = {
   top = padding,
