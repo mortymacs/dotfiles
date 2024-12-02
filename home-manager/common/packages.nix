@@ -143,7 +143,7 @@
       ]
     ))
     unstable.uv
-    nodePackages.pyright
+    unstable.pyright
     unstable.ruff
     ## Lua.
     luajit
