@@ -58,6 +58,11 @@ in
   hardware.bluetooth.powerOnBoot = true;
   services.blueman.enable = true;
 
+  # Graphic.
+  hardware.graphics = {
+    enable = true;
+  };
+
   # User.
   users.users.mort = {
     isNormalUser = true;
