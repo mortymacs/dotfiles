@@ -46,11 +46,11 @@ in
   services.printing.enable = true;
 
   # Sound.
-  security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
     pulse.enable = true;
+    jack.enable = true;
   };
 
   # Bluetooth.
@@ -95,6 +95,7 @@ in
   };
 
   # Security.
+  security.rtkit.enable = true;
   services.tor = {
     enable = true;
     client.enable = true;
