@@ -6,7 +6,6 @@
         # General.
         disabledTrayIcon = true;
         showStartupLaunchMessage = false;
-        checkForUpdates = false;
         historyConfirmationToDelete = false;
         showHelp = false;
         showMagnifier = true;
@@ -17,7 +16,6 @@
 
         # Save/Export.
         copyPathAfterSave = true;
-        copyAndCloseAfterUpload = false;
       };
     };
   };
