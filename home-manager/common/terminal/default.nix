@@ -1,7 +1,11 @@
 { pkgs, ... }:
 {
-  programs.wezterm = {
+  programs.alacritty = {
     enable = true;
-    extraConfig = builtins.readFile ./wezterm.lua;
+    package = pkgs.unstable.alacritty;
+  };
+
+  xdg.configFile = {
+    "alacritty/alacritty.toml".source = ./alacritty.toml;
   };
 }

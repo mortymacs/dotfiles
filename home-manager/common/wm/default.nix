@@ -24,7 +24,6 @@ in
           command = "systemctl --user restart kanshi.service";
           always = true;
         }
-        { command = "zeal"; }
       ];
       modifier = "Mod4";
 
@@ -72,7 +71,7 @@ in
         };
       };
 
-      terminal = "wezterm";
+      terminal = "alacritty";
       keybindings = {
         # Focus.
         "${modifier}+j" = "focus down";
@@ -117,7 +116,7 @@ in
 
         # Application.
         "${modifier}+w" = "exec firefox";
-        "${modifier}+Return" = "exec wezterm";
+        "${modifier}+Return" = "exec alacritty msg create-window 2>/dev/null || alacritty";
         "${modifier}+Shift+s" = "exec flameshot gui";
       };
 

@@ -39,7 +39,7 @@ set -x TERM "xterm-256color"
 # Editors.
 set -x VISUAL nvim
 set -x EDITOR nvim
-set -x TERMINAL wezterm
+set -x TERMINAL alacritty
 
 # Bat
 set -x BAT_THEME 'ayu-dark'

@@ -18,7 +18,7 @@ My environment config. I tried to keep it minimal and simple as much as I could.
 | Window Manager | [Sway](https://github.com/swaywm/sway) |
 | Status Bar | [i3status-rust](https://github.com/greshake/i3status-rust) |
 | Mako | [Mako](https://github.com/emersion/mako) |
-| Terminal | [Wezterm](https://wezfurlong.org/wezterm) |
+| Terminal | [Alacritty](https://alacritty.org) |
 | Shell | [Fish](https://fishshell.com) |
 | Shell Prompt | [Starship](https://github.com/starship/starship) |
 | Terminal Multiplexer | [Tmux](https://github.com/tmux/tmux) |

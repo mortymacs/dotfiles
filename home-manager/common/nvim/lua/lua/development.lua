@@ -342,7 +342,7 @@ require("zen-mode").setup({
     },
   },
   plugins = {
-    wezterm = {
+    alacritty = {
       enabled = true,
       font = "+5",
     },
