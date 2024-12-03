@@ -26,3 +26,6 @@ require("dressing").setup({
 require("scrollview").setup({
   excluded_filetypes = { "nerdtree", "terminal", "Outline", "toggleterm", "fzf" },
 })
+
+-- Cursor.
+require("beacon").setup()

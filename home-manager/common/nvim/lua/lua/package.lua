@@ -19,6 +19,9 @@ require("lazy").setup({
   "projekt0n/github-nvim-theme",
   "mvllow/modes.nvim",
 
+  -- Cursor.
+  "danilamihailov/beacon.nvim",
+
   -- Tabbar.
   {
     "romgrk/barbar.nvim",
