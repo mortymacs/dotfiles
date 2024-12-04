@@ -28,4 +28,7 @@ require("scrollview").setup({
 })
 
 -- Cursor.
-require("beacon").setup()
+require("beacon").setup({
+  fps = 100,
+  highlight = { bg = "#4361ee" },
+})
