@@ -295,8 +295,6 @@ require("lazy").setup({
     "hashivim/vim-terraform",
     ft = { "terraform" },
   },
-  -- -- Typst.
-  "kaarmu/typst.vim",
   -- -- JSON/YAML.
   {
     "b0o/schemastore.nvim",

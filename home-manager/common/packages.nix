@@ -172,7 +172,7 @@
     ## Typst.
     typst
     typstfmt
-    typst-lsp
+    tinymist
     ## Dot.
     graphviz-nox
     dot-language-server
