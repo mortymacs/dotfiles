@@ -6,7 +6,7 @@
       unstable.nerd-fonts.jetbrains-mono
       unstable.vazir-fonts
       unstable.lexend
-      unstable.noto-fonts-emoji
+      unstable.noto-fonts-color-emoji
     ];
     fontconfig = {
       enable = true;
