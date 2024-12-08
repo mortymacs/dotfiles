@@ -64,7 +64,7 @@
         -p 6379:6379 \
         --hostname valkey \
         --name valkey \
-        valkey/valkey:alpine valkey-server
+        valkey/valkey:alpine valkey-server --loglevel verbose
   '';
   mysql-server = ''
     docker run -d --rm \
