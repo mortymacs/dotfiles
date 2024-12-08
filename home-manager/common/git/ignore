@@ -9,6 +9,7 @@ bin/
 dist/
 *.out
 target/
+build/
 
 # Python
 venv
