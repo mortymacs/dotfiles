@@ -105,6 +105,7 @@
     doxygen
     cmake
     neocmakelsp
+    cpm-cmake
     emscripten
     ## Rust.
     unstable.rustc
