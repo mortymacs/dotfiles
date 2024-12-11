@@ -26,9 +26,3 @@ require("dressing").setup({
 require("scrollview").setup({
   excluded_filetypes = { "nerdtree", "terminal", "Outline", "toggleterm", "fzf" },
 })
-
--- Cursor.
-require("beacon").setup({
-  fps = 100,
-  highlight = { bg = "#4361ee" },
-})
