@@ -201,6 +201,10 @@ require("lazy").setup({
     "rachartier/tiny-inline-diagnostic.nvim",
     event = "LspAttach",
   },
+  {
+    "machakann/vim-sandwich",
+    event = "VeryLazy",
+  },
 
   -- LSP.
   "neovim/nvim-lspconfig",
