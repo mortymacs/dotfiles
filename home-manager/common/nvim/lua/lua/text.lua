@@ -15,13 +15,6 @@ require("mini.move").setup({
   },
 })
 
--- Indentation
-require("mini.indentscope").setup({
-  draw = {
-    animation = require("mini.indentscope").gen_animation.none(),
-  },
-  symbol = "│",
-})
 vim.api.nvim_create_autocmd("FileType", {
   pattern = {
     "alpha",

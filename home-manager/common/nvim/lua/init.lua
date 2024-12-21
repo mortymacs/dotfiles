@@ -10,11 +10,6 @@ require("theme")
 -- Body.
 require("tabbar")
 require("statusline")
-require("sidebar")
-require("notification")
-
--- Splash screen.
-require("splashscreen")
 
 -- Tree / Finder.
 require("tree")

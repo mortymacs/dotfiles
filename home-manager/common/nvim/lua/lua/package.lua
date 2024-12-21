@@ -37,15 +37,14 @@ require("lazy").setup({
   },
   "luukvbaal/statuscol.nvim",
 
-  -- Notification.
-  "rcarriga/nvim-notify",
-
   -- UI.
   {
     "stevearc/dressing.nvim",
   },
   {
-    "dstein64/nvim-scrollview",
+    "folke/snacks.nvim",
+    priority = 1000,
+    lazy = false,
   },
 
   -- Splash screen.
@@ -326,18 +325,6 @@ require("lazy").setup({
       "nvim-treesitter/nvim-treesitter",
     },
     event = "VeryLazy",
-  },
-  {
-    "folke/snacks.nvim",
-    priority = 1000,
-    lazy = false,
-    opts = {
-      bigfile = { enabled = true },
-      notifier = { enabled = true },
-      quickfile = { enabled = true },
-      statuscolumn = { enabled = true },
-      words = { enabled = true },
-    },
   },
 
   -- Keybinding.

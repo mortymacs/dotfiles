@@ -3,11 +3,12 @@
 -- @param command string: the command.
 -- @param modes array{string}: supported modes. Defaults to all available modes.
 -- @param is_expr bool: is it expression or not. Defaults to false.
-function SetKeyMap(shortcut, command, modes, is_expr)
+function SetKeyMap(shortcut, command, modes, is_expr, desc)
   modes = modes or { "n", "i", "v", "x", "o", "c", "t", "l" }
   for _, v in pairs(modes) do
     pcall(vim.keymap.del, v, shortcut)
-    local opts = { silent = true, noremap = v == "n", expr = is_expr or false }
+    desc = desc or tostring(command)
+    local opts = { silent = true, noremap = v == "n", expr = is_expr or false, desc = desc }
     if v == "n" then
       vim.keymap.set(v, shortcut, command, opts)
     else
