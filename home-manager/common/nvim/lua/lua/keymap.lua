@@ -134,9 +134,9 @@ SetKeyMap("<c-t>9", function() require("textcase").current_word("to_title_case")
 SetKeyMap("<c-s-w>", "<C-o>dw",  { "i" })
 SetKeyMap("<c-b>",   "<C-o>ciw", { "i" })
 -- Fold.
-SetKeyMap("<c-x><Left>",  require('ufo').closeAllFolds,              { "n" }, nil, "CloseAllFolds")
-SetKeyMap("<c-x><Right>", require('ufo').openAllFolds,               { "n" }, nil, "OpenAllFolds")
-SetKeyMap("<c-x><Down>",  require('ufo').peekFoldedLinesUnderCursor, { "n" }, nil, "PeekFoldedLinesUnderCursor")
+SetKeyMap("<c-x>h", require('ufo').closeAllFolds,              { "n" }, nil, "CloseAllFolds")
+SetKeyMap("<c-x>l", require('ufo').openAllFolds,               { "n" }, nil, "OpenAllFolds")
+SetKeyMap("<c-x>j", require('ufo').peekFoldedLinesUnderCursor, { "n" }, nil, "PeekFoldedLinesUnderCursor")
 
 -- Terminal
 SetKeyMap("<c-x>t", function ()
@@ -160,7 +160,7 @@ SetKeyMap("<c-c><c-g>", "<Cmd>Telescope ast_grep<cr>")
 SetKeyMap("<c-c><c-w>", "<Cmd>Telescope lsp_dynamic_workspace_symbols<cr>")
 SetKeyMap("<c-c><c-a>", "<Cmd>Outline<cr>")
 SetKeyMap("<c-c><c-j>", function() require('treesj').toggle() end, nil, nil, "TreeSitterSplitJoinToggle")
-SetKeyMap("<c-x><c-l>", RestartLsp)
+SetKeyMap("<c-x><c-l>", RestartLsp, nil, nil, "RestartLsp")
 
 -- Debug
 SetKeyMap("<c-d><c-s>", function() require("dapui").toggle() end, nil, nil, "DapToggle")
