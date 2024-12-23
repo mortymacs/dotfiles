@@ -53,6 +53,15 @@ require("snacks").setup({
     enabled = true,
     win = {
       border = "single",
+      -- https://github.com/folke/snacks.nvim/discussions/376#discussioncomment-11650059
+      keys = {
+        i_del_word = { "<C-w>", "delete_word", mode = "i" },
+      },
+      actions = {
+        delete_word = function()
+          return "<cmd>normal! diw<cr><right>"
+        end,
+      },
     },
   },
   notifier = {
