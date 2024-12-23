@@ -49,8 +49,15 @@ require("snacks").setup({
   indent = {
     enabled = false,
   },
-  input = { enabled = true },
-  notifier = { enabled = true },
+  input = {
+    enabled = true,
+    win = {
+      border = "single",
+    },
+  },
+  notifier = {
+    enabled = true,
+  },
   quickfile = { enabled = true },
   scroll = { enabled = true },
   statuscolumn = {
