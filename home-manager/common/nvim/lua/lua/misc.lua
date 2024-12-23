@@ -57,17 +57,7 @@ require("snacks").setup({
     animate = { enabled = false },
   },
   indent = {
-    enabled = true,
-    hl = {
-      "SnacksIndent1",
-      "SnacksIndent2",
-      "SnacksIndent3",
-      "SnacksIndent4",
-      "SnacksIndent5",
-      "SnacksIndent6",
-      "SnacksIndent7",
-      "SnacksIndent8",
-    },
+    enabled = false,
   },
   input = { enabled = true },
   notifier = { enabled = true },

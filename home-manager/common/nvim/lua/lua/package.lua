@@ -35,7 +35,6 @@ require("lazy").setup({
       "lewis6991/gitsigns.nvim",
     },
   },
-  "luukvbaal/statuscol.nvim",
 
   -- UI.
   {
