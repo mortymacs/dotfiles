@@ -139,10 +139,11 @@ table.insert(golangcilint.args, "--enable-all")
 table.insert(golangcilint.args, "--disable=depguard")
 table.insert(golangcilint.args, "--gci.custom-order=standard,blank,custom,blank,default,blank,localmodule")
 lint.linters_by_ft = {
+  cpp = { "clangtidy", "cppcheck", "cpplint" },
   go = { "golangcilint", "revive" },
   python = { "ruff" },
   lua = { "luacheck" },
-  vala = { "vala_lint" },
+  cmake = { "cmakelint" },
   sh = { "shellcheck" },
   sql = { "sqlfluff" },
   nix = { "nix" },

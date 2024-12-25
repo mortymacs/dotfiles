@@ -91,6 +91,7 @@
     cgdb
     lldb
     cppcheck
+    cpplint
     rr
     unstable.include-what-you-use
     ccache
@@ -104,6 +105,7 @@
     bear
     doxygen
     cmake
+    cmake-lint
     neocmakelsp
     cpm-cmake
     emscripten
