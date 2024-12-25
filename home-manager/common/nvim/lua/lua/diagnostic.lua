@@ -36,4 +36,8 @@ function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
 end
 
 -- Tiny Inline.
-require("tiny-inline-diagnostic").setup()
+require("tiny-inline-diagnostic").setup({
+  virt_texts = {
+    priority = 70,
+  },
+})

@@ -1,6 +1,6 @@
 -- Setup.
-local left_icon = ""
-local right_icon = ""
+local left_icon = ""
+local right_icon = ""
 local left_left_icon = "" -- right_icon
 local right_right_icon = "" -- left_icon
 require("lualine").setup({

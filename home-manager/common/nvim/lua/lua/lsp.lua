@@ -326,6 +326,7 @@ require("symbol-usage").setup({
     enabled = true,
   },
   vt_position = "end_of_line",
+  vt_priority = 60,
   text_format = text_format,
 })
 
