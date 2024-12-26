@@ -1,45 +1,42 @@
 { lib, ... }:
 let
-  # https://coolors.co/420039-8f1639-db2b39-e76926-e7940d-83955a-1282a2-edd2e0
-  # https://coolors.co/db2b39-bd2d3b-9e2e3d-603140-2e2e2e-db5c2b
-
   # Nix shell
-  nix_shell_bg = "#E76926";
+  nix_shell_bg = "#ed4a4a";
   nix_shell_fg = "#151F28";
 
   # username
-  section_1_bg = "#420039";
-  section_1_fg = "#EDD2E0";
+  section_1_bg = "#2e294e";
+  section_1_fg = "#f5e2c8";
 
   # directory
-  section_2_bg = "#8F1639";
-  section_2_fg = "#EDD2E0";
+  section_2_bg = "#633359";
+  section_2_fg = "#f5e2c8";
 
   # fill
   fill_bg = "#0E131F";
   fill_fg = "#151F28";
 
   # svc
-  section_3_bg = "#DB2B39";
-  section_3_fg = "#EDD2E0";
-  section_3_1_bg = "#E7940D";
-  section_3_1_fg = "#151F28";
+  section_3_bg = "#973c64";
+  section_3_fg = "#f5e2c8";
+  section_3_1_bg = "#973c64";
+  section_3_1_fg = "#f5e2c8";
 
   # status
-  section_4_bg = "#2e294e";
-  section_4_fg = "#EDD2E0";
+  section_4_bg = "#33465b";
+  section_4_fg = "#f5e2c8";
 
   # cmd_duration
-  section_5_bg = "#1282A2";
-  section_5_fg = "#151F28";
+  section_5_bg = "#5b3758";
+  section_5_fg = "#f5e2c8";
 
   # job
-  section_6_bg = "#83955A";
-  section_6_fg = "#151F28";
+  section_6_bg = "#44355b";
+  section_6_fg = "#f5e2c8";
 
   # icons
-  left_icon = "";
-  right_icon = "";
+  left_icon = "";
+  right_icon = "";
   fill_icon = " ";
   prompt_icon = "  ";
 in
