@@ -12,5 +12,7 @@ vim.api.nvim_create_autocmd("TermOpen", {
     vim.opt_local.sidescrolloff = 0
     vim.opt_local.buflisted = false
     vim.opt_local.cursorline = false
+    vim.opt_local.colorcolumn = ""
+    vim.opt_local.statuscolumn = ""
   end,
 })

@@ -90,6 +90,11 @@ require("snacks").setup({
     bo = {
       filetype = "snacks_terminal",
     },
-    win = { style = "terminal" },
+    win = {
+      style = "terminal",
+    },
+    wo = {
+      winbar = "",
+    },
   },
 })

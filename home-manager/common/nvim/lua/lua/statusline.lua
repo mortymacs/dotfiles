@@ -9,7 +9,7 @@ require("lualine").setup({
     component_separators = { left = "", right = "" },
     section_separators = { left = left_icon, right = right_icon },
     globalstatus = true,
-    disabled_filetypes = { "fzf", "snacks_terminal" },
+    disabled_filetypes = { "fzf" },
   },
   sections = {
     lualine_a = {
