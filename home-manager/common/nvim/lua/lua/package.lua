@@ -89,13 +89,6 @@ require("lazy").setup({
     event = "VeryLazy",
   },
 
-  -- Terminal.
-  {
-    "akinsho/toggleterm.nvim",
-    version = "*",
-    event = "VeryLazy",
-  },
-
   -- Git.
   "ruanyl/vim-gh-line",
   "aaronhallaert/advanced-git-search.nvim",

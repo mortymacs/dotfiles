@@ -85,5 +85,11 @@ require("snacks").setup({
     },
   },
   words = { enabled = true },
-  terminal = { enabled = true },
+  terminal = {
+    enabled = true,
+    bo = {
+      filetype = "snacks_terminal",
+    },
+    win = { style = "terminal" },
+  },
 })
