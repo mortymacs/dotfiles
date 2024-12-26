@@ -27,13 +27,21 @@ require("lualine").setup({
           left = left_left_icon,
           right = left_icon,
         },
+        cond = function()
+          return vim.bo.buftype ~= "terminal"
+        end,
       },
     },
     lualine_b = {},
     lualine_c = {},
     lualine_x = {},
     lualine_y = {
-      require("lsp-progress").progress,
+      {
+        require("lsp-progress").progress,
+        cond = function()
+          return vim.bo.buftype ~= "terminal"
+        end,
+      },
       "branch",
       "diff",
       "diagnostics",
