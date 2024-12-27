@@ -31,7 +31,7 @@
       if [ ! -f "${config.home.homeDirectory}/.aws/config" ]; then
         $DRY_RUN_CMD mkdir -p "${config.home.homeDirectory}/.aws"
         $DRY_RUN_CMD cat > "${config.home.homeDirectory}/.aws/config" << EOF
-[profile localhost]
+[profile localstack]
 region = us-east-1
 EOF
       fi
