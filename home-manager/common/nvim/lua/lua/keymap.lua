@@ -139,7 +139,7 @@ SetKeyMap("<c-x>l", require('ufo').openAllFolds,               { "n" }, nil, "Op
 SetKeyMap("<c-x>j", require('ufo').peekFoldedLinesUnderCursor, { "n" }, nil, "PeekFoldedLinesUnderCursor")
 
 -- Terminal
-SetKeyMap("<c-s-t>", function ()
+SetKeyMap("<c-b>t", function ()
    require("snacks").terminal()
 end, nil, nil, "ToggleTerminal")
 
