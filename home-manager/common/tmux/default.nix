@@ -9,7 +9,8 @@ let
   active_pane_foreground = "#0E131F";
   left_icon = "";
   right_icon = "";
-in {
+in
+{
   programs.tmux = {
     enable = true;
     terminal = "screen-256color";
@@ -61,9 +62,14 @@ in {
       setw -g window-status-format "#[fg=${active_pane_background},bg=${background}] #W "
       setw -g window-status-current-format "#[fg=${background},bg=${active_pane_background},nobold,nounderscore,noitalics]${left_icon}#[fg=${active_pane_foreground},bg=${active_pane_background}] #W #[fg=${active_pane_background},bg=${background},nobold,nounderscore,noitalics]${left_icon}"
     '';
-    plugins = with pkgs; [ tmuxPlugins.fuzzback ];
+    plugins = with pkgs; [
+      tmuxPlugins.fuzzback
+      tmuxPlugins.fzf-tmux-url
+    ];
 
-    tmuxp = { enable = true; };
+    tmuxp = {
+      enable = true;
+    };
   };
 
   home.packages = with pkgs; [
