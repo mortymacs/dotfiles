@@ -38,7 +38,7 @@ let
   left_icon = "";
   right_icon = "";
   fill_icon = " ";
-  prompt_icon = "  ";
+  prompt_icon = " ";
 in
 {
   programs.starship = {
@@ -80,7 +80,7 @@ in
         format = "[ $user ]($style)";
       };
       character = {
-        format = "$symbol";
+        format = "$symbol ";
         success_symbol = "[${prompt_icon}](purple)";
         error_symbol = "[${prompt_icon}](red)";
         vimcmd_symbol = "[${prompt_icon}](green)";
