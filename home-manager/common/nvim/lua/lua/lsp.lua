@@ -1,10 +1,5 @@
 require("util")
 
--- Tags.
-vim.g.fzf_tags_command = "fd | ctags -R --links=no -L-"
-vim.g.fzf_lsp_pretty = true
-require("fzf_lsp").setup()
-
 -- Kind.
 require("lspkind").init({
   symbol_map = {

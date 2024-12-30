@@ -61,11 +61,6 @@ require("lazy").setup({
     },
   },
   {
-    "junegunn/fzf",
-    "junegunn/fzf.vim",
-    event = "VeryLazy",
-  },
-  {
     "nvim-telescope/telescope.nvim",
     branch = "0.1.x",
     dependencies = {
@@ -215,13 +210,6 @@ require("lazy").setup({
   },
   {
     "dnlhc/glance.nvim",
-    event = "LspAttach",
-  },
-  {
-    "gfanto/fzf-lsp.nvim",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-    },
     event = "LspAttach",
   },
   {

@@ -1,18 +1,8 @@
--- FZF.
-vim.g.fzf_layout = {
-  window = {
-    width = 0.9,
-    height = 0.7,
-    border = "sharp",
-  },
-}
-vim.g.fzf_preview_window = {
-  "up,65%",
-}
-
 -- Telescope.
 require("telescope").setup({
   defaults = {
+    results_title = false,
+    prompt_title = false,
     layout_strategy = "vertical",
     borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
     mappings = {
