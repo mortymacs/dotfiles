@@ -24,8 +24,8 @@ require("snacks").setup({
       keys = {
         { icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
         { icon = " ", key = "p", desc = "Find Projects", action = ":Telescope ghq" },
-        { icon = " ", key = "f", desc = "Find File", action = ":Files" },
-        { icon = " ", key = "g", desc = "Find Text", action = ":Rg" },
+        { icon = " ", key = "f", desc = "Find File", action = ":Telescope find_files" },
+        { icon = " ", key = "g", desc = "Find Text", action = ":Telescope live_grep" },
         { icon = "󰈬 ", key = "t", desc = "Find Tag", action = ":Telescope live_grep" },
         { icon = " ", key = "r", desc = "Recent Files", action = ":lua Snacks.dashboard.pick('oldfiles')" },
         { icon = " ", key = "b", desc = "Bookmarks", action = ":Telescope vim_bookmarks all" },

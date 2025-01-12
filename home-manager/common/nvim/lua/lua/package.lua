@@ -76,6 +76,10 @@ require("lazy").setup({
     event = "VeryLazy",
   },
   {
+    "nvim-telescope/telescope-fzf-native.nvim",
+    build = "make",
+  },
+  {
     "folke/flash.nvim",
     event = "VeryLazy",
   },
