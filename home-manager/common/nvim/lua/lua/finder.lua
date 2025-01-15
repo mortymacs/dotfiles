@@ -24,6 +24,9 @@ require("telescope").setup({
     find_files = {
       borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
     },
+    lsp_references = {
+      fname_width = 80,
+    },
   },
   extensions = {
     fzf = {
@@ -45,7 +48,7 @@ require("telescope").setup({
 })
 
 -- Plugins.
-require('telescope').load_extension('fzf')
+require("telescope").load_extension("fzf")
 require("telescope").load_extension("vim_bookmarks")
 require("telescope").load_extension("file_browser")
 require("telescope").load_extension("undo")
