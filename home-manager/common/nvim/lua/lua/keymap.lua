@@ -27,7 +27,14 @@ SetKeyMap("<c-]>",      "<Cmd>Neotree toggle<cr>")
 SetKeyMap("<c-x><c-r>", "<Cmd>Neotree reveal<cr>")
 
 -- Search
-SetKeyMap("<c-x><c-g>", snacks.picker.grep_word, nil, nil, "LiveGrep")
+SetKeyMap("<c-x><c-g>", function ()
+  local word_under_cursor = vim.fn.expand('<cword>')
+  if word_under_cursor and word_under_cursor ~= "" then
+    snacks.picker.grep_word()
+  else
+    snacks.picker.grep()
+  end
+end, nil, nil, "LiveGrep")
 
 -- Finder.
 SetKeyMap("sf", function()
@@ -94,14 +101,15 @@ SetKeyMap("<c-g><c-u>", "<Cmd>Gitsigns undo_stage_hunk<cr>")
 SetKeyMap("<c-g><c-s>", snacks.picker.git_status, nil, nil, "GitStatus")
 SetKeyMap("<c-g><c-d>", function() ToggleCommand("DiffviewOpen", "DiffviewClose", "diff_view_status") end, nil, nil, "ToggleDiffView")
 SetKeyMap("<c-g><c-h>", function() ToggleCommand("DiffviewFileHistory", "DiffviewClose", "diff_view_status") end, nil, nil, "ToggleDiffViewFileHistory")
-SetKeyMap("<c-g><c-c>", telescope.git_commits, nil, nil, "GitCommits")
-SetKeyMap("<c-g><c-b>", telescope.git_bcommits, nil, nil, "GitBCommits")
+SetKeyMap("<c-g><c-c>", snacks.picker.git_log, nil, nil, "GitCommits")
+SetKeyMap("<c-g><c-l>", snacks.git.blame_line, nil, nil, "GitCommits")
+SetKeyMap("<c-g><c-b>", snacks.picker.git_log_file, nil, nil, "GitBCommits")
 SetKeyMap("<c-g><c-t>", telescope.git_stash, nil, nil, "GitStash")
 SetKeyMap("<c-g><c-e>", function () snacks.gitbrowse() end, nil, nil, "GitBrowse")
 SetKeyMap("<c-g><c-i>", "<esc><Cmd>Gitignore<cr>")
 
 -- History
-SetKeyMap("<c-x><c-h>", "<Cmd>Telescope undo<cr>")
+SetKeyMap("<c-x><c-h>", snacks.picker.help)
 
 -- Text
 -- Stop copying text on delete.

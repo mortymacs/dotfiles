@@ -63,12 +63,18 @@ require("hlslens").setup()
 
 -- Snacks.
 require("snacks").setup({
+  styles = {
+    blame_line = { border = "single" },
+    input = { border = "single" },
+    notification = { border = "single" },
+  },
   picker = {
     previewers = {
       file = {
         max_line_length = 1000,
       },
     },
+    layout = "default",
     layouts = {
       default = {
         layout = {
@@ -103,6 +109,9 @@ require("snacks").setup({
         },
       },
     },
+    grep_word = {
+      finder = "rg",
+    },
   },
   lazygit = { enabled = false },
   bigfile = { enabled = true },
@@ -132,7 +141,6 @@ require("snacks").setup({
   input = {
     enabled = true,
     win = {
-      border = "single",
       -- https://github.com/folke/snacks.nvim/discussions/376#discussioncomment-11650059
       keys = {
         i_del_word = { "<C-w>", "delete_word", mode = "i" },
