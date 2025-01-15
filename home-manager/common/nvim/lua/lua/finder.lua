@@ -60,3 +60,121 @@ require("telescope").load_extension("ghq")
 
 -- Hlslens.
 require("hlslens").setup()
+
+-- Snacks.
+require("snacks").setup({
+  picker = {
+    previewers = {
+      file = {
+        max_line_length = 1000,
+      },
+    },
+    layouts = {
+      default = {
+        layout = {
+          box = "vertical",
+          width = 0.8,
+          height = 0.5,
+          {
+            box = "vertical",
+            border = "single",
+            { win = "preview", border = "none" },
+            { win = "list", height = 10, border = "top" },
+            { win = "input", height = 1, border = "top" },
+          },
+        },
+      },
+    },
+    win = {
+      input = {
+        keys = {
+          ["<m-j>"] = { "list_down", mode = { "i", "n" } },
+          ["<m-k>"] = { "list_up", mode = { "i", "n" } },
+          ["<c-j>"] = { "preview_scroll_down", mode = { "i", "n" } },
+          ["<c-k>"] = { "preview_scroll_up", mode = { "i", "n" } },
+        },
+      },
+      list = {
+        keys = {
+          ["<m-j>"] = "list_down",
+          ["<m-k>"] = "list_up",
+          ["<c-j>"] = "preview_scroll_down",
+          ["<c-k>"] = "preview_scroll_up",
+        },
+      },
+    },
+  },
+  lazygit = { enabled = false },
+  bigfile = { enabled = true },
+  dashboard = {
+    enabled = true,
+    width = 68,
+    pane_gap = 4,
+    preset = {
+      keys = {},
+      header = [[
+ _____  ___    _______    ______  ___      ___  __     ___      ___
+|\"   \|"  \  /"     "|  /    " \|"  \    /"  ||" \   |"  \    /"  |
+|.\\   \    ||: ______| // ____  \\   \  //  / ||  |   \   \  //   |
+|: \.   \\  | \/    |  /  /    / :|\\  \/. ./  |:  |   /\\  \/.    |
+|.  \    \. | // ___|_|: /____/ //  \.    //   |.  |  |: \.        |
+|    \    \ ||:      "|\        /    \\   /    |\  |\ |.  \    /:  |
+ \___|\____\| \_______| \"_____/      \__/     |_\_|_||___|\__/|___|]],
+    },
+  },
+  dim = {
+    enabled = true,
+    animate = { enabled = false },
+  },
+  indent = {
+    enabled = false,
+  },
+  input = {
+    enabled = true,
+    win = {
+      border = "single",
+      -- https://github.com/folke/snacks.nvim/discussions/376#discussioncomment-11650059
+      keys = {
+        i_del_word = { "<C-w>", "delete_word", mode = "i" },
+      },
+      actions = {
+        delete_word = function()
+          return "<cmd>normal! diw<cr><right>"
+        end,
+      },
+    },
+  },
+  notifier = {
+    enabled = true,
+  },
+  quickfile = { enabled = true },
+  scroll = { enabled = false },
+  statuscolumn = {
+    enabled = true,
+    {
+      left = { "mark", "sign" },
+      right = { "fold", "git" },
+      folds = {
+        open = false,
+        git_hl = false,
+      },
+      git = {
+        patterns = { "GitSign", "MiniDiffSign" },
+      },
+      refresh = 50,
+    },
+  },
+  words = { enabled = true },
+  terminal = {
+    enabled = true,
+    bo = {
+      filetype = "snacks_terminal",
+    },
+    win = {
+      style = "terminal",
+    },
+    wo = {
+      winbar = "",
+    },
+  },
+})

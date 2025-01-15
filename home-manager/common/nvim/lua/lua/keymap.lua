@@ -1,38 +1,37 @@
 require("util")
-local builtin = require("telescope.builtin")
+local snacks = require("snacks")
+local telescope = require("telescope.builtin")
+local flash = require("flash")
 
 -- Mouse.
 SetKeyMap("<c-x><c-m>", function() ToggleCommand("set mouse=a", "set mouse=", "mouse_status") end, nil, nil, "ToggleMouse")
 
 -- Command.
-SetKeyMap("<c-x><c-c>", builtin.commands, nil, nil, "Commands")
-SetKeyMap("<c-x><c-k>", builtin.keymaps,  nil, nil, "Keymaps")
+SetKeyMap("<c-x><c-c>", snacks.picker.commands, nil, nil, "Commands")
+SetKeyMap("<c-x><c-k>", snacks.picker.keymaps,  nil, nil, "Keymaps")
 
 -- Buffer
-SetKeyMap("<c-x><c-e>", function() require("snacks").bufdelete() end, nil, nil, "DeleteBuffer")
-SetKeyMap("<c-f>",      builtin.current_buffer_fuzzy_find, nil, nil, "FuzzyFinder")
+SetKeyMap("<c-x><c-e>", function () snacks.bufdelete() end, nil, nil, "DeleteBuffer")
+SetKeyMap("<c-f>",      snacks.picker.lines, nil, nil, "FuzzyFinder")
 
 -- Tabbar.
 SetKeyMap("<s-h>",      "<Cmd>BufferPrevious<cr>", { "n" })
 SetKeyMap("<s-l>",      "<Cmd>BufferNext<cr>",     { "n" })
 SetKeyMap("<c-x><c-q>", ":qa<cr>")
-SetKeyMap("<c-q>",      ":q<cr>")
 SetKeyMap("<c-x><c-n>", "<Cmd>tabnew<cr>")
 
 -- File and directory
-SetKeyMap("<c-x><c-f>", builtin.find_files, nil, nil, "FindFiles")
-SetKeyMap("<c-x><c-p>", "<Cmd>Telescope ghq<cr>")
+SetKeyMap("<c-x><c-f>", snacks.picker.files, nil, nil, "FindFiles")
 SetKeyMap("<c-x><c-d>", "<Cmd>BufferCloseAllButCurrent<cr>")
-SetKeyMap("<c-x><c-t>", builtin.filetypes, nil, nil, "FileTypes")
 SetKeyMap("<c-]>",      "<Cmd>Neotree toggle<cr>")
 SetKeyMap("<c-x><c-r>", "<Cmd>Neotree reveal<cr>")
 
 -- Search
-SetKeyMap("<c-x><c-g>", builtin.live_grep, nil, nil, "LiveGrep")
+SetKeyMap("<c-x><c-g>", snacks.picker.grep_word, nil, nil, "LiveGrep")
 
 -- Finder.
 SetKeyMap("sf", function()
-    require("flash").jump({
+    flash.jump({
         continue = false,
         search = {
             mode = "fuzzy",
@@ -45,7 +44,7 @@ SetKeyMap("sf", function()
     })
 end)
 SetKeyMap("ss", function()
-    require("flash").jump({
+    flash.jump({
         pattern = vim.fn.expand("<cword>"),
         continue = false,
         search = {
@@ -59,7 +58,7 @@ SetKeyMap("ss", function()
     })
 end, { "n", "x", "o" }, nil, "FlasJumpCursor")
 SetKeyMap("sv", function()
-    require("flash").treesitter_search({
+    flash.treesitter_search({
         pattern = vim.fn.expand("<cword>"),
         continue = false,
         search = {
@@ -73,7 +72,7 @@ SetKeyMap("sv", function()
     })
 end, { "n", "x", "o" }, nil, "FlashTreeSitterSearchCursor")
 SetKeyMap("sc", function()
-    require("flash").treesitter_search({
+    flash.treesitter_search({
         continue = false,
         search = {
             mode = "fuzzy",
@@ -92,13 +91,13 @@ SetKeyMap("<c-g><c-p>", "<Cmd>Gitsigns preview_hunk<cr>")
 SetKeyMap("<c-g><c-r>", "<Cmd>Gitsigns reset_hunk<cr>")
 SetKeyMap("<c-g><c-a>", "<Cmd>Gitsigns stage_hunk<cr>")
 SetKeyMap("<c-g><c-u>", "<Cmd>Gitsigns undo_stage_hunk<cr>")
-SetKeyMap("<c-g><c-s>", builtin.git_status, nil, nil, "GitStatus")
+SetKeyMap("<c-g><c-s>", snacks.picker.git_status, nil, nil, "GitStatus")
 SetKeyMap("<c-g><c-d>", function() ToggleCommand("DiffviewOpen", "DiffviewClose", "diff_view_status") end, nil, nil, "ToggleDiffView")
 SetKeyMap("<c-g><c-h>", function() ToggleCommand("DiffviewFileHistory", "DiffviewClose", "diff_view_status") end, nil, nil, "ToggleDiffViewFileHistory")
-SetKeyMap("<c-g><c-c>", builtin.git_commits, nil, nil, "GitCommits")
-SetKeyMap("<c-g><c-b>", builtin.git_bcommits, nil, nil, "GitBCommits")
-SetKeyMap("<c-g><c-t>", builtin.git_stash, nil, nil, "GitStash")
-SetKeyMap("<c-g><c-e>", function() require("snacks").gitbrowse() end, nil, nil, "GitBrowse")
+SetKeyMap("<c-g><c-c>", telescope.git_commits, nil, nil, "GitCommits")
+SetKeyMap("<c-g><c-b>", telescope.git_bcommits, nil, nil, "GitBCommits")
+SetKeyMap("<c-g><c-t>", telescope.git_stash, nil, nil, "GitStash")
+SetKeyMap("<c-g><c-e>", function () snacks.gitbrowse() end, nil, nil, "GitBrowse")
 SetKeyMap("<c-g><c-i>", "<esc><Cmd>Gitignore<cr>")
 
 -- History
@@ -139,25 +138,23 @@ SetKeyMap("<c-x>l", require('ufo').openAllFolds,               { "n" }, nil, "Op
 SetKeyMap("<c-x>j", require('ufo').peekFoldedLinesUnderCursor, { "n" }, nil, "PeekFoldedLinesUnderCursor")
 
 -- Terminal
-SetKeyMap("<c-b>t", function ()
-   require("snacks").terminal()
-end, nil, nil, "ToggleTerminal")
+SetKeyMap("<c-b>t", function () snacks.terminal() end, nil, nil, "ToggleTerminal")
 
 -- LSP
-SetKeyMap("<c-c><c-d>", builtin.lsp_definitions, nil, nil, "LspDefinition")
-SetKeyMap("<c-c><c-i>", builtin.lsp_implementations, nil, nil, "LspImplementation")
-SetKeyMap("<c-c><c-r>", builtin.lsp_references, nil, nil, "LspReferences")
+SetKeyMap("<c-c><c-d>", snacks.picker.lsp_definitions, nil, nil, "LspDefinition")
+SetKeyMap("<c-c><c-i>", snacks.picker.lsp_references, nil, nil, "LspImplementation")
+SetKeyMap("<c-c><c-r>", snacks.picker.lsp_references, nil, nil, "LspReferences")
 SetKeyMap("<c-c><c-e>", vim.lsp.buf.rename)
 SetKeyMap("<c-c><c-x>", vim.lsp.buf.code_action)
 SetKeyMap("<c-c><c-l>", "<esc><Cmd>Format<cr>")
 SetKeyMap("<c-c><c-h>", vim.lsp.buf.hover)
 SetKeyMap("<c-c><c-q>", vim.lsp.buf.signature_help)
 SetKeyMap("<c-c><c-n>", vim.diagnostic.open_float)
-SetKeyMap("<c-c><c-m>", builtin.diagnostics, nil, nil, "Diagnostics")
-SetKeyMap("<c-c><c-s>", builtin.lsp_document_symbols, nil, nil, "LspDocumentSymbols")
-SetKeyMap("<c-c><c-f>", builtin.lsp_workspace_symbols, nil, nil, "LspWorkspaceSymbols")
+SetKeyMap("<c-c><c-m>", snacks.picker.diagnostics, nil, nil, "Diagnostics")
+SetKeyMap("<c-c><c-s>", snacks.picker.lsp_symbols, nil, nil, "LspDocumentSymbols")
+SetKeyMap("<c-c><c-f>", telescope.lsp_workspace_symbols, nil, nil, "LspWorkspaceSymbols")
 SetKeyMap("<c-c><c-g>", "<Cmd>Telescope ast_grep<cr>")
-SetKeyMap("<c-c><c-w>", builtin.lsp_dynamic_workspace_symbols, nil, nil, "LspDynamicWorkspaceSymbols")
+SetKeyMap("<c-c><c-w>", telescope.lsp_dynamic_workspace_symbols, nil, nil, "LspDynamicWorkspaceSymbols")
 SetKeyMap("<c-c><c-a>", "<Cmd>Outline<cr>")
 SetKeyMap("<c-c><c-j>", function() require('treesj').toggle() end, nil, nil, "TreeSitterSplitJoinToggle")
 SetKeyMap("<c-x><c-l>", RestartLsp, nil, nil, "RestartLsp")
