@@ -17,7 +17,6 @@ require("mini.move").setup({
 
 vim.api.nvim_create_autocmd("FileType", {
   pattern = {
-    "alpha",
     "NvimTree",
   },
   command = ":lua vim.b.miniindentscope_disable=true",

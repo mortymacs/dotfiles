@@ -36,21 +36,6 @@ require("lazy").setup({
     },
   },
 
-  -- UI.
-  {
-    "folke/snacks.nvim",
-    priority = 1000,
-    lazy = false,
-  },
-
-  -- Splash screen.
-  {
-    "goolord/alpha-nvim",
-    dependencies = {
-      "nvim-tree/nvim-web-devicons",
-    },
-  },
-
   -- Finder.
   {
     "nvim-neo-tree/neo-tree.nvim",
@@ -59,6 +44,11 @@ require("lazy").setup({
       "nvim-tree/nvim-web-devicons",
       "MunifTanjim/nui.nvim",
     },
+  },
+  {
+    "folke/snacks.nvim",
+    priority = 1000,
+    lazy = false,
   },
   {
     "nvim-telescope/telescope.nvim",

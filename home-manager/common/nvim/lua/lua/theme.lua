@@ -50,10 +50,6 @@ vim.api.nvim_set_hl(0, "TreesitterContextSeparator", { bg = "", fg = "#1b1c36" }
 vim.api.nvim_set_hl(0, "StatusLine",     { bg = "", fg = "" })
 vim.api.nvim_set_hl(0, "StatusLineTerm", { bg = "", fg = "" })
 
--- Splashscreen.
-vim.api.nvim_set_hl(0, "AlphaHeader", { bg = "", fg = "#ffb703" })
-vim.api.nvim_set_hl(0, "AlphaButton", { bg = "", fg = "#fefae0" })
-
 -- Noice.
 vim.api.nvim_set_hl(0, "NoiceCmdlinePopupBorderCmdline", { bg = "", fg = "#686f9a" })
 vim.api.nvim_set_hl(0, "NoiceCmdlinePopup",              { bg = "", fg = "" })
