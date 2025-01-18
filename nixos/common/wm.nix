@@ -9,19 +9,25 @@ let
       -b 'Poweroff' 'systemctl poweroff' \
       -b 'Reboot' 'systemctl reboot'
   '';
-in {
+in
+{
   security.polkit.enable = true;
   programs.light.enable = true;
   services.dbus.enable = true;
   xdg.portal = {
     enable = true;
     wlr.enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-wlr ];
+    extraPortals = [
+      pkgs.xdg-desktop-portal
+      pkgs.xdg-desktop-portal-wlr
+    ];
   };
+
   programs.sway = {
     enable = true;
     wrapperFeatures.gtk = true;
   };
+
   services.greetd = {
     enable = true;
     settings = {
