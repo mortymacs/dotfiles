@@ -52,7 +52,6 @@ require("telescope").load_extension("fzf")
 require("telescope").load_extension("vim_bookmarks")
 require("telescope").load_extension("file_browser")
 require("telescope").load_extension("undo")
-require("telescope").load_extension("advanced_git_search")
 require("telescope").load_extension("ast_grep")
 require("telescope").load_extension("live_grep_args")
 require("telescope").load_extension("nerdy")
@@ -159,18 +158,16 @@ require("snacks").setup({
   scroll = { enabled = false },
   statuscolumn = {
     enabled = true,
-    {
-      left = { "mark", "sign" },
-      right = { "fold", "git" },
-      folds = {
-        open = false,
-        git_hl = false,
-      },
-      git = {
-        patterns = { "GitSign", "MiniDiffSign" },
-      },
-      refresh = 50,
+    left = { "mark", "sign" },
+    right = { "fold", "git" },
+    folds = {
+      open = false,
+      git_hl = false,
     },
+    git = {
+      patterns = { "GitSign", "MiniDiffSign" },
+    },
+    refresh = 50,
   },
   words = { enabled = true },
   terminal = {

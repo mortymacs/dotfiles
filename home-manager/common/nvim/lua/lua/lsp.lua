@@ -50,7 +50,6 @@ cmp.setup({
     ["<cr>"] = cmp.mapping.confirm({ select = true }),
   }),
   sources = cmp.config.sources({
-    { name = "cody" },
     { name = "nvim_lsp" },
     { name = "path" },
     { name = "buffer" },
@@ -81,6 +80,13 @@ local lsp_signature_setup = {
   transparency = 1,
   close_timeout = 100,
 }
+lspconfig.util.default_config = vim.tbl_extend("force", lspconfig.util.default_config, {
+  capabilities = vim.tbl_deep_extend(
+    "force",
+    vim.lsp.protocol.make_client_capabilities(),
+    require("lsp-file-operations").default_capabilities()
+  ),
+})
 
 -- Rust.
 require("crates").setup()
@@ -240,18 +246,6 @@ lspconfig.yamlls.setup({
     yaml = {
       schemas = require("schemastore").yaml.schemas(),
     },
-  },
-})
-
--- Glance.
-require("glance").setup({
-  preview_win_opts = {
-    cursorline = false,
-  },
-  folds = {
-    fold_closed = ">",
-    fold_open = "v",
-    folded = true,
   },
 })
 

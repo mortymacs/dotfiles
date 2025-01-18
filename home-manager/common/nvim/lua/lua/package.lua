@@ -79,31 +79,22 @@ require("lazy").setup({
   },
 
   -- Git.
-  "ruanyl/vim-gh-line",
-  "aaronhallaert/advanced-git-search.nvim",
   "lewis6991/gitsigns.nvim",
   "sindrets/diffview.nvim",
-  {
-    "wintermute-cell/gitignore.nvim",
-    dependencies = {
-      "nvim-telescope/telescope.nvim",
-    },
-    event = "VeryLazy",
-  },
 
   -- Development.
-  {
-    "nvim-neotest/neotest",
-    dependencies = {
-      "nvim-neotest/nvim-nio",
-      "nvim-lua/plenary.nvim",
-      "nvim-treesitter/nvim-treesitter",
-      "antoinemadec/FixCursorHold.nvim",
-      "nvim-neotest/neotest-python",
-      "nvim-neotest/neotest-go",
-    },
-    event = "VeryLazy",
+{
+  "nvim-neotest/neotest",
+  dependencies = {
+    "nvim-neotest/nvim-nio",
+    "nvim-lua/plenary.nvim",
+    "nvim-treesitter/nvim-treesitter",
+    "antoinemadec/FixCursorHold.nvim",
+    "nvim-neotest/neotest-python",
+    "nvim-neotest/neotest-go",
   },
+  event = "VeryLazy",
+},
   {
     "nvim-treesitter/nvim-treesitter",
     dependencies = {
@@ -130,21 +121,29 @@ require("lazy").setup({
   },
   {
     "hedyhli/outline.nvim",
-    event = "VeryLazy",
+    event = { "VeryLazy", "LspAttach" },
   },
-  "mhartington/formatter.nvim",
+  {
+    "mhartington/formatter.nvim",
+    event = { "LspAttach", "LspAttach" },
+  },
   "cappyzawa/trim.nvim",
   "brenoprata10/nvim-highlight-colors",
   "echasnovski/mini.nvim",
   "nacro90/numb.nvim",
-  "Wansmer/treesj",
-  "mfussenegger/nvim-lint",
+  {
+    "Wansmer/treesj",
+    event = { "VeryLazy", "LspAttach" },
+  },
+  {
+    "mfussenegger/nvim-lint",
+    event = { "VeryLazy", "LspAttach" },
+  },
   {
     "kylechui/nvim-surround",
     version = "*",
     event = "VeryLazy",
   },
-  "Bekaboo/deadcolumn.nvim",
   "johmsalas/text-case.nvim",
   "koenverburg/peepsight.nvim",
   {
@@ -173,6 +172,7 @@ require("lazy").setup({
       "echasnovski/mini.nvim",
     },
     file_types = { "markdown", "Avante" },
+    event = "VeryLazy",
   },
   {
     "rachartier/tiny-inline-diagnostic.nvim",
@@ -203,10 +203,6 @@ require("lazy").setup({
     event = "LspAttach",
   },
   {
-    "dnlhc/glance.nvim",
-    event = "LspAttach",
-  },
-  {
     "Wansmer/symbol-usage.nvim",
     event = "LspAttach",
   },
@@ -234,10 +230,14 @@ require("lazy").setup({
     "mrcjkb/rustaceanvim",
     version = "^5",
     lazy = false,
+    ft = { "rust", "toml" },
+    event = "LspAttach",
   },
   {
     "saecki/crates.nvim",
     tag = "stable",
+    ft = { "toml" },
+    event = "LspAttach",
   },
   -- -- Go.
   {

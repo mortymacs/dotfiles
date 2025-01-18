@@ -173,13 +173,6 @@ require("nvim-surround").setup({
   },
 })
 
--- Deadcolumn.
-require("deadcolumn").setup({
-  warning = {
-    colorcode = "#f94144",
-  },
-})
-
 -- Formatter.
 local util = require("formatter.util")
 require("formatter").setup({
