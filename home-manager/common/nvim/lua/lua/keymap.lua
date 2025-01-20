@@ -50,7 +50,7 @@ SetKeyMap("sf", function()
             },
         },
     })
-end)
+end, { "n", "x", "o" })
 SetKeyMap("ss", function()
     flash.jump({
         pattern = vim.fn.expand("<cword>"),
