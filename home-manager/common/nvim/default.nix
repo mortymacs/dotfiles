@@ -12,15 +12,4 @@
     source = ./lua;
     recursive = true;
   };
-
-  programs.helix = {
-    enable = true;
-    package = pkgs.unstable.helix;
-    settings = {
-      theme = "ayu_dark";
-      editor = {
-        mouse = false;
-      };
-    };
-  };
 }
