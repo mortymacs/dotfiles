@@ -83,18 +83,18 @@ require("lazy").setup({
   "sindrets/diffview.nvim",
 
   -- Development.
-{
-  "nvim-neotest/neotest",
-  dependencies = {
-    "nvim-neotest/nvim-nio",
-    "nvim-lua/plenary.nvim",
-    "nvim-treesitter/nvim-treesitter",
-    "antoinemadec/FixCursorHold.nvim",
-    "nvim-neotest/neotest-python",
-    "nvim-neotest/neotest-go",
+  {
+    "nvim-neotest/neotest",
+    dependencies = {
+      "nvim-neotest/nvim-nio",
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      "antoinemadec/FixCursorHold.nvim",
+      "nvim-neotest/neotest-python",
+      "nvim-neotest/neotest-go",
+    },
+    event = "VeryLazy",
   },
-  event = "VeryLazy",
-},
   {
     "nvim-treesitter/nvim-treesitter",
     dependencies = {

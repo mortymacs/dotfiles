@@ -27,7 +27,7 @@ SetKeyMap("<c-]>",      "<Cmd>Neotree toggle<cr>")
 SetKeyMap("<c-x><c-r>", "<Cmd>Neotree reveal<cr>")
 
 -- Search
-SetKeyMap("<c-x><c-g>", function ()
+SetKeyMap("<c-x><c-s-g>", function ()
   local word_under_cursor = vim.fn.expand('<cword>')
   if word_under_cursor and word_under_cursor ~= "" then
     snacks.picker.grep_word()
@@ -35,6 +35,7 @@ SetKeyMap("<c-x><c-g>", function ()
     snacks.picker.grep()
   end
 end, nil, nil, "LiveGrep")
+SetKeyMap("<c-x><c-g>", snacks.picker.grep, nil, nil, "LiveGrep")
 
 -- Finder.
 SetKeyMap("sf", function()

@@ -50,23 +50,10 @@ vim.api.nvim_set_hl(0, "TreesitterContextSeparator", { bg = "", fg = "#1b1c36" }
 vim.api.nvim_set_hl(0, "StatusLine",     { bg = "", fg = "" })
 vim.api.nvim_set_hl(0, "StatusLineTerm", { bg = "", fg = "" })
 
--- Noice.
-vim.api.nvim_set_hl(0, "NoiceCmdlinePopupBorderCmdline", { bg = "", fg = "#686f9a" })
-vim.api.nvim_set_hl(0, "NoiceCmdlinePopup",              { bg = "", fg = "" })
-vim.api.nvim_set_hl(0, "NoiceCmdlinePopupBorder",        { bg = "", fg = "" })
-
 -- Git.
 vim.api.nvim_set_hl(0, "GitSignsAdd",    { bg = "", fg = "#5ccc96" })
 vim.api.nvim_set_hl(0, "GitSignsChange", { bg = "", fg = "#e39400" })
 vim.api.nvim_set_hl(0, "GitSignsDelete", { bg = "", fg = "#ce6f8f" })
-
--- Notification.
-vim.api.nvim_set_hl(0, "NotifyDEBUGBody",  { bg = "" })
-vim.api.nvim_set_hl(0, "NotifyINFOBody",   { bg = "" })
-vim.api.nvim_set_hl(0, "NotifyWARNBody",   { bg = "" })
-vim.api.nvim_set_hl(0, "NotifyERRORBody",  { bg = "" })
-vim.api.nvim_set_hl(0, "NotifyTRACEBody",  { bg = "" })
-vim.api.nvim_set_hl(0, "NotifyBackground", { bg = "" })
 
 -- Telescope.
 vim.api.nvim_set_hl(0, "TelescopeNormal",        { bg = "",                 link = "TelescopeNormal" })
@@ -95,12 +82,6 @@ vim.api.nvim_set_hl(0, "UfoFoldedBg", { bg = "",        fg = "" })
 vim.api.nvim_set_hl(0, "Pmenu",                       { fg = "#ecf0c1", bg = "" })
 vim.api.nvim_set_hl(0, "PmenuSbar",                   { bg = "#272831" })
 vim.api.nvim_set_hl(0, "PmenuDoc",                    { fg = "#ecf0c1", bg = "" })
--- -- Glance.
-vim.api.nvim_set_hl(0, "GlancePreviewNormal",         { bg = "#000000" })
-vim.api.nvim_set_hl(0, "GlancePreviewMatch",          { bg = "#000000" })
-vim.api.nvim_set_hl(0, "GlancePreviewSignColumn",     { bg = "#000000" })
-vim.api.nvim_set_hl(0, "GlancePreviewLineNr",         { bg = "#000000" })
-vim.api.nvim_set_hl(0, "GlanceListNormal",            { bg = "#000000" })
 -- -- Lsp Signature.
 vim.api.nvim_set_hl(0, "LspSignatureActiveParameter", { bg = "#0e6ba8", fg = "#ffffff" })
 -- -- InlayHint.
@@ -140,6 +121,3 @@ require('modes').setup({
     visual = "#e0aaff",
   },
 })
-
--- FZF.
-vim.g.fzf_colors = { border = { "fg" , "FloatBorder" }}
