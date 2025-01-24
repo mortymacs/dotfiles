@@ -59,6 +59,7 @@ in
   hardware.graphics = {
     enable = true;
   };
+  services.xserver.videoDrivers = [ "intel" ];
 
   # User.
   users.users.mort = {
