@@ -31,9 +31,6 @@ in
     };
   };
 
-  # Kernel.
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-
   # Time zone.
   time.timeZone = "Europe/Amsterdam";
 
@@ -57,7 +54,6 @@ in
   # Bluetooth.
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
-  services.blueman.enable = true;
 
   # Graphic.
   hardware.graphics = {

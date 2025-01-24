@@ -12,7 +12,6 @@
         showSidePanelButton = false;
         uiColor = "#0f111b";
         drawColor = "#D81E5B";
-        buttons = "";
 
         # Save/Export.
         copyPathAfterSave = true;

@@ -38,10 +38,6 @@ in
     "/crypto_keyfile.bin" = null;
   };
 
-  # Kernel.
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.kernelParams = [ "i915.force_probe=22e8" ];
-
   # Time zone.
   time.timeZone = "Europe/Amsterdam";
 
@@ -65,7 +61,6 @@ in
   # Bluetooth.
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
-  services.blueman.enable = true;
 
   # Graphic.
   hardware.graphics = {

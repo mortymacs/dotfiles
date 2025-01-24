@@ -22,7 +22,6 @@ in
     ../common/tmuxp
     ../common/fzf
     ../common/nvim
-    ../common/emacs
     ../common/btop
     ../common/git
     ../common/docker
@@ -49,7 +48,7 @@ in
     ];
   };
 
-  home.packages = with pkgs; defaultPackages.list ++ [ teams-for-linux ];
+  home.packages = with pkgs; defaultPackages.list ++ [ teams-for-linux unstable.zoom-us ];
 
   # Fontconfig.
   fonts.fontconfig.enable = true;

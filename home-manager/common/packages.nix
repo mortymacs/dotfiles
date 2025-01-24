@@ -1,9 +1,6 @@
 { pkgs, ... }:
 {
   list = with pkgs; [
-    # Desktop
-    rofi-wayland
-
     # Text.
     bat
     unstable.ast-grep
@@ -34,9 +31,6 @@
     file
     unstable.walk
     tree
-
-    # Theme.
-    yaru-theme
 
     # Process.
     procs
@@ -81,6 +75,13 @@
     silicon
     ## Test.
     hurl
+    ## IDE.
+    jetbrains.goland
+    jetbrains.datagrip
+    jetbrains.rust-rover
+    jetbrains.pycharm-professional
+    jetbrains.clion
+    unstable.vscode
 
     # Programming.
     ## C/C++.
@@ -195,8 +196,6 @@
 
     # Misc.
     trash-cli
-    zathura
-    libqalculate
     unzip
     ascii-image-converter
   ];

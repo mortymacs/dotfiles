@@ -15,15 +15,6 @@
     # Audio.
     pamixer
 
-    # WM.
-    swaylock
-    swayidle
-    swaybg
-    mako
-    wdisplays
-    wayland
-    wl-clipboard
-
     # Doc.
     man-pages
   ];

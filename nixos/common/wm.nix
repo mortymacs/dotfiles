@@ -1,43 +1,46 @@
 { pkgs, ... }:
-let
-  swayConfig = pkgs.writeText "greetd-sway-config" ''
-    # `-l` activates layer-shell mode. Notice that `swaymsg exit` will run after gtkgreet.
-    exec "${pkgs.greetd.gtkgreet}/bin/gtkgreet -l; swaymsg exit"
-    bindsym Mod4+shift+e exec swaynag \
-      -t warning \
-      -m 'What do you want to do?' \
-      -b 'Poweroff' 'systemctl poweroff' \
-      -b 'Reboot' 'systemctl reboot'
-  '';
-in
 {
   security.polkit.enable = true;
-  programs.light.enable = true;
   services.dbus.enable = true;
-  xdg.portal = {
+
+  services.xserver = {
     enable = true;
-    wlr.enable = true;
-    extraPortals = [
-      pkgs.xdg-desktop-portal
-      pkgs.xdg-desktop-portal-wlr
-    ];
+    displayManager.gdm.enable = true;
+    desktopManager.gnome.enable = true;
   };
 
-  programs.sway = {
-    enable = true;
-    wrapperFeatures.gtk = true;
-  };
+  programs.gpaste.enable = true;
 
-  services.greetd = {
-    enable = true;
-    settings = {
-      default_session = {
-        command = "${pkgs.sway}/bin/sway --config ${swayConfig}";
-      };
-    };
-  };
+  environment.gnome.excludePackages = (
+    with pkgs;
+    [
+      atomix
+      cheese
+      snapshot
+      epiphany
+      geary
+      gedit
+      gnome-screenshot
+      gnome-characters
+      gnome-music
+      gnome-photos
+      gnome-terminal
+      gnome-contacts
+      gnome-connections
+      gnome-maps
+      gnome-disk-utility
+      gnome-font-viewer
+      gnome-browser-connector
+      gnome-console
+      gnome-weather
+      gnome-user-docs
+      gnome-tour
+      simple-scan
+      hitori
+      iagno
+      tali
+      totem
+    ]
+  );
 
-  environment.etc."greetd/environments".text = ''
-    sway
-  '';
 }

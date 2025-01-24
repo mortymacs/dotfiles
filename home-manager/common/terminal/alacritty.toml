@@ -49,15 +49,16 @@ size = 14
 x = 0
 y = -1
 
-[mouse]
-hide_when_typing = true
-
 [selection]
 save_to_clipboard = true
 
 [window]
 dynamic_padding = false
 opacity = 0.95
+
+[window.dimensions]
+columns = 120
+lines = 30
 
 [window.padding]
 x = 10

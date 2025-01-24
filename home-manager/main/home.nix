@@ -22,7 +22,6 @@ in
     ../common/tmuxp
     ../common/fzf
     ../common/nvim
-    ../common/emacs
     ../common/btop
     ../common/git
     ../common/docker
