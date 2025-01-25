@@ -10,18 +10,8 @@ end
 # Tmux.
 set -x TMUX_PLUGIN_MANAGER_PATH "$HOME"/.config/tmux/plugins/
 
-# GTK.
-set -x GTK_THEME Yaru-purple-dark
-
-# Qt.
-set -x QT_QPA_PLATFORMTHEME qt5ct
-
 # Rust.
 set -x CARGO_HOME "$HOME/.local/share/cargo"
-
-# Python.
-# https://github.com/python-poetry/poetry/issues/5250#issuecomment-1067193647
-set -x PYTHON_KEYRING_BACKEND keyring.backends.fail.Keyring
 
 # Go.
 set -x GOPATH "$HOME/.local/share/go"
