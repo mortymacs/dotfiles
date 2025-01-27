@@ -85,7 +85,7 @@ in
       };
       status = {
         style = "bold fg:${section_4_fg}";
-        format = "[ $status ]($style)";
+        format = "[ $status]($style)";
         disabled = false;
       };
     };
