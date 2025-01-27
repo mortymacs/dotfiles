@@ -53,7 +53,7 @@ in
       nix_shell = {
         disabled = false;
         style = "fg:${nix_shell_fg}";
-        symbol = "  ";
+        symbol = "";
         format = "[ $symbol]($style)";
       };
       sudo = {
@@ -77,7 +77,7 @@ in
         tag_symbol = " 󰓼 ";
         tag_disabled = false;
         style = "fg:${section_3_fg}";
-        format = "[ $hash$tag ]($style)";
+        format = "[ $hash$tag]($style)";
       };
       git_state = {
         style = "fg:${section_3_fg}";
