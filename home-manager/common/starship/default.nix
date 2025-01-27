@@ -58,9 +58,9 @@ in
       };
       sudo = {
         disabled = false;
-        format = "[$symbol]($style)";
+        format = "[$symbol ]($style)";
         style = "fg:${section_1_fg}";
-        symbol = " 󰯄";
+        symbol = "󰯄";
       };
       directory = {
         style = "fg:${section_2_fg}";
