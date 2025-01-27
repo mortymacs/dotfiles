@@ -15,10 +15,7 @@
     # System packages.
     # nix flake update
     sudo nixos-rebuild switch --flake ".#$argv[1]";
-    home-manager switch --flake ".#$argv[1]";
-
-    # Restart monitor manager.
-    systemctl --user restart kanshi.service
+    home-manager switch --flake ".#$argv[1]" --impure;
 
     # Nvim packages.
     nvim --headless "+Lazy! sync" +qa
