@@ -45,9 +45,9 @@
 
     # Nix.
     # https://discourse.nixos.org/t/list-and-delete-nixos-generations/29637/3
-    sudo nix profile wipe-history --profile /nix/var/nix/profiles/system --older-than 10d
-    home-manager expire-generations "-10 days"
-    nix-collect-garbage --delete-older-than 10d
+    sudo nix profile wipe-history --profile /nix/var/nix/profiles/system --older-than 5d
+    home-manager expire-generations "-5 days"
+    nix-collect-garbage --delete-older-than 5d
   '';
 
   # Process.
