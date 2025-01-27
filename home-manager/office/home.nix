@@ -10,24 +10,17 @@ let
 in
 {
   imports = [
-    ../common/wm
-    ../common/statusbar
-    ../common/notification
-    ../common/gtk
+    ../common/desktop
     ../common/fish
     ../common/starship
-    ../common/monitor
     ../common/terminal
     ../common/tmux
-    ../common/tmuxp
-    ../common/fzf
     ../common/nvim
     ../common/btop
     ../common/git
     ../common/docker
     ../common/flameshot
     ../common/firefox
-    ../common/launcher
     ../common/misc
   ];
 
@@ -42,7 +35,7 @@ in
 
   # Config packages.
   nixpkgs = {
-    config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [ "terraform" ];
+    config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [ "terraform" "vscode" ];
     overlays = [
       (final: prev: { unstable = import inputs.nixpkgs-unstable { system = final.system; }; })
     ];

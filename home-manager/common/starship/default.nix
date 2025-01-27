@@ -1,8 +1,7 @@
 { lib, ... }:
 let
   # Nix shell
-  nix_shell_bg = "#ed4a4a";
-  nix_shell_fg = "#151F28";
+  nix_shell_fg = "#48cae4";
 
   # username
   section_1_fg = "#D81E5B";
@@ -11,10 +10,10 @@ let
   section_2_fg = "#EB5E55";
 
   # svc
-  section_3_fg = "#8136C7";
+  section_3_fg = "#c77dff";
 
   # status
-  section_4_fg = "#D81E5B";
+  section_4_fg = "#ff006e";
 
   # cmd_duration
   section_5_fg = "#35C693";
@@ -47,14 +46,14 @@ in
         format = "[$user]($style)";
       };
       character = {
-        success_symbol = "[❯](purple)";
-        error_symbol = "[❯](red)";
-        vimcmd_symbol = "[❮](green)";
+        success_symbol = "[ ❯](purple)";
+        error_symbol = "[ ❯](red)";
+        vimcmd_symbol = "[ ❮](green)";
       };
       nix_shell = {
         disabled = false;
-        style = "bg:${nix_shell_bg} fg:${nix_shell_fg}";
-        symbol = " ";
+        style = "fg:${nix_shell_fg}";
+        symbol = "  ";
         format = "[ $symbol]($style)";
       };
       sudo = {
@@ -65,14 +64,14 @@ in
       };
       directory = {
         style = "fg:${section_2_fg}";
-        format = "[ $path ]($style)";
+        format = "[ $path]($style)";
         truncation_length = 3;
         truncation_symbol = ".../";
       };
       git_branch = {
         symbol = "";
         style = "fg:${section_3_fg}";
-        format = "[ $symbol$branch ]($style)";
+        format = "[ $symbol$branch]($style)";
       };
       git_commit = {
         tag_symbol = " 󰓼 ";
@@ -86,7 +85,7 @@ in
       };
       status = {
         style = "bold fg:${section_4_fg}";
-        format = "[ $status]($style)";
+        format = "[ $status ]($style)";
         disabled = false;
       };
     };
