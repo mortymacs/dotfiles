@@ -46,9 +46,9 @@ in
         format = "[$user]($style)";
       };
       character = {
-        success_symbol = "[ ❯](purple)";
-        error_symbol = "[ ❯](red)";
-        vimcmd_symbol = "[ ❮](green)";
+        success_symbol = "[ ](purple)";
+        error_symbol = "[ ](red)";
+        vimcmd_symbol = "[ ](green)";
       };
       nix_shell = {
         disabled = false;
