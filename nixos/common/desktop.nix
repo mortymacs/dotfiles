@@ -26,6 +26,7 @@
       gnome-photos
       gnome-terminal
       gnome-contacts
+      gnome-calendar
       gnome-connections
       gnome-maps
       gnome-disk-utility

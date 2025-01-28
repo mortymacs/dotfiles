@@ -28,8 +28,8 @@ in
     gnomeExtensions.tiling-shell
     gnomeExtensions.blur-my-shell
     gnome-tweaks
-    endeavour
     wl-clipboard
+    unstable.todoist-electron
   ];
 
   # GTK.
