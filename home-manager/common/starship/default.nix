@@ -69,9 +69,9 @@ in
         truncation_symbol = ".../";
       };
       git_branch = {
-        symbol = "";
+        symbol = "";
         style = "fg:${section_3_fg}";
-        format = "[ $symbol$branch]($style)";
+        format = "[ $symbol $branch]($style)";
       };
       git_commit = {
         tag_symbol = " 󰓼 ";
