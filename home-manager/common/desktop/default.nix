@@ -25,7 +25,7 @@ in
 {
   home.packages = with pkgs; [
     gnomeExtensions.appindicator
-    gnomeExtensions.tiling-assistant
+    gnomeExtensions.tiling-shell
     gnomeExtensions.blur-my-shell
     gnome-tweaks
     endeavour
