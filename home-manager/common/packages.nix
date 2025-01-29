@@ -76,11 +76,11 @@
     ## Test.
     hurl
     ## IDE.
-    jetbrains.goland
-    jetbrains.datagrip
-    jetbrains.rust-rover
-    jetbrains.pycharm-professional
-    jetbrains.clion
+    unstable.jetbrains.goland
+    unstable.jetbrains.datagrip
+    unstable.jetbrains.rust-rover
+    unstable.jetbrains.pycharm-professional
+    unstable.jetbrains.clion
     unstable.vscode
 
     # Programming.

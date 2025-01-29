@@ -84,6 +84,7 @@ in
 
   # Config packages.
   nixpkgs = {
+    config.allowUnfree = true;
     overlays = [
       (final: prev: { unstable = import inputs.nixpkgs-unstable { system = final.system; }; })
     ];

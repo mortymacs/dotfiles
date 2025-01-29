@@ -100,7 +100,6 @@ in
         enabled-extensions = [
           "appindicatorsupport@rgcjonas.gmail.com"
           "GPaste@gnome-shell-extensions.gnome.org"
-          "tiling-assistant@leleat-on-github"
           "blur-my-shell@aunetx"
         ];
         disabled-extensions = [ ];
@@ -108,14 +107,13 @@ in
       "org/gnome/settings-daemon/plugins/media-keys".custom-keybindings = [
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
-        "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/"
       ];
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
         name = "Open Alacritty";
         binding = "<Super>Return";
         command = "alacritty";
       };
-      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
         name = "Screenshot";
         binding = "<Super><Shift>S";
         command = "flameshot gui";

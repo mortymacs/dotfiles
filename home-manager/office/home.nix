@@ -35,7 +35,8 @@ in
 
   # Config packages.
   nixpkgs = {
-    config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [ "terraform" "vscode" ];
+    config.allowUnfree = true;
+    config.allowUnfreePredicate = true;
     overlays = [
       (final: prev: { unstable = import inputs.nixpkgs-unstable { system = final.system; }; })
     ];
