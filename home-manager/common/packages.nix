@@ -21,7 +21,6 @@
 
     ## Presentation / reading.
     glow
-    unstable.presenterm
 
     # File and directory.
     broot
@@ -36,6 +35,7 @@
     procs
     kmon
     bmon
+    zps
 
     # System / network.
     duf
@@ -76,11 +76,7 @@
     ## Test.
     hurl
     ## IDE.
-    unstable.jetbrains.goland
-    unstable.jetbrains.datagrip
-    unstable.jetbrains.rust-rover
-    unstable.jetbrains.pycharm-professional
-    unstable.jetbrains.clion
+    unstable.jetbrains-toolbox
     unstable.vscode
 
     # Programming.
