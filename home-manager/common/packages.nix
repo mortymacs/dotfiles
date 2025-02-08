@@ -23,12 +23,9 @@
     glow
 
     # File and directory.
-    broot
     eza
     zoxide
-    feh
     file
-    unstable.walk
     tree
 
     # Process.
@@ -56,7 +53,6 @@
     chart-testing
     awscli2
     ctop
-    act
     wait4x
 
     # Database.
