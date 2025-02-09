@@ -128,5 +128,6 @@ in
   xdg.configFile = {
     # Wallpaper.
     "wallpaper.jpg".source = ./wallpaper.jpg;
+    "wallpaper-1.jpg".source = ./wallpaper-1.jpg;
   };
 }
