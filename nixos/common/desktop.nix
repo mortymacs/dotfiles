@@ -9,15 +9,12 @@
     desktopManager.gnome.enable = true;
   };
 
-  programs.gpaste.enable = true;
-
   environment.gnome.excludePackages = (
     with pkgs;
     [
       atomix
       cheese
       snapshot
-      epiphany
       geary
       gedit
       gnome-screenshot

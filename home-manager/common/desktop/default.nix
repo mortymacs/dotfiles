@@ -27,6 +27,7 @@ in
     gnomeExtensions.appindicator
     gnomeExtensions.tiling-shell
     gnomeExtensions.blur-my-shell
+    gnomeExtensions.pano
     gnome-tweaks
     wl-clipboard
     unstable.todoist-electron
