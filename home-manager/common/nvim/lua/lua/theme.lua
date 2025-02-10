@@ -78,7 +78,6 @@ vim.api.nvim_set_hl(0, "HlSearchLens", { bg = "#ffb703", fg = "#000000" })
 
 -- Folded.
 vim.api.nvim_set_hl(0, "Folded",      { bg = "#1a1423", fg = "" })
-vim.api.nvim_set_hl(0, "UfoFoldedBg", { bg = "",        fg = "" })
 
 -- LSP.
 -- -- General.

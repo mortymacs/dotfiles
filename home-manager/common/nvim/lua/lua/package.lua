@@ -320,15 +320,6 @@ require("lazy").setup({
     cmd = "Nerdy",
   },
 
-  -- Fold.
-  {
-    "kevinhwang91/nvim-ufo",
-    dependencies = {
-      "kevinhwang91/promise-async",
-    },
-    event = "VeryLazy",
-  },
-
   -- AI.
   {
     "jackMort/ChatGPT.nvim",

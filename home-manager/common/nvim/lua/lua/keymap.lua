@@ -141,10 +141,6 @@ SetKeyMap("<c-t>9", function() require("textcase").current_word("to_title_case")
 -- Delete word.
 SetKeyMap("<c-s-w>", "<C-o>dw",  { "i" })
 SetKeyMap("<c-b>",   "<C-o>ciw", { "i" })
--- Fold.
-SetKeyMap("<c-x>h", require('ufo').closeAllFolds,              { "n" }, nil, "CloseAllFolds")
-SetKeyMap("<c-x>l", require('ufo').openAllFolds,               { "n" }, nil, "OpenAllFolds")
-SetKeyMap("<c-x>j", require('ufo').peekFoldedLinesUnderCursor, { "n" }, nil, "PeekFoldedLinesUnderCursor")
 
 -- Terminal
 SetKeyMap("<c-b>t", function () snacks.terminal() end, nil, nil, "ToggleTerminal")
