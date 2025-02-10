@@ -73,8 +73,6 @@
     hurl
     ## IDE.
     unstable.jetbrains-toolbox
-    unstable.vscode
-    unstable.zed-editor
 
     # Programming.
     ## C/C++.
