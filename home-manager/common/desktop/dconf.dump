@@ -29,7 +29,7 @@ last-panel='background'
 folder-children=['Utilities', '8371fcd4-30e3-411f-920d-45f133d37193']
 
 [org/gnome/desktop/app-folders/folders/8371fcd4-30e3-411f-920d-45f133d37193]
-apps=['clion.desktop', 'datagrip.desktop', 'goland.desktop', 'pycharm-professional.desktop', 'code.desktop', 'nvim.desktop', 'org.kde.heaptrack.desktop', 'com.kdab.hotspot.desktop', 'org.kde.massif-visualizer.desktop', 'rust-rover.desktop', 'jetbrains-clion-5732ba89-8d2f-4dde-bce8-8ada6d3d79a4.desktop', 'jetbrains-datagrip-2cd2a4f6-d6cb-480f-9ba7-3368142138fb.desktop', 'jetbrains-goland-1f6bf96f-a32b-4add-95ed-3910b61158a2.desktop', 'jetbrains-pycharm-54e9415e-f88a-4691-a011-0f2c379d2cfc.desktop', 'jetbrains-toolbox.desktop', 'dev.zed.Zed.desktop']
+apps=['datagrip.desktop', 'goland.desktop', 'pycharm-professional.desktop', 'code.desktop', 'nvim.desktop', 'org.kde.heaptrack.desktop', 'com.kdab.hotspot.desktop', 'org.kde.massif-visualizer.desktop', 'rust-rover.desktop', 'jetbrains-clion-5732ba89-8d2f-4dde-bce8-8ada6d3d79a4.desktop', 'jetbrains-datagrip-2cd2a4f6-d6cb-480f-9ba7-3368142138fb.desktop', 'jetbrains-goland-1f6bf96f-a32b-4add-95ed-3910b61158a2.desktop', 'jetbrains-pycharm-54e9415e-f88a-4691-a011-0f2c379d2cfc.desktop', 'jetbrains-toolbox.desktop']
 name='Programming'
 
 [org/gnome/desktop/app-folders/folders/Utilities]
@@ -57,7 +57,7 @@ color-scheme='prefer-dark'
 font-name='Lexend 10'
 
 [org/gnome/desktop/notifications]
-application-children=['gnome-power-panel', 'firefox', 'teams-for-linux', 'alacritty', 'org-gnome-evolution-alarm-notify', 'todoist', 'clion', 'jetbrains-toolbox', 'zoom', 'org-gnome-fileroller', 'org-gnome-nautilus']
+application-children=['gnome-power-panel', 'firefox', 'teams-for-linux', 'alacritty', 'org-gnome-evolution-alarm-notify', 'todoist', 'jetbrains-toolbox', 'zoom', 'org-gnome-fileroller', 'org-gnome-nautilus']
 show-banners=true
 
 [org/gnome/desktop/notifications/application/alacritty]
@@ -179,7 +179,7 @@ command='flameshot gui'
 name='Screenshot'
 
 [org/gnome/shell]
-app-picker-layout=[{'org.gnome.Nautilus.desktop': <{'position': <0>}>, 'Alacritty.desktop': <{'position': <1>}>, 'Zoom.desktop': <{'position': <2>}>, 'teams-for-linux.desktop': <{'position': <3>}>, 'gimp.desktop': <{'position': <4>}>, 'org.gnome.clocks.desktop': <{'position': <5>}>, 'org.gnome.Calculator.desktop': <{'position': <6>}>, 'org.gnome.SystemMonitor.desktop': <{'position': <7>}>, 'org.gnome.tweaks.desktop': <{'position': <8>}>, 'org.gnome.Settings.desktop': <{'position': <9>}>, 'org.gnome.Extensions.desktop': <{'position': <10>}>, 'org.gnome.seahorse.Application.desktop': <{'position': <11>}>, 'Utilities': <{'position': <12>}>, '8371fcd4-30e3-411f-920d-45f133d37193': <{'position': <13>}>, 'org.gnome.TextEditor.desktop': <{'position': <14>}>}]
+app-picker-layout=[{'org.gnome.Nautilus.desktop': <{'position': <0>}>, 'org.gnome.Epiphany.desktop': <{'position': <1>}>, 'Alacritty.desktop': <{'position': <2>}>, 'Zoom.desktop': <{'position': <3>}>, 'teams-for-linux.desktop': <{'position': <4>}>, 'org.gnome.TextEditor.desktop': <{'position': <5>}>, 'gimp.desktop': <{'position': <6>}>, 'org.gnome.clocks.desktop': <{'position': <7>}>, 'org.gnome.Calculator.desktop': <{'position': <8>}>, 'org.gnome.SystemMonitor.desktop': <{'position': <9>}>, 'org.gnome.tweaks.desktop': <{'position': <10>}>, 'org.gnome.Settings.desktop': <{'position': <11>}>, 'org.gnome.Extensions.desktop': <{'position': <12>}>, 'org.gnome.seahorse.Application.desktop': <{'position': <13>}>, 'Utilities': <{'position': <14>}>, '8371fcd4-30e3-411f-920d-45f133d37193': <{'position': <15>}>}]
 disable-user-extensions=false
 disabled-extensions=@as []
 enabled-extensions=['appindicatorsupport@rgcjonas.gmail.com', 'GPaste@gnome-shell-extensions.gnome.org', 'blur-my-shell@aunetx', 'tilingshell@ferrarodomenico.com', 'pano@elhan.io']
