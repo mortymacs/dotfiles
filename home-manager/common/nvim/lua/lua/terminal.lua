@@ -1,7 +1,9 @@
 -- https://stackoverflow.com/a/63908546/2338672
-vim.api.nvim_create_autocmd("TermOpen", {
+vim.api.nvim_create_autocmd({ "TermOpen", "TermEnter" }, {
+  pattern = "*",
   callback = function()
     vim.diagnostic.disable(0)
+    vim.wo.winbar = ""
     vim.opt_local.number = false
     vim.opt_local.relativenumber = false
     vim.opt_local.foldcolumn = "0"
