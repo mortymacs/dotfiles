@@ -50,6 +50,9 @@ vim.api.nvim_set_hl(0, "TreesitterContextSeparator", { bg = "", fg = "#1b1c36" }
 vim.api.nvim_set_hl(0, "StatusLine",     { bg = "", fg = "" })
 vim.api.nvim_set_hl(0, "StatusLineTerm", { bg = "", fg = "" })
 
+-- CMP.
+vim.api.nvim_set_hl(0, "CmpItemKindCody", { fg = "#8eecf5" })
+
 -- Git.
 vim.api.nvim_set_hl(0, "GitSignsAdd",    { bg = "", fg = "#5ccc96" })
 vim.api.nvim_set_hl(0, "GitSignsChange", { bg = "", fg = "#e39400" })

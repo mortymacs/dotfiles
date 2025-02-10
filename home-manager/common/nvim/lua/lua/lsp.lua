@@ -50,6 +50,7 @@ cmp.setup({
     ["<cr>"] = cmp.mapping.confirm({ select = true }),
   }),
   sources = cmp.config.sources({
+    { name = "cody" },
     { name = "nvim_lsp" },
     { name = "path" },
     { name = "buffer" },
