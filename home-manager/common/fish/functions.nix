@@ -17,6 +17,9 @@
     sudo nixos-rebuild switch --flake ".#$argv[1]";
     home-manager switch --flake ".#$argv[1]" --impure;
 
+    # Gnome.
+    dconf load / < ~/.config/dconf/dconf.dump
+
     # Nvim packages.
     nvim --headless "+Lazy! sync" +qa
 
