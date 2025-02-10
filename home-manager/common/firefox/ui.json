@@ -14,11 +14,13 @@
       "jid1-bofifl9vbdl2zq_jetpack-browser-action",
       "_74145f27-f039-47ce-a470-a662b129930a_-browser-action",
       "_154cddeb-4c8b-4627-a478-c7e5b427ffdf_-browser-action",
-      "_a138007c-5ff6-4d10-83d9-0afaf0efbe5e_-browser-action"
+      "_a138007c-5ff6-4d10-83d9-0afaf0efbe5e_-browser-action",
+      "enhancerforyoutube_maximerf_addons_mozilla_org-browser-action"
     ],
     "nav-bar": [
       "back-button",
       "forward-button",
+      "vertical-spacer",
       "stop-reload-button",
       "urlbar-container",
       "save-to-pocket-button",
@@ -34,6 +36,7 @@
       "new-tab-button",
       "alltabs-button"
     ],
+    "vertical-tabs": [],
     "PersonalToolbar": [
       "import-button",
       "personal-bookmarks"
@@ -54,15 +57,17 @@
     "jid1-bofifl9vbdl2zq_jetpack-browser-action",
     "_74145f27-f039-47ce-a470-a662b129930a_-browser-action",
     "_154cddeb-4c8b-4627-a478-c7e5b427ffdf_-browser-action",
-    "_a138007c-5ff6-4d10-83d9-0afaf0efbe5e_-browser-action"
+    "_a138007c-5ff6-4d10-83d9-0afaf0efbe5e_-browser-action",
+    "enhancerforyoutube_maximerf_addons_mozilla_org-browser-action"
   ],
   "dirtyAreaCache": [
     "nav-bar",
     "PersonalToolbar",
     "unified-extensions-area",
     "toolbar-menubar",
-    "TabsToolbar"
+    "TabsToolbar",
+    "vertical-tabs"
   ],
-  "currentVersion": 20,
+  "currentVersion": 21,
   "newElementCount": 7
 }
