@@ -16,6 +16,9 @@
     jless
     hexyl
 
+    # Music.
+    unstable.spotify
+
     # Image.
     gimp
 
