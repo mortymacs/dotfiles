@@ -77,7 +77,7 @@ size=(870, 690)
 
 [org/gnome/control-center]
 last-panel='background'
-window-state=(1265, 1171, false)
+window-state=(2289, 1395, false)
 
 [org/gnome/desktop/app-folders]
 folder-children=['Utilities', '8371fcd4-30e3-411f-920d-45f133d37193']
@@ -276,7 +276,7 @@ migrated-gtk-settings=true
 search-filter-time-type='last_modified'
 
 [org/gnome/nautilus/window-state]
-initial-size=(1906, 1038)
+initial-size=(1873, 926)
 initial-size-file-chooser=(890, 550)
 
 [org/gnome/portal/filechooser/gnome-background-panel]
@@ -404,6 +404,11 @@ toggle-always-on-top=@as []
 toggle-tiling-popup=@as []
 
 [org/gnome/shell/extensions/tilingshell]
+enable-autotiling=true
+enable-blur-selected-tilepreview=false
+enable-blur-snap-assistant=false
+enable-smart-window-border-radius=false
+enable-window-border=true
 focus-window-down=['<Super>j']
 focus-window-left=['<Super>h']
 focus-window-right=['<Super>l']
@@ -416,6 +421,8 @@ move-window-right=['<Control><Super>l']
 move-window-up=['<Control><Super>k']
 overridden-settings="{\"org.gnome.mutter.keybindings\":{\"toggle-tiled-right\":\"@as []\",\"toggle-tiled-left\":\"@as []\"},\"org.gnome.desktop.wm.keybindings\":{\"maximize\":\"['<Super>Up']\",\"unmaximize\":\"['<Super>Down', '<Alt>F5']\"},\"org.gnome.mutter\":{\"edge-tiling\":\"false\"}}"
 selected-layouts=[['27060245'], ['Layout 3'], ['Layout 3'], ['Layout 3']]
+window-border-color='rgb(10,147,150)'
+window-border-width=uint32 3
 
 [org/gnome/shell/keybindings]
 focus-active-notification=@as []
@@ -448,8 +455,8 @@ window-maximized=true
 show-extensions-notice=false
 
 [org/gtk/gtk4/settings/color-chooser]
-custom-colors=[(0.62352943420410156, 0.88235294818878174, 0.90588235855102539, 1.0), (0.75, 0.25, 0.25, 1.0)]
-selected-color=(true, 0.75294119119644165, 0.3803921639919281, 0.79607844352722168, 1.0)
+custom-colors=[(0.16470587253570557, 0.61568629741668701, 0.56078433990478516, 1.0), (0.039215687662363052, 0.57647061347961426, 0.58823531866073608, 1.0), (0.039215683937072754, 0.57647061347961426, 0.58823531866073608, 1.0), (1.0, 0.26999998092651367, 0.73720026016235352, 1.0), (0.92549020051956177, 0.36862745881080627, 0.36862745881080627, 1.0), (0.62352943420410156, 0.88235294818878174, 0.90588235855102539, 1.0), (0.75, 0.25, 0.25, 1.0)]
+selected-color=(true, 0.039215687662363052, 0.57647061347961426, 0.58823531866073608, 1.0)
 
 [org/gtk/gtk4/settings/file-chooser]
 date-format='regular'
