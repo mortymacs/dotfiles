@@ -31,7 +31,7 @@ vim.opt.shiftwidth = 4
 vim.opt.backspace = "2"
 vim.opt.list = false
 
--- Fold.
+-- Fold
 vim.opt.foldlevel = 99
 vim.opt.conceallevel = 2
 vim.o.foldcolumn = "0"
