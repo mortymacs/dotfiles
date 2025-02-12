@@ -48,9 +48,15 @@ cmp.setup({
     ["<c-space>"] = cmp.mapping.complete(),
     ["<esc>"] = cmp.mapping.abort(),
     ["<cr>"] = cmp.mapping.confirm({ select = true }),
+    ["<c-a>"] = cmp.mapping.complete({
+      config = {
+        sources = {
+          { name = "cody" },
+        },
+      },
+    }),
   }),
   sources = cmp.config.sources({
-    { name = "cody" },
     { name = "nvim_lsp" },
     { name = "path" },
     { name = "buffer" },
