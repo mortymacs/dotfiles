@@ -50,6 +50,12 @@
     nix-collect-garbage --delete-older-than 5d
   '';
 
+  # DConf.
+  dconf-update = ''
+    dconf dump / > dconf.dump
+    sed -i '/^window-height=/d; /^window-width=/d; /^window-state=/d; /^size=/d; /^window-size=/d; /^sidebar-size=/d; /^window-ratio=/d; /^width=/d; /^height=/d; /^name-column-width=/d; /^initial-size=/d; /^initial-size-/d; /^custom-colors=/d; /^sidebar-width=/d; /^window-position=/d; /^custom-colors=/d; /^selected-color=/d' dconf.dump
+  '';
+
   # Process.
   kp = ''
     ps | \grep -v fzf | fzf --header-lines=2 -m --no-mouse -q "$argv[1]" | cut -d' ' -f2 | xargs -r kill -9

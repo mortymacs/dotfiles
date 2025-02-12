@@ -1,8 +1,17 @@
 [apps/seahorse/listing]
 keyrings-selected=['gnupg://']
 
+[apps/seahorse/windows/key-manager]
+
+[ca/desrt/dconf-editor]
+saved-pathbar-path='/ca/desrt/'
+saved-view='/ca/desrt/'
+window-is-maximized=false
+
 [org/gnome/Connections]
 first-run=false
+
+[org/gnome/Extensions]
 
 [org/gnome/Snapshot]
 is-maximized=false
@@ -30,6 +39,7 @@ folder-children=['Utilities', 'Development']
 [org/gnome/desktop/app-folders/folders/Development]
 apps=['code.desktop', 'nvim.desktop', 'org.kde.heaptrack.desktop', 'com.kdab.hotspot.desktop', 'org.kde.massif-visualizer.desktop', 'jetbrains-datagrip-2cd2a4f6-d6cb-480f-9ba7-3368142138fb.desktop', 'jetbrains-goland-1f6bf96f-a32b-4add-95ed-3910b61158a2.desktop', 'jetbrains-pycharm-54e9415e-f88a-4691-a011-0f2c379d2cfc.desktop', 'jetbrains-toolbox.desktop']
 name='Development'
+translate=false
 
 [org/gnome/desktop/app-folders/folders/Utilities]
 apps=['nm-connection-editor.desktop', 'org.gnome.baobab.desktop', 'org.gnome.Logs.desktop', 'org.gnome.Evince.desktop', 'org.gnome.Loupe.desktop', 'org.gnome.FileRoller.desktop', 'cups.desktop', 'yelp.desktop', 'nixos-manual.desktop', 'org.flameshot.Flameshot.desktop', 'btop.desktop', 'fish.desktop', 'org.gnome.GPaste.Ui.desktop', 'org.gnome.GPaste.Preferences.desktop']
@@ -127,6 +137,9 @@ focus-mode='sloppy'
 [org/gnome/epiphany]
 ask-for-default=false
 
+[org/gnome/epiphany/state]
+is-maximized=false
+
 [org/gnome/evince/default]
 continuous=true
 dual-page=false
@@ -138,6 +151,23 @@ show-sidebar=true
 sidebar-page='thumbnails'
 sizing-mode='automatic'
 
+[org/gnome/file-roller/dialogs/extract]
+recreate-folders=true
+skip-newer=false
+
+[org/gnome/file-roller/file-selector]
+show-hidden=false
+sort-method='name'
+sort-type='ascending'
+
+[org/gnome/file-roller/listing]
+list-mode='as-folder'
+show-path=false
+sort-method='name'
+sort-type='ascending'
+
+[org/gnome/file-roller/ui]
+
 [org/gnome/nautilus/icon-view]
 default-zoom-level='medium'
 
@@ -145,6 +175,8 @@ default-zoom-level='medium'
 default-folder-viewer='icon-view'
 migrated-gtk-settings=true
 search-filter-time-type='last_modified'
+
+[org/gnome/nautilus/window-state]
 
 [org/gnome/portal/filechooser/gnome-background-panel]
 last-folder-path='/home/mort/.config'
@@ -176,7 +208,7 @@ command='flameshot gui'
 name='Screenshot'
 
 [org/gnome/shell]
-app-picker-layout=[{'org.gnome.Nautilus.desktop': <{'position': <0>}>, 'org.gnome.Epiphany.desktop': <{'position': <1>}>, 'Alacritty.desktop': <{'position': <2>}>, 'Zoom.desktop': <{'position': <3>}>, 'teams-for-linux.desktop': <{'position': <4>}>, 'org.gnome.TextEditor.desktop': <{'position': <5>}>, 'spotify.desktop': <{'position': <6>}>, 'gimp.desktop': <{'position': <7>}>, 'org.gnome.clocks.desktop': <{'position': <8>}>, 'org.gnome.Calculator.desktop': <{'position': <9>}>, 'org.gnome.SystemMonitor.desktop': <{'position': <10>}>, 'org.gnome.tweaks.desktop': <{'position': <11>}>, 'org.gnome.Settings.desktop': <{'position': <12>}>, 'org.gnome.Extensions.desktop': <{'position': <13>}>, 'org.gnome.seahorse.Application.desktop': <{'position': <14>}>, 'Utilities': <{'position': <15>}>, '8371fcd4-30e3-411f-920d-45f133d37193': <{'position': <16>}>}]
+app-picker-layout=[{'org.gnome.Nautilus.desktop': <{'position': <0>}>, 'org.gnome.Epiphany.desktop': <{'position': <1>}>, 'Alacritty.desktop': <{'position': <2>}>, 'Zoom.desktop': <{'position': <3>}>, 'teams-for-linux.desktop': <{'position': <4>}>, 'org.gnome.TextEditor.desktop': <{'position': <5>}>, 'spotify.desktop': <{'position': <6>}>, 'gimp.desktop': <{'position': <7>}>, 'org.gnome.clocks.desktop': <{'position': <8>}>, 'org.gnome.Calculator.desktop': <{'position': <9>}>, 'org.gnome.SystemMonitor.desktop': <{'position': <10>}>, 'org.gnome.tweaks.desktop': <{'position': <11>}>, 'org.gnome.Settings.desktop': <{'position': <12>}>, 'org.gnome.Extensions.desktop': <{'position': <13>}>, 'org.gnome.seahorse.Application.desktop': <{'position': <14>}>, 'Utilities': <{'position': <15>}>, 'Development': <{'position': <16>}>}]
 disable-user-extensions=false
 disabled-extensions=@as []
 enabled-extensions=['appindicatorsupport@rgcjonas.gmail.com', 'blur-my-shell@aunetx', 'tilingshell@ferrarodomenico.com', 'pano@elhan.io']
@@ -275,6 +307,8 @@ locations=[<(uint32 2, <('New York', 'KNYC', true, [(0.71180344078725644, -1.290
 
 [org/gnome/tweaks]
 show-extensions-notice=false
+
+[org/gtk/gtk4/settings/color-chooser]
 
 [org/gtk/gtk4/settings/file-chooser]
 date-format='regular'
