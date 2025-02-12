@@ -404,22 +404,25 @@ toggle-always-on-top=@as []
 toggle-tiling-popup=@as []
 
 [org/gnome/shell/extensions/tilingshell]
-enable-autotiling=true
+enable-autotiling=false
 enable-blur-selected-tilepreview=false
 enable-blur-snap-assistant=false
 enable-smart-window-border-radius=false
-enable-window-border=true
+enable-window-border=false
 focus-window-down=['<Super>j']
 focus-window-left=['<Super>h']
 focus-window-right=['<Super>l']
 focus-window-up=['<Super>k']
+inner-gaps=uint32 8
 last-version-name-installed='15.1'
 layouts-json='[{"id":"Layout 3","tiles":[{"x":0,"y":0,"width":0.33,"height":1,"groups":[1]},{"x":0.33,"y":0,"width":0.67,"height":1,"groups":[1]}]},{"id":"Layout 4","tiles":[{"x":0,"y":0,"width":0.67,"height":1,"groups":[1]},{"x":0.67,"y":0,"width":0.33,"height":1,"groups":[1]}]},{"id":"209533","tiles":[{"x":0,"y":0,"width":0.5,"height":1,"groups":[1]},{"x":0.5,"y":0,"width":0.5000000000000018,"height":1,"groups":[1]}]},{"id":"27060245","tiles":[{"x":0,"y":0,"width":1,"height":0.5003543586109143,"groups":[2]},{"x":0,"y":0.5003543586109143,"width":0.5,"height":0.49964564138908574,"groups":[2,3]},{"x":0.5,"y":0.5003543586109143,"width":0.25,"height":0.24663359319631462,"groups":[2,5,4,3]},{"x":0.5,"y":0.7469879518072289,"width":0.5000000000000009,"height":0.2530120481927711,"groups":[4,3]},{"x":0.75,"y":0.5003543586109143,"width":0.25000000000000006,"height":0.24663359319631462,"groups":[2,4,5]}]},{"id":"5618632","tiles":[{"x":0,"y":0,"width":1,"height":1,"groups":[]}]}]'
 move-window-down=['<Control><Super>j']
 move-window-left=['<Control><Super>h']
 move-window-right=['<Control><Super>l']
 move-window-up=['<Control><Super>k']
+outer-gaps=uint32 8
 overridden-settings="{\"org.gnome.mutter.keybindings\":{\"toggle-tiled-right\":\"@as []\",\"toggle-tiled-left\":\"@as []\"},\"org.gnome.desktop.wm.keybindings\":{\"maximize\":\"['<Super>Up']\",\"unmaximize\":\"['<Super>Down', '<Alt>F5']\"},\"org.gnome.mutter\":{\"edge-tiling\":\"false\"}}"
+restore-window-original-size=true
 selected-layouts=[['27060245'], ['Layout 3'], ['Layout 3'], ['Layout 3']]
 window-border-color='rgb(10,147,150)'
 window-border-width=uint32 3
@@ -481,7 +484,7 @@ sort-column='name'
 sort-directories-first=false
 sort-order='ascending'
 type-format='category'
-window-position=(604, 300)
+window-position=(606, 300)
 window-size=(1096, 822)
 
 [org/guake/general]
