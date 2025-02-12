@@ -38,6 +38,7 @@ vim.api.nvim_set_hl(0, "BufferTabpagesSep",        { bg = "",   fg = "#087e8b" }
 vim.api.nvim_set_hl(0, "BufferTabpageFill",        { bg = "" })
 vim.api.nvim_set_hl(0, "BufferCurrent",            { bg = "",   fg = "#087e8b" })
 vim.api.nvim_set_hl(0, "BufferCurrentSign",        { bg = "",   fg = "#087e8b" })
+vim.api.nvim_set_hl(0, "BufferCurrentMod",         { bg = "",   fg = "#087e8b" })
 vim.api.nvim_set_hl(0, "BufferInactive",           { bg = "" })
 vim.api.nvim_set_hl(0, "BufferInactiveSign",       { bg = "",   fg = "#090d12" })
 vim.api.nvim_set_hl(0, "BufferVisible",            { bg = "" })
