@@ -151,6 +151,9 @@ show-sidebar=true
 sidebar-page='thumbnails'
 sizing-mode='automatic'
 
+[org/gnome/evolution-data-server]
+migrated=true
+
 [org/gnome/file-roller/dialogs/extract]
 recreate-folders=true
 skip-newer=false
@@ -167,6 +170,13 @@ sort-method='name'
 sort-type='ascending'
 
 [org/gnome/file-roller/ui]
+
+[org/gnome/mutter]
+edge-tiling=false
+
+[org/gnome/mutter/keybindings]
+toggle-tiled-left=@as []
+toggle-tiled-right=@as []
 
 [org/gnome/nautilus/icon-view]
 default-zoom-level='medium'
