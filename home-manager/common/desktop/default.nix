@@ -29,7 +29,6 @@
 
   xdg.configFile = {
     "wallpaper.jpg".source = ./wallpaper.jpg;
-    "wallpaper-1.jpg".source = ./wallpaper-1.jpg;
     "dconf/dconf.dump".source = ./dconf.dump;
   };
 }
