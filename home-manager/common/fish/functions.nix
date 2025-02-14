@@ -54,6 +54,7 @@
   dconf-update = ''
     dconf dump / > dconf.dump
     sed -i '/^window-height=/d; /^window-width=/d; /^window-state=/d; /^size=/d; /^window-size=/d; /^sidebar-size=/d; /^window-ratio=/d; /^width=/d; /^height=/d; /^name-column-width=/d; /^initial-size=/d; /^initial-size-/d; /^custom-colors=/d; /^sidebar-width=/d; /^window-position=/d; /^custom-colors=/d; /^selected-color=/d' dconf.dump
+    sed -i '/^\[.*\/window\]/,/^\[/{//!d;}' dconf.dump
   '';
 
   # Process.

@@ -27,9 +27,6 @@ use-system-font=true
 world-clocks=[{'location': <(uint32 2, <('New York', 'KNYC', true, [(0.71180344078725644, -1.2909618758762367)], [(0.71059804659265924, -1.2916478949920254)])>)>}, {'location': <(uint32 2, <('Tel Aviv', 'LLBG', true, [(0.55850536063818546, 0.60911990894602097)], [(0.55966891929061258, 0.60679280909445943)])>)>}, {'location': <(uint32 2, <('Tehran', 'OIII', true, [(0.62279164893554573, 0.8962265708990883)], [(0.62316980942457534, 0.89747622664351612)])>)>}]
 
 [org/gnome/clocks/state/window]
-maximized=false
-panel-id='world'
-
 [org/gnome/control-center]
 last-panel='background'
 
