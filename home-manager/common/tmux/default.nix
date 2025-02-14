@@ -66,10 +66,6 @@ in
       tmuxPlugins.fuzzback
       tmuxPlugins.fzf-tmux-url
     ];
-
-    tmuxp = {
-      enable = true;
-    };
   };
 
   home.packages = with pkgs; [
