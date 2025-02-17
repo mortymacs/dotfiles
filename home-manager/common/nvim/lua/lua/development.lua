@@ -352,3 +352,21 @@ require("render-markdown").setup({
     below = "─",
   },
 })
+
+-- Namu.
+require("namu").setup({
+  namu_symbols = {
+    options = {
+      movement = {
+        alternative_next = "<m-j>",
+        alternative_previous = "<m-k>",
+      },
+      window = {
+        border = "single",
+      },
+    },
+  },
+  colorscheme = {
+    enable = false,
+  },
+})

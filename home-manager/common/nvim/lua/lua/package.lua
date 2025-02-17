@@ -84,6 +84,10 @@ require("lazy").setup({
 
   -- Development.
   {
+    "bassamsdata/namu.nvim",
+    event = "VeryLazy",
+  },
+  {
     "nvim-neotest/neotest",
     dependencies = {
       "nvim-neotest/nvim-nio",

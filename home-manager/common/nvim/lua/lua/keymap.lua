@@ -12,7 +12,8 @@ SetKeyMap("<c-x><c-k>", snacks.picker.keymaps,  nil, nil, "Keymaps")
 
 -- Buffer
 SetKeyMap("<c-x><c-e>", function () snacks.bufdelete() end, nil, nil, "DeleteBuffer")
-SetKeyMap("<c-f>",      snacks.picker.lines, nil, nil, "FuzzyFinder")
+SetKeyMap("<c-f>",      snacks.picker.lines,                nil, nil, "FuzzyFinder")
+SetKeyMap("<m-f>",    "<Cmd>Namu symbols<cr>",            nil, nil, "Symbols")
 
 -- Tabbar.
 SetKeyMap("<s-h>",      "<Cmd>BufferPrevious<cr>", { "n" })
@@ -149,11 +150,11 @@ SetKeyMap("<c-b>t", function () snacks.terminal() end, nil, nil, "ToggleTerminal
 SetKeyMap("<c-c><c-d>", snacks.picker.lsp_definitions, nil, nil, "LspDefinition")
 SetKeyMap("<c-c><c-i>", snacks.picker.lsp_implementations, nil, nil, "LspImplementation")
 SetKeyMap("<c-c><c-r>", snacks.picker.lsp_references, nil, nil, "LspReferences")
-SetKeyMap("<c-c><c-e>", vim.lsp.buf.rename)
-SetKeyMap("<c-c><c-x>", vim.lsp.buf.code_action)
+SetKeyMap("<c-c><c-e>", vim.lsp.buf.rename, nil, nil, "LspRename")
+SetKeyMap("<c-c><c-x>", vim.lsp.buf.code_action, nil, nil, "LspCodeAction")
 SetKeyMap("<c-c><c-l>", "<esc><Cmd>Format<cr>")
-SetKeyMap("<c-c><c-h>", vim.lsp.buf.hover)
-SetKeyMap("<c-c><c-q>", vim.lsp.buf.signature_help)
+SetKeyMap("<c-c><c-h>", vim.lsp.buf.hover, nil, nil, "LspHover")
+SetKeyMap("<c-c><c-q>", vim.lsp.buf.signature_help, nil, nil, "LspSignatureHelp")
 SetKeyMap("<c-c><c-n>", vim.diagnostic.open_float)
 SetKeyMap("<c-c><c-m>", snacks.picker.diagnostics, nil, nil, "Diagnostics")
 SetKeyMap("<c-c><c-s>", snacks.picker.lsp_symbols, nil, nil, "LspDocumentSymbols")
