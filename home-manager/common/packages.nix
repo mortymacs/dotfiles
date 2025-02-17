@@ -76,6 +76,8 @@
     hurl
     ## IDE.
     unstable.jetbrains-toolbox
+    ## AI.
+    mods
 
     # Programming.
     ## C/C++.
