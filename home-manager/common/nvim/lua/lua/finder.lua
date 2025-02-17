@@ -172,10 +172,3 @@ require("snacks").setup({
     },
   },
 })
-
-vim.api.nvim_create_autocmd("BufEnter", {
-  pattern = "snacks_dashboard",
-  callback = function()
-    vim.keymap.set("n", "q", "<cmd>qa<CR>", { buffer = true, silent = true })
-  end,
-})
