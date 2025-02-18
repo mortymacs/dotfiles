@@ -5,14 +5,6 @@
   ...
 }:
 {
-  # Services.
-  services = {
-    cliphist = {
-      enable = true;
-      systemdTarget = "sway-session.target";
-    };
-  };
-
   # Custom config.
   xdg.configFile = {
     # Most.

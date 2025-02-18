@@ -16,6 +16,9 @@
     jless
     hexyl
 
+    # Office.
+    unstable.zoom-us
+
     # Music.
     unstable.spotify
 
@@ -187,8 +190,6 @@
     nodePackages.jsonlint
     ## XML.
     xmlformat
-    ## Protobuf
-    protobuf
 
     # Misc.
     trash-cli

@@ -35,14 +35,12 @@ in
 
   # Config packages.
   nixpkgs = {
-    config.allowUnfree = true;
-    config.allowUnfreePredicate = true;
     overlays = [
       (final: prev: { unstable = import inputs.nixpkgs-unstable { system = final.system; }; })
     ];
   };
 
-  home.packages = with pkgs; defaultPackages.list ++ [ teams-for-linux unstable.zoom-us ];
+  home.packages = with pkgs; defaultPackages.list ++ [ teams-for-linux ];
 
   # Fontconfig.
   fonts.fontconfig.enable = true;

@@ -12,9 +12,6 @@
     # Filesystem.
     ntfs3g
 
-    # Audio.
-    pamixer
-
     # Doc.
     man-pages
   ];
