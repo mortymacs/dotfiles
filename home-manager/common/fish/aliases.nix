@@ -65,7 +65,8 @@
   py = ''
     ipython --no-term-title --no-confirm-exit --no-banner --no-simple-prompt \
         --PlainTextFormatter.pprint=True \
-        --TerminalInteractiveShell.highlighting_style=material'';
+        --TerminalInteractiveShell.highlighting_style=one-dark \
+        --log-level=ERROR'';
   rpy = ''fd -I "(build|dist|__pycache__|egg-info)" | xargs rm -rf --'';
   apy = "source ./.venv/bin/activate.fish";
 
