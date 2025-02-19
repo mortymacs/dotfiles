@@ -264,6 +264,7 @@ item-date-font-family='Lexend'
 item-date-font-size=11
 item-title-font-family='Lexend'
 item-title-font-size=20
+paste-on-select=false
 play-audio-on-copy=false
 search-bar-font-family='Lexend'
 search-bar-font-size=14
