@@ -3,6 +3,11 @@
   security.polkit.enable = true;
   services.dbus.enable = true;
 
+  # Config QT applications.
+  environment.sessionVariables = {
+    QT_QPA_PLATFORM = "wayland";
+  };
+
   services.xserver = {
     enable = true;
     displayManager.gdm = {
@@ -10,7 +15,14 @@
       wayland = true;
     };
     desktopManager.gnome.enable = true;
+    updateDbusEnvironment = true;
   };
+
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = with pkgs; [
+    xdg-desktop-portal-gtk
+    xdg-desktop-portal-gnome
+  ];
 
   environment.gnome.excludePackages = (
     with pkgs;

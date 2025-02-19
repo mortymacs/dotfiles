@@ -58,8 +58,16 @@ in
   # Graphic.
   hardware.graphics = {
     enable = true;
+    extraPackages = with pkgs; [
+      vaapiIntel
+      vaapiVdpau
+      libvdpau-va-gl
+      intel-media-driver
+      libGL
+      libGLU
+    ];
   };
-  # services.xserver.videoDrivers = [ "intel" ];
+  hardware.opengl.enable = true;
 
   # User.
   users.users.mort = {
