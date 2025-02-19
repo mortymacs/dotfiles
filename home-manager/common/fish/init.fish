@@ -7,6 +7,9 @@ if command -q nix-your-shell
   nix-your-shell fish | source
 end
 
+# Wayland.
+set -x XDG_SESSION_TYPE wayland
+
 # Tmux.
 set -x TMUX_PLUGIN_MANAGER_PATH "$HOME"/.config/tmux/plugins/
 
