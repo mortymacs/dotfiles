@@ -3,6 +3,7 @@
   ...
 }:
 {
+  xsession.enable = false; # Prevent Xorg from being enabled
 
   home.packages = with pkgs; [
     gnomeExtensions.appindicator
