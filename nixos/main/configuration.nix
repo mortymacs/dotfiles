@@ -67,7 +67,6 @@ in
       libGLU
     ];
   };
-  hardware.opengl.enable = true;
 
   # User.
   users.users.mort = {
