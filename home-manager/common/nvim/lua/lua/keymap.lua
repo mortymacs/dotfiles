@@ -170,13 +170,13 @@ SetKeyMap("<c-d><c-s>", function() require("dapui").toggle() end, nil, nil, "Dap
 SetKeyMap("<c-d><c-t>", "<Cmd>DapToggleBreakpoint<cr>")
 
 -- Test
-SetKeyMap("<c-t><c-x>", "<esc><Cmd>Neotest run<cr>")
-SetKeyMap("<c-t><c-f>", "<esc><Cmd>Neotest run file<cr>")
-SetKeyMap("<c-t><c-r>", "<esc><Cmd>Neotest output<cr>")
-SetKeyMap("<c-t><up>",  "<esc><Cmd>Neotest output-panel<cr>")
-SetKeyMap("<c-t><c-s>", "<esc><Cmd>Neotest summary<cr>")
+SetKeyMap("<c-t><c-x>",     "<esc><Cmd>Neotest run<cr>")
+SetKeyMap("<c-t><c-f>",     "<esc><Cmd>Neotest run file<cr>")
+SetKeyMap("<c-t><c-r>",     "<esc><Cmd>Neotest output<cr>")
+SetKeyMap("<c-t><up>",      "<esc><Cmd>Neotest output-panel<cr>")
+SetKeyMap("<c-t><c-s>",     "<esc><Cmd>Neotest summary<cr>")
 SetKeyMap("<c-t><c-right>", "<esc><Cmd>Neotest jump next<cr>")
-SetKeyMap("<c-t><c-left>", "<esc><Cmd>Neotest jump prev<cr>")
+SetKeyMap("<c-t><c-left>",  "<esc><Cmd>Neotest jump prev<cr>")
 
 -- Trouble / Quickfix.
 SetKeyMap("<c-x><c-i>", "<Cmd>TroubleToggle todo<cr>")
@@ -189,10 +189,6 @@ SetKeyMap("<c-a>d", "<Cmd>ChatGPTRun docstring<cr>",          { "n", "v" })
 SetKeyMap("<c-a>e", "<Cmd>ChatGPTRun explain_code<cr>",       { "v" })
 SetKeyMap("<c-a>a", "<Cmd>AvanteAsk<cr>",                     { "n" })
 SetKeyMap("<c-a>t", ":CodyTask ",                             { "n", "v" })
-
--- Bookmark
-SetKeyMap("<c-r><c-c>", "<Cmd>Telescope vim_bookmarks current_file<cr>")
-SetKeyMap("<c-r><c-a>", "<Cmd>Telescope vim_bookmarks all<cr>")
 
 -- Package.
 SetKeyMap("<c-x><c-y>", "<Cmd>Lazy! sync<cr>")
