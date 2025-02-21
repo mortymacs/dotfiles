@@ -229,6 +229,10 @@ settings-version=2
 brightness=0.59999999999999998
 sigma=30
 
+[org/gnome/shell/extensions/blur-my-shell/applications]
+blur=false
+whitelist=@as []
+
 [org/gnome/shell/extensions/blur-my-shell/coverflow-alt-tab]
 pipeline='pipeline_default'
 
@@ -237,8 +241,11 @@ blur=true
 brightness=0.59999999999999998
 pipeline='pipeline_default_rounded'
 sigma=30
-static-blur=true
+static-blur=false
 style-dash-to-dock=0
+
+[org/gnome/shell/extensions/blur-my-shell/hidetopbar]
+compatibility=false
 
 [org/gnome/shell/extensions/blur-my-shell/lockscreen]
 pipeline='pipeline_default'
@@ -250,6 +257,7 @@ pipeline='pipeline_default'
 brightness=0.59999999999999998
 pipeline='pipeline_default'
 sigma=30
+static-blur=false
 
 [org/gnome/shell/extensions/blur-my-shell/screenshot]
 pipeline='pipeline_default'
@@ -260,15 +268,43 @@ sigma=30
 
 [org/gnome/shell/extensions/pano]
 global-shortcut=['<Super>c']
-item-date-font-family='Lexend'
+history-length=100
+item-date-font-family='Sans'
 item-date-font-size=11
-item-title-font-family='Lexend'
+item-title-font-family='Sans'
 item-title-font-size=20
 paste-on-select=false
 play-audio-on-copy=false
-search-bar-font-family='Lexend'
+search-bar-font-family='Sans'
 search-bar-font-size=14
 send-notification-on-copy=false
+
+[org/gnome/shell/extensions/pano/color-item]
+metadata-font-family='Monospace'
+metadata-font-size=16
+
+[org/gnome/shell/extensions/pano/emoji-item]
+emoji-size=63
+
+[org/gnome/shell/extensions/pano/file-item]
+body-font-family='Sans'
+body-font-size=13
+
+[org/gnome/shell/extensions/pano/image-item]
+metadata-font-family='Sans'
+metadata-font-size=12
+
+[org/gnome/shell/extensions/pano/link-item]
+metadata-description-font-family='Sans'
+metadata-description-font-size=12
+metadata-link-font-family='Sans'
+metadata-link-font-size=10
+metadata-title-font-family='Sans'
+metadata-title-font-size=13
+
+[org/gnome/shell/extensions/pano/text-item]
+body-font-family='Sans'
+body-font-size=14
 
 [org/gnome/shell/extensions/tilingshell]
 enable-autotiling=false
