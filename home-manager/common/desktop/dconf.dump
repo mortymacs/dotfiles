@@ -1,21 +1,6 @@
 [apps/seahorse/listing]
 keyrings-selected=['gnupg://']
 
-[apps/seahorse/windows/key-manager]
-
-[ca/desrt/dconf-editor]
-saved-pathbar-path='/ca/desrt/'
-saved-view='/ca/desrt/'
-window-is-maximized=false
-
-[org/gnome/Connections]
-first-run=false
-
-[org/gnome/Extensions]
-
-[org/gnome/Snapshot]
-is-maximized=false
-
 [org/gnome/TextEditor]
 highlight-current-line=false
 last-save-directory='file:///home/mort'
@@ -28,7 +13,6 @@ world-clocks=[{'location': <(uint32 2, <('New York', 'KNYC', true, [(0.711803440
 
 [org/gnome/clocks/state/window]
 [org/gnome/control-center]
-last-panel='background'
 
 [org/gnome/desktop/app-folders]
 folder-children=['Utilities', 'Development']
@@ -54,13 +38,15 @@ primary-color='#e18477'
 secondary-color='#000000'
 
 [org/gnome/desktop/input-sources]
-sources=[('xkb', 'us')]
+mru-sources=[('xkb', 'us')]
+sources=[('xkb', 'us'), ('xkb', 'ir')]
 xkb-options=['terminate:ctrl_alt_bksp', 'lv3:ralt_switch']
 
 [org/gnome/desktop/interface]
 accent-color='blue'
 color-scheme='prefer-dark'
 font-name='Lexend 10'
+toolkit-accessibility=false
 
 [org/gnome/desktop/notifications]
 application-children=['gnome-power-panel', 'firefox', 'teams-for-linux', 'alacritty', 'todoist', 'jetbrains-toolbox', 'zoom', 'org-gnome-fileroller', 'org-gnome-nautilus', 'spotify']
@@ -166,8 +152,6 @@ show-path=false
 sort-method='name'
 sort-type='ascending'
 
-[org/gnome/file-roller/ui]
-
 [org/gnome/mutter]
 edge-tiling=false
 
@@ -195,7 +179,7 @@ last-folder-path='/home/mort'
 night-light-schedule-automatic=false
 
 [org/gnome/settings-daemon/plugins/media-keys]
-custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/']
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']
 help=@as []
 logout=['<Shift><Super>e']
 magnifier=@as []
@@ -208,11 +192,6 @@ screensaver=['<Shift><Super>a']
 binding='<Super>Return'
 command='alacritty'
 name='Open Alacritty'
-
-[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1]
-binding='<Super><Shift>S'
-command='flameshot gui'
-name='Screenshot'
 
 [org/gnome/shell]
 app-picker-layout=[{'org.gnome.Nautilus.desktop': <{'position': <0>}>, 'org.gnome.Epiphany.desktop': <{'position': <1>}>, 'Alacritty.desktop': <{'position': <2>}>, 'Zoom.desktop': <{'position': <3>}>, 'teams-for-linux.desktop': <{'position': <4>}>, 'org.gnome.TextEditor.desktop': <{'position': <5>}>, 'spotify.desktop': <{'position': <6>}>, 'gimp.desktop': <{'position': <7>}>, 'org.gnome.clocks.desktop': <{'position': <8>}>, 'org.gnome.Calculator.desktop': <{'position': <9>}>, 'org.gnome.SystemMonitor.desktop': <{'position': <10>}>, 'org.gnome.tweaks.desktop': <{'position': <11>}>, 'org.gnome.Settings.desktop': <{'position': <12>}>, 'org.gnome.Extensions.desktop': <{'position': <13>}>, 'org.gnome.seahorse.Application.desktop': <{'position': <14>}>, 'Utilities': <{'position': <15>}>, 'Development': <{'position': <16>}>}]
@@ -229,10 +208,6 @@ settings-version=2
 brightness=0.59999999999999998
 sigma=30
 
-[org/gnome/shell/extensions/blur-my-shell/applications]
-blur=false
-whitelist=@as []
-
 [org/gnome/shell/extensions/blur-my-shell/coverflow-alt-tab]
 pipeline='pipeline_default'
 
@@ -243,9 +218,6 @@ pipeline='pipeline_default_rounded'
 sigma=30
 static-blur=false
 style-dash-to-dock=0
-
-[org/gnome/shell/extensions/blur-my-shell/hidetopbar]
-compatibility=false
 
 [org/gnome/shell/extensions/blur-my-shell/lockscreen]
 pipeline='pipeline_default'
@@ -282,9 +254,6 @@ send-notification-on-copy=false
 [org/gnome/shell/extensions/pano/color-item]
 metadata-font-family='Monospace'
 metadata-font-size=16
-
-[org/gnome/shell/extensions/pano/emoji-item]
-emoji-size=63
 
 [org/gnome/shell/extensions/pano/file-item]
 body-font-family='Sans'
@@ -332,10 +301,9 @@ window-border-width=uint32 3
 
 [org/gnome/shell/keybindings]
 focus-active-notification=@as []
-screenshot=@as []
 screenshot-window=['<Shift><Control><Super>s']
 show-screen-recording-ui=@as []
-show-screenshot-ui=@as []
+show-screenshot-ui=['<Shift><Super>s']
 toggle-application-view=@as []
 toggle-message-tray=['<Shift><Super>n']
 toggle-quick-settings=@as []
