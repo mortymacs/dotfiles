@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   programs.firefox = {
     enable = true;
     profiles = {
@@ -12,42 +13,48 @@
             "Bookmarks".metaData.alias = "*";
             "DuckDuckGo".metaData.alias = "@s";
             "Nix Packages" = {
-              urls = [{
-                template = "https://search.nixos.org/packages";
-                params = [
-                  {
-                    name = "type";
-                    value = "packages";
-                  }
-                  {
-                    name = "query";
-                    value = "{searchTerms}";
-                  }
-                ];
-              }];
+              urls = [
+                {
+                  template = "https://search.nixos.org/packages";
+                  params = [
+                    {
+                      name = "type";
+                      value = "packages";
+                    }
+                    {
+                      name = "query";
+                      value = "{searchTerms}";
+                    }
+                  ];
+                }
+              ];
               definedAliases = [ "@np" ];
-              icon =
-                "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+              icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
             };
             "NixOS Wiki" = {
-              urls = [{
-                template = "https://nixos.wiki/index.php?search={searchTerms}";
-              }];
+              urls = [
+                {
+                  template = "https://nixos.wiki/index.php?search={searchTerms}";
+                }
+              ];
               iconUpdateURL = "https://nixos.wiki/favicon.png";
               updateInterval = 24 * 60 * 60 * 1000; # every day
               definedAliases = [ "@nw" ];
             };
             "Nix Hub" = {
-              urls = [{
-                template = "https://www.nixhub.io/search?q={searchTerms}";
-                params = [{
-                  name = "query";
-                  value = "{searchTerms}";
-                }];
-              }];
+              urls = [
+                {
+                  template = "https://www.nixhub.io/search?q={searchTerms}";
+                  params = [
+                    {
+                      name = "query";
+                      value = "{searchTerms}";
+                    }
+                  ];
+                }
+              ];
               definedAliases = [ "@nh" ];
-              icon =
-                "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+              icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
             };
 
             # Disable the rest.
@@ -72,11 +79,28 @@
           "accessibility.typeaheadfind.enablesound" = false;
           "network.protocol-handler.external.mailto" = false;
           "browser.uiCustomization.state" = builtins.readFile ./ui.json;
-          "browser.newtabpage.pinned" = [{
-            title = "Mort";
-            url = "https://0t1.me";
-            icon = "https://0t1.me/img/favicon.png";
-          }];
+          "browser.newtabpage.pinned" = [
+            {
+              title = "Mort";
+              url = "https://0t1.me";
+              icon = "https://0t1.me/img/favicon.png";
+            }
+            {
+              title = "Gmail";
+              url = "https://mail.google.com";
+              icon = "https://www.google.com/a/cpanel/0t1.me/images/favicon.ico";
+            }
+            {
+              title = "ChatGPT";
+              url = "https://chatgpt.com";
+              icon = "https://cdn.oaistatic.com/assets/favicon-miwirzcw.ico";
+            }
+            {
+              title = "Orielly";
+              url = "https://learning.oreilly.com/home/";
+              icon = "www.oreilly.com/favicon.ico";
+            }
+          ];
         };
       };
     };

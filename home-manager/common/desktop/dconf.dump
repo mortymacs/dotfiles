@@ -49,7 +49,7 @@ font-name='Lexend 10'
 toolkit-accessibility=false
 
 [org/gnome/desktop/notifications]
-application-children=['gnome-power-panel', 'firefox', 'teams-for-linux', 'alacritty', 'todoist', 'jetbrains-toolbox', 'zoom', 'org-gnome-fileroller', 'org-gnome-nautilus', 'spotify']
+application-children=['gnome-power-panel', 'firefox', 'teams-for-linux', 'alacritty', 'todoist', 'jetbrains-toolbox', 'zoom', 'org-gnome-fileroller', 'org-gnome-nautilus', 'spotify', 'xdg-desktop-portal-gnome']
 show-banners=true
 
 [org/gnome/desktop/notifications/application/alacritty]
@@ -78,6 +78,9 @@ application-id='teams-for-linux.desktop'
 
 [org/gnome/desktop/notifications/application/todoist]
 application-id='todoist.desktop'
+
+[org/gnome/desktop/notifications/application/xdg-desktop-portal-gnome]
+application-id='xdg-desktop-portal-gnome.desktop'
 
 [org/gnome/desktop/notifications/application/zoom]
 application-id='Zoom.desktop'
@@ -208,6 +211,10 @@ settings-version=2
 brightness=0.59999999999999998
 sigma=30
 
+[org/gnome/shell/extensions/blur-my-shell/applications]
+blur=false
+whitelist=@as []
+
 [org/gnome/shell/extensions/blur-my-shell/coverflow-alt-tab]
 pipeline='pipeline_default'
 
@@ -218,6 +225,9 @@ pipeline='pipeline_default_rounded'
 sigma=30
 static-blur=false
 style-dash-to-dock=0
+
+[org/gnome/shell/extensions/blur-my-shell/hidetopbar]
+compatibility=false
 
 [org/gnome/shell/extensions/blur-my-shell/lockscreen]
 pipeline='pipeline_default'
@@ -254,6 +264,9 @@ send-notification-on-copy=false
 [org/gnome/shell/extensions/pano/color-item]
 metadata-font-family='Monospace'
 metadata-font-size=16
+
+[org/gnome/shell/extensions/pano/emoji-item]
+emoji-size=63
 
 [org/gnome/shell/extensions/pano/file-item]
 body-font-family='Sans'
