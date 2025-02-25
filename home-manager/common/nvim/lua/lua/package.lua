@@ -216,13 +216,6 @@ require("lazy").setup({
     opts = {},
   },
   {
-    "antosha417/nvim-lsp-file-operations",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-neo-tree/neo-tree.nvim",
-    },
-  },
-  {
     "linrongbin16/lsp-progress.nvim",
     dependencies = {
       "nvim-tree/nvim-web-devicons",
@@ -247,9 +240,6 @@ require("lazy").setup({
   {
     "fatih/vim-go",
     ft = { "go" },
-    init = function()
-      vim.g.go_echo_command_info = 0
-    end,
   },
   -- -- Lua.
   {
