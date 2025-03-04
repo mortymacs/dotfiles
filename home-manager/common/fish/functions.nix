@@ -48,6 +48,8 @@
     sudo nix profile wipe-history --profile /nix/var/nix/profiles/system --older-than 5d
     home-manager expire-generations "-5 days"
     nix-collect-garbage --delete-older-than 5d
+
+    sudo fstrim -vA
   '';
 
   # DConf.
