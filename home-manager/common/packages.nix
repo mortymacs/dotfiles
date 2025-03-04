@@ -18,6 +18,7 @@
 
     # Office.
     unstable.zoom-us
+    unstable.iotas
 
     # Music.
     unstable.spotify
@@ -59,7 +60,7 @@
     chart-testing
     awscli2
     ctop
-    wait4x
+    unstable.wait4x
 
     # Database.
     pgcli
@@ -81,6 +82,7 @@
     unstable.jetbrains-toolbox
     ## AI.
     mods
+    unstable.code-cursor
 
     # Programming.
     ## C/C++.
