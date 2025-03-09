@@ -14,6 +14,4 @@ require("avante").setup({
 })
 
 -- Cody.
-require("sg").setup({
-  enable_cody = vim.fn.getenv("SRC_CODY_STATUS") == "1" and true or false,
-})
+require("sg").setup()
