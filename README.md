@@ -24,7 +24,7 @@ My environment config. I tried to keep it minimal and simple as much as I could.
 | DB | [dbcli tools](https://github.com/dbcli) |
 | Fonts | Display: [Lexend](https://github.com/googlefonts/lexend), [VarizMatn](https://github.com/rastikerdar/vazirmatn), Monospace: [JetBrainsMono Nerd Font](https://www.nerdfonts.com), [Noto Color Emoji](https://github.com/C1710/blobmoji) |
 | Browser | [Firefox](https://www.mozilla.org) |
-| Wallpaper | Created by me, under the same license as this repository. |
+| [Wallpaper](./home-manager/common/desktop/wallpaper.jpg) | Created by me, under the same license as this repository. |
 
 ## Screenshot
 

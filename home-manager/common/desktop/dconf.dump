@@ -32,10 +32,10 @@ translate=false
 [org/gnome/desktop/background]
 color-shading-type='solid'
 picture-options='zoom'
-picture-uri='file:///run/current-system/sw/share/backgrounds/gnome/neogeo-l.jxl'
-picture-uri-dark='file:///run/current-system/sw/share/backgrounds/gnome/neogeo-d.jxl'
-primary-color='#e18477'
-secondary-color='#000000'
+picture-uri='file:///home/mort/.config/wallpaper1.jpg'
+picture-uri-dark='file:///home/mort/.config/wallpaper1.jpg'
+primary-color='#000000000000'
+secondary-color='#000000000000'
 
 [org/gnome/desktop/input-sources]
 mru-sources=[('xkb', 'us')]
@@ -88,9 +88,9 @@ application-id='Zoom.desktop'
 [org/gnome/desktop/screensaver]
 color-shading-type='solid'
 picture-options='zoom'
-picture-uri='file:///run/current-system/sw/share/backgrounds/gnome/neogeo-l.jxl'
-primary-color='#e18477'
-secondary-color='#000000'
+picture-uri='file:///home/mort/.config/wallpaper1.jpg'
+primary-color='#000000000000'
+secondary-color='#000000000000'
 
 [org/gnome/desktop/wm/keybindings]
 activate-window-menu=@as []

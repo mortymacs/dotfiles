@@ -38,4 +38,8 @@
     '';
   };
 
+  # Nix Index.
+  programs.nix-index = {
+    enable = true;
+  };
 }

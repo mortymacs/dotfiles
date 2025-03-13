@@ -13,6 +13,7 @@
     gnome-tweaks
     wl-clipboard
     unstable.todoist-electron
+    unstable.pantheon.elementary-wallpapers
   ];
 
   # GTK.
@@ -31,6 +32,7 @@
 
   xdg.configFile = {
     "wallpaper.jpg".source = ./wallpaper.jpg;
+    "wallpaper1.jpg".source = ./wallpaper1.jpg;
     "dconf/dconf.dump".source = ./dconf.dump;
   };
 }
