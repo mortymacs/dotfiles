@@ -140,10 +140,6 @@ require("lazy").setup({
     event = { "VeryLazy", "LspAttach" },
   },
   {
-    "mfussenegger/nvim-lint",
-    event = { "VeryLazy", "LspAttach" },
-  },
-  {
     "kylechui/nvim-surround",
     version = "*",
     event = "VeryLazy",

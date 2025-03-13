@@ -127,7 +127,7 @@
     unstable.gosec
     unstable.golangci-lint
     unstable.govulncheck
-    # unstable.nilaway
+    unstable.nilaway
     goimports-reviser
     goconst
     golines
@@ -137,6 +137,7 @@
     unstable.go-motion
     mage
     air
+    unstable.panicparse
     ## Python.
     (python312.withPackages (
       ps: with ps; [

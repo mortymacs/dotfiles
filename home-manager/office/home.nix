@@ -35,8 +35,16 @@ in
 
   # Config packages.
   nixpkgs = {
+    config = {
+      allowUnfree = true;
+      allowUnfreePredicate = pkg: true;
+    };
     overlays = [
-      (final: prev: { unstable = import inputs.nixpkgs-unstable { system = final.system; }; })
+      (final: prev: {
+        unstable = import inputs.nixpkgs-unstable {
+          inherit (final) system config;
+        };
+      })
     ];
   };
 

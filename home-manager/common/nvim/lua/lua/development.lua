@@ -132,27 +132,6 @@ require("which-key").setup({
 require("numb").setup()
 require("trim").setup()
 
--- Lint.
-local lint = require("lint")
-lint.linters_by_ft = {
-  cpp = { "clangtidy", "cppcheck", "cpplint" },
-  go = { "golangcilint", "revive" },
-  python = { "ruff" },
-  lua = { "luacheck" },
-  cmake = { "cmakelint" },
-  sh = { "shellcheck" },
-  sql = { "sqlfluff" },
-  nix = { "nix" },
-  yaml = { "yamllint" },
-  json = { "jsonlint" },
-  terraform = { "tfsec" },
-}
-vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost" }, {
-  callback = function()
-    require("lint").try_lint()
-  end,
-})
-
 -- Surround.
 require("nvim-surround").setup({
   keymaps = {

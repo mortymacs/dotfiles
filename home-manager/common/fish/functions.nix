@@ -15,7 +15,7 @@
     # System packages.
     # nix flake update
     sudo nixos-rebuild switch --flake ".#$argv[1]";
-    home-manager switch --flake ".#$argv[1]" --impure;
+    home-manager switch --flake ".#$argv[1]";
 
     # Gnome.
     dconf load / < ~/.config/dconf/dconf.dump
