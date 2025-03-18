@@ -13,7 +13,6 @@
     gnome-tweaks
     wl-clipboard
     unstable.todoist-electron
-    unstable.pantheon.elementary-wallpapers
   ];
 
   # GTK.
