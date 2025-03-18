@@ -45,7 +45,11 @@ in
       settings = {
         style = "compact";
         show_preview = true;
+        keymap_mode = "vim-normal";
       };
+      flags = [
+        "--disable-up-arrow"
+      ];
     };
 
     zoxide = {
