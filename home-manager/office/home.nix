@@ -48,7 +48,7 @@ in
     ];
   };
 
-  home.packages = with pkgs; defaultPackages.list ++ [ teams-for-linux ];
+  home.packages = with pkgs; defaultPackages.list ++ [ unstable.teams-for-linux ];
 
   # Fontconfig.
   fonts.fontconfig.enable = true;
