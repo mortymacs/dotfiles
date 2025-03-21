@@ -128,12 +128,6 @@ in
   # Enable dconf.
   programs.dconf.enable = true;
 
-  # Boost.
-  services.thinkfan = {
-    enable = true;
-    smartSupport = true;
-  };
-
   # NixOS installed version.
   system.stateVersion = "22.11";
 }
