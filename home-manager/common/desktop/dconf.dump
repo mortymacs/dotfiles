@@ -45,7 +45,9 @@ xkb-options=['terminate:ctrl_alt_bksp', 'lv3:ralt_switch']
 [org/gnome/desktop/interface]
 accent-color='blue'
 color-scheme='prefer-dark'
+document-font-name='Lexend 11'
 font-name='Lexend 10'
+monospace-font-name='JetBrainsMono Nerd Font 10'
 toolkit-accessibility=false
 
 [org/gnome/desktop/notifications]
