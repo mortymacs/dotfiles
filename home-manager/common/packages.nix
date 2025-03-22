@@ -18,7 +18,6 @@
 
     # Office.
     unstable.zoom-us
-    unstable.iotas
 
     # Music.
     unstable.spotify
