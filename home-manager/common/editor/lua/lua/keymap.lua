@@ -147,6 +147,7 @@ SetKeyMap("<c-b>",   "<C-o>ciw", { "i" })
 
 -- Terminal
 SetKeyMap("<c-b>t", function () snacks.terminal() end, nil, nil, "ToggleTerminal")
+SetKeyMap("<c-e>",  function () snacks.terminal() end, nil, nil, "ToggleTerminal")
 
 -- LSP
 SetKeyMap("<c-c><c-d>", snacks.picker.lsp_definitions, nil, nil, "LspDefinition")

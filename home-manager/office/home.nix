@@ -15,7 +15,7 @@ in
     ../common/starship
     ../common/terminal
     ../common/tmux
-    ../common/nvim
+    ../common/editor
     ../common/btop
     ../common/git
     ../common/docker
