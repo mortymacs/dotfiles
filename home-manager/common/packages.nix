@@ -81,7 +81,6 @@
     unstable.jetbrains-toolbox
     ## AI.
     mods
-    unstable.code-cursor
 
     # Programming.
     ## C/C++.
