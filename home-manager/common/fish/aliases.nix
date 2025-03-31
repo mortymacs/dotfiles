@@ -29,7 +29,6 @@
 
   # Search.
   f = "fzf --no-mouse --preview 'bat {} --style=numbers --color=always'";
-  gg = "rg -i -n";
   cg = "ast-grep run --pattern";
   gfi = "sk -i -c 'rg {}'";
 

@@ -31,9 +31,6 @@ require("blink.cmp").setup({
         treesitter = { "lsp" },
       },
     },
-    ghost_text = {
-    enabled = true,
-  },
   },
   sources = {
     default = { "lsp", "path", "buffer" },

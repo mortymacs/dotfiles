@@ -13,4 +13,10 @@ require("bigfile").setup({
 })
 
 -- Noice.
-require("noice").setup()
+require("noice").setup({
+  lsp = {
+    progress = {
+      enabled = false,
+    },
+  },
+})

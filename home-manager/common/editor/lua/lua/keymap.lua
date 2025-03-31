@@ -11,14 +11,13 @@ SetKeyMap("<c-x><c-c>", snacks.picker.commands, nil, nil, "Commands")
 SetKeyMap("<c-x><c-k>", snacks.picker.keymaps,  nil, nil, "Keymaps")
 
 -- Buffer
-SetKeyMap("<c-x><c-e>", function () snacks.bufdelete() end, nil, nil, "DeleteBuffer")
+SetKeyMap("<c-x><c-q>", function () snacks.bufdelete() end, nil, nil, "DeleteBuffer")
 SetKeyMap("<c-f>",      snacks.picker.lines,                nil, nil, "FuzzyFinder")
 SetKeyMap("<m-f>",    "<Cmd>Namu symbols<cr>",            nil, nil, "Symbols")
 
 -- Tabbar.
 SetKeyMap("<s-h>",      "<Cmd>BufferPrevious<cr>", { "n" })
 SetKeyMap("<s-l>",      "<Cmd>BufferNext<cr>",     { "n" })
-SetKeyMap("<c-x><c-q>", ":qa<cr>")
 SetKeyMap("<c-x><c-n>", "<Cmd>tabnew<cr>")
 
 -- File and directory
@@ -117,7 +116,6 @@ SetKeyMap("<c-x><c-h>", snacks.picker.help)
 -- Stop copying text on delete.
 SetKeyMap("<Del>", '"_d',  { "v" })
 SetKeyMap("d",     '"_d',  { "v" })
-SetKeyMap("dd",    '"_dd', { "n" })
 -- Decorated yank.
 SetKeyMap("<c-y>", function() require('decorated_yank').decorated_yank_with_link() end,  { "v" }, nil, "DecoratedYank")
 -- Transformation.
@@ -156,8 +154,7 @@ SetKeyMap("<c-c><c-r>", snacks.picker.lsp_references, nil, nil, "LspReferences")
 SetKeyMap("<c-c><c-e>", vim.lsp.buf.rename, nil, nil, "LspRename")
 SetKeyMap("<c-c><c-x>", vim.lsp.buf.code_action, nil, nil, "LspCodeAction")
 SetKeyMap("<c-c><c-l>", "<esc><Cmd>Format<cr>")
-SetKeyMap("<c-c><c-h>", vim.lsp.buf.hover, nil, nil, "LspHover")
-SetKeyMap("<c-c><c-q>", vim.lsp.buf.signature_help, nil, nil, "LspSignatureHelp")
+SetKeyMap("<c-c><c-h>", vim.lsp.buf.signature_help, nil, nil, "LspSignatureHelp")
 SetKeyMap("<c-c><c-n>", vim.diagnostic.open_float)
 SetKeyMap("<c-c><c-m>", snacks.picker.diagnostics, nil, nil, "Diagnostics")
 SetKeyMap("<c-c><c-s>", snacks.picker.lsp_symbols, nil, nil, "LspDocumentSymbols")
