@@ -1,7 +1,12 @@
 -- DAP
 local dap = require("dap")
 
-vim.fn.sign_define("DapBreakpoint", { text = "󰯯 ", texthl = "", linehl = "", numhl = "" })
+dap.defaults.fallback.breakpoint = {
+  text = "󰯯 ",
+  texthl = "",
+  linehl = "",
+  numhl = "",
+}
 
 -- DAP virtual text
 require("nvim-dap-virtual-text").setup()

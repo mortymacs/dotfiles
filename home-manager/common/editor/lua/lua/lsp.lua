@@ -9,84 +9,43 @@ require("lspkind").init({
     Property = "󱈤",
   },
 })
-local lspkind = require("lspkind")
 
 -- CMP.
-local cmp = require("cmp")
-cmp.setup({
-  snippet = {
-    expand = function(args)
-      vim.fn["vsnip#anonymous"](args.body)
-    end,
+require("blink.cmp").setup({
+  keymap = {
+    ["<m-k>"] = { "select_prev", "fallback" },
+    ["<m-j>"] = { "select_next", "fallback" },
+    ["<c-k>"] = { "scroll_documentation_up", "fallback" },
+    ["<c-j>"] = { "scroll_documentation_down", "fallback" },
+    ["<cr>"] = { "select_and_accept", "fallback" },
+    ["<esc>"] = { "hide", "fallback" },
   },
-  window = {
-    completion = {
-      winhighlight = "Normal:Pmenu",
-      col_offset = -3,
-      side_padding = 1,
-      border = "single",
-    },
-    documentation = {
-      winhighlight = "Normal:PmenuDoc",
-      border = "single",
-    },
-  },
-  formatting = {
-    fields = { "abbr", "kind", "menu" },
-    format = lspkind.cmp_format({
-      mode = "symbol_text",
-      symbol_map = {
-        Variable = "",
-      },
-    }),
-  },
-  mapping = cmp.mapping.preset.insert({
-    ["<a-j>"] = cmp.mapping.select_next_item(),
-    ["<a-k>"] = cmp.mapping.select_prev_item(),
-    ["<c-up>"] = cmp.mapping.scroll_docs(-4),
-    ["<c-down>"] = cmp.mapping.scroll_docs(4),
-    ["<c-space>"] = cmp.mapping.complete(),
-    ["<esc>"] = cmp.mapping.abort(),
-    ["<cr>"] = cmp.mapping.confirm({ select = true }),
-    ["<c-a>"] = cmp.mapping.complete({
-      config = {
-        sources = {
-          { name = "cody" },
+  completion = {
+    documentation = { auto_show = false },
+    menu = {
+      draw = {
+        columns = {
+          { "label", "label_description", gap = 1 },
+          { "kind_icon", "kind" },
         },
+        treesitter = { "lsp" },
       },
-    }),
-  }),
-  sources = cmp.config.sources({
-    { name = "nvim_lsp" },
-    { name = "path" },
-    { name = "buffer" },
-  }),
-})
-
--- Use cmdline & path source for ':'.
-cmp.setup.cmdline(":", {
-  mapping = cmp.mapping.preset.cmdline(),
-  sources = cmp.config.sources({
-    { name = "path" },
-  }, {
-    { name = "cmdline" },
-  }),
+    },
+    ghost_text = {
+    enabled = true,
+  },
+  },
+  sources = {
+    default = { "lsp", "path", "buffer" },
+  },
+  appearance = {
+    nerd_font_variant = "normal",
+  },
 })
 
 -- Set up lspconfig.
 local lspconfig = require("lspconfig")
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
-local lsp_signature = require("lsp_signature")
-local lsp_signature_setup = {
-  hint_enable = false,
-  floating_window = false,
-  handler_opts = {
-    border = "single",
-  },
-  padding = " ",
-  transparency = 1,
-  close_timeout = 100,
-}
+local capabilities = require("blink.cmp").get_lsp_capabilities()
 
 -- Rust.
 require("crates").setup()
@@ -94,9 +53,6 @@ require("crates").setup()
 -- C/C++.
 lspconfig.clangd.setup({
   capabilities = capabilities,
-  on_attach = function(_, bufnr)
-    lsp_signature.on_attach(lsp_signature_setup, bufnr)
-  end,
   init_options = {
     compilationDatabaseDirectory = "build",
     index = {
@@ -117,9 +73,6 @@ vim.g.go_fmt_options = {
 vim.g.go_def_mapping_enabled = 0
 lspconfig.gopls.setup({
   capabilities = capabilities,
-  on_attach = function(_, bufnr)
-    lsp_signature.on_attach(lsp_signature_setup, bufnr)
-  end,
   settings = {
     gopls = {
       vulncheck = "Imports",
@@ -133,9 +86,6 @@ require("neodev").setup({
 })
 lspconfig.lua_ls.setup({
   capabilities = capabilities,
-  on_attach = function(_, bufnr)
-    lsp_signature.on_attach(lsp_signature_setup, bufnr)
-  end,
   settings = {
     Lua = {
       diagnostics = {
@@ -148,9 +98,6 @@ lspconfig.lua_ls.setup({
 -- Python
 lspconfig.pyright.setup({
   capabilities = capabilities,
-  on_attach = function(_, bufnr)
-    lsp_signature.on_attach(lsp_signature_setup, bufnr)
-  end,
 })
 
 -- Javascript/Typescript.
@@ -160,72 +107,45 @@ vim.g.markdown_fenced_languages = {
 }
 lspconfig.denols.setup({
   capabilities = capabilities,
-  on_attach = function(_, bufnr)
-    lsp_signature.on_attach(lsp_signature_setup, bufnr)
-  end,
 })
 
 -- Nix.
 lspconfig.nil_ls.setup({
   capabilities = capabilities,
-  on_attach = function(_, bufnr)
-    lsp_signature.on_attach(lsp_signature_setup, bufnr)
-  end,
 })
 
 -- Shell.
 lspconfig.bashls.setup({
   capabilities = capabilities,
-  on_attach = function(_, bufnr)
-    lsp_signature.on_attach(lsp_signature_setup, bufnr)
-  end,
 })
 
 -- CMake.
 lspconfig.neocmake.setup({
   capabilities = capabilities,
-  on_attach = function(_, bufnr)
-    lsp_signature.on_attach(lsp_signature_setup, bufnr)
-  end,
 })
 
 -- Terraform.
 lspconfig.terraformls.setup({
   capabilities = capabilities,
-  on_attach = function(_, bufnr)
-    lsp_signature.on_attach(lsp_signature_setup, bufnr)
-  end,
 })
 
 -- Typst.
 lspconfig.tinymist.setup({
   capabilities = capabilities,
-  on_attach = function(_, bufnr)
-    lsp_signature.on_attach(lsp_signature_setup, bufnr)
-  end,
   offset_encoding = "utf-8",
 })
 
 -- Dot.
 lspconfig.dotls.setup({
   capabilities = capabilities,
-  on_attach = function(_, bufnr)
-    lsp_signature.on_attach(lsp_signature_setup, bufnr)
-  end,
 })
 
 -- HTML / CSS / Markdown.
 lspconfig.html.setup({
   capabilities = capabilities,
-  on_attach = function(_, bufnr)
-    lsp_signature.on_attach(lsp_signature_setup, bufnr)
-  end,
 })
 lspconfig.cssls.setup({
   capabilities = capabilities,
-  on_attach = function(_, bufnr)
-    lsp_signature.on_attach(lsp_signature_setup, bufnr)
-  end,
 })
 
 -- JSON.

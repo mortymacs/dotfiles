@@ -19,6 +19,16 @@ require("lazy").setup({
   "projekt0n/github-nvim-theme",
   "mvllow/modes.nvim",
 
+  -- CMD.
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
+    },
+  },
+
   -- Tabbar.
   {
     "romgrk/barbar.nvim",
@@ -187,20 +197,8 @@ require("lazy").setup({
   "neovim/nvim-lspconfig",
   "onsails/lspkind.nvim",
   {
-    "hrsh7th/cmp-nvim-lsp",
-    dependencies = {
-      "hrsh7th/nvim-cmp",
-      "hrsh7th/cmp-cmdline",
-      "hrsh7th/cmp-path",
-      "hrsh7th/cmp-vsnip",
-      "hrsh7th/vim-vsnip",
-    },
-    event = "LspAttach",
-  },
-  {
-    "ray-x/lsp_signature.nvim",
-    opts = {},
-    event = "LspAttach",
+    "saghen/blink.cmp",
+    version = "1.*",
   },
   {
     "Wansmer/symbol-usage.nvim",
@@ -241,11 +239,6 @@ require("lazy").setup({
   {
     "folke/neodev.nvim",
     ft = { "lua " },
-  },
-  {
-    "hrsh7th/cmp-nvim-lua",
-    ft = { "lua" },
-    event = "LspAttach",
   },
   {
     "rafcamlet/nvim-luapad",

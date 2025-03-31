@@ -11,3 +11,6 @@ require("bigfile").setup({
     "vimopts",
   },
 })
+
+-- Noice.
+require("noice").setup()
