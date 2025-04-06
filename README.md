@@ -16,7 +16,7 @@ My environment config. I tried to keep it minimal and simple as much as I could.
 |----------|------|
 | Distro | [NixOS](https://nixos.org/) |
 | Desktop | [Gnome](https://www.gnome.org) |
-| Terminal | [Alacritty](https://alacritty.org) |
+| Terminal | [Kitty](https://github.com/kovidgoyal/kitty) |
 | Shell | [Fish](https://fishshell.com) |
 | Shell Prompt | [Starship](https://github.com/starship/starship) |
 | Terminal Multiplexer | [Tmux](https://github.com/tmux/tmux) |

@@ -51,11 +51,8 @@ monospace-font-name='JetBrainsMono Nerd Font 10'
 toolkit-accessibility=false
 
 [org/gnome/desktop/notifications]
-application-children=['gnome-power-panel', 'firefox', 'teams-for-linux', 'alacritty', 'todoist', 'jetbrains-toolbox', 'zoom', 'org-gnome-fileroller', 'org-gnome-nautilus', 'spotify', 'xdg-desktop-portal-gnome']
+application-children=['gnome-power-panel', 'firefox', 'teams-for-linux', 'todoist', 'jetbrains-toolbox', 'zoom', 'org-gnome-fileroller', 'org-gnome-nautilus', 'spotify', 'xdg-desktop-portal-gnome']
 show-banners=true
-
-[org/gnome/desktop/notifications/application/alacritty]
-application-id='Alacritty.desktop'
 
 [org/gnome/desktop/notifications/application/firefox]
 application-id='firefox.desktop'
@@ -195,11 +192,11 @@ screensaver=['<Shift><Super>a']
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
 binding='<Super>Return'
-command='ptyxis'
+command='kitty'
 name='Terminal'
 
 [org/gnome/shell]
-app-picker-layout=[{'org.gnome.Nautilus.desktop': <{'position': <0>}>, 'org.gnome.Epiphany.desktop': <{'position': <1>}>, 'Alacritty.desktop': <{'position': <2>}>, 'Zoom.desktop': <{'position': <3>}>, 'teams-for-linux.desktop': <{'position': <4>}>, 'org.gnome.TextEditor.desktop': <{'position': <5>}>, 'spotify.desktop': <{'position': <6>}>, 'gimp.desktop': <{'position': <7>}>, 'org.gnome.clocks.desktop': <{'position': <8>}>, 'org.gnome.Calculator.desktop': <{'position': <9>}>, 'org.gnome.SystemMonitor.desktop': <{'position': <10>}>, 'org.gnome.tweaks.desktop': <{'position': <11>}>, 'org.gnome.Settings.desktop': <{'position': <12>}>, 'org.gnome.Extensions.desktop': <{'position': <13>}>, 'org.gnome.seahorse.Application.desktop': <{'position': <14>}>, 'Utilities': <{'position': <15>}>, 'Development': <{'position': <16>}>}]
+app-picker-layout=[{'org.gnome.Nautilus.desktop': <{'position': <0>}>, 'org.gnome.Epiphany.desktop': <{'position': <1>}>, 'kitty.desktop': <{'position': <2>}>, 'Zoom.desktop': <{'position': <3>}>, 'teams-for-linux.desktop': <{'position': <4>}>, 'org.gnome.TextEditor.desktop': <{'position': <5>}>, 'spotify.desktop': <{'position': <6>}>, 'gimp.desktop': <{'position': <7>}>, 'org.gnome.clocks.desktop': <{'position': <8>}>, 'org.gnome.Calculator.desktop': <{'position': <9>}>, 'org.gnome.SystemMonitor.desktop': <{'position': <10>}>, 'org.gnome.tweaks.desktop': <{'position': <11>}>, 'org.gnome.Settings.desktop': <{'position': <12>}>, 'org.gnome.Extensions.desktop': <{'position': <13>}>, 'org.gnome.seahorse.Application.desktop': <{'position': <14>}>, 'Utilities': <{'position': <15>}>, 'Development': <{'position': <16>}>}]
 disable-user-extensions=false
 disabled-extensions=@as []
 enabled-extensions=['appindicatorsupport@rgcjonas.gmail.com', 'blur-my-shell@aunetx', 'tilingshell@ferrarodomenico.com', 'pano@elhan.io']

@@ -312,13 +312,9 @@ require("zen-mode").setup({
     },
   },
   plugins = {
-    alacritty = {
+    kitty = {
       enabled = true,
       font = "+5",
-    },
-    neovide = {
-      enabled = true,
-      scale = 1.5,
     },
   },
 })
