@@ -49,6 +49,9 @@ in
         success_symbol = "[ ](purple)";
         error_symbol = "[ ](red)";
         vimcmd_symbol = "[ ](green)";
+        vimcmd_replace_one_symbol = "[ ](orange})";
+        vimcmd_replace_symbol = "[ ](organge)";
+        vimcmd_visual_symbol = "[ ](${section_3_fg})";
       };
       nix_shell = {
         disabled = false;
