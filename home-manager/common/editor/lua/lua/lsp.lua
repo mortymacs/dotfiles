@@ -20,9 +20,16 @@ require("blink.cmp").setup({
     ["<cr>"] = { "select_and_accept", "fallback" },
     ["<esc>"] = { "hide", "fallback" },
   },
+  signature = {
+    window = { border = "single" },
+  },
   completion = {
-    documentation = { auto_show = false },
+    documentation = {
+      auto_show = false,
+      window = { border = "single" },
+    },
     menu = {
+      border = "single",
       draw = {
         columns = {
           { "label", "label_description", gap = 1 },

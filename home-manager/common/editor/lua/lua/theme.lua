@@ -53,7 +53,10 @@ vim.api.nvim_set_hl(0, "StatusLine",     { bg = "", fg = "" })
 vim.api.nvim_set_hl(0, "StatusLineTerm", { bg = "", fg = "" })
 
 -- CMP.
-vim.api.nvim_set_hl(0, "CmpItemKindCody", { fg = "#8eecf5" })
+vim.api.nvim_set_hl(0, "BlinkCmpMenu",          { bg = "#001524" })
+vim.api.nvim_set_hl(0, "BlinkCmpMenuBorder",    { fg = "#3d405b" })
+vim.api.nvim_set_hl(0, "BlinkCmpMenuSelection", { bg = "#006494" })
+vim.api.nvim_set_hl(0, "BlinkCmpKind",          { fg = "#8eecf5" })
 
 -- Git.
 vim.api.nvim_set_hl(0, "GitSignsAdd",    { bg = "", fg = "#5ccc96" })
