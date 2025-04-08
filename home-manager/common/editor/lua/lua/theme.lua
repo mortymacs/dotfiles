@@ -42,6 +42,8 @@ vim.api.nvim_set_hl(0, "BufferCurrentMod",         { bg = "",   fg = "#087e8b" }
 vim.api.nvim_set_hl(0, "BufferInactive",           { bg = "" })
 vim.api.nvim_set_hl(0, "BufferInactiveSign",       { bg = "",   fg = "#090d12" })
 vim.api.nvim_set_hl(0, "BufferVisible",            { bg = "" })
+vim.api.nvim_set_hl(0, "TabLine",                  { bg = "" })
+vim.api.nvim_set_hl(0, "TabLineFill",              { bg = "" })
 
 -- Treesitter.
 vim.api.nvim_set_hl(0, "ContextVt",                  { bg = "", fg = "#686f9a" })
