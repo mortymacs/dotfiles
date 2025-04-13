@@ -195,7 +195,7 @@ require("formatter").setup({
           stdin = true,
         }
       end,
-      require("formatter.filetypes.go").golines,
+      require("formatter.filetypes.go").gofmt,
     },
 
     python = {

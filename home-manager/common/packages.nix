@@ -128,7 +128,6 @@
     unstable.nilaway
     goimports-reviser
     goconst
-    golines
     gomodifytags
     gotags
     reftools
