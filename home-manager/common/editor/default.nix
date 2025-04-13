@@ -8,6 +8,11 @@
     package = pkgs.unstable.neovim-unwrapped;
   };
 
+  programs.vscode = {
+    enable = true;
+    package = pkgs.unstable.vscode;
+  };
+
   xdg.configFile.nvim = {
     source = ./lua;
     recursive = true;
