@@ -1,7 +1,10 @@
--- General
-require("trim").setup()
+-- General.
+require("trim").setup({
+  trim_last_line = false,
+})
+require("numb").setup()
 
--- Move lines
+-- Move lines.
 require("mini.move").setup({
   mappings = {
     left = "",

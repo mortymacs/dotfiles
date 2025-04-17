@@ -15,9 +15,14 @@ vim.opt.rtp:prepend(lazypath)
 -- Packages.
 require("lazy").setup({
   -- Theme.
-  "Shatur/neovim-ayu",
-  "projekt0n/github-nvim-theme",
-  "mvllow/modes.nvim",
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    dependencies = {
+      "mvllow/modes.nvim",
+    },
+  },
 
   -- CMD.
   {
@@ -141,10 +146,16 @@ require("lazy").setup({
     "mhartington/formatter.nvim",
     event = { "LspAttach", "LspAttach" },
   },
-  "cappyzawa/trim.nvim",
+  {
+    "cappyzawa/trim.nvim",
+    event = "VeryLazy",
+  },
   "brenoprata10/nvim-highlight-colors",
   "echasnovski/mini.nvim",
-  "nacro90/numb.nvim",
+  {
+    "nacro90/numb.nvim",
+    event = "VeryLazy",
+  },
   {
     "Wansmer/treesj",
     event = { "VeryLazy", "LspAttach" },

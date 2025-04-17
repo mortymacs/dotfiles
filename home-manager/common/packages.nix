@@ -126,6 +126,8 @@
     unstable.golangci-lint
     unstable.govulncheck
     unstable.nilaway
+    unstable.gocovsh
+    unstable.go-cover-treemap
     goimports-reviser
     goconst
     gomodifytags

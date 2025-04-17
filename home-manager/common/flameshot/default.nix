@@ -1,6 +1,11 @@
 {
+  pkgs,
+  ...
+}:
+{
   services.flameshot = {
-    enable = false;
+    enable = true;
+    package = pkgs.unstable.flameshot;
     settings = {
       General = {
         # General.
@@ -18,4 +23,9 @@
       };
     };
   };
+
+  # Need a wrapper to set some env variables before running the commands.
+  home.packages = with pkgs; [
+    (writeShellScriptBin "flameshot-gui" (builtins.readFile ./flameshot-gui.sh))
+  ];
 }

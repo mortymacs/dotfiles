@@ -1,7 +1,7 @@
 { pkgs, ... }:
 let
   # https://coolors.co/0e131f-faa275-ff8c61-ce6a85-985277-edd2e0
-  background = "#0E131F";
+  background = "#1f2335";
   foreground = "#EDD2E0";
   left_background = "#985277";
   left_foreground = "#EDD2E0";

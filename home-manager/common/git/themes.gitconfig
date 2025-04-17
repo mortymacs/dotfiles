@@ -1,15 +1,17 @@
+# https://github.com/folke/tokyonight.nvim/blob/main/extras/delta/tokyonight_night.gitconfig
 [delta "mort"]
-    file-decoration-style    = none;
-    file-style               = "#dad2bc" bold;
-    hunk-header-style        = omit;
-    hunk-header-file-style   = omit;
-    plus-style               = syntax "#1b4332";
-    plus-emph-style          = syntax "#2d6a4f";
-    minus-style              = syntax "#421B2E";
-    minus-emph-style         = syntax "#6B2D49";
-    line-numbers-left-style  = "#474973";
-    line-numbers-right-style = "#474973";
-    line-numbers-zero-style  = "#474973";
-    line-numbers-plus-style  = "#52b788";
-    line-numbers-minus-style = "#e84855";
-    syntax-theme             = ayu-dark
+  minus-style                   = syntax "#37222c"
+  minus-non-emph-style          = syntax "#37222c"
+  minus-emph-style              = syntax "#713137"
+  minus-empty-line-marker-style = syntax "#37222c"
+  line-numbers-minus-style      = "#914c54"
+  plus-style                    = syntax "#20303b"
+  plus-non-emph-style           = syntax "#20303b"
+  plus-emph-style               = syntax "#2c5a66"
+  plus-empty-line-marker-style  = syntax "#20303b"
+  line-numbers-plus-style       = "#449dab"
+  line-numbers-zero-style       = "#3b4261"
+  file-decoration-style         = none;
+  hunk-header-style             = omit;
+  hunk-header-file-style        = omit;
+  syntax-theme                  = ayu-dark

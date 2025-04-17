@@ -128,10 +128,6 @@ require("which-key").setup({
   },
 })
 
--- Spaces.
-require("numb").setup()
-require("trim").setup()
-
 -- Surround.
 require("nvim-surround").setup({
   keymaps = {
