@@ -188,7 +188,6 @@ SetKeyMap("<c-a>g", "<Cmd>ChatGPTRun grammar_correction<cr>", { "n", "v" })
 SetKeyMap("<c-a>d", "<Cmd>ChatGPTRun docstring<cr>",          { "n", "v" })
 SetKeyMap("<c-a>e", "<Cmd>ChatGPTRun explain_code<cr>",       { "v" })
 SetKeyMap("<c-a>a", "<Cmd>AvanteAsk<cr>",                     { "n" })
-SetKeyMap("<c-a>t", ":CodyTask ",                             { "n", "v" })
 
 -- Package.
 SetKeyMap("<c-x><c-y>", "<Cmd>Lazy! sync<cr>")

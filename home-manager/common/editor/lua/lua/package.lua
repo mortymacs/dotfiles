@@ -341,7 +341,7 @@ require("lazy").setup({
         opts = {
           providers = {
             ["cody"] = {
-              endpoint = os.getenv("SRC_ENDPOINT") or "https://sourcegraph.com",
+              endpoint = os.getenv("SRC_ENDPOINT"),
               api_key_name = "SRC_ACCESS_TOKEN",
             },
           },
