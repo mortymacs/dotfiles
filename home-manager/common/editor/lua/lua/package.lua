@@ -326,13 +326,6 @@ require("lazy").setup({
     event = "VeryLazy",
   },
   {
-    "sourcegraph/sg.nvim",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-telescope/telescope.nvim",
-    },
-  },
-  {
     "yetone/avante.nvim",
     lazy = false,
     version = false,
@@ -343,6 +336,17 @@ require("lazy").setup({
       "nvim-lua/plenary.nvim",
       "MunifTanjim/nui.nvim",
       "nvim-tree/nvim-web-devicons",
+      {
+        "brewinski/avante-cody.nvim",
+        opts = {
+          providers = {
+            ["cody"] = {
+              endpoint = os.getenv("SRC_ENDPOINT") or "https://sourcegraph.com",
+              api_key_name = "SRC_ACCESS_TOKEN",
+            },
+          },
+        },
+      },
     },
     event = "VeryLazy",
   },

@@ -4,9 +4,6 @@ require("chatgpt").setup()
 -- Avante.
 require("avante_lib").load()
 require("avante").setup({
-  provider = "openai",
-  auto_suggestions_provider = "openai",
+  provider = "cody",
+  auto_suggestions_provider = "cody",
 })
-
--- Cody.
-require("sg").setup()
