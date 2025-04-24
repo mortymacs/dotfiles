@@ -119,6 +119,11 @@ lspconfig.bashls.setup({
   capabilities = capabilities,
 })
 
+-- SQL.
+lspconfig.postgres_lsp.setup({
+  capabilities = capabilities,
+})
+
 -- CMake.
 lspconfig.neocmake.setup({
   capabilities = capabilities,

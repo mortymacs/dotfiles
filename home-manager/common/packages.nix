@@ -168,6 +168,7 @@
     shfmt
     shellcheck
     ## SQL.
+    unstable.postgres-lsp
     sqlfluff
     ## Terraform.
     terraform-ls
