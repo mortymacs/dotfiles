@@ -228,6 +228,10 @@ require("formatter").setup({
       end,
     },
 
+    javascript = {
+      require("formatter.filetypes.javascript").prettier,
+    },
+
     sh = {
       require("formatter.filetypes.sh").shfmt,
     },

@@ -158,6 +158,7 @@
     ## Javascript/Typescript.
     deno
     nodejs
+    nodePackages.prettier
     ## Nix.
     nil
     nixfmt-rfc-style
