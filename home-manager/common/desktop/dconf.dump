@@ -63,6 +63,9 @@ application-id='gnome-power-panel.desktop'
 [org/gnome/desktop/notifications/application/jetbrains-toolbox]
 application-id='jetbrains-toolbox.desktop'
 
+[org/gnome/desktop/notifications/application/kitty]
+application-id='kitty.desktop'
+
 [org/gnome/desktop/notifications/application/org-gnome-fileroller]
 application-id='org.gnome.FileRoller.desktop'
 
@@ -181,7 +184,7 @@ last-folder-path='/home/mort'
 night-light-schedule-automatic=false
 
 [org/gnome/settings-daemon/plugins/media-keys]
-custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/']
 help=@as []
 logout=['<Shift><Super>e']
 magnifier=@as []
@@ -196,7 +199,7 @@ command='kitty'
 name='Terminal'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1]
-binding='<Super><Shift>S'
+binding='<Shift><Super>s'
 command='flameshot-gui'
 name='Screenshot'
 
@@ -318,9 +321,10 @@ window-border-width=uint32 3
 
 [org/gnome/shell/keybindings]
 focus-active-notification=@as []
+screenshot=@as []
 screenshot-window=['<Shift><Control><Super>s']
 show-screen-recording-ui=@as []
-show-screenshot-ui=['<Shift><Super>s']
+show-screenshot-ui=@as []
 toggle-application-view=@as []
 toggle-message-tray=['<Shift><Super>n']
 toggle-quick-settings=@as []
