@@ -12,11 +12,11 @@
         "nixpkgs-unstable": "nixpkgs-unstable"
       },
       "locked": {
-        "lastModified": 1745576181,
-        "narHash": "sha256-+LgUeVV6Kgyl/FXRd/nUXOw0VvYUlSTTmIs48mMS2Eg=",
+        "lastModified": 1745823886,
+        "narHash": "sha256-pWU6lWGoQSAlkPgqf4+/O3JOXNwO1kUUZ5Ll9NaxFSo=",
         "owner": "atkrad",
         "repo": "dotfiles",
-        "rev": "6beed55eb8eb66ed6067ac626f8895bcba515a0b",
+        "rev": "9347c93d1928328c75212494faa11346fa2037f5",
         "type": "github"
       },
       "original": {
@@ -210,11 +210,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1745487689,
-        "narHash": "sha256-FQoi3R0NjQeBAsEOo49b5tbDPcJSMWc3QhhaIi9eddw=",
+        "lastModified": 1745742390,
+        "narHash": "sha256-1rqa/XPSJqJg21BKWjzJZC7yU0l/YTVtjRi0RJmipus=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "5630cf13cceac06cefe9fc607e8dfa8fb342dde3",
+        "rev": "26245db0cb552047418cfcef9a25da91b222d6c7",
         "type": "github"
       },
       "original": {

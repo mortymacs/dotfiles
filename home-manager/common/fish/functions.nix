@@ -17,9 +17,6 @@
     sudo nixos-rebuild switch --flake ".#$argv[1]";
     home-manager switch --flake ".#$argv[1]";
 
-    # Gnome.
-    dconf load / < ~/.config/dconf/dconf.dump
-
     # Nvim packages.
     nvim --headless "+Lazy! sync" +qa
 
@@ -50,13 +47,6 @@
     nix-collect-garbage --delete-older-than 5d
 
     sudo fstrim -vA
-  '';
-
-  # DConf.
-  dconf-update = ''
-    dconf dump / > dconf.dump
-    sed -i '/^window-height=/d; /^window-width=/d; /^window-state=/d; /^size=/d; /^window-size=/d; /^sidebar-size=/d; /^window-ratio=/d; /^width=/d; /^height=/d; /^name-column-width=/d; /^initial-size=/d; /^initial-size-/d; /^custom-colors=/d; /^sidebar-width=/d; /^window-position=/d; /^custom-colors=/d; /^selected-color=/d' dconf.dump
-    sed -i '/^\[.*\/window\]/,/^\[/{//!d;}' dconf.dump
   '';
 
   # Process.
