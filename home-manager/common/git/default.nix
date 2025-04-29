@@ -5,6 +5,7 @@
     userName = "Morteza NourelahiAlamdari";
     userEmail = "m@0t1.me";
     aliases = {
+      ss = "status --short";
       tree = "log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'";
       del-local = ''!f(){ git branch | grep "$1" | xargs git branch -d; }; f'';
       del-all = ''!f(){ git branch | grep "$1" | xargs git branch -D; }; f'';
