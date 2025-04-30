@@ -18,6 +18,7 @@
 
     # Office.
     unstable.zoom-us
+    unstable.slack
 
     # Music.
     unstable.spotify
