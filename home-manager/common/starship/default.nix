@@ -14,12 +14,6 @@ let
 
   # status
   section_4_fg = "#ff006e";
-
-  # cmd_duration
-  section_5_fg = "#35C693";
-
-  # job
-  section_6_fg = "#8C48CC";
 in
 {
   programs.starship = {
