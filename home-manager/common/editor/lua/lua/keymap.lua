@@ -151,7 +151,7 @@ SetKeyMap("<c-e>",  function () snacks.terminal() end, nil, nil, "ToggleTerminal
 SetKeyMap("<c-c><c-d>", snacks.picker.lsp_definitions, nil, nil, "LspDefinition")
 SetKeyMap("<c-c><c-i>", snacks.picker.lsp_implementations, nil, nil, "LspImplementation")
 SetKeyMap("<c-c><c-r>", snacks.picker.lsp_references, nil, nil, "LspReferences")
-SetKeyMap("<c-c><c-e>", vim.lsp.buf.rename, nil, nil, "LspRename")
+SetKeyMap("<c-c>e", vim.lsp.buf.rename, nil, nil, "LspRename")
 SetKeyMap("<c-c><c-x>", vim.lsp.buf.code_action, nil, nil, "LspCodeAction")
 SetKeyMap("<c-c><c-l>", "<esc><Cmd>Format<cr>")
 SetKeyMap("<c-c><c-h>", vim.lsp.buf.signature_help, nil, nil, "LspSignatureHelp")
