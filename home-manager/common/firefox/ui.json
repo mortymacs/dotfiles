@@ -15,9 +15,12 @@
       "_74145f27-f039-47ce-a470-a662b129930a_-browser-action",
       "_154cddeb-4c8b-4627-a478-c7e5b427ffdf_-browser-action",
       "_a138007c-5ff6-4d10-83d9-0afaf0efbe5e_-browser-action",
-      "enhancerforyoutube_maximerf_addons_mozilla_org-browser-action"
+      "enhancerforyoutube_maximerf_addons_mozilla_org-browser-action",
+      "atbc_easonwong-browser-action",
+      "_de22fd49-c9ab-4359-b722-b3febdc3a0b0_-browser-action"
     ],
     "nav-bar": [
+      "sidebar-button",
       "back-button",
       "forward-button",
       "vertical-spacer",
@@ -58,7 +61,9 @@
     "_74145f27-f039-47ce-a470-a662b129930a_-browser-action",
     "_154cddeb-4c8b-4627-a478-c7e5b427ffdf_-browser-action",
     "_a138007c-5ff6-4d10-83d9-0afaf0efbe5e_-browser-action",
-    "enhancerforyoutube_maximerf_addons_mozilla_org-browser-action"
+    "enhancerforyoutube_maximerf_addons_mozilla_org-browser-action",
+    "atbc_easonwong-browser-action",
+    "_de22fd49-c9ab-4359-b722-b3febdc3a0b0_-browser-action"
   ],
   "dirtyAreaCache": [
     "nav-bar",
@@ -68,6 +73,6 @@
     "TabsToolbar",
     "vertical-tabs"
   ],
-  "currentVersion": 21,
-  "newElementCount": 7
+  "currentVersion": 22,
+  "newElementCount": 8
 }

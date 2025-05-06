@@ -67,6 +67,8 @@
           order = [ "DuckDuckGo" ];
         };
         settings = {
+          "reader.toolbar.vertical" = true;
+          "sidebar.verticalTabs" = true;
           "browser.bookmarks.restore_default_bookmarks" = false;
           "browser.toolbars.bookmarks.visibility" = "never";
           "browser.tabs.inTitlebar" = 1;
@@ -78,6 +80,9 @@
           "browser.aboutwelcome.enabled" = false;
           "accessibility.typeaheadfind.enablesound" = false;
           "network.protocol-handler.external.mailto" = false;
+          "browser.uiCustomization.navBarWhenVerticalTabs" = ''
+            ["sidebar-button","back-button","forward-button","vertical-spacer","stop-reload-button","urlbar-container","save-to-pocket-button","downloads-button","fxa-toolbar-menu-button","unified-extensions-button","alltabs-button"]
+          '';
           "browser.uiCustomization.state" = builtins.readFile ./ui.json;
           "browser.newtabpage.pinned" = [
             {
