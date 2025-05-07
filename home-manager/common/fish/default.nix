@@ -30,6 +30,7 @@ in
 
     fzf = {
       enable = true;
+      enableFishIntegration = true;
       tmux = {
         enableShellIntegration = true;
       };
@@ -37,19 +38,6 @@ in
     };
     skim = {
       enable = true;
-    };
-
-    atuin = {
-      enable = true;
-      enableFishIntegration = true;
-      settings = {
-        style = "compact";
-        show_preview = true;
-        keymap_mode = "vim-normal";
-      };
-      flags = [
-        "--disable-up-arrow"
-      ];
     };
 
     zoxide = {
