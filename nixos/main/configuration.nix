@@ -40,7 +40,7 @@ in
   };
 
   # Printer.
-  services.printing.enable = true;
+  services.printing.enable = false;
 
   # Sound.
   hardware.pulseaudio.enable = false;
@@ -113,9 +113,6 @@ in
   # Enable Fish.
   programs.fish.enable = true;
 
-  # Enable dconf.
-  programs.dconf.enable = true;
-
   # NixOS installed version.
-  system.stateVersion = "24.05";
+  system.stateVersion = "24.11";
 }
