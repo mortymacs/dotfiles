@@ -7,3 +7,6 @@ require("avante").setup({
   provider = "cody",
   auto_suggestions_provider = "cody",
 })
+
+--
+require("copilot").setup({})

@@ -350,4 +350,7 @@ require("lazy").setup({
     },
     event = "VeryLazy",
   },
+  {
+    "zbirenbaum/copilot.lua",
+  },
 })
