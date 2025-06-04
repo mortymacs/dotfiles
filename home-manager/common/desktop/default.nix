@@ -23,7 +23,7 @@ in
   gtk = {
     enable = true;
     font = {
-      name = "Lexend";
+      name = "Adwaita Sans";
       size = 10;
     };
   };
@@ -37,15 +37,15 @@ in
       "org/gnome/desktop/background" = {
         color-shading-type = "solid";
         picture-options = "zoom";
-        picture-uri = "file:///home/mort/.config/wallpaper1.jpg";
-        picture-uri-dark = "file:///home/mort/.config/wallpaper1.jpg";
+        picture-uri = "file:///home/mort/.config/wallpaper.jpg";
+        picture-uri-dark = "file:///home/mort/.config/wallpaper.jpg";
         primary-color = "#000000000000";
         secondary-color = "#000000000000";
       };
       "org/gnome/desktop/screensaver" = {
         color-shading-type = "solid";
         picture-options = "zoom";
-        picture-uri = "file:///home/mort/.config/wallpaper1.jpg";
+        picture-uri = "file:///home/mort/.config/wallpaper.jpg";
         primary-color = "#000000000000";
         secondary-color = "#000000000000";
       };
@@ -68,8 +68,8 @@ in
       "org/gnome/desktop/interface" = {
         accent-color = "blue";
         color-scheme = "prefer-dark";
-        document-font-name = "Lexend 11";
-        font-name = "Lexend 10";
+        document-font-name = "Adwaita Sans 11";
+        font-name = "Adwaita Sans 10";
         monospace-font-name = "JetBrainsMono Nerd Font 10";
         toolkit-accessibility = false;
       };
@@ -378,6 +378,5 @@ in
 
   xdg.configFile = {
     "wallpaper.jpg".source = ./wallpaper.jpg;
-    "wallpaper1.jpg".source = ./wallpaper1.jpg;
   };
 }

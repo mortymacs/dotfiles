@@ -7,11 +7,11 @@
         name = "main";
         isDefault = true;
         search = {
-          default = "DuckDuckGo";
+          default = "ddg";
           force = true;
           engines = {
             "Bookmarks".metaData.alias = "*";
-            "DuckDuckGo".metaData.alias = "@s";
+            "ddg".metaData.alias = "@s";
             "Nix Packages" = {
               urls = [
                 {
@@ -58,13 +58,13 @@
             };
 
             # Disable the rest.
-            "Bing".metaData.hidden = true;
-            "eBay".metaData.hidden = true;
-            "Google".metaData.hidden = true;
+            "bing".metaData.hidden = true;
+            "ebay".metaData.hidden = true;
+            "google".metaData.hidden = true;
             "Amazon.nl".metaData.hidden = true;
-            "Wikipedia (en)".metaData.hidden = true;
+            "wikipedia".metaData.hidden = true;
           };
-          order = [ "DuckDuckGo" ];
+          order = [ "ddg" ];
         };
         settings = {
           "reader.toolbar.vertical" = true;

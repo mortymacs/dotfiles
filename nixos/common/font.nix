@@ -5,18 +5,17 @@
     packages = with pkgs; [
       unstable.nerd-fonts.jetbrains-mono
       unstable.vazir-fonts
-      unstable.lexend
       unstable.noto-fonts-color-emoji
     ];
     fontconfig = {
       enable = true;
       defaultFonts = {
         serif = [
-          "Lexend"
+          "Adwaita Sans"
           "Vazirmatn"
         ];
         sansSerif = [
-          "Lexend"
+          "Adwaita Sans"
           "Vazirmatn"
         ];
         monospace = [

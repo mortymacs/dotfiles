@@ -316,41 +316,6 @@ require("lazy").setup({
 
   -- AI.
   {
-    "jackMort/ChatGPT.nvim",
-    dependencies = {
-      "MunifTanjim/nui.nvim",
-      "nvim-lua/plenary.nvim",
-      "folke/trouble.nvim",
-      "nvim-telescope/telescope.nvim",
-    },
-    event = "VeryLazy",
-  },
-  {
-    "yetone/avante.nvim",
-    lazy = false,
-    version = false,
-    build = "make",
-    dependencies = {
-      "nvim-treesitter/nvim-treesitter",
-      "stevearc/dressing.nvim",
-      "nvim-lua/plenary.nvim",
-      "MunifTanjim/nui.nvim",
-      "nvim-tree/nvim-web-devicons",
-      {
-        "brewinski/avante-cody.nvim",
-        opts = {
-          providers = {
-            ["cody"] = {
-              endpoint = os.getenv("SRC_ENDPOINT"),
-              api_key_name = "SRC_ACCESS_TOKEN",
-            },
-          },
-        },
-      },
-    },
-    event = "VeryLazy",
-  },
-  {
     "zbirenbaum/copilot.lua",
   },
 })

@@ -12,7 +12,6 @@ in
     ../common/misc.nix
     ../common/excludes.nix
     ../common/desktop.nix
-    inputs.atkrad.nixosModules.cato-client
   ];
 
   # Nix.
@@ -50,7 +49,7 @@ in
   services.printing.enable = false;
 
   # Sound.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -119,7 +118,6 @@ in
   };
   services.cato-client = {
     enable = true;
-    package = inputs.atkrad.packages.x86_64-linux.cato-client;
   };
 
   # Enable Fish.

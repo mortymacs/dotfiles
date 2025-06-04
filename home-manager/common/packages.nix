@@ -47,7 +47,6 @@
     networkmanagerapplet
 
     # Cloud / virtualization / CICD.
-    terraform
     kubectl
     kubecolor
     kubectx
@@ -183,10 +182,6 @@
     typst
     typstfmt
     tinymist
-    ## Dot.
-    graphviz-nox
-    dot-language-server
-    graph-easy
     ## HTML & CSS.
     vscode-langservers-extracted
     ## YAML.

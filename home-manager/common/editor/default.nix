@@ -5,7 +5,7 @@
     vimAlias = true;
     viAlias = true;
     defaultEditor = true;
-    package = pkgs.neovim-unwrapped;
+    package = pkgs.unstable.neovim-unwrapped;
   };
 
   programs.vscode = {
