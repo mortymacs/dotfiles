@@ -14,6 +14,9 @@ let
 
   # status
   section_4_fg = "#ff006e";
+
+  # cmd duration.
+  section_5_fg = "#ccc5b9";
 in
 {
   programs.starship = {
@@ -30,6 +33,7 @@ in
         "$git_metrics"
         "$nix_shell"
         "$status"
+        "$cmd_duration"
         "$character"
       ];
       add_newline = false;
@@ -84,6 +88,10 @@ in
         style = "bold fg:${section_4_fg}";
         format = "[ $status]($style)";
         disabled = false;
+      };
+      cmd_duration = {
+        style = "fg:${section_5_fg}";
+        format = " [󰦖 $duration]($style)";
       };
     };
   };
