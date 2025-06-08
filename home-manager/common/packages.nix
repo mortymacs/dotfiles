@@ -20,9 +20,6 @@
     unstable.zoom-us
     unstable.slack
 
-    # Music.
-    unstable.spotify
-
     # Image.
     gimp
 
@@ -77,10 +74,6 @@
     silicon
     ## Test.
     hurl
-    ## IDE.
-    unstable.jetbrains-toolbox
-    unstable.code-cursor
-    unstable.zed-editor
     ## AI.
     mods
 
