@@ -210,6 +210,9 @@ require("lazy").setup({
   {
     "saghen/blink.cmp",
     version = "1.*",
+    dependencies = {
+      "giuxtaposition/blink-cmp-copilot",
+    },
   },
   {
     "Wansmer/symbol-usage.nvim",
@@ -317,5 +320,7 @@ require("lazy").setup({
   -- AI.
   {
     "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "InsertEnter",
   },
 })

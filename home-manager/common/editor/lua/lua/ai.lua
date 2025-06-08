@@ -1,2 +1,9 @@
---
-require("copilot").setup({})
+-- Copilot.
+require("copilot").setup({
+  panel = {
+    enabled = false,
+  },
+  suggestion = {
+    enabled = false,
+  },
+})

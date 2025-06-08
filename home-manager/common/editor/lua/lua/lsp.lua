@@ -31,6 +31,14 @@ require("blink.cmp").setup({
     menu = {
       border = "single",
       draw = {
+        padding = { 2, 2 },
+        components = {
+          kind_icon = {
+            text = function(ctx)
+              return " " .. ctx.kind_icon .. ctx.icon_gap .. " "
+            end,
+          },
+        },
         columns = {
           { "label", "label_description", gap = 1 },
           { "kind_icon", "kind" },
@@ -40,7 +48,15 @@ require("blink.cmp").setup({
     },
   },
   sources = {
-    default = { "lsp", "path", "buffer" },
+    default = { "lsp", "path", "buffer", "copilot" },
+    providers = {
+      copilot = {
+        name = "copilot",
+        module = "blink-cmp-copilot",
+        score_offset = 100,
+        async = true,
+      },
+    },
   },
   appearance = {
     nerd_font_variant = "normal",
