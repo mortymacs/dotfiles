@@ -13,7 +13,7 @@
     end
 
     # System packages.
-    # nix flake update
+    nix flake update
     sudo nixos-rebuild switch --flake ".#$argv[1]";
     home-manager switch --flake ".#$argv[1]";
 
