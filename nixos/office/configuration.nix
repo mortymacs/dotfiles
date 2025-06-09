@@ -28,13 +28,7 @@ in
     };
     efi = {
       canTouchEfiVariables = true;
-      efiSysMountPoint = "/boot/efi";
     };
-  };
-
-  # Setup keyfile
-  boot.initrd.secrets = {
-    "/crypto_keyfile.bin" = null;
   };
 
   # Time zone.
@@ -124,5 +118,5 @@ in
   programs.fish.enable = true;
 
   # NixOS installed version.
-  system.stateVersion = "22.11";
+  system.stateVersion = "25.05";
 }
