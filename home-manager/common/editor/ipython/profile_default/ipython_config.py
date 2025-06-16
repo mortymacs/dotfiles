@@ -13,6 +13,9 @@ c.TerminalInteractiveShell.quiet = True
 # Disable simple prompt.
 c.TerminalInteractiveShell.simple_prompt = False
 
+# Options for displaying tab completions.
+c.TerminalInteractiveShell.display_completions = 'column'
+
 # Use pprint in PlainTextFormatter.
 c.PlainTextFormatter.pprint = True
 
