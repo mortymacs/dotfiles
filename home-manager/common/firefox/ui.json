@@ -21,25 +21,26 @@
     ],
     "nav-bar": [
       "sidebar-button",
+      "vertical-spacer",
       "back-button",
       "forward-button",
-      "vertical-spacer",
       "stop-reload-button",
       "urlbar-container",
       "save-to-pocket-button",
       "downloads-button",
       "fxa-toolbar-menu-button",
-      "unified-extensions-button"
+      "unified-extensions-button",
+      "new-tab-button",
+      "alltabs-button",
+      "customizableui-special-spring18"
     ],
     "toolbar-menubar": [
       "menubar-items"
     ],
-    "TabsToolbar": [
-      "tabbrowser-tabs",
-      "new-tab-button",
-      "alltabs-button"
+    "TabsToolbar": [],
+    "vertical-tabs": [
+      "tabbrowser-tabs"
     ],
-    "vertical-tabs": [],
     "PersonalToolbar": [
       "import-button",
       "personal-bookmarks"
@@ -74,5 +75,5 @@
     "vertical-tabs"
   ],
   "currentVersion": 22,
-  "newElementCount": 8
+  "newElementCount": 18
 }
