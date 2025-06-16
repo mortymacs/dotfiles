@@ -62,11 +62,7 @@
   clang = "clang -Weffc++ -Wall -Werror  -Wfatal-errors -Wextra";
   "clang++" = "clang++ -Weffc++ -Wall -Werror  -Wfatal-errors -Wextra";
   ## Python.
-  py = ''
-    ipython --no-term-title --no-confirm-exit --no-banner --no-simple-prompt \
-        --PlainTextFormatter.pprint=True \
-        --TerminalInteractiveShell.highlighting_style=one-dark \
-        --log-level=ERROR'';
+  py = "ipython";
   rpy = ''fd -I "(build|dist|__pycache__|egg-info)" | xargs rm -rf --'';
   apy = "source ./.venv/bin/activate.fish";
 

@@ -25,6 +25,7 @@ set -x GOCOVSH_THEME mocha
 # Python.
 # https://www.andreagrandi.it/2018/10/16/using-ipdb-with-python-37-breakpoint/
 set -x PYTHONBREAKPOINT ipdb.set_trace
+set -x IPYTHONDIR "$HOME/.config/ipython"
 
 # https://stackoverflow.com/a/22481496
 set -x TERM "xterm-256color"
