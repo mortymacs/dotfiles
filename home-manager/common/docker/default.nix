@@ -1,5 +1,5 @@
 {
   home.file = {
-    ".docker/config.json".source = ./config.json;
+    ".config/docker/config.json".source = ./config.json;
   };
 }

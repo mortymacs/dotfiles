@@ -56,5 +56,10 @@ set -x SRC_ACCESS_TOKEN (cat ~/.config/cody/secret)
 # Man
 set -x MANPAGER most
 
+# AWS.
+set -x AWS_CONFIG_FILE "$HOME/.config/aws/config"
+set -x AWS_DATA_PATH "$HOME/.config/aws/models"
+set -x AWS_SHARED_CREDENTIALS_FILE "$HOME/.config/aws/credentials"
+
 # General.
 set -x PATH "$PATH:$HOME/.local/bin:$GOPATH/bin:$CARGO_HOME/bin"
