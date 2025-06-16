@@ -1,4 +1,13 @@
 require("neo-tree").setup({
+  event_handlers = {
+    {
+      event = "neo_tree_buffer_enter",
+      handler = function()
+        vim.wo.number = false
+        vim.wo.relativenumber = false
+      end,
+    },
+  },
   sources = {
     "filesystem",
     "buffers",
