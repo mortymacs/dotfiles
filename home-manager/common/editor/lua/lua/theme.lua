@@ -1,5 +1,8 @@
 -- Colorscheme.
 vim.g.background = "dark"
+require("tokyonight").setup({
+    transparent = true,
+});
 vim.cmd.colorscheme("tokyonight-night")
 
 -- Custom.
