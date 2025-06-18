@@ -27,6 +27,9 @@ set -x GOCOVSH_THEME mocha
 set -x PYTHONBREAKPOINT ipdb.set_trace
 set -x IPYTHONDIR "$HOME/.config/ipython"
 
+# Database.
+set -x MYCLI_HISTFILE "$HOME/.config/mycli/history"
+
 # https://stackoverflow.com/a/22481496
 set -x TERM "xterm-256color"
 
