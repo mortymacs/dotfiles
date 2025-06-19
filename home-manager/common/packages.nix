@@ -42,6 +42,7 @@
     duf
     gping
     networkmanagerapplet
+    unstable.websocat
 
     # Cloud / virtualization / CICD.
     kubectl
@@ -172,9 +173,9 @@
     ## Dockerfile.
     nodePackages.dockerfile-language-server-nodejs
     ## Typst.
-    typst
-    typstfmt
-    tinymist
+    unstable.typst
+    unstable.typstfmt
+    unstable.tinymist
     ## HTML & CSS.
     vscode-langservers-extracted
     ## YAML.

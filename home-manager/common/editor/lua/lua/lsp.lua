@@ -155,6 +155,12 @@ lspconfig.tinymist.setup({
   capabilities = capabilities,
   offset_encoding = "utf-8",
 })
+require("typst-preview").setup({
+  dependencies_bin = {
+    ["tinymist"] = vim.fn.exepath("tinymist"),
+    ["websocat"] = vim.fn.exepath("websocat"),
+  },
+})
 
 -- Dot.
 lspconfig.dotls.setup({

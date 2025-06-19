@@ -263,6 +263,12 @@ require("lazy").setup({
     "hashivim/vim-terraform",
     ft = { "terraform" },
   },
+  -- -- Typsy.
+  {
+    "chomosuke/typst-preview.nvim",
+    ft = "typst",
+    version = "1.*",
+  },
   -- -- JSON/YAML.
   {
     "b0o/schemastore.nvim",
