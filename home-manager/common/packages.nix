@@ -83,8 +83,8 @@
     (hiPrio unstable.gcc)
     clang
     clang-tools
-    gdb
-    cgdb
+    unstable.gdb
+    unstable.cgdb
     lldb
     cppcheck
     cpplint
