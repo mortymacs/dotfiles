@@ -13,7 +13,6 @@ SetKeyMap("<c-x><c-k>", snacks.picker.keymaps,  nil, nil, "Keymaps")
 -- Buffer
 SetKeyMap("<c-x><c-q>", function () snacks.bufdelete() end, nil, nil, "DeleteBuffer")
 SetKeyMap("<c-f>",      snacks.picker.lines,                nil, nil, "FuzzyFinder")
-SetKeyMap("<m-f>",    "<Cmd>Namu symbols<cr>",            nil, nil, "Symbols")
 
 -- Tabbar.
 SetKeyMap("<s-h>",      "<Cmd>BufferPrevious<cr>", { "n" })
@@ -158,10 +157,10 @@ SetKeyMap("<c-c><c-h>", vim.lsp.buf.signature_help, nil, nil, "LspSignatureHelp"
 SetKeyMap("<c-c><c-n>", vim.diagnostic.open_float)
 SetKeyMap("<c-c><c-m>", snacks.picker.diagnostics, nil, nil, "Diagnostics")
 SetKeyMap("<c-c><c-s>", snacks.picker.lsp_symbols, nil, nil, "LspDocumentSymbols")
-SetKeyMap("<c-c><c-f>", telescope.lsp_workspace_symbols, nil, nil, "LspWorkspaceSymbols")
+SetKeyMap("<c-c><c-f>", "<Cmd>Namu workspace<cr>", nil, nil, "LspWorkspaceSymbols")
+SetKeyMap("<c-c><c-o>", "<Cmd>Namu call out<cr>", nil, nil, "CallOut")
 SetKeyMap("<c-c><c-g>", "<Cmd>Telescope ast_grep<cr>")
-SetKeyMap("<c-c><c-w>", telescope.lsp_dynamic_workspace_symbols, nil, nil, "LspDynamicWorkspaceSymbols")
-SetKeyMap("<c-c><c-a>", "<Cmd>Outline<cr>")
+SetKeyMap("<c-c><c-a>", "<Cmd>Namu watchtower<cr>")
 SetKeyMap("<c-c><c-j>", function() require('treesj').toggle() end, nil, nil, "TreeSitterSplitJoinToggle")
 SetKeyMap("<c-x><c-l>", RestartLsp, nil, nil, "RestartLsp")
 

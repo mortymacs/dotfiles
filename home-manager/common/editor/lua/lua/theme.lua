@@ -10,6 +10,11 @@ vim.api.nvim_set_hl(0, "FloatBorder",        { bg = "", fg = "#233d4d" })
 vim.api.nvim_set_hl(0, "NormalFloat",        { bg = "" })
 vim.api.nvim_set_hl(0, "BlinkCmpMenu",       { bg = "" })
 vim.api.nvim_set_hl(0, "BlinkCmpMenuBorder", { bg = "" , fg = "#233d4d" })
+vim.api.nvim_set_hl(0, "DiagnosticSignInfo", { bg = "" , fg = "#233d4d" })
+
+-- Noice.
+vim.api.nvim_set_hl(0, "NoiceCmdlinePopupBorder",    { bg = "" , fg = "#233d4d" })
+vim.api.nvim_set_hl(0, "NoiceCmdlinePopupBorderLua", { bg = "" , fg = "#233d4d" })
 
 -- Bookmark.
 vim.g.bookmark_sign = ''

@@ -329,19 +329,30 @@ require("render-markdown").setup({
 })
 
 -- Namu.
-require("namu").setup({
-  namu_symbols = {
-    options = {
-      movement = {
-        alternative_next = "<m-j>",
-        alternative_previous = "<m-k>",
-      },
-      window = {
-        border = "single",
-      },
-    },
+local default_namu_config = {
+  window = {
+    border = "single",
+    title_prefix = " ",
   },
-  colorscheme = {
-    enable = false,
+  icon = " ",
+  row_position = "center_right",
+  auto_select = true,
+  movement = {
+    next = { "<M-j>" },
+    previous = { "<M-k>" },
+    delete_word = { "<C-w>" },
+    clear_line = { "<C-u>" },
+  },
+}
+
+require("namu").setup({
+  workspace = {
+    options = default_namu_config,
+  },
+  callhierarchy = {
+    options = default_namu_config,
+  },
+  watchtower = {
+    options = default_namu_config,
   },
 })

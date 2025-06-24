@@ -22,4 +22,19 @@ require("noice").setup({
   presets = {
     lsp_doc_border = true,
   },
+  views = {
+    cmdline_popup = {
+      position = {
+        row = 5,
+        col = "50%",
+      },
+      size = {
+        width = 60,
+        height = "auto",
+      },
+      border = {
+        style = "single",
+      },
+    },
+  },
 })

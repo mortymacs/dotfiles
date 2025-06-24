@@ -111,7 +111,7 @@ lspconfig.lua_ls.setup({
   },
 })
 
--- Python
+-- Python.
 lspconfig.pyright.setup({
   capabilities = capabilities,
 })
