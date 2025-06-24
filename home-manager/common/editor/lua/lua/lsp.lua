@@ -160,6 +160,9 @@ require("typst-preview").setup({
     ["tinymist"] = vim.fn.exepath("tinymist"),
     ["websocat"] = vim.fn.exepath("websocat"),
   },
+  extra_args = {
+    "--font-path=fonts",
+  },
 })
 
 -- Dot.
