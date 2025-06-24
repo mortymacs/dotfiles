@@ -19,6 +19,9 @@ vim.api.nvim_set_hl(0, "NoiceCmdlinePopupBorderSearch", { bg = "" , fg = "#233d4
 -- Snacks.
 vim.api.nvim_set_hl(0, "SnacksPickerInputBorder", { bg = "" })
 
+-- Whichkey.
+vim.api.nvim_set_hl(0, "WhichKeyNormal", { bg = "" })
+
 -- Bookmark.
 vim.g.bookmark_sign = ''
 vim.g.bookmark_highlight_lines = 1
