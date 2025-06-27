@@ -38,3 +38,6 @@ require("noice").setup({
     },
   },
 })
+
+-- Bookmark.
+vim.g.bookmark_auto_save_file = vim.env.HOME .. '/.local/share/nvim/vim-bookmarks'

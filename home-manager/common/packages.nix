@@ -117,6 +117,7 @@
     unstable.delve
     unstable.pprof
     unstable.go-tools
+    unstable.gotools
     unstable.revive
     unstable.gosec
     unstable.golangci-lint
