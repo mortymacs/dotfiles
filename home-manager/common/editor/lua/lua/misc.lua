@@ -20,6 +20,7 @@ require("noice").setup({
     },
   },
   presets = {
+    long_message_to_split = true,
     lsp_doc_border = true,
   },
   views = {
@@ -40,4 +41,4 @@ require("noice").setup({
 })
 
 -- Bookmark.
-vim.g.bookmark_auto_save_file = vim.env.HOME .. '/.local/share/nvim/vim-bookmarks'
+vim.g.bookmark_auto_save_file = vim.env.HOME .. "/.local/share/nvim/vim-bookmarks"
