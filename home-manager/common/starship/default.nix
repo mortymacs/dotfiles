@@ -34,6 +34,7 @@ in
         "$nix_shell"
         "$status"
         "$cmd_duration"
+        "$python"
         "$character"
       ];
       add_newline = false;
@@ -92,6 +93,9 @@ in
       cmd_duration = {
         style = "fg:${section_5_fg}";
         format = " [󰦖 $duration]($style)";
+      };
+      python = {
+        format = "[  $virtualenv]($style)";
       };
     };
   };
