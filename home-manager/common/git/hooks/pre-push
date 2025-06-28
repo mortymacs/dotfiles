@@ -1,0 +1,56 @@
+#!/usr/bin/env bash
+
+get_confirmation() {
+    local prompt="$1"
+    local response
+
+    if [[ -c /dev/tty ]]; then
+        printf "%s " "$prompt" > /dev/tty
+        read -r response < /dev/tty
+    else
+        echo "❌ Cannot prompt for input (no tty). Push to protected branch aborted." >&2
+        return 1
+    fi
+
+    case "$response" in
+        [yY][eE][sS]|[yY]) return 0 ;;
+        *) return 1 ;;
+    esac
+}
+
+echo "🔍 Checking branch protection..."
+
+while read -r local_ref local_sha remote_ref remote_sha; do
+
+    # Skip if we're deleting a branch (local_sha is all zeros)
+    if [[ "$local_sha" == "0000000000000000000000000000000000000000" ]]; then
+        continue
+    fi
+
+    # Extract branch name from the reference
+    if [[ "$local_ref" =~ refs/heads/(.+) ]]; then
+        branch="${BASH_REMATCH[1]}"
+    else
+        # Fallback method
+        branch=$(git rev-parse --symbolic --abbrev-ref "$local_ref" 2>/dev/null)
+    fi
+
+    # Check if pushing to protected branches
+    if [[ "$branch" == "main" || "$branch" == "master" ]]; then
+        echo ""
+        echo "🚨 WARNING: You are about to push to the '$branch' branch!"
+        echo "   Repository: $(git remote get-url origin 2>/dev/null || echo 'Unknown')"
+        echo "   Commits: $(git rev-list --count "$remote_sha..$local_sha" 2>/dev/null || echo 'Unknown')"
+        echo ""
+
+        if ! get_confirmation "⚠️Are you sure you want to continue? (y/N):"; then
+            echo "✋ Push aborted by user."
+            exit 1
+        fi
+
+        echo "✅ Proceeding with push to '$branch'..."
+    fi
+done
+
+echo "🎉 Pre-push checks completed successfully!"
+exit 0

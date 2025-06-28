@@ -40,6 +40,7 @@
         autocorrect = 10;
       };
       diff.algorithm = "histogram";
+      core.hooksPath = "~/.config/git/hooks";
     };
 
     ignores = map (v: "${toString v}") (builtins.split "\n" (builtins.readFile ./ignore));
@@ -59,6 +60,7 @@
   xdg.configFile = {
     # Wallpaper.
     "git/themes.gitconfig".source = ./themes.gitconfig;
+    "git/hooks/pre-push".source = ./hooks/pre-push;
   };
 
   home.packages = with pkgs; [
