@@ -96,6 +96,7 @@ in
       };
       python = {
         detect_files = [ ];
+        detect_extensions = [ ];
         format = "[  $virtualenv]($style)";
       };
     };
