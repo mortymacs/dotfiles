@@ -95,6 +95,7 @@ in
         format = " [󰦖 $duration]($style)";
       };
       python = {
+        detect_files = [ ];
         format = "[  $virtualenv]($style)";
       };
     };
