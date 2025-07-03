@@ -59,6 +59,9 @@ set -x SRC_ACCESS_TOKEN (cat ~/.config/cody/secret)
 # Man
 set -x MANPAGER most
 
+# Kubernetes.
+set -x KUBECONFIG "$HOME/.config/kube/config"
+
 # AWS.
 set -x AWS_CONFIG_FILE "$HOME/.config/aws/config"
 set -x AWS_DATA_PATH "$HOME/.config/aws/models"
