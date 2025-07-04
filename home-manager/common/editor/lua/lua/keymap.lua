@@ -181,12 +181,14 @@ SetKeyMap("<c-t><c-left>",  "<esc><Cmd>Neotest jump prev<cr>")
 SetKeyMap("<c-x><c-i>", "<Cmd>TroubleToggle todo<cr>")
 
 -- AI.
-SetKeyMap("<c-a>c", "<Cmd>ChatGPTRun complete_code<cr>",      { "n", "v" })
-SetKeyMap("<c-a>f", "<Cmd>ChatGPTRun fix_bugs<cr>",           { "n", "v" })
-SetKeyMap("<c-a>g", "<Cmd>ChatGPTRun grammar_correction<cr>", { "n", "v" })
-SetKeyMap("<c-a>d", "<Cmd>ChatGPTRun docstring<cr>",          { "n", "v" })
-SetKeyMap("<c-a>e", "<Cmd>ChatGPTRun explain_code<cr>",       { "v" })
-SetKeyMap("<c-a>a", "<Cmd>AvanteAsk<cr>",                     { "n" })
+SetKeyMap("<c-a>c", "<Cmd>CopilotChat<cr>",        { "n", "v" })
+SetKeyMap("<c-a>f", "<Cmd>CopilotChatFix<cr>",     { "n", "v" })
+SetKeyMap("<c-a>g", "<Cmd>CopilotChatCommit<cr>",  { "n", "v" })
+SetKeyMap("<c-a>d", "<Cmd>CopilotChatDocs<cr>",    { "n", "v" })
+SetKeyMap("<c-a>e", "<Cmd>CopilotChatExplain<cr>", { "v", "n" })
+SetKeyMap("<c-a>r", "<Cmd>CopilotChatReview<cr>",  { "v", "n" })
+SetKeyMap("<c-a>q", "<Cmd>CopilotChatClose<cr>",   { "v", "n" })
+SetKeyMap("<c-a>l", "<Cmd>CopilotChatReset<cr>",   { "v", "n" })
 
 -- Package.
 SetKeyMap("<c-x><c-y>", "<Cmd>Lazy! sync<cr>")

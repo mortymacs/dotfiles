@@ -7,3 +7,4 @@ require("copilot").setup({
     enabled = false,
   },
 })
+require("CopilotChat").setup()
