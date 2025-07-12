@@ -31,8 +31,7 @@
       "fxa-toolbar-menu-button",
       "unified-extensions-button",
       "new-tab-button",
-      "alltabs-button",
-      "customizableui-special-spring18"
+      "alltabs-button"
     ],
     "toolbar-menubar": [
       "menubar-items"
@@ -64,7 +63,8 @@
     "_a138007c-5ff6-4d10-83d9-0afaf0efbe5e_-browser-action",
     "enhancerforyoutube_maximerf_addons_mozilla_org-browser-action",
     "atbc_easonwong-browser-action",
-    "_de22fd49-c9ab-4359-b722-b3febdc3a0b0_-browser-action"
+    "_de22fd49-c9ab-4359-b722-b3febdc3a0b0_-browser-action",
+    "screenshot-button"
   ],
   "dirtyAreaCache": [
     "nav-bar",
@@ -75,5 +75,5 @@
     "vertical-tabs"
   ],
   "currentVersion": 22,
-  "newElementCount": 18
+  "newElementCount": 19
 }
