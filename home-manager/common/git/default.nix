@@ -22,6 +22,8 @@
         line-numbers = true;
         side-by-side = true;
         dark = true;
+        merge-conflict-begin-symbol = "";
+        merge-conflict-end-symbol = "";
       };
     };
 
