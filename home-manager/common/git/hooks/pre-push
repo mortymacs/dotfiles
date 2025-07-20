@@ -43,7 +43,7 @@ while read -r local_ref local_sha remote_ref remote_sha; do
         echo "   Commits: $(git rev-list --count "$remote_sha..$local_sha" 2>/dev/null || echo 'Unknown')"
         echo ""
 
-        if ! get_confirmation "⚠️Are you sure you want to continue? (y/N):"; then
+        if ! get_confirmation "⚠️ Are you sure you want to continue? (y/N):"; then
             echo "✋ Push aborted by user."
             exit 1
         fi
