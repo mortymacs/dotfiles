@@ -1,12 +1,12 @@
 -- Setup.
-local left_icon = ""
-local right_icon = ""
+local left_icon = ""
+local right_icon = ""
 local left_left_icon = "" -- right_icon
 local right_right_icon = "" -- left_icon
 require("lualine").setup({
   options = {
     theme = "auto",
-    component_separators = { left = "", right = "" },
+    component_separators = { left = "│", right = "│" },
     section_separators = { left = left_icon, right = right_icon },
     globalstatus = true,
     disabled_filetypes = { "fzf" },

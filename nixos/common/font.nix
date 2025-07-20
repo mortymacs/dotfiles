@@ -3,7 +3,7 @@
   fonts = {
     enableDefaultPackages = false;
     packages = with pkgs; [
-      unstable.nerd-fonts.jetbrains-mono
+      unstable.nerd-fonts.code-new-roman
       unstable.vazir-fonts
       unstable.noto-fonts-color-emoji
     ];
@@ -19,7 +19,7 @@
           "Vazirmatn"
         ];
         monospace = [
-          "JetBrainsMono Nerd Font"
+          "CodeNewRoman Nerd Font"
           "Noto Color Emoji"
         ];
         emoji = [ "Noto Color Emoji" ];

@@ -13,12 +13,6 @@
     recursive = true;
   };
 
-  # VSCode.
-  programs.vscode = {
-    enable = true;
-    package = pkgs.unstable.vscode;
-  };
-
   # IPython.
   xdg.configFile.ipython = {
     source = ./ipython;
