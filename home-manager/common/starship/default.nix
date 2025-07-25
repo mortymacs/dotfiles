@@ -16,7 +16,7 @@ let
   section_4_fg = "#ff006e";
 
   # cmd duration.
-  section_5_fg = "#ccc5b9";
+  section_5_fg = "#a3b18a";
 in
 {
   programs.starship = {
