@@ -77,6 +77,7 @@
     hurl
     ## AI.
     mods
+    unstable.claude-code
 
     # Programming.
     ## C/C++.
