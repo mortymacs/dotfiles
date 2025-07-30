@@ -40,6 +40,7 @@ set -x TERMINAL kitty
 
 # Bat
 set -x BAT_THEME 'ayu-dark'
+set -x BAT_PAGER 'ov -F -H3'
 
 # Fzf.
 set -x FZF_DEFAULT_COMMAND 'fd --type f'
@@ -57,7 +58,7 @@ set -x SRC_ENDPOINT (cat ~/.config/cody/server)
 set -x SRC_ACCESS_TOKEN (cat ~/.config/cody/secret)
 
 # Man
-set -x MANPAGER most
+set -x MANPAGER "ov --section-delimiter '^[^\s]' --section-header"
 
 # Kubernetes.
 set -x KUBECONFIG "$HOME/.config/kube/config"

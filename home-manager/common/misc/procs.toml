@@ -1,3 +1,6 @@
+[pager]
+command = "ov -H=1 -w=false -d=│"
+
 [[columns]]
 kind = "Pid"
 style = "BrightYellow|Yellow"
