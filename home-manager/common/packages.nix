@@ -7,7 +7,6 @@
     ripgrep
     pwgen
     most
-    ov
     fd
     jq
     yq
