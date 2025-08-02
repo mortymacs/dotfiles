@@ -1,10 +1,11 @@
 -- Copilot.
 require("copilot").setup({
   panel = {
-    enabled = false,
+    enabled = true,
   },
   suggestion = {
-    enabled = false,
+    enabled = true,
   },
 })
+require("copilot.suggestion").toggle_auto_trigger()
 require("CopilotChat").setup()

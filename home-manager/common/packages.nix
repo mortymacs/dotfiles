@@ -78,6 +78,7 @@
     ## AI.
     mods
     unstable.claude-code
+    unstable.code-cursor
 
     # Programming.
     ## C/C++.
