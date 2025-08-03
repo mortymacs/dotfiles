@@ -56,6 +56,21 @@
               definedAliases = [ "@nh" ];
               icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
             };
+            "Oxford Dictionary" = {
+              urls = [
+                {
+                  template = "https://www.oxfordlearnersdictionaries.com/search/english/direct/?q={searchTerms}";
+                  params = [
+                    {
+                      name = "q";
+                      value = "{searchTerms}";
+                    }
+                  ];
+                }
+              ];
+              definedAliases = [ "@od" ];
+              icon = "https://www.oxfordlearnersdictionaries.com/favicon.ico";
+            };
 
             # Disable the rest.
             "bing".metaData.hidden = true;
