@@ -10,6 +10,7 @@ dist/
 *.out
 target/
 build/
+.hugo_build.lock
 
 # Python
 venv
@@ -42,6 +43,9 @@ vendor/
 
 # Cloud.
 .terraform
+
+# AI.
+.claude/
 
 # Compressed
 *.zip
