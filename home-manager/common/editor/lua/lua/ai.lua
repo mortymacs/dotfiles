@@ -5,6 +5,9 @@ require("copilot").setup({
   },
   suggestion = {
     enabled = true,
+    keymap = {
+      accept = "<tab>",
+    },
   },
 })
 require("copilot.suggestion").toggle_auto_trigger()
