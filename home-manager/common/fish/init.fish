@@ -53,8 +53,6 @@ set -x MOST_INITFILE "$HOME"/.config/most/mostrc
 
 # AI.
 set -x OPENAI_API_KEY (cat ~/.config/openai/secret)
-set -x SRC_ENDPOINT (cat ~/.config/cody/server)
-set -x SRC_ACCESS_TOKEN (cat ~/.config/cody/secret)
 
 # Man
 set -x MANPAGER most
