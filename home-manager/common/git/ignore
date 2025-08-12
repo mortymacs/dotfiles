@@ -54,6 +54,9 @@ vendor/
 *.rar
 *.7z
 
+# Benchmarks.
+*.prof
+
 # Misc
 .bundle
 *.plist
