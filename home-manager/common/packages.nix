@@ -76,7 +76,7 @@
     ## Test.
     hurl
     ## AI.
-    mods
+    unstable.mods
     unstable.claude-code
     unstable.code-cursor
 
@@ -107,12 +107,6 @@
     neocmakelsp
     cpm-cmake
     emscripten
-    ## Rust.
-    unstable.rustc
-    unstable.cargo
-    unstable.rust-analyzer
-    unstable.rustfmt
-    unstable.rust-bindgen
     ## Go.
     unstable.go
     unstable.gopls
@@ -137,7 +131,7 @@
     air
     unstable.panicparse
     ## Python.
-    (python312.withPackages (
+    (python313.withPackages (
       ps: with ps; [
         cython
         ipdb
@@ -166,9 +160,6 @@
     nodePackages.bash-language-server
     shfmt
     shellcheck
-    ## SQL.
-    unstable.postgres-lsp
-    sqlfluff
     ## Terraform.
     terraform-ls
     tfsec
