@@ -337,4 +337,21 @@ require("lazy").setup({
       { "nvim-lua/plenary.nvim", branch = "master" },
     },
   },
+  {
+    "yetone/avante.nvim",
+    build = "make",
+    event = "VeryLazy",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "MunifTanjim/nui.nvim",
+      "stevearc/dressing.nvim",
+      "folke/snacks.nvim",
+      "nvim-tree/nvim-web-devicons",
+      "zbirenbaum/copilot.lua",
+      {
+        "MeanderingProgrammer/render-markdown.nvim",
+        ft = { "markdown", "Avante" },
+      },
+    },
+  },
 })

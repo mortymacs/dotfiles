@@ -130,6 +130,9 @@
     mage
     air
     unstable.panicparse
+    ## Rust.
+    unstable.rustc
+    unstable.cargo
     ## Python.
     (python313.withPackages (
       ps: with ps; [
