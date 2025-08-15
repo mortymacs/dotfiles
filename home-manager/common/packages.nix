@@ -77,6 +77,7 @@
     hurl
     ## AI.
     unstable.mods
+    unstable.crush
     unstable.claude-code
     unstable.code-cursor
 
