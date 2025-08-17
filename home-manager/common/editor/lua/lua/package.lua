@@ -344,10 +344,10 @@ require("lazy").setup({
     dependencies = {
       "nvim-lua/plenary.nvim",
       "MunifTanjim/nui.nvim",
-      "stevearc/dressing.nvim",
       "folke/snacks.nvim",
       "nvim-tree/nvim-web-devicons",
       "zbirenbaum/copilot.lua",
+      "Kaiser-Yang/blink-cmp-avante",
       {
         "MeanderingProgrammer/render-markdown.nvim",
         ft = { "markdown", "Avante" },

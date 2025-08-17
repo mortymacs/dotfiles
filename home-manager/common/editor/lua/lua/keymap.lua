@@ -190,6 +190,7 @@ SetKeyMap("<c-a>e", "<Cmd>CopilotChatExplain<cr>",           { "v", "n" })
 SetKeyMap("<c-a>r", "<Cmd>CopilotChatReview<cr>",            { "v", "n" })
 SetKeyMap("<c-a>q", "<Cmd>CopilotChatClose<cr>",             { "v", "n" })
 SetKeyMap("<c-a>l", "<Cmd>CopilotChatReset<cr>",             { "v", "n" })
+SetKeyMap("<c-a>t", "<Cmd>AvanteAsk<cr>",                    { "v", "n" })
 SetKeyMap("<c-j>",  function() copilotSuggestion.next() end, { "i" })
 SetKeyMap("<c-k>",  function() copilotSuggestion.prev() end, { "i" })
 

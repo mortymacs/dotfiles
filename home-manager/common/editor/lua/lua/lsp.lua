@@ -48,11 +48,17 @@ require("blink.cmp").setup({
     },
   },
   sources = {
-    default = { "lsp", "path", "buffer", "copilot" },
+    default = { "lsp", "path", "buffer", "copilot", "avante" },
     providers = {
       copilot = {
         name = "copilot",
         module = "blink-cmp-copilot",
+        score_offset = 100,
+        async = true,
+      },
+      avante = {
+        module = "blink-cmp-avante",
+        name = "Avante",
         score_offset = 100,
         async = true,
       },
@@ -74,7 +80,6 @@ vim.api.nvim_create_autocmd("User", {
     vim.b.copilot_suggestion_hidden = false
   end,
 })
-
 
 -- Set up lspconfig.
 local lspconfig = require("lspconfig")
