@@ -3,7 +3,7 @@
 
 # Default colors
 [colors.primary]
-background = '#0B1015'
+background = '#1e1e24'
 foreground = '#F5E2C8'
 
 [colors.cursor]
@@ -65,7 +65,7 @@ save_to_clipboard = true
 
 [window]
 dynamic_padding = false
-opacity         = 1.0
+opacity         = 0.98
 dynamic_title   = false
 
 [window.dimensions]

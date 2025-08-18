@@ -1,23 +1,5 @@
 #!/usr/bin/env bash
 
-get_confirmation() {
-    local prompt="$1"
-    local response
-
-    if [[ -c /dev/tty ]]; then
-        printf "%s " "$prompt" > /dev/tty
-        read -r response < /dev/tty
-    else
-        echo "❌ Cannot prompt for input (no tty). Push to protected branch aborted." >&2
-        return 1
-    fi
-
-    case "$response" in
-        [yY][eE][sS]|[yY]) return 0 ;;
-        *) return 1 ;;
-    esac
-}
-
 echo "🔍 Checking branch protection..."
 
 while read -r local_ref local_sha remote_ref remote_sha; do
@@ -43,7 +25,7 @@ while read -r local_ref local_sha remote_ref remote_sha; do
         echo "   Commits: $(git rev-list --count "$remote_sha..$local_sha" 2>/dev/null || echo 'Unknown')"
         echo ""
 
-        if ! get_confirmation "⚠️ Are you sure you want to continue? (y/N):"; then
+        if ! gum confirm "⚠️ Are you sure you want to continue?"; then
             echo "✋ Push aborted by user."
             exit 1
         fi

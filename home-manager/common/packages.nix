@@ -164,6 +164,7 @@
     nodePackages.bash-language-server
     shfmt
     shellcheck
+    unstable.gum
     ## Terraform.
     terraform-ls
     tfsec
