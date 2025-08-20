@@ -79,7 +79,8 @@
     unstable.mods
     unstable.crush
     unstable.claude-code
-    unstable.code-cursor
+    ## Diagram.
+    unstable.d2
 
     # Programming.
     ## C/C++.
