@@ -326,6 +326,7 @@ require("render-markdown").setup({
     above = "─",
     below = "─",
   },
+  completions = { lsp = { enabled = true } },
 })
 
 -- Namu.
