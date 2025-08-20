@@ -264,7 +264,7 @@ require("lazy").setup({
     "hashivim/vim-terraform",
     ft = { "terraform" },
   },
-  -- -- Typsy.
+  -- -- Typst.
   {
     "chomosuke/typst-preview.nvim",
     ft = "typst",
@@ -274,6 +274,10 @@ require("lazy").setup({
   {
     "b0o/schemastore.nvim",
     ft = { "yaml", "json" },
+  },
+  {
+    "terrastruct/d2-vim",
+    ft = { "d2" },
   },
 
   -- Quickfix.
