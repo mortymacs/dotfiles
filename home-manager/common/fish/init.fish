@@ -52,8 +52,8 @@ set -x GHQ_ROOT "$HOME/Workspaces"
 set -x MOST_INITFILE "$HOME"/.config/most/mostrc
 
 # AI.
-set -x OPENAI_API_KEY (cat ~/.config/openai/secret)
-set -x ANTHROPIC_API_KEY (cat ~/.config/anthropic/secret)
+set -x OPENAI_API_KEY (cat ~/.config/openai/secret 2>/dev/null || echo '')
+set -x ANTHROPIC_API_KEY (cat ~/.config/anthropic/secret 2>/dev/null || echo '')
 set -x NVIM_AVANTE_ENABLE (cat ~/.config/nvim/avante_enable 2>/dev/null || echo false)
 set -x NVIM_COPILOT_ENABLE (cat ~/.config/nvim/copilot_enable 2>/dev/null || echo false)
 
