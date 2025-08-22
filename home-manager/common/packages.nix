@@ -73,14 +73,13 @@
     gnumake
     commitlint
     silicon
+    ## Diagram.
+    unstable.d2
     ## Test.
     hurl
     ## AI.
     unstable.mods
     unstable.crush
-    unstable.claude-code
-    ## Diagram.
-    unstable.d2
 
     # Programming.
     ## C/C++.
