@@ -171,3 +171,6 @@ require("snacks").setup({
     },
   },
 })
+
+-- Harpoon.
+require("harpoon").setup()

@@ -1,5 +1,3 @@
---require("util")
-
 -- BQF.
 require("bqf").setup({
   auto_enable = true,
@@ -18,11 +16,3 @@ require("qfview").setup()
 
 -- Trouble.
 require("trouble").setup()
-
--- Update quickfix diagnostic items.
---vim.api.nvim_create_autocmd({ "DiagnosticChanged" }, {
---  pattern = "<buffer>",
---  callback = function()
---    DiagnosticsToQuickFix(vim.api.nvim_get_current_buf(), "Diagnostics")
---  end,
---})

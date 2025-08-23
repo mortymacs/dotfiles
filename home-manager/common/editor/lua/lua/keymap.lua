@@ -1,18 +1,23 @@
 require("util")
 local snacks = require("snacks")
-local telescope = require("telescope.builtin")
 local flash = require("flash")
-
--- Mouse.
-SetKeyMap("<c-x><c-m>", function() ToggleCommand("set mouse=a", "set mouse=", "mouse_status") end, nil, nil, "ToggleMouse")
+local harpoon = require('harpoon')
 
 -- Command.
-SetKeyMap("<c-x><c-c>", snacks.picker.commands, nil, nil, "Commands")
 SetKeyMap("<c-x><c-k>", snacks.picker.keymaps,  nil, nil, "Keymaps")
 
 -- Buffer
-SetKeyMap("<c-x><c-q>", function () snacks.bufdelete() end, nil, nil, "DeleteBuffer")
-SetKeyMap("<c-f>",      snacks.picker.lines,                nil, nil, "FuzzyFinder")
+SetKeyMap("<leader>q", function () snacks.bufdelete() end, { "n" }, nil, "DeleteBuffer")
+SetKeyMap("<leader>/",  snacks.picker.lines,               { "n" }, nil, "FuzzyFinder")
+
+-- Pinned buffers.
+SetKeyMap("<s-c-a>", function () harpoon:list():add() end, nil, nil, "PinBuffer")
+SetKeyMap("<s-c-d>", function () harpoon:list():remove() end, nil, nil, "UnpinBuffer")
+SetKeyMap("<s-c-l>", function () harpoon:list():next() end, nil, nil, "NextPinnedBuffer")
+SetKeyMap("<s-c-h>", function () harpoon:list():prev() end, nil, nil, "PrevPinnedBuffer")
+SetKeyMap("<leader>,",  function()
+    harpoon.ui:toggle_quick_menu(harpoon:list())
+end, { "n" }, nil, "Buffers")
 
 -- Tabbar.
 SetKeyMap("<s-h>",      "<Cmd>BufferPrevious<cr>", { "n" })
@@ -26,14 +31,6 @@ SetKeyMap("<c-]>",      "<Cmd>Neotree toggle<cr>")
 SetKeyMap("<c-x><c-r>", "<Cmd>Neotree reveal<cr>")
 
 -- Search
-SetKeyMap("<c-x><c-s-g>", function ()
-  local word_under_cursor = vim.fn.expand('<cword>')
-  if word_under_cursor and word_under_cursor ~= "" then
-    snacks.picker.grep_word()
-  else
-    snacks.picker.grep()
-  end
-end, nil, nil, "LiveGrep")
 SetKeyMap("<c-x><c-g>", snacks.picker.grep, nil, nil, "LiveGrep")
 
 -- Finder.
@@ -63,7 +60,7 @@ SetKeyMap("ss", function()
             },
         },
     })
-end, { "n", "x", "o" }, nil, "FlasJumpCursor")
+end, { "n", "x", "o" }, nil, "FlashJumpCursor")
 SetKeyMap("sv", function()
     flash.treesitter_search({
         pattern = vim.fn.expand("<cword>"),
@@ -101,20 +98,17 @@ SetKeyMap("<c-g><c-u>", "<Cmd>Gitsigns undo_stage_hunk<cr>")
 SetKeyMap("<c-g><c-s>", snacks.picker.git_status, nil, nil, "GitStatus")
 SetKeyMap("<c-g><c-d>", function() ToggleCommand("DiffviewOpen", "DiffviewClose", "diff_view_status") end, nil, nil, "ToggleDiffView")
 SetKeyMap("<c-g><c-h>", function() ToggleCommand("DiffviewFileHistory", "DiffviewClose", "diff_view_status") end, nil, nil, "ToggleDiffViewFileHistory")
-SetKeyMap("<c-g><c-c>", snacks.picker.git_log, nil, nil, "GitCommits")
-SetKeyMap("<c-g><c-l>", snacks.git.blame_line, nil, nil, "GitCommits")
 SetKeyMap("<c-g><c-b>", snacks.picker.git_log_file, nil, nil, "GitBCommits")
-SetKeyMap("<c-g><c-t>", telescope.git_stash, nil, nil, "GitStash")
 SetKeyMap("<c-g><c-e>", function () snacks.gitbrowse() end, nil, nil, "GitBrowse")
-SetKeyMap("<c-g><c-i>", "<esc><Cmd>Gitignore<cr>")
 
--- History
+-- Help
 SetKeyMap("<c-x><c-h>", snacks.picker.help)
 
 -- Text
 -- Stop copying text on delete.
 SetKeyMap("<Del>", '"_d',  { "v" })
 SetKeyMap("d",     '"_d',  { "v" })
+
 -- Decorated yank.
 SetKeyMap("<c-y>", function() require('decorated_yank').decorated_yank_with_link() end,  { "v" }, nil, "DecoratedYank")
 -- Transformation.
@@ -138,19 +132,15 @@ SetKeyMap("<c-t>8", function() require("textcase").operator("to_pascal_case") en
 SetKeyMap("<c-t>8", function() require("textcase").current_word("to_pascal_case") end,   { "n", "i" }, nil, "ToPascalCase")
 SetKeyMap("<c-t>9", function() require("textcase").operator("to_title_case") end,        { "v" },      nil, "ToTitleCase")
 SetKeyMap("<c-t>9", function() require("textcase").current_word("to_title_case") end,    { "n", "i" }, nil, "ToTitleCase")
--- Delete word.
-SetKeyMap("<c-s-w>", "<C-o>dw",  { "i" })
-SetKeyMap("<c-b>",   "<C-o>ciw", { "i" })
 
--- Terminal
-SetKeyMap("<c-b>t", function () snacks.terminal() end, nil, nil, "ToggleTerminal")
+-- Terminal.
 SetKeyMap("<c-e>",  function () snacks.terminal() end, nil, nil, "ToggleTerminal")
 
--- LSP
+-- LSP.
 SetKeyMap("<c-c><c-d>", snacks.picker.lsp_definitions, nil, nil, "LspDefinition")
 SetKeyMap("<c-c><c-i>", snacks.picker.lsp_implementations, nil, nil, "LspImplementation")
 SetKeyMap("<c-c><c-r>", snacks.picker.lsp_references, nil, nil, "LspReferences")
-SetKeyMap("<c-c>e", vim.lsp.buf.rename, nil, nil, "LspRename")
+SetKeyMap("<c-c><c-e>", vim.lsp.buf.rename, nil, nil, "LspRename")
 SetKeyMap("<c-c><c-x>", vim.lsp.buf.code_action, nil, nil, "LspCodeAction")
 SetKeyMap("<c-c><c-l>", "<esc><Cmd>Format<cr>")
 SetKeyMap("<c-c><c-h>", vim.lsp.buf.signature_help, nil, nil, "LspSignatureHelp")
@@ -161,24 +151,11 @@ SetKeyMap("<c-c><c-f>", "<Cmd>Namu workspace<cr>", nil, nil, "LspWorkspaceSymbol
 SetKeyMap("<c-c><c-o>", "<Cmd>Namu call out<cr>", nil, nil, "CallOut")
 SetKeyMap("<c-c><c-g>", "<Cmd>Telescope ast_grep<cr>")
 SetKeyMap("<c-c><c-a>", "<Cmd>Namu watchtower<cr>")
-SetKeyMap("<c-c><c-j>", function() require('treesj').toggle() end, nil, nil, "TreeSitterSplitJoinToggle")
 SetKeyMap("<c-x><c-l>", RestartLsp, nil, nil, "RestartLsp")
-
--- Debug
-SetKeyMap("<c-d><c-s>", function() require("dapui").toggle() end, nil, nil, "DapToggle")
-SetKeyMap("<c-d><c-t>", "<Cmd>DapToggleBreakpoint<cr>")
-
--- Test
-SetKeyMap("<c-t><c-x>",     "<esc><Cmd>Neotest run<cr>")
-SetKeyMap("<c-t><c-f>",     "<esc><Cmd>Neotest run file<cr>")
-SetKeyMap("<c-t><c-r>",     "<esc><Cmd>Neotest output<cr>")
-SetKeyMap("<c-t><up>",      "<esc><Cmd>Neotest output-panel<cr>")
-SetKeyMap("<c-t><c-s>",     "<esc><Cmd>Neotest summary<cr>")
-SetKeyMap("<c-t><c-right>", "<esc><Cmd>Neotest jump next<cr>")
-SetKeyMap("<c-t><c-left>",  "<esc><Cmd>Neotest jump prev<cr>")
+SetKeyMap("<c-x><c-,>", "<Cmd>TSJToggle<cr>", nil, nil, "ToggleSplitJoin")
 
 -- Trouble / Quickfix.
-SetKeyMap("<c-x><c-i>", "<Cmd>TroubleToggle todo<cr>")
+SetKeyMap("<leader>i", "<Cmd>Trouble diagnostics toggle<cr>")
 
 -- AI.
 local copilotSuggestion = require("copilot.suggestion")

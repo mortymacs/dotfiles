@@ -93,6 +93,13 @@ require("lazy").setup({
     "kevinhwang91/nvim-hlslens",
     event = "VeryLazy",
   },
+  {
+    "ThePrimeagen/harpoon",
+    branch = "harpoon2",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+  },
 
   -- Git.
   "lewis6991/gitsigns.nvim",
@@ -104,18 +111,6 @@ require("lazy").setup({
     event = "VeryLazy",
   },
   {
-    "nvim-neotest/neotest",
-    dependencies = {
-      "nvim-neotest/nvim-nio",
-      "nvim-lua/plenary.nvim",
-      "nvim-treesitter/nvim-treesitter",
-      "antoinemadec/FixCursorHold.nvim",
-      "nvim-neotest/neotest-python",
-      "nvim-neotest/neotest-go",
-    },
-    event = "VeryLazy",
-  },
-  {
     "nvim-treesitter/nvim-treesitter",
     dependencies = {
       "nvim-treesitter/nvim-treesitter-context",
@@ -124,9 +119,9 @@ require("lazy").setup({
       "HiPhish/rainbow-delimiters.nvim",
       "JoosepAlviste/nvim-ts-context-commentstring",
     },
-    build = function()
-      vim.cmd(":TSUpdate")
-    end,
+    branch = "master",
+    lazy = false,
+    build = ":TSUpdate",
   },
   {
     "numToStr/Comment.nvim",
@@ -152,7 +147,6 @@ require("lazy").setup({
     event = "VeryLazy",
   },
   "brenoprata10/nvim-highlight-colors",
-  "echasnovski/mini.nvim",
   {
     "nacro90/numb.nvim",
     event = "VeryLazy",
@@ -294,6 +288,7 @@ require("lazy").setup({
     dependencies = {
       "mfussenegger/nvim-dap",
       "jonboh/nvim-dap-rr",
+      "nvim-neotest/nvim-nio",
     },
     event = "VeryLazy",
   },

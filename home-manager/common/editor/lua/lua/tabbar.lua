@@ -1,7 +1,7 @@
 require("barbar").setup({
   animation = false,
-  auto_hide = false,
-  tabpages = true,
+  auto_hide = true,
+  tabpages = false,
   icons = {
     button = "",
     separator = { left = "󰇝", right = "" },
