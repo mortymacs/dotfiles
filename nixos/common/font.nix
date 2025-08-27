@@ -4,6 +4,7 @@
     enableDefaultPackages = false;
     packages = with pkgs; [
       unstable.nerd-fonts.code-new-roman
+      unstable.lexend
       unstable.vazir-fonts
       unstable.noto-fonts-color-emoji
     ];
@@ -11,11 +12,11 @@
       enable = true;
       defaultFonts = {
         serif = [
-          "Adwaita Sans"
+          "Lexend"
           "Vazirmatn"
         ];
         sansSerif = [
-          "Adwaita Sans"
+          "Lexend"
           "Vazirmatn"
         ];
         monospace = [

@@ -50,12 +50,12 @@ in
             before-sleep 'swaylock -f -c #0f111b'
           '';
         }
-        { command = "mako"; }
         {
           command = "systemctl --user restart kanshi.service";
           always = true;
         }
       ];
+
       modifier = "Mod4";
 
       fonts = {
@@ -264,6 +264,18 @@ in
     };
   };
 
+  # Notifications.
+  services.mako = {
+    enable = true;
+    settings = {
+      font = "sans 10";
+      border_size = 1;
+      background-color = "#0f111b";
+      border-color = "#554884";
+      text-color = "#ECECEC";
+    };
+  };
+
   # GTK.
   gtk = {
     enable = true;
@@ -271,8 +283,8 @@ in
     iconTheme.name = iconTheme;
     cursorTheme.name = cursorTheme;
     font = {
-      name = "Lexend";
-      size = 10;
+      name = "sans";
+      size = 11;
     };
     gtk3.extraConfig = extraConfig;
     gtk4.extraConfig = gtk4ExtraConfig;
