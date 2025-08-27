@@ -86,7 +86,7 @@
           "sidebar.verticalTabs" = true;
           "browser.bookmarks.restore_default_bookmarks" = false;
           "browser.toolbars.bookmarks.visibility" = "never";
-          "browser.tabs.inTitlebar" = 0;
+          "browser.tabs.inTitlebar" = 1;
           "browser.tabs.firefox-view" = false;
           "browser.tabs.firefox-view-newIcon" = false;
           "browser.tabs.firefox-view-next" = false;
