@@ -10,7 +10,8 @@ let
 in
 {
   imports = [
-    ../common/desktop
+    ../common/wm
+    # ../common/desktop
     ../common/fish
     ../common/starship
     ../common/terminal

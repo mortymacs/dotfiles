@@ -11,7 +11,8 @@ in
     ../common/font.nix
     ../common/misc.nix
     ../common/excludes.nix
-    ../common/desktop.nix
+    # ../common/desktop.nix
+    ../common/wm.nix
   ];
 
   # Nix.

@@ -1,6 +1,10 @@
-{ pkgs, ... }: {
+{
   # Backlight.
-  programs = { light = { enable = true; }; };
+  programs = {
+    light = {
+      enable = true;
+    };
+  };
 
   # Pam.
   security.pam.loginLimits = [
