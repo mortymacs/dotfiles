@@ -238,7 +238,7 @@ in
           }
           {
             block = "time";
-            format = "NL $timestamp.datetime(f:'%a %d/%m %R') ";
+            format = "$timestamp.datetime(f:'%a %d/%m %R') ";
             timezone = "Europe/Amsterdam";
             interval = 10;
           }
@@ -284,7 +284,7 @@ in
     cursorTheme.name = cursorTheme;
     font = {
       name = "sans";
-      size = 11;
+      size = 10;
     };
     gtk3.extraConfig = extraConfig;
     gtk4.extraConfig = gtk4ExtraConfig;
