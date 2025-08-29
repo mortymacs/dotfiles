@@ -1,3 +1,4 @@
+# To get list of outputs: swaymsg -t get_outputs
 {
   services.kanshi = {
     enable = true;
@@ -64,6 +65,21 @@
           outputs = [
             {
               criteria = "HDMI-A-1";
+              status = "enable";
+            }
+            {
+              criteria = "eDP-1";
+              status = "disable";
+            }
+          ];
+        };
+      }
+      {
+        profile = {
+          name = "office-1";
+          outputs = [
+            {
+              criteria = "DP-1";
               status = "enable";
             }
             {

@@ -48,21 +48,21 @@ require("blink.cmp").setup({
     },
   },
   sources = {
-    default = { "lsp", "path", "buffer", "copilot", "avante" },
-    providers = {
-      copilot = {
-        name = "copilot",
-        module = "blink-cmp-copilot",
-        score_offset = 100,
-        async = true,
-      },
-      avante = {
-        module = "blink-cmp-avante",
-        name = "Avante",
-        score_offset = 100,
-        async = true,
-      },
-    },
+    default = { "lsp", "path" },
+    -- providers = {
+    --   copilot = {
+    --     name = "copilot",
+    --     module = "blink-cmp-copilot",
+    --     score_offset = 100,
+    --     async = true,
+    --   },
+    --   avante = {
+    --     module = "blink-cmp-avante",
+    --     name = "Avante",
+    --     score_offset = 100,
+    --     async = true,
+    --   },
+    -- },
   },
   appearance = {
     nerd_font_variant = "normal",

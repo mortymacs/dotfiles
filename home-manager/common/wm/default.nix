@@ -127,6 +127,8 @@ in
         "${modifier}+Ctrl+v" = "splith";
         "${modifier}+Ctrl+s" = "splitv";
         "${modifier}+Shift+Up" = "fullscreen toggle global";
+        "${modifier}+m" = "focus parent; layout splith; focus child; resize set width 70ppt";
+        "${modifier}+Shift+m" = "focus parent; layout splith; focus child; resize set width 50ppt";
 
         # Move.
         "${modifier}+Shift+Ctrl+l" = "exec move-to-next-workspace";
@@ -200,6 +202,7 @@ in
 
     extraConfig = ''
       default_border pixel
+      output * adaptive_sync on
     '';
   };
 
@@ -269,7 +272,7 @@ in
     enable = true;
     settings = {
       font = "sans 10";
-      border_size = 1;
+      border-size = 1;
       background-color = "#0f111b";
       border-color = "#554884";
       text-color = "#ECECEC";
