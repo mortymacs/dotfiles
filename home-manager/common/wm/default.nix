@@ -202,7 +202,6 @@ in
 
     extraConfig = ''
       default_border pixel
-      output * adaptive_sync on
     '';
   };
 
