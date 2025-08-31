@@ -11,7 +11,8 @@ in
     ../common/font.nix
     ../common/misc.nix
     ../common/excludes.nix
-    ../common/desktop.nix
+    # ../common/desktop.nix
+    ../common/wm.nix
   ];
 
   # Nix.
@@ -67,6 +68,7 @@ in
       libGLU
     ];
   };
+  services.xserver.videoDrivers = [ "intel" ];
 
   # User.
   users.users.mort = {
