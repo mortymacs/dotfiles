@@ -16,7 +16,6 @@ in
     gnomeExtensions.pano
     gnome-tweaks
     wl-clipboard
-    unstable.todoist-electron
   ];
 
   # GTK.
@@ -80,7 +79,6 @@ in
           "gnome-power-panel"
           "firefox"
           "teams-for-linux"
-          "todoist"
           "zoom"
           "org-gnome-fileroller"
           "org-gnome-nautilus"
@@ -150,7 +148,6 @@ in
         ];
         favorite-apps = [
           "firefox.desktop"
-          "todoist.desktop"
         ];
       };
 
