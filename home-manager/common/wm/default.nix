@@ -51,7 +51,7 @@ in
           '';
         }
         {
-          command = "systemctl --user restart kanshi.service";
+          command = "sleep 5; systemctl --user restart kanshi.service";
           always = true;
         }
       ];
