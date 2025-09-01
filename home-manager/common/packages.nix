@@ -77,9 +77,6 @@
     unstable.d2
     ## Test.
     hurl
-    ## AI.
-    unstable.mods
-    unstable.crush
 
     # Programming.
     ## C/C++.
