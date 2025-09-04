@@ -198,6 +198,14 @@ require("lazy").setup({
     "machakann/vim-sandwich",
     event = "VeryLazy",
   },
+  {
+    "nvzone/minty",
+    dependencies = {
+      "nvzone/volt",
+    },
+    cmd = { "Shades", "Huefy" },
+    event = "VeryLazy",
+  },
 
   -- LSP.
   "neovim/nvim-lspconfig",
@@ -307,6 +315,11 @@ require("lazy").setup({
     "folke/flash.nvim",
     event = "VeryLazy",
     opts = {},
+  },
+  {
+    "nvzone/showkeys",
+    cmd = "ShowkeysToggle",
+    event = "VeryLazy",
   },
 
   -- Large files.

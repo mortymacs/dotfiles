@@ -11,12 +11,15 @@ let
 
   # svc
   section_3_fg = "#c77dff";
+  section_3_1_fg = "#2a9d8f";
+  section_3_2_fg = "#da627d";
 
   # status
   section_4_fg = "#ff006e";
 
   # cmd duration.
   section_5_fg = "#a3b18a";
+
 in
 {
   programs.starship = {
@@ -84,6 +87,12 @@ in
       git_state = {
         style = "fg:${section_3_fg}";
         format = "[ $state($progress_current/$progress_total)]($style)";
+      };
+      git_metrics = {
+        disabled = false;
+        added_style = "fg:${section_3_1_fg}";
+        deleted_style = "fg:${section_3_2_fg}";
+        format = " ([+$added]($added_style))([-$deleted]($deleted_style))";
       };
       status = {
         style = "bold fg:${section_4_fg}";

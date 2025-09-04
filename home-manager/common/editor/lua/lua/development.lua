@@ -117,16 +117,7 @@ require("todo-comments").setup({
   },
 })
 
--- Whichkey.
-require("which-key").setup({
-  delay = 1000,
-  win = {
-    border = "single",
-  },
-  disable = {
-    ft = { "toggleterm" },
-  },
-})
+require("minty").setup()
 
 -- Surround.
 require("nvim-surround").setup({
