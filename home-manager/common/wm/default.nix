@@ -74,9 +74,9 @@ in
         background = "#242423";
         focused = {
           background = "#27213C";
-          border = "#554884";
-          childBorder = "#554884";
-          indicator = "#554884";
+          border = "#7a5ccc";
+          childBorder = "#7a5ccc";
+          indicator = "#7a5ccc";
           text = "#FFE5D4";
         };
         unfocused = {
@@ -151,7 +151,7 @@ in
         # Application.
         "${modifier}+w" = "exec firefox";
         "${modifier}+Return" = "exec alacritty-fork";
-        "${modifier}+Shift+s" = "exec flameshot gui";
+        "${modifier}+Shift+s" = "exec flameshot-gui";
       };
 
       window.border = 1;
@@ -173,7 +173,7 @@ in
           trayOutput = "*";
           statusCommand = "i3status-rs ~/.config/i3status-rust/config-default.toml";
           colors = {
-            background = "#0f111b";
+            background = "#222C32";
             statusline = "#FFE5D4";
             focusedWorkspace = {
               background = "#1d4e89";
@@ -229,18 +229,13 @@ in
             format = " 󰄌  $percentage ";
           }
           {
-            block = "toggle";
-            command_state = "makoctl mode | grep do-not";
-            command_on = "makoctl mode -s do-not-disturb";
-            command_off = "makoctl mode -r do-not-disturb";
-            icon_on = "toggle_on";
-            icon_off = "toggle_off";
+            block = "notify";
+            driver = "dunst";
             format = " $icon ";
-            interval = 1;
           }
           {
             block = "time";
-            format = "$timestamp.datetime(f:'%a %d/%m %R') ";
+            format = " $timestamp.datetime(f:'%a %d/%m %R') ";
             timezone = "Europe/Amsterdam";
             interval = 10;
           }
@@ -254,11 +249,11 @@ in
             icons = "material-nf";
           };
           theme = {
-            theme = "native";
+            theme = "modern";
             overrides = {
               idle_fg = "#ECECEC";
-              separator = "│";
-              separator_fg = "#292948";
+              separator = " ";
+              separator_fg = "#222C32";
             };
           };
         };
@@ -267,14 +262,35 @@ in
   };
 
   # Notifications.
-  services.mako = {
+  services.dunst = {
     enable = true;
     settings = {
-      font = "sans 10";
-      border-size = 1;
-      background-color = "#0f111b";
-      border-color = "#554884";
-      text-color = "#ECECEC";
+      global = {
+        font = "sans 10";
+        markup = "full";
+        frame_width = 1;
+        frame_color = "#7a5ccc";
+        corner_radius = 0;
+        gap_size = 1;
+        offset = "10x10";
+        icon_theme = iconTheme;
+      };
+      urgency_low = {
+        background = "#0f111b";
+        foreground = "#b3a1e6";
+        timeout = 10;
+      };
+      urgency_normal = {
+        background = "#0f111b";
+        foreground = "#ecf0c1";
+        timeout = 10;
+      };
+      urgency_critical = {
+        background = "#0f111b";
+        foreground = "#ce6f8f";
+        frame_color = "#B93C89";
+        timeout = 0;
+      };
     };
   };
 
@@ -324,6 +340,7 @@ in
     swaybg
     wdisplays
     wayland
+    slurp
     wl-clipboard
     rofi-wayland
     yaru-theme
