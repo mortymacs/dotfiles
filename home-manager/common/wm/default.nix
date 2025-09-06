@@ -51,7 +51,7 @@ in
           '';
         }
         {
-          command = "sleep 5; systemctl --user restart kanshi.service";
+          command = "systemctl --user restart kanshi.service";
           always = true;
         }
       ];
@@ -329,7 +329,7 @@ in
   services = {
     cliphist = {
       enable = true;
-      systemdTargets = [ "way-session.target" ];
+      systemdTargets = [ "sway-session.target" ];
     };
   };
 
