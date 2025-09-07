@@ -213,8 +213,11 @@ in
         blocks = [
           {
             block = "cpu";
-            interval = 1;
             format = "   $utilization ";
+          }
+          {
+            block = "memory";
+            format = "    $mem_used_percents.eng(w:1) ";
           }
           {
             block = "backlight";
