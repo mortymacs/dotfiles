@@ -173,27 +173,27 @@ in
           trayOutput = "*";
           statusCommand = "i3status-rs ~/.config/i3status-rust/config-default.toml";
           colors = {
-            background = "#222C32";
-            statusline = "#FFE5D4";
+            background = "#1f2041";
+            statusline = "#FFF3F0";
             focusedWorkspace = {
-              background = "#1d4e89";
-              border = "#1d4e89";
-              text = "#FFE5D4";
+              background = "#028090";
+              border = "#028090";
+              text = "#FFF3F0";
             };
             activeWorkspace = {
-              background = "#161927";
+              background = "#1f2041";
               border = "#161927";
-              text = "#FFE5D4";
+              text = "#FFF3F0";
             };
             inactiveWorkspace = {
-              background = "#161927";
-              border = "#161927";
-              text = "#FFE5D4";
+              background = "#1f2041";
+              border = "#1f2041";
+              text = "#FFF3F0";
             };
             urgentWorkspace = {
-              background = "#973c64";
-              border = "#e23e58";
-              text = "#FFE5D4";
+              background = "#DB2B39";
+              border = "#DB2B39";
+              text = "#FFF3F0";
             };
           };
         }
@@ -251,9 +251,9 @@ in
           theme = {
             theme = "modern";
             overrides = {
-              idle_fg = "#ECECEC";
+              idle_fg = "#FFF3F0";
               separator = " ";
-              separator_fg = "#222C32";
+              idle_bg = "#1f2041";
             };
           };
         };
