@@ -255,8 +255,10 @@ in
             theme = "modern";
             overrides = {
               idle_fg = "#FFF3F0";
+              good_fg = "#FFF3F0";
               separator = " ";
               idle_bg = "#1f2041";
+              good_bg = "#1f2041";
             };
           };
         };
