@@ -41,7 +41,6 @@
   tl = "tmux ls -F '#S'";
 
   # DevOps.
-  docker = "docker --config $HOME/.config/docker";
   kubectl = "kubecolor";
   aws-local = ''
     aws --endpoint-url http://127.0.0.1:4566 \

@@ -18,9 +18,6 @@ require("finder")
 -- Terminal.
 require("terminal")
 
--- AI.
-require("ai")
-
 -- Git.
 require("git")
 

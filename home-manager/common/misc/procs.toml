@@ -106,7 +106,7 @@ nonnumeric_search = false
 align = "Left"
 
 [[columns]]
-kind = "Docker"
+kind = "Podman"
 style = "BrightGreen|Green"
 numeric_search = false
 nonnumeric_search = true

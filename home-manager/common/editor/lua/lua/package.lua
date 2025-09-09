@@ -336,35 +336,4 @@ require("lazy").setup({
       use_new_command = true,
     },
   },
-
-  -- AI.
-  {
-    "zbirenbaum/copilot.lua",
-    cmd = "Copilot",
-    event = "InsertEnter",
-  },
-  {
-    "CopilotC-Nvim/CopilotChat.nvim",
-    dependencies = {
-      "zbirenbaum/copilot.lua",
-      { "nvim-lua/plenary.nvim", branch = "master" },
-    },
-  },
-  {
-    "yetone/avante.nvim",
-    build = "make",
-    event = "VeryLazy",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "MunifTanjim/nui.nvim",
-      "folke/snacks.nvim",
-      "nvim-tree/nvim-web-devicons",
-      "zbirenbaum/copilot.lua",
-      "Kaiser-Yang/blink-cmp-avante",
-      {
-        "MeanderingProgrammer/render-markdown.nvim",
-        ft = { "markdown", "Avante" },
-      },
-    },
-  },
 })

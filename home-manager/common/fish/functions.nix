@@ -24,8 +24,8 @@
     bat cache --build
 
     # Containers.
-    for img in localstack/localstack valkey/valkey:alpine mysql postgres kennethreitz/httpbin
-        docker pull $img;
+    for img in localstack/localstack valkey/valkey:alpine postgres kennethreitz/httpbin
+        podman pull $img;
     end
 
     # Firmware.
@@ -35,10 +35,10 @@
     # Trash.
     trash-empty
 
-    # Docker.
+    # Podman.
     # http://www.bashoneliners.com/oneliners/252/
-    docker images -q -f dangling=true | xargs --no-run-if-empty --delim='\n' docker rmi -f
-    docker system prune
+    podman images -q -f dangling=true | xargs --no-run-if-empty --delim='\n' podman rmi -f
+    podman system prune
 
     # Nix.
     # https://discourse.nixos.org/t/list-and-delete-nixos-generations/29637/3
@@ -59,29 +59,21 @@
 
   # Containers.
   http-test-server = ''
-    docker run -d --rm \
+    podman run -d --rm \
         -p 9090:80 \
         --hostname http-test-server \
         --name http-test-server \
         kennethreitz/httpbin
   '';
   valkey-server = ''
-    docker run -d --rm \
+    podman run -d --rm \
         -p 6379:6379 \
         --hostname valkey \
         --name valkey \
         valkey/valkey:alpine valkey-server --loglevel verbose
   '';
-  mysql-server = ''
-    docker run -d --rm \
-        -p 3306:3306 \
-        --hostname mysql \
-        --name mysql \
-        -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE="db" -e MYSQL_USER=user -e MYSQL_PASSWORD=secret \
-        mysql
-  '';
   postgresql-server = ''
-    docker run -d --rm \
+    podman run -d --rm \
         -p 5432:5432 \
         --hostname postgresql \
         --name postgresql \
@@ -89,7 +81,7 @@
         postgres
   '';
   localstack = ''
-    docker run -d --rm \
+    podman run -d --rm \
         -p 4566:4566 -p 4510-4559:4510-4559 \
         --name localstack \
         localstack/localstack

@@ -12,6 +12,9 @@
     # Filesystem.
     ntfs3g
 
+    # Virtualisation.
+    unstable.qemu
+
     # Doc.
     man-pages
   ];

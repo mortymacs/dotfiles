@@ -339,11 +339,10 @@ in
   };
 
   # Packages.
+  programs.swaylock.enable = true;
   home.packages = with pkgs; [
-    swaylock
     swayidle
     swaybg
-    wdisplays
     wayland
     slurp
     wl-clipboard

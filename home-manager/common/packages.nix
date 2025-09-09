@@ -19,9 +19,7 @@
     # Office.
     unstable.zoom-us
     unstable.slack
-
-    # Image.
-    gimp
+    unstable.tz
 
     ## Presentation / reading.
     glow

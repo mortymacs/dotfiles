@@ -11,7 +11,6 @@ in
 {
   imports = [
     ../common/wm
-    # ../common/desktop
     ../common/fish
     ../common/starship
     ../common/terminal
@@ -19,7 +18,6 @@ in
     ../common/editor
     ../common/btop
     ../common/git
-    ../common/docker
     ../common/flameshot
     ../common/firefox
     ../common/misc
