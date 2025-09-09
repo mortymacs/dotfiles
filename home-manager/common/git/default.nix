@@ -69,14 +69,4 @@
     git-town
     (writeShellScriptBin "git-user-stats" (builtins.readFile ./git-user-stats.sh))
   ];
-
-  programs.gh = {
-    enable = true;
-    extensions = with pkgs; [
-      gh-notify
-      gh-eco
-      gh-dash
-      gh-markdown-preview
-    ];
-  };
 }
