@@ -22,10 +22,6 @@ vim.api.nvim_set_hl(0, "SnacksPickerInputBorder", { bg = "" })
 -- Whichkey.
 vim.api.nvim_set_hl(0, "WhichKeyNormal", { bg = "" })
 
--- AI.
-vim.api.nvim_set_hl(0, "AvantePromptInputBorder", { bg = "#03071e" })
-vim.api.nvim_set_hl(0, "AvantePromptInput",       { bg = "#03071e" })
-
 -- Bookmark.
 vim.g.bookmark_sign = ''
 vim.g.bookmark_highlight_lines = 1

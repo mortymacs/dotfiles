@@ -157,20 +157,6 @@ SetKeyMap("<c-x><c-,>", "<Cmd>TSJToggle<cr>", nil, nil, "ToggleSplitJoin")
 -- Trouble / Quickfix.
 SetKeyMap("<leader>i", "<Cmd>Trouble diagnostics toggle<cr>")
 
--- AI.
-local copilotSuggestion = require("copilot.suggestion")
-SetKeyMap("<c-a>c", "<Cmd>CopilotChat<cr>",                  { "n", "v" })
-SetKeyMap("<c-a>f", "<Cmd>CopilotChatFix<cr>",               { "n", "v" })
-SetKeyMap("<c-a>g", "<Cmd>CopilotChatCommit<cr>",            { "n", "v" })
-SetKeyMap("<c-a>d", "<Cmd>CopilotChatDocs<cr>",              { "n", "v" })
-SetKeyMap("<c-a>e", "<Cmd>CopilotChatExplain<cr>",           { "v", "n" })
-SetKeyMap("<c-a>r", "<Cmd>CopilotChatReview<cr>",            { "v", "n" })
-SetKeyMap("<c-a>q", "<Cmd>CopilotChatClose<cr>",             { "v", "n" })
-SetKeyMap("<c-a>l", "<Cmd>CopilotChatReset<cr>",             { "v", "n" })
-SetKeyMap("<c-a>t", "<Cmd>AvanteAsk<cr>",                    { "v", "n" })
-SetKeyMap("<c-j>",  function() copilotSuggestion.next() end, { "i" })
-SetKeyMap("<c-k>",  function() copilotSuggestion.prev() end, { "i" })
-
 -- Package.
 SetKeyMap("<c-x><c-y>", "<Cmd>Lazy! sync<cr>")
 

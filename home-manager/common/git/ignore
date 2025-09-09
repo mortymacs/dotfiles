@@ -44,9 +44,6 @@ vendor/
 # Cloud.
 .terraform
 
-# AI.
-.claude/
-
 # Compressed
 *.zip
 *.tar.gz

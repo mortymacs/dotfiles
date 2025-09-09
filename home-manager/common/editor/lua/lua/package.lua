@@ -187,7 +187,7 @@ require("lazy").setup({
       "nvim-treesitter/nvim-treesitter",
       "echasnovski/mini.nvim",
     },
-    file_types = { "markdown", "Avante" },
+    file_types = { "markdown" },
     event = "VeryLazy",
   },
   {
@@ -213,9 +213,6 @@ require("lazy").setup({
   {
     "saghen/blink.cmp",
     version = "1.*",
-    dependencies = {
-      "giuxtaposition/blink-cmp-copilot",
-    },
   },
   {
     "Wansmer/symbol-usage.nvim",

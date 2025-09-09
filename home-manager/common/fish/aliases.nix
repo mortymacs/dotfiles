@@ -72,9 +72,6 @@
     && rm -f `basename $PWD`.tar.gz \
     && tar --exclude='.git' --exclude='.gitignore' --exclude-vcs-ignores -zcvf (basename $PWD).tar.gz ./*'';
 
-  # AI.
-  ai = "mods";
-
   # Utility.
   calc = "qalc";
 }
