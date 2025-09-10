@@ -20,9 +20,7 @@ in
       shellInit = builtins.readFile ./init.fish;
       shellAbbrs = {
         k = "kubectl";
-        rm = "trash";
         ":q" = "exit";
-        cb = "wl-copy";
       };
       functions = defaultFunctions;
       shellAliases = defaultAliases;

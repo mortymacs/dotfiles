@@ -3,9 +3,6 @@
   list = with pkgs; [
     # Text.
     bat
-    unstable.ast-grep
-    ripgrep
-    pwgen
     most
     fd
     jq
@@ -14,12 +11,20 @@
     fx
     fq
     jless
+
+    # Find.
+    unstable.ast-grep
+    unstable.igrep
+
+    # Binary.
     hexyl
+    hevi
 
     # Office.
     unstable.zoom-us
     unstable.slack
     unstable.tz
+    eva
 
     ## Presentation / reading.
     glow
@@ -65,7 +70,6 @@
     pkg-config
     lsof
     ghq
-    nap
     httpie
     tokei
     gnumake
@@ -75,6 +79,8 @@
     unstable.d2
     ## Test.
     hurl
+    ## Snipped.
+    nap
 
     # Programming.
     ## C/C++.
@@ -94,6 +100,7 @@
     complexity
     cflow
     hotspot
+    flamelens
     massif-visualizer
     heaptrack
     bear
@@ -182,7 +189,7 @@
     xmlformat
 
     # Misc.
-    trash-cli
+    gomi
     unzip
     ascii-image-converter
   ];

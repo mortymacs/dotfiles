@@ -1,4 +1,8 @@
 {
+  # General.
+  rm = "gomi";
+  cb = "wl-copy";
+
   # Process.
   ps = "procs";
 
@@ -29,7 +33,7 @@
 
   # Search.
   f = "fzf --no-mouse --preview 'bat {} --style=numbers --color=always'";
-  gg = "rg -i -n";
+  gg = "ig -i -n";
   cg = "ast-grep run --pattern";
   gfi = "sk -i -c 'rg {}'";
 
@@ -73,5 +77,5 @@
     && tar --exclude='.git' --exclude='.gitignore' --exclude-vcs-ignores -zcvf (basename $PWD).tar.gz ./*'';
 
   # Utility.
-  calc = "qalc";
+  calc = "eva";
 }

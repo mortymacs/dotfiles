@@ -13,6 +13,7 @@
       status-lines = "diff --stat";
       conflicts = "diff --name-only --diff-filter=U --relative";
       restore-from-history = ''!f(){ git checkout "$(git rev-list -n 1 HEAD -- $1)"^ -- "$1"; }; f'';
+      who = "git-who";
     };
 
     delta = {
@@ -67,6 +68,7 @@
 
   home.packages = with pkgs; [
     git-town
+    git-who
     (writeShellScriptBin "git-user-stats" (builtins.readFile ./git-user-stats.sh))
   ];
 }
