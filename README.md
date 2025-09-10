@@ -26,7 +26,7 @@ My environment config. I tried to keep it minimal and simple as much as I could.
 | Terminal Multiplexer | [Tmux](https://github.com/tmux/tmux) |
 | Editor/IDE | [Neovim](https://github.com/neovim/neovim) |
 | DB | [dbcli tools](https://github.com/dbcli) |
-| Fonts | Display: [Adwaita Sans](https://gitlab.gnome.org/GNOME/adwaita-fonts), [VarizMatn](https://github.com/rastikerdar/vazirmatn), Monospace: [CodeNewRoman Nerd Font](https://www.nerdfonts.com), [Noto Color Emoji](https://github.com/C1710/blobmoji) |
+| Fonts | Display: [Lexend](https://www.lexend.com), [VarizMatn](https://github.com/rastikerdar/vazirmatn), Monospace: [CodeNewRoman Nerd Font](https://www.nerdfonts.com), [Noto Color Emoji](https://github.com/C1710/blobmoji) |
 | Browser | [Firefox](https://www.mozilla.org) |
 | [Wallpaper](./home-manager/common/desktop/wallpaper.jpg) | Created by me, under the same license as this repository. |
 
@@ -42,7 +42,7 @@ My environment config. I tried to keep it minimal and simple as much as I could.
 | Terminal Multiplexer | [Tmux](https://github.com/tmux/tmux) |
 | Editor/IDE | [Neovim](https://github.com/neovim/neovim) |
 | DB | [dbcli tools](https://github.com/dbcli) |
-| Fonts | Display: [Adwaita Sans](https://gitlab.gnome.org/GNOME/adwaita-fonts), [VarizMatn](https://github.com/rastikerdar/vazirmatn), Monospace: [CodeNewRoman Nerd Font](https://www.nerdfonts.com), [Noto Color Emoji](https://github.com/C1710/blobmoji) |
+| Fonts | Display: [Lexend](https://www.lexend.com), [VarizMatn](https://github.com/rastikerdar/vazirmatn), Monospace: [CodeNewRoman Nerd Font](https://www.nerdfonts.com), [Noto Color Emoji](https://github.com/C1710/blobmoji) |
 | Browser | [Firefox](https://www.mozilla.org) |
 | [Wallpaper](./home-manager/common/desktop/wallpaper.jpg) | Created by me, under the same license as this repository. |
 
