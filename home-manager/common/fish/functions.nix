@@ -33,7 +33,7 @@
   '';
   cleanup = ''
     # Trash.
-    trash-empty
+    gomi --prune=0d
 
     # Podman.
     # http://www.bashoneliners.com/oneliners/252/

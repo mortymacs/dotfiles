@@ -33,7 +33,7 @@
 
   # Search.
   f = "fzf --no-mouse --preview 'bat {} --style=numbers --color=always'";
-  gg = "ig -i -n";
+  gg = "ig -i";
   cg = "ast-grep run --pattern";
   gfi = "sk -i -c 'rg {}'";
 
