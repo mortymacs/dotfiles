@@ -1,7 +1,8 @@
 require("util")
 
 -- Kind.
-require("lspkind").init({
+local lspkind = require("lspkind")
+lspkind.init({
   symbol_map = {
     Constructor = "󰩀",
     Module = "",
@@ -11,53 +12,63 @@ require("lspkind").init({
 })
 
 -- CMP.
-require("blink.cmp").setup({
-  keymap = {
-    ["<m-k>"] = { "select_prev", "fallback" },
-    ["<m-j>"] = { "select_next", "fallback" },
-    ["<c-k>"] = { "scroll_documentation_up", "fallback" },
-    ["<c-j>"] = { "scroll_documentation_down", "fallback" },
-    ["<cr>"] = { "select_and_accept", "fallback" },
-    ["<esc>"] = { "hide", "fallback" },
+local cmp = require("cmp")
+cmp.setup({
+  snippet = {
+    expand = function(args)
+      vim.fn["vsnip#anonymous"](args.body)
+    end,
   },
-  signature = {
-    window = { border = "single" },
-  },
-  completion = {
-    documentation = {
-      auto_show = false,
-      window = { border = "single" },
-    },
-    menu = {
+  window = {
+    completion = {
+      winhighlight = "Normal:Pmenu",
+      col_offset = -3,
+      side_padding = 1,
       border = "single",
-      draw = {
-        padding = { 2, 2 },
-        components = {
-          kind_icon = {
-            text = function(ctx)
-              return " " .. ctx.kind_icon .. ctx.icon_gap .. " "
-            end,
-          },
-        },
-        columns = {
-          { "label", "label_description", gap = 1 },
-          { "kind_icon", "kind" },
-        },
-        treesitter = { "lsp" },
-      },
+    },
+    documentation = {
+      winhighlight = "Normal:PmenuDoc",
+      border = "single",
     },
   },
-  sources = {
-    default = { "lsp", "path" },
+  formatting = {
+    fields = { "abbr", "kind", "menu" },
+    format = lspkind.cmp_format({
+      mode = "symbol_text",
+      symbol_map = {
+        Variable = "",
+      },
+    }),
   },
-  appearance = {
-    nerd_font_variant = "normal",
-  },
+  mapping = cmp.mapping.preset.insert({
+    ["<a-j>"] = cmp.mapping.select_next_item(),
+    ["<a-k>"] = cmp.mapping.select_prev_item(),
+    ["<c-up>"] = cmp.mapping.scroll_docs(-4),
+    ["<c-down>"] = cmp.mapping.scroll_docs(4),
+    ["<c-space>"] = cmp.mapping.complete(),
+    ["<esc>"] = cmp.mapping.abort(),
+    ["<cr>"] = cmp.mapping.confirm({ select = true }),
+  }),
+  sources = cmp.config.sources({
+    { name = "nvim_lsp" },
+    { name = "path" },
+    { name = "buffer" },
+  }),
+})
+
+-- Use cmdline & path source for ':'.
+cmp.setup.cmdline(":", {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = cmp.config.sources({
+    { name = "path" },
+  }, {
+    { name = "cmdline" },
+  }),
 })
 
 -- Set up lspconfig.
 local lspconfig = require("lspconfig")
-local capabilities = require("blink.cmp").get_lsp_capabilities()
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 -- Rust.
 require("crates").setup()

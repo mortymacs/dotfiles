@@ -22,6 +22,14 @@ vim.api.nvim_set_hl(0, "SnacksPickerInputBorder", { bg = "" })
 -- Whichkey.
 vim.api.nvim_set_hl(0, "WhichKeyNormal", { bg = "" })
 
+-- LSP.
+-- -- General.
+vim.api.nvim_set_hl(0, "Pmenu",     { bg = "" })
+vim.api.nvim_set_hl(0, "PmenuSbar", { bg = "#272831" })
+vim.api.nvim_set_hl(0, "PmenuDoc",  { bg = "" })
+-- -- Lsp Signature.
+vim.api.nvim_set_hl(0, "LspSignatureActiveParameter", { bg = "" })
+
 -- Bookmark.
 vim.g.bookmark_sign = ''
 vim.g.bookmark_highlight_lines = 1

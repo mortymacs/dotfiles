@@ -20,7 +20,7 @@ My environment config. I tried to keep it minimal and simple as much as I could.
 | Status Bar | [i3status-rust](https://github.com/greshake/i3status-rust) |
 | Launcher | [Rofi-Wayland](https://github.com/lbonn/rofi) |
 | GTK Theme + Icon | [Yaru](https://github.com/ubuntu/yaru) |
-| Terminal | [Alacritty](https://alacritty.org) |
+| Terminal | [Foot](https://codeberg.org/dnkl/foot) |
 | Shell | [Fish](https://fishshell.com) |
 | Shell Prompt | [Starship](https://github.com/starship/starship) |
 | Terminal Multiplexer | [Tmux](https://github.com/tmux/tmux) |
@@ -36,7 +36,7 @@ My environment config. I tried to keep it minimal and simple as much as I could.
 |----------|------|
 | Distro | [NixOS](https://nixos.org/) |
 | Desktop | [Gnome](https://www.gnome.org) |
-| Terminal | [Alacritty](https://alacritty.org) |
+| Terminal | [Foot](https://codeberg.org/dnkl/foot) |
 | Shell | [Fish](https://fishshell.com) |
 | Shell Prompt | [Starship](https://github.com/starship/starship) |
 | Terminal Multiplexer | [Tmux](https://github.com/tmux/tmux) |

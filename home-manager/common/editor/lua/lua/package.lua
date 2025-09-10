@@ -211,8 +211,13 @@ require("lazy").setup({
   "neovim/nvim-lspconfig",
   "onsails/lspkind.nvim",
   {
-    "saghen/blink.cmp",
-    version = "1.*",
+    "hrsh7th/cmp-nvim-lsp",
+    dependencies = {
+      "hrsh7th/nvim-cmp",
+      "hrsh7th/cmp-cmdline",
+      "hrsh7th/cmp-path",
+    },
+    event = "LspAttach",
   },
   {
     "Wansmer/symbol-usage.nvim",

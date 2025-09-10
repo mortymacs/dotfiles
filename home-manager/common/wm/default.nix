@@ -102,7 +102,7 @@ in
         };
       };
 
-      terminal = "alacritty-fork";
+      terminal = "foot";
       keybindings = {
         # Focus.
         "${modifier}+j" = "focus down";
@@ -150,7 +150,7 @@ in
 
         # Application.
         "${modifier}+w" = "exec firefox";
-        "${modifier}+Return" = "exec alacritty-fork";
+        "${modifier}+Return" = "exec foot";
         "${modifier}+Shift+s" = "exec flameshot-gui";
       };
 

@@ -1,15 +1,11 @@
 { pkgs, ... }:
 {
-  programs.alacritty = {
+  programs.foot = {
     enable = true;
-    package = pkgs.unstable.alacritty;
+    package = pkgs.unstable.foot;
   };
 
   xdg.configFile = {
-    "alacritty/alacritty.toml".source = ./alacritty.toml;
+    "foot/foot.ini".source = ./foot.ini;
   };
-
-  home.packages = with pkgs; [
-    (writeShellScriptBin "alacritty-fork" (builtins.readFile ./alacritty-fork.sh))
-  ];
 }
