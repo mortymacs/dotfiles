@@ -14,6 +14,7 @@
 
     # Find.
     unstable.ast-grep
+    unstable.ripgrep
     unstable.igrep
 
     # Binary.
