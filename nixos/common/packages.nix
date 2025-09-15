@@ -14,6 +14,7 @@
 
     # Virtualisation.
     unstable.qemu
+    buildah
 
     # Doc.
     man-pages
