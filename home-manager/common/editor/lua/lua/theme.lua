@@ -37,7 +37,16 @@ vim.g.bookmark_sho_warning = 0
 vim.g.bookmark_show_toggle_warning = 0
 
 -- Cursor.
-vim.opt.guicursor = { "a:block" }
+vim.opt.guicursor = "a:block"
+
+-- Icons.
+vim.fn.sign_define("DapStopped",            { text = "", texthl = "SignColumn", linehl = "debugPC" })
+vim.fn.sign_define("DapLogPoint",           { text = "", texthl = "SignColumn" })
+vim.fn.sign_define("DapBreakpointRejected", { text = "", texthl = "SignColumn" })
+vim.fn.sign_define("DapBreakpointCondition",{ text = "", texthl = "SignColumn" })
+vim.fn.sign_define("DapBreakpoint",         { text = "", texthl = "SignColumn" })
+vim.fn.sign_define("Bookmark",              { text = "", linehl = "BookmarkLine", texthl = "BookmarkSign" })
+vim.fn.sign_define("BookmarkAnnotation",    { text = "", linehl = "BookmarkAnnotationLine", texthl = "BookmarkAnnotationSign" })
 
 -- Modes.
 require('modes').setup()
