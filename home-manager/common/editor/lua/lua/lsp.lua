@@ -68,14 +68,13 @@ cmp.setup.cmdline(":", {
 })
 
 -- Set up lspconfig.
-local lspconfig = require("lspconfig")
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 -- Rust.
 require("crates").setup()
 
 -- C/C++.
-lspconfig.clangd.setup({
+vim.lsp.enable("clangd", {
   capabilities = capabilities,
   init_options = {
     compilationDatabaseDirectory = "build",
@@ -91,7 +90,7 @@ vim.g.go_auto_type_info = 0
 vim.g.go_gopls_enabled = 1
 vim.g.go_echo_command_info = 0
 vim.g.go_def_mapping_enabled = 0
-lspconfig.gopls.setup({
+vim.lsp.enable("gopls", {
   capabilities = capabilities,
   settings = {
     gopls = {
@@ -104,7 +103,7 @@ lspconfig.gopls.setup({
 require("neodev").setup({
   library = { plugins = { "nvim-dap-ui" }, types = true },
 })
-lspconfig.lua_ls.setup({
+vim.lsp.enable("lua_ls", {
   capabilities = capabilities,
   settings = {
     Lua = {
@@ -116,7 +115,7 @@ lspconfig.lua_ls.setup({
 })
 
 -- Python.
-lspconfig.pyright.setup({
+vim.lsp.enable("pyright", {
   capabilities = capabilities,
 })
 
@@ -125,37 +124,34 @@ vim.g.markdown_fenced_languages = {
   "js=javascript",
   "ts=typescript",
 }
-lspconfig.denols.setup({
-  capabilities = capabilities,
-})
 
 -- Nix.
-lspconfig.nil_ls.setup({
+vim.lsp.enable("nil_ls", {
   capabilities = capabilities,
 })
 
 -- Shell.
-lspconfig.bashls.setup({
+vim.lsp.enable("bashls", {
   capabilities = capabilities,
 })
 
 -- SQL.
-lspconfig.postgres_lsp.setup({
+vim.lsp.enable("postgres_lsp", {
   capabilities = capabilities,
 })
 
 -- CMake.
-lspconfig.neocmake.setup({
+vim.lsp.enable("neocmake", {
   capabilities = capabilities,
 })
 
 -- Terraform.
-lspconfig.terraformls.setup({
+vim.lsp.enable("terraformls", {
   capabilities = capabilities,
 })
 
 -- Typst.
-lspconfig.tinymist.setup({
+vim.lsp.enable("tinymist", {
   capabilities = capabilities,
   offset_encoding = "utf-8",
 })
@@ -169,21 +165,16 @@ require("typst-preview").setup({
   },
 })
 
--- Dot.
-lspconfig.dotls.setup({
-  capabilities = capabilities,
-})
-
 -- HTML / CSS / Markdown.
-lspconfig.html.setup({
+vim.lsp.enable("html", {
   capabilities = capabilities,
 })
-lspconfig.cssls.setup({
+vim.lsp.enable("cssls", {
   capabilities = capabilities,
 })
 
 -- JSON.
-lspconfig.jsonls.setup({
+vim.lsp.enable("jsonls", {
   capabilities = capabilities,
   settings = {
     json = {
@@ -194,7 +185,7 @@ lspconfig.jsonls.setup({
 })
 
 -- YAML.
-lspconfig.yamlls.setup({
+vim.lsp.enable("yamlls", {
   capabilities = capabilities,
   settings = {
     yaml = {
@@ -208,9 +199,6 @@ require("lsp-progress").setup()
 
 -- Symbol usage.
 local SymbolKind = vim.lsp.protocol.SymbolKind
-local function h(name)
-  return vim.api.nvim_get_hl(0, { name = name })
-end
 local function text_format(symbol)
   local res = {}
 
