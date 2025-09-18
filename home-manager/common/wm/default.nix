@@ -67,7 +67,7 @@ in
       };
 
       gaps = {
-        inner = 10;
+        inner = 9;
       };
 
       colors = {
