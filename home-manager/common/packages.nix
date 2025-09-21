@@ -85,11 +85,11 @@
 
     # Programming.
     ## C/C++.
-    (hiPrio unstable.gcc)
+    (hiPrio gcc)
     clang
     clang-tools
-    unstable.gdb
-    unstable.cgdb
+    gdb
+    cgdb
     lldb
     cppcheck
     cpplint
