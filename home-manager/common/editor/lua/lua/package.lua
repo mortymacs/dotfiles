@@ -175,13 +175,6 @@ require("lazy").setup({
     },
   },
   {
-    "folke/zen-mode.nvim",
-    dependencies = {
-      "folke/twilight.nvim",
-    },
-    event = "VeryLazy",
-  },
-  {
     "MeanderingProgrammer/render-markdown.nvim",
     dependencies = {
       "nvim-treesitter/nvim-treesitter",
@@ -235,20 +228,6 @@ require("lazy").setup({
     dependencies = {
       "nvim-tree/nvim-web-devicons",
     },
-    event = "LspAttach",
-  },
-  -- -- Rust.
-  {
-    "mrcjkb/rustaceanvim",
-    version = "^5",
-    lazy = false,
-    ft = { "rust", "toml" },
-    event = "LspAttach",
-  },
-  {
-    "saecki/crates.nvim",
-    tag = "stable",
-    ft = { "toml" },
     event = "LspAttach",
   },
   -- -- Go.
@@ -325,9 +304,6 @@ require("lazy").setup({
     cmd = "ShowkeysToggle",
     event = "VeryLazy",
   },
-
-  -- Large files.
-  "LunarVim/bigfile.nvim",
 
   -- Nerd Icon.
   {

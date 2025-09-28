@@ -9,7 +9,6 @@
   # Editor.
   v = "$EDITOR";
   e = "emacsclient --reuse-frame";
-  vg = "neovide";
 
   # Read.
   cat = "bat";
@@ -52,7 +51,6 @@
         --profile localstack'';
 
   # Server/Proxy.
-  ping = "gping --vertical-margin 0";
   x = "export http_proxy='http://127.0.0.1:8118'";
   dx = "export http_proxy=''";
   whereiam = "echo (curl -s http://ip-api.com/json | jq -r '.country,.city')";

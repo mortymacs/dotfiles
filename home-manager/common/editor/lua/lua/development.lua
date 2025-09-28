@@ -1,6 +1,8 @@
 -- Treesitter setup.
 require("nvim-treesitter.configs").setup({
   ensure_installed = {
+    "c",
+    "cpp",
     "go",
     "python",
     "lua",
@@ -20,6 +22,8 @@ require("nvim-treesitter.configs").setup({
     "regex",
     "http",
     "vimdoc",
+    "make",
+    "cmake",
   },
   sync_install = true,
   auto_install = true,
@@ -288,27 +292,6 @@ require("range-highlight").setup()
 
 -- Decorated yank.
 require("decorated_yank").setup()
-
--- Zen mode.
-require("twilight").setup()
-require("zen-mode").setup({
-  window = {
-    width = 1,
-    options = {
-      signcolumn = "no",
-      number = false,
-      foldcolumn = "0",
-      cursorline = false,
-      cursorcolumn = false,
-    },
-  },
-  plugins = {
-    kitty = {
-      enabled = true,
-      font = "+5",
-    },
-  },
-})
 
 -- Markdown
 require("render-markdown").setup({

@@ -8,14 +8,13 @@
     jq
     yq
     htmlq
-    fx
-    fq
     jless
 
     # Find.
-    unstable.ast-grep
-    unstable.ripgrep
-    unstable.igrep
+    tree
+    ast-grep
+    ripgrep
+    igrep
 
     # Binary.
     hexyl
@@ -24,8 +23,9 @@
     # Office.
     unstable.zoom-us
     unstable.slack
-    unstable.tz
+    tz
     eva
+    zathura
 
     ## Presentation / reading.
     glow
@@ -34,7 +34,6 @@
     eza
     zoxide
     file
-    tree
 
     # Process.
     procs
@@ -44,21 +43,16 @@
 
     # System / network.
     duf
-    gping
     networkmanagerapplet
-    unstable.websocat
+    websocat
 
     # Cloud / virtualization / CICD.
     kubectl
     kubecolor
     kubectx
     kind
-    k9s
-    kubespy
     stern
     kubernetes-helm
-    helm-docs
-    chart-testing
     awscli2
     ctop
     unstable.wait4x
@@ -71,15 +65,11 @@
     pkg-config
     lsof
     ghq
-    httpie
     tokei
-    gnumake
     commitlint
     silicon
     ## Diagram.
     unstable.d2
-    ## Test.
-    hurl
     ## Snipped.
     nap
 
@@ -110,6 +100,7 @@
     cmake-lint
     neocmakelsp
     cpm-cmake
+    gnumake
     emscripten
     ## Go.
     unstable.go
@@ -135,8 +126,8 @@
     air
     unstable.panicparse
     ## Rust.
-    unstable.rustc
-    unstable.cargo
+    rustc
+    cargo
     ## Python.
     (python313.withPackages (
       ps: with ps; [
@@ -155,6 +146,9 @@
     sumneko-lua-language-server
     stylua
     lua54Packages.luacheck
+    # Guile.
+    unstable.guile
+    unstable.guile-lsp-server
     ## Javascript/Typescript.
     deno
     nodejs

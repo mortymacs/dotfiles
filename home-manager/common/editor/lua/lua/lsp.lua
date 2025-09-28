@@ -70,9 +70,6 @@ cmp.setup.cmdline(":", {
 -- Set up lspconfig.
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
--- Rust.
-require("crates").setup()
-
 -- C/C++.
 vim.lsp.enable("clangd", {
   capabilities = capabilities,
@@ -119,6 +116,11 @@ vim.lsp.enable("pyright", {
   capabilities = capabilities,
 })
 
+-- Guile.
+vim.lsp.enable("guile_ls", {
+  capabilities = capabilities,
+})
+
 -- Javascript/Typescript.
 vim.g.markdown_fenced_languages = {
   "js=javascript",
@@ -132,11 +134,6 @@ vim.lsp.enable("nil_ls", {
 
 -- Shell.
 vim.lsp.enable("bashls", {
-  capabilities = capabilities,
-})
-
--- SQL.
-vim.lsp.enable("postgres_lsp", {
   capabilities = capabilities,
 })
 
