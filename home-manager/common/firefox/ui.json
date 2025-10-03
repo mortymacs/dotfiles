@@ -17,7 +17,8 @@
       "_a138007c-5ff6-4d10-83d9-0afaf0efbe5e_-browser-action",
       "enhancerforyoutube_maximerf_addons_mozilla_org-browser-action",
       "atbc_easonwong-browser-action",
-      "_de22fd49-c9ab-4359-b722-b3febdc3a0b0_-browser-action"
+      "_de22fd49-c9ab-4359-b722-b3febdc3a0b0_-browser-action",
+      "_c23d8eea-4e71-4573-a245-4c97f8e1a1e0_-browser-action"
     ],
     "nav-bar": [
       "sidebar-button",
@@ -26,7 +27,6 @@
       "forward-button",
       "stop-reload-button",
       "urlbar-container",
-      "save-to-pocket-button",
       "downloads-button",
       "fxa-toolbar-menu-button",
       "unified-extensions-button",
@@ -64,7 +64,8 @@
     "enhancerforyoutube_maximerf_addons_mozilla_org-browser-action",
     "atbc_easonwong-browser-action",
     "_de22fd49-c9ab-4359-b722-b3febdc3a0b0_-browser-action",
-    "screenshot-button"
+    "screenshot-button",
+    "_c23d8eea-4e71-4573-a245-4c97f8e1a1e0_-browser-action"
   ],
   "dirtyAreaCache": [
     "nav-bar",
@@ -74,6 +75,6 @@
     "TabsToolbar",
     "vertical-tabs"
   ],
-  "currentVersion": 22,
+  "currentVersion": 23,
   "newElementCount": 19
 }
