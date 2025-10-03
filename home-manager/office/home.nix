@@ -46,7 +46,7 @@ in
     ];
   };
 
-  home.packages = with pkgs; defaultPackages.list ++ [ unstable.teams-for-linux ];
+  home.packages = with pkgs; defaultPackages.list ++ [ unstable.teams-for-linux unstable.jetbrains-toolbox ];
 
   # Fontconfig.
   fonts.fontconfig.enable = true;
