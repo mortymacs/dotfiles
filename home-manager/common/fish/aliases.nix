@@ -1,5 +1,7 @@
 {
   # General.
+  wifi-config = "nmtui";
+  sound-config = "wpctl";
   rm = "gomi";
   cb = "wl-copy";
 
