@@ -24,7 +24,7 @@
     bat cache --build
 
     # Containers.
-    for img in localstack/localstack valkey/valkey:alpine postgres kennethreitz/httpbin
+    for img in localstack/localstack valkey/valkey:alpine postgres kennethreitz/httpbin temporalio/auto-setup
         podman pull $img;
     end
 
@@ -80,7 +80,7 @@
         -e POSTGRES_DB="db" -e POSTGRES_USER=user -e POSTGRES_PASSWORD=secret \
         postgres
   '';
-  localstack = ''
+  localstack-server = ''
     podman run -d --rm \
         -p 4566:4566 -p 4510-4559:4510-4559 \
         --name localstack \
@@ -91,6 +91,18 @@
         aws --endpoint-url http://127.0.0.1:4566 --region us-east-1 --profile localstack sns create-topic --name "sns$i"
         aws --endpoint-url http://127.0.0.1:4566 --region us-east-1 --profile localstack s3api create-bucket --bucket "s3$i"
     end
+  '';
+  temporal-server = ''
+    podman run -d --rm \
+        -p 7233:7233 \
+        --name temporal \
+        --env DB=postgres12_pgx \
+        --env DB_PORT=5432 \
+        --env POSTGRES_USER=user \
+        --env POSTGRES_PWD=secret \
+        --env POSTGRES_DB=db \
+        --env POSTGRES_SEEDS=host.docker.internal \
+        temporalio/auto-setup
   '';
 
   # Git.
