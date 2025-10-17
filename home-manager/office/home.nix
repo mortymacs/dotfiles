@@ -46,7 +46,7 @@ in
     ];
   };
 
-  home.packages = with pkgs; defaultPackages.list ++ [ unstable.teams-for-linux ];
+  home.packages = with pkgs; defaultPackages.list ++ [ unstable.teams-for-linux unstable.code-cursor ];
 
   # Fontconfig.
   fonts.fontconfig.enable = true;
