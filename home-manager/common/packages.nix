@@ -187,5 +187,6 @@
     gomi
     unzip
     ascii-image-converter
+    hyprpicker
   ];
 }

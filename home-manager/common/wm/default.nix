@@ -147,6 +147,7 @@ in
         "${modifier}+c" =
           "exec cliphist list | rofi -dmenu | cliphist decode | wl-copy | xargs swaymsg exec --";
         "${modifier}+Tab" = "exec rofi -show window | xargs swaymsg exec --";
+        "${modifier}+Shift+c" = "exec hyprpicker | wl-copy";
 
         # Application.
         "${modifier}+w" = "exec firefox";
