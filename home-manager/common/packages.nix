@@ -158,7 +158,7 @@
     nixfmt-rfc-style
     nurl
     ## Shell.
-    nodePackages.bash-language-server
+    bash-language-server
     shfmt
     shellcheck
     unstable.gum
@@ -167,7 +167,7 @@
     tfsec
     terraform-docs
     ## Dockerfile.
-    nodePackages.dockerfile-language-server-nodejs
+    dockerfile-language-server-nodejs
     ## Typst.
     unstable.typst
     unstable.typstfmt
