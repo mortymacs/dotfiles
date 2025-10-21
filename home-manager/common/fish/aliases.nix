@@ -2,6 +2,7 @@
   # General.
   wifi-config = "nmtui";
   sound-config = "wpctl";
+  bluetooth-config = "bluetui";
   rm = "gomi";
   cb = "wl-copy";
 

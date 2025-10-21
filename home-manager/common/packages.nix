@@ -45,6 +45,7 @@
     duf
     networkmanagerapplet
     websocat
+    bluetui
 
     # Cloud / virtualization / CICD.
     kubectl

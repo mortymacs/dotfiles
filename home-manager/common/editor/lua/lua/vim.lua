@@ -66,8 +66,8 @@ vim.opt.timeoutlen = 300
 if vim.g.neovide then
   vim.opt.winblend = 20
   vim.g.neovide_cursor_vfx_mode = "railgun"
-  vim.o.guifont = "monospace:h12"
-  vim.g.neovide_transparency = 0.8
+  vim.o.guifont = "monospace:h15"
+  vim.g.neovide_transparency = 0.95
   vim.g.neovide_theme = "auto"
   vim.g.neovide_scroll_animation_length = 0.3
   vim.g.neovide_cursor_animation_length = 0.05
