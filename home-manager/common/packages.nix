@@ -48,6 +48,7 @@
     bluetui
 
     # Cloud / virtualization / CICD.
+    podman-compose
     kubectl
     kubecolor
     kubectx
