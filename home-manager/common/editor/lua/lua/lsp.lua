@@ -116,11 +116,6 @@ vim.lsp.enable("pyright", {
   capabilities = capabilities,
 })
 
--- Guile.
-vim.lsp.enable("guile_ls", {
-  capabilities = capabilities,
-})
-
 -- Javascript/Typescript.
 vim.g.markdown_fenced_languages = {
   "js=javascript",

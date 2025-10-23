@@ -105,28 +105,28 @@
     gnumake
     emscripten
     ## Go.
-    unstable.go
-    unstable.gopls
-    unstable.delve
-    unstable.pprof
-    unstable.go-tools
-    unstable.gotools
-    unstable.revive
-    unstable.gosec
-    unstable.golangci-lint
-    unstable.govulncheck
-    unstable.nilaway
-    unstable.gocovsh
-    unstable.go-cover-treemap
+    go
+    gopls
+    delve
+    pprof
+    go-tools
+    gotools
+    revive
+    gosec
+    golangci-lint
+    govulncheck
+    nilaway
+    gocovsh
+    go-cover-treemap
     goimports-reviser
     goconst
     gomodifytags
     gotags
     reftools
-    unstable.go-motion
+    go-motion
     mage
     air
-    unstable.panicparse
+    panicparse
     ## Rust.
     rustc
     cargo
@@ -140,17 +140,14 @@
         black
       ]
     ))
-    unstable.uv
-    unstable.pyright
-    unstable.ruff
+    uv
+    pyright
+    ruff
     ## Lua.
     luajit
     sumneko-lua-language-server
     stylua
     lua54Packages.luacheck
-    # Guile.
-    unstable.guile
-    unstable.guile-lsp-server
     ## Javascript/Typescript.
     deno
     nodejs
@@ -171,9 +168,9 @@
     ## Dockerfile.
     dockerfile-language-server-nodejs
     ## Typst.
-    unstable.typst
-    unstable.typstfmt
-    unstable.tinymist
+    typst
+    typstfmt
+    tinymist
     ## HTML & CSS.
     vscode-langservers-extracted
     ## YAML.
