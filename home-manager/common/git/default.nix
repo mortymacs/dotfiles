@@ -29,6 +29,9 @@
     };
 
     extraConfig = {
+      format = {
+        signoff = true;
+      };
       push = {
         default = "current";
       };
@@ -61,7 +64,6 @@
     ];
   };
   xdg.configFile = {
-    # Wallpaper.
     "git/themes.gitconfig".source = ./themes.gitconfig;
     "git/hooks/pre-push".source = ./hooks/pre-push;
   };
