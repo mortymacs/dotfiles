@@ -46,7 +46,7 @@ in
     ];
   };
 
-  home.packages = with pkgs; defaultPackages.list ++ [ unstable.teams-for-linux unstable.code-cursor ];
+  home.packages = with pkgs; defaultPackages.list ++ [ unstable.teams-for-linux unstable.code-cursor jetbrains.phpstorm ];
 
   # Fontconfig.
   fonts.fontconfig.enable = true;
