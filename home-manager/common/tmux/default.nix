@@ -28,9 +28,13 @@ in
 
       # Keybinding.
       bind -n M-H previous-window
+      bind -n M-S-Left previous-window
       bind -n M-L next-window
+      bind -n M-S-Right next-window
       bind -n M-K switch-client -p
+      bind -n M-S-Up switch-client -p
       bind -n M-J switch-client -n
+      bind -n M-S-Down switch-client -n
       bind h select-pane -L
       bind j select-pane -D
       bind k select-pane -U

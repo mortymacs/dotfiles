@@ -106,13 +106,19 @@ in
       keybindings = {
         # Focus.
         "${modifier}+j" = "focus down";
+        "${modifier}+Down" = "focus down";
         "${modifier}+h" = "focus left";
+        "${modifier}+Left" = "focus left";
         "${modifier}+l" = "focus right";
+        "${modifier}+Right" = "focus right";
         "${modifier}+k" = "focus up";
+        "${modifier}+Up" = "focus up";
 
         # Workspace.
         "${modifier}+Shift+h" = "workspace prev";
+        "${modifier}+Shift+Left" = "workspace prev";
         "${modifier}+Shift+l" = "workspace next";
+        "${modifier}+Shift+Right" = "workspace next";
         "${modifier}+Shift+0" = "workspace number 0";
         "${modifier}+Shift+1" = "workspace number 1";
         "${modifier}+Shift+2" = "workspace number 2";
@@ -132,9 +138,13 @@ in
 
         # Move.
         "${modifier}+Shift+Ctrl+l" = "exec move-to-next-workspace";
+        "${modifier}+Shift+Ctrl+Right" = "exec move-to-next-workspace";
         "${modifier}+Shift+Ctrl+h" = "move to workspace prev";
+        "${modifier}+Shift+Ctrl+Left" = "move to workspace prev";
         "${modifier}+Shift+Alt+h" = "move left";
+        "${modifier}+Shift+Alt+Left" = "move left";
         "${modifier}+Shift+Alt+l" = "move right";
+        "${modifier}+Shift+Alt+Right" = "move right";
 
         # Action.
         "${modifier}+Shift+a" = "exec swaylock -c '0f111b' -e -F";

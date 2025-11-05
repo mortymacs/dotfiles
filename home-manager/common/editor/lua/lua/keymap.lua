@@ -21,7 +21,9 @@ end, { "n" }, nil, "Buffers")
 
 -- Tabbar.
 SetKeyMap("<s-h>",      "<Cmd>BufferPrevious<cr>", { "n" })
+SetKeyMap("<s-Left>",   "<Cmd>BufferPrevious<cr>")
 SetKeyMap("<s-l>",      "<Cmd>BufferNext<cr>",     { "n" })
+SetKeyMap("<s-Right>",  "<Cmd>BufferNext<cr>")
 SetKeyMap("<c-x><c-n>", "<Cmd>tabnew<cr>")
 
 -- File and directory
