@@ -1,59 +1,55 @@
 element {
-children: [element-text];
+    children: [ "element-text" ];
 }
-
 element-text {
-background-color: #0B1015;
-text-color: #FCFCFC;
+    background-color: rgba ( 11, 16, 21, 100 % );
+    text-color:       rgba ( 252, 252, 252, 100 % );
 }
-
 element-text selected {
-background-color: #161927;
+    background-color: rgba ( 22, 25, 39, 100 % );
 }
-
 entry {
-background-color: #161927;
-border: 1;
-border-color: #27213C;
-text-color: #FCFCFC;
+    background-color: rgba ( 22, 25, 39, 100 % );
+    border-color:     rgba ( 39, 33, 60, 100 % );
+    border:           1;
+    text-color:       rgba ( 252, 252, 252, 100 % );
 }
-
 inputbar {
-background-color: #0B1015;
-border: 0;
-children: [entry];
+    background-color: rgba ( 11, 16, 21, 100 % );
+    border:           0;
+    children:         [ "entry" ];
 }
-
 listview {
-background-color: #0B1015;
-children: [element];
-lines: 3;
-text-color: #FCFCFC;
+    background-color: rgba ( 11, 16, 21, 100 % );
+    lines:            3;
+    children:         [ "element" ];
+    text-color:       rgba ( 252, 252, 252, 100 % );
 }
-
 mainbox {
-background-color: #0B1015;
-children: [inputbar,message,listview];
+    background-color: rgba ( 11, 16, 21, 100 % );
+    children:         [ "inputbar","message","listview" ];
 }
-
 message {
-background-color: #0B1015;
+    background-color: rgba ( 11, 16, 21, 100 % );
 }
-
 prompt {
-background-color: "#0B1015";
-text-color: #FCFCFC;
+    background-color: "#0B1015";
+    text-color:       rgba ( 252, 252, 252, 100 % );
 }
-
 textbox {
-background-color: #0B1015;
-text-color: #FCFCFC;
+    background-color: rgba ( 11, 16, 21, 100 % );
+    text-color:       rgba ( 252, 252, 252, 100 % );
 }
-
 window {
-background-color: #0B1015;
-border: 1;
-border-color: #27213C;
-children: [mainbox];
-padding: 5;
+    padding:          5;
+    background-color: rgba ( 11, 16, 21, 100 % );
+    width:            25%;
+    border-color:     rgba ( 39, 33, 60, 100 % );
+    border:           1;
+    children:         [ "mainbox" ];
+}
+element-icon {
+    visible: true;
+    size: 1.2em;
+    padding: 5px;
 }

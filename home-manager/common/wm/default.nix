@@ -153,7 +153,7 @@ in
         "${modifier}+Shift+e" = "exec exit-action | xargs swaymsg exec --";
 
         # Launcher.
-        "${modifier}+d" = "exec rofi -show run | xargs swaymsg exec --";
+        "${modifier}+d" = "exec rofi -show drun | xargs swaymsg exec --";
         "${modifier}+c" =
           "exec cliphist list | rofi -dmenu | cliphist decode | wl-copy | xargs swaymsg exec --";
         "${modifier}+Tab" = "exec rofi -show window | xargs swaymsg exec --";
