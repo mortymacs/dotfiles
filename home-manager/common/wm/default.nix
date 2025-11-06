@@ -2,7 +2,7 @@
 let
   modifier = config.wayland.windowManager.sway.config.modifier;
   fontSize = 13.0;
-  fontName = "monospace";
+  fontName = "sans";
   gtkTheme = "Yaru-purple";
   iconTheme = "Yaru-purple";
   cursorTheme = "Yaru";
