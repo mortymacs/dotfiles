@@ -48,8 +48,3 @@ window {
     border:           1;
     children:         [ "mainbox" ];
 }
-element-icon {
-    visible: true;
-    size: 1.2em;
-    padding: 5px;
-}
