@@ -1,7 +1,6 @@
 {
   lib,
   config,
-  pkgs,
   ...
 }:
 {
@@ -36,13 +35,6 @@
       EOF
             fi
     '';
-  };
-
-  # Todo management.
-  programs.taskwarrior = {
-    enable = true;
-    package = pkgs.unstable.taskwarrior3;
-    colorTheme = "dark-blue-256";
   };
 
   # Nix Index.
