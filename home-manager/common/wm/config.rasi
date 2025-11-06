@@ -1,5 +1,5 @@
 configuration {
-    font: "sans-serif 13";
+    font: "monospace 13";
     location: 0;
     xoffset: 0;
     yoffset: 0;
