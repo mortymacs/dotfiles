@@ -184,7 +184,7 @@ in
           trayOutput = "*";
           statusCommand = "i3status-rs ~/.config/i3status-rust/config-default.toml";
           colors = {
-            background = "#1f2041";
+            background = "#161927";
             statusline = "#FFF3F0";
             focusedWorkspace = {
               background = "#028090";
@@ -192,12 +192,12 @@ in
               text = "#FFF3F0";
             };
             activeWorkspace = {
-              background = "#1f2041";
+              background = "#161927";
               border = "#161927";
               text = "#FFF3F0";
             };
             inactiveWorkspace = {
-              background = "#1f2041";
+              background = "#161927";
               border = "#1f2041";
               text = "#FFF3F0";
             };
@@ -268,8 +268,8 @@ in
               idle_fg = "#FFF3F0";
               good_fg = "#FFF3F0";
               separator = " ";
-              idle_bg = "#1f2041";
-              good_bg = "#1f2041";
+              idle_bg = "#161927";
+              good_bg = "#161927";
             };
           };
         };
