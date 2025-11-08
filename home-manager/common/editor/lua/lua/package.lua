@@ -53,6 +53,11 @@ require("lazy").setup({
 
   -- Finder.
   {
+    "stevearc/oil.nvim",
+    dependencies = { "nvim-mini/mini.icons" },
+    lazy = false,
+  },
+  {
     "nvim-neo-tree/neo-tree.nvim",
     branch = "v3.x",
     dependencies = {

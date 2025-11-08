@@ -1,3 +1,7 @@
+-- Oil.
+require("oil").setup()
+
+-- Neotree.
 require("neo-tree").setup({
   enable_modified_markers = false,
   hide_root_node = true,
@@ -8,10 +12,6 @@ require("neo-tree").setup({
       {
         source = "filesystem",
         display_name = " 󰉕 Files ",
-      },
-      {
-        source = "buffers",
-        display_name = "  Buffers ",
       },
       {
         source = "git_status",
@@ -39,9 +39,6 @@ require("neo-tree").setup({
         "venv",
         ".git",
         "vendor",
-        ".DS_Store",
-        ".idea",
-        ".vscode",
       },
       always_show = {
         ".gitignore",

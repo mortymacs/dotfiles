@@ -165,3 +165,5 @@ SetKeyMap("<c-x><c-y>", "<Cmd>Lazy! sync<cr>")
 
 -- Misc.
 SetKeyMap("<c-s>", "<esc>:silent wa<cr>")
+require('mini.jump').setup()
+require('mini.jump2d').setup()

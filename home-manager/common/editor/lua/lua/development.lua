@@ -331,3 +331,7 @@ require("namu").setup({
     options = default_namu_config,
   },
 })
+
+-- Mini.
+require("mini.ai").setup()
+require("mini.surround").setup()
