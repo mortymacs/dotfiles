@@ -26,6 +26,7 @@
     tz
     eva
     zathura
+    rnote
 
     ## Presentation / reading.
     glow
