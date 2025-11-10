@@ -1,3 +1,8 @@
+> ⚠️ **This project has moved!**
+>
+> This repository is no longer maintained. The project has been moved to **[https://git.sr.ht/~mortymacs/dotfiles](https://git.sr.ht/~mortymacs/dotfiles)**.
+> Please update your bookmarks and clone the new repository for the latest updates.
+
 <p align="center">
     <img src="./doc/logo.png" alt="Logo">
 </p>
