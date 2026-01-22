@@ -1,0 +1,83 @@
+{
+  pkgs,
+  ...
+}:
+{
+  programs.git = {
+    enable = true;
+    settings = {
+      user = {
+        name = "Morteza NourelahiAlamdari";
+        email = "m@0g1.org";
+      };
+      aliases = {
+        ss = "status --short";
+        tree = "log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'";
+        del-local = ''!f(){ git branch | grep "$1" | xargs git branch -d; }; f'';
+        del-all = ''!f(){ git branch | grep "$1" | xargs git branch -D; }; f'';
+        show-files = "diff-tree --no-commit-id --name-only -r";
+        status-lines = "diff --stat";
+        conflicts = "diff --name-only --diff-filter=U --relative";
+        restore-from-history = ''!f(){ git checkout "$(git rev-list -n 1 HEAD -- $1)"^ -- "$1"; }; f'';
+        who = "git-who";
+      };
+      format = {
+        signoff = true;
+      };
+      commit = {
+        gpgsign = true;
+      };
+      push = {
+        default = "current";
+      };
+      pager = {
+        diff = "delta";
+        log = "delta";
+        reflog = "delta";
+        show = "delta";
+        blame = "delta";
+      };
+      help = {
+        autocorrect = 10;
+      };
+      diff.algorithm = "histogram";
+      core.hooksPath = "~/.config/git/hooks";
+    };
+
+    ignores = map (v: "${toString v}") (builtins.split "\n" (builtins.readFile ./ignore));
+    includes = [
+      { path = "./themes.gitconfig"; }
+      {
+        condition = "gitdir:~/Workspaces/gitlab.ci.fdmg.org/";
+        contents = {
+          user = {
+            name = "Morteza NourelahiAlamdari";
+            email = "mort.nourelahialamdari@company.info";
+          };
+        };
+      }
+    ];
+  };
+  xdg.configFile = {
+    "git/themes.gitconfig".source = ./themes.gitconfig;
+    "git/hooks/pre-push".source = ./hooks/pre-push;
+  };
+
+  home.packages = with pkgs; [
+    git-town
+    git-who
+    (writeShellScriptBin "git-user-stats" (builtins.readFile ./git-user-stats.sh))
+  ];
+
+  programs.delta = {
+    enable = true;
+    options = {
+      features = "decorations mort";
+      line-numbers = true;
+      side-by-side = true;
+      dark = true;
+      merge-conflict-begin-symbol = "";
+      merge-conflict-end-symbol = "";
+    };
+  };
+}

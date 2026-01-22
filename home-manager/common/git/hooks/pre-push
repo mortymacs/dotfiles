@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+
+echo "🔍 Checking branch protection..."
+
+while read -r local_ref local_sha remote_ref remote_sha; do
+
+    # Skip if we're deleting a branch (local_sha is all zeros)
+    if [[ "$local_sha" == "0000000000000000000000000000000000000000" ]]; then
+        continue
+    fi
+
+    # Extract branch name from the reference
+    if [[ "$local_ref" =~ refs/heads/(.+) ]]; then
+        branch="${BASH_REMATCH[1]}"
+    else
+        # Fallback method
+        branch=$(git rev-parse --symbolic --abbrev-ref "$local_ref" 2>/dev/null)
+    fi
+
+    # Check if pushing to protected branches
+    if [[ "$branch" == "main" || "$branch" == "master" ]]; then
+        echo ""
+        echo "🚨 WARNING: You are about to push to the '$branch' branch!"
+        echo "   Repository: $(git remote get-url origin 2>/dev/null || echo 'Unknown')"
+        echo "   Commits: $(git rev-list --count "$remote_sha..$local_sha" 2>/dev/null || echo 'Unknown')"
+        echo ""
+
+        if ! gum confirm "⚠️ Are you sure you want to continue?"; then
+            echo "✋ Push aborted by user."
+            exit 1
+        fi
+
+        echo "✅ Proceeding with push to '$branch'..."
+    fi
+done
+
+echo "🎉 Pre-push checks completed successfully!"
+exit 0

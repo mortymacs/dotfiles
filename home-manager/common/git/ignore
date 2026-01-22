@@ -1,0 +1,65 @@
+# General
+init-doc
+log/
+tmp/
+*.tmp
+
+# Build
+dist/
+*.out
+target/
+build/
+.hugo_build.lock
+
+# Python
+venv
+.venv
+*pyc
+*.egg-info/
+__pycached__/
+__pycache__/
+.mypy_cache
+.ruff_cache
+
+# C/C++
+.tags
+tags
+*~
+*.o
+*.so
+*.cmake
+CMakeCache.txt
+CMakeFiles/
+cmake-build-debug/
+compile_commands.json
+.ccls*
+
+# Go
+vendor/
+*.test
+
+# Editors/IDE
+.vim
+*.swp
+lazy-lock.json
+
+# Cloud.
+.terraform
+
+# Compressed
+*.zip
+*.tar.gz
+*.tgz
+*.rar
+*.7z
+
+# Benchmarks.
+*.prof
+
+# Misc
+.bundle
+*.plist
+.cache
+*.sqlite3
+*.spec
+*.log

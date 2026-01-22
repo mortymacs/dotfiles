@@ -1,0 +1,48 @@
+{ pkgs, ... }:
+let
+  defaultAliases = import ../../common/fish/aliases.nix;
+  defaultFunctions = import ../../common/fish/functions.nix;
+in
+{
+  programs = {
+    fish = {
+      enable = true;
+      plugins = with pkgs; [
+        {
+          name = "fzf-fish";
+          src = fishPlugins.fzf-fish.src;
+        }
+        {
+          name = "forgit";
+          src = fishPlugins.forgit.src;
+        }
+      ];
+      shellInit = builtins.readFile ./init.fish;
+      shellAbbrs = {
+        k = "kubectl";
+        ":q" = "exit";
+      };
+      functions = defaultFunctions;
+      shellAliases = defaultAliases;
+    };
+
+    fzf = {
+      enable = true;
+      enableFishIntegration = true;
+      tmux = {
+        enableShellIntegration = true;
+      };
+      package = pkgs.unstable.fzf;
+    };
+    skim = {
+      enable = true;
+    };
+
+    zoxide = {
+      enable = true;
+      enableFishIntegration = true;
+    };
+  };
+
+  home.packages = with pkgs; [ nix-your-shell ];
+}
