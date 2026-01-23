@@ -76,5 +76,5 @@
     && tar --exclude='.git' --exclude='.gitignore' --exclude-vcs-ignores -zcvf (basename $PWD).tar.gz ./*'';
 
   # Utility.
-  calc = "eva";
+  calc = "numbat";
 }
