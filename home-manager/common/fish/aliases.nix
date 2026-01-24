@@ -47,6 +47,7 @@
 
   # DevOps.
   kubectl = "kubecolor";
+  tf = "tofu";
   aws-local = ''
     aws --endpoint-url http://127.0.0.1:4566 \
         --region us-east-1 \

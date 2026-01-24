@@ -159,6 +159,11 @@ vim.lsp.enable("nil_ls", {
   capabilities = capabilities,
 })
 
+-- TF.
+vim.lsp.enable("tofu_ls", {
+  capabilities = capabilities,
+})
+
 -- Shell.
 vim.lsp.enable("bashls", {
   capabilities = capabilities,

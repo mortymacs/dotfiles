@@ -117,6 +117,9 @@
     nil
     nixfmt-rfc-style
     nurl
+    ## TF.
+    opentofu
+    tofu-ls
     ## Shell.
     bash-language-server
     shfmt
