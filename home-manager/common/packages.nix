@@ -55,7 +55,6 @@
     unstable.wait4x
 
     # Development.
-    pkg-config
     lsof
     ghq
     tokei
@@ -72,6 +71,8 @@
     clang
     clang-tools
     gdb
+    cmake
+    neocmakelsp
     ## Go.
     go
     gopls
