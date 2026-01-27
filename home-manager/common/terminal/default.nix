@@ -9,7 +9,7 @@
     installVimSyntax = true;
     settings = {
       # Theme.
-      theme = "Ayu";
+      theme = "Cutie Pro";
 
       # Font.
       font-family = "monospace";
@@ -27,11 +27,16 @@
       copy-on-select = "clipboard";
       bell-features = "no-audio";
       gtk-single-instance = true;
-    };
-    themes = {
-      Ayu = {
-        background = "#151b21";
-      };
+
+      # Keymaps.
+      keybind = [
+        "ctrl+shift+v=new_split:right"
+        "ctrl+shift+h=new_split:down"
+        "ctrl+shift+left=goto_split:left"
+        "ctrl+shift+right=goto_split:right"
+        "ctrl+shift+up=goto_split:up"
+        "ctrl+shift+down=goto_split:down"
+      ];
     };
   };
 
