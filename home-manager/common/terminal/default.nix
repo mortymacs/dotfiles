@@ -17,7 +17,7 @@
 
       # Windowe.
       window-width = 130;
-      window-height = 20;
+      window-height = 30;
       window-theme = "ghostty";
       window-padding-x = 5;
       window-padding-y = 5;
@@ -30,7 +30,7 @@
 
       # Keymaps.
       keybind = [
-        "ctrl+shift+v=new_split:right"
+        "ctrl+shift+s=new_split:right"
         "ctrl+shift+h=new_split:down"
         "ctrl+shift+left=goto_split:left"
         "ctrl+shift+right=goto_split:right"

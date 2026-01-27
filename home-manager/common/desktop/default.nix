@@ -203,17 +203,13 @@ in
       };
 
       "org/gnome/shell/extensions/pano" = {
-        global-shortcut = [ "<Super>c" ];
+        auto-hide-search = false;
+        clipboard-orientation = "horizontal";
+        clipboard-position-horizontal = "fill";
+        clipboard-position-vertical = "bottom";
+        clipboard-size = 500;
         history-length = 100;
-        item-date-font-family = "Sans";
-        item-date-font-size = 11;
-        item-title-font-family = "Sans";
-        item-title-font-size = 20;
-        paste-on-select = false;
-        play-audio-on-copy = false;
-        search-bar-font-family = "Sans";
-        search-bar-font-size = 14;
-        send-notification-on-copy = false;
+        open-clipboard-dialog-shortcut = [ "<Super>c" ];
       };
 
       "org/gnome/shell/extensions/tilingshell" = {
@@ -222,16 +218,40 @@ in
         enable-blur-snap-assistant = false;
         enable-smart-window-border-radius = false;
         enable-window-border = false;
-        focus-window-down = [ "<Super>j" ];
-        focus-window-left = [ "<Super>h" ];
-        focus-window-right = [ "<Super>l" ];
-        focus-window-up = [ "<Super>k" ];
+        focus-window-down = [
+          "<Super>j"
+          "<Super>Down"
+        ];
+        focus-window-left = [
+          "<Super>h"
+          "<Super>Left"
+        ];
+        focus-window-right = [
+          "<Super>l"
+          "<Super>Right"
+        ];
+        focus-window-up = [
+          "<Super>k"
+          "<Super>Up"
+        ];
         inner-gaps = lib.gvariant.mkUint32 8;
         layouts-json = ''[{"id":"Layout 3","tiles":[{"x":0,"y":0,"width":0.33,"height":1,"groups":[1]},{"x":0.33,"y":0,"width":0.67,"height":1,"groups":[1]}]},{"id":"Layout 4","tiles":[{"x":0,"y":0,"width":0.67,"height":1,"groups":[1]},{"x":0.67,"y":0,"width":0.33,"height":1,"groups":[1]}]},{"id":"209533","tiles":[{"x":0,"y":0,"width":0.5,"height":1,"groups":[1]},{"x":0.5,"y":0,"width":0.5000000000000018,"height":1,"groups":[1]}]},{"id":"27060245","tiles":[{"x":0,"y":0,"width":1,"height":0.5003543586109143,"groups":[2]},{"x":0,"y":0.5003543586109143,"width":0.5,"height":0.49964564138908574,"groups":[2,3]},{"x":0.5,"y":0.5003543586109143,"width":0.25,"height":0.24663359319631462,"groups":[2,5,4,3]},{"x":0.5,"y":0.7469879518072289,"width":0.5000000000000009,"height":0.2530120481927711,"groups":[4,3]},{"x":0.75,"y":0.5003543586109143,"width":0.25000000000000006,"height":0.24663359319631462,"groups":[2,4,5]}]},{"id":"5618632","tiles":[{"x":0,"y":0,"width":1,"height":1,"groups":[]}]}]'';
-        move-window-down = [ "<Control><Super>j" ];
-        move-window-left = [ "<Control><Super>h" ];
-        move-window-right = [ "<Control><Super>l" ];
-        move-window-up = [ "<Control><Super>k" ];
+        move-window-down = [
+          "<Control><Super>j"
+          "<Control><Super>Down"
+        ];
+        move-window-left = [
+          "<Control><Super>h"
+          "<Control><Super>Left"
+        ];
+        move-window-right = [
+          "<Control><Super>l"
+          "<Control><Super>Right"
+        ];
+        move-window-up = [
+          "<Control><Super>k"
+          "<Control><Super>Up"
+        ];
         outer-gaps = lib.gvariant.mkUint32 8;
         overridden-settings = ''{"org.gnome.mutter.keybindings":{"toggle-tiled-right":"@as []","toggle-tiled-left":"@as []"},"org.gnome.desktop.wm.keybindings":{"maximize":"['<Super>Up']","unmaximize":"['<Super>Down', '<Alt>F5']"},"org.gnome.mutter":{"edge-tiling":"false"}}'';
         restore-window-original-size = true;
@@ -252,22 +272,40 @@ in
         begin-resize = [ ];
         close = [ "<Shift><Super>q" ];
         maximize = [ ];
-        minimize = [ "<Shift><Super>j" ];
+        minimize = [
+          "<Shift><Super>j"
+          "<Shift><Super>Down"
+        ];
         move-to-monitor-down = [ ];
         move-to-monitor-left = [ ];
         move-to-monitor-right = [ ];
         move-to-monitor-up = [ ];
         move-to-workspace-1 = [ ];
         move-to-workspace-last = [ ];
-        move-to-workspace-left = [ "<Shift><Control><Super>h" ];
-        move-to-workspace-right = [ "<Shift><Control><Super>l" ];
+        move-to-workspace-left = [
+          "<Shift><Control><Super>h"
+          "<Shift><Control><Super>Left"
+        ];
+        move-to-workspace-right = [
+          "<Shift><Control><Super>l"
+          "<Shift><Control><Super>Right"
+        ];
         panel-run-dialog = [ ];
         switch-to-workspace-1 = [ ];
         switch-to-workspace-last = [ ];
-        switch-to-workspace-left = [ "<Shift><Super>h" ];
-        switch-to-workspace-right = [ "<Shift><Super>l" ];
+        switch-to-workspace-left = [
+          "<Shift><Super>h"
+          "<Shift><Super>Left"
+        ];
+        switch-to-workspace-right = [
+          "<Shift><Super>l"
+          "<Shift><Super>Right"
+        ];
         toggle-fullscreen = [ "<Shift><Super>f" ];
-        toggle-maximized = [ "<Shift><Super>k" ];
+        toggle-maximized = [
+          "<Shift><Super>k"
+          "<Shift><Super>Up"
+        ];
         unmaximize = [ ];
       };
 
@@ -276,7 +314,7 @@ in
         screenshot = [ ];
         screenshot-window = [ "<Shift><Control><Super>s" ];
         show-screen-recording-ui = [ ];
-        show-screenshot-ui = [ ];
+        show-screenshot-ui = [ "<Shift><Super>s" ];
         toggle-application-view = [ ];
         toggle-message-tray = [ "<Shift><Super>n" ];
         toggle-quick-settings = [ ];
