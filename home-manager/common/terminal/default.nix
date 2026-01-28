@@ -25,6 +25,8 @@
 
       # Misc.
       copy-on-select = "clipboard";
+      clipboard-trim-trailing-spaces = true;
+      app-notifications = false;
       bell-features = "no-audio";
       gtk-single-instance = true;
 
