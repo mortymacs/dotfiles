@@ -28,7 +28,7 @@ in
         ga = "git add";
         gc = "git commit";
         gp = "git push";
-        gf = "git fetch --all";
+        gf = "git fetch --prune --all";
         gpr = "git pull --rebase";
       };
       functions = defaultFunctions;
