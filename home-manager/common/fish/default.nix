@@ -21,6 +21,15 @@ in
       shellAbbrs = {
         k = "kubectl";
         ":q" = "exit";
+        gs = "git status --short";
+        gd = "git diff";
+        gl = "git log --oneline --decorate --graph --show-signature";
+        gb = "git blame `f`";
+        ga = "git add";
+        gc = "git commit";
+        gp = "git push";
+        gf = "git fetch --all";
+        gpr = "git pull --rebase";
       };
       functions = defaultFunctions;
       shellAliases = defaultAliases;
