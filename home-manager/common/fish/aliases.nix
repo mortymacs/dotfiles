@@ -4,7 +4,7 @@
   sound-config = "wpctl";
   bluetooth-config = "bluetui";
   rm = "gomi";
-  cb = "wl-copy";
+  cb = "wl-copy -n";
 
   # Process.
   ps = "procs";
