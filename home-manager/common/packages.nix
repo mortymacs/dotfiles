@@ -114,6 +114,11 @@
     lua-language-server
     stylua
     lua54Packages.luacheck
+    ## HTML & CSS & JS.
+    nodejs
+    deno
+    vscode-langservers-extracted
+    prettier
     ## Nix.
     nil
     nixfmt-rfc-style
@@ -130,9 +135,6 @@
     gnumake
     ## Dockerfile.
     dockerfile-language-server
-    ## HTML & CSS & JS.
-    vscode-langservers-extracted
-    nodejs
     ## YAML.
     nodePackages.yaml-language-server
     yamllint

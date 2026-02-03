@@ -153,6 +153,9 @@ vim.g.markdown_fenced_languages = {
   "js=javascript",
   "ts=typescript",
 }
+vim.lsp.enable("denols", {
+  capabilities = capabilities,
+})
 
 -- Nix.
 vim.lsp.enable("nil_ls", {
