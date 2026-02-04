@@ -1,8 +1,8 @@
 require("util")
 
 -- AI status.
-local ai_claude_enabled = vim.env.NVIM_AI == "true"
-local ai_copilot_enabled = vim.env.NVIM_AI == "true"
+local ai_claude_enabled = vim.env.NVIM_CLAUDE_ENABLED == "true"
+local ai_copilot_enabled = vim.env.NVIM_COPILOT_ENABLED == "true"
 
 -- Kind.
 local lspkind = require("lspkind")
