@@ -186,7 +186,7 @@
     if test (count $argv) -eq 0
         set conn_str (mycli --list-dsn | fzf)
         if not test -z "$conn_str"
-            mycli "$conn_str"
+            mycli "$conn_str" --ssl
         end
     else
         mycli $argv

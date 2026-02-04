@@ -65,6 +65,10 @@
     ## Snipped.
     nap
 
+    # Database.
+    pgcli
+    mycli
+
     # Programming.
     ## C/C++.
     (lib.hiPrio gcc)
