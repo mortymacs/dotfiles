@@ -11,7 +11,8 @@
 
   # Editor.
   v = "$EDITOR";
-  e = "$EDITOR -u $HOME/.config/nvim/lua/vim.lua";
+  vr = "$EDITOR -u $HOME/.config/nvim/lua/vim.lua";
+  e = "emacsclient -r";
 
   # Read.
   cat = "bat";
