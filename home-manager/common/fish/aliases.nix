@@ -39,6 +39,9 @@
   gg = "ig -i";
   cg = "ast-grep run --pattern";
   gfi = "sk -i -c 'rg {}'";
+  nd = ''
+    manix "" | grep '^# ' | sed 's/^# \(.*\) (.*/\1/;s/ (.*//;s/^# //' | fzf --preview="manix '{}'" | xargs manix
+  '';
 
   # Tmux.
   tq = "tl | xargs -n 1 tmux kill-session -t ; tl";

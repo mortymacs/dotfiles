@@ -15,6 +15,7 @@
     ast-grep
     ripgrep
     igrep
+    manix
 
     # Binary.
     hexyl
