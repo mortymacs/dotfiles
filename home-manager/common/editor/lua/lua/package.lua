@@ -309,8 +309,16 @@ require("lazy").setup({
     dependencies = {
       "copilotlsp-nvim/copilot-lsp",
       "giuxtaposition/blink-cmp-copilot",
+      "AndreM222/copilot-lualine",
     },
     cmd = "Copilot",
+  },
+  {
+    "CopilotC-Nvim/CopilotChat.nvim",
+    dependencies = {
+      { "nvim-lua/plenary.nvim", branch = "master" },
+    },
+    build = "make tiktoken",
   },
 
   -- Keybinding.

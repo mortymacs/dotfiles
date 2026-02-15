@@ -366,4 +366,7 @@ if ai_copilot_enabled then
     suggestion = { enabled = false },
     panel = { enabled = false },
   })
+  require("CopilotChat").setup({
+    model = "claude-sonnet-4.5",
+  })
 end
