@@ -52,6 +52,7 @@ in
     defaultPackages.list
     ++ [
       unstable.teams-for-linux
+      unstable.github-copilot-cli
     ];
 
   # Fontconfig.

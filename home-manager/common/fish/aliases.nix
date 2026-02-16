@@ -12,7 +12,7 @@
   # Editor.
   v = "$EDITOR";
   vr = "$EDITOR -u $HOME/.config/nvim/lua/vim.lua";
-  e = "emacsclient -r";
+  e = "hx";
 
   # Read.
   cat = "bat";
