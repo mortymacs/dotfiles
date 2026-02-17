@@ -119,9 +119,11 @@
     lua-language-server
     stylua
     lua54Packages.luacheck
-    ## HTML & CSS & JS.
+    ## HTML & CSS & JS & TS.
     nodejs
     deno
+    typescript
+    typescript-language-server
     vscode-langservers-extracted
     prettier
     ## Nix.

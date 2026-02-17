@@ -156,6 +156,9 @@ vim.g.markdown_fenced_languages = {
 vim.lsp.enable("denols", {
   capabilities = capabilities,
 })
+vim.lsp.enable("ts_ls", {
+  capabilities = capabilities,
+})
 
 -- Nix.
 vim.lsp.enable("nil_ls", {
