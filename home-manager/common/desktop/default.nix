@@ -20,6 +20,7 @@ in
     dconf-editor
     bustle
     newsflash
+    gradia
   ];
 
   # GTK.
@@ -312,9 +313,9 @@ in
       "org/gnome/shell/keybindings" = {
         focus-active-notification = [ ];
         screenshot = [ ];
-        screenshot-window = [ "<Shift><Control><Super>s" ];
+        screenshot-window = [ ];
         show-screen-recording-ui = [ ];
-        show-screenshot-ui = [ "<Shift><Super>s" ];
+        show-screenshot-ui = [ ];
         toggle-application-view = [ ];
         toggle-message-tray = [ "<Shift><Super>n" ];
         toggle-quick-settings = [ ];
@@ -339,6 +340,13 @@ in
         command = "ghostty";
         name = "Terminal";
       };
+
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
+        binding = "<Shift><Super>s";
+        command = "gradia --screenshot";
+        name = "Screenshot";
+      };
+
     };
   };
 }
