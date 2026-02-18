@@ -9,7 +9,7 @@
     installVimSyntax = true;
     settings = {
       # Theme.
-      theme = "Cutie Pro";
+      theme = "Kanagawabones";
 
       # Font.
       font-family = "monospace";

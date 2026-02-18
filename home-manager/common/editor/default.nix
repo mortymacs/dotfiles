@@ -23,6 +23,7 @@
     recursive = true;
   };
 
+  # Helix.
   programs.helix = {
     enable = true;
     package = pkgs.unstable.helix;
