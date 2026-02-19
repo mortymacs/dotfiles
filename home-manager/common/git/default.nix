@@ -54,6 +54,9 @@
             name = "Morteza NourelahiAlamdari";
             email = "mort.nourelahialamdari@company.info";
           };
+          commit = {
+            gpgsign = false;
+          };
         };
       }
     ];
