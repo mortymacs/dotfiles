@@ -16,7 +16,7 @@
   # Emacs.
   programs.emacs = {
     enable = true;
-    package = pkgs.unstable.emacs-nox;
+    package = pkgs.emacs-nox;
   };
   xdg.configFile.emacs = {
     source = ./elisp;
@@ -26,7 +26,7 @@
   # Helix.
   programs.helix = {
     enable = true;
-    package = pkgs.unstable.helix;
+    package = pkgs.helix;
     settings = {
       theme = "bogster-custom";
       editor = {
