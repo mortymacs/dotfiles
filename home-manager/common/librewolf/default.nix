@@ -57,7 +57,7 @@
         "{c23d8eea-4e71-4573-a245-4c97f8e1a1e0}" = {
           default_area = "menupanel";
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/photoshow/latest.xpi";
-          installation_mode = "force_installed";
+          installation_mode = "blocked";
           private_browsing = false;
         };
         # https://addons.mozilla.org/en-US/firefox/addon/vimium-ff/
