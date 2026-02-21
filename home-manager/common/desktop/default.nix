@@ -21,6 +21,8 @@ in
     bustle
     newsflash
     gradia
+    libheif
+    libheif.out
   ];
 
   # GTK.
