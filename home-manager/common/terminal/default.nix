@@ -22,8 +22,12 @@
       window-padding-x = 5;
       window-padding-y = 5;
       window-subtitle = false;
+      custom-shader-animation = false;
+      gtk-titlebar = true;
+      gtk-titlebar-style = "tabs";
 
       # Misc.
+      gtk-quick-terminal-layer = "overlay";
       copy-on-select = "clipboard";
       clipboard-trim-trailing-spaces = true;
       app-notifications = false;
