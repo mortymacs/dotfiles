@@ -56,8 +56,8 @@ vim.fn.sign_define("BookmarkAnnotation",    { text = "", linehl = "BookmarkAn
 -- Modes.
 require('modes').setup({
   colors = {
-    select = "#5986C5";
-    visual = "#5986C5";
+    insert = "#589BC4",
+    visual = "#BB58C4";
   },
-  line_opacity = 0.55,
+  line_opacity = 0.40,
 })
