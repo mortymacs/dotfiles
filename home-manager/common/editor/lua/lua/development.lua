@@ -124,20 +124,7 @@ require("todo-comments").setup({
 require("minty").setup()
 
 -- Surround.
-require("nvim-surround").setup({
-  keymaps = {
-    insert = nil,
-    insert_line = nil,
-    normal = nil,
-    normal_cur = nil,
-    normal_line = nil,
-    normal_cur_line = nil,
-    visual = "va",
-    visual_line = nil,
-    delete = "da",
-    change = "ca",
-  },
-})
+require("nvim-surround").setup()
 
 -- Formatter.
 local util = require("formatter.util")
