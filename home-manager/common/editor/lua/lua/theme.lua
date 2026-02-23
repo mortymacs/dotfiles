@@ -54,4 +54,10 @@ vim.fn.sign_define("Bookmark",              { text = "", linehl = "BookmarkLi
 vim.fn.sign_define("BookmarkAnnotation",    { text = "", linehl = "BookmarkAnnotationLine", texthl = "BookmarkAnnotationSign" })
 
 -- Modes.
-require('modes').setup()
+require('modes').setup({
+  colors = {
+    select = "#5986C5";
+    visual = "#5986C5";
+  },
+  line_opacity = 0.55,
+})

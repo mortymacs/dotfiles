@@ -110,6 +110,7 @@ SetKeyMap("<c-x><c-h>", snacks.picker.help)
 -- Stop copying text on delete.
 SetKeyMap("<Del>", '"_d',  { "v" })
 SetKeyMap("d",     '"_d',  { "v" })
+SetKeyMap("x",     "V$",   { "n" })
 
 -- Decorated yank.
 SetKeyMap("<c-y>", function() require('decorated_yank').decorated_yank_with_link() end,  { "v" }, nil, "DecoratedYank")
