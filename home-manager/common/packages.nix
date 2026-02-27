@@ -38,6 +38,7 @@
     kmon
     bmon
     zps
+    unstable.witr
 
     # System / network.
     duf
