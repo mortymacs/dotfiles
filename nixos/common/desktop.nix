@@ -26,7 +26,6 @@
       gnome-screenshot
       gnome-characters
       gnome-music
-      gnome-photos
       gnome-terminal
       gnome-contacts
       gnome-calendar
@@ -44,6 +43,7 @@
       iagno
       tali
       totem
+      showtime
       yelp
       epiphany
       decibels
