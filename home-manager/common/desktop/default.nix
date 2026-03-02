@@ -12,7 +12,7 @@ in
     gnomeExtensions.appindicator
     gnomeExtensions.tiling-shell
     gnomeExtensions.blur-my-shell
-    unstable.gnomeExtensions.copyous
+    gnomeExtensions.clipboard-indicator
     gnomeExtensions.alphabetical-app-grid
     gnome-tweaks
     wl-clipboard
@@ -112,7 +112,7 @@ in
           "appindicatorsupport@rgcjonas.gmail.com"
           "blur-my-shell@aunetx"
           "tilingshell@ferrarodomenico.com"
-          "copyous@boerdereinar.dev"
+          "clipboard-indicator@tudmotu.com"
           "AlphabeticalAppGrid@stuarthayhurst"
         ];
         favorite-apps = [
