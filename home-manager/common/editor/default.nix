@@ -60,6 +60,12 @@
     };
   };
 
+  # Zed.
+  programs.zed-editor = {
+    enable = true;
+    package = pkgs.unstable.zed-editor;
+  };
+
   # IPython.
   xdg.configFile.ipython = {
     source = ./ipython;
