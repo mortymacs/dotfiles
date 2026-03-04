@@ -177,12 +177,6 @@
             icon = "circle";
             id = 3;
           };
-          D = {
-            name = "Shopping";
-            color = "pink";
-            icon = "cart";
-            id = 4;
-          };
         };
         containersForce = true;
         settings = {
