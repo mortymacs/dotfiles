@@ -208,6 +208,7 @@
           "privacy.clearOnShutdown.sessions" = true;
           "network.cookie.lifetimePolicy" = 2;
           "privacy.userContext.newTabContainerOnLeftClick.enabled" = true;
+          "privacy.resistFingerprinting.exemptedDomains" = "outlook.office.com";
 
           # UI.
           "browser.uiCustomization.horizontalTabstrip" = ''["tabbrowser-tabs"]'';
