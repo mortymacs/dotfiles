@@ -2,7 +2,6 @@
 {
   programs.librewolf = {
     enable = true;
-    package = pkgs.unstable.librewolf;
     policies = {
       ExtensionSettings = {
         # https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/
