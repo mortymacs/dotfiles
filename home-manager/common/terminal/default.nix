@@ -19,8 +19,8 @@
       window-width = 130;
       window-height = 30;
       window-theme = "ghostty";
-      window-padding-x = 5;
-      window-padding-y = 5;
+      window-padding-x = 3;
+      window-padding-y = 3;
       window-subtitle = false;
       custom-shader-animation = false;
       gtk-titlebar = true;
