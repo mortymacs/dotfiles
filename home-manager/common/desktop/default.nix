@@ -76,7 +76,7 @@ in
         accent-color = "blue";
         color-scheme = "prefer-dark";
         document-font-name = "Adwaita Sans 1s";
-        monospace-font-name = "JetBrainsMono Nerd Font 14";
+        monospace-font-name = "CodeNewRoman Nerd Font 14";
         toolkit-accessibility = false;
       };
 

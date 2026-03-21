@@ -13,7 +13,7 @@
 
       # Font.
       font-family = "monospace";
-      font-size = 13;
+      font-size = 15;
 
       # Windowe.
       window-width = 130;
