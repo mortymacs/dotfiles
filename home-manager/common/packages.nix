@@ -66,7 +66,7 @@
     unstable.d2
     ## Snipped.
     nap
-    unstable.claude-code
+    claude-code
 
     # Database.
     pgcli
