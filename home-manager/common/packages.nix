@@ -78,6 +78,7 @@
     clang
     clang-tools
     gdb
+    ccache
     cmake
     neocmakelsp
     ## Go.
