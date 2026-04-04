@@ -14,7 +14,7 @@ My dotfiles collection.
 | Shell Prompt | [Starship](https://github.com/starship/starship) |
 | Terminal Multiplexer | [Tmux](https://github.com/tmux/tmux) |
 | Editor/IDE | [Neovim](https://github.com/neovim/neovim) |
-| Browser | [Librewolf](https://librewolf.net) |
+| Browser | [Firefox](https://www.firefox.com) |
 | Fonts | Display: [Adwaita](https://gitlab.gnome.org/GNOME/adwaita-fonts), [VarizMatn](https://github.com/rastikerdar/vazirmatn), Monospace: [CodeNewRoman Nerd Font](https://www.nerdfonts.com), [Noto Color Emoji](https://github.com/C1710/blobmoji) |
 | Wallpaper | [NASA](https://unsplash.com/photos/space-shuttle-challenger-launches-from-kennedy-space-center-dCgbRAQmTQA) |
 

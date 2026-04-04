@@ -1,5 +1,113 @@
 { pkgs, lib, ... }:
 {
+  programs.firefox = {
+    enable = true;
+    profiles = {
+      main = {
+        name = "main";
+        isDefault = true;
+        search = {
+          default = "ddg";
+          force = true;
+          engines = {
+            "Bookmarks".metaData.alias = "*";
+            "ddg".metaData.alias = "@s";
+            "Nix Packages" = {
+              urls = [
+                {
+                  template = "https://search.nixos.org/packages";
+                  params = [
+                    {
+                      name = "type";
+                      value = "packages";
+                    }
+                    {
+                      name = "query";
+                      value = "{searchTerms}";
+                    }
+                  ];
+                }
+              ];
+              definedAliases = [ "@np" ];
+              icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+            };
+            "NixOS Wiki" = {
+              urls = [
+                {
+                  template = "https://nixos.wiki/index.php?search={searchTerms}";
+                }
+              ];
+              icon = "https://nixos.wiki/favicon.png";
+              updateInterval = 24 * 60 * 60 * 1000; # every day
+              definedAliases = [ "@nw" ];
+            };
+            "Nix Hub" = {
+              urls = [
+                {
+                  template = "https://www.nixhub.io/search?q={searchTerms}";
+                  params = [
+                    {
+                      name = "query";
+                      value = "{searchTerms}";
+                    }
+                  ];
+                }
+              ];
+              definedAliases = [ "@nh" ];
+              icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+            };
+            "Oxford Dictionary" = {
+              urls = [
+                {
+                  template = "https://www.oxfordlearnersdictionaries.com/search/english/direct/?q={searchTerms}";
+                  params = [
+                    {
+                      name = "q";
+                      value = "{searchTerms}";
+                    }
+                  ];
+                }
+              ];
+              definedAliases = [ "@od" ];
+              icon = "https://www.oxfordlearnersdictionaries.com/favicon.ico";
+            };
+
+            # Disable the rest.
+            "bing".metaData.hidden = true;
+            "ebay".metaData.hidden = true;
+            "google".metaData.hidden = true;
+            "Amazon.nl".metaData.hidden = true;
+            "wikipedia".metaData.hidden = true;
+            "perplexity".metaData.hidden = true;
+            "metager".metaData.hidden = true;
+          };
+          order = [ "ddg" ];
+        };
+        containers = {
+          A = {
+            name = "Personal";
+            color = "turquoise";
+            icon = "fingerprint";
+            id = 1;
+          };
+          B = {
+            name = "Work";
+            color = "orange";
+            icon = "briefcase";
+            id = 2;
+          };
+          C = {
+            name = "Messenger";
+            color = "green";
+            icon = "circle";
+            id = 3;
+          };
+        };
+        containersForce = true;
+      };
+    };
+  };
+
   programs.librewolf = {
     enable = true;
     policies = {

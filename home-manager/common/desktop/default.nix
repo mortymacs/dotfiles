@@ -84,7 +84,7 @@ in
       "org/gnome/desktop/notifications" = {
         application-children = [
           "gnome-power-panel"
-          "librewolf"
+          "firefox"
           "ghostty"
           "org-gnome-fileroller"
           "org-gnome-nautilus"
@@ -116,7 +116,7 @@ in
           "AlphabeticalAppGrid@stuarthayhurst"
         ];
         favorite-apps = [
-          "librewolf.desktop"
+          "firefox.desktop"
           "io.gitlab.news_flash.NewsFlash.desktop"
           "com.mitchellh.ghostty.desktop"
           "com.toolstack.Folio.desktop"
