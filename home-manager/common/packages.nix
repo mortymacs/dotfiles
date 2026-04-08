@@ -104,7 +104,9 @@
     zigimports
     ## Rust.
     rustc
+    rust-analyzer
     cargo
+    cargo-expand
     ## Python.
     (python313.withPackages (
       ps: with ps; [

@@ -112,6 +112,11 @@ vim.lsp.enable("clangd", {
   cmd = { "clangd", "--clang-tidy", "--compile-commands-dir=build" },
 })
 
+-- Rust.
+vim.lsp.enable("rust_analyzer", {
+  capabilities = capabilities,
+})
+
 -- Go
 vim.g.go_auto_type_info = 0
 vim.g.go_gopls_enabled = 1
