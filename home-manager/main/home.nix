@@ -17,7 +17,7 @@ in
     ../common/editor
     ../common/btop
     ../common/git
-    ../common/librewolf
+    ../common/firefox
     ../common/misc
   ];
 
