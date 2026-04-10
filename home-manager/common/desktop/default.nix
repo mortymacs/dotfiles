@@ -14,6 +14,7 @@ in
     gnomeExtensions.blur-my-shell
     gnomeExtensions.clipboard-indicator
     gnomeExtensions.alphabetical-app-grid
+    gnomeExtensions.static-workspace-background
     gnome-tweaks
     wl-clipboard
     folio
@@ -108,12 +109,13 @@ in
       "org/gnome/shell" = {
         disable-user-extensions = false;
         disabled-extensions = [ ];
-        enabled-extensions = [
-          "appindicatorsupport@rgcjonas.gmail.com"
-          "blur-my-shell@aunetx"
-          "tilingshell@ferrarodomenico.com"
-          "clipboard-indicator@tudmotu.com"
-          "AlphabeticalAppGrid@stuarthayhurst"
+        enabled-extensions = with pkgs; [
+          gnomeExtensions.appindicator.extensionUuid
+          gnomeExtensions.tiling-shell.extensionUuid
+          gnomeExtensions.blur-my-shell.extensionUuid
+          gnomeExtensions.clipboard-indicator.extensionUuid
+          gnomeExtensions.alphabetical-app-grid.extensionUuid
+          gnomeExtensions.static-workspace-background.extensionUuid
         ];
         favorite-apps = [
           "firefox.desktop"
