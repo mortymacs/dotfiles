@@ -19,12 +19,10 @@
       window-width = 130;
       window-height = 30;
       window-theme = "ghostty";
-      window-padding-x = 3;
-      window-padding-y = 3;
+      window-padding-x = 10;
+      window-padding-y = 10;
       window-subtitle = false;
       custom-shader-animation = false;
-      gtk-titlebar = true;
-      gtk-titlebar-style = "tabs";
 
       # Misc.
       gtk-quick-terminal-layer = "overlay";
