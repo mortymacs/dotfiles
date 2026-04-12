@@ -107,6 +107,7 @@
     rust-analyzer
     cargo
     cargo-expand
+    rustfmt
     ## Python.
     (python313.withPackages (
       ps: with ps; [
