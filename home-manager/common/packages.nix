@@ -67,6 +67,8 @@
     ## Snipped.
     nap
     claude-code
+    ## Nix.
+    cachix
 
     # Database.
     pgcli

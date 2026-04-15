@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
   # Neovim.
   programs.neovim = {
@@ -10,16 +10,6 @@
   };
   xdg.configFile.nvim = {
     source = ./lua;
-    recursive = true;
-  };
-
-  # Emacs.
-  programs.emacs = {
-    enable = true;
-    package = pkgs.emacs-nox;
-  };
-  xdg.configFile.emacs = {
-    source = ./elisp;
     recursive = true;
   };
 
@@ -63,7 +53,7 @@
   # Zed.
   programs.zed-editor = {
     enable = true;
-    package = pkgs.unstable.zed-editor;
+    package = inputs.zed-editor.packages.${pkgs.system}.default;
   };
 
   # IPython.
