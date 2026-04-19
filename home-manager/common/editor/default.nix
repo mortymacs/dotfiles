@@ -50,15 +50,15 @@
     };
   };
 
-  # Zed.
-  programs.zed-editor = {
-    enable = true;
-    package = inputs.zed-editor.packages.${pkgs.system}.default;
-  };
-
   # IPython.
   xdg.configFile.ipython = {
     source = ./ipython;
     recursive = true;
+  };
+
+  # Zed.
+  programs.zed-editor = {
+    enable = true;
+    package = inputs.zed-editor.packages.${pkgs.system}.default;
   };
 }

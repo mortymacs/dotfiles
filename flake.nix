@@ -33,6 +33,14 @@
             inputs.nixos-hardware.nixosModules.dell-xps-13-9370
           ];
         };
+        lenovo = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs outputs;
+          };
+          modules = [
+            ./nixos/lenovo/configuration.nix
+          ];
+        };
         work = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs outputs;
@@ -51,6 +59,13 @@
             inherit inputs outputs;
           };
           modules = [ ./home-manager/dell/home.nix ];
+        };
+        lenovo = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          extraSpecialArgs = {
+            inherit inputs outputs;
+          };
+          modules = [ ./home-manager/lenovo/home.nix ];
         };
         work = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
