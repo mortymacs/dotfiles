@@ -119,9 +119,9 @@
         black
       ]
     ))
-    uv
-    pyright
-    ruff
+    unstable.uv
+    unstable.ty
+    unstable.ruff
     ## Lua.
     luajit
     lua-language-server

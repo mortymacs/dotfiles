@@ -19,6 +19,7 @@ in
     ../common/git
     ../common/firefox
     ../common/misc
+    ./custom.nix
   ];
 
   # User home.

@@ -6,8 +6,8 @@
     "flakes"
   ];
 
-  # Use latest kernel.
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  # Use LTS kernel.
+  boot.kernelPackages = pkgs.linuxPackages_6_18;
 
   # Bootloader.
   boot = {
