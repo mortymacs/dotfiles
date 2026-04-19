@@ -28,7 +28,8 @@
       fsType = "ext4";
     };
 
-  boot.initrd.luks.devices."luks-9a1bbc34-eb88-4c47-be0e-c4ab2ab3ff17".device = "/dev/disk/by-uuid/9a1bbc34-eb88-4c47-be0e-c4ab2ab3ff17";
+  boot.initrd.luks.devices."luks-9a1bbc34-eb88-4c47-be0e-c4ab2ab3ff17".device =
+    "/dev/disk/by-uuid/9a1bbc34-eb88-4c47-be0e-c4ab2ab3ff17";
 
   fileSystems."/boot" =
     # command: sudo fatlabel /dev/disk/by-uuid/5411-F9C6 BOOT
@@ -42,7 +43,12 @@
     };
 
   # Swap.
-  swapDevices = [ ];
+  swapDevices = [
+    {
+      device = "/swapfile";
+      size = 16 * 1024; # 16GB
+    }
+  ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;

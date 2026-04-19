@@ -32,16 +32,6 @@ in
   # Global packages.
   environment.systemPackages = with pkgs; defaultPackages.list ++ [ ];
 
-  # Security.
-  services.tor = {
-    enable = true;
-    client.enable = true;
-  };
-  services.privoxy = {
-    enable = true;
-    enableTor = true;
-  };
-
   # NixOS installed version.
   system.stateVersion = "25.11";
 }

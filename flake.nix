@@ -24,12 +24,12 @@
     in
     {
       nixosConfigurations = {
-        main = nixpkgs.lib.nixosSystem {
+        dell = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs outputs;
           };
           modules = [
-            ./nixos/main/configuration.nix
+            ./nixos/dell/configuration.nix
             inputs.nixos-hardware.nixosModules.dell-xps-13-9370
           ];
         };
@@ -45,12 +45,12 @@
       };
 
       homeConfigurations = {
-        main = home-manager.lib.homeManagerConfiguration {
+        dell = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           extraSpecialArgs = {
             inherit inputs outputs;
           };
-          modules = [ ./home-manager/main/home.nix ];
+          modules = [ ./home-manager/dell/home.nix ];
         };
         work = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
