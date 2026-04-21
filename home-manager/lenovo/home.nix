@@ -45,7 +45,7 @@ in
     ];
   };
 
-  home.packages = with pkgs; defaultPackages.list ++ [ ];
+  home.packages = with pkgs; defaultPackages.list ++ [ unstable.discord ];
 
   # Fontconfig.
   fonts.fontconfig.enable = true;
