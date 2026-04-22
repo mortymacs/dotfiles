@@ -67,6 +67,9 @@ set -x GOCOVSH_THEME mocha
 # Python.
 set -x IPYTHONDIR "$XDG_CONFIG_HOME/ipython"
 
+# Node.
+set -x NPM_CONFIG_USERCONFIG "$XDG_CONFIG_HOME/npm/npmrc"
+
 # Kubernetes.
 set -x KUBECONFIG "$XDG_CONFIG_HOME/kube/config"
 
@@ -81,6 +84,7 @@ set -x AWS_SHARED_CREDENTIALS_FILE "$XDG_CONFIG_HOME/aws/credentials"
 # AI.
 set -x NVIM_CLAUDE_ENABLED true
 set -x NVIM_COPILOT_ENABLED false
+set -x CLAUDE_CONFIG_DIR "$XDG_CONFIG_HOME/claude"
 
 # General.
 set -x PATH "$PATH:$HOME/.local/bin:$GOPATH/bin:$CARGO_HOME/bin"

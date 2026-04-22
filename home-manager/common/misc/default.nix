@@ -19,6 +19,8 @@
     # Clang.
     "clangd/config.yaml".source = ./clangd.yaml;
     "clangd/clang-format".source = ./clang-format;
+    # Node.
+    "npm/npmrc".source = ./npmrc;
   };
 
   # AWS CLI config.
