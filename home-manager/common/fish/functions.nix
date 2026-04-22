@@ -79,6 +79,7 @@
   localstack-server = ''
     podman run -d --rm \
         -p 4566:4566 -p 4510-4559:4510-4559 \
+        -e LOCALSTACK_AUTH_TOKEN="$LOCALSTACK_AUTH_TOKEN" \
         --name localstack \
         localstack/localstack
     wait4x http http://127.0.0.1:4566
