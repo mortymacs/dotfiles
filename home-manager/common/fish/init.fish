@@ -94,3 +94,8 @@ set extra_init "$XDG_CONFIG_HOME/fish/extra.fish"
 if test -f "$extra_init"
     source "$extra_init"
 end
+# Secret/local config (optional, not tracked).
+set secret_init "$XDG_CONFIG_HOME/fish/secret.fish"
+if test -f "$secret_init"
+    source "$secret_init"
+end
