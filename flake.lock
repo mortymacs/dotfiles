@@ -56,11 +56,11 @@
     },
     "nixos-hardware": {
       "locked": {
-        "lastModified": 1776830795,
-        "narHash": "sha256-PAfvLwuHc1VOvsLcpk6+HDKgMEibvZjCNvbM1BJOA7o=",
+        "lastModified": 1776983936,
+        "narHash": "sha256-ZOQyNqSvJ8UdrrqU1p7vaFcdL53idK+LOM8oRWEWh6o=",
         "owner": "NixOS",
         "repo": "nixos-hardware",
-        "rev": "72674a6b5599e844c045ae7449ba91f803d44ebc",
+        "rev": "2096f3f411ce46e88a79ae4eafcfc9df8ed41c61",
         "type": "github"
       },
       "original": {
@@ -171,11 +171,11 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1776961685,
-        "narHash": "sha256-bbEY+s0iJ3IQecValeNNXy70vUXiJ7kvgktI4H1Zd9c=",
+        "lastModified": 1777043152,
+        "narHash": "sha256-s9nZFPs1kN5fLnpCv64C13t07oxcYQEEnwJ1MxEG8Ww=",
         "owner": "zed-industries",
         "repo": "zed",
-        "rev": "8127c975bc7782d305f746132297e7bfe92d20c8",
+        "rev": "8334374398122859eae02c6c6fd5da2d6a9b29e8",
         "type": "github"
       },
       "original": {
