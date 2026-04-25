@@ -46,15 +46,15 @@ in
       "org/gnome/desktop/background" = {
         color-shading-type = "solid";
         picture-options = "zoom";
-        picture-uri = "file:///home/mort/.config/wallpaper.jpg";
-        picture-uri-dark = "file:///home/mort/.config/wallpaper.jpg";
+        picture-uri = "file://${config.xdg.configHome}/wallpaper.jpg";
+        picture-uri-dark = "file://${config.xdg.configHome}/wallpaper.jpg";
         primary-color = "#000000000000";
         secondary-color = "#000000000000";
       };
       "org/gnome/desktop/screensaver" = {
         color-shading-type = "solid";
         picture-options = "zoom";
-        picture-uri = "file:///home/mort/.config/wallpaper.jpg";
+        picture-uri = "file://${config.xdg.configHome}/wallpaper.jpg";
         primary-color = "#000000000000";
         secondary-color = "#000000000000";
       };

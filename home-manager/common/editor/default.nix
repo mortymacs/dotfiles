@@ -59,6 +59,6 @@
   # Zed.
   programs.zed-editor = {
     enable = true;
-    package = inputs.zed-editor.packages.${pkgs.system}.default;
+    package = inputs.zed-editor.packages.${pkgs.stdenv.hostPlatform.system}.default;
   };
 }

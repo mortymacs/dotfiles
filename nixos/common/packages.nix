@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  list = with pkgs; [
+  environment.systemPackages = with pkgs; [
     # Basic.
     nano
     wget

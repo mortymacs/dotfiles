@@ -1,5 +1,6 @@
 {
   pkgs,
+  lib,
   ...
 }:
 {
@@ -44,7 +45,7 @@
       core.hooksPath = "~/.config/git/hooks";
     };
 
-    ignores = map (v: "${toString v}") (builtins.split "\n" (builtins.readFile ./ignore));
+    ignores = lib.splitString "\n" (builtins.readFile ./ignore);
     includes = [
       { path = "./themes.gitconfig"; }
       {

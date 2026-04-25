@@ -1,6 +1,6 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
-  list = with pkgs; [
+  home.packages = with pkgs; [
     # Text.
     bat
     most

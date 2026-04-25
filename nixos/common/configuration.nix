@@ -6,7 +6,7 @@
     "flakes"
   ];
 
-  # Use LTS kernel.
+  # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Bootloader.
@@ -87,7 +87,7 @@
     ];
     initialPassword = "password";
     shell = pkgs.fish;
-    packages = with pkgs; [ ];
+
   };
 
   # Security.

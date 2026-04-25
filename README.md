@@ -21,6 +21,72 @@ My dotfiles collection.
 
 ![Screenshot](./doc/screenshot.png)
 
+## Overlays
+
+Overlays live in `overlays/` and are applied automatically to every profile.
+
+### Add a custom package from GitHub (no flake.nix / shell.nix)
+
+Edit `overlays/custom.nix`. The new attribute becomes available as a regular
+`pkgs.myPackageName` anywhere in the config.
+
+To get the hash, run: `nurl https://github.com/owner/repo vTAG`
+
+**Go project:**
+```nix
+my-go-tool = final.buildGoModule rec {
+  pname = "my-go-tool";
+  version = "1.2.3";
+  src = final.fetchFromGitHub {
+    owner  = "some-owner";
+    repo   = "my-go-tool";
+    rev    = "v${version}";
+    hash   = "sha256-AAAA...";
+  };
+  vendorHash = "sha256-BBBB...";
+};
+```
+
+**C/C++ project with cmake:**
+```nix
+my-c-tool = final.stdenv.mkDerivation rec {
+  pname = "my-c-tool";
+  version = "0.5.0";
+  src = final.fetchFromGitHub {
+    owner  = "some-owner";
+    repo   = "my-c-tool";
+    rev    = "v${version}";
+    hash   = "sha256-AAAA...";
+  };
+  nativeBuildInputs = [ final.cmake final.pkg-config ];
+  buildInputs       = [ final.openssl ];
+};
+```
+
+### Override an existing package (custom compile flags, patches, …)
+
+Edit `overlays/overrides.nix`. The package keeps its original name.
+
+**Change feature flags the package already exposes (`.override`):**
+```nix
+somePackage = prev.somePackage.override {
+  withFeatureX = true;
+  enableFoo    = false;
+};
+```
+
+**Full control over the derivation (`.overrideAttrs`):**
+```nix
+somePackage = prev.somePackage.overrideAttrs (old: {
+  configureFlags = (old.configureFlags or []) ++ [
+    "--enable-foo"
+    "--disable-bar"
+  ];
+  buildInputs = old.buildInputs ++ [ final.someLib ];
+  patches     = (old.patches or []) ++ [ ./patches/somePackage-fix.patch ];
+});
+```
+
 ## Resources
 
 Some good resources that I used in my config:

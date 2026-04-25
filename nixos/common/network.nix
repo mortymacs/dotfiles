@@ -2,7 +2,6 @@
 { lib, ... }:
 {
   networking = {
-    hostName = "fx";
     useDHCP = lib.mkDefault true;
     nameservers = [
       "1.1.1.1"
