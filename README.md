@@ -15,7 +15,7 @@ My dotfiles collection.
 | Editor/IDE | [Neovim](https://github.com/neovim/neovim) |
 | Browser | [Firefox](https://www.firefox.com) |
 | Fonts | Display: [Adwaita](https://gitlab.gnome.org/GNOME/adwaita-fonts), [VarizMatn](https://github.com/rastikerdar/vazirmatn), Monospace: [CodeNewRoman Nerd Font](https://www.nerdfonts.com), [Noto Color Emoji](https://github.com/C1710/blobmoji) |
-| Wallpaper | [NASA](https://unsplash.com/photos/space-shuttle-challenger-launches-from-kennedy-space-center-dCgbRAQmTQA) |
+| Wallpaper | [Ashim D’Silva](https://unsplash.com/photos/scenery-of-mountain-canyon-WeYamle9fDM) |
 
 ## Screenshot
 
