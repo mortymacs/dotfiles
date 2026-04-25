@@ -22,6 +22,7 @@ in
     bustle
     newsflash
     gradia
+    rewaita
     libheif
     libheif.out
   ];

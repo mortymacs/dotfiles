@@ -3,7 +3,6 @@
 My dotfiles collection.
 
 ## General config
-### Desktop
 
 | Category | Tool |
 |----------|------|
