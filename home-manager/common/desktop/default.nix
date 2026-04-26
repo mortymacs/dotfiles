@@ -22,9 +22,10 @@ in
     bustle
     newsflash
     gradia
-    rewaita
+    unstable.rewaita
     libheif
     libheif.out
+    gtksourceview5
   ];
 
   # GTK.
