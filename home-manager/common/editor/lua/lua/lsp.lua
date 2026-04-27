@@ -149,7 +149,7 @@ vim.lsp.enable("lua_ls", {
 })
 
 -- Python.
-vim.lsp.enable("pyright", {
+vim.lsp.enable("ty", {
   capabilities = capabilities,
 })
 

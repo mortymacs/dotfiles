@@ -25,7 +25,7 @@ require("nvim-treesitter.configs").setup({
     "make",
     "cmake",
   },
-  sync_install = true,
+  sync_install = false,
   auto_install = true,
   highlight = {
     enable = true,
