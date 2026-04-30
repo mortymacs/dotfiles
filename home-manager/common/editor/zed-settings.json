@@ -1,0 +1,81 @@
+{
+  "terminal": {
+    "font_family": "CodeNewRoman Nerd Font",
+  },
+  "git_panel": {
+    "dock": "left",
+  },
+  "project_panel": {
+    "dock": "left",
+  },
+  "search": {
+    "include_ignored": false,
+  },
+  "agent": {
+    "dock": "right",
+    "sidebar_side": "right",
+    "inline_assistant_model": {
+      "provider": "zed.dev",
+      "model": "claude-sonnet-4-6",
+      "enable_thinking": false,
+    },
+    "default_model": {
+      "effort": "high",
+      "provider": "zed.dev",
+      "model": "claude-opus-4-7",
+      "enable_thinking": true,
+    },
+    "favorite_models": [
+      {
+        "provider": "zed.dev",
+        "model": "claude-opus-4-6",
+        "enable_thinking": false,
+      },
+    ],
+    "model_parameters": [],
+  },
+  "auto_update": false,
+  "vim_mode": false,
+  "ui_font_family": "Adwaita Sans",
+  "buffer_font_family": "CodeNewRoman Nerd Font",
+  "telemetry": {
+    "diagnostics": true,
+    "metrics": true,
+  },
+  "ui_font_size": 16.0,
+  "buffer_font_size": 18.0,
+  "theme": "Fleet Dark",
+  "lsp": {
+    "nil": {
+      "settings": {
+        "diagnostics": {
+          "ignored": ["unused_binding"],
+        },
+      },
+    },
+  },
+  "languages": {
+    "Python": {
+      "language_servers": ["ty", "!basedpyright"],
+      "formatter": {
+        "external": {
+          "command": "ruff",
+          "arguments": ["format", "-"],
+        },
+      },
+      "code_actions_on_format": {
+        "source.fixAll.ruff": true,
+        "source.organizeImports.ruff": true,
+      },
+    },
+    "Nix": {
+      "language_servers": ["nil"],
+      "formatter": {
+        "external": {
+          "command": "nixfmt",
+          "arguments": ["--quiet", "--"],
+        },
+      },
+    },
+  },
+}
