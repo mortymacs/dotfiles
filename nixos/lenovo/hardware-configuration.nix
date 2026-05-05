@@ -30,32 +30,6 @@
   boot.kernelParams = [ "amdgpu.sg_display=0" ];
   boot.extraModulePackages = with config.boot.kernelPackages; [ lenovo-legion-module ];
 
-  # Filesystem.
-  fileSystems."/" = {
-    device = "/dev/mapper/luks-0a089b07-f6e9-4a3f-95c0-e95e7de6944d";
-    fsType = "ext4";
-  };
-
-  boot.initrd.luks.devices."luks-0a089b07-f6e9-4a3f-95c0-e95e7de6944d".device =
-    "/dev/disk/by-uuid/0a089b07-f6e9-4a3f-95c0-e95e7de6944d";
-
-  fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/F16A-0A66";
-    fsType = "vfat";
-    options = [
-      "fmask=0077"
-      "dmask=0077"
-    ];
-  };
-
-  # Swap.
-  swapDevices = [
-    {
-      device = "/swapfile";
-      size = 16 * 1024; # 32GB
-    }
-  ];
-
   # GPU driver (NVIDIA + AMD hybrid).
   hardware.graphics = {
     enable = true;

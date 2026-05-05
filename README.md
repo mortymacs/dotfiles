@@ -21,6 +21,18 @@ My dotfiles collection.
 
 ![Screenshot](./doc/screenshot.png)
 
+## Fresh Install
+
+Boot the NixOS installer, then run (replace `PROFILE` with `lenovo`, `dell`, or `work`):
+
+```bash
+sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko -- --mode disko --flake "github:mortymacs/dotfiles#PROFILE"
+sudo nixos-install --flake "github:mortymacs/dotfiles#PROFILE"
+sudo reboot
+```
+
+No git clone needed — flakes fetch directly from GitHub.
+
 ## Overlays
 
 Overlays live in `overlays/` and are applied automatically to every profile.

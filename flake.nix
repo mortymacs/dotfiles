@@ -10,6 +10,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     zed-editor.url = "github:zed-industries/zed";
+    disko = {
+      url = "github:nix-community/disko/latest";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -40,9 +44,9 @@
     in
     {
       nixosConfigurations = {
-        dell   = mkNixos [ ./nixos/dell/configuration.nix   inputs.nixos-hardware.nixosModules.dell-xps-13-9370 ];
-        lenovo = mkNixos [ ./nixos/lenovo/configuration.nix ];
-        work   = mkNixos [ ./nixos/work/configuration.nix   inputs.nixos-hardware.nixosModules.lenovo-thinkpad-t14 ];
+        dell   = mkNixos [ ./nixos/dell/configuration.nix   ./nixos/dell/disk-config.nix   inputs.disko.nixosModules.disko inputs.nixos-hardware.nixosModules.dell-xps-13-9370 ];
+        lenovo = mkNixos [ ./nixos/lenovo/configuration.nix ./nixos/lenovo/disk-config.nix inputs.disko.nixosModules.disko ];
+        work   = mkNixos [ ./nixos/work/configuration.nix   ./nixos/work/disk-config.nix   inputs.disko.nixosModules.disko inputs.nixos-hardware.nixosModules.lenovo-thinkpad-t14 ];
       };
 
       homeConfigurations = {
