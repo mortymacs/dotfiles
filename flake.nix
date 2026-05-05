@@ -31,28 +31,46 @@
         overlays = import ./overlays inputs;
       };
 
-      mkNixos = modules: nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs outputs; };
-        inherit modules;
-      };
+      mkNixos =
+        modules:
+        nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs outputs; };
+          inherit modules;
+        };
 
-      mkHome = modules: home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        extraSpecialArgs = { inherit inputs outputs; };
-        inherit modules;
-      };
+      mkHome =
+        modules:
+        home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          extraSpecialArgs = { inherit inputs outputs; };
+          inherit modules;
+        };
     in
     {
       nixosConfigurations = {
-        dell   = mkNixos [ ./nixos/dell/configuration.nix   ./nixos/dell/disk-config.nix   inputs.disko.nixosModules.disko inputs.nixos-hardware.nixosModules.dell-xps-13-9370 ];
-        lenovo = mkNixos [ ./nixos/lenovo/configuration.nix ./nixos/lenovo/disk-config.nix inputs.disko.nixosModules.disko ];
-        work   = mkNixos [ ./nixos/work/configuration.nix   ./nixos/work/disk-config.nix   inputs.disko.nixosModules.disko inputs.nixos-hardware.nixosModules.lenovo-thinkpad-t14 ];
+        dell = mkNixos [
+          ./nixos/dell/configuration.nix
+          ./nixos/dell/disk-configuration.nix
+          inputs.disko.nixosModules.disko
+          inputs.nixos-hardware.nixosModules.dell-xps-13-9370
+        ];
+        lenovo = mkNixos [
+          ./nixos/lenovo/configuration.nix
+          ./nixos/lenovo/disk-configuration.nix
+          inputs.disko.nixosModules.disko
+        ];
+        work = mkNixos [
+          ./nixos/work/configuration.nix
+          ./nixos/work/disk-configuration.nix
+          inputs.disko.nixosModules.disko
+          inputs.nixos-hardware.nixosModules.lenovo-thinkpad-t14
+        ];
       };
 
       homeConfigurations = {
-        dell   = mkHome [ ./home-manager/dell/home.nix ];
+        dell = mkHome [ ./home-manager/dell/home.nix ];
         lenovo = mkHome [ ./home-manager/lenovo/home.nix ];
-        work   = mkHome [ ./home-manager/work/home.nix ];
+        work = mkHome [ ./home-manager/work/home.nix ];
       };
     };
 }
