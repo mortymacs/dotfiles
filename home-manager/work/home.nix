@@ -9,5 +9,6 @@
     unstable.teams-for-linux
     unstable.github-copilot-cli
     unstable.copilot-language-server
+    unstable.phpactor
   ];
 }
