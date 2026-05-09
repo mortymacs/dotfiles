@@ -195,15 +195,6 @@ vim.lsp.enable("tinymist", {
   capabilities = capabilities,
   offset_encoding = "utf-8",
 })
-require("typst-preview").setup({
-  dependencies_bin = {
-    ["tinymist"] = vim.fn.exepath("tinymist"),
-    ["websocat"] = vim.fn.exepath("websocat"),
-  },
-  extra_args = {
-    "--font-path=fonts",
-  },
-})
 
 -- HTML / CSS / Markdown.
 vim.lsp.enable("html", {

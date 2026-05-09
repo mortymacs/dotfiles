@@ -17,13 +17,3 @@ require("mini.move").setup({
     line_up = "<s-m-k>",
   },
 })
-
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = {
-    "NvimTree",
-  },
-  command = ":lua vim.b.miniindentscope_disable=true",
-})
-
--- TreeSJ.
-require("treesj").setup()

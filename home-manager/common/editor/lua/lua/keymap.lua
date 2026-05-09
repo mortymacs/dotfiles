@@ -1,23 +1,12 @@
 require("util")
-local snacks = require("snacks")
 local flash = require("flash")
-local harpoon = require('harpoon')
 
 -- Command.
-SetKeyMap("<c-x><c-k>", snacks.picker.keymaps,  nil, nil, "Keymaps")
+SetKeyMap("<c-x><c-k>", "<Cmd>Commands<cr>",  nil, nil, "Keymaps")
 
 -- Buffer
-SetKeyMap("<leader>q", function () snacks.bufdelete() end, { "n" }, nil, "DeleteBuffer")
-SetKeyMap("<leader>/",  snacks.picker.lines,               { "n" }, nil, "FuzzyFinder")
-
--- Pinned buffers.
-SetKeyMap("<leader>a", function () harpoon:list():add() end, nil, nil, "PinBuffer")
-SetKeyMap("<leader>d", function () harpoon:list():remove() end, nil, nil, "UnpinBuffer")
-SetKeyMap("<leader>l", function () harpoon:list():next() end, nil, nil, "NextPinnedBuffer")
-SetKeyMap("<leader>h", function () harpoon:list():prev() end, nil, nil, "PrevPinnedBuffer")
-SetKeyMap("<leader>,",  function()
-    harpoon.ui:toggle_quick_menu(harpoon:list())
-end, { "n" }, nil, "Buffers")
+SetKeyMap("<leader>q",  "<Cmd>BufferClose<cr>", { "n" }, nil, "DeleteBuffer")
+SetKeyMap("<leader>/",  "<Cmd>Lines<cr>",       { "n" }, nil, "FuzzyFinder")
 
 -- Tabbar.
 SetKeyMap("<s-h>",      "<Cmd>BufferPrevious<cr>", { "n" })
@@ -33,7 +22,7 @@ SetKeyMap("<c-]>",      "<Cmd>Neotree toggle<cr>")
 SetKeyMap("<c-x><c-r>", "<Cmd>Neotree reveal<cr>")
 
 -- Search
-SetKeyMap("<c-x><c-g>", snacks.picker.grep, nil, nil, "LiveGrep")
+SetKeyMap("<c-x><c-g>", "<Cmd>Rg<cr>", nil, nil, "LiveGrep")
 
 -- Finder.
 SetKeyMap("sf", function()
@@ -97,14 +86,8 @@ SetKeyMap("<c-g><c-p>", "<Cmd>Gitsigns preview_hunk<cr>")
 SetKeyMap("<c-g><c-r>", "<Cmd>Gitsigns reset_hunk<cr>")
 SetKeyMap("<c-g><c-a>", "<Cmd>Gitsigns stage_hunk<cr>")
 SetKeyMap("<c-g><c-u>", "<Cmd>Gitsigns undo_stage_hunk<cr>")
-SetKeyMap("<c-g><c-s>", snacks.picker.git_status, nil, nil, "GitStatus")
 SetKeyMap("<c-g><c-d>", function() ToggleCommand("DiffviewOpen", "DiffviewClose", "diff_view_status") end, nil, nil, "ToggleDiffView")
 SetKeyMap("<c-g><c-h>", function() ToggleCommand("DiffviewFileHistory", "DiffviewClose", "diff_view_status") end, nil, nil, "ToggleDiffViewFileHistory")
-SetKeyMap("<c-g><c-b>", snacks.picker.git_log_file, nil, nil, "GitBCommits")
-SetKeyMap("<c-g><c-e>", function () snacks.gitbrowse() end, nil, nil, "GitBrowse")
-
--- Help
-SetKeyMap("<c-x><c-h>", snacks.picker.help)
 
 -- Text
 -- Stop copying text on delete.
@@ -136,27 +119,20 @@ SetKeyMap("<c-t>8", function() require("textcase").current_word("to_pascal_case"
 SetKeyMap("<c-t>9", function() require("textcase").operator("to_title_case") end,        { "v" },      nil, "ToTitleCase")
 SetKeyMap("<c-t>9", function() require("textcase").current_word("to_title_case") end,    { "n", "i" }, nil, "ToTitleCase")
 
--- Terminal.
-SetKeyMap("<c-e>",  function () snacks.terminal() end, nil, nil, "ToggleTerminal")
-
 -- LSP.
-SetKeyMap("<c-c><c-d>", snacks.picker.lsp_definitions, nil, nil, "LspDefinition")
-SetKeyMap("<c-c><c-i>", snacks.picker.lsp_implementations, nil, nil, "LspImplementation")
-SetKeyMap("<c-c><c-r>", snacks.picker.lsp_references, nil, nil, "LspReferences")
+SetKeyMap("<c-c><c-d>", vim.lsp.buf.definition, nil, nil, "LspDefinition")
+SetKeyMap("<c-c><c-i>", vim.lsp.buf.implementation, nil, nil, "LspImplementation")
+SetKeyMap("<c-c><c-r>", vim.lsp.buf.references, nil, nil, "LspReferences")
 SetKeyMap("<c-c><c-w>", vim.lsp.buf.rename, nil, nil, "LspRename")
 SetKeyMap("<c-c><c-x>", vim.lsp.buf.code_action, nil, nil, "LspCodeAction")
 SetKeyMap("<c-c><c-l>", "<esc><Cmd>Format<cr>")
 SetKeyMap("<c-c><c-h>", vim.lsp.buf.signature_help, nil, nil, "LspSignatureHelp")
 SetKeyMap("<c-c><c-n>", vim.diagnostic.open_float)
-SetKeyMap("<c-c><c-m>", snacks.picker.diagnostics, nil, nil, "Diagnostics")
-SetKeyMap("<c-c><c-s>", snacks.picker.lsp_symbols, nil, nil, "LspDocumentSymbols")
 SetKeyMap("<c-c><c-f>", "<Cmd>Namu workspace<cr>", nil, nil, "LspWorkspaceSymbols")
 SetKeyMap("<c-c><c-o>", "<Cmd>Namu call out<cr>", nil, nil, "CallOut")
 SetKeyMap("<c-c><c-v>", "<Cmd>Namu call in<cr>", nil, nil, "CallIn")
-SetKeyMap("<c-c><c-g>", "<Cmd>Telescope ast_grep<cr>")
 SetKeyMap("<c-c><c-a>", "<Cmd>Namu watchtower<cr>")
 SetKeyMap("<c-x><c-l>", RestartLsp, nil, nil, "RestartLsp")
-SetKeyMap("<c-x><c-,>", "<Cmd>TSJToggle<cr>", nil, nil, "ToggleSplitJoin")
 
 -- Trouble / Quickfix.
 SetKeyMap("<leader>i", "<Cmd>Trouble diagnostics toggle<cr>")

@@ -121,8 +121,6 @@ require("todo-comments").setup({
   },
 })
 
-require("minty").setup()
-
 -- Surround.
 require("nvim-surround").setup()
 
@@ -266,13 +264,9 @@ require("formatter").setup({
     },
   },
 })
--- vim.api.nvim_create_autocmd({ "BufWritePost" }, { pattern = "*", command = ":FormatWrite" })
 
 -- TextCase.
 require("textcase").setup()
-
--- Peepsight.
-require("peepsight").setup()
 
 -- Range highlight.
 require("range-highlight").setup()

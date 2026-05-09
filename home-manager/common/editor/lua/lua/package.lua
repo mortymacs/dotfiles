@@ -24,16 +24,6 @@ require("lazy").setup({
     },
   },
 
-  -- CMD.
-  {
-    "folke/noice.nvim",
-    event = "VeryLazy",
-    dependencies = {
-      "MunifTanjim/nui.nvim",
-      "rcarriga/nvim-notify",
-    },
-  },
-
   -- Tabbar.
   {
     "romgrk/barbar.nvim",
@@ -52,11 +42,6 @@ require("lazy").setup({
   },
 
   -- Finder.
-  {
-    "stevearc/oil.nvim",
-    dependencies = { "nvim-mini/mini.icons" },
-    lazy = false,
-  },
   {
     "nvim-neo-tree/neo-tree.nvim",
     branch = "v3.x",
@@ -78,38 +63,12 @@ require("lazy").setup({
     lazy = false,
   },
   {
-    "nvim-telescope/telescope.nvim",
-    branch = "0.1.x",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-telescope/telescope-file-browser.nvim",
-      "tom-anders/telescope-vim-bookmarks.nvim",
-      "MattesGroeger/vim-bookmarks",
-      "debugloop/telescope-undo.nvim",
-      "Marskey/telescope-sg",
-      "nvim-telescope/telescope-live-grep-args.nvim",
-      "nvim-telescope/telescope-ghq.nvim",
-    },
-    event = "VeryLazy",
-  },
-  {
-    "nvim-telescope/telescope-fzf-native.nvim",
-    build = "make",
-  },
-  {
     "folke/flash.nvim",
     event = "VeryLazy",
   },
   {
     "kevinhwang91/nvim-hlslens",
     event = "VeryLazy",
-  },
-  {
-    "ThePrimeagen/harpoon",
-    branch = "harpoon2",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-    },
   },
 
   -- Git.
@@ -163,16 +122,11 @@ require("lazy").setup({
     event = "VeryLazy",
   },
   {
-    "Wansmer/treesj",
-    event = { "VeryLazy", "LspAttach" },
-  },
-  {
     "kylechui/nvim-surround",
     version = "*",
     event = "VeryLazy",
   },
   "johmsalas/text-case.nvim",
-  "koenverburg/peepsight.nvim",
   {
     "winston0410/range-highlight.nvim",
     dependencies = {
@@ -197,18 +151,6 @@ require("lazy").setup({
   {
     "rachartier/tiny-inline-diagnostic.nvim",
     event = "LspAttach",
-  },
-  {
-    "machakann/vim-sandwich",
-    event = "VeryLazy",
-  },
-  {
-    "nvzone/minty",
-    dependencies = {
-      "nvzone/volt",
-    },
-    cmd = { "Shades", "Huefy" },
-    event = "VeryLazy",
   },
 
   -- LSP.
@@ -244,20 +186,10 @@ require("lazy").setup({
     "folke/lazydev.nvim",
     ft = { "lua " },
   },
-  {
-    "rafcamlet/nvim-luapad",
-    ft = { "lua" },
-  },
   -- -- Terraform
   {
     "hashivim/vim-terraform",
     ft = { "terraform" },
-  },
-  -- -- Typst.
-  {
-    "chomosuke/typst-preview.nvim",
-    ft = "typst",
-    version = "1.*",
   },
   -- -- JSON/YAML.
   {
@@ -275,25 +207,6 @@ require("lazy").setup({
   {
     "folke/trouble.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
-  },
-
-  -- Debug.
-  {
-    "rcarriga/nvim-dap-ui",
-    dependencies = {
-      "mfussenegger/nvim-dap",
-      "jonboh/nvim-dap-rr",
-      "nvim-neotest/nvim-nio",
-    },
-    event = "VeryLazy",
-  },
-  {
-    "theHamsta/nvim-dap-virtual-text",
-    dependencies = {
-      "mfussenegger/nvim-dap",
-      "nvim-treesitter/nvim-treesitter",
-    },
-    event = "VeryLazy",
   },
 
   -- AI.
@@ -327,11 +240,6 @@ require("lazy").setup({
     "folke/flash.nvim",
     event = "VeryLazy",
     opts = {},
-  },
-  {
-    "nvzone/showkeys",
-    cmd = "ShowkeysToggle",
-    event = "VeryLazy",
   },
 
   -- Nerd Icon.

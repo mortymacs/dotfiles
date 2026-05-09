@@ -1,6 +1,3 @@
--- Oil.
-require("oil").setup()
-
 -- Neotree.
 require("neo-tree").setup({
   enable_modified_markers = false,

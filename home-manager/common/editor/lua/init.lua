@@ -13,10 +13,6 @@ require("statusline")
 
 -- Tree / Finder.
 require("tree")
-require("finder")
-
--- Terminal.
-require("terminal")
 
 -- Git.
 require("git")
@@ -30,14 +26,8 @@ require("text")
 require("lsp")
 require("diagnostic")
 
--- Debug
-vim.cmd [[ source ~/.config/nvim/lua/debug.lua ]]
-
 -- Keybinding.
 require("keymap")
 
 -- Misc.
 require("misc")
-
--- Event.
-require("event")
