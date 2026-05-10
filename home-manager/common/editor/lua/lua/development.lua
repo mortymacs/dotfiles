@@ -1,5 +1,5 @@
 -- Treesitter setup.
-require("nvim-treesitter.configs").setup({
+require("nvim-treesitter").setup({
   ensure_installed = {
     "c",
     "cpp",
@@ -276,11 +276,6 @@ require("decorated_yank").setup()
 
 -- Markdown
 require("render-markdown").setup({
-  code = {
-    style = "normal",
-    above = "─",
-    below = "─",
-  },
   completions = { lsp = { enabled = true } },
 })
 

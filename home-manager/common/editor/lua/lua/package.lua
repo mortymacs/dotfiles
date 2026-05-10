@@ -89,7 +89,7 @@ require("lazy").setup({
       "HiPhish/rainbow-delimiters.nvim",
       "JoosepAlviste/nvim-ts-context-commentstring",
     },
-    branch = "master",
+    branch = "main",
     lazy = false,
     build = ":TSUpdate",
   },
@@ -143,7 +143,7 @@ require("lazy").setup({
     "MeanderingProgrammer/render-markdown.nvim",
     dependencies = {
       "nvim-treesitter/nvim-treesitter",
-      "echasnovski/mini.nvim",
+      "nvim-mini/mini.nvim",
     },
     file_types = { "markdown" },
     event = "VeryLazy",
