@@ -80,19 +80,10 @@ require("lazy").setup({
     "bassamsdata/namu.nvim",
     event = "VeryLazy",
   },
-  {
-    "nvim-treesitter/nvim-treesitter",
-    dependencies = {
-      "nvim-treesitter/nvim-treesitter-context",
-      "haringsrob/nvim_context_vt",
-      "nvim-treesitter/nvim-treesitter-textobjects",
-      "HiPhish/rainbow-delimiters.nvim",
-      "JoosepAlviste/nvim-ts-context-commentstring",
-    },
-    branch = "main",
-    lazy = false,
-    build = ":TSUpdate",
-  },
+  "nvim-treesitter/nvim-treesitter-context",
+  "haringsrob/nvim_context_vt",
+  "HiPhish/rainbow-delimiters.nvim",
+  "JoosepAlviste/nvim-ts-context-commentstring",
   {
     "numToStr/Comment.nvim",
     event = "VeryLazy",

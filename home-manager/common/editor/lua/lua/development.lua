@@ -1,76 +1,11 @@
--- Treesitter setup.
-require("nvim-treesitter").setup({
-  ensure_installed = {
-    "c",
-    "cpp",
-    "go",
-    "python",
-    "lua",
-    "bash",
-    "sql",
-    "markdown",
-    "markdown_inline",
-    "dockerfile",
-    "hcl",
-    "vim",
-    "json",
-    "yaml",
-    "toml",
-    "html",
-    "css",
-    "query",
-    "regex",
-    "http",
-    "vimdoc",
-    "make",
-    "cmake",
-  },
-  sync_install = false,
-  auto_install = true,
-  highlight = {
-    enable = true,
-  },
-  textobjects = {
-    select = {
-      enable = true,
-      lookahead = true,
-      keymaps = {
-        ["af"] = "@function.outer",
-        ["if"] = "@function.inner",
-        ["ac"] = "@class.outer",
-        ["ic"] = "@class.inner",
-        ["ip"] = "@parameter.inner",
-        ["ap"] = "@parameter.outer",
-      },
-      selection_modes = {
-        ["@parameter.outer"] = "v", -- charwise
-        ["@function.outer"] = "V", -- linewise
-        ["@class.outer"] = "<c-v>", -- blockwise
-      },
-      include_surrounding_whitespace = true,
-    },
-    swap = {
-      enable = true,
-      swap_next = {
-        ["<c-c>n"] = "@parameter.inner",
-      },
-      swap_previous = {
-        ["<c-c>p"] = "@parameter.inner",
-      },
-    },
-    move = {
-      enable = true,
-      set_jumps = true,
-      goto_next = {
-        ["<c-c>j"] = "@function.inner",
-        ["<c-c>l"] = "@parameter.inner",
-      },
-      goto_previous = {
-        ["<c-c>k"] = "@function.inner",
-        ["<c-c>h"] = "@parameter.inner",
-      },
-    },
-  },
+-- Enable treesitter highlighting (built-in in Neovim 0.12+).
+vim.api.nvim_create_autocmd("FileType", {
+  callback = function(args)
+    if vim.bo[args.buf].filetype == "text" then
+      return
+    end
+    pcall(vim.treesitter.start)
+  end,
 })
 
 -- Treesitter plugins.
@@ -309,5 +244,12 @@ require("namu").setup({
 })
 
 -- Mini.
-require("mini.ai").setup()
+local spec_treesitter = require("mini.ai").gen_spec.treesitter
+require("mini.ai").setup({
+  custom_textobjects = {
+    f = spec_treesitter({ a = "@function.outer", i = "@function.inner" }),
+    c = spec_treesitter({ a = "@class.outer", i = "@class.inner" }),
+    p = spec_treesitter({ a = "@parameter.outer", i = "@parameter.inner" }),
+  },
+})
 require("mini.surround").setup()
