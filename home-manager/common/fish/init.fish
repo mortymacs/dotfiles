@@ -82,8 +82,7 @@ set -x AWS_DATA_PATH "$XDG_CONFIG_HOME/aws/models"
 set -x AWS_SHARED_CREDENTIALS_FILE "$XDG_CONFIG_HOME/aws/credentials"
 
 # AI.
-set -x NVIM_CLAUDE_ENABLED true
-set -x NVIM_COPILOT_ENABLED false
+set -x NVIM_OLLAMA_ENABLED true
 set -x CLAUDE_CONFIG_DIR "$XDG_CONFIG_HOME/claude"
 
 # General.

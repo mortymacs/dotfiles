@@ -11,8 +11,5 @@ require("bqf").setup({
   },
 })
 
---- QFView.
-require("qfview").setup()
-
 -- Trouble.
 require("trouble").setup()

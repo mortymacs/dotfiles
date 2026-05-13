@@ -1,8 +1,7 @@
 require("util")
 
 -- AI status.
-local ai_claude_enabled = vim.env.NVIM_CLAUDE_ENABLED == "true"
-local ai_copilot_enabled = vim.env.NVIM_COPILOT_ENABLED == "true"
+local ai_ollama_enabled = vim.env.NVIM_OLLAMA_ENABLED == "true"
 
 -- Kind.
 local lspkind = require("lspkind")
@@ -18,7 +17,7 @@ lspkind.init({
 -- CMP.
 local blink_cmp_providers = {}
 local blink_cmp_sources = { "lsp", "path", "buffer" }
-if ai_claude_enabled then
+if ai_ollama_enabled then
   blink_cmp_providers.minuet = {
     name = "minuet",
     module = "minuet.blink",
@@ -27,15 +26,6 @@ if ai_claude_enabled then
     score_offset = 50,
   }
   table.insert(blink_cmp_sources, "minuet")
-end
-if ai_copilot_enabled then
-  blink_cmp_providers.copilot = {
-    name = "copilot",
-    module = "blink-cmp-copilot",
-    score_offset = 100,
-    async = true,
-  }
-  table.insert(blink_cmp_sources, "copilot")
 end
 require("blink.cmp").setup({
   keymap = {
@@ -83,18 +73,6 @@ require("blink.cmp").setup({
   appearance = {
     nerd_font_variant = "normal",
   },
-})
-vim.api.nvim_create_autocmd("User", {
-  pattern = "BlinkCmpMenuOpen",
-  callback = function()
-    vim.b.copilot_suggestion_hidden = true
-  end,
-})
-vim.api.nvim_create_autocmd("User", {
-  pattern = "BlinkCmpMenuClose",
-  callback = function()
-    vim.b.copilot_suggestion_hidden = false
-  end,
 })
 
 -- Set up lspconfig.
@@ -352,20 +330,26 @@ require("outline").setup({
 })
 
 -- AI.
-if ai_claude_enabled then
-  require("minuet").setup({
-    cmp = {
-      enable_auto_complete = false,
-    },
-    provider = "claude",
-  })
-end
-if ai_copilot_enabled then
-  require("copilot").setup({
-    suggestion = { enabled = false },
-    panel = { enabled = false },
-  })
-  require("CopilotChat").setup({
-    model = "claude-sonnet-4.5",
-  })
+if ai_ollama_enabled then
+    require("minuet").setup({
+      provider = "openai_fim_compatible",
+      virtualtext = {
+        auto_trigger_ft = { "*" },
+        keymap = {
+          accept = "<Tab>",
+          accept_line = "<C-l>",
+          dismiss = "<C-e>",
+          next = "<C-n>",
+          prev = "<C-p>",
+        },
+      },
+      provider_options = {
+        openai_fim_compatible = {
+          api_key = "TERM",
+          model = "deepseek-coder-v2:16b-lite-instruct-q4_0",
+          end_point = "http://127.0.0.1:11434/v1/completions",
+          name = "ollama",
+        },
+      },
+    })
 end

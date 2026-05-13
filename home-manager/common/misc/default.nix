@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  pkgs,
   ...
 }:
 {
@@ -42,6 +43,14 @@
       EOF
             fi
     '';
+  };
+
+  # AI.
+  services.ollama = {
+    enable = true;
+    acceleration = "cuda";
+    host = "127.0.0.1";
+    package = pkgs.unstable.ollama;
   };
 
   # Nix Index.

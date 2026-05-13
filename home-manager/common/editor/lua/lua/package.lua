@@ -194,7 +194,6 @@ require("lazy").setup({
 
   -- Quickfix.
   "kevinhwang91/nvim-bqf",
-  "ashfinal/qfview.nvim",
   {
     "folke/trouble.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -207,22 +206,6 @@ require("lazy").setup({
       "nvim-lua/plenary.nvim",
     },
     event = "LspAttach",
-  },
-  {
-    "zbirenbaum/copilot.lua",
-    dependencies = {
-      "copilotlsp-nvim/copilot-lsp",
-      "giuxtaposition/blink-cmp-copilot",
-      "AndreM222/copilot-lualine",
-    },
-    cmd = "Copilot",
-  },
-  {
-    "CopilotC-Nvim/CopilotChat.nvim",
-    dependencies = {
-      { "nvim-lua/plenary.nvim", branch = "master" },
-    },
-    build = "make tiktoken",
   },
 
   -- Keybinding.

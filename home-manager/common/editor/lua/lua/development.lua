@@ -118,11 +118,6 @@ require("formatter").setup({
     lua = {
       function()
         -- Ignore files.
-        if
-          util.get_current_buffer_file_name() == "keymap.lua" or util.get_current_buffer_file_name() == "theme.lua"
-        then
-          return nil
-        end
         return {
           exe = "stylua",
           args = {

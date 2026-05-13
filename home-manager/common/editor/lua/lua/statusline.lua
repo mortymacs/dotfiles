@@ -36,7 +36,6 @@ require("lualine").setup({
     lualine_c = {},
     lualine_x = {},
     lualine_y = {
-      "copilot",
       {
         require("lsp-progress").progress,
         cond = function()
