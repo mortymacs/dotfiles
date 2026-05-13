@@ -141,6 +141,6 @@ SetKeyMap("<leader>i", "<Cmd>Trouble diagnostics toggle<cr>")
 SetKeyMap("<c-x><c-y>", "<Cmd>Lazy! sync<cr>")
 
 -- Misc.
-SetKeyMap("<c-s>", "<esc>:silent wa<cr>")
+SetKeyMap("<c-s>", "<esc>:silent wa ++p<cr>")
 require('mini.jump').setup()
 require('mini.jump2d').setup()

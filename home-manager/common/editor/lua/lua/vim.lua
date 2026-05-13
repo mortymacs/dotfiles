@@ -1,5 +1,6 @@
 -- Performance
 vim.loader.enable()
+require("vim._core.ui2").enable()
 
 -- Body
 vim.opt.nu = true

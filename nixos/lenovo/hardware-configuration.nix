@@ -27,7 +27,7 @@
     "nvidia_drm"
   ];
   boot.kernelModules = [ "kvm-amd" "amdgpu" ];
-  boot.kernelParams = [ "amdgpu.sg_display=0" "amd_pstate=active" ];
+  boot.kernelParams = [ "amdgpu.sg_display=0" "amdgpu.dcdebugmask=0x10" "amd_pstate=active" ];
   boot.extraModulePackages = with config.boot.kernelPackages; [ lenovo-legion-module ];
 
   # GPU driver (NVIDIA + AMD hybrid).
