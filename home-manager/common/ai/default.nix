@@ -1,7 +1,7 @@
 { pkgs, inputs, ... }:
 {
   services.ollama = {
-    enable = true;
+    enable = false;
     acceleration = "cuda";
     host = "127.0.0.1";
     package = pkgs.unstable.ollama;
