@@ -201,10 +201,7 @@ require("lazy").setup({
 
   -- AI.
   {
-    "milanglacier/minuet-ai.nvim",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-    },
+    "ggml-org/llama.vim",
     event = "LspAttach",
   },
 

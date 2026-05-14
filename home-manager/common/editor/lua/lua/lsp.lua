@@ -1,8 +1,5 @@
 require("util")
 
--- AI status.
-local ai_ollama_enabled = vim.env.NVIM_OLLAMA_ENABLED == "true"
-
 -- Kind.
 local lspkind = require("lspkind")
 lspkind.init({
@@ -17,16 +14,6 @@ lspkind.init({
 -- CMP.
 local blink_cmp_providers = {}
 local blink_cmp_sources = { "lsp", "path", "buffer" }
-if ai_ollama_enabled then
-  blink_cmp_providers.minuet = {
-    name = "minuet",
-    module = "minuet.blink",
-    async = true,
-    timeout_ms = 3000,
-    score_offset = 50,
-  }
-  table.insert(blink_cmp_sources, "minuet")
-end
 require("blink.cmp").setup({
   keymap = {
     ["<m-k>"] = { "select_prev", "fallback" },
@@ -328,28 +315,3 @@ require("outline").setup({
     },
   },
 })
-
--- AI.
-if ai_ollama_enabled then
-    require("minuet").setup({
-      provider = "openai_fim_compatible",
-      virtualtext = {
-        auto_trigger_ft = { "*" },
-        keymap = {
-          accept = "<Tab>",
-          accept_line = "<C-l>",
-          dismiss = "<C-e>",
-          next = "<C-n>",
-          prev = "<C-p>",
-        },
-      },
-      provider_options = {
-        openai_fim_compatible = {
-          api_key = "TERM",
-          model = "qwen2.5-coder:7b",
-          end_point = "http://127.0.0.1:11434/v1/completions",
-          name = "ollama",
-        },
-      },
-    })
-end

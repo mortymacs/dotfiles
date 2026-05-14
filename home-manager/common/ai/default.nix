@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
   services.ollama = {
     enable = true;
@@ -10,5 +10,6 @@
   home.packages = with pkgs; [
     unstable.crush
     unstable.claude-code
+    inputs.llama-cpp.packages.${pkgs.stdenv.hostPlatform.system}.cuda
   ];
 }
