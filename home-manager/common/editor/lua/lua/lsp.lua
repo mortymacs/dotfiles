@@ -13,7 +13,7 @@ lspkind.init({
 
 -- CMP.
 local blink_cmp_providers = {}
-local blink_cmp_sources = { "lsp", "path", "buffer" }
+local blink_cmp_sources = { "lsp", "path" }
 require("blink.cmp").setup({
   keymap = {
     ["<m-k>"] = { "select_prev", "fallback" },

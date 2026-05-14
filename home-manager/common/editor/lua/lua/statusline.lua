@@ -16,7 +16,7 @@ require("lualine").setup({
       {
         "filename",
         newfile_status = true,
-        path = 1,
+        path = 4,
         symbols = {
           modified = "[+]",
           readonly = "[-]",
@@ -43,12 +43,10 @@ require("lualine").setup({
         end,
       },
       "branch",
-      "diff",
       "diagnostics",
     },
     lualine_z = {
       "filetype",
-      "filesize",
       {
         "progress",
         separator = {
