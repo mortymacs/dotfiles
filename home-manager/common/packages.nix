@@ -66,7 +66,6 @@
     unstable.d2
     ## Snipped.
     nap
-    claude-code
     ## Nix.
     cachix
 

@@ -45,14 +45,6 @@
     '';
   };
 
-  # AI.
-  services.ollama = {
-    enable = true;
-    acceleration = "cuda";
-    host = "127.0.0.1";
-    package = pkgs.unstable.ollama;
-  };
-
   # Nix Index.
   programs.nix-index = {
     enable = true;

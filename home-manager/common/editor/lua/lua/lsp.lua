@@ -346,7 +346,7 @@ if ai_ollama_enabled then
       provider_options = {
         openai_fim_compatible = {
           api_key = "TERM",
-          model = "deepseek-coder-v2:16b-lite-instruct-q4_0",
+          model = "qwen2.5-coder:7b",
           end_point = "http://127.0.0.1:11434/v1/completions",
           name = "ollama",
         },

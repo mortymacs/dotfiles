@@ -9,6 +9,7 @@
     ../common/btop
     ../common/git
     ../common/firefox
+    ../common/ai
     ../common/misc
     ../common/packages.nix
   ];
