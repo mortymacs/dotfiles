@@ -1,15 +1,17 @@
-{ pkgs, inputs, ... }:
+{ pkgs, inputs, hasCuda ? false, ... }:
+let
+  system = pkgs.stdenv.hostPlatform.system;
+in
 {
   services.ollama = {
     enable = true;
-    acceleration = "cuda";
     host = "127.0.0.1";
     package = pkgs.unstable.ollama;
-  };
+  } // (if hasCuda then { acceleration = "cuda"; } else { });
 
   home.packages = with pkgs; [
     unstable.crush
-    inputs.llama-cpp.packages.${pkgs.stdenv.hostPlatform.system}.cuda
+    (if hasCuda then inputs.llama-cpp.packages.${system}.cuda else inputs.llama-cpp.packages.${system}.default)
     unstable.claude-code
   ];
 

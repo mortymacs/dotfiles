@@ -1,4 +1,6 @@
 {
+  _module.args.hasCuda = false;
+
   imports = [
     ../common/desktop
     ../common/fish

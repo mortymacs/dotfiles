@@ -6,8 +6,8 @@
       "type": "openai-compat",
       "models": [
         {
-          "name": "Qwen 3 8B",
-          "id": "qwen3:8b",
+          "name": "$OLLAMA_MODEL",
+          "id": "$OLLAMA_MODEL",
           "context_window": 256000,
           "default_max_tokens": 20000
         }
