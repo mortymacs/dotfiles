@@ -101,11 +101,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1778828604,
-        "narHash": "sha256-H2yzBjNNuTLN8nKGdvrfyk++9WoIn5TuOytNyfMwb4k=",
+        "lastModified": 1778839147,
+        "narHash": "sha256-wCEHUE/4+pZNKkQKPxg1SBqVh/qnWU9R2VascxXlIJI=",
         "owner": "ggml-org",
         "repo": "llama.cpp",
-        "rev": "91e84fed64329cd96202d68220724a1d92f5ec1f",
+        "rev": "ac33f032ac41748ffa9aaefca07cfc16e732f73f",
         "type": "github"
       },
       "original": {
@@ -248,11 +248,11 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1778797234,
-        "narHash": "sha256-wf0NH7u9c7TDZM1BEt494RMOqFMlNFZH3tq+UCu2An4=",
+        "lastModified": 1778839849,
+        "narHash": "sha256-j6MqX94/tUziShYyNe48W0khyk+DXPL5460/1NgexCU=",
         "owner": "zed-industries",
         "repo": "zed",
-        "rev": "700b0b5de6b1101fbe699f714888d1b68680cb0f",
+        "rev": "bf68bf79ffc2a35c7647dfa18a9b2a23c6209d9b",
         "type": "github"
       },
       "original": {

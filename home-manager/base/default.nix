@@ -1,5 +1,6 @@
+{ lib, ... }:
 {
-  _module.args.hasCuda = false;
+  _module.args.hasCuda = lib.mkDefault false;
 
   imports = [
     ../common/desktop

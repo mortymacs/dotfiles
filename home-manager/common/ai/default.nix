@@ -1,6 +1,10 @@
 { pkgs, inputs, hasCuda ? false, ... }:
 let
   system = pkgs.stdenv.hostPlatform.system;
+  llamaCppPkg = if hasCuda then inputs.llama-cpp.packages.${system}.cuda else inputs.llama-cpp.packages.${system}.default;
+  llamaCpp = llamaCppPkg.overrideAttrs (old: {
+    cmakeFlags = (old.cmakeFlags or [ ]) ++ [ "-DLLAMA_BUILD_WEBUI=OFF" ];
+  });
 in
 {
   services.ollama = {
@@ -11,7 +15,7 @@ in
 
   home.packages = with pkgs; [
     unstable.crush
-    (if hasCuda then inputs.llama-cpp.packages.${system}.cuda else inputs.llama-cpp.packages.${system}.default)
+    llamaCpp
     unstable.claude-code
   ];
 
