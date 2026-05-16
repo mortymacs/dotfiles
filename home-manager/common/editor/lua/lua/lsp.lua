@@ -87,11 +87,14 @@ vim.g.go_auto_type_info = 0
 vim.g.go_gopls_enabled = 1
 vim.g.go_echo_command_info = 0
 vim.g.go_def_mapping_enabled = 0
+vim.g.go_fmt_command = "gopls"
+vim.g.go_gopls_gofumpt = 1
 vim.lsp.enable("gopls", {
   capabilities = capabilities,
   settings = {
     gopls = {
       vulncheck = "Imports",
+      gofumpt = true,
     },
   },
 })

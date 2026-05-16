@@ -94,19 +94,7 @@ require("formatter").setup({
     },
 
     go = {
-      function()
-        return {
-          exe = "goimports-reviser",
-          args = {
-            "-output",
-            "stdout",
-            "-rm-unused",
-            util.escape_path(util.get_current_buffer_file_path()),
-          },
-          stdin = true,
-        }
-      end,
-      require("formatter.filetypes.go").gofmt,
+      require("formatter.filetypes.go").gofumpt,
     },
 
     python = {

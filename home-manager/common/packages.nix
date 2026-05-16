@@ -98,6 +98,7 @@
     gomodifytags
     gotags
     panicparse
+    gofumpt
     ## Zig.
     zig
     zls
