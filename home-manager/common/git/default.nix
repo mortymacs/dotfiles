@@ -31,23 +31,18 @@
       push = {
         default = "current";
       };
-      pager = {
-        diff = "delta";
-        log = "delta";
-        reflog = "delta";
-        show = "delta";
-        blame = "delta";
-      };
       help = {
         autocorrect = 10;
       };
       diff.algorithm = "histogram";
-      core.hooksPath = "~/.config/git/hooks";
+      core = {
+        hooksPath = "~/.config/git/hooks";
+        pager = "git-diff-pretty | less -RFX";
+      };
     };
 
     ignores = lib.splitString "\n" (builtins.readFile ./ignore);
     includes = [
-      { path = "./themes.gitconfig"; }
       {
         condition = "gitdir:~/Workspaces/gitlab.ci.fdmg.org/";
         contents = {
@@ -63,7 +58,6 @@
     ];
   };
   xdg.configFile = {
-    "git/themes.gitconfig".source = ./themes.gitconfig;
     "git/hooks/pre-push".source = ./hooks/pre-push;
   };
 
@@ -71,17 +65,8 @@
     git-town
     git-who
     (writeShellScriptBin "git-user-stats" (builtins.readFile ./git-user-stats.sh))
+    (writeShellScriptBin "git-diff-pretty" ''
+      exec ${python3}/bin/python3 ${./git-diff-pretty.py} "$@"
+    '')
   ];
-
-  programs.delta = {
-    enable = true;
-    options = {
-      features = "decorations mort";
-      line-numbers = true;
-      side-by-side = true;
-      dark = true;
-      merge-conflict-begin-symbol = "";
-      merge-conflict-end-symbol = "";
-    };
-  };
 }
