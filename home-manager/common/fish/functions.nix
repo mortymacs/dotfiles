@@ -7,6 +7,12 @@
     end
 
     if test "$argv[1]" = "update"
+        nix flake update nixpkgs nixpkgs-unstable nixos-hardware home-manager disko
+        fwupdmgr get-updates
+        return 0
+    end
+
+    if test "$argv[1]" = "update-all"
         nix flake update
         fwupdmgr get-updates
         return 0
