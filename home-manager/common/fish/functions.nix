@@ -26,7 +26,7 @@
     nvim --headless "+Lazy! sync" +qa
 
     # Containers.
-    for img in localstack/localstack valkey/valkey:alpine postgres kennethreitz/httpbin temporalio/auto-setup
+    for img in ministackorg/ministack:full valkey/valkey:alpine postgres temporalio/auto-setup
         podman pull $img;
     end
 
@@ -82,17 +82,16 @@
         -e POSTGRES_DB="db" -e POSTGRES_USER=user -e POSTGRES_PASSWORD=secret \
         postgres
   '';
-  localstack-server = ''
+  localcloud-server = ''
     podman run -d --rm \
-        -p 4566:4566 -p 4510-4559:4510-4559 \
-        -e LOCALSTACK_AUTH_TOKEN="$LOCALSTACK_AUTH_TOKEN" \
-        --name localstack \
-        localstack/localstack
+        -p 4566:4566 \
+        --name localcloud \
+        ministackorg/ministack:full
     wait4x http http://127.0.0.1:4566
     for i in (seq 1 3)
-        aws --endpoint-url http://127.0.0.1:4566 --region us-east-1 --profile localstack sqs create-queue --queue-name "sqs$i"
-        aws --endpoint-url http://127.0.0.1:4566 --region us-east-1 --profile localstack sns create-topic --name "sns$i"
-        aws --endpoint-url http://127.0.0.1:4566 --region us-east-1 --profile localstack s3api create-bucket --bucket "s3$i"
+        aws --endpoint-url http://127.0.0.1:4566 --region us-east-1 --profile localcloud sqs create-queue --queue-name "sqs$i"
+        aws --endpoint-url http://127.0.0.1:4566 --region us-east-1 --profile localcloud sns create-topic --name "sns$i"
+        aws --endpoint-url http://127.0.0.1:4566 --region us-east-1 --profile localcloud s3api create-bucket --bucket "s3$i"
     end
   '';
   temporal-server = ''

@@ -30,14 +30,14 @@
             if [ ! -f "${config.xdg.configHome}/aws/config" ]; then
               $DRY_RUN_CMD mkdir -p "${config.xdg.configHome}/aws"
               $DRY_RUN_CMD cat > "${config.xdg.configHome}/aws/config" << EOF
-      [profile localstack]
+      [profile localcloud]
       region = us-east-1
       EOF
             fi
             if [ ! -f "${config.xdg.configHome}/aws/credentials" ]; then
               $DRY_RUN_CMD mkdir -p "${config.xdg.configHome}/aws"
               $DRY_RUN_CMD cat > "${config.xdg.configHome}/aws/credentials" << EOF
-      [localstack]
+      [localcloud]
       aws_access_key_id = foo
       aws_secret_access_key = bar
       EOF

@@ -53,7 +53,7 @@
   aws-local = ''
     aws --endpoint-url http://127.0.0.1:4566 \
         --region us-east-1 \
-        --profile localstack'';
+        --profile localcloud'';
 
   # Server/Proxy.
   x = "export http_proxy='http://127.0.0.1:8118'";
