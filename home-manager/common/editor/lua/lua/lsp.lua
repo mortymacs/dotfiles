@@ -99,11 +99,6 @@ vim.lsp.enable("gopls", {
   },
 })
 
--- Zig.
-vim.lsp.enable("zls", {
-  capabilities = capabilities,
-})
-
 -- Lua
 vim.lsp.enable("lua_ls", {
   capabilities = capabilities,

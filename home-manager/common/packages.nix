@@ -68,6 +68,8 @@
     nap
     ## Nix.
     cachix
+    ## Debug.
+    flamelens
 
     # Database.
     pgcli
@@ -89,31 +91,20 @@
     pprof
     go-tools
     gotools
-    revive
-    gosec
     golangci-lint
     govulncheck
-    goimports-reviser
-    goconst
-    gomodifytags
-    gotags
-    panicparse
     gofumpt
-    ## Zig.
-    zig
-    zls
-    zig-zlint
-    zigimports
     ## Rust.
     rustc
     rust-analyzer
     cargo
     cargo-expand
     rustfmt
+    clippy
+    cargo-flamegraph
     ## Python.
     (python313.withPackages (
       ps: with ps; [
-        ipdb
         ipython
         isort
         black
