@@ -78,6 +78,7 @@ in
       "org/gnome/desktop/interface" = {
         accent-color = "blue";
         color-scheme = "prefer-dark";
+        cursor-theme = "Adwaita";
         document-font-name = "Adwaita Sans 1s";
         monospace-font-name = "CodeNewRoman Nerd Font 14";
         toolkit-accessibility = false;
