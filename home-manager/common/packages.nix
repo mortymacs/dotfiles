@@ -38,7 +38,7 @@
     kmon
     bmon
     zps
-    unstable.witr
+    witr
 
     # System / network.
     duf
@@ -54,7 +54,7 @@
     kubernetes-helm
     awscli2
     ctop
-    unstable.wait4x
+    wait4x
 
     # Development.
     lsof
@@ -127,7 +127,7 @@
     prettier
     ## Nix.
     nil
-    nixfmt-rfc-style
+    nixfmt
     nurl
     ## TF.
     opentofu
@@ -142,7 +142,7 @@
     ## Dockerfile.
     dockerfile-language-server
     ## YAML.
-    nodePackages.yaml-language-server
+    yaml-language-server
     yamllint
     yamlfmt
     ## XML.

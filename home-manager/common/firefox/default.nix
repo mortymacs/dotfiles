@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ pkgs, lib, config, ... }:
 {
   programs.firefox = {
     enable = true;
@@ -10,9 +10,5 @@
       };
     };
   };
-
-  # Remove '.mozilla' directory from home.
-  home.activation.removeKeepFile = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-    rm -rf ~/.mozilla/
-  '';
+  programs.firefox.configPath = "${config.xdg.configHome}/mozilla/firefox";
 }
