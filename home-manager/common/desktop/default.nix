@@ -14,7 +14,6 @@ in
     gnomeExtensions.blur-my-shell
     gnomeExtensions.clipboard-indicator
     gnomeExtensions.alphabetical-app-grid
-    gnomeExtensions.static-workspace-background
     gnome-tweaks
     wl-clipboard
     folio
@@ -118,7 +117,6 @@ in
           gnomeExtensions.blur-my-shell.extensionUuid
           gnomeExtensions.clipboard-indicator.extensionUuid
           gnomeExtensions.alphabetical-app-grid.extensionUuid
-          gnomeExtensions.static-workspace-background.extensionUuid
         ];
         favorite-apps = [
           "firefox.desktop"
