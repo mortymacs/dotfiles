@@ -26,13 +26,6 @@
           installation_mode = "force_installed";
           private_browsing = true;
         };
-        # https://addons.mozilla.org/en-US/firefox/addon/popup-blocker/
-        "{de22fd49-c9ab-4359-b722-b3febdc3a0b0}" = {
-          default_area = "menupanel";
-          install_url = "https://addons.mozilla.org/firefox/downloads/latest/popup-blocker/latest.xpi";
-          installation_mode = "force_installed";
-          private_browsing = true;
-        };
         # https://addons.mozilla.org/en-US/firefox/addon/consent-o-matic/
         "gdpr@cavi.au.dk" = {
           default_area = "menupanel";
@@ -59,13 +52,6 @@
           default_area = "menupanel";
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/history-cleaner/latest.xpi";
           installation_mode = "force_installed";
-          private_browsing = false;
-        };
-        # https://addons.mozilla.org/en-US/firefox/addon/photoshow/
-        "{c23d8eea-4e71-4573-a245-4c97f8e1a1e0}" = {
-          default_area = "menupanel";
-          install_url = "https://addons.mozilla.org/firefox/downloads/latest/photoshow/latest.xpi";
-          installation_mode = "blocked";
           private_browsing = false;
         };
         # https://addons.mozilla.org/en-US/firefox/addon/vimium-ff/
