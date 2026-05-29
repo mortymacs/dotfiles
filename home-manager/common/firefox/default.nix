@@ -10,6 +10,10 @@
 
   programs.librewolf = {
     enable = true;
+    # LibreWolf (XDG build) reads its profile root from
+    # $XDG_CONFIG_HOME/librewolf/librewolf (vendor + app name), so the path
+    # must be doubled — otherwise it ignores this config and makes its own profile.
+    configPath = "${config.xdg.configHome}/librewolf/librewolf";
     policies = {
       ExtensionSettings = {
         # https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/
@@ -30,13 +34,6 @@
         "gdpr@cavi.au.dk" = {
           default_area = "menupanel";
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/consent-o-matic/latest.xpi";
-          installation_mode = "force_installed";
-          private_browsing = false;
-        };
-        # https://addons.mozilla.org/en-US/firefox/addon/dont-track-me-google1/
-        "dont-track-me-google@robwu.nl" = {
-          default_area = "menupanel";
-          install_url = "https://addons.mozilla.org/firefox/downloads/latest/dont-track-me-google1/latest.xpi";
           installation_mode = "force_installed";
           private_browsing = false;
         };
@@ -204,6 +201,7 @@
           "privacy.resistFingerprinting.exemptedDomains" = "app.tuta.com";
 
           # UI.
+          "browser.uidensity" = 2;
           "browser.uiCustomization.horizontalTabstrip" = ''["tabbrowser-tabs"]'';
           "browser.uiCustomization.navBarWhenVerticalTabs" = ''
             ["back-button","forward-button","stop-reload-button","vertical-spacer","urlbar-container","downloads-button","unified-extensions-button","fxa-toolbar-menu-button","reset-pbm-toolbar-button"]
@@ -223,4 +221,8 @@
       };
     };
   };
+
+  home.activation.removeKeepFile = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    rm -rf ~/{.mozilla,.librewolf}
+  '';
 }

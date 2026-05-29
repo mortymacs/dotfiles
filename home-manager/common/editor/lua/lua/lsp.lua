@@ -77,6 +77,11 @@ vim.lsp.enable("clangd", {
   cmd = { "clangd", "--clang-tidy", "--compile-commands-dir=build" },
 })
 
+-- Zig.
+vim.lsp.enable("zls", {
+  capabilities = capabilities,
+})
+
 -- Rust.
 vim.lsp.enable("rust_analyzer", {
   capabilities = capabilities,

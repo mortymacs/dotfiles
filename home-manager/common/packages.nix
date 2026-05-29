@@ -84,6 +84,11 @@
     ccache
     cmake
     neocmakelsp
+    ## Zig.
+    zig
+    zls
+    zig-zlint
+    zigimports
     ## Go.
     go
     gopls
