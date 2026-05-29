@@ -191,12 +191,19 @@
           "browser.download.autohideButton" = true;
 
           # Privacy.
-          # Keep track of the only exception websites, and flush the rest.
+          # Keep "Allow" exception sites; flush the rest on close.
           "privacy.clearOnShutdown.cookies" = true;
           "privacy.clearOnShutdown.offlineApps" = true;
           "privacy.clearOnShutdown.cache" = true;
           "privacy.clearOnShutdown.sessions" = true;
+          # lifetimePolicy=2 makes all cookies/storage session-scoped and honors
+          # per-site "Allow" exceptions (stored in permissions.sqlite, set in the UI).
           "network.cookie.lifetimePolicy" = 2;
+          "privacy.sanitize.sanitizeOnShutdown" = true;
+          "privacy.clearOnShutdown_v2.cache" = true;
+          "privacy.clearOnShutdown_v2.cookiesAndStorage" = true;
+          "privacy.clearOnShutdown_v2.historyFormDataAndDownloads" = false;
+          "privacy.clearOnShutdown_v2.siteSettings" = true;
           "privacy.userContext.newTabContainerOnLeftClick.enabled" = true;
           "privacy.resistFingerprinting.exemptedDomains" = "app.tuta.com";
 
