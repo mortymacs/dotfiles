@@ -1,0 +1,46 @@
+{
+  "placements": {
+    "widget-overflow-fixed-list": [],
+    "unified-extensions-area": [
+      "ublock0_raymondhill_net-browser-action"
+    ],
+    "nav-bar": [
+      "sidebar-button",
+      "back-button",
+      "forward-button",
+      "stop-reload-button",
+      "vertical-spacer",
+      "urlbar-container",
+      "downloads-button",
+      "unified-extensions-button",
+      "fxa-toolbar-menu-button",
+      "reset-pbm-toolbar-button"
+    ],
+    "toolbar-menubar": [
+      "menubar-items"
+    ],
+    "TabsToolbar": [],
+    "vertical-tabs": [
+      "tabbrowser-tabs"
+    ],
+    "PersonalToolbar": [
+      "import-button",
+      "personal-bookmarks"
+    ]
+  },
+  "seen": [
+    "ublock0_raymondhill_net-browser-action",
+    "developer-button",
+    "screenshot-button"
+  ],
+  "dirtyAreaCache": [
+    "nav-bar",
+    "PersonalToolbar",
+    "unified-extensions-area",
+    "toolbar-menubar",
+    "TabsToolbar",
+    "vertical-tabs"
+  ],
+  "currentVersion": 23,
+  "newElementCount": 3
+}

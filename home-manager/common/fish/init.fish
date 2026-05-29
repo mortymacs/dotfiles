@@ -84,6 +84,7 @@ set -x AWS_SHARED_CREDENTIALS_FILE "$XDG_CONFIG_HOME/aws/credentials"
 # AI.
 set -x OLLAMA_MODEL "qwen3:8b"
 set -x CLAUDE_CONFIG_DIR "$XDG_CONFIG_HOME/claude"
+set -x GRAMMER_MODEL "ggml-org/Qwen3-0.6B-GGUF"
 
 # General.
 set -x PATH "$PATH:$HOME/.local/bin:$GOPATH/bin:$CARGO_HOME/bin"

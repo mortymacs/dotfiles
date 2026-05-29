@@ -88,6 +88,7 @@ in
         application-children = [
           "gnome-power-panel"
           "firefox"
+          "librewolf"
           "ghostty"
           "org-gnome-fileroller"
           "org-gnome-nautilus"
@@ -120,6 +121,7 @@ in
         ];
         favorite-apps = [
           "firefox.desktop"
+          "librewolf.desktop"
           "io.gitlab.news_flash.NewsFlash.desktop"
           "com.mitchellh.ghostty.desktop"
           "com.toolstack.Folio.desktop"

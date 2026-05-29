@@ -80,4 +80,13 @@
 
   # Utility.
   calc = "numbat";
+
+  # AI.
+  fix-grammer = ''
+    llama-cli \
+        -hf $GRAMMER_MODEL \
+        --reasoning off \
+        --log-disable --no-perf \
+        --system-prompt-file "$XDG_CONFIG_HOME/ai/fix-grammer-prompt.txt"
+  '';
 }
