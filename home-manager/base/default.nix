@@ -11,7 +11,7 @@
     ../common/editor
     ../common/btop
     ../common/git
-    ../common/firefox
+    ../common/librewolf
     ../common/ai
     ../common/misc
     ../common/packages.nix

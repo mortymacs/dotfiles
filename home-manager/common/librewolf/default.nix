@@ -5,9 +5,6 @@
   ...
 }:
 {
-  programs.firefox.enable = true;
-  programs.firefox.configPath = "${config.xdg.configHome}/mozilla/firefox";
-
   programs.librewolf = {
     enable = true;
     # LibreWolf (XDG build) reads its profile root from
@@ -230,6 +227,6 @@
   };
 
   home.activation.removeKeepFile = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-    rm -rf ~/{.mozilla,.librewolf}
+    rm -rf ~/.librewolf
   '';
 }
