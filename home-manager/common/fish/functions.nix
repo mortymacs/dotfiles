@@ -60,13 +60,6 @@
   '';
 
   # Containers.
-  http-test-server = ''
-    podman run -d --rm \
-        -p 9090:80 \
-        --hostname http-test-server \
-        --name http-test-server \
-        kennethreitz/httpbin
-  '';
   valkey-server = ''
     podman run -d --rm \
         -p 6379:6379 \
@@ -296,5 +289,16 @@
     else
         echo "'$argv[1]' is not a valid file"
     end
+  '';
+  heavy = ''
+    set -l n (test -n "$argv[1]"; and echo $argv[1]; or echo 20)
+    du -ah . 2>/dev/null | sort -rh | head -n $n
+  '';
+  rmname = ''
+    if test (count $argv) -eq 0
+        echo "Usage: rmname <name>"
+        return 1
+    end
+    find . -name "$argv[1]" -exec rm -rf {} +
   '';
 }
