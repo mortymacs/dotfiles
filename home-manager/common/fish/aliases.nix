@@ -12,7 +12,6 @@
   # Editor.
   v = "$EDITOR";
   vr = "$EDITOR -u $HOME/.config/nvim/lua/vim.lua";
-  e = "hx";
 
   # Read.
   cat = "bat";
