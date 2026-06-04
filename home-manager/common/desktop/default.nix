@@ -95,6 +95,11 @@ in
         show-banners = true;
       };
 
+      # Sound.
+      "org/gnome/desktop/sound" = {
+        event-sounds = false;
+      };
+
       # Shell.
       "org/gnome/desktop/wm/preferences" = {
         button-layout = "appmenu:minimize,close";
@@ -206,16 +211,6 @@ in
       "org/gnome/shell/extensions/blur-my-shell/window-list" = {
         brightness = 0.6;
         sigma = 30;
-      };
-
-      "org/gnome/shell/extensions/pano" = {
-        auto-hide-search = false;
-        clipboard-orientation = "horizontal";
-        clipboard-position-horizontal = "fill";
-        clipboard-position-vertical = "bottom";
-        clipboard-size = 500;
-        history-length = 100;
-        open-clipboard-dialog-shortcut = [ "<Super>c" ];
       };
 
       "org/gnome/shell/extensions/tilingshell" = {
