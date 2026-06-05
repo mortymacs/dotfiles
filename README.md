@@ -2,6 +2,9 @@
 
 My dotfiles collection.
 
+> [!WARNING]
+> THis project has moved to [Codeberg](https://codeberg.org/mortymacs/dotfiles) and is no longer maintained on Github!
+
 ## General config
 
 | Category | Tool |
